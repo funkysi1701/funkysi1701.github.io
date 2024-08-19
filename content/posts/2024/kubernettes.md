@@ -15,7 +15,7 @@ description = "Kubernettes"
 summary = "Kubernettes"
 showFullContent = false
 readingTime = true
-draft = false
+draft = true
 aliases = [
     "/2024/07/23/kubernettes"
 ]
