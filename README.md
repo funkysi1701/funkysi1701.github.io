@@ -1,4 +1,4 @@
-# funkysi1701.github.io - My Blog (using Hugo)
+# funkysi1701.com - My Blog (using Hugo)
 
 Repo for my website www.funkysi1701.com actually hosted on Azure Static Websites not github pages.
 
@@ -6,6 +6,9 @@ Repo for my website www.funkysi1701.com actually hosted on Azure Static Websites
 
 To run locally use
 hugo server -D
+
+To run locally using docker use
+docker run --rm -it -v .:/src -p 1313:1313 klakegg/hugo:0.101.0 server -D --disableFastRender 
 
 To run on github codespace run
 hugo server -D --baseUrl="https://funkysi1701-funkysi1701-github-io-x5wvxvxfv9q4-1313.githubpreview.dev" --appendPort=false
