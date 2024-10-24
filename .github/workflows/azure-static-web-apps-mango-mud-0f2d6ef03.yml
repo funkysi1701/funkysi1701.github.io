@@ -18,6 +18,11 @@ jobs:
       - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4
         with:
           submodules: true
+      - name: Installing Hugo 0.91.2
+        run: |
+          wget https://github.com/gohugoio/hugo/releases/download/v0.91.2/hugo_extended_0.91.2_Linux-64bit.deb
+          sudo dpkg -i hugo_extended_0.91.2_Linux-64bit.deb
+          hugo version    
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
