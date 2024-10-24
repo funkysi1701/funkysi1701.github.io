@@ -21,7 +21,7 @@ A list of events I have attended.
 | Event/Talk | Date | Location | 
 | --- | --- | --- |
 | |    **2024**   | 
-| *Scottish Summit* | *17/19 October 2024* | *Aberdeen* |
+| Scottish Summit | 17/19 October 2024 | Aberdeen |
 | ~~SteelCon~~ | ~~20 July 2024~~ | ~~Sheffield~~ |
 | [Charity Walk](/charity-hike) | 8 June 2024 | Peak District |
 | DDD North | 2 March 2024 | Hull |
