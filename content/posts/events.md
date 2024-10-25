@@ -20,18 +20,24 @@ A list of events I have attended.
 
 | Event/Talk | Date | Location | 
 | --- | --- | --- |
-|     | 2024 |    |
-| *Scottish Summit* | *17/19 October 2024* | *Aberdeen* |
-| *SteelCon* | *TBA* | *Sheffield* |
-| *DDD North* | *2 March 2024* | *Hull* |
-|     | 2023 |    |
+| |    **2025**   | 
+| *[Night Walk](https://runforwildlife.com/run-for-wildlife-night-5k)* | *4 January 2025* | *Yorkshire Wildlife Park* |
+| |    **2024**   | 
+| *Yorkshire Azure* | *10 December 2024* | *Leeds* |
+| *Yorkshire Azure* | *19 November 2024* | *York* |
+| *Code Club* | *2 November 2024* | *Leeds Library* |
+| Scottish Summit | 17/19 October 2024 | Aberdeen |
+| ~~SteelCon~~ | ~~20 July 2024~~ | ~~Sheffield~~ |
+| [Charity Walk](/charity-hike) | 8 June 2024 | Peak District |
+| DDD North | 2 March 2024 | Hull |
+||     **2023**  |  
 | DevBoss | 16 November 2023 | Leeds |
 | [DDD East Midlands](/posts/2023/ddd-east-midlands) | 7th October | Nottingham |
 | SteelCon | 8 July 2023 | Sheffield |
 | Yorkshire Azure | 13 June 2023 | Leeds |
 | DevBoss | 20 April 2023 | Leeds |
 | dotnet York Machine Learning with ML.Net | 2 March 2023 | York |
-|    | 2022 |        |
+| |   **2022**  |      
 | Microsoft Datacenter Tour: Virtual Experience | 6 December 2022   | Online |
 | [DDD North](/posts/2022/ddd-north)            | 3 December 2022 | Hull |
 | LeedsSharp Azure Patterns for Fun and Profit | 24 November 2022 | Leeds |
