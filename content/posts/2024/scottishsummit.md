@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 featured = false
+draft = true
 aliases = [
     "/scottish-summit-2024",
     "/posts/scottishsummit",
