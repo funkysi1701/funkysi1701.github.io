@@ -59,7 +59,7 @@ The "Ask the Azure Experts" panel featured four Azure MVPs and Sarah Lean, who a
 
 "Who's Afraid of a Little Ole Copilot?" presented by Dona Sarkar and her colleagues, was a captivating exploration of how Copilots function within the Microsoft ecosystem. It featured various speakers I had encountered throughout the conference, demonstrating the interactivity of Microsoft’s services, from Purview to Responsible AI. It was a fun and enlightening way to close the conference.
 
-Saturday evening featured a pub quiz and the UK Community Awards ceremony, where dedicated community members were recognized for their hard work. Our quiz team, led by MVP Vesa Nopanen and humorously named "Vogan Poets," finished 14th—complete with silly hats. It was a delightful opportunity to socialize with teammates and was one of the highlights of the conference.
+Saturday evening featured a pub quiz and the UK Community Awards ceremony, where dedicated community members were recognized for their hard work. Our quiz team, led by MVP Vesa Nopanen and humorously named "Vogon Poets," finished 14th—complete with silly hats. It was a delightful opportunity to socialize with teammates and was one of the highlights of the conference.
 
 ## Conclusion
 
