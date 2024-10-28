@@ -1,6 +1,6 @@
 +++
 title = "Scottish Summit 2024"
-date = "2024-10-27T18:00:45Z"
+date = "2024-10-28T18:00:45Z"
 year = "2024"
 month= "2024-10"
 author = "funkysi1701"
@@ -15,14 +15,14 @@ showFullContent = false
 readingTime = true
 copyright = false
 featured = false
-draft = true
+draft = false
 aliases = [
     "/scottish-summit-2024",
     "/posts/scottishsummit",
-    "/posts/2024/10/27/scottishsummit",
+    "/posts/2024/10/28/scottishsummit",
     "/posts/scottish-summit-2024",
-    "/posts/2024/10/27/scottish-summit-2024",
-    "/2024/10/27/scottish-summit-2024"    
+    "/posts/2024/10/28/scottish-summit-2024",
+    "/2024/10/28/scottish-summit-2024"    
 ]
 +++
 Scottish Summit 2024 took place in Aberdeen on October 18th and 19th at the P&J Live Arena, and I was fortunate enough to attend.
