@@ -25,50 +25,48 @@ aliases = [
     "/2024/10/27/scottish-summit-2024"    
 ]
 +++
-Scottish Summit 2024 took place in Aberdeen on the 18th and 19th October 2024 at the P&J Live Arena and I was there.
-
-I travelled up to Aberdeen by train on the 17th October, travel took a good 6 hours, but I used the time to catch up on podcasts and audiobooks.
+Scottish Summit 2024 took place in Aberdeen on October 18th and 19th at the P&J Live Arena, and I was fortunate enough to attend.
 
 ## Friday
 
-Friday 18th was the first full day of the conference. As expected there were bag pipers at the door of the venue, back in 2022 they did this as well, reminding us all that it was a Scottish conference. Registration was quick and easy just show your QR code ticket and get a lanyard. This years lanyard were made of seed paper, so you could plant them and grow flowers, something I want to do in the spring. 
+The first full day of the conference, Friday the 18th, began with the unmistakable sound of bagpipers welcoming attendees at the venue—an echo of the 2022 event that reminded us all of the conference's Scottish roots. Registration was quick and seamless; all I needed was my QR code ticket to receive a unique lanyard made of seed paper—perfect for planting flowers in the spring.
 
-Scott Hanselman was the keynote speaker, and I spotted him in the main hall mingling with other attendees. I almost asked him for a selfie, but didn't in the end. His keynote was titled "AI: Hero or Villain" and was very interesting. He talked about ChatGPT in general terms and how it wasn't magic, but was just machine learning and used mathematics to predict the next word in a sentence. 
+Scott Hanselman was the keynote speaker, and I spotted him mingling with other attendees. I almost asked him for a selfie but decided against it. His keynote, titled "AI: Hero or Villain," was compelling. He demystified ChatGPT, explaining that it’s not magic but rather a product of machine learning, using mathematics to predict the next word in a sentence. 
 
-Next up was MVP Vesa Nopanen with his talk "Supercharge your Teams meetings". I picked up a few tips for improving my own Teams meetings. Adding notes and agendas to meetings was my bigest take away.
+Next, MVP Vesa Nopanen delivered his talk on "Supercharge Your Teams Meetings." I picked up some valuable tips, particularly the importance of adding notes and agendas to enhance meeting effectiveness.
 
-<img src="/images/GaKpRZ3WIAAFsIW.jpg" style="padding-right: 7px" align="left" /> Next I attended a talk by a couple of the Scottish Summit organisers, they talked about the technology used to run an event like Scottish Summit. Stripe was the payment API, and this linked in with a lot of Power Automate and Power Pages, this was very interesting as a charity non profit event, the tech used was very much lets learn how it works while also doing the job and not costing the earth.
+<img src="/images/GaKpRZ3WIAAFsIW.jpg" style="padding-right: 7px" align="left" /> Following that, a couple of the Scottish Summit organizers discussed the technology behind the event. They explained how they used Stripe for payments, integrating it with Power Automate and Power Pages. I found this particularly interesting for a charity event; it demonstrated a commitment to learning while keeping costs manageable.
 
-What does it mean to be a modern full stack software developer? was a talk about how to mix power apps with traditional web development, this was interesting as I have not touched power apps before. Instead of starting with .net and trying to incorporate power apps, start with power apps and anything it can't do fill in with .net or traditional web development.
+The next session explored what it means to be a modern full-stack software developer, focusing on integrating Power Apps with traditional web development. As someone new to Power Apps, I learned that starting with it can be beneficial, filling gaps with .NET or conventional web development as needed.
 
-Next was a session about public speaking. I have never given a talk at a conference, but I feel I may do in the future. Hearing about how others have made that journey was very encouraging and has given me things to think about.
+I then attended a session on public speaking. Although I’ve never given a talk at a conference, hearing about others' journeys was encouraging and prompted me to consider my own potential in this area.
 
-The last session of Friday was from MS Sarah Lean, she talked about how her hobbies (in her case Curling) influenced her work life. Another talk that left me with stuff to ponder. What hobbies do I have that could influence my work life?
+The final session of Friday featured Microsoft’s Sarah Lean, who shared how her hobbies—specifically curling—have influenced her work life. This talk made me reflect on my own hobbies and their impact on my professional journey.
 
-For the friday evening there was a drag cabaret. I enjoyed it a lot more than I thought I would. Some very brave community speakers also got dressed up and took part in the show. This was all for the conferences charity TIE
+The evening wrapped up with a drag cabaret, which exceeded my expectations. Several brave community members dressed up and participated in the show, all in support of the conference's charity, TIE.
 
 ## Saturday
 
-Saturday started with a trip to the world of wizards and D&D (Dungeons and Dragons). Securing the Realm and Autonomous Adventure: DM-less D&D with Azure AI. This was a really interesting practical talk about how you could use AI to run a D&D game, what guard rails to include and what AI prompts to use.
+Saturday kicked off with a dive into the world of wizards and D&D in a session titled "Securing the Realm: DM-less D&D with Azure AI." This practical talk demonstrated how AI can be utilized in running D&D games, discussing essential guardrails and effective AI prompts.
 
-Community - It just makes sense was a talk about the tech community and how it can help you in your career. I feel I have only really dipped my toe into the community aspect, but after this weekend I am wanting to do more.
+Another engaging talk, "Community - It Just Makes Sense," highlighted the tech community's role in career development. I realized that I’ve only just scratched the surface of community involvement, and I’m eager to explore it further.
 
 <img src="/images/GaP4xTOW0AA6VHI.jpg" style="padding-left: 7px" align="right" /> 
 
-Sarah Lean (from Microsoft) talked about KQL or Kusto Query Language. KQL is the language that Application Insights uses to query data, I have touched on it a couple of times but interesting to learn more.
+Sarah Lean returned to discuss KQL (Kusto Query Language), which Application Insights uses for querying data. Although I've encountered KQL before, learning more about it was fascinating.
 
-Ask the Azure experts panel was a great session, a bunch of 4 Azure MVPs and Sarah Lean from Microoft answered questions about Azure, how to migrate work loads, how to keep costs down and a few other tips.
+The "Ask the Azure Experts" panel featured four Azure MVPs and Sarah Lean, who answered questions about Azure migration and cost management, sharing numerous helpful insights.
 
-Who's Affraid of a little ole copilot with Dona Sarkar and friends was a fascinating talk about how Copilots work in the Microsoft world. It featured many of the other speakers I had heard over the conference interacting as various services and tools. eg Purview, Copilot Prompt, Sharepoint, MS Teams, Outlook and of course the Responsible AI. This was a very fun way to end the conference and explain how the services interact.  
+"Who's Afraid of a Little Ole Copilot?" presented by Dona Sarkar and her colleagues, was a captivating exploration of how Copilots function within the Microsoft ecosystem. It featured various speakers I had encountered throughout the conference, demonstrating the interactivity of Microsoft’s services, from Purview to Responsible AI. It was a fun and enlightening way to close the conference.
 
-Lastly on the Saturday night was the pub quiz and UK Community Awards ceremony. It was great seeing members of the community that has worked so hard get recognition. The pub quiz was great fun, MVP Vesa Nopanen was our team captain and out team "Vogan Poets" came 14th and most of our team wore silly hats. It was great to socialise with my team mates and was one of the hilights of the conference.
+Saturday evening featured a pub quiz and the UK Community Awards ceremony, where dedicated community members were recognized for their hard work. Our quiz team, led by MVP Vesa Nopanen and humorously named "Vogan Poets," finished 14th—complete with silly hats. It was a delightful opportunity to socialize with teammates and was one of the highlights of the conference.
 
 ## Conclusion
 
-To sum up, Scottish Summit 2024 was a great conference and was super well organised. As a dotnet developer there was not a huge amount of relevant sessions for me. However the best thing about the conference is the community, I was able to hang out with a few MVPs and community people that I have met before and due to the pub quiz I was able to meet some new ones.
+In summary, Scottish Summit 2024 was an exceptionally well-organized conference. As a .NET developer, I found a limited number of directly relevant sessions, but the true value lay in the community. I reconnected with familiar faces and met new friends, especially during the pub quiz.
 
-I left feeling really encouraged to get more involved in community and events like this. The talks on public speaking, community and hobbies were all about more soft skills than tech but these skills are so valuable in the tech world. 
+I left feeling inspired to become more involved in the community and participate in future events. The sessions on public speaking, community engagement, and hobbies underscored the importance of soft skills in the tech world.
 
-Also I met Scott Hansleman (or at least saw him from the audience) so that was very cool.
+And yes, I caught a glimpse of Scott Hanselman, which was quite a thrill!
 
 <img src="/images/GaKSNJeXwAA-xyr.jpg" style="padding-right: 7px" align="left" />
