@@ -12,7 +12,6 @@ tags = ["StarTrek", "Podcast" ]
 category="trek"
 keywords = ["", ""]
 description = "Last night I had a bit of a chat about season 3 of Star Trek Picard"
-summary = "Last night I had a bit of a chat about season 3 of Star Trek Picard"
 showFullContent = false
 readingTime = true
 aliases = [

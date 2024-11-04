@@ -10,7 +10,6 @@ images = ['/images/Pnb-NvNJ_400x400.jpg']
 tags = ["youth", "codeclub", "community"]
 category="tech"
 description =  "Code Clubs are free and open to all school-aged young people."
-summary = "Code Clubs are free and open to all school-aged young people."
 showFullContent = false
 readingTime = true
 copyright = false
