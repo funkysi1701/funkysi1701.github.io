@@ -12,7 +12,6 @@ tags = ["Visual Studio", "API" ]
 category="tech"
 keywords = ["", ""]
 description = "Make API calls from Visual Studio or Visual Studio Code"
-summary = "Make API calls from Visual Studio or Visual Studio Code"
 showFullContent = false
 readingTime = true
 draft = false

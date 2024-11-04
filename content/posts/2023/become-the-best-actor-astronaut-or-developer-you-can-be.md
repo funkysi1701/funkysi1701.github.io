@@ -12,7 +12,6 @@ tags = ["StarTrek","Patrick Stewart", "Goals", "Jose Hernandez", "continuous imp
 category="tech"
 keywords = ["", ""]
 description = "Become the best Actor, Astronaut or Developer you can be"
-summary = "Become the best Actor, Astronaut or Developer you can be"
 showFullContent = false
 readingTime = true
 draft = false

@@ -10,7 +10,6 @@ images = ['/images/scottishsummit.jpg']
 tags = ["conference", "microsoft", "community"]
 category="tech"
 description =  "Scottish Summit 2024 took place in Aberdeen on October 18th and 19th at the P&J Live Arena, and I was fortunate enough to attend."
-summary = "Scottish Summit 2024 took place in Aberdeen on October 18th and 19th at the P&J Live Arena, and I was fortunate enough to attend."
 showFullContent = false
 readingTime = true
 copyright = false

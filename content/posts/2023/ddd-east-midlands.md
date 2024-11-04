@@ -12,7 +12,6 @@ tags = ["DotNet", "Community", "Conference", "DDD East Midlands"]
 category="tech"
 keywords = ["", ""]
 description = "On Saturday 7th October I attended DDD East Midlands"
-summary = "On Saturday 7th October I attended DDD East Midlands"
 showFullContent = false
 readingTime = true
 draft = false
