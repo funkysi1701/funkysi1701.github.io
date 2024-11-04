@@ -12,7 +12,6 @@ tags = ["Azure", "Website", "Side Project", "Costs" ]
 category="tech"
 keywords = ["", ""]
 description = "How much does it cost?"
-summary = "How much does it cost?"
 showFullContent = false
 readingTime = true
 aliases = [

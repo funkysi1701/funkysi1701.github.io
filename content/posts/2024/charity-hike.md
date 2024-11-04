@@ -12,7 +12,6 @@ tags = [ ]
 category=""
 keywords = ["", ""]
 description = "Funky Si walks a half marathon"
-summary = "Funky Si walks a half marathon"
 showFullContent = false
 readingTime = true
 aliases = [
