@@ -56,8 +56,8 @@ jobs:
         run: |
           hugo \
             --minify \
+            --config config-stage.toml \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
-            --config config-stage.toml
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
