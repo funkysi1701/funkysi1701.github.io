@@ -19,6 +19,7 @@ draft = false
 aliases = [
     "/code-club",
     "/posts/code-club",
+    "/code-club-23mb",
     "/posts/2024/11/02/code-club",
     "/2024/11/02/code-club"    
 ]

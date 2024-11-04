@@ -18,6 +18,7 @@ featured = false
 draft = false
 aliases = [
     "/scottish-summit-2024",
+    "/scottish-summit-2024-53ci",
     "/posts/scottishsummit",
     "/posts/2024/10/28/scottishsummit",
     "/posts/scottish-summit-2024",
