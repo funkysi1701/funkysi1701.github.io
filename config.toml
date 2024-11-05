@@ -4,6 +4,7 @@ title = "Funky Si's Blog"
 theme = 'hugo-theme-bootstrap'
 disqusShortname = "funkysi1701"  
 googleAnalytics = ""
+enableRobotsTXT = true
 
 [Menus]
   main = [
