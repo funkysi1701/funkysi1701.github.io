@@ -13,7 +13,7 @@
                 {{ if gt $tagCount 1 }}
                   <a href="{{ "/tags/" }}{{ $name }}" rel="{{ $tagCount }}"
                   class="tagcloud-item">
-                    {{ $taxonomy.Page.Title }}
+                    {{- $taxonomy.Page.Title -}}
                   </a>
                 {{ end }}
               {{ end }}

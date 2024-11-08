@@ -69,7 +69,7 @@ Lets look at the code.
                   {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weigth)) }}
                     <a href="{{ "/tags/" }}{{ $name }}" 
                     class="tagcloud-item" style="font-size: {{ $currentFontSize }}rem;">
-                      {{ $taxonomy.Page.Title }}
+                      {{- $taxonomy.Page.Title -}}
                     </a>
                 {{ end }}
             {{ end }}
