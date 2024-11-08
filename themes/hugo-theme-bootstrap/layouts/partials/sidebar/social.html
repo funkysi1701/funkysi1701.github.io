@@ -69,8 +69,8 @@
     <div class="py-2">
       <div class="container tagcloud">
         {{ if ne (len $.Site.Taxonomies.year) 0 }}
-          {{ $largestFontSize := 2.0 }}
-          {{ $smallestFontSize := 0.7 }}
+          {{ $largestFontSize := 2.5 }}
+          {{ $smallestFontSize := 1.0 }}
           {{ $fontSpread := sub $largestFontSize $smallestFontSize }}
           {{ $max := add (len (index $.Site.Taxonomies.year.ByCount 0).Pages) 1 }}
           {{ $min := len (index $.Site.Taxonomies.year.ByCount.Reverse 0).Pages }}
