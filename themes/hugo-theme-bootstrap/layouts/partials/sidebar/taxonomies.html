@@ -10,10 +10,10 @@
             {{ if ne (len $.Site.Taxonomies.tags) 0 }}
               {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
                 {{ $tagCount := len $taxonomy.Pages }}
-                {{ if gt $tagCount 1 }}
+                {{ if gt $tagCount 3 }}
                   <a href="{{ "/tags/" }}{{ $name }}" rel="{{ $tagCount }}"
                   class="tagcloud-item">
-                    {{ $taxonomy.Page.Title }}
+                    {{- $taxonomy.Page.Title -}}
                   </a>
                 {{ end }}
               {{ end }}
@@ -26,6 +26,6 @@
     <script src="https://www.jqueryscript.net/demo/Minimalist-Tag-Cloud-Generator-with-jQuery-tagcloud-js/jquery.tagcloud.js"></script>
     <script>
       $(".tagcloud a").tagcloud({
-        size: {start: 10, end: 50, unit:"px"}
+        size: {start: 15, end: 60, unit:"px"}
       });
 </script>
