@@ -5,7 +5,9 @@ year = "2024"
 month= "2024-11"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-tags = ["design patterns", "architecture", "c-sharp", ""]
+cover = "/images/flying-machine-blueprint-patent-john-malone.jpg"
+images =['/images/flying-machine-blueprint-patent-john-malone.jpg']
+tags = ["design patterns", "architecture", "c-sharp"]
 category="tech"
 description =  "A look at the Strategy Design Pattern."
 showFullContent = false
@@ -20,7 +22,7 @@ aliases = [
     "/2024/11/11/strategy-design-pattern"    
 ]
 +++
-# Understanding the Strategy Design Pattern
+# Understanding the Strategy Design Pattern.
 
 In the world of software development, design patterns are essential tools that help developers solve common problems in a standardized way. One such pattern is the **Strategy Design Pattern**. This pattern is particularly useful when you need to define a family of algorithms, encapsulate each one, and make them interchangeable. Let's dive into what the Strategy Design Pattern is, why it's useful, and how you can implement it in your projects.
 
