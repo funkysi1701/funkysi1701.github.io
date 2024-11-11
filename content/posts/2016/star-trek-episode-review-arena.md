@@ -11,7 +11,6 @@ tags = ["StarTrek", "Gorn", "Arena"]
 category="trek"
 keywords = ["", ""]
 description =  "Star Trek Episode Review Arena"
-summary = "Star Trek Episode Review Arena"
 showFullContent = false
 readingTime = true
 copyright = false

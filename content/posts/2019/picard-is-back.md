@@ -11,7 +11,6 @@ tags = ["StarTrek", "Picard", "PatrickStewart"]
 category="trek"
 keywords = ["", ""]
 description = "Picard is back!"
-summary = "Picard is back!"
 showFullContent = false
 readingTime = true
 copyright = false

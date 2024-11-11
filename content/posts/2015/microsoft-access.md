@@ -10,7 +10,6 @@ tags = ["Database", "Access", "SQL", "VBA", "Microsoft Office"]
 category="tech"
 keywords = ["", ""]
 description =  "My Love/Hate Relationship with Microsoft Access"
-summary = "My Love/Hate Relationship with Microsoft Access"
 showFullContent = false
 readingTime = true
 copyright = false

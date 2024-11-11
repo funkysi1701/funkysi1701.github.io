@@ -9,7 +9,6 @@ cover = "/images/scratch.png"
 tags = ["Github", "Pulumi", "DevOps"]
 category="tech"
 description =  "Using Pulumi to Deploy Azure Function"
-summary = "Using Pulumi to Deploy Azure Function"
 showFullContent = false
 readingTime = true
 copyright = false

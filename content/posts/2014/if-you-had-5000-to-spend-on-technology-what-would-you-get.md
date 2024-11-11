@@ -11,7 +11,6 @@ tags = ["Servers", "Spending"]
 category="tech"
 keywords = ["", ""]
 description = "If you had £5000 to spend on technology what would you get?"
-summary = "If you had £5000 to spend on technology what would you get?"
 showFullContent = false
 readingTime = true
 copyright = false

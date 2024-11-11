@@ -10,7 +10,6 @@ tags = ["Database", "SQL",  "Backups"]
 category="tech"
 keywords = ["", ""]
 description =  "SQL Transaction Log Backups"
-summary = "SQL Transaction Log Backups"
 showFullContent = false
 readingTime = true
 copyright = false

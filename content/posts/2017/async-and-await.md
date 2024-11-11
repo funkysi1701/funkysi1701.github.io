@@ -10,7 +10,6 @@ tags = ["Async", "Await",  "C-Sharp"]
 category="tech"
 keywords = ["", ""]
 description =  "Async and Await"
-summary = "Async and Await"
 showFullContent = false
 readingTime = true
 copyright = false

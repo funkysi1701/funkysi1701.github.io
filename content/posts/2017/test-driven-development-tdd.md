@@ -11,7 +11,6 @@ tags = ["Test Driven Development", "Testing",  "Visual Studio"]
 category="tech"
 keywords = ["", ""]
 description =  "Test Driven Development or TDD"
-summary = "Test Driven Development or TDD"
 showFullContent = false
 readingTime = true
 copyright = false

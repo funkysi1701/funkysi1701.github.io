@@ -10,7 +10,6 @@ tags = ["Azure", "DNS"]
 category="tech"
 keywords = ["", ""]
 description =  "Creating DNS records programmatically"
-summary = "Creating DNS records programmatically"
 showFullContent = false
 readingTime = true
 copyright = false

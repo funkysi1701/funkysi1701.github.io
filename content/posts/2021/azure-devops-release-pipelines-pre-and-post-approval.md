@@ -11,7 +11,6 @@ tags = ["AzureDevOps", "DevOps", "Azure"]
 category="tech"
 keywords = ["", ""]
 description = "Azure DevOps release pipelines have lots of options to do things how you want. One of my favourites is the option for approval."
-summary = "Azure DevOps release pipelines have lots of options to do things how you want. One of my favourites is the option for approval."
 showFullContent = false
 readingTime = true
 copyright = false

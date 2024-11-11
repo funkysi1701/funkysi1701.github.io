@@ -11,7 +11,6 @@ tags = ["DotNet"]
 category="tech"
 keywords = ["", ""]
 description = "Dotnet 5, dotnetconf and adding devops buildID and hash"
-summary = "Dotnet 5, dotnetconf and adding devops buildID and hash"
 showFullContent = false
 readingTime = true
 aliases = [

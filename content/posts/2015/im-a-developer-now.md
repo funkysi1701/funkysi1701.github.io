@@ -10,7 +10,6 @@ tags = ["Self-Belief"]
 category="tech"
 keywords = ["", ""]
 description =  "I’m a developer now"
-summary = "I’m a developer now"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -10,7 +10,6 @@ tags = ["HighCharts", "Graphs",  "Javascript", "SQL"]
 category="tech"
 keywords = ["", ""]
 description =  "High Charts is a javascript library that allows graphs and charts to easily be added to web pages."
-summary = "High Charts is a javascript library that allows graphs and charts to easily be added to web pages."
 showFullContent = false
 readingTime = true
 copyright = false

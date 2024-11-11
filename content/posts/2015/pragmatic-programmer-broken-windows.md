@@ -11,7 +11,6 @@ tags = [ "Windows", "Books", "Tips"]
 category="tech"
 keywords = ["", ""]
 description =  "Don’t Live with Broken Windows"
-summary = "Don’t Live with Broken Windows"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -10,7 +10,6 @@ images = ['/images/mermaid2.png']
 tags = ["github", "mermaid", "documentation"]
 category="tech"
 description =  "Mermaid is a tool that lets you create diagrams from code and text"
-summary = "Mermaid is a tool that lets you create diagrams from code and text"
 showFullContent = false
 readingTime = true
 copyright = false

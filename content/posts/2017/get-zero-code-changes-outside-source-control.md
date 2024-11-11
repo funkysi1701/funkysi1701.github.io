@@ -10,7 +10,6 @@ tags = ["Git", "SQL","Visual Studio","SourceCode"]
 category="tech"
 keywords = ["", ""]
 description =  "How to get Zero Code Changes outside of Source Control"
-summary = "How to get Zero Code Changes outside of Source Control"
 showFullContent = false
 readingTime = true
 copyright = false

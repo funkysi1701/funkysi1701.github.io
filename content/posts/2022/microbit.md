@@ -10,7 +10,6 @@ images = ['/images/blocks.png']
 tags = ["Scratch", "kids", "MakeCode", "Microbit"]
 category="tech"
 description =  "MakeCode and the BBC micro:bit"
-summary = "MakeCode and the BBC micro:bit"
 showFullContent = false
 readingTime = true
 copyright = false

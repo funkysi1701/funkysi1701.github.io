@@ -10,7 +10,6 @@ tags = ["Windows", "Update", "ITAdmin"]
 category="tech"
 keywords = ["", ""]
 description =  "Windows Update – don’t turn it off!"
-summary = "Windows Update – don’t turn it off!"
 showFullContent = false
 readingTime = true
 copyright = false

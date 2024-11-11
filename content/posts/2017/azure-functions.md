@@ -10,7 +10,6 @@ tags = ["Azure", "DevOps"]
 category="tech"
 keywords = ["", ""]
 description =  "Azure Functions"
-summary = "Azure Functions"
 showFullContent = false
 readingTime = true
 copyright = false

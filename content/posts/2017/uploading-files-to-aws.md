@@ -10,7 +10,6 @@ tags = ["AWS", "C-Sharp"]
 category="tech"
 keywords = ["", ""]
 description =  "Uploading Files to AWS"
-summary = "Uploading Files to AWS"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -5,7 +5,6 @@ authorTwitter = "funkysi1701" #do not include @
 cover = ""
 keywords = ["", ""]
 description = "Events - Conferences, User Groups and other events I have been to or plan to attend"
-summary = "Events - Conferences, User Groups and other events I have been to or plan to attend"
 comment = false
 showFullContent = false
 copyright = false

@@ -10,7 +10,6 @@ tags = ["Azure", "DevOps", "ITAdmin"]
 category="tech"
 keywords = ["", ""]
 description =  "However Azure has some amazing features that you can configure to help manage when downtime occurs"
-summary = "However Azure has some amazing features that you can configure to help manage when downtime occurs"
 showFullContent = false
 readingTime = true
 copyright = false

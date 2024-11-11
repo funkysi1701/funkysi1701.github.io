@@ -11,7 +11,6 @@ tags = ["Father", "Baby", "Family"]
 category=""
 keywords = ["", ""]
 description =  "Baby Magic and Becoming a Father"
-summary = "Baby Magic and Becoming a Father"
 showFullContent = false
 readingTime = true
 copyright = false

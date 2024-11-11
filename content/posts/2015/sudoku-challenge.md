@@ -11,7 +11,6 @@ tags = ["Dojo", "C-Sharp", "LeedsSharp"]
 category="tech"
 keywords = ["", ""]
 description =  "Sudoku Challenge"
-summary = "Sudoku Challenge"
 showFullContent = false
 readingTime = true
 copyright = false
