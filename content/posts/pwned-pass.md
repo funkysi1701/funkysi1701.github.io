@@ -5,7 +5,6 @@ authorTwitter = "funkysi1701" #do not include @
 cover = ""
 keywords = ["", ""]
 description = "Pwned Pass - My HIBP Android App"
-summary = "Pwned Pass - My HIBP Android App"
 comment = false
 showFullContent = false
 copyright = false

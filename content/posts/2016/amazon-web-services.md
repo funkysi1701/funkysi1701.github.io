@@ -11,7 +11,6 @@ tags = ["AWS", "Azure","Amazon",  "Clouds"]
 category="tech"
 keywords = ["", ""]
 description =  "Amazon Web Services"
-summary = "Amazon Web Services"
 showFullContent = false
 readingTime = true
 copyright = false

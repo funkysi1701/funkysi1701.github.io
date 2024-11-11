@@ -10,7 +10,6 @@ tags = ["C-Sharp", "Raspberry Pi", "Visual Studio" ]
 category="tech"
 keywords = ["", ""]
 description =  "Running Windows on Raspberry Pi"
-summary = "Running Windows on Raspberry Pi"
 showFullContent = false
 readingTime = true
 copyright = false

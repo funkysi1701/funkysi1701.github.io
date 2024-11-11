@@ -10,7 +10,6 @@ images = ['/images/podcast.jpg']
 tags = ["StarTrek", "podcast"]
 category="trek"
 description =  "Earlier this year I was a guest on the Temporal Trek Podcast"
-summary = "Earlier this year I was a guest on the Temporal Trek Podcast"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -11,7 +11,6 @@ tags = ["DevOps", "Operations", "ITAdmin"]
 category="tech"
 keywords = ["", ""]
 description = "What is the difference between Development and Operations?"
-summary = "What is the difference between Development and Operations?"
 showFullContent = false
 readingTime = true
 copyright = false

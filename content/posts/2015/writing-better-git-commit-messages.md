@@ -11,7 +11,6 @@ tags = ["Git",  "Source Control"]
 category="tech"
 keywords = ["", ""]
 description =  "Writing better Git commit messages"
-summary = "Writing better Git commit messages"
 showFullContent = false
 readingTime = true
 copyright = false

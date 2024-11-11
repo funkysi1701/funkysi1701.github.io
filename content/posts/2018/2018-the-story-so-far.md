@@ -11,7 +11,6 @@ tags = ["Career", "Home", "Family", "Job", "Goals"]
 category="tech"
 keywords = ["", ""]
 description = "2018 The Story So far"
-summary = "2018 The Story So far"
 showFullContent = false
 readingTime = true
 aliases = [

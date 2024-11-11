@@ -11,7 +11,6 @@ tags = ["Clouds", "Azure", "DevOps", "Powershell"]
 category="tech"
 keywords = ["", ""]
 description =  "Copying settings to an Azure Website"
-summary = "Copying settings to an Azure Website"
 showFullContent = false
 readingTime = true
 copyright = false

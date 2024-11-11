@@ -11,7 +11,6 @@ tags = ["Java",  "SourceCode"]
 category="tech"
 keywords = ["", ""]
 description =  "Source Code for Game of Life"
-summary = "Source Code for Game of Life"
 showFullContent = false
 readingTime = true
 copyright = false

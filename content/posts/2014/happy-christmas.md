@@ -11,7 +11,6 @@ tags = ["SQL", "Christmas"]
 category="tech"
 keywords = ["", ""]
 description = "Happy Christmas"
-summary = "Happy Christmas"
 showFullContent = false
 readingTime = true
 copyright = false

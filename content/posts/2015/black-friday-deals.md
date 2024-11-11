@@ -11,7 +11,6 @@ tags = ["Deals", "Blogging", "Blackfriday"]
 category="tech"
 keywords = ["", ""]
 description =  "Black Friday Deals"
-summary = "Black Friday Deals"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -10,7 +10,6 @@ images = ['/images/scratch.png']
 tags = ["Scratch", "kids"]
 category="tech"
 description =  "My 6 year old boy has been playing with Scratch, so here is a quick introduction to what we have learnt about it"
-summary = "My 6 year old boy has been playing with Scratch, so here is a quick introduction to what we have learnt about it"
 showFullContent = false
 readingTime = true
 copyright = false

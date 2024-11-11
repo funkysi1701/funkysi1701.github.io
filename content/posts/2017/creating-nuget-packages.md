@@ -10,7 +10,6 @@ tags = ["Nuget", "C-Sharp", "Visual Studio"]
 category="tech"
 keywords = ["", ""]
 description =  "Creating your own nuget packages with VSTS"
-summary = "Creating your own nuget packages with VSTS"
 showFullContent = false
 readingTime = true
 copyright = false

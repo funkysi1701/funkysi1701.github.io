@@ -11,7 +11,6 @@ tags = ["DevOps", "SSL", "Security"]
 category="tech"
 keywords = ["", ""]
 description = "Let’s Encrypt is awesome"
-summary = "Let’s Encrypt is awesome"
 showFullContent = false
 readingTime = true
 aliases = [

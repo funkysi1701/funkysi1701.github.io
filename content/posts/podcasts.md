@@ -5,7 +5,6 @@ authorTwitter = "funkysi1701" #do not include @
 cover = ""
 keywords = ["", ""]
 description = "Podcasts"
-summary = "Podcasts"
 comment = false
 showFullContent = false
 copyright = false

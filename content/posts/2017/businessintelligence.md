@@ -10,7 +10,6 @@ tags = ["ApplicationInsights",  "BusinessIntelligence", "SQL"]
 category="tech"
 keywords = ["", ""]
 description =  "What the heck is Business Intelligence?"
-summary = "What the heck is Business Intelligence?"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -11,7 +11,6 @@ tags = []
 category="tech"
 keywords = ["", ""]
 description =  "Great British Code Off"
-summary = "Great British Code Off"
 showFullContent = false
 readingTime = true
 copyright = false

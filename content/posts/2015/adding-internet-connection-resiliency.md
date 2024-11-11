@@ -11,7 +11,6 @@ tags = ["Fibre", "VPN", "Internet"]
 category="tech"
 keywords = ["", ""]
 description =  "Adding Internet Connection Resiliency"
-summary = "Adding Internet Connection Resiliency"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -10,7 +10,6 @@ tags = ["PowerShell", "Desktop",  "ITAdmin"]
 category="tech"
 keywords = ["", ""]
 description =  "My desktop is always a mess. I constantly download files there and forget all about them."
-summary = "My desktop is always a mess. I constantly download files there and forget all about them."
 showFullContent = false
 readingTime = true
 copyright = false

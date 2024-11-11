@@ -11,7 +11,6 @@ tags = ["Due Date", "Baby", "Estimate"]
 category="tech"
 keywords = ["", ""]
 description =  "Due Dates"
-summary = "Due Dates"
 showFullContent = false
 readingTime = true
 copyright = false

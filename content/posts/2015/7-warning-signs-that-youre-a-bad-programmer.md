@@ -11,7 +11,6 @@ tags = ["Bad Programmer", "Plan", "Bad Programmer", "Source Control"]
 category="tech"
 keywords = ["", ""]
 description =  "7 Warning Signs that you’re a Bad Programmer"
-summary = "7 Warning Signs that you’re a Bad Programmer"
 showFullContent = false
 readingTime = true
 copyright = false

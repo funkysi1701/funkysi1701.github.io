@@ -5,7 +5,6 @@ authorTwitter = "funkysi1701" #do not include @
 cover = ""
 keywords = ["", ""]
 description = "About Me - My real name is Simon Foster"
-summary = "About Me - My real name is Simon Foster"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg']
 showFullContent = false
 copyright = false

@@ -11,7 +11,6 @@ tags = ["StarTrek"]
 category="trek"
 keywords = ["", ""]
 description =  "Happy 50th Star Trek"
-summary = "Happy 50th Star Trek"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -10,7 +10,6 @@ tags = ["Agile", "SQL",  "Project"]
 category="tech"
 keywords = ["", ""]
 description =  "Development Annoyance"
-summary = "Development Annoyance"
 showFullContent = false
 readingTime = true
 copyright = false

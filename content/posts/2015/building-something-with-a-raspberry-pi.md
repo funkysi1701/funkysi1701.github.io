@@ -11,7 +11,6 @@ tags = ["#MarchIsForMakers", "C-Sharp", "Arduino", "Hardware", "Electronics", "R
 category="tech"
 keywords = ["", ""]
 description =  "Building something with a Raspberry Pi"
-summary = "Building something with a Raspberry Pi"
 showFullContent = false
 readingTime = true
 copyright = false

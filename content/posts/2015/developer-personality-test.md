@@ -11,7 +11,6 @@ tags = ["Developer", "Personaility", "Myers-Briggs"]
 category="tech"
 keywords = ["", ""]
 description =  "Developer Personality Test"
-summary = "Developer Personality Test"
 showFullContent = false
 readingTime = true
 copyright = false

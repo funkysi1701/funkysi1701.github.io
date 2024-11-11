@@ -11,7 +11,6 @@ tags = ["StarTrek", "podcast"]
 category="trek"
 keywords = ["", ""]
 description =  "Star Trek is back (in 2017)"
-summary = "Star Trek is back (in 2017)"
 showFullContent = false
 readingTime = true
 copyright = false

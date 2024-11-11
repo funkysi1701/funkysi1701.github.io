@@ -11,7 +11,6 @@ tags = ["Help", "Gene Roddenberry", "Plane", "StarTrek"]
 category="trek"
 keywords = ["", ""]
 description =  "Roddenberry comic"
-summary = "Roddenberry comic"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -10,7 +10,6 @@ tags = ["Website", "Security", "Azure"]
 category="tech"
 keywords = ["", ""]
 description = "Azure Key Vault"
-summary = "Azure Key Vault"
 showFullContent = false
 readingTime = true
 copyright = false

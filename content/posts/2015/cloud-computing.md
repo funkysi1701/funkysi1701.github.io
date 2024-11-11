@@ -10,7 +10,6 @@ tags = ["Clouds", "Azure", "Google", "Computing", "OneDrive"]
 category="tech"
 keywords = ["", ""]
 description =  "Cloud Computing"
-summary = "Cloud Computing"
 showFullContent = false
 readingTime = true
 copyright = false

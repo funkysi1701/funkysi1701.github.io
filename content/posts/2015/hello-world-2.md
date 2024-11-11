@@ -11,7 +11,6 @@ tags = ["Languages", "SourceCode"]
 category="tech"
 keywords = ["", ""]
 description =  "Hello World!"
-summary = "Hello World!"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -11,7 +11,6 @@ tags = ["Git"]
 category="tech"
 keywords = ["", ""]
 description = "Source Control Fail"
-summary = "Source Control Fail"
 showFullContent = false
 readingTime = true
 aliases = [

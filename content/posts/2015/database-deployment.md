@@ -10,7 +10,6 @@ tags = ["Deployment", "Database", "SQL"]
 category="tech"
 keywords = ["", ""]
 description =  "Database Deployment"
-summary = "Database Deployment"
 showFullContent = false
 readingTime = true
 copyright = false

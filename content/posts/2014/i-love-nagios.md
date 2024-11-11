@@ -11,7 +11,6 @@ tags = ["ITAdmin", "Monitoring", "Servers", "Nagios"]
 category="tech"
 keywords = ["", ""]
 description = "I love Nagios"
-summary = "I love Nagios"
 showFullContent = false
 readingTime = true
 copyright = false

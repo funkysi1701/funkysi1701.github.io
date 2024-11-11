@@ -12,7 +12,6 @@ tags = ["Docker", "SQL"]
 category="tech"
 keywords = ["", ""]
 description = "Updating SQL Server with Docker"
-summary = "Updating SQL Server with Docker"
 showFullContent = false
 readingTime = true
 aliases = [

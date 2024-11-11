@@ -11,7 +11,6 @@ tags = ["Agile"]
 category="tech"
 keywords = ["", ""]
 description =  "Agile Software Development"
-summary = "Agile Software Development"
 showFullContent = false
 readingTime = true
 copyright = false

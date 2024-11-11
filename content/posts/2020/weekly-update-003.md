@@ -11,7 +11,6 @@ tags = ["OpenSource", "PHP"]
 category="tech"
 keywords = ["", ""]
 description = "My first PR and PHP"
-summary = "My first PR and PHP"
 showFullContent = false
 readingTime = true
 aliases = [
