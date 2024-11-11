@@ -10,7 +10,6 @@ images = ['/images/dddnorth-hull-developers-conference-2022.jpg']
 tags = ["DotNet", "Azure", "Community", "Conference", "DDD North"]
 category="tech"
 description =  "On Saturday 3rd December I attended DDD North. It is a community run conference for Developers (the D’s stand for Developer) and I had a fab time there."
-summary = "On Saturday 3rd December I attended DDD North. It is a community run conference for Developers (the D’s stand for Developer) and I had a fab time there."
 showFullContent = false
 readingTime = true
 copyright = false

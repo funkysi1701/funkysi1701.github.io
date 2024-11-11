@@ -10,7 +10,6 @@ tags = ["Lonely",  "Rubber Duck", "Troubleshooting"]
 category="tech"
 keywords = ["", ""]
 description =  "Using your Rubber Duck"
-summary = "Using your Rubber Duck"
 showFullContent = false
 readingTime = true
 copyright = false

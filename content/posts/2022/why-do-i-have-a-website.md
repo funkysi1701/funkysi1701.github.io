@@ -11,7 +11,6 @@ tags = ["website", ""]
 category="tech"
 keywords = ["", ""]
 description = "Is it to share my ideas? Is it to learn new technologies and techniques? Is it to create a following? Is it to educate others? Is it to build some kind of service? Is it some combination of all of these."
-summary = "Is it to share my ideas? Is it to learn new technologies and techniques? Is it to create a following? Is it to educate others? Is it to build some kind of service? Is it some combination of all of these."
 showFullContent = false
 readingTime = true
 copyright = false

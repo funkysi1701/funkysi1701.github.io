@@ -11,7 +11,6 @@ tags = ["Azure", "API", "ApplicationInsights", "DevOps"]
 category="tech"
 keywords = ["", ""]
 description = "Automated releases of software are great but how can we add an element of feedback so only good releases go live"
-summary = "Automated releases of software are great but how can we add an element of feedback so only good releases go live"
 showFullContent = false
 readingTime = true
 copyright = false

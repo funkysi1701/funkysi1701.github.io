@@ -11,7 +11,6 @@ tags = ["Blogging", "Goals"]
 category="tech"
 keywords = ["", ""]
 description = "For a while I have been mentoring a friend and I thought I might share some top tips I have implemented in my career so far"
-summary = "For a while I have been mentoring a friend and I thought I might share some top tips I have implemented in my career so far"
 showFullContent = false
 readingTime = true
 aliases = [

@@ -11,7 +11,6 @@ tags = ["Laptop", "Hardware", "Technology", "Microsoft", "Windows"]
 category="tech"
 keywords = ["", ""]
 description =  "Surface Book Review"
-summary = "Surface Book Review"
 showFullContent = false
 readingTime = true
 copyright = false

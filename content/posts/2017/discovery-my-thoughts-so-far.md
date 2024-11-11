@@ -11,7 +11,6 @@ tags = ["StarTrek", "Discovery"]
 category="trek"
 keywords = ["", ""]
 description = "Discovery – My thoughts so far"
-summary = "Discovery – My thoughts so far"
 showFullContent = false
 readingTime = true
 copyright = false

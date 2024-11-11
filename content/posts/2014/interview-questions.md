@@ -11,7 +11,6 @@ tags = ["ITAdmin", "Interview", "Technical"]
 category="tech"
 keywords = ["", ""]
 description = "Interview questions"
-summary = "Interview questions"
 showFullContent = false
 readingTime = true
 copyright = false

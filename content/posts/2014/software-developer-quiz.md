@@ -11,7 +11,6 @@ tags = ["Quiz", ""]
 category="tech"
 keywords = ["", ""]
 description = "Software Developer Quiz"
-summary = "Software Developer Quiz"
 showFullContent = false
 readingTime = true
 copyright = false

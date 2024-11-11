@@ -10,7 +10,6 @@ images=['/images/svn.jpg']
 tags = ["Source Control", "History", "Bitbucket", "AzureDevOps", "GitHub", "Git", "Subversion"]
 category="tech"
 description =  "A brief history of Source Control"
-summary = "A brief history of Source Control"
 showFullContent = false
 readingTime = true
 copyright = false

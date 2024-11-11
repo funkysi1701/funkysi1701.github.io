@@ -12,7 +12,6 @@ tags = ["FestiveTechCalendar2021","Career","LifeStory"]
 category="tech"
 keywords = ["", ""]
 description = "Part of Festive Tech Calendar 2021"
-summary = "Part of Festive Tech Calendar 2021"
 showFullContent = false
 readingTime = true
 featured = true

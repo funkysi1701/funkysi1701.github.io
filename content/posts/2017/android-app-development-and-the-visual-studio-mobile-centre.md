@@ -10,7 +10,6 @@ tags = ["App", "Azure", "Android"]
 category="tech"
 keywords = ["", ""]
 description =  "Android App Development and the Visual Studio Mobile Centre"
-summary = "Android App Development and the Visual Studio Mobile Centre"
 showFullContent = false
 readingTime = true
 copyright = false

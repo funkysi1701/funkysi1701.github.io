@@ -10,7 +10,6 @@ tags = ["Android", "Mobile", "App", "PwnedPass"]
 category="tech"
 keywords = ["", ""]
 description =  "Pwned Pass – Available from the Play Store"
-summary = "Pwned Pass – Available from the Play Store"
 showFullContent = false
 readingTime = true
 copyright = false

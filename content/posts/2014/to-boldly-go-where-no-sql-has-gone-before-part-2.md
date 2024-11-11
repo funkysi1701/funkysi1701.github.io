@@ -11,7 +11,6 @@ tags = ["StarTrek", "SQL", "Database"]
 category="tech"
 keywords = ["", ""]
 description = "To boldly go where no SQL has gone before Part 2"
-summary = "To boldly go where no SQL has gone before Part 2"
 showFullContent = false
 readingTime = true
 copyright = false

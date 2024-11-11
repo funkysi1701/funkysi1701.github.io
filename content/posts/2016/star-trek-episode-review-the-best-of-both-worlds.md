@@ -11,7 +11,6 @@ tags = ["StarTrek"]
 category="trek"
 keywords = ["", ""]
 description =  "Star Trek Episode Review The Best of Both Worlds"
-summary = "Star Trek Episode Review The Best of Both Worlds"
 showFullContent = false
 readingTime = true
 copyright = false

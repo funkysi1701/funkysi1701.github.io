@@ -11,7 +11,6 @@ tags = ["JavaScript",  "SourceCode"]
 category="tech"
 keywords = ["", ""]
 description =  "Javascript progress"
-summary = "Javascript progress"
 showFullContent = false
 readingTime = true
 copyright = false

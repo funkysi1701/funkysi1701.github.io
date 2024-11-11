@@ -10,7 +10,6 @@ images = ['/images/scottishsummit.jpg']
 tags = ["conference", "microsoft", "community"]
 category="tech"
 description =  "On the 10th and 11th June 2022 Scottish Summit 2022 happened and I was there."
-summary = "On the 10th and 11th June 2022 Scottish Summit 2022 happened and I was there."
 showFullContent = false
 readingTime = true
 copyright = false

@@ -11,7 +11,6 @@ tags = ["Blog", "50"]
 category="tech"
 keywords = ["", ""]
 description =  "50th Blog Post"
-summary = "50th Blog Post"
 showFullContent = false
 readingTime = true
 copyright = false

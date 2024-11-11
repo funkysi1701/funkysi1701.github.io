@@ -11,7 +11,6 @@ tags = ["Testing", "Website", "UI"]
 category="tech"
 keywords = ["", ""]
 description = "Website UI Testing"
-summary = "Website UI Testing"
 showFullContent = false
 readingTime = true
 aliases = [

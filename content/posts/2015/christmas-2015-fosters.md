@@ -11,7 +11,6 @@ tags = ["James", "Elf", "CHristmas"]
 category="home"
 keywords = ["", ""]
 description =  "Christmas 2015 with the Fosters"
-summary = "Christmas 2015 with the Fosters"
 showFullContent = false
 readingTime = true
 copyright = false

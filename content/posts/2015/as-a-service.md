@@ -11,7 +11,6 @@ tags = ["Azure", "As A Service", "Clouds", "PaaS", "IaaS", "SaaS"]
 category="tech"
 keywords = ["", ""]
 description =  "As A Service"
-summary = "As A Service"
 showFullContent = false
 readingTime = true
 copyright = false

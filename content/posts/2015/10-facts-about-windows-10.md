@@ -11,7 +11,6 @@ tags = ["Microsoft", "Windows 10", "Operating System"]
 category="tech"
 keywords = ["", ""]
 description =  "10 facts about Windows 10"
-summary = "10 facts about Windows 10"
 showFullContent = false
 readingTime = true
 copyright = false

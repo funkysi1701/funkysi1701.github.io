@@ -11,7 +11,6 @@ tags = ["Father", "BASIC", "1980s", "Lynx"]
 category="tech"
 keywords = ["", ""]
 description =  "Fathers Day"
-summary = "Fathers Day"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -10,7 +10,6 @@ images = ['/images/AzureADSecret.png']
 tags = ["DotNet", "Azure", "Active Directory", "Secret"]
 category="tech"
 description =  "Expiring Azure AD Client Secrets"
-summary = "Expiring Azure AD Client Secrets"
 showFullContent = false
 readingTime = true
 copyright = false

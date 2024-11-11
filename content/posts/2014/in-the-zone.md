@@ -11,7 +11,6 @@ tags = ["Zone", "Visual Studio"]
 category="tech"
 keywords = ["", ""]
 description = "In the Zone"
-summary = "In the Zone"
 showFullContent = false
 readingTime = true
 copyright = false

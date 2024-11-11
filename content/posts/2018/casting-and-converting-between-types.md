@@ -11,7 +11,6 @@ tags = ["C-Sharp", "Casting", "Convert"]
 category="tech"
 keywords = ["", ""]
 description = "Casting and Converting between types"
-summary = "Casting and Converting between types"
 showFullContent = false
 readingTime = true
 aliases = [

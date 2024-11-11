@@ -10,7 +10,6 @@ tags = ["ITAdmin", "Backups", "SQL"]
 category="tech"
 keywords = ["", ""]
 description = "Runaway SQL Log growth"
-summary = "Runaway SQL Log growth"
 showFullContent = false
 readingTime = true
 copyright = false

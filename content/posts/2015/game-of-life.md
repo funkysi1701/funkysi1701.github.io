@@ -10,7 +10,6 @@ tags = ["Java"]
 category="tech"
 keywords = ["", ""]
 description =  "Game of Life"
-summary = "Game of Life"
 showFullContent = false
 readingTime = true
 copyright = false

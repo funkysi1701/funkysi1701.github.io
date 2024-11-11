@@ -10,7 +10,6 @@ images = ['/images/aws.png']
 tags = ["AWS", "Certification"]
 category="tech"
 description =  "So today I sat the AWS Cloud Practitioner Certification Exam and passed!"
-summary = "So today I sat the AWS Cloud Practitioner Certification Exam and passed!"
 showFullContent = false
 readingTime = true
 copyright = false

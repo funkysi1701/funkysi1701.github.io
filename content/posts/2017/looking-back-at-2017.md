@@ -10,7 +10,6 @@ tags = ["StarTrek", "Goals", "Azure", "Baby", "C-Sharp"]
 category="tech"
 keywords = ["", ""]
 description =  "Looking back at 2017"
-summary = "Looking back at 2017"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -11,7 +11,6 @@ tags = ["StarTrek", "Podcast"]
 category="trek"
 keywords = ["", ""]
 description =  "Ten Forward Episode #135 – Anti Firbob is Back or Simon’s Desert Island Trek"
-summary = "Ten Forward Episode #135 – Anti Firbob is Back or Simon’s Desert Island Trek"
 showFullContent = false
 readingTime = true
 copyright = false

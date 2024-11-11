@@ -11,7 +11,6 @@ tags = ["Goals", "Azure", "ITAdmin"]
 category="tech"
 keywords = ["", ""]
 description =  "Looking back at 2014"
-summary = "Looking back at 2014"
 showFullContent = false
 readingTime = true
 copyright = false

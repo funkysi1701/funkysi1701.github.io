@@ -11,7 +11,6 @@ tags = ["LINQ", "SQL",  "C-Sharp"]
 category="tech"
 keywords = ["", ""]
 description =  "LINQ"
-summary = "LINQ"
 showFullContent = false
 readingTime = true
 copyright = false

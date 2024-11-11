@@ -11,7 +11,6 @@ tags = ["Baby", "James", "Father"]
 category=""
 keywords = ["", ""]
 description =  "James goes on an adventure with Daddy"
-summary = "James goes on an adventure with Daddy"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -10,7 +10,6 @@ tags = ["Azure", "SQL","Table Storage","Database"]
 category="tech"
 keywords = ["", ""]
 description =  "Getting started with Azure Table Storage"
-summary = "Getting started with Azure Table Storage"
 showFullContent = false
 readingTime = true
 copyright = false

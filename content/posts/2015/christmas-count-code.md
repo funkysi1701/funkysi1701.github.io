@@ -11,7 +11,6 @@ tags = ["Code", "Challenge", "Santa", "Happy Christmas"]
 category="tech"
 keywords = ["", ""]
 description =  "The Christmas count down with code"
-summary = "The Christmas count down with code"
 showFullContent = false
 readingTime = true
 copyright = false
