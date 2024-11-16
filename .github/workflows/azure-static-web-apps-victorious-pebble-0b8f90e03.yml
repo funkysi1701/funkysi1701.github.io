@@ -2,7 +2,7 @@ name: Azure Static Web Apps CI/CD
 
 on:
   schedule: 
-    - cron: '38 21 * * *'
+    - cron: '0 * * * *'
 jobs:
   build_and_deploy_job:
     runs-on: ubuntu-latest
