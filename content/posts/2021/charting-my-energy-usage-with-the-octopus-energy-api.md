@@ -12,6 +12,7 @@ category="tech"
 keywords = ["", ""]
 description = "Discover how to track and visualize your energy consumption using the Octopus Energy API. Learn step-by-step methods to access and chart your smart meter data for better energy management."
 showFullContent = false
+featured = true
 readingTime = true
 copyright = false
 aliases = [
