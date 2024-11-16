@@ -13,7 +13,7 @@ description =  "I have a Blazor application that was built with .Net Core 3, and
 showFullContent = false
 readingTime = true
 copyright = false
-featured = false
+featured = true
 aliases = [
     "/upgrading-to-net-7-1mon",
     "/posts/dotnet7",
