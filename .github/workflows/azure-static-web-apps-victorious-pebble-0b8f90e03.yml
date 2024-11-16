@@ -2,7 +2,7 @@ name: Azure Static Web Apps CI/CD
 
 on:
   schedule: 
-    - cron: '0 20 * * *'
+    - cron: '0 * * * *'
 jobs:
   build_and_deploy_job:
     runs-on: ubuntu-latest
@@ -10,6 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
+          ref: master
           submodules: true
       - name: Build And Deploy
         id: builddeploy
