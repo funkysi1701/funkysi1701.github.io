@@ -13,6 +13,13 @@
       {{- end -}}
       {{ with .Site.Params.brand }}{{ . }}{{ else }}{{ $.Site.Title }}{{ end }}
     </a></h1>
+    {{- else if .IsNode -}}
+    <h1><a class="navbar-brand flex-grow-1 flex-lg-grow-0 text-center text-lg-start mx-auto me-lg-3 active" href="{{ "" | absLangURL }}">
+      {{- if $logo -}}
+        {{ partial "helpers/image" (dict "filename" $logo "alt" "Logo" "class" "logo" "resources" .Resources) }}
+      {{- end -}}
+      {{ with .Site.Params.brand }}{{ . }}{{ else }}{{ $.Site.Title }}{{ end }}
+    </a></h1>    
     {{- else -}}
     <a class="navbar-brand flex-grow-1 flex-lg-grow-0 text-center text-lg-start mx-auto me-lg-3" href="{{ "" | absLangURL }}">
       {{- if $logo -}}
