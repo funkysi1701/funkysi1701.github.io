@@ -11,7 +11,7 @@
               {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
                 {{ $tagCount := len $taxonomy.Pages }}
                 {{ if gt $tagCount 3 }}
-                  <a href="{{ "/tags/" }}{{ $name }}" rel="{{ $tagCount }}"
+                  <a href="{{ "/tags/" }}{{ $name }}/" rel="{{ $tagCount }}"
                   class="tagcloud-item">
                     {{- $taxonomy.Page.Title -}}
                   </a>
