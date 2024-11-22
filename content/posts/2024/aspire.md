@@ -205,4 +205,4 @@ The second BindMount line mounts a folder inside your API project, so add a data
 
 ## Conclusion
 
-This is just a few things I have done with Aspire. Go check out the docs on [MS learn](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview) or the some of the sessions from [dotnet conf](https://www.youtube.com/watch?v=fiePiEc1qcU&list=PLdo4fOcmZ0oXeSG8BgCVru3zQtw_K4ANY&index=2)
+This is just a few things I have done with Aspire. Go check out the docs on [MS learn](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview) or the some of the sessions from [dotnet conf](https://www.youtube.com/watch?v=fiePiEc1qcU&list=PLdo4fOcmZ0oXeSG8BgCVru3zQtw_K4ANY&index=2).
