@@ -18,8 +18,8 @@ draft = false
 aliases = [
     "/aspire",
     "/posts/aspire",
-    "/posts/2024/11/18/aspire",
-    "/2024/11/18/aspire"    
+    "/posts/2024/11/25/aspire",
+    "/2024/11/25/aspire"    
 ]
 +++
 ## What is .Net Aspire?
