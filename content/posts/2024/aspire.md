@@ -38,7 +38,7 @@ Overall, [.NET Aspire](https://devblogs.microsoft.com/dotnet/introducing-dotnet-
 
 ## Getting started with .Net Aspire
 
-I touched on .Net Aspire last week, when I talked about what was new in [dotnet 9](/posts/2024/dotnet9), but lets walk through an example.
+I touched on .Net Aspire last week, when I talked about what was new in [dotnet 9](/posts/2024/dotnet9), but let's walk through an example.
 
 Lets say you have a simple application. It has a Blazor web front end, it communicates with a dotnet API and that API retrieves data from a SQL Server database. Before Aspire came along I would create a docker compose file and configure ports so the FE could call the API, and add connection strings so the API could access the database.
 
