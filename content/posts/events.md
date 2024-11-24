@@ -20,7 +20,6 @@ A list of events I have attended.
 | Event/Talk | Date | Location | 
 | --- | --- | --- |
 | |    **2025**   | 
-| *NDC London* | *27-31 January 2025* | *London* |
 | *[Night Walk](https://runforwildlife.com/run-for-wildlife-night-5k)* | *4 January 2025* | *Yorkshire Wildlife Park* |
 | |    **2024**   | 
 | Yorkshire Azure | 19 November 2024 | York |
