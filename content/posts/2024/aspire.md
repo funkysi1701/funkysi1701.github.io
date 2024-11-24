@@ -101,7 +101,7 @@ builder.AddProject<Projects.API>("api");
 
 builder.Build().Run();
 ```
-Your Program.cs file inside you AppHost project will look something like this now, with both your API and UI/Blazor projects referenced. 
+Your Program.cs file inside your AppHost project will look something like this now, with both your API and UI/Blazor projects referenced.
 
 There is one more component we need to wire up, but we don't have a project to right click on for the database. It is fairly straightforward to do, update it to look like the following:
 
