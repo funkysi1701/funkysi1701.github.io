@@ -24,15 +24,15 @@ aliases = [
 +++
 ## What is .Net Aspire?
 
-.NET Aspire is a comprehensive set of tools, templates, and packages designed to simplify the development of cloud-native applications using .NET. It focuses on building observable, production-ready apps by providing a consistent and opinionated set of [tools and patterns](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview).
+.Net Aspire is a comprehensive set of tools, templates, and packages designed to simplify the development of cloud-native applications using .NET. It focuses on building observable, production-ready apps by providing a consistent and opinionated set of [tools and patterns](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview).
 
-The key features of .NET Aspire:
+The key features of .Net Aspire:
 
 - Orchestration: Enhances the local development experience by simplifying the management of your app's configuration and interconnections. It helps with app composition, service discovery, and connection string management1.
 - Integrations: Offers NuGet packages for commonly used services like Redis and Postgres, ensuring they connect consistently and seamlessly with your app.
-- Tooling: Comes with project templates and tooling experiences for Visual Studio, Visual Studio Code, and the .NET CLI to help you create and interact with .NET Aspire projects1.
+- Tooling: Comes with project templates and tooling experiences for Visual Studio, Visual Studio Code, and the .Net CLI to help you create and interact with .NET Aspire projects1.
 
-Overall, [.NET Aspire](https://devblogs.microsoft.com/dotnet/introducing-dotnet-aspire-simplifying-cloud-native-development-with-dotnet-8/) aims to improve the experience of building .NET cloud-native apps by providing a robust framework for developing distributed applications.
+Overall, [.Net Aspire](https://devblogs.microsoft.com/dotnet/introducing-dotnet-aspire-simplifying-cloud-native-development-with-dotnet-8/) aims to improve the experience of building .NET cloud-native apps by providing a robust framework for developing distributed applications.
 
 ![Aspire](/images/aspire-ga-what-is-aspire.png)
 
