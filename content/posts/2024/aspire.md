@@ -86,7 +86,7 @@ services:
 ```
 As you can see from this docker compose file, there is a lot of specifying ports and other plumbing to get these three parts of my system to work together.
 
-Now in Visual Studio, right click on the API project and select add **.Net Aspire Orchestrator Support** this will add two new Visual Studio projects to the solution, AppHost and ServiceDefaults. 
+Now in Visual Studio, right-click on the API project and select add **.Net Aspire Orchestrator Support** this will add two new Visual Studio projects to the solution, AppHost and ServiceDefaults.
 - AppHost is where you configure what service depends on what, you can configure all sorts of different dependencies, like databases (sql server, mysql, postgres etc), rabbitmq, redis and many others.
 - ServiceDefaults is where you configure the defaults for your services, like how opentelemetry should be configured, or how logging should work.
 
