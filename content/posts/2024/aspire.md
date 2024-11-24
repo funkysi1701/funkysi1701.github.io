@@ -7,9 +7,9 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/aspire-ga-what-is-aspire.png"
 images =['/images/aspire-ga-what-is-aspire.png']
-tags = ["DotNet", "Blazor", "C-Sharp", "Visual Studio", "Aspire", "OpenTelemetry", ".NET 9", "Microsoft"]
+tags = ["DotNet", "Blazor", "C-Sharp", "Visual Studio", "Aspire", "OpenTelemetry", ".Net 9", "Microsoft"]
 category="tech"
-description = "Learn how to get started with .NET Aspire, a comprehensive set of tools, templates, and packages that simplify cloud-native application development using .NET. Explore its key features like orchestration, integrations, and tooling to build observable, production-ready applications with consistent patterns."
+description = "Learn how to get started with .Net Aspire, a comprehensive set of tools, templates, and packages that simplify cloud-native application development using .Net. Explore its key features like orchestration, integrations, and tooling to build observable, production-ready applications with consistent patterns."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -24,15 +24,15 @@ aliases = [
 +++
 ## What is .Net Aspire?
 
-.Net Aspire is a comprehensive set of tools, templates, and packages designed to simplify the development of cloud-native applications using .NET. It focuses on building observable, production-ready apps by providing a consistent and opinionated set of [tools and patterns](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview).
+.Net Aspire is a comprehensive set of tools, templates, and packages designed to simplify the development of cloud-native applications using .Net. It focuses on building observable, production-ready apps by providing a consistent and opinionated set of [tools and patterns](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview).
 
 The key features of .Net Aspire:
 
-- Orchestration: Enhances the local development experience by simplifying the management of your app's configuration and interconnections. It helps with app composition, service discovery, and connection string management1.
+- Orchestration: Enhances the local development experience by simplifying the management of your app's configuration and interconnections. It helps with app composition, service discovery, and connection string management.
 - Integrations: Offers NuGet packages for commonly used services like Redis and Postgres, ensuring they connect consistently and seamlessly with your app.
-- Tooling: Comes with project templates and tooling experiences for Visual Studio, Visual Studio Code, and the .Net CLI to help you create and interact with .NET Aspire projects1.
+- Tooling: Comes with project templates and tooling experiences for Visual Studio, Visual Studio Code, and the .Net CLI to help you create and interact with .Net Aspire projects.
 
-Overall, [.Net Aspire](https://devblogs.microsoft.com/dotnet/introducing-dotnet-aspire-simplifying-cloud-native-development-with-dotnet-8/) aims to improve the experience of building .NET cloud-native apps by providing a robust framework for developing distributed applications.
+Overall, [.Net Aspire](https://devblogs.microsoft.com/dotnet/introducing-dotnet-aspire-simplifying-cloud-native-development-with-dotnet-8/) aims to improve the experience of building .Net cloud-native apps by providing a robust framework for developing distributed applications.
 
 ![Aspire](/images/aspire-ga-what-is-aspire.png)
 
