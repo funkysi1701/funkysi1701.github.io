@@ -10,7 +10,6 @@ tags = ["PowerBI", ""]
 category="tech"
 keywords = ["", ""]
 description = "Last week I talked about Power BI, what it is and some of the different services you can use with it. This week lets add some of that data to a simple web page."
-summary = "Last week I talked about Power BI, what it is and some of the different services you can use with it. This week lets add some of that data to a simple web page."
 showFullContent = false
 readingTime = true
 copyright = false

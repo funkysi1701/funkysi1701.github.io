@@ -1,5 +1,5 @@
 <section class="social row card component">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous">
   <div class="card-header">
     <h2 class="card-title">
       Social Links
@@ -69,8 +69,8 @@
     <div class="py-2">
       <div class="container tagcloud">
         {{ if ne (len $.Site.Taxonomies.year) 0 }}
-          {{ $largestFontSize := 2.0 }}
-          {{ $smallestFontSize := 0.7 }}
+          {{ $largestFontSize := 2.5 }}
+          {{ $smallestFontSize := 1.0 }}
           {{ $fontSpread := sub $largestFontSize $smallestFontSize }}
           {{ $max := add (len (index $.Site.Taxonomies.year.ByCount 0).Pages) 1 }}
           {{ $min := len (index $.Site.Taxonomies.year.ByCount.Reverse 0).Pages }}
@@ -83,7 +83,7 @@
               {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weigth)) }}
                 <a href="{{ "/" }}{{ $name }}" 
                 class="tagcloud-item" style="font-size: {{ $currentFontSize }}rem;">
-                  {{ $taxonomy.Page.Title }}
+                  {{- $taxonomy.Page.Title -}}
                 </a>
             {{ end }}
         {{ end }}

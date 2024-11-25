@@ -11,7 +11,6 @@ tags = ["BASIC", "History", "Lynx"]
 category="tech"
 keywords = ["", ""]
 description =  "Writing BASIC for the Lynx"
-summary = " Writing BASIC for the Lynx"
 showFullContent = false
 readingTime = true
 copyright = false

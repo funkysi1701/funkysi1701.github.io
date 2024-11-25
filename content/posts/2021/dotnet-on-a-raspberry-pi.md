@@ -11,7 +11,6 @@ tags = ["Raspberry Pi", "DotNet"]
 category="tech"
 keywords = ["", ""]
 description = "DotNet on a Raspberry Pi"
-summary = "DotNet on a Raspberry Pi"
 showFullContent = false
 readingTime = true
 copyright = false

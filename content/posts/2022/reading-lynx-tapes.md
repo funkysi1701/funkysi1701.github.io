@@ -9,7 +9,6 @@ cover = ""
 tags = ["BASIC", "History"]
 category="tech"
 description =  "I now have a collection of 27 cassette tapes with various Lynx programs saved on them."
-summary = "I now have a collection of 27 cassette tapes with various Lynx programs saved on them."
 showFullContent = false
 readingTime = true
 copyright = false

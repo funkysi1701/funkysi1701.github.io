@@ -11,7 +11,6 @@ tags = ["Swagger", "API"]
 category="tech"
 keywords = ["", ""]
 description = "Documenting your API"
-summary = "Documenting your API"
 showFullContent = false
 readingTime = true
 copyright = false

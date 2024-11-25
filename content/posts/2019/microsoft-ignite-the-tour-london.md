@@ -11,7 +11,6 @@ tags = ["Conference", "Azure", "Microsoft", "DevOps"]
 category="tech"
 keywords = ["", ""]
 description = "Microsoft Ignite | The Tour – London"
-summary = "Microsoft Ignite | The Tour – London"
 showFullContent = false
 readingTime = true
 copyright = false

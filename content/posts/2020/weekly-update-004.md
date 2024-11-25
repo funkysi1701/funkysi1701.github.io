@@ -10,7 +10,6 @@ tags = ["SQL"]
 category="tech"
 keywords = ["", ""]
 description = "dynamic sql"
-summary = "dynamic sql"
 showFullContent = false
 readingTime = true
 copyright = false

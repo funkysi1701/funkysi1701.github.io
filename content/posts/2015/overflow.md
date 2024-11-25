@@ -11,7 +11,6 @@ tags = ["Database", "Access", "Integer", "SQL", "Overflow", "Variables"]
 category="tech"
 keywords = ["", ""]
 description =  "Overflow"
-summary = "Overflow"
 showFullContent = false
 readingTime = true
 copyright = false

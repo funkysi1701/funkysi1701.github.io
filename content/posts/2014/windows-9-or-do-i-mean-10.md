@@ -11,7 +11,6 @@ tags = ["Windows", "Microsoft", "ITAdmin"]
 category="tech"
 keywords = ["", ""]
 description = "Windows 9 or do I mean 10"
-summary = "Windows 9 or do I mean 10"
 showFullContent = false
 readingTime = true
 copyright = false

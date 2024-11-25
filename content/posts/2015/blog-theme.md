@@ -11,7 +11,6 @@ tags = ["Theme", "Blogging", "WordPress"]
 category="tech"
 keywords = ["", ""]
 description =  "Choosing a Blog Theme"
-summary = "Choosing a Blog Theme"
 showFullContent = false
 readingTime = true
 copyright = false

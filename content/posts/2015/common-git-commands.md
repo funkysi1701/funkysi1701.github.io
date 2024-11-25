@@ -10,7 +10,6 @@ tags = ["Git",  "Source Control"]
 category="tech"
 keywords = ["", ""]
 description =  "Common git commands"
-summary = "Common git commands"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -11,7 +11,6 @@ tags = ["Azure", "Certification"]
 category="tech"
 keywords = ["", ""]
 description = "Road to Certification"
-summary = "Road to Certification"
 showFullContent = false
 readingTime = true
 copyright = false

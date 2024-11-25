@@ -11,7 +11,6 @@ tags = ["Backups", "SQL",  "Disaster Recovery"]
 category="tech"
 keywords = ["", ""]
 description =  "Things to know before working on your database"
-summary = "Things to know before working on your database"
 showFullContent = false
 readingTime = true
 copyright = false

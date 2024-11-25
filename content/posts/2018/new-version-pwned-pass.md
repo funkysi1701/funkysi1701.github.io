@@ -12,7 +12,6 @@ tags = ["Android", "PwnedPass", "App"]
 category="tech"
 keywords = ["", ""]
 description = "New version of Pwned Pass"
-summary = "New version of Pwned Pass"
 showFullContent = false
 readingTime = true
 aliases = [

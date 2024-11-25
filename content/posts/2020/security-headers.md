@@ -11,7 +11,6 @@ tags = ["DotNet", "Security"]
 category="tech"
 keywords = ["", ""]
 description = "Check the security headers of your site"
-summary = "Check the security headers of your site"
 showFullContent = false
 readingTime = true
 aliases = [

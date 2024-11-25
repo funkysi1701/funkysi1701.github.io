@@ -9,7 +9,6 @@ cover = ""
 tags = ["AWS", "Certification"]
 category="tech"
 description =  "AWS Certified Solutions Architect Associate Exam"
-summary = "AWS Certified Solutions Architect Associate Exam"
 showFullContent = false
 readingTime = true
 copyright = false

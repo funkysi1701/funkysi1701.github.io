@@ -11,7 +11,6 @@ tags = ["Docker", "Azure"]
 category="tech"
 keywords = ["", ""]
 description = "Time sync in docker containers"
-summary = "Time sync in docker containers"
 showFullContent = false
 readingTime = true
 aliases = [

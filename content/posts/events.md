@@ -5,7 +5,6 @@ authorTwitter = "funkysi1701" #do not include @
 cover = ""
 keywords = ["", ""]
 description = "Events - Conferences, User Groups and other events I have been to or plan to attend"
-summary = "Events - Conferences, User Groups and other events I have been to or plan to attend"
 comment = false
 showFullContent = false
 copyright = false
@@ -23,9 +22,9 @@ A list of events I have attended.
 | |    **2025**   | 
 | *[Night Walk](https://runforwildlife.com/run-for-wildlife-night-5k)* | *4 January 2025* | *Yorkshire Wildlife Park* |
 | |    **2024**   | 
-| *Yorkshire Azure* | *10 December 2024* | *Leeds* |
-| *Yorkshire Azure* | *19 November 2024* | *York* |
-| *Code Club* | *2 November 2024* | *Leeds Library* |
+| Yorkshire Azure | 19 November 2024 | York |
+| Code Club | 16 November 2024 | Leeds Library |
+| [Code Club](/posts/2024/codeclub) | 2 November 2024 | Leeds Library |
 | Scottish Summit | 17/19 October 2024 | Aberdeen |
 | ~~SteelCon~~ | ~~20 July 2024~~ | ~~Sheffield~~ |
 | [Charity Walk](/charity-hike) | 8 June 2024 | Peak District |

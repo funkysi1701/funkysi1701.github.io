@@ -3,7 +3,8 @@ languageCode = 'en-gb'
 title = "Funky Si's Blog"
 theme = 'hugo-theme-bootstrap'
 disqusShortname = "funkysi1701"  
-googleAnalytics = "G-N1YJNQEHR4"
+googleAnalytics = ""
+enableRobotsTXT = true
 
 [Menus]
   main = [

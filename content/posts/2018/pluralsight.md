@@ -11,7 +11,6 @@ tags = ["Learning", "Training", "Pluralsight", "C-Sharp"]
 category="tech"
 keywords = ["", ""]
 description = "Pluralsight"
-summary = "Pluralsight"
 showFullContent = false
 readingTime = true
 aliases = [

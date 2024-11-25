@@ -12,7 +12,6 @@ tags = ["Android", "Azure", "App"]
 category="tech"
 keywords = ["", ""]
 description = "Mobile App UI Testing"
-summary = "Mobile App UI Testing"
 showFullContent = false
 readingTime = true
 aliases = [

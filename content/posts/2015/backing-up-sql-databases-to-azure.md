@@ -10,7 +10,6 @@ tags = ["DevOps", "Backups", "Azure", "SQL"]
 category="tech"
 keywords = ["", ""]
 description =  "Backing up SQL databases to Azure"
-summary = "Backing up SQL databases to Azure"
 showFullContent = false
 readingTime = true
 copyright = false

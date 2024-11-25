@@ -10,7 +10,6 @@ tags = ["Goals"]
 category="tech"
 keywords = ["", ""]
 description = "We are over halfway through 2021, let's have a quick look at some things I have done this year"
-summary = "We are over halfway through 2021, let's have a quick look at some things I have done this year"
 showFullContent = false
 readingTime = true
 copyright = false

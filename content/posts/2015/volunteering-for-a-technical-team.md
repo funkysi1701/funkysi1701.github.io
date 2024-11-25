@@ -11,7 +11,6 @@ tags = ["Easy Worship", "Church", "Volunteers", "Projection"]
 category="tech"
 keywords = ["", ""]
 description =  "Volunteering for a Technical Team"
-summary = "Volunteering for a Technical Team"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -10,7 +10,6 @@ images = ['/images/shortcuts.png']
 tags = ["Visual Studio", "shortcuts"]
 category="tech"
 description =  "I use keyboard shortcuts all the time, mostly without thinking"
-summary = "I use keyboard shortcuts all the time, mostly without thinking"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -10,7 +10,6 @@ tags = ["Buffer", "Blogging", "XML",  "RSS"]
 category="tech"
 keywords = ["", ""]
 description =  "Automation of the Promotion of my Blog"
-summary = "Automation of the Promotion of my Blog"
 showFullContent = false
 readingTime = true
 copyright = false

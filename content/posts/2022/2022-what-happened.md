@@ -12,7 +12,6 @@ tags = ["Goals"]
 category="tech"
 keywords = ["", ""]
 description = "As 2022 draws to a close its time to do my annual look back at what happened"
-summary = "As 2022 draws to a close its time to do my annual look back at what happened"
 showFullContent = false
 readingTime = true
 aliases = [

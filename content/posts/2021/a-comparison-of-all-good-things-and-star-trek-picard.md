@@ -11,7 +11,6 @@ tags = ["StarTrek", "Picard"]
 category="trek"
 keywords = ["", ""]
 description =  "A Comparison of All Good Things... and Star Trek Picard"
-summary = "A Comparison of All Good Things... and Star Trek Picard"
 showFullContent = false
 readingTime = true
 copyright = false

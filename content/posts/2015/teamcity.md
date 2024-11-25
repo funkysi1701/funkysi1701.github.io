@@ -10,7 +10,6 @@ tags = ["Continuous Integration", "DevOps",  "TeamCity", "Test"]
 category="tech"
 keywords = ["", ""]
 description =  "Building a CI Server with TeamCity"
-summary = "Building a CI Server with TeamCity"
 showFullContent = false
 readingTime = true
 copyright = false

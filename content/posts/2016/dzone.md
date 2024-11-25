@@ -11,7 +11,6 @@ tags = ["Blogging", "DevOps",  "Social", "DZone"]
 category="tech"
 keywords = ["", ""]
 description =  "DZone"
-summary = "DZone"
 showFullContent = false
 readingTime = true
 copyright = false

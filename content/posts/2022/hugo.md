@@ -11,7 +11,6 @@ tags = ["website", ""]
 category="tech"
 keywords = ["", ""]
 description = "Hugo"
-summary = "Hugo"
 showFullContent = false
 readingTime = true
 copyright = false

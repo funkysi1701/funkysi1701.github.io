@@ -11,7 +11,6 @@ tags = ["SQL",  "Backups", "Deployment"]
 category="tech"
 keywords = ["", ""]
 description =  "Unmanaged Database Deployment"
-summary = "Unmanaged Database Deployment"
 showFullContent = false
 readingTime = true
 copyright = false

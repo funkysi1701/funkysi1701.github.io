@@ -10,7 +10,6 @@ tags = ["Javascript", "AzureDevOps","SQL","Visual Studio",  "C-Sharp"]
 category="tech"
 keywords = ["", ""]
 description =  "Getting control of a codebase"
-summary = "Getting control of a codebase"
 showFullContent = false
 readingTime = true
 copyright = false
