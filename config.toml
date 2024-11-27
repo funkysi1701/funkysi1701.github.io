@@ -10,6 +10,7 @@ enableRobotsTXT = true
   main = [
       {Name = "About", URL = "/about"},
       {Name = "Pwned Pass", URL = "/pwned-pass"},
+      {Name = "Referral Links", URL = "/referral-links"},
       {Name = "Funky Si: The Next Generation", URL = "/funky-si-the-next-generation"},
       {Name = "Events", URL = "/events"},
       {Name = "Podcasts", URL = "/podcasts"}
