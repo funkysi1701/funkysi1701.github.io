@@ -22,15 +22,15 @@ aliases = [
     "/2024/11/11/strategy-design-pattern"    
 ]
 +++
-# Understanding the Strategy Design Pattern.
+## Understanding the Strategy Design Pattern.
 
 In the world of software development, design patterns are essential tools that help developers solve common problems in a standardized way. One such pattern is the **Strategy Design Pattern**. This pattern is particularly useful when you need to define a family of algorithms, encapsulate each one, and make them interchangeable. Let's dive into what the Strategy Design Pattern is, why it's useful, and how you can implement it in your projects.
 
-## What is the Strategy Design Pattern?
+### What is the Strategy Design Pattern?
 
 The Strategy Design Pattern falls under the category of behavioural design patterns. It enables an algorithm's behaviour to be selected at runtime. Instead of implementing a single algorithm directly, code receives run-time instructions as to which in a family of algorithms to use.
 
-## Why Use the Strategy Design Pattern?
+### Why Use the Strategy Design Pattern?
 
 The primary benefits of using the Strategy Design Pattern include:
 
@@ -38,11 +38,11 @@ The primary benefits of using the Strategy Design Pattern include:
 2. **Reusability**: By encapsulating algorithms separately, you can reuse them across different parts of your application.
 3. **Maintainability**: It promotes cleaner code by adhering to the Single Responsibility Principle, making your code easier to maintain and extend.
 
-## How to Implement the Strategy Design Pattern
+### How to Implement the Strategy Design Pattern
 
 Let's break down the implementation of the Strategy Design Pattern with a simple example. Suppose we are developing a flight simulator that supports multiple flying methods (e.g., Flapping like a bird, Jet Engine powered, and Warp Speed).
 
-### Step 1: Define the Strategy Interface
+#### Step 1: Define the Strategy Interface
 
 First, we define an interface that all payment strategies will implement.
 
@@ -52,7 +52,7 @@ public interface IFlyingStrategy
     void Fly();
 }
 ```
-### Step 2: Implement Concrete Strategies
+#### Step 2: Implement Concrete Strategies
 
 Next, we create concrete classes that implement the IPaymentStrategy interface.
 
@@ -82,7 +82,7 @@ public class StarShip : IFlyingStrategy
 }
 ```
 
-### Step 3: Create the Context Class
+#### Step 3: Create the Context Class
 
 The context class uses a IFlyingStrategy to perform the payment.
 
@@ -103,7 +103,7 @@ public class FlyContext
 }
 ```
 
-### Step 4: Use the Strategy Pattern
+#### Step 4: Use the Strategy Pattern
 
 Finally, we use the FlyContext to fly with different strategies.
 
@@ -126,6 +126,6 @@ class Program
 }
 ```
 
-## Conclusion
+### Conclusion
 
 The Strategy Design Pattern is a powerful tool that promotes flexibility, reusability, and maintainability in your code. By encapsulating algorithms and making them interchangeable, you can easily extend and modify your application without disrupting existing functionality. Whether you’re dealing with payment processing, flying machines, sorting algorithms, or any other scenario requiring dynamic behaviour, the Strategy Design Pattern can help you write cleaner and more efficient code.
