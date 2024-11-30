@@ -1,7 +1,7 @@
 name = "Simon Foster"
-  location = "North Yorkshire"
+  location = "North England"
   about = "/about"
-  bio = "More than just another developer"
+  bio = ".NET & C# specialist | More than just another developer."
 
 [social]
   email = "simon@funkysi1701.com"
