@@ -20,7 +20,7 @@ aliases = [
 +++
 I have been wondering what devices in my house use the most electricity. I have a smart meter which tells me how much electricity I am using, but it doesn't tell me what devices are using the most electricity. 
 
-Recently I purchased 12 of these [ANTELA Smart Plugs](https://www.amazon.co.uk/dp/B09VP5KNWM?ref=ppx_yo2ov_dt_b_fed_asin_title) (they come in a packs of 4 so it hasn't broken the bank). They are straightforward to set up, you plug them into your power socket and plug your device you want to monitor into them, after that you connect to the wifi and can turn the device off/on and see how much power/current/voltage they are using. I have integrated them into Home Assistant and after about a day of usage I can reveal the following findings:
+Recently I purchased 12 of these [ANTELA Smart Plugs](https://www.amazon.co.uk/dp/B09VP5KNWM?ref=ppx_yo2ov_dt_b_fed_asin_title) (they come in packs of 4 so it hasn't broken the bank). They are straightforward to set up, you plug them into your power socket and plug your device you want to monitor into them, after that you connect to the wifi and can turn the device off/on and see how much power/current/voltage they are using. I have integrated them into Home Assistant and after about a day of usage I can reveal the following findings:
 
 - 2 x Monitors attached to my Laptop. As I write this they are only using about 30W of power between them.
 - Microwave - I cooked a potato and it used 1.2kWh of power.
