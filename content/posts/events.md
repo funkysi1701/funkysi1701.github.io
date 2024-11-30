@@ -9,6 +9,7 @@ comment = false
 showFullContent = false
 copyright = false
 readingTime = true
+featured = true
 aliases = [
     "/events",
     "/posts/events"

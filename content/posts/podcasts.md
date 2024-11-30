@@ -7,6 +7,7 @@ keywords = ["", ""]
 description = "Podcasts"
 comment = false
 showFullContent = false
+featured = true
 copyright = false
 readingTime = true
 aliases = [
