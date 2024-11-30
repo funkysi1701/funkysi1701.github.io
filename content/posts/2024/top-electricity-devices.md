@@ -30,7 +30,7 @@ Recently I purchased 12 of these [ANTELA Smart Plugs](https://www.amazon.co.uk/d
 - My Routers/Switches/Servers - My home network has a few devices on it like Raspberry Pi's, a linux and windows server and a network switch etc. Between them they are using about 32W of power. Not a lot but it is on 24-7.
 - Fridge - I have a fridge freezer, it uses about 72W of power.
 - TV (and firestick) - This is a surprisingly large amount of power. TV is on quite a lot and is using 110W of power. There are other devices which contribute to this value, however when off the TV is still using 10W of power, so TV is the big one here. I am assuming its age is a big factor.
-- Tumble Dryer - Again no surprises that this is a big electricity user, it peaks at 2.3kW of power and as it runs for a good hour or so, is a big contributer to my electricity.
++- Tumble Dryer - Again no surprises that this is a big electricity user, it peaks at 2.3kW of power and as it runs for a good hour or so, is a big contributor to my electricity.
 - Dishwasher - I have put the dishwasher on a few times today and it peaks at 2.2kW of power. It is also a few years old, I wonder if a newer model would be more efficient?
 
 ![](/images/elec-usage.png)
