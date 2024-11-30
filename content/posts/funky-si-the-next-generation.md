@@ -10,6 +10,7 @@ showFullContent = false
 copyright = false
 readingTime = true
 comment = false
+featured = true
 aliases = [
     "/funky-si-the-next-generation",
     "/posts/funky-si-the-next-generation"
