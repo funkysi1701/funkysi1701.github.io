@@ -1,6 +1,6 @@
 # funkysi1701.com - My Blog (using Hugo)
 
-Repo for my website www.funkysi1701.com actually hosted on Azure Static Websites not github pages.
+Repo for my website [www.funkysi1701.com](https://www.funkysi1701.com?utm_source=gh) actually hosted on Azure Static Websites not github pages.
 
 ## Getting Started
 
@@ -26,7 +26,7 @@ What tests? I usually browse the test site and make sure everything looks good
 ## Deployment
 
 * PR into develop deploys to https://funkysi1701.github.io/ using github actions, use feature branches if you can
-* PR from develop to master deploys to https://funkysi1701.com using github actions
+* PR from develop to master deploys to [www.funkysi1701.com](https://www.funkysi1701.com?utm_source=gh) using github actions
 
 ## Built With
 
