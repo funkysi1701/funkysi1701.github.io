@@ -1,5 +1,5 @@
 +++
-title = "Top Electricity using Devices"
+title = "Top Electricity Consuming Devices in Your Home"
 date = "2024-11-29T20:00:00Z"
 year = "2024"
 month= "2024-11"
