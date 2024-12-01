@@ -58,7 +58,7 @@ If you want to support me do check out my [referral links](/referral-links) we c
 ![](/images/elec-usage3.png)
 
 - Name is the user friendly name of the device.
-- Metrix prefix is the unit of measurement, in this case KWh.
+- Metric prefix is the unit of measurement, in this case KWh.
 - Time of Unit is Hours
 - Entity is the sensor that is measuring the power usage.
 - Integration method use Left Riemann sum
