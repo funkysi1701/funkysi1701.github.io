@@ -71,4 +71,4 @@ This gives you an extra sensor in Home Assistant which is the energy usage of th
 
 The accuracy is not brilliant, sometimes it looks like I have used more energy in my devices than my smart meter says I have used in total. However it is a good indicator of what is using the most electricity in your house. Leave it running for a few days, you may have to tweak the Integral helper settings to get the best results.
 
-The [Home Assistant Forums](https://community.home-assistant.io/t/added-tuya-smart-plugs-where-is-the-energy-monitoring/356746/28) are great for getting this sort of thing setup, I have found a lot of useful information on there. 
+The [Home Assistant Forums](https://community.home-assistant.io/t/added-tuya-smart-plugs-where-is-the-energy-monitoring/356746/16) are great for getting this sort of thing setup, I have found a lot of useful information on there. 
