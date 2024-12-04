@@ -23,6 +23,7 @@ A list of events I have attended or am planning to attend (no guarantee that I w
 | Event/Talk | Date | Location | 
 | --- | --- | --- |
 | *SteelCon* | *12 July 2025* | *Sheffield* |
+| *DDD North* | *22 February 2025* | *Hull* |
 | *NDC London* | *27-31 January 2025* | *London* |
 | *[Night Walk](https://runforwildlife.com/run-for-wildlife-night-5k)* | *4 January 2025* | *Yorkshire Wildlife Park* |
 
