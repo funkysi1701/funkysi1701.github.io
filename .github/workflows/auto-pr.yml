@@ -1,3 +1,4 @@
+name: Auto PR
 on:
   push:
     branches:
@@ -7,6 +8,11 @@ jobs:
   foo:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: develop
       - name: create pull request
         run: gh pr create -B base_branch -H branch_to_merge --title 'Merge branch_to_merge into base_branch' --body 'Created by Github action'
         env:
