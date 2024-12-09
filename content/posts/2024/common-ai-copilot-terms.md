@@ -8,9 +8,9 @@ authorTwitter = "funkysi1701" #do not include @
 copyright = false
 cover = "/images/ai.jpeg"
 images =['/images/ai.jpeg']
-tags = ["AI", "Copilot", "RAG", "Machine Learning", "Natural Language Processing"]
+tags = ["AI", "Copilot", "RAG", "LLM", "GPT", "Machine Learning", "Natural Language Processing"]
 category="tech"
-description = "Learn about common AI and Copilot terms, including a detailed explanation of Retrieval-Augmented Generation (RAG) with links to Microsoft Learn articles."
+description = "Learn about common AI and Copilot terms, including a detailed explanations of Retrieval-Augmented Generation (RAG), Large Language Models (LLM), and GPT."
 showFullContent = false
 readingTime = true
 aliases = [
@@ -39,23 +39,11 @@ Copilot is an AI-powered code completion tool developed by GitHub in collaborati
 ### Retrieval-Augmented Generation (RAG)
 Retrieval-Augmented Generation (RAG) is a technique that combines retrieval-based and generation-based approaches to improve the performance of AI models in tasks such as question answering and text generation. RAG involves retrieving relevant documents or information from a large corpus and using that information to generate more accurate and contextually relevant responses.
 
-For more information on RAG, you can refer to the following Microsoft Learn articles:
-- [Introduction to Retrieval-Augmented Generation](https://learn.microsoft.com/en-us/azure/ai-services/retrieval-augmented-generation)
-- [Implementing RAG in Your AI Solutions](https://learn.microsoft.com/en-us/azure/ai-services/implement-rag)
-
 ### Large Language Models (LLM)
 Large Language Models (LLM) are a type of AI model that is trained on vast amounts of text data to understand and generate human language. These models, such as GPT-3, are capable of performing a wide range of language tasks, including translation, summarization, and question answering. LLMs leverage deep learning techniques to capture the nuances of language and provide highly accurate and contextually relevant outputs.
 
-For more information on LLMs, you can refer to the following Microsoft Learn articles:
-- [Introduction to Large Language Models](https://learn.microsoft.com/en-us/azure/ai-services/large-language-models)
-- [Using Large Language Models in Your AI Solutions](https://learn.microsoft.com/en-us/azure/ai-services/using-large-language-models)
-
 ### Generative Pre-trained Transformer (GPT)
 Generative Pre-trained Transformer (GPT) is a type of large language model developed by OpenAI. GPT models, such as GPT-3, are pre-trained on a diverse range of internet text and fine-tuned for specific tasks. GPT models are known for their ability to generate coherent and contextually relevant text, making them useful for applications such as chatbots, content creation, and code generation.
-
-For more information on GPT, you can refer to the following Microsoft Learn articles:
-- [Introduction to GPT](https://learn.microsoft.com/en-us/azure/ai-services/gpt)
-- [Using GPT in Your AI Solutions](https://learn.microsoft.com/en-us/azure/ai-services/using-gpt)
 
 ### Deep Learning
 Deep Learning is a subset of machine learning that involves the use of neural networks with many layers (deep neural networks) to model complex patterns in data. Deep learning has been particularly successful in tasks such as image and speech recognition, natural language processing, and game playing.
@@ -73,5 +61,3 @@ Computer Vision is a field of AI that enables machines to interpret and understa
 Generative Adversarial Networks (GANs) are a class of neural networks used for generating new data samples that are similar to a given training dataset. GANs consist of two networks: a generator that creates new data samples and a discriminator that evaluates the authenticity of the generated samples. GANs are used in applications such as image synthesis, data augmentation, and style transfer.
 
 By understanding these common AI and Copilot terms, you can better navigate the rapidly evolving field of artificial intelligence and leverage these technologies in your projects.
-
-For more detailed information and tutorials, visit [Microsoft Learn](https://learn.microsoft.com/).
