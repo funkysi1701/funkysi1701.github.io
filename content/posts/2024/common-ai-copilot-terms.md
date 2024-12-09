@@ -1,13 +1,13 @@
 +++
 title = "Common AI and Copilot Terms"
-date = "2024-12-03T20:00:00Z"
+date = "2024-12-09T20:00:00Z"
 year = "2024"
 month= "2024-12"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = "/images/elec-usage.png"
-images =['/images/elec-usage.png']
+cover = "/images/ai.jpeg"
+images =['/images/ai.jpeg']
 tags = ["AI", "Copilot", "RAG", "Machine Learning", "Natural Language Processing"]
 category="tech"
 description = "Learn about common AI and Copilot terms, including a detailed explanation of Retrieval-Augmented Generation (RAG) with links to Microsoft Learn articles."
@@ -20,6 +20,8 @@ aliases = [
     "/2024/12/09/common-ai-copilot-terms",
 ]
 +++
+AI is everywhere at the moment, from chatbots to code completion tools like GitHub Copilot. Here are some common AI and Copilot terms with explanations.
+
 ## Common AI and Copilot Terms
 
 ### Artificial Intelligence (AI)
