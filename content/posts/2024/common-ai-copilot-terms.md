@@ -72,7 +72,6 @@ Computer Vision is a field of AI that enables machines to interpret and understa
 Generative Adversarial Networks (GANs) are a class of neural networks used for generating new data samples that are similar to a given training dataset. GANs consist of two networks: a generator that creates new data samples and a discriminator that evaluates the authenticity of the generated samples. GANs are used in applications such as image synthesis, data augmentation, and style transfer.
 
 ### Positronic Brain
-
 The Positronic Brain is a fictional technological concept created by science fiction writer Isaac Asimov. It is a highly advanced artificial brain used in robots, enabling them to process information, make decisions, and exhibit behaviors similar to human intelligence. The concept of the Positronic Brain is central to Asimov's Robot series, where it serves as the foundation for the robots' cognitive functions and adherence to the Three Laws of Robotics. Star Trek's Commander Data had a positronic brain as well.
 
 For more information on the Positronic Brain, you can refer to the following sources:
