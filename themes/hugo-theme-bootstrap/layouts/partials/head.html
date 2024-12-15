@@ -1,6 +1,6 @@
 {{- partial "head/favicons" . -}}
 <meta name="keywords" content="{{ if .IsPage }}{{ delimit .Keywords ", " }}{{ else }}{{ $.Site.Params.keywords }}{{ end }}" />
-<meta name="description" content="{{ if .IsPage }}{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}{{ else }}{{ $.Site.Params.description }}{{ end }}" />
+<meta name="description" content="{{ if .IsPage }}{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}{{ else }}{{ .Title }} - {{ $.Site.Params.description }}{{ end }}" />
 <meta name="fediverse:creator" content="@funkysi1701@hachyderm.io">
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
