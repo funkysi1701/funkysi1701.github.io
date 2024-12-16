@@ -5,7 +5,7 @@ on:
     - develop
 
 jobs:
-  foo:
+  create-pr:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
