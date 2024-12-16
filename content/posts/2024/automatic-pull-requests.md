@@ -47,7 +47,7 @@ jobs:
           fetch-depth: 0
           ref: develop
       - name: create pull request
-        run: gh pr create -B main -H develop --title 'Merge develop into main' --body 'Created by Github action'
+        run: gh pr create -B main -H develop --title 'Merge develop into main' --body 'Created by GitHub action'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
