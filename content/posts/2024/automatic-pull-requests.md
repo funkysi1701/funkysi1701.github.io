@@ -70,7 +70,7 @@ param (
     [Parameter(Mandatory=$true)][string]$sourceBranch,
     [Parameter(Mandatory=$true)][string]$targetBranch,
     [Parameter(Mandatory=$true)][string]$prTitle,
-    [Parameter(Mandatory=$true)][string]$prDescription,
+    [Parameter(Mandatory=$true)][string]$prDescription
 )
 
 # Construct base URLs
