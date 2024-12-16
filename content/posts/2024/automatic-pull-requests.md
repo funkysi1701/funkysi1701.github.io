@@ -57,7 +57,7 @@ This action will run when code is pushed to the develop branch. It will then che
 This action uses the GitHub CLI to create the PR. For more information on the GitHub CLI, see the [GitHub CLI documentation](https://cli.github.com/). The gh pr create command creates a pull request with the specified title and body. There is also a gh pr edit command, so combining the two could be used to update the PR if it already exists.
 
 ```yml
-run: gh pr create -B main -H develop --title 'Merge develop into main' --body 'Created by Github action' || gh pr edit -B main --title "Merge develop into main" --body 'Created by Github action'
+run: gh pr create -B main -H develop --title 'Merge develop into main' --body 'Created by GitHub action' || gh pr edit -B main --title "Merge develop into main" --body 'Created by GitHub action'
 ```
 
 ### Azure DevOps
