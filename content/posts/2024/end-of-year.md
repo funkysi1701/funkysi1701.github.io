@@ -46,3 +46,11 @@ Being a developer is a constant journey of learning, and I have not done enough 
 ## Conferences and User Groups
 
 I want to attend a Conference or User Group once a month in 2025. Conferences and User Groups are great places to meet people, learn new things and be encouraged by the community. I have signed up as a volunteer for NDC London in January, DDD North is back in February. I am sure I will be able to fill the other months with events soon enough as well. 
+
+## What happened in 2024
+
+I did something in 2024 that I thought I would never do. I signed up for a half marathon hike across the peak district for charity. This was an amazing achievement for me, and involved lots of training walks and also raised over £600 for charity.
+
+My attendance of conferences and user groups has been a bit light this year, however I did attend Scottish Summit in October which rekindled my blogging. I also attended DDD North with a couple of my work colleagues which was great as usual. 
+
+Family life has kept me busy this year and has been my focus for a lot of the year, next year I want the focus to shift more to my work and career. I attended a couple of code club sessions with my eldest son, and it was great to see his skills develop and like me he wanted to help others.
