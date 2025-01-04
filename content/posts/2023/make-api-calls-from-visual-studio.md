@@ -25,7 +25,7 @@ It is that exciting time of year where Microsoft announce a new version of .Net 
 
 The new window is called **Endpoint Explorer** and can be added from the menu **View > Other Windows > Endpoint Explorer**.
 
-![](/images/endpoint-explorer.png)
+![Endpoint Explorer](/images/endpoint-explorer.png)
 
 If you right click on one of the endpoints you can view the code or send a request. It works with minimal APIs or standard MVC APIs. If you select send a request a .http file will be created, this is a feature that has been in Visual Studio for a while but I haven't taken much notice.
 

@@ -35,11 +35,11 @@ Recently I purchased 12 of these [ANTELA Smart Plugs](https://www.amazon.co.uk/d
 - Tumble Dryer - Again no surprises that this is a big electricity user, it peaks at 2.3kW of power and as it runs for a good couple of hours or so, is a big contributor to my electricity.
 - Dishwasher - I have put the dishwasher on a few times today and it peaks at 2.2kW of power. 
 
-![](/images/elec-usage.png)
+![Electricity Usage](/images/elec-usage.png)
 
 I am not able to monitor 100% of my electricity usage, things like lights, my boiler and anything else wired directly in, won't have a plug and I can't monitor in this way. However over the last month or so I can see what is using the most electricity.
 
-![](/images/elec-usage2.png)
+![Electricity Usage](/images/elec-usage2.png)
 
 [Octopus Energy](https://octopus.energy/) who supply my energy have an agile tariff, which means the price of electricity changes every half hour depending on demand. I want to move the heavy usage of electricity to cheaper parts of the day, so I can save money. 
 
@@ -55,7 +55,7 @@ If you want to support me do check out my [referral links](/referral-links) we c
 
 4 - Now you have Watts, Amps and Volts in Home Assistant but the Energy section of Home Assistant requires Wh or KWh. To get this you need to use the Integral helper to get the amount of time that the device is on for. Go to Add Integration and search for Integral (helper)
 
-![](/images/elec-usage3.png)
+![Electricity Usage](/images/elec-usage3.png)
 
 - Name is the user friendly name of the device.
 - Metric prefix is the unit of measurement, in this case KWh.
