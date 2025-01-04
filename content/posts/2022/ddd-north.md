@@ -25,7 +25,7 @@ aliases = [
 +++
 On Saturday 3rd December I attended [DDD North](https://www.dddnorth.co.uk/). It is a community run conference for Developers (the D's stand for Developer) and I had a fab time there. Many conferences are going online which is great, however there is nothing quite like chatting over coffee or lunch with fellow Developers about the tech you are learning about, this was probably my favourite thing about the conference. 
 
-![](/images/dddnorth-hull-developers-conference-2022.jpg)
+![DDD North](/images/dddnorth-hull-developers-conference-2022.jpg)
 
 The first talk I attended was '.Net Minimal APIs' by [Kevin Smith](https://twitter.com/kev_bite). Kevin runs .Net user groups in York and Sheffield so I have heard him speak before. He went through some of the features of minimal APIs. I have briefly experimented with them in .Net 6, however from the sound of things the tech is much improved in .Net 7, with lots of improvements, so this is something I want to give another try.
 
