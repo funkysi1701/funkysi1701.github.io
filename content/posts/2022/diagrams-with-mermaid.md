@@ -41,7 +41,7 @@ graph TD;
 
 which renders like this:
 
-![](/images/mermaid.png)
+![Mermaid](/images/mermaid.png)
 
 Lets look at what it is doing.
 
@@ -53,7 +53,7 @@ Then we just define the relationships between the different nodes, you can have 
 
 Lets look at my architecture. I have a database (cosmosDB), I have a website running on Azure Static Web Apps, I have some Azure functions for getting data into and out of my database. I also have Application Insights monitoring the whole thing. I also have a console app for doing some data import stuff. This produces a diagram like this:
 
-![](/images/mermaid2.png)
+![Mermaid](/images/mermaid2.png)
 
 The code to produce this and display it on my [github repo](https://github.com/funkysi1701/Blogv2/) is simply
 
@@ -73,7 +73,7 @@ Pretty nice for a few lines of code to show what system talks with what.
 
 There are improvements that can be made to the diagram, for example changing the shapes of the different services.
 
-eg ![](/images/mermaid3.png)
+eg ![Mermaid](/images/mermaid3.png)
 
 If you live in the AzureDevOps world you can add a mermaid diagram to your wiki pages (but I don't think to your markdown files). Just use the following syntax
 
