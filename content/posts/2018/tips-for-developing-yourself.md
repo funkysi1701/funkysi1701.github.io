@@ -44,7 +44,7 @@ Start building a side project, it doesn’t matter what it is but start building
 
 ##### Use your spare time
 
-During the day there are moments you can reclaim for learning stuff. There are lots of [podcast](https://www.funkysi1701.com/podcasts) which discuss useful development topics, listen to these while driving to work. Subscribe to [pluralsight](https://www.funkysi1701.com/pluralsight) and listen to this while washing up. Don’t get too concerned with learning everything, however think how much more you are learning than not listening at all.
+During the day there are moments you can reclaim for learning stuff. There are lots of [podcast](https://www.funkysi1701.com/podcasts) which discuss useful development topics, listen to these while driving to work. Subscribe to [pluralsight](https://www.funkysi1701.com/posts/pluralsight) and listen to this while washing up. Don’t get too concerned with learning everything, however think how much more you are learning than not listening at all.
 
 ##### I’m not ready!
 
