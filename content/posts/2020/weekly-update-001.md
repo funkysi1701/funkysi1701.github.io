@@ -53,7 +53,7 @@ https://zimmergren.net/solved-asp-net-core-blazor-web-sites-does-not-work-with-c
 
 Turning off HTML minification fixed my issue!
 
-One additional thing I added to my Blog is the [/config](https://www.funkysi1701.com/config) page which details some of the config settings. I think this probably came from https://www.hanselman.com/blog/adding-a-git-commit-hash-and-azure-devops-build-number-and-build-id-to-an-aspnet-website but it was a while ago when I first did this on another project.
+One additional thing I added to my Blog is the config page which details some of the config settings. I think this probably came from https://www.hanselman.com/blog/adding-a-git-commit-hash-and-azure-devops-build-number-and-build-id-to-an-aspnet-website but it was a while ago when I first did this on another project.
 
 At the moment we have .net Version, Commit and Build links.
 
