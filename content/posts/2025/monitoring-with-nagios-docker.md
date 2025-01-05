@@ -2,7 +2,7 @@
 title = "Setting Up Nagios Monitoring with Docker"
 date = "2025-01-06T20:00:00Z"
 year = "2025"
-month= "2024-01"
+month= "2025-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/nagios.png"
