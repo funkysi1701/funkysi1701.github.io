@@ -7,10 +7,10 @@ googleAnalytics = ""
 
 [Menus]
   main = [
-      {Name = "About", URL = "/about"},
-      {Name = "Referral Links", URL = "/referral-links"},
-      {Name = "Events", URL = "/events"},
-      {Name = "Podcasts", URL = "/podcasts"}
+      {Name = "About", URL = "/about/"},
+      {Name = "Referral Links", URL = "/referral-links/"},
+      {Name = "Events", URL = "/events/"},
+      {Name = "Podcasts", URL = "/podcasts/"}
   ]
 
 [params]
