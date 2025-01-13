@@ -11,7 +11,8 @@ enableRobotsTXT = true
       {Name = "About", URL = "/about/"},
       {Name = "Referral Links", URL = "/referral-links/"},
       {Name = "Events", URL = "/events/"},
-      {Name = "Podcasts", URL = "/podcasts/"}
+      {Name = "Podcasts", URL = "/podcasts/"},
+      {Name = "Search", URL = "/search/"}
   ]
 
 [params]
