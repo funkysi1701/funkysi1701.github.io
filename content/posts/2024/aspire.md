@@ -13,7 +13,7 @@ description = "Learn how to get started with .Net Aspire, a comprehensive set of
 showFullContent = false
 readingTime = true
 copyright = false
-featured = false
+featured = true
 draft = false
 aliases = [
     "/aspire",
