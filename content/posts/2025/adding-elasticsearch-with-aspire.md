@@ -5,8 +5,8 @@ year = "2025"
 month= "2025-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/central-package-management-with-nuget.png"
-images =['/images/central-package-management-with-nuget.png']
+cover = "/images/elastic-search.jpg"
+images =['/images/elastic-search.jpg']
 tags = ["Elasticsearch", ".NET", "Aspire", "Search", "Indexing", "Development", "Tech"]
 category="tech"
 description = "Learn how to integrate Elasticsearch with .NET Aspire to enhance your application's search capabilities using powerful indexing and search features."
@@ -48,16 +48,18 @@ var kibana = builder
     .WithEndpoint(5601, 5601); // Expose a port so you can connect
 ```
 
-Now if you run your project you will have an elasticsearch and kibana container running. You can access kibana by going to `http://localhost:5601`.
+Now if you run your project you will have an elasticsearch and kibana container running. You can access kibana by going to `http://localhost:5601`, and elasticsearch by going to `http://localhost:9200`.
 
-However when I do that I get the error `Kibana server is not ready yet`. Looking at the kibana container logs I see the following error:
+## Troubleshooting Kibana
+
+However when I do that I get the error `Kibana server is not ready yet`. Looking at the kibana container logs, I see the following error:
 
 ```
 2025-01-19T21:42:13 [2025-01-19T21:42:13.558+00:00][WARN ][plugins.security.config] Generating a random key for xpack.security.encryptionKey. To prevent sessions from being invalidated on restart, please set xpack.security.encryptionKey in the kibana.yml or use the bin/kibana-encryption-keys command.
 Unable to retrieve version information from Elasticsearch nodes. security_exception
 ```
 
-This is because of the security settings in elasticsearch to fix this you can turn off this security feature by enabling an environment variable:
+This is due to the security settings in Elasticsearch. To fix this, you can turn off this security feature by enabling an environment variable:
 
 ```csharp
 var elasticsearch = builder
@@ -65,15 +67,17 @@ var elasticsearch = builder
     .WithEnvironment("xpack.security.enabled", "false");
 ```    
 
-As Aspire is only running locally this is fine, but in a production environment you would want to secure your elasticsearch and kibana instances.
+As Aspire is only running locally, this is fine, but in a production environment, you would want to secure your Elasticsearch and Kibana instances.
 
-Now you have elasticsearch added to your project, but how can I use it? Well in the dotnet project that wants to connect and interact with elasticsearch you can add the following nuget package:
+## Using Elasticsearch in Your Project
+
+Now that you have Elasticsearch added to your project, how can you use it? In the .NET project that wants to connect and interact with Elasticsearch, you can add the following NuGet package:
 
 ```
 Aspire.Elastic.Clients.Elasticsearch (version 9.0.0-preview.5.24551.3 as of writing)
 ```
 
-In the `Program.cs` file of your dotnet project you can add the following code:
+In the `Program.cs` file of your .NET project you can add the following code:
 
 ```csharp
 builder.AddElasticsearchClient("elasticsearch");
@@ -93,7 +97,7 @@ To index some data you can use the following code:
   await _client.IndexManyAsync(documents, index: "searchindex", cancellationToken); // Index the documents into the searchindex index
 ```
 
-_client can be injected in via dependency injection eg **ElasticsearchClient client**, again no need to specify any connection strings or settings.
+ElasticsearchClient can be injected in via dependency injection, again no need to specify any connection strings or settings.
 
 To search for data you can use the following code:
 
@@ -114,3 +118,7 @@ To search for data you can use the following code:
       return response.Documents.ToList();
   }
 ```
+
+## Conclusion
+
+By following these steps, you can successfully integrate Elasticsearch and Kibana into your .NET Aspire project. This setup allows you to leverage powerful search and analytics capabilities in your application. Remember to secure your instances in a production environment to ensure data safety.
