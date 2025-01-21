@@ -14,10 +14,7 @@ copyright = false
 featured = false
 draft = false
 aliases = [
-    "/central-package-management-with-nuget",
-    "/posts/central-package-management-with-nuget",
-    "/posts/2025/01/13/central-package-management-with-nuget",
-    "/2025/01/13/central-package-management-with-nuget" 
+    "/test",
 ]
 +++
 Test
