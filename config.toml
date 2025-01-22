@@ -12,7 +12,8 @@ enableRobotsTXT = true
       {Name = "Referral Links", URL = "/referral-links/"},
       {Name = "Events", URL = "/events/"},
       {Name = "Podcasts", URL = "/podcasts/"},
-      {Name = "Search", URL = "/search/"}
+      {Name = "Search", URL = "/search/"},
+      {Name = "Newsletter", URL = "http://eepurl.com/i7pQno"},
   ]
 
 [params]
