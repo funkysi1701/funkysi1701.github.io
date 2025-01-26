@@ -1,5 +1,5 @@
 +++
-title = "Setting Up Grafana for Monitoring .NET Applications with Docker and Prometheus"
+title = "Setting Up Grafana for Monitoring .NET Apps with Docker"
 date = "2025-01-27T20:00:00Z"
 year = "2025"
 month= "2025-01"
@@ -16,10 +16,10 @@ copyright = false
 featured = false
 draft = false
 aliases = [
-    "/setting-up-grafa-for-monitoring-net-applications-with-docker-and-prometheus",
-    "/posts/setting-up-grafa-for-monitoring-net-applications-with-docker-and-prometheus",
-    "/posts/2025/01/27/setting-up-grafa-for-monitoring-net-applications-with-docker-and-prometheus",
-    "/2025/01/27/setting-up-grafa-for-monitoring-net-applications-with-docker-and-prometheus" 
+    "/setting-up-grafa-for-monitoring-net-applications-with-docker",
+    "/posts/setting-up-grafa-for-monitoring-net-applications-with-docker",
+    "/posts/2025/01/27/setting-up-grafa-for-monitoring-net-applications-with-docker",
+    "/2025/01/27/setting-up-grafa-for-monitoring-net-applications-with-docker" 
 ]
 +++
 Grafana is an open-source analytics and monitoring platform that allows you to query, visualize, and alert on your metrics data. It is a popular tool for monitoring systems, applications, and services in real-time. I am going to have a look at setting this up in docker to monitor a simple .net API.
