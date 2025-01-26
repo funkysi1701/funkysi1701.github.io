@@ -22,11 +22,13 @@ aliases = [
     "/2025/01/27/setting-up-grafa-for-monitoring-net-applications-with-docker" 
 ]
 +++
-Grafana is an open-source analytics and monitoring platform that allows you to query, visualize, and alert on your metrics data. It is a popular tool for monitoring systems, applications, and services in real-time. I am going to have a look at setting this up in docker to monitor a simple .net API.
+Grafana is an open-source analytics and monitoring platform that allows you to query, visualize, and alert on your metrics data. It is a popular tool for monitoring systems, applications, and services in real-time. In this post, I will guide you through setting up Grafana in Docker to monitor a simple .NET API.
 
 ## Setting up Grafana
 
-Lets quickly describe what we are going to need to see some fun charts. My .net application is going to need a /metrics endpoint which describes the state of the system. Prometheus will then scrape this endpoint every few seconds and store the data. Grafana will then query Prometheus to display the data in a nice dashboard.
+To visualize metrics data, we need to set up a few components. Our .NET application will need a `/metrics` endpoint to describe the state of the system. Prometheus will scrape this endpoint every few seconds and store the data. Grafana will then query Prometheus to display the data in a nice dashboard.
+
+### Docker Compose File
 
 Lets start with a docker compose file to bring up the services we need.
 
@@ -57,7 +59,9 @@ volumes:
 
 This spins up the grafana and prometheus containers, it maps some ports and maps some folders as volumes. Lets look at the config files for prometheus and grafana.
 
-### Prometheus Config
+### Prometheus Configuration
+
+Next, create a **prometheus.yml** file to configure Prometheus:
 
 ```yaml
 global:
@@ -91,6 +95,8 @@ For example, if you have a web server running on your host machine and you want 
 
 The next thing we need to do is build a dashboard, well the dotnet team has done the hard work for us. They have created a [grafana dashboard](https://devblogs.microsoft.com/dotnet/introducing-aspnetcore-metrics-and-grafana-dashboards-in-dotnet-8/) that we can import into our grafana instance. 
 
+You can do all of this yourself by using the Grafana UI, to add the graphs, guages and other visualizations that you are interested in.
+
 ![Dashboard](https://devblogs.microsoft.com/dotnet/wp-content/uploads/sites/10/2024/01/dashboard-screenshot.png)
 
 ## Metrics endpoint
@@ -108,6 +114,8 @@ public static WebApplication MapDefaultEndpoints(this WebApplication app)
 If you are not using .NET Aspire, you can add app.MapPrometheusScrapingEndpoint() to your Program.cs file.
 
 ## Conclusion
+
+By following these steps, you can set up Grafana with Docker and Prometheus to monitor your .NET applications. This setup allows you to visualize metrics and create real-time dashboards, providing valuable insights into your application's performance. Happy monitoring!
 
 If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up to my [newsletter](http://eepurl.com/i7pQno). If you have any questions or comments, please feel free to reach out or leave a comment below.
  
