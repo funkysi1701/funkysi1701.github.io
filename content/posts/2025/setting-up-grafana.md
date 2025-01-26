@@ -9,7 +9,7 @@ cover = "/images/grafana-dashboard.png"
 images =['/images/grafana-dashboard.png']
 tags = ["Grafana", "Monitoring", "Analytics", "Docker", "Prometheus", ".NET", "DevOps", "Metrics"]
 category="tech"
-description = "Learn how to set up Grafana with Docker and Prometheus to monitor .NET applications, visualize metrics, and create real-time dashboards."
+description = "Set up Grafana with Docker and Prometheus to monitor .NET apps. Learn to visualize metrics and create real-time dashboards."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -90,6 +90,22 @@ For example, if you have a web server running on your host machine and you want 
 ### Dashboard
 
 The next thing we need to do is build a dashboard, well the dotnet team has done the hard work for us. They have created a [grafana dashboard](https://devblogs.microsoft.com/dotnet/introducing-aspnetcore-metrics-and-grafana-dashboards-in-dotnet-8/) that we can import into our grafana instance. 
+
+![Dashboard](https://devblogs.microsoft.com/dotnet/wp-content/uploads/sites/10/2024/01/dashboard-screenshot.png)
+
+## Metrics endpoint
+
+If your .NET application is using .NET Aspire, this /metrics endpoint is probably already setup for you. Have a look at Extensions.cs in your ServiceDefaults project and check for the following code (you will need the nuget package OpenTelemetry.Exporter.Prometheus.AspNetCore):
+
+```csharp
+public static WebApplication MapDefaultEndpoints(this WebApplication app)
+{
+    // The following line enables the Prometheus endpoint (requires the OpenTelemetry.Exporter.Prometheus.AspNetCore package)
+    app.MapPrometheusScrapingEndpoint();
+}
+```
+
+If you are not using .NET Aspire, you can add app.MapPrometheusScrapingEndpoint() to your Program.cs file.
 
 ## Conclusion
 
