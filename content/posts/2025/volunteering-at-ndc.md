@@ -1,0 +1,43 @@
++++
+title = "Volunteering at NDC London"
+date = "2025-02-01T20:00:00Z"
+year = "2025"
+month= "2025-02"
+author = "funkysi1701"
+authorTwitter = "funkysi1701" #do not include @
+cover = "/images/ndc-simon.jpg"
+images =['/images/ndc-simon.jpg']
+tags = ["NDC London", "Volunteering", "Conference", "DotNet", "Tech Events", "Networking"]
+category="tech"
+description = "Read about my experience volunteering at NDC London, meeting great people, and learning a lot at this premier software development conference."
+showFullContent = false
+readingTime = true
+copyright = false
+featured = false
+draft = false
+aliases = [
+    "/volunteering-at-ndc-london",
+    "/posts/volunteering-at-ndc-london",
+    "/posts/2025/02/03/volunteering-at-ndc-london",
+    "/2025/02/03/volunteering-at-ndc-london" 
+]
++++
+![The NDC Volunteers](/images/ndc-crew.jpg)
+
+I have just come home from volunteering at NDC London. It was a great experience and I learned a lot. I met some great people and had a lot of fun. I can't wait to go back next year.
+
+You may have heard of [NDC London](https://ndclondon.com/) before. It is a conference for software developers. It is held in London every year and attracts people from all over the world. The conference covers a wide range of topics, with a strong focus on .NET. I have heard about the conference for years and always wanted to go, but with ticket prices in the thousands, it was out of reach for me.
+
+Late last year, I saw a contact on social media mention that [volunteering at NDC](https://ndclondon.com/volunteer) was a good way to go to the conference for free. I had heard that this was an option before, but hadn't acted upon it. So I sent a quick email to the conference organizers. I didn't expect I would get on the team, but they emailed back and said I was on the team, and asked what was my t-shirt size. I was so excited!
+
+The event is held at the [Queen Elizabeth II Centre](https://qeiicentre.london/), which is a great venue, right next to Big Ben and Westminster Abbey. The conference is spread over a whole week, with 2 day of workshops and 3 days of talks. Volunteers are only needed for the 3 days of talks, however there was a intro meeting the day before.
+
+As a volunteer, you don't get paid, so I needed to arrange my own transport to London and accommodation. It being London, I knew the tube network was a quick and easy way to get around, so I could search for a cheapish hotel that was nearish to the venue.
+
+The into meeting was on Tuesday evening, at 5.30pm. I arrived a bit early and unfortunately I wasn't very clear about why I was there so I was told to wait and the meetup would go upstairs soon. The London .NET user group was having a session at 5pm with Mads Torgersen (the C# language designer), but luckily I double checked and got to wait with the right people. However this was not a bad thing, as I got to see some of the .NET team walk past, like Steve Sanderson and of course Mads Torgersen who was going to the meetup.
+
+![London view](/images/london.jpg)
+
+Once the intro meeting started, we unboxed the hoodies that every attendee was given. These ranged in size from XS to XXXL, we also learned how the registration process worked. Scan a QR code, print off ticket, stick it to lanyard, issue to attendee. I also found out that there was a decent Yorkshire contingent, some I had met from York and Leeds user groups. We had a tour of the venue, the conference was on floor 3, 4 and 5. The top floor had a great view of Big Ben and Westminster Abbey.  We were also issued with our own T-shirt and hoodies, which were purple and said NDC Crew on them along with our lanyard passes.
+
+It was an early morning, we needed to be at the venue for 7am, ready to welcome 900+ people to the conference, when the doors opened at 8am.

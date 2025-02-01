@@ -7,13 +7,13 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/elastic-search.jpg"
 images =['/images/elastic-search.jpg']
-tags = ["Elasticsearch", ".NET", "Aspire", "Search", "Indexing", "Development", "Tech"]
+tags = ["Elasticsearch", "DotNet", "Aspire", "Search", "Indexing", "Development", "Tech"]
 category="tech"
 description = "Learn how to integrate Elasticsearch with .NET Aspire to enhance your application's search capabilities using powerful indexing and search features."
 showFullContent = false
 readingTime = true
 copyright = false
-featured = false
+featured = true
 draft = false
 aliases = [
     "/adding-elasticsearch-with-aspire",
@@ -37,7 +37,7 @@ In your AppHost project, add the following code to your `Program.cs` file:
 ```csharp
 var elasticsearch = builder
     .AddElasticsearch("elasticsearch");
-```    
+```
 
 Now if you run your project it will add an elasticsearch containter to your project. A common way to administer elasticsearch is to use Kibana. You can add this to your project by adding the following code to your `Program.cs` file:
 
@@ -54,7 +54,7 @@ Now if you run your project you will have an elasticsearch and kibana container 
 
 However when I do that I get the error `Kibana server is not ready yet`. Looking at the kibana container logs, I see the following error:
 
-```
+```log
 2025-01-19T21:42:13 [2025-01-19T21:42:13.558+00:00][WARN ][plugins.security.config] Generating a random key for xpack.security.encryptionKey. To prevent sessions from being invalidated on restart, please set xpack.security.encryptionKey in the kibana.yml or use the bin/kibana-encryption-keys command.
 Unable to retrieve version information from Elasticsearch nodes. security_exception
 ```
@@ -65,7 +65,7 @@ This is due to the security settings in Elasticsearch. To fix this, you can turn
 var elasticsearch = builder
     .AddElasticsearch("elasticsearch")
     .WithEnvironment("xpack.security.enabled", "false");
-```    
+```
 
 As Aspire is only running locally, this is fine, but in a production environment, you would want to secure your Elasticsearch and Kibana instances.
 
@@ -73,7 +73,7 @@ As Aspire is only running locally, this is fine, but in a production environment
 
 Now that you have Elasticsearch added to your project, how can you use it? In the .NET project that wants to connect and interact with Elasticsearch, you can add the following NuGet package:
 
-```
+```txt
 Aspire.Elastic.Clients.Elasticsearch (version 9.0.0-preview.5.24551.3 as of writing)
 ```
 
