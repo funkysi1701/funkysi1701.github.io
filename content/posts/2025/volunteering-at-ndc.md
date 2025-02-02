@@ -51,3 +51,5 @@ Wearing a purple NDC Crew hoodie, gave me a certain amount of confidence, I walk
 At the end of the first day, I was invited to the speaker dinner, which was a great experience. I got to chat with some of the other volunteers. I had a great time and it was free food and drink so I can't complain.
 
 While I was volunteering, I was often hanging out with the other volunteers. We had a great time, and I made some new friends. We had a lot of fun, and I learned a lot. I can't wait to go back next year.
+
+If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up to my [newsletter](http://eepurl.com/i7pQno). If you have any questions or comments, please feel free to reach out or leave a comment below.
