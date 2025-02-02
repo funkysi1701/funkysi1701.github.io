@@ -40,4 +40,14 @@ The into meeting was on Tuesday evening, at 5.30pm. I arrived a bit early and un
 
 Once the intro meeting started, we unboxed the hoodies that every attendee was given. These ranged in size from XS to XXXL, we also learned how the registration process worked. Scan a QR code, print off ticket, stick it to lanyard, issue to attendee. I also found out that there was a decent Yorkshire contingent, some I had met from York and Leeds user groups. We had a tour of the venue, the conference was on floor 3, 4 and 5. The top floor had a great view of Big Ben and Westminster Abbey.  We were also issued with our own T-shirt and hoodies, which were purple and said NDC Crew on them along with our lanyard passes.
 
-It was an early morning, we needed to be at the venue for 7am, ready to welcome 900+ people to the conference, when the doors opened at 8am.
+It was an early morning, we needed to be at the venue for 7am, ready to welcome 900+ people to the conference, when the doors opened at 8am. I helped man the hoodies, handing out XXL to any attendees who wanted them. There was a steady stream of people registering, however I didn't feel overwhelmed. By the time we had finished at registration the keynote with Scott Hanselman was about half way through, so I went to get a coffee and some breakfast and had a look at the schedule for the day. I was assigned to help out with the afternoon sessions so I was free to attend any sessions I liked in the morning.
+
+For my afternoon duties, I needed to report back when the speaker had arrived and count up the number of green/amber/red cards for the session. At NDC feedback for the different speakers is submitted by the attendees by putting cards of different colours in a box. Green for good, amber for ok, red for bad. Throughout the different talks I attended there was always a good proportion of green cards, indicating the high quality of the speakers at NDC.
+
+<img src="/images/ndc-simon.jpg" alt="The NDC Volunteers" width="250px" style="float:left;padding-right: 15px; " />
+
+Wearing a purple NDC Crew hoodie, gave me a certain amount of confidence, I walked among many of the sponsors and chatted to a few. Elastic Search had a stall, and I mentioned my recent experience at work with them. At some conferences, I can feel a bit out of place, but at NDC being a volunteer, I had an automatic group of friends to chat to, the other volunteers, and this also helped me speak with one or two of the speakers. I enjoyed saying hello to Richard Campbell, who I had listened to on the .Net Rocks and RunAs Radio podcasts for years. I told him he had sent me a mug, and he mentioned it was a collector's item now.
+
+At the end of the first day, I was invited to the speaker dinner, which was a great experience. I got to chat with some of the other volunteers. I had a great time and it was free food and drink so I can't complain.
+
+While I was volunteering, I was often hanging out with the other volunteers. We had a great time, and I made some new friends. We had a lot of fun, and I learned a lot. I can't wait to go back next year.
