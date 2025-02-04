@@ -18,17 +18,18 @@ aliases = [
 
 A list of events I have attended or am planning to attend (no guarantee that I will be there)
 
-
 ## 2025
-| Event/Talk | Date | Location | 
+
+| Event/Talk | Date | Location |
 | --- | --- | --- |
 | *SteelCon*  | *12 July 2025*     | *Sheffield* |
 | *DDD North* | *22 February 2025* | *Hull*      |
-| NDC London  | 29-31 January 2025 | London      |
+| [NDC London](https://www.funkysi1701.com/posts/2025/volunteering-at-ndc/)  | 29-31 January 2025 | London      |
 | [Night Walk](https://runforwildlife.com/run-for-wildlife-night-5k) | 4 January 2025 | Yorkshire Wildlife Park |
 
 ## 2024
-| Event/Talk | Date | Location | 
+
+| Event/Talk | Date | Location |
 | --- | --- | --- |
 | Yorkshire Azure | 19 November 2024 | York |
 | Code Club | 16 November 2024 | Leeds Library |
@@ -38,8 +39,9 @@ A list of events I have attended or am planning to attend (no guarantee that I w
 | [Charity Walk](/charity-hike) | 8 June 2024 | Peak District |
 | DDD North | 2 March 2024 | Hull |
 
-## 2023 
-| Event/Talk | Date | Location | 
+## 2023
+
+| Event/Talk | Date | Location |
 | --- | --- | --- |
 | DevBoss | 16 November 2023 | Leeds |
 | [DDD East Midlands](/posts/2023/ddd-east-midlands) | 7th October | Nottingham |
@@ -48,8 +50,9 @@ A list of events I have attended or am planning to attend (no guarantee that I w
 | DevBoss | 20 April 2023 | Leeds |
 | dotnet York Machine Learning with ML.Net | 2 March 2023 | York |
 
-## 2022   
-| Event/Talk | Date | Location | 
+## 2022
+
+| Event/Talk | Date | Location |
 | --- | --- | --- |
 | Microsoft Datacenter Tour: Virtual Experience | 6 December 2022   | Online |
 | [DDD North](/posts/2022/ddd-north)            | 3 December 2022 | Hull |
