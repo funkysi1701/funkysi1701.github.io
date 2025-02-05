@@ -60,4 +60,3 @@ A list of events I have attended or am planning to attend (no guarantee that I w
 | .Net Conf (Keynote only) | 8 November 2022 | Online |
 | [Scottish Summit](/posts/2022/scottishsummit/) | 10/11 June 2022 | Glasgow |
 | The .Network (Networking event) | 28 April 2022 | Leeds |
-
