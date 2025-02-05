@@ -33,7 +33,7 @@ Currently this office is connected via a wireless link with our head office. Unf
 
 This is one of my first considerations. I need a reliable internet connection and there are a lot of options to consider, lets look at a few.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/14091d1357164106-internet-connection-drops-every-couple-minutes-cable-sxchu-internet1.jpg?resize=660%2C252&ssl=1)
+![Internet Connection](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/14091d1357164106-internet-connection-drops-every-couple-minutes-cable-sxchu-internet1.jpg?resize=660%2C252&ssl=1)
 
 **ADSL Connection** This is your standard internet connection that most homes have, you get around 20Mb/s download but only 2Mb/s upload for a fairly low price per month. Speeds are dependent on area and the quality and distance from your exchange, some rural areas have speeds much lower than this. As this connection is for an office I want the best connection I can afford so would rather not go down this option if I can avoid it.
 

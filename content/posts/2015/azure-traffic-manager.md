@@ -32,7 +32,7 @@ However Azure has some amazing features that you can configure to help manage wh
 
 Azure is Microsoft’s global cloud platform. And it really is global, there are data centres in North Europe, West Europe, Brazil, Japan, two more in Asia and five in the US. In the event of problems it is highly unlikely that more than one of these would go down at once. If all of these are unavailable, I expect the planet earth is facing some kind of cataclysmic event and the fact that my website is down is not a priority.
 
-[![IC750592](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/03/IC750592.jpg?resize=662%2C347)](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/03/IC750592.jpg)To take advantage of these multiple data centres, Azure has something called a Traffic Manager.
+[![Azure Traffic Manager](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/03/IC750592.jpg?resize=662%2C347)](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/03/IC750592.jpg)To take advantage of these multiple data centres, Azure has something called a Traffic Manager.
 
 Traffic Manager has various settings but I am using it in failover mode. This means that if one website goes down, the next one is used.
 

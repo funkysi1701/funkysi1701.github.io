@@ -25,7 +25,7 @@ aliases = [
 +++
 I have heard the term **Agile Software Development** quite a bit, but lets see if we can define it and see if I do any of the processes involved with it.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/Agile-Marketing-Series-What-is-Agile-Marketing.png?w=579&ssl=1)
+![Agile Software Development](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/Agile-Marketing-Series-What-is-Agile-Marketing.png?w=579&ssl=1)
 
 The dictionary defines ‘Agile’ as mentally quick, or nimble, or quick in movement.
 
