@@ -38,7 +38,7 @@ During the pregnancy I had been living in denial that I would become a father, d
 
 Due to James’s large size, the birth wasn’t easy. After about an hour of pushing the midwife called in a team of doctors and nurses to help and I think it was at this point that it started to hit me. I am not an emotional man, if anything I tend to repress my feelings but I completely and utterly failed to do that on this occasion. By the time the baby had been placed on my wife’s chest tears of joy were streaming down my face and this continued for some time. Moments after birth James had a tight grip on my finger. His tiny hands were like miniature versions of my own hands.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/jameshand.jpg?resize=169%2C300&ssl=1)
+![Baby James holding finger](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/jameshand.jpg?resize=169%2C300&ssl=1)
 
 I have been asked what it felt like holding James in my arms for the first time, this happened on the following day. I am not sure if I can put it into words, but a few adjectives come to mind, amazing, great, fantastic, humbling. James depends on me (and his mother) for everything and his existence has put a new spin on everything I do. I want to be there for him, help him learn stuff, provide for him and love him.
 

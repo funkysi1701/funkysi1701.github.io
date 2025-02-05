@@ -22,7 +22,7 @@ aliases = [
 +++
 ## Over 50% Off this Black Friday!
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/11/86910937_t053ll31.jpg?w=660&ssl=1)
+![Black Friday Deals](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/11/86910937_t053ll31.jpg?w=660&ssl=1)
 
 Yes your heard it correctly even www.funkysi1701.com has amazing offers.
 
