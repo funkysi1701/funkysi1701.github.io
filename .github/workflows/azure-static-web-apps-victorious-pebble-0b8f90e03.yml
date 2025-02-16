@@ -9,7 +9,8 @@ jobs:
     runs-on: self-hosted
     name: Build and Deploy Locally
     steps:
-      - uses: actions/checkout
+      - name: Git checkout
+        uses: actions/checkout@v3
       - name: Build Blog
         run: hugo --minify
   build_and_deploy_job:
