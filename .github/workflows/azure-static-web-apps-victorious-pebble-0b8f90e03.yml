@@ -11,13 +11,12 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@v3
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+
+      - name: hugo
+        uses: klakegg/actions-hugo@1.0.0
         with:
-          hugo-version: '0.92.0'
-          extended: true  
-      - name: Build Blog
-        run: hugo --minify
+          args: server -D
+          source: src
   build_and_deploy_job:
     runs-on: ubuntu-latest  
     name: Build and Deploy Job
