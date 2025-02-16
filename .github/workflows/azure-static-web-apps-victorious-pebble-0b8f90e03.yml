@@ -6,7 +6,7 @@ on:
     - cron: '0 * * * *'
 jobs:
   build_and_deploy_job:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     name: Build and Deploy Job
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
