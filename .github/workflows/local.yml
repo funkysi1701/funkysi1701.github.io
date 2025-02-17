@@ -1,0 +1,21 @@
+name: Local Deployment
+
+on:
+  push:
+jobs:
+  build_and_deploy_locally:
+    runs-on: self-hosted
+    name: Build and Deploy Locally
+    steps:
+      - name: 'Cleanup build folder'
+        run: |
+          ls -la ./
+          rm -rf ./* || true
+          rm -rf ./.??* || true
+          ls -la ./
+      - name: Git checkout
+        uses: actions/checkout@v4
+      - name: stop Hugo
+        run: docker stop hugo
+      - name: hugo
+        run: docker run --name hugo -d --rm -v .:/src -p 1313:1313 klakegg/hugo:0.101.0 server -D --config config-dev.toml --baseUrl="http://server05.local:1313/"
