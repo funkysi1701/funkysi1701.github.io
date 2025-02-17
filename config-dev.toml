@@ -1,0 +1,47 @@
+baseURL = 'http://server05.local:1313/'
+languageCode = 'en-gb'
+title = "Testing Funky Si's Blog"
+theme = 'hugo-theme-bootstrap'
+disqusShortname = "funkysi1701"  
+googleAnalytics = ""
+
+[Menus]
+  main = [
+      {Name = "About", URL = "/about/"},
+      {Name = "Referral Links", URL = "/referral-links/"},
+      {Name = "Events", URL = "/events/"},
+      {Name = "Podcasts", URL = "/podcasts/"},
+      {Name = "Search", URL = "/search/"}
+  ]
+
+[params]
+  description = "Simon Foster - North of England-based Software Developer | .NET & C# specialist | More than just another developer."
+  images = ["https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg"]
+  themeColor = "theme-base-0d"
+  logo = false
+
+[taxonomies]
+  year = "year"
+  month = "month"
+  tag = "tags"
+  category = "categories"
+
+[permalinks]
+  year = "/:year/"
+  month = "/:year/:month/"  
+
+[markup.goldmark.renderer]
+  unsafe= true  
+
+[server]
+[[server.headers]]
+  for = '/**.html'
+  [server.headers.values]
+    Content-Security-Policy = 'script-src localhost:1313'
+    Referrer-Policy = 'strict-origin-when-cross-origin'
+    X-Content-Type-Options = 'nosniff'
+    X-Frame-Options = 'DENY'
+    X-XSS-Protection = '1; mode=block'
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
