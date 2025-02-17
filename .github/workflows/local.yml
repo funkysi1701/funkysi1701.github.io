@@ -14,7 +14,7 @@ jobs:
           rm -rf ./.??* || true
           ls -la ./
       - name: Git checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: stop Hugo
         run: docker stop hugo
       - name: hugo
