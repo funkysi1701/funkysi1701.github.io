@@ -22,3 +22,13 @@ aliases = [
     "/2025/02/24/pragmatic-programmer" 
 ]
 +++
+I have been reading the Pragmatic Programmer and I have to say it is a great book. It is full of great advice and tips for programmers. I highly recommend it to anyone who is a programmer at any level or wants to become one.
+
+Here is the complete list of tips that can be found in the book, (I am reading the 20th anniversary edition, so these might be slightly different if you are looking at the original edition):
+
+- Care About Your Craft
+- Think! About Your Work
+- You Have Agency
+- Provide Options, Don’t Make Lame Excuses
+- [Don’t Live with Broken Windows](/posts/2015/pragmatic-programmer-broken-windows/) I blogged about this in 2015
+- 
