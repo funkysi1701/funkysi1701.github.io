@@ -1,6 +1,7 @@
 name: Local Deployment
 
 on:
+  workflow_dispatch:
   push:
 jobs:
   build_and_deploy_locally:
