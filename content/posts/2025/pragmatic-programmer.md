@@ -7,9 +7,9 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/tpp.jpg"
 images =['/images/tpp.jpg']
-tags = []
+tags = ["Pragmatic Programmer", "Book Review", "Programming", "Software Development", "Best Practices", "Tech"]
 category="tech"
-description = ""
+description = "'The Pragmatic Programmer' with key takeaways and tips for improving your programming skills and practices."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -22,11 +22,11 @@ aliases = [
     "/2025/02/24/pragmatic-programmer" 
 ]
 +++
-I have been reading the [Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) and I have to say it is a great book. It is full of great advice and tips for programmers. I highly recommend it to anyone who is a programmer at any level.
+I have been reading [The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) and I have to say it is a fantastic book. It is full of great advice and tips for programmers. I highly recommend it to anyone who is a programmer at any level.
 
-Lots of the advice is common sense, and things I already do, but there are also lots of things I know in the back of my mind that I should be doing. So reading it has been a great reminder of those things.
+Lots of the advice is common sense and things I already do, but there are also lots of things I know in the back of my mind that I should be doing. So reading it has been a great reminder of those things.
 
-Here is the complete list of tips that can be found in the book, (I am reading the 20th anniversary edition, so these might be slightly different if you are looking at the original edition):
+Here is the complete list of tips that can be found in the book (I am reading the 20th anniversary edition, so these might be slightly different if you are looking at the original edition):
 
 1. Care About Your Craft
 2. Think! About Your Work
