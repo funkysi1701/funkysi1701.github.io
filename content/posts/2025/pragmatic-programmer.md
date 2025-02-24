@@ -22,107 +22,140 @@ aliases = [
     "/2025/02/24/pragmatic-programmer" 
 ]
 +++
-I have been reading the Pragmatic Programmer and I have to say it is a great book. It is full of great advice and tips for programmers. I highly recommend it to anyone who is a programmer at any level or wants to become one.
+I have been reading the [Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) and I have to say it is a great book. It is full of great advice and tips for programmers. I highly recommend it to anyone who is a programmer at any level.
+
+Lots of the advice is common sense, and things I already do, but there are also lots of things I know in the back of my mind that I should be doing. So reading it has been a great reminder of those things.
 
 Here is the complete list of tips that can be found in the book, (I am reading the 20th anniversary edition, so these might be slightly different if you are looking at the original edition):
 
 1. Care About Your Craft
 2. Think! About Your Work
+
+### A Pragmatic Philosophy
+
 3. You Have Agency
 4. Provide Options, Don’t Make Lame Excuses
-5. [Don’t Live with Broken Windows](/posts/2015/pragmatic-programmer-broken-windows/) I blogged about this in 2015
+5. [Don’t Live with Broken Windows](/posts/2015/pragmatic-programmer-broken-windows/) (I blogged about this in 2015)
 6. Be a Catalyst for Change
 7. Remember the Big Picture
 8. Make Quality a Requirements Issue
-9. Invest Regularly in Your Knowledge Portfolio
+9.  Invest Regularly in Your Knowledge Portfolio
 10. Critically Analyze What You Read and Hear
 11. English is Just Another Programming Language
 12. It’s Both What You Say and the Way You Say It
 13. Build Documentation In, Don’t Bolt It On
-14. Good Design is easier to change than bad design
+
+### A Pragmatic Approach
+
+14. Good Design Is Easier to Change Than Bad Design
 15. DRY - Don’t Repeat Yourself
-16. Make it easy to reuse
+16. Make It Easy to Reuse
 17. Eliminate Effects Between Unrelated Things
-18. There are no Final Decisions
+18. There Are No Final Decisions
 19. Forgo Following Fads
 20. Use Tracer Bullets to Find the Target
 21. Prototype to Learn
 22. Program Close to the Problem Domain
 23. Estimate to Avoid Surprises
 24. Iterate the Schedule with the Code
+
+### The Basic Tools
+
 25. Keep Knowledge in Plain Text
 26. Use the Power of Command Shells
 27. Achieve Editor Fluency
-28. Always use version control
+28. Always Use Version Control
 29. Fix the Problem, Not the Blame
 30. Don’t Panic
-31. Failing tests before fixing code
-32. Read the damn error message
-33. "select" isn't broken
-34. Don't assume it - Prove it
-35. Learn a text manipulation language
-36. You can't write perfect software
-37. Design with contracts
-38. Crash early
-39. Use assertions to prevent the impossible
-40. Finish what you start
+31. Failing Test Before Fixing Code
+32. Read the Damn Error Message
+33. "select" Isn't Broken
+34. Don't Assume It - Prove it
+35. Learn a Text Manipulation Language
+
+### Pragmatic Paranoia
+
+36. You Can't Write Perfect Software
+37. Design with Contracts
+38. Crash Early
+39. Use Assertions to Prevent the Impossible
+40. Finish What You Start
 41. Act Locally
-42. Take small steps - Always
+42. Take Small Steps - Always
 43. Avoid Fortune Telling
-44. Decoupled code is easy to change
+
+### Bend, or Break
+
+44. Decoupled Code is Easy to Change
 45. Tell, Don't Ask
-46. Don't chain method calls
-47. Avoid global data
-48. If it's important enough to be global, wrap it in an API
-49. Programming is about code, but programs are about data
-50. don't hoard state, pass it around
-51. Don't pay inheritance tax
-52. Prefer interfaces to express polymorphism
-53. Delegate to services: Has-A trumps Is-A
-54. Use Mixins to share functionality
-55. Parameterize your app using external configuration
-56. Analyze workflow to improve concurrency
-57. Shared state is incorrect state
-58. Random failures are often concurrency issues
-59. Use actors for concurrency withou shared state
-60. Use blackboards to coordinate workflow
-61. Listen to your inner lizard
-62. Don't program by coincidence
-63. Estimate the order of your algorithms
-64. Test your estimates
-65. Refactor early, refactor often
-66. Testing is not about finding bugs
-67. A test is the first user of your code
-68. Build end-to-end, not necessarily top-down or bottom-up
-69. Design to test
-70. Test your software, or your users will
-71. Use property-based tests to validate your assumptions
-72. keep it simple and minimize attack surfaces
-73. Apply security patches quickly
-74. name well, rename when needed
-75. no one knows exactly what they want
-76. programmers help people understand what they want
-77. requirements are learned in a feedback loop
-78. work with a user to think like a user
-79. policy is metadata
-80. use a project glossary
-81. don't think outside the box - find the box
-82. don't go into the code alone
-83. agile is not a noun; agile is how you do things
-84. maintain small stable teams
-85. schedule it to make it happen
-86. organize fully functional teams
-87. do what works, not what's fashionable
-88. deliver when users need it
-89. use version control to drive builds, tests and releases
-90. test early, test often, test automatically
-91. coding ain't done 'til all the tests run
-92. use saboteurs to test your testing
-93. test state coverage, not code coverage
-94. find bugs once
-95. don't use manual procedures
-96. delight users, don't just deliver code
-97. sign your work
-98. first, do no harm
-99. don't enable scumbags
-100. it's your life
+46. Don't Chain Method Calls
+47. Avoid Global Data
+48. If it's Important Enough to be Global, Wrap It in an API
+49. Programming is About Code, But Programs Are About Data
+50. Don't Hoard State; Pass It Around
+51. Don't Pay Inheritance Tax
+52. Prefer Interfaces to Express Polymorphism
+53. Delegate to Services: Has-A Trumps Is-A
+54. Use Mixins to Share Functionality
+55. Parameterize Your App Using External Configuration
+
+### Concurrency
+
+56. Analyze Workflow to Improve Concurrency
+57. Shared State is Incorrect State
+58. Random Failures Are Often Concurrency Issues
+59. Use Actors for Concurrency Without Shared State
+60. Use Blackboards to Coordinate Workflow
+
+### While You Are Coding
+
+61. Listen to Your Inner Lizard
+62. Don't Program by Coincidence
+63. Estimate the Order of Your Algorithms
+64. Test Your Estimates
+65. Refactor Early, Refactor Often
+66. Testing is Not About Finding Bugs
+67. A Test is the First User of Your Code
+68. Build End-to-End, Not Top-Down or Bottom-Up
+69. Design To Test
+70. Test Your Software, or Your Users Will
+71. Use Property-Based Tests to Validate your Assumptions
+72. Keep it Simple and Minimize Attack Surfaces
+73. Apply Security Patches Quickly
+74. Name well; Rename When Needed
+
+### Before the Project
+
+75. No One Knows Exactly What They Want
+76. Programmers Help People Understand What They Want
+77. Requirements are Learned in a Feedback Loop
+78. Work with a User to Think Like a User
+79. Policy is Metadata
+80. Use a Project Glossary
+81. Don't Think Outside the Box - Find the Box
+82. Don't Go into the Code Alone
+83. Agile is Not a Noun; Agile is How You Do Things
+
+### Pragmatic Projects
+
+84. Maintain Small, Stable Teams
+85. Schedule It to Make it Happen
+86. Organize Fully Functional Teams
+87. Do What Works, Not What's Fashionable
+88. Deliver When Users Need It
+89. Use Version Control to Drive Builds, Tests and Releases
+90. Test Early, Test Often, Test Automatically
+91. Coding Ain't Done 'Til All the Tests Run
+92. Use Saboteurs to Test Your Testing
+93. Test State Coverage, Not Code Coverage
+94. Find Bugs Once
+96. Don't use Manual Procedures
+97. Delight Users, Don't Just Deliver Code
+98. Sign your Work
+
+### 
+
+99.  First, Do No Harm
+100. Don't Enable Scumbags
+101. It's Your Life
+
