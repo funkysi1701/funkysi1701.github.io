@@ -1,3 +1,2 @@
 User-agent: *
-Disallow: /*/index.xml
 Sitemap: {{ "sitemap.xml" | absURL }}
