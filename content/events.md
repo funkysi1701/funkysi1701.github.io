@@ -3,7 +3,7 @@ title = "Events"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = ""
-keywords = ["", ""]
+keywords = ["User Groups", "Conferences", "Events", "Meetups"]
 description = "Events - Conferences, User Groups and other events I have been to or plan to attend"
 comment = false
 showFullContent = false
@@ -23,8 +23,6 @@ A list of events I have attended or am planning to attend (no guarantee that I w
 | Event/Talk | Date | Location |
 | --- | --- | --- |
 | *SteelCon*  | *12 July 2025*     | *Sheffield* |
-| *May User Group*  | *May 2025*     | ** |
-| *April User Group*  | *April 2025*     | ** |
 | *Leeds Sharp*  | *27 March 2025*     | *Leeds* |
 | DDD North | 22 February 2025 | Hull      |
 | [NDC London](https://www.funkysi1701.com/posts/2025/volunteering-at-ndc/)  | 29-31 January 2025 | London      |
