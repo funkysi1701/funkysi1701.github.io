@@ -2,7 +2,7 @@
 title = "Merging Two Projects Into One Git Repository"
 date = "2025-03-10T20:00:00Z"
 year = "2025"
-month= "2025-023"
+month= "2025-03"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/git-merge.png"
