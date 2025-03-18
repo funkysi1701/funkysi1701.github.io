@@ -22,11 +22,11 @@ aliases = [
     "/2025/03/17/uisng-ai" 
 ]
 +++
-Lets look at a way to use AI for a practical use. For the last few weeks I have been using AI to help me write social media posts to promote my latest blog posts, lets look at how I might automate this using dotnet code.
+Lets look at a way to use AI for a practical use. For the last few weeks I have been using AI to help me write social media posts to promote my latest blog posts, let's look at how I might automate this using .NET code.
 
-My blog publishes new posts to a rss feed, I can consume this from dotnet code and pass it to AI, and create social media posts from them.
+My blog publishes new posts to a rss feed, I can consume this from .NET code and pass it to AI, and create social media posts from them.
 
-My blog is written in Hugo and it is already generating an rss feed, however I have made a slight tweak to it. I want the tags from the blog article to be used as hastags in any social media posts. I am storing the tags in the rss field category.
+My blog is written in Hugo and it is already generating an rss feed, however I have made a slight tweak to it. I want the tags from the blog article to be used as hashtags in any social media posts. I am storing the tags in the rss field category.
 
 ```xml
 <category term="tagname">tagname</category>
@@ -61,9 +61,9 @@ I want to pass the description to AI, and then combine the Response from AI with
 
 Initially I thought about using [ollama](https://ollama.com/), this is an example of a LLM (Large Language Model) that you can install on your laptop, sometimes called a Small Language Model (SLM). However, I found this to be unreliable with my laptop and caused several system wide crashes. I assume this is due to memory usage and the size of the model. LLMs or SLMs do require a lot of system resources so this is not completely surprising. I will revisit this at some point as I would like to learn more about ollama.
 
-I already have an account on [OpenAI](https://platform.openai.com/) and some credit so lets try that instead. I have made a fair few requests using OpenAI and so far it has cost me 11p, I don't think for my usage it is going to break the bank. If I was going to put something on the public internet I may have to reconsider but for my own personal use I think this should be fine.
+I already have an account on [OpenAI](https://platform.openai.com/) and some credit so let's try that instead. I have made a fair few requests using OpenAI and so far it has cost me 11p, I don't think for my usage it is going to break the bank. If I was going to put something on the public internet I may have to reconsider but for my own personal use I think this should be fine.
 
-Next step, how do I talk to OpenAI from dotnet. I know of two approaches, [Semantic Kernel](https://github.com/microsoft/semantic-kernel) and the new Microsoft.Extensions.AI libraries introduces in dotnet 9 https://devblogs.microsoft.com/dotnet/introducing-microsoft-extensions-ai-preview/. Semantic Kernel is what I am using here, however I do want to explore the newer libraries at some point.
+Next step, how do I talk to OpenAI from .NET. I know of two approaches, [Semantic Kernel](https://github.com/microsoft/semantic-kernel) and the new Microsoft.Extensions.AI libraries introduces in .NET 9 https://devblogs.microsoft.com/dotnet/introducing-microsoft-extensions-ai-preview/. Semantic Kernel is what I am using here, however I do want to explore the newer libraries at some point.
 
 Semantic Kernel with OpenAI needs the following Nuget package: Microsoft.SemanticKernel.Connectors.OpenAI
 
