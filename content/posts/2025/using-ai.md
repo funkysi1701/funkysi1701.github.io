@@ -5,8 +5,8 @@ year = "2025"
 month= "2025-03"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/exceptions.png"
-images =['/images/exceptions.png']
+cover = "/images/social-ai.png"
+images =['/images/social-ai.png']
 tags = ["AI", "OpenAI", "Semantic Kernel", "DotNet", "RSS", "Social Media", "Automation", "Programming", "Tech"]
 category="tech"
 description = "Learn how to use AI with .NET to automate social media posts from your blog's RSS feed using Semantic Kernel and OpenAI."
@@ -25,6 +25,8 @@ aliases = [
 ## Introduction
 
 Automating repetitive tasks is one of the best ways to save time and focus on what matters most. In this blog, I'll show you how I used AI with .NET to automate the creation of social media posts for my blog. By leveraging my blog's RSS feed, OpenAI, and Semantic Kernel, I was able to generate engaging posts effortlessly. Let's dive in!
+
+## Using OpenAI for Social Media Posts
 
 Let's look at a way to use AI for a practical use. For the last few weeks I have been using AI to help me write social media posts to promote my latest blog posts, let's look at how I might automate this using .NET code.
 
