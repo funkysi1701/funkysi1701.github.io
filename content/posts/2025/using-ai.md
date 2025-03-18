@@ -22,7 +22,11 @@ aliases = [
     "/2025/03/17/uisng-ai" 
 ]
 +++
-Lets look at a way to use AI for a practical use. For the last few weeks I have been using AI to help me write social media posts to promote my latest blog posts, let's look at how I might automate this using .NET code.
+## Introduction
+
+Automating repetitive tasks is one of the best ways to save time and focus on what matters most. In this blog, I'll show you how I used AI with .NET to automate the creation of social media posts for my blog. By leveraging my blog's RSS feed, OpenAI, and Semantic Kernel, I was able to generate engaging posts effortlessly. Let's dive in!
+
+Let's look at a way to use AI for a practical use. For the last few weeks I have been using AI to help me write social media posts to promote my latest blog posts, let's look at how I might automate this using .NET code.
 
 My blog publishes new posts to a rss feed, I can consume this from .NET code and pass it to AI, and create social media posts from them.
 
@@ -109,4 +113,8 @@ Now once I put is all together I have a page that loads my rss feed, and I can c
 
 ![Ai Example](images/ai-example.png)
 
-If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up to my [newsletter](http://eepurl.com/i7pQno). If you have any questions or comments, please feel free to reach out or leave a comment below.
+## Conclusion
+
+By combining .NET, Semantic Kernel, and OpenAI, I was able to automate the creation of social media posts, saving time and effort. This approach can be adapted for other use cases, such as summarizing content or generating marketing copy. 
+
+If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up to my [newsletter](http://eepurl.com/i7pQno). If you have any questions or want to share your own experiences, feel free to leave a comment below!
