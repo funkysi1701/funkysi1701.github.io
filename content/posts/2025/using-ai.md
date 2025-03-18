@@ -102,7 +102,7 @@ Now the only step I am missing is what string or prompt do I want to pass to Ope
 I want a social media post that will fit into a facebook/twitter/bluesky etc post, some of these services are character limited so I have included a character limit in my "prompt", however I am being clever and counting the number of characters taken up by the URL and hashtags and subtracting that first.
 
 ```csharp
-QueryString = $"write a social media post under {240 - length} characters, excluding hash tags about {feedItem.Description}"
+string socialMediaPrompt = $"write a social media post under {240 - length} characters, excluding hash tags about {feedItem.Description}"
 ```
 
 Now once I put is all together I have a page that loads my rss feed, and I can click a button to generate a social media post.
