@@ -49,7 +49,7 @@ And here is the section of code that generates my rss feed, the key tags I will 
 </item>
 ```
 
-I am using the nuget package [CodeHollow.FeedReader](https://github.com/arminreiter/FeedReader/), this allows me to pass in a URL to my rss feed, and get an object out which contains all the items in the feed. Using a nuget package saves me doing a lot of parsing of XML. The method I am using takes an input string something like [[https://](https://www.funkysi1701.com/index.xml)](https://www.funkysi1701.com/index.xml), and gives me an object I can query and do things with.
+I am using the nuget package [CodeHollow.FeedReader](https://github.com/arminreiter/FeedReader/), this allows me to pass in a URL to my rss feed, and get an object out which contains all the items in the feed. Using a nuget package saves me doing a lot of parsing of XML. The method I am using takes an input string something like [https://www.funkysi1701.com/index.xml](https://www.funkysi1701.com/index.xml), and gives me an object I can query and do things with.
 
 ```csharp
 var RSSFeed = await FeedReader.ReadAsync(FeedStringValue);
