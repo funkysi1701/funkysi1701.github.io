@@ -22,7 +22,6 @@ aliases = [
     "/2025/03/17/uisng-ai" 
 ]
 +++
-## Introduction
 
 Automating repetitive tasks is one of the best ways to save time and focus on what matters most. In this blog, I'll show you how I used AI with .NET to automate the creation of social media posts for my blog. By leveraging my blog's RSS feed, OpenAI, and Semantic Kernel, I was able to generate engaging posts effortlessly. Let's dive in!
 
