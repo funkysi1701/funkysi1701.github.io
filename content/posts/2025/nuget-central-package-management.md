@@ -22,7 +22,6 @@ aliases = [
     "/2025/01/13/central-package-management-with-nuget" 
 ]
 +++
-## Introduction
 
 Managing dependencies in .NET projects can become complex, especially when dealing with multiple projects that share common packages. NuGet Central Package Management (CPM) is a feature that simplifies this process by allowing you to manage package versions centrally. 
 

@@ -22,7 +22,6 @@ aliases = [
     "/2025/01/06/nagios-monitoring-with-docker"    
 ]
 +++
-## Introduction
 
 A long time ago in my SysAdmin days, I was a big fan of [Nagios](/posts/2014/i-love-nagios/). Recently, I decided to revisit it and see if I could run it in a Docker container to monitor my local network. This guide will walk you through the process of setting up Nagios monitoring using Docker.
 
