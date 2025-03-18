@@ -16,10 +16,12 @@ copyright = false
 featured = false
 draft = false
 aliases = [
-    "/uisng-ai",
-    "/posts/uisng-ai",
-    "/posts/2025/03/17/uisng-ai",
-    "/2025/03/17/uisng-ai" 
+aliases = [
+    "/using-ai",
+    "/posts/using-ai",
+    "/posts/2025/03/17/using-ai",
+    "/2025/03/17/using-ai" 
+]
 ]
 +++
 
