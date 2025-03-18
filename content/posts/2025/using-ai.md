@@ -1,5 +1,5 @@
 +++
-title = "Using AI to ..."
+title = "Using AI to Automate Social Media Posts with .NET"
 date = "2025-03-17T20:00:00Z"
 year = "2025"
 month= "2025-03"
@@ -7,9 +7,9 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/exceptions.png"
 images =['/images/exceptions.png']
-tags = []
+tags = ["AI", "OpenAI", "Semantic Kernel", "DotNet", "RSS", "Social Media", "Automation", "Programming", "Tech"]
 category="tech"
-description = ""
+description = "Learn how to use AI with .NET to automate social media posts from your blog's RSS feed using Semantic Kernel and OpenAI."
 showFullContent = false
 readingTime = true
 copyright = false
