@@ -16,12 +16,10 @@ copyright = false
 featured = false
 draft = false
 aliases = [
-aliases = [
     "/using-ai",
     "/posts/using-ai",
     "/posts/2025/03/17/using-ai",
     "/2025/03/17/using-ai" 
-]
 ]
 +++
 
