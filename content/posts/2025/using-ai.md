@@ -40,18 +40,7 @@ My blog is written in Hugo and it is already generating an rss feed, however I h
 And here is the section of code that generates my rss feed, the key tags I will be using are title, link, category and description.
 
 ```xml
-<item>
-  <title>{{ .Title }}</title>
-  <link>{{ .Permalink }}</link>
-  <author>{{ with .Params.author }}{{ . }}{{ else }}{{ with $.Site.Author.name }}{{.}}{{end}}{{end}}</author>
-  <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
-  {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
-  <guid>{{ .Permalink }}</guid>
-  {{- range .Params.tags -}}
-    <category term="{{ replace . " " "" }}">{{ replace . " " "" }}</category>
-  {{ end }}
-  <description>{{ .Content | html }}</description>
-</item>
+
 ```
 
 I am using the nuget package [CodeHollow.FeedReader](https://github.com/arminreiter/FeedReader/), this allows me to pass in a URL to my rss feed, and get an object out which contains all the items in the feed. Using a nuget package saves me doing a lot of parsing of XML. The method I am using takes an input string something like [https://www.funkysi1701.com/index.xml](https://www.funkysi1701.com/index.xml), and gives me an object I can query and do things with.
@@ -107,7 +96,7 @@ Now the only step I am missing is what string or prompt do I want to pass to Ope
 I want a social media post that will fit into a facebook/twitter/bluesky etc post, some of these services are character limited so I have included a character limit in my "prompt", however I am being clever and counting the number of characters taken up by the URL and hashtags and subtracting that first.
 
 ```csharp
-
+string socialMediaPrompt = $"write a social media post under {240 - length} characters, excluding hash tags about {feedItem.Description}"
 ```
 
 Now once I put is all together I have a page that loads my rss feed, and I can click a button to generate a social media post.
