@@ -1,5 +1,5 @@
 # Build stage
-FROM klakegg/hugo:ubuntu as builder
+FROM floryn90/hugo:ubuntu as builder
 
 RUN apt-get update -y
 
