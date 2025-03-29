@@ -8,7 +8,7 @@ To run locally use
 hugo server -D
 
 To run locally using docker use
-docker run --rm -it -v .:/src -p 1313:1313 floryn90/hugo:0.111.3 server -D --disableFastRender 
+docker run --rm -it -v .:/src -p 1313:1313 floryn90/hugo:0.119.0 server -D --disableFastRender 
 
 To run on github codespace run
 hugo server -D --baseUrl="https://funkysi1701-funkysi1701-github-io-x5wvxvxfv9q4-1313.githubpreview.dev" --appendPort=false
