@@ -3,17 +3,21 @@ on:
   push:
     branches:
     - develop
-
+  
 jobs:
   create-pr:
     runs-on: ubuntu-latest
     steps:
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%b %Y')"
       - name: Check out repository code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: develop
       - name: create pull request
-        run: gh pr create -B master -H develop --title 'Merge develop into master' --body 'Created by Github action' || gh pr edit -B master --title "Merge develop into master" --body 'Created by Github action'
+        run: gh pr create -B master -H develop --title 'Release ${{ steps.date.outputs.date }}' --body 'Created by Github action' 
+          || gh pr edit -B master --title 'Release ${{ steps.date.outputs.date }}' --body 'Created by Github action'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
