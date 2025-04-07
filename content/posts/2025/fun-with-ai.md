@@ -1,5 +1,5 @@
 +++
-title = "Fun with AI"
+title = "Exploring ChatGPT's Image Generation: Fun with AI"
 date = "2025-04-07T20:00:00Z"
 year = "2025"
 month= "2025-04"
@@ -7,9 +7,9 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/ai-version-of-me.png"
 images =['/images/ai-version-of-me.png']
-tags = []
+tags = ["AI", "ChatGPT", "Image Generation", "Fun with AI", "Technology", "Creativity", "Machine Learning"]
 category="tech"
-description = ""
+description = "Exploring ChatGPT's image generation features with a fun action figure prompt and creative results. Check out the AI-generated version of me!"
 showFullContent = false
 readingTime = true
 copyright = false
