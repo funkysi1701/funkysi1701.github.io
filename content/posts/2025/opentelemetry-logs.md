@@ -22,7 +22,7 @@ aliases = [
     "/2025/04/14/adding-opentelemetry-logs-to-grafana" 
 ]
 +++
-I have blogged about [Grafana](/posts/2025/setting-up-grafana/) before but I haven't added logs to Grafana lets have a look at how that works.
+I have blogged about [Grafana](/posts/2025/setting-up-grafana/) before but until now I haven't added logs to Grafana lets have a look at how that works.
 
 My dotnet application makes use of OpenTelemetry. I have been sending this telemetry to an Aspire Dashboard running in Docker. This allows me to view logs, metrics and traces.
 
