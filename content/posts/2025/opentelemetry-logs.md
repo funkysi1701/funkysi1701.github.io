@@ -92,3 +92,31 @@ Lets talk through the flow of information.
 - Alloy receives these logs and starts processing them
 - Alloy sends them to loki on port 3100
 - Grafana adds Loki as a data source and allows me to query any log stored in loki
+
+But doing all this means that my Aspire Dashboard no longer recieves the logs as they are now being sent to Alloy/Loki.
+
+```Extensions.cs
+if (useOtlpExporter)
+{
+    // The following lines enable the OTLP exporter (requires the OpenTelemetry.Exporter.OpenTelemetryProtocol package)
+    builder.Services.AddOpenTelemetry()
+    .WithLogging(logging => logging.AddOtlpExporter(options =>
+    {
+        options.Endpoint = new Uri(builder.Configuration["OTEL_EXPORTER_OTLP_ENDPOINT"]);
+    }))
+    .WithLogging(logging => logging.AddOtlpExporter(options =>
+    {
+        options.Endpoint = new Uri(builder.Configuration["GrafanaExporter"]);
+    }))
+    .WithMetrics(metrics => metrics.AddOtlpExporter(options =>
+    {
+        options.Endpoint = new Uri(builder.Configuration["OTEL_EXPORTER_OTLP_ENDPOINT"]);
+    }))
+    .WithTracing(tracing => tracing.AddOtlpExporter(options =>
+    {
+        options.Endpoint = new Uri(builder.Configuration["OTEL_EXPORTER_OTLP_ENDPOINT"]);
+    }));
+}
+```
+
+If I update the AddOpenTelemetryExporters method in my Extensions.cs file in my .Net Aspire ServiceDefaults project, I can get my logs (or traces/metrics) to be sent to as many different places as I want. In my case I am sending to Allot and Aspire Dashboard.
