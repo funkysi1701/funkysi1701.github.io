@@ -11,7 +11,6 @@ tags = ["Certificates", "SSL", "Security", "DevOps"]
 category="tech"
 keywords = ["", ""]
 description = "Chrome distrusts SSL Certificates"
-summary = "Chrome distrusts SSL Certificates"
 showFullContent = false
 readingTime = true
 aliases = [

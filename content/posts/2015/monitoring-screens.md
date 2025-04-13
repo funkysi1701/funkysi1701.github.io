@@ -11,7 +11,6 @@ tags = ["BigScreen", "Azure", "jQuery", "Javascript", "Nagios", "Monitoring"]
 category="tech"
 keywords = ["", ""]
 description =  "Monitoring Screens"
-summary = "Monitoring Screens"
 showFullContent = false
 readingTime = true
 copyright = false

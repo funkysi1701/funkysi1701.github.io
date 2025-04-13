@@ -10,7 +10,6 @@ tags = ["Pwned", "Data Breach",  "Security", "Troy Hunt"]
 category="tech"
 keywords = ["", ""]
 description =  "Have I Been Pwned?"
-summary = "Have I Been Pwned?"
 showFullContent = false
 readingTime = true
 copyright = false

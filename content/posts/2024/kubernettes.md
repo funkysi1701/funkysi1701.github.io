@@ -12,7 +12,6 @@ tags = ["Side Project" ]
 category="tech"
 keywords = ["", ""]
 description = "Kubernettes"
-summary = "Kubernettes"
 showFullContent = false
 readingTime = true
 draft = true

@@ -11,7 +11,6 @@ tags = ["StarTrek", "Music", "Warp11"]
 category="trek"
 keywords = ["", ""]
 description =  "Top 10 Warp 11 Songs"
-summary = "Top 10 Warp 11 Songs"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -10,7 +10,6 @@ tags = ["DevOps", "ITAdmin","Servers", "Nagios","2016", "2006",  "C-Sharp", "Car
 category="tech"
 keywords = ["", ""]
 description =  "Looking back Ten years"
-summary = "Looking back Ten years"
 showFullContent = false
 readingTime = true
 copyright = false

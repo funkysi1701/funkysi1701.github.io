@@ -10,7 +10,6 @@ tags = ["Database", "Access", "DevOps",  "Source Control" ]
 category="tech"
 keywords = ["", ""]
 description =  "Clever things with MS Access"
-summary = "Clever things with MS Access"
 showFullContent = false
 readingTime = true
 copyright = false

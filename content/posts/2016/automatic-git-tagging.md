@@ -10,7 +10,6 @@ tags = ["DevOps",  "Source Control", "Git", "TeamCity" ]
 category="tech"
 keywords = ["", ""]
 description =  "Automatic Git Tagging"
-summary = "Automatic Git Tagging"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -11,7 +11,6 @@ tags = ["ExchangeRates", "R"]
 category="tech"
 keywords = ["", ""]
 description =  "Learning R"
-summary = "Learning R"
 showFullContent = false
 readingTime = true
 copyright = false

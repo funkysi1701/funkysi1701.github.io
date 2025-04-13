@@ -10,7 +10,6 @@ tags = ["CI",  "DevOps", "Source Control" ]
 category="tech"
 keywords = ["", ""]
 description =  "Revisiting Team City"
-summary = "Revisiting Team City"
 showFullContent = false
 readingTime = true
 copyright = false

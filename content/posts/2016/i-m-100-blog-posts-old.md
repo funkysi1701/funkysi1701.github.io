@@ -10,7 +10,6 @@ tags = ["100", "Blogging"]
 category="tech"
 keywords = ["", ""]
 description = "I’m 100 blog posts old"
-summary = "I’m 100 blog posts old"
 showFullContent = false
 readingTime = true
 copyright = false

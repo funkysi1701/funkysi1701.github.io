@@ -10,7 +10,6 @@ tags = ["Git", "Source Control"]
 category="tech"
 keywords = ["", ""]
 description =  "My git repository is too large!"
-summary = "My git repository is too large!"
 showFullContent = false
 readingTime = true
 copyright = false

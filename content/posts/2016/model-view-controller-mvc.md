@@ -10,7 +10,6 @@ tags = [ "MVC"]
 category="tech"
 keywords = ["", ""]
 description =  "Model View Controller (MVC)"
-summary = "Model View Controller (MVC)"
 showFullContent = false
 readingTime = true
 copyright = false

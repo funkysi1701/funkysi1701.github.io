@@ -11,7 +11,6 @@ tags = ["Windows 8", "Windows 10", "Format", "Reinstall"]
 category="tech"
 keywords = ["", ""]
 description =  "Trying windows 10"
-summary = "Trying windows 10"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -10,7 +10,6 @@ tags = ["C-Sharp", "Interface"]
 category="tech"
 keywords = ["", ""]
 description =  "Interfaces"
-summary = "Interfaces"
 showFullContent = false
 readingTime = true
 copyright = false

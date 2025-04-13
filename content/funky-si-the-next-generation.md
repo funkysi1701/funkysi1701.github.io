@@ -5,12 +5,12 @@ authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/james5.jpg?resize=300%2C225&ssl=1"
 keywords = ["", ""]
 description = "Funky Si: The Next Generation"
-summary = "Funky Si: The Next Generation"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/james5.jpg?resize=300%2C225&ssl=1']
 showFullContent = false
 copyright = false
 readingTime = true
 comment = false
+featured = true
 aliases = [
     "/funky-si-the-next-generation",
     "/posts/funky-si-the-next-generation"

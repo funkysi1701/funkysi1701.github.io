@@ -11,7 +11,6 @@ tags = ["StarTrek", "Trekmate", "Podcast"]
 category="trek"
 keywords = ["", ""]
 description =  "Brothers, TNG S4 E3 Review, The Battle Bridge"
-summary = "Brothers, TNG S4 E3 Review, The Battle Bridge"
 showFullContent = false
 readingTime = true
 copyright = false

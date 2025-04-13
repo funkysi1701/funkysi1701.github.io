@@ -11,7 +11,6 @@ tags = ["Stephen Hawking", "Hero"]
 category=""
 keywords = ["", ""]
 description = "Heroes"
-summary = "Heroes"
 showFullContent = false
 readingTime = true
 aliases = [

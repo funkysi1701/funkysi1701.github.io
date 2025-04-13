@@ -11,7 +11,6 @@ tags = ["Architecture", "Azure"]
 category="tech"
 keywords = ["", ""]
 description = "Flexible Architecture with Interfaces"
-summary = "Flexible Architecture with Interfaces"
 showFullContent = false
 readingTime = true
 aliases = [

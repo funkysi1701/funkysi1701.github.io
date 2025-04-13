@@ -11,7 +11,6 @@ tags = ["Disaster Recovery", "BT", "Outage", "Flood", "Phone", "Internet"]
 category="tech"
 keywords = ["", ""]
 description =  "Disaster Planning"
-summary = "Disaster Planning"
 showFullContent = false
 readingTime = true
 copyright = false

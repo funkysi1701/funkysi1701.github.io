@@ -11,7 +11,6 @@ tags = ["Chemistry", "DevOps",  "Tools"]
 category="tech"
 keywords = ["", ""]
 description =  "Periodic Table of DevOps"
-summary = "Periodic Table of DevOps"
 showFullContent = false
 readingTime = true
 copyright = false

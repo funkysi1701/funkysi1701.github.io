@@ -10,7 +10,6 @@ tags = ["Azure", "Infrastructure", "Terrafrom", "DevOps"]
 category="tech"
 keywords = ["", ""]
 description = "Infrastructure as Code - Creating Azure Resources with Terraform"
-summary = "Infrastructure as Code - Creating Azure Resources with Terraform"
 showFullContent = false
 readingTime = true
 copyright = false

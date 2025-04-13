@@ -10,7 +10,6 @@ tags = ["Act", "Arrange", "Assert",  "Testing"]
 category="tech"
 keywords = ["", ""]
 description =  "Writing your first test"
-summary = "Writing your first test"
 showFullContent = false
 readingTime = true
 copyright = false

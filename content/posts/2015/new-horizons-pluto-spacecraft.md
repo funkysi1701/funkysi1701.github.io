@@ -11,7 +11,6 @@ tags = ["Pluto", "Hardware", "Spacecraft", "Software", "Technology"]
 category="tech"
 keywords = ["", ""]
 description =  "New Horizons Pluto Spacecraft"
-summary = "New Horizons Pluto Spacecraft"
 showFullContent = false
 readingTime = true
 copyright = false

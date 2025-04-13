@@ -11,7 +11,6 @@ tags = ["StarTrek", "podcast", "trekmate"]
 category="trek"
 keywords = ["", ""]
 description =  "Upper Pylon 2 – 1 x 09: The Passenger"
-summary = "Upper Pylon 2 – 1 x 09: The Passenger"
 showFullContent = false
 readingTime = true
 copyright = false

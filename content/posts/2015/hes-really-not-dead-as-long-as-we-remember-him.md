@@ -11,7 +11,6 @@ tags = ["Science", "Leonard Nimoy", "StarTrek", "Spock", "Technology"]
 category="trek"
 keywords = ["", ""]
 description =  "He’s really not dead as long as we remember him – Leonard Nimoy"
-summary = "He’s really not dead as long as we remember him – Leonard Nimoy"
 showFullContent = false
 readingTime = true
 copyright = false

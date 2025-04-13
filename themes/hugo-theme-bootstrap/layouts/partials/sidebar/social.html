@@ -1,8 +1,8 @@
 <section class="social row card component">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous">
   <div class="card-header">
     <h2 class="card-title">
-      Social Links
+      Links
     </h2>
   </div>
   <div class="card-body">    
@@ -11,23 +11,11 @@
         <li><span class="" aria-hidden="true"></span>&nbsp;<a href="https://share.octopus.energy/amber-eel-810">Octopus Energy</a></li> 
         <li><span class="" aria-hidden="true"></span>&nbsp;<a href="https://dev.to/funkysi1701">DevTo</a></li> 
         <li><span class="" aria-hidden="true"></span>&nbsp;<a href="https://funkysi1701.hashnode.dev/">Hashnode</a></li>
-        <li><span class="" aria-hidden="true"></span>&nbsp;<a rel="me" href="https://hachyderm.io/@funkysi1701">Mastodon</a></li> 
+        <li><span class="" aria-hidden="true"></span>&nbsp;<a rel="me" href="https://hachyderm.io/@funkysi1701">Mastodon</a></li>
+        <li><span class="" aria-hidden="true"></span>&nbsp;<a href="https://www.funkysi1701.com/funky-si-the-next-generation/">Funky Si: The Next Generation</a></li> 
+        <li><span class="" aria-hidden="true"></span>&nbsp;<a href="http://eepurl.com/i7pQno">My Monthly Newsletter</a></li>
+        <li><span class="" aria-hidden="true"></span>&nbsp;<a href="https://www.funkysi1701.com/referral-links">Referral Links</a></li> 
       </ul>
-  </div>
-</section>
-<section class="search row card component">
-  <div class="card-header">
-    <h2 class="card-title">
-      Search
-    </h2>
-  </div>
-  <div class="card-body">
-    <form class="search-bar my-1" action="{{ absLangURL "search" }}">
-      <div class="input-group input-group-sm">
-        <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
-        <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
-      </div>
-    </form>
   </div>
 </section>
 <section class="year row card component">
@@ -53,7 +41,7 @@
             {{ $.Scratch.Add "tagCounter2" 1 }}
           {{ end }}
           
-          <li><a href="/{{ $taxonomy.Term }}">{{ $taxonomy.Term }}</a> ({{ $.Scratch.Get "tagCounter" }})</li>
+          <li><a href="/{{ $taxonomy.Term }}/">{{ $taxonomy.Term }}</a> ({{ $.Scratch.Get "tagCounter" }})</li>
         {{end}}
         <li>{{ $.Scratch.Get "tagCounter2" }} Posts so far</li>
       </ul>
@@ -69,8 +57,8 @@
     <div class="py-2">
       <div class="container tagcloud">
         {{ if ne (len $.Site.Taxonomies.year) 0 }}
-          {{ $largestFontSize := 2.0 }}
-          {{ $smallestFontSize := 0.7 }}
+          {{ $largestFontSize := 2.5 }}
+          {{ $smallestFontSize := 1.0 }}
           {{ $fontSpread := sub $largestFontSize $smallestFontSize }}
           {{ $max := add (len (index $.Site.Taxonomies.year.ByCount 0).Pages) 1 }}
           {{ $min := len (index $.Site.Taxonomies.year.ByCount.Reverse 0).Pages }}
@@ -81,9 +69,9 @@
               {{ $currentFontSize := (add $smallestFontSize (mul (sub $tagCount $min) $fontStep) ) }}
               {{ $weigth := div (sub (math.Log $tagCount) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
               {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weigth)) }}
-                <a href="{{ "/" }}{{ $name }}" 
+                <a href="{{ "/" }}{{ $name }}{{ "/" }}" 
                 class="tagcloud-item" style="font-size: {{ $currentFontSize }}rem;">
-                  {{ $taxonomy.Page.Title }}
+                  {{- $taxonomy.Page.Title -}}
                 </a>
             {{ end }}
         {{ end }}

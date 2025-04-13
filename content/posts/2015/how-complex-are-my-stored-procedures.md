@@ -11,7 +11,6 @@ tags = ["Complexity", "SQL"]
 category="tech"
 keywords = ["", ""]
 description =  "How complex are my stored procedures?"
-summary = "How complex are my stored procedures?"
 showFullContent = false
 readingTime = true
 copyright = false

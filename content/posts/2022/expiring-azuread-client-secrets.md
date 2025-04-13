@@ -9,8 +9,7 @@ cover = "/images/AzureADSecret.png"
 images = ['/images/AzureADSecret.png']
 tags = ["DotNet", "Azure", "Active Directory", "Secret"]
 category="tech"
-description =  "Expiring Azure AD Client Secrets"
-summary = "Expiring Azure AD Client Secrets"
+description = "Learn how to handle expiring Azure AD client secrets in your applications. This guide covers troubleshooting steps, best practices for managing client secrets, and how to avoid common pitfalls to ensure your applications remain secure and functional."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -44,7 +43,7 @@ The fix for this is relatively simple, generate a new client secret in Azure AD 
 
 The problem is that this problem will reoccur in 3, 6, 12, 18 or 24 months, depending on what expiry date you set on the secret.
 
-![](/images/AzureADSecret.png)
+![Add a client secret](/images/AzureADSecret.png)
 
 A suggestion from twitter is that Logic Apps and Event Grid might help solve this problem. Lets see how this might work.
 

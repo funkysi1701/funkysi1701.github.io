@@ -10,7 +10,6 @@ tags = ["Bad Design", "SQL",  "Database Design"]
 category="tech"
 keywords = ["", ""]
 description =  "Weakest Database Design"
-summary = "Weakest Database Design"
 showFullContent = false
 readingTime = true
 copyright = false

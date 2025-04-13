@@ -10,7 +10,6 @@ tags = ["EWS", "MVC", "Exchange"]
 category="tech"
 keywords = ["", ""]
 description =  "Exchange Web Services"
-summary = "Exchange Web Services"
 showFullContent = false
 readingTime = true
 copyright = false

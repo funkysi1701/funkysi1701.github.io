@@ -4,12 +4,12 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = ""
 keywords = ["", ""]
-description = "Pwned Pass - My HIBP Android App"
-summary = "Pwned Pass - My HIBP Android App"
+description = "Pwned Pass is an Android app that allows you to check if your passwords have appeared in a data breach using the Have I Been Pwned? API by Troy Hunt. Ensure your passwords are secure by leveraging this simple and effective tool."
 comment = false
 showFullContent = false
 copyright = false
 readingTime = true
+featured = true
 aliases = [
     "/pwned-pass",
     "/posts/pwned-pass"

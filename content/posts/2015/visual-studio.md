@@ -11,7 +11,6 @@ tags = ["CodeLens", "Azure",  "Visual Studio"]
 category="tech"
 keywords = ["", ""]
 description =  "Visual Studio"
-summary = "Visual Studio"
 showFullContent = false
 readingTime = true
 copyright = false

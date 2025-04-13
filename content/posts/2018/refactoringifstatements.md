@@ -11,7 +11,6 @@ tags = ["Design", "Class", "Interface"]
 category="tech"
 keywords = ["", ""]
 description = "Refactoring if statements"
-summary = "Refactoring if statements"
 showFullContent = false
 readingTime = true
 aliases = [

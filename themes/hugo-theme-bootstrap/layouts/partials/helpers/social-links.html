@@ -2,6 +2,7 @@
 {{- $gitlab := dict "gitlab" (dict "url" "https://gitlab.com/%s" "title" "GitLab") -}}
 {{- $twitter := dict "twitter" (dict "url" "https://twitter.com/%s") -}}
 {{- $mastodon := dict "mastodon" (dict "url" "https://hachyderm.io/web/%s") -}}
+{{- $bluesky := dict "bluesky" (dict "url" "https://bsky.app/profile/%s" "icon" "fab fa-bluesky") -}}
 {{- $facebook := dict "facebook" (dict "url" "https://facebook.com/%s" "icon" "fab fa-facebook-f") -}}
 {{- $facebookGroup := dict "facebookgroup" (dict "url" "https://facebook.com/groups/%s" "icon" "fab fa-facebook-square" "title" "Facebook Group") -}}
 {{- $linkedin := dict "linkedin" (dict "url" "https://linkedin.com/%s" "icon" "fab fa-linkedin-in" "title" "LinkedIn") -}}
@@ -20,7 +21,7 @@
 {{- $youtube := dict "youtube" (dict "url" "https://www.youtube.com/channel/%s" "icon" "fab fa-youtube") -}}
 {{- $discord := dict "discord" (dict "url" "https://discord.com/invite/%s" "icon" "fab fa-discord") -}}
 {{- $discourse := dict "discourse" (dict "url" "%s" "icon" "fab fa-discourse") -}}
-{{- $items := merge $github $gitlab $twitter $mastodon $facebook $facebookGroup $linkedin $stackoverflow $weibo $zhihu $quora $instagram $discourse $discord $youtube -}}
+{{- $items := merge $github $gitlab $twitter $mastodon $bluesky $facebook $facebookGroup $linkedin $stackoverflow $weibo $zhihu $quora $instagram $discourse $discord $youtube -}}
 {{- $lastfm := dict "lastfm" (dict "url" "https://www.last.fm/user/%s" "title" "Last.fm") -}}
 {{- $bilibili := dict "bilibili" (dict "url" "https://space.bilibili.com/%s" "title" "bilibili" "icon" "fab fa-bilibili") -}}
 {{- $tiktok := dict "tiktok" (dict "url" "https://www.tiktok.com/@%s" "title" "TikTok" "icon" "fab fa-tiktok") -}}

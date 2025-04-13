@@ -12,7 +12,6 @@ tags = ["StarTrek", "Podcast", "TrekRanks" ]
 category="trek"
 keywords = ["", ""]
 description = "I was recently invited onto the TrekRanks podcast"
-summary = "I was recently invited onto the TrekRanks podcast"
 showFullContent = false
 readingTime = true
 aliases = [

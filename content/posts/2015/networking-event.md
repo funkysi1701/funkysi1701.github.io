@@ -10,7 +10,6 @@ tags = ["IT Managers", "Change", "Networking", "ITBoss", "Strategy"]
 category="tech"
 keywords = ["", ""]
 description =  "Networking Event"
-summary = "Networking Event"
 showFullContent = false
 readingTime = true
 copyright = false

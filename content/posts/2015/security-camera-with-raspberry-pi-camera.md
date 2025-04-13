@@ -10,7 +10,6 @@ tags = ["PHP", "Camera", "Bash", "Raspberry Pi", "Project"]
 category="tech"
 keywords = ["", ""]
 description =  "Security Camera with Raspberry Pi Camera"
-summary = "Security Camera with Raspberry Pi Camera"
 showFullContent = false
 readingTime = true
 copyright = false

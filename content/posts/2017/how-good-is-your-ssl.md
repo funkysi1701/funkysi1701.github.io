@@ -10,7 +10,6 @@ tags = ["SSL", "Security"]
 category="tech"
 keywords = ["", ""]
 description =  "How good is your SSL?"
-summary = "How good is your SSL?"
 showFullContent = false
 readingTime = true
 copyright = false

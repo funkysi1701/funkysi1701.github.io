@@ -11,7 +11,6 @@ tags = ["Active Directory", "Azure", "Authentication", "Azure Active Directory",
 category="tech"
 keywords = ["", ""]
 description =  "Trying Out Azure Active Directory"
-summary = "Trying Out Azure Active Directory"
 showFullContent = false
 readingTime = true
 copyright = false

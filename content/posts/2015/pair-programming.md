@@ -11,7 +11,6 @@ tags = ["PairProgramming",  "FreeCodeCamp"]
 category="tech"
 keywords = ["", ""]
 description =  "Pair Programming"
-summary = "Pair Programming"
 showFullContent = false
 readingTime = true
 copyright = false

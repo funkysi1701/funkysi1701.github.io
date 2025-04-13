@@ -10,7 +10,6 @@ tags = ["Database", "SQL","Visual Studio"]
 category="tech"
 keywords = ["", ""]
 description = "SQL with Visual Studio Code"
-summary = "SQL with Visual Studio Code"
 showFullContent = false
 readingTime = true
 copyright = false

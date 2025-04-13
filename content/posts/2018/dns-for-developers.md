@@ -11,7 +11,6 @@ tags = ["DNS", "DevOps"]
 category="tech"
 keywords = ["", ""]
 description = "DNS for Developers"
-summary = "DNS for Developers"
 showFullContent = false
 readingTime = true
 aliases = [

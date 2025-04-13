@@ -11,7 +11,6 @@ tags = ["Git", "Visual Studio"]
 category="tech"
 keywords = ["", ""]
 description = "Code Reviews"
-summary = "Code Reviews"
 showFullContent = false
 readingTime = true
 aliases = [

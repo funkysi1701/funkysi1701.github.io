@@ -10,7 +10,6 @@ tags = ["ITAdmin", "Routers", "Servers", "OfficeMove"]
 category="tech"
 keywords = ["", ""]
 description = "Office Move"
-summary = "Office Move"
 showFullContent = false
 readingTime = true
 copyright = false
