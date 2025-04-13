@@ -11,7 +11,6 @@ tags = ["Learning", "SQL"]
 category="tech"
 keywords = ["", ""]
 description =  "I might actually like SQL Server"
-summary = "I might actually like SQL Server"
 showFullContent = false
 readingTime = true
 copyright = false

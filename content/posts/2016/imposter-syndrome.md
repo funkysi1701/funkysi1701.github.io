@@ -11,7 +11,6 @@ tags = ["Newjob","Imposter Syndrome"]
 category="tech"
 keywords = ["", ""]
 description =  "Imposter Syndrome"
-summary = "Imposter Syndrome"
 showFullContent = false
 readingTime = true
 copyright = false

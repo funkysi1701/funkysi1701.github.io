@@ -10,7 +10,6 @@ tags = ["Twitter"]
 category="tech"
 keywords = ["", ""]
 description = "It has been a bit of a mad week this week."
-summary = "It has been a bit of a mad week this week."
 showFullContent = false
 readingTime = true
 copyright = false

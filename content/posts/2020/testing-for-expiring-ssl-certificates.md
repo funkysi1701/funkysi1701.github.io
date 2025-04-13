@@ -10,7 +10,6 @@ tags = ["Security", "SSL", "Testing"]
 category="tech"
 keywords = ["", ""]
 description =  "Testing for expiring SSL Certificates"
-summary = "Testing for expiring SSL Certificates"
 showFullContent = false
 readingTime = true
 copyright = false

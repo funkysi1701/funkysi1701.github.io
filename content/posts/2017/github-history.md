@@ -10,7 +10,6 @@ tags = ["Git", "Github",  "Code"]
 category="tech"
 keywords = ["", ""]
 description =  "I created my GitHub account in August 2010, lets look at what I have done with it."
-summary = "I created my GitHub account in August 2010, lets look at what I have done with it."
 showFullContent = false
 readingTime = true
 copyright = false

@@ -11,7 +11,6 @@ tags = ["DevOps", "SSL", "Security"]
 category="tech"
 keywords = ["", ""]
 description = "Let’s Encrypt is awesome"
-summary = "Let’s Encrypt is awesome"
 showFullContent = false
 readingTime = true
 aliases = [
@@ -20,7 +19,8 @@ aliases = [
     "/posts/2018/04/30/lets-encrypt-is-awesome",
     "/posts/lets-encrypt-is-awesome-5d23",
     "/posts/2018/04/30/lets-encrypt-is-awesome-5d23",
-    "/2018/04/30/lets-encrypt-is-awesome-5d23"
+    "/2018/04/30/lets-encrypt-is-awesome-5d23",
+    "/posts/let-s-encrypt-is-awesome-3f5j/"
 ]
 +++
 Let’s Encrypt is a free way to get a SSL certificate onto your website and until recently I had never tried it. It is very easy and I think it is awesome.

@@ -10,7 +10,6 @@ tags = ["Connect4", "PWA", "Website"]
 category="tech"
 keywords = ["", ""]
 description =  "Side Project – Connect 4"
-summary = "Side Project – Connect 4"
 showFullContent = false
 readingTime = true
 copyright = false

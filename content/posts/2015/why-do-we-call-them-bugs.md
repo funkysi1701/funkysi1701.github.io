@@ -11,7 +11,6 @@ tags = ["Debugging", "Bugs"]
 category="tech"
 keywords = ["", ""]
 description =  "Why do we call them bugs?"
-summary = "Why do we call them bugs?"
 showFullContent = false
 readingTime = true
 copyright = false

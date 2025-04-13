@@ -11,7 +11,6 @@ tags = ["CSP", "ReportURI", "Security"]
 category="tech"
 keywords = ["", ""]
 description = "Content Security Policies"
-summary = "Content Security Policies"
 showFullContent = false
 readingTime = true
 aliases = [

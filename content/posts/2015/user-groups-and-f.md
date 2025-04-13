@@ -11,7 +11,6 @@ tags = ["F-Sharp", "C-Sharp",  "Leeds-Sharp", "UserGroups"]
 category="tech"
 keywords = ["", ""]
 description =  "User Groups and F#"
-summary = "User Groups and F#"
 showFullContent = false
 readingTime = true
 copyright = false

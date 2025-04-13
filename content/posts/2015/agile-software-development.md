@@ -10,8 +10,7 @@ images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-conten
 tags = ["Agile"]
 category="tech"
 keywords = ["", ""]
-description =  "Agile Software Development"
-summary = "Agile Software Development"
+description = "An overview of Agile Software Development principles and personal experiences applying them in real-world projects."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -26,7 +25,7 @@ aliases = [
 +++
 I have heard the term **Agile Software Development** quite a bit, but lets see if we can define it and see if I do any of the processes involved with it.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/Agile-Marketing-Series-What-is-Agile-Marketing.png?w=579&ssl=1)
+![Agile Software Development](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/Agile-Marketing-Series-What-is-Agile-Marketing.png?w=579&ssl=1)
 
 The dictionary defines ‘Agile’ as mentally quick, or nimble, or quick in movement.
 

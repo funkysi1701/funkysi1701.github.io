@@ -11,7 +11,6 @@ tags = ["Global", "Blogging", "World"]
 category="tech"
 keywords = ["", ""]
 description =  "How to speak to the whole world"
-summary = "How to speak to the whole world"
 showFullContent = false
 readingTime = true
 copyright = false

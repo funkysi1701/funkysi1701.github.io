@@ -11,7 +11,6 @@ tags = ["Blogging", "James", "Goals"]
 category="tech"
 keywords = ["", ""]
 description =  "A look back at 2015"
-summary = "A look back at 2015"
 showFullContent = false
 readingTime = true
 copyright = false

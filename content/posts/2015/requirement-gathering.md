@@ -11,7 +11,6 @@ tags = [ "Database", "Requirements"]
 category="tech"
 keywords = ["", ""]
 description =  "Requirement Gathering"
-summary = "Requirement Gathering"
 showFullContent = false
 readingTime = true
 copyright = false

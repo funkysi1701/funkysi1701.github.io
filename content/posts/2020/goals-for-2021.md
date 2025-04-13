@@ -11,7 +11,6 @@ tags = ["Goals"]
 category="tech"
 keywords = ["", ""]
 description = "Here are my goals for 2021"
-summary = "Here are my goals for 2021"
 showFullContent = false
 readingTime = true
 aliases = [

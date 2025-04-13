@@ -10,7 +10,6 @@ tags = ["Automate", "Azure","Cron"]
 category="tech"
 keywords = ["", ""]
 description =  "Using Azure WebJobs to Automate Stuff"
-summary = "Using Azure WebJobs to Automate Stuff"
 showFullContent = false
 readingTime = true
 copyright = false

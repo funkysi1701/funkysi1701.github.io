@@ -11,7 +11,6 @@ tags = ["StarTrek", "Discovery"]
 category="trek"
 keywords = ["", ""]
 description = "Star Trek Discovery – thoughts on new trailer"
-summary = "Star Trek Discovery – thoughts on new trailer"
 showFullContent = false
 readingTime = true
 copyright = false

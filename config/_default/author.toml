@@ -1,13 +1,14 @@
 name = "Simon Foster"
-  location = "North Yorkshire"
+  location = "North England"
   about = "/about"
-  bio = "More than just another developer"
+  bio = ".NET & C# specialist | More than just another developer."
 
 [social]
-  email = "simon@funkysi1701.com"
+  email = "funkysi1701@gmail.com"
   facebook = "funkysi1701"
   twitter = "funkysi1701"
   mastodon = "@funkysi1701"
+  bluesky = "funkysi1701.com"
   github = "funkysi1701"
   linkedin = "in/funkysi1701/"
   avatar = "images/profile.jpg"

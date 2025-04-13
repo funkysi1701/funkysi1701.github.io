@@ -10,7 +10,6 @@ tags = ["Git", "Bitbucket", "DevOps",  "AzureDevOps", "Source Control"]
 category="tech"
 keywords = ["", ""]
 description =  "Github Vs Bitbucket Vs Visual Studio Team Services"
-summary = "Github Vs Bitbucket Vs Visual Studio Team Services"
 showFullContent = false
 readingTime = true
 copyright = false

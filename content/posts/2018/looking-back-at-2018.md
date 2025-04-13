@@ -11,7 +11,6 @@ tags = ["C-Sharp", "Home", "Family", "Goals"]
 category="tech"
 keywords = ["", ""]
 description = "Looking back at 2018"
-summary = "Looking back at 2018"
 showFullContent = false
 readingTime = true
 aliases = [

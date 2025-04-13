@@ -12,7 +12,6 @@ tags = ["Podcast", "Leadership", "Open Source", "StarTrek"]
 category="tech"
 keywords = ["", ""]
 description = "I love listening to podcasts so I thought I would share what I have been listening to over the last few days"
-summary = "I love listening to podcasts so I thought I would share what I have been listening to over the last few days"
 showFullContent = false
 readingTime = true
 aliases = [

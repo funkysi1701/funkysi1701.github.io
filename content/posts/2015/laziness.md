@@ -11,7 +11,6 @@ tags = ["PowerShell", "RDP", "Lazy", "ITAdmin"]
 category="tech"
 keywords = ["", ""]
 description =  "Laziness"
-summary = "Laziness"
 showFullContent = false
 readingTime = true
 copyright = false

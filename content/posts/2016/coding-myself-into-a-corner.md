@@ -10,7 +10,6 @@ tags = [ "Databse", "Access"]
 category="tech"
 keywords = ["", ""]
 description =  "Coding myself into a corner"
-summary = "Coding myself into a corner"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -11,7 +11,6 @@ tags = ["Scott Hansleman", "Free", "System Administration", "WIndows 10", "Upgra
 category="tech"
 keywords = ["", ""]
 description =  "How to upgrade to Windows 10"
-summary = "How to upgrade to Windows 10"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -10,7 +10,6 @@ tags = ["Azure", "DNS"]
 category="tech"
 keywords = ["", ""]
 description =  "Creating DNS records programmatically"
-summary = "Creating DNS records programmatically"
 showFullContent = false
 readingTime = true
 copyright = false
@@ -21,7 +20,8 @@ aliases = [
     "/posts/2017/10/16/creating-dns-records-programmatically-26lp",
     "/posts/2017/10/16/creating-dns-records-programmatically",
     "/2017/10/16/creating-dns-records-programmatically-26lp",
-    "/2017/10/16/creating-dns-records-programmatically"
+    "/2017/10/16/creating-dns-records-programmatically",
+    "/creating-dns-records-programmatically"
 ]
 +++
 DNS is the backbone of the internet. It converts domain names into IP addresses. But how can we do clever things with it?

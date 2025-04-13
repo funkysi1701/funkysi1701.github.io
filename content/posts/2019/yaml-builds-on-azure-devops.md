@@ -10,7 +10,6 @@ tags = ["CI", "Build", "Azure", "DevOps", "AzureDevOps"]
 category="tech"
 keywords = ["", ""]
 description = "Yaml Builds on Azure DevOps"
-summary = "Yaml Builds on Azure DevOps"
 showFullContent = false
 readingTime = true
 copyright = false

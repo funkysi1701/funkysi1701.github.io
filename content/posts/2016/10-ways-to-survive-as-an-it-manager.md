@@ -11,7 +11,6 @@ tags = ["ITAdmin", "Backups","DevOps","Technology"]
 category="tech"
 keywords = ["", ""]
 description =  "10 Ways to Survive as an IT Manager"
-summary = "10 Ways to Survive as an IT Manager"
 showFullContent = false
 readingTime = true
 copyright = false

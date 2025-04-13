@@ -10,7 +10,6 @@ tags = ["BadDesign", "Interface"]
 category="tech"
 keywords = ["", ""]
 description =  "Interfaces are cool!"
-summary = "Interfaces are cool!"
 showFullContent = false
 readingTime = true
 copyright = false

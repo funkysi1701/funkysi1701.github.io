@@ -10,7 +10,6 @@ tags = ["Design Patterns", "DRY", "MVC",  "SOLID"]
 category="tech"
 keywords = ["", ""]
 description =  "SOLID and other programming terms"
-summary = "SOLID and other programming terms"
 showFullContent = false
 readingTime = true
 copyright = false

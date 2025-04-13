@@ -11,7 +11,6 @@ tags = ["JavaScript", "JQuery", "FreeCodeCamp"]
 category="tech"
 keywords = ["", ""]
 description =  "My Year of Code"
-summary = "My Year of Code"
 showFullContent = false
 readingTime = true
 copyright = false

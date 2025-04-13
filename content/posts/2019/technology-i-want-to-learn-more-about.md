@@ -10,7 +10,6 @@ tags = ["C-Sharp", "Azure", "Security"]
 category="tech"
 keywords = ["", ""]
 description = "Technology I want to learn more about"
-summary = "Technology I want to learn more about"
 showFullContent = false
 readingTime = true
 copyright = false

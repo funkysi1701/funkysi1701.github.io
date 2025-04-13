@@ -11,7 +11,6 @@ tags = ["StarTrek", "Voyager", "DeepSpaceNine", "Spock", "Kirk", "Enterprise"]
 category="trek"
 keywords = ["", ""]
 description =  "Top 50 Star Trek episodes"
-summary = "Top 50 Star Trek episodes"
 showFullContent = false
 readingTime = true
 copyright = false

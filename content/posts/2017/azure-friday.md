@@ -10,7 +10,6 @@ tags = ["Azure", "ApplicationInsights"]
 category="tech"
 keywords = ["", ""]
 description =  "Azure Friday"
-summary = "Azure Friday"
 showFullContent = false
 readingTime = true
 copyright = false

@@ -11,7 +11,6 @@ tags = ["Windows", "Docker", "SQL", "Linux"]
 category="tech"
 keywords = ["", ""]
 description = "Running SQL Server on a Linux Container using Docker for Windows"
-summary = "Running SQL Server on a Linux Container using Docker for Windows"
 showFullContent = false
 readingTime = true
 aliases = [

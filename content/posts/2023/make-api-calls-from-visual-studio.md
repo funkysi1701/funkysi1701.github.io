@@ -11,8 +11,7 @@ images = ['/images/endpoint-explorer.png']
 tags = ["Visual Studio", "API" ]
 category="tech"
 keywords = ["", ""]
-description = "Make API calls from Visual Studio or Visual Studio Code"
-summary = "Make API calls from Visual Studio or Visual Studio Code"
+description = "Learn how to make API calls directly from Visual Studio or Visual Studio Code using the new Endpoint Explorer feature. This guide covers how to view, manage, and test your API endpoints efficiently within your development environment."
 showFullContent = false
 readingTime = true
 draft = false
@@ -26,7 +25,7 @@ It is that exciting time of year where Microsoft announce a new version of .Net 
 
 The new window is called **Endpoint Explorer** and can be added from the menu **View > Other Windows > Endpoint Explorer**.
 
-![](/images/endpoint-explorer.png)
+![Endpoint Explorer](/images/endpoint-explorer.png)
 
 If you right click on one of the endpoints you can view the code or send a request. It works with minimal APIs or standard MVC APIs. If you select send a request a .http file will be created, this is a feature that has been in Visual Studio for a while but I haven't taken much notice.
 

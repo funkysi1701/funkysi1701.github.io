@@ -11,7 +11,6 @@ tags = ["Database",  "SQL"]
 category="tech"
 keywords = ["", ""]
 description = "SQL Server Management Studio"
-summary = "SQL Server Management Studio"
 showFullContent = false
 readingTime = true
 aliases = [

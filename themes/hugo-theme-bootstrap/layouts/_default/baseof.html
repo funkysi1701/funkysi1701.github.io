@@ -9,6 +9,11 @@
     {{- partial "head.html" . -}}
     {{- block "head-end" . -}}{{- end -}}
     {{- partial "hooks/head-end" . -}}
+    {{ with .Params.relcanonical }}
+    <link rel="canonical" href="{{ . | relLangURL }}" itemprop="url" />
+    {{ else -}}
+    <link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
+    {{ end -}}
   </head>
   <body>
     {{- $bootstrapScript := resources.Get "bootstrap/template.js" | resources.ExecuteAsTemplate "js/bootstrap.js" . | minify -}}

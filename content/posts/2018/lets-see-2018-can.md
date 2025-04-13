@@ -11,7 +11,6 @@ tags = ["Career", "Family", "Marriage", "Goals"]
 category="tech"
 keywords = ["", ""]
 description = "Lets see what 2018 can do!"
-summary = "Lets see what 2018 can do!"
 showFullContent = false
 readingTime = true
 aliases = [

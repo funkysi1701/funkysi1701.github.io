@@ -11,7 +11,6 @@ tags = ["StarTrek"]
 category="trek"
 keywords = ["", ""]
 description =  "Top 25 Star Trek Characters"
-summary = "Top 25 Star Trek Characters"
 showFullContent = false
 readingTime = true
 copyright = false

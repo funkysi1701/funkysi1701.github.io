@@ -11,7 +11,6 @@ tags = ["ICYMI", "Learning"]
 category="tech"
 keywords = ["", ""]
 description =  "ICYMI What does it mean?"
-summary = "ICYMI What does it mean?"
 showFullContent = false
 readingTime = true
 copyright = false

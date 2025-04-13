@@ -11,7 +11,6 @@ tags = ["StarTrek", "Podcast", "Trekmate"]
 category="trek"
 keywords = ["", ""]
 description =  "The Hunted, TNG S3 E11, The Battle Bridge"
-summary = "The Hunted, TNG S3 E11, The Battle Bridge"
 showFullContent = false
 readingTime = true
 copyright = false

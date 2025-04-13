@@ -10,7 +10,6 @@ tags = ["Linux", "Fedora", "Camera", "Raspberry Pi", "Pidora"]
 category="tech"
 keywords = ["", ""]
 description =  "The Raspberry Pi Adventure Starts"
-summary = "The Raspberry Pi Adventure Starts"
 showFullContent = false
 readingTime = true
 copyright = false

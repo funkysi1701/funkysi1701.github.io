@@ -10,7 +10,6 @@ tags = ["Goals", ""]
 category="tech"
 keywords = ["", ""]
 description = "This is my annual lets make some goals for the new year blog post."
-summary = "This is my annual lets make some goals for the new year blog post."
 showFullContent = false
 readingTime = true
 copyright = false

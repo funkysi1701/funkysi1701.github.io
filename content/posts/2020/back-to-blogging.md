@@ -10,7 +10,6 @@ tags = ["Blogging", "Blazor", "DotNet"]
 category="tech"
 keywords = ["", ""]
 description =  "Back to Blogging"
-summary = "Back to Blogging"
 showFullContent = false
 readingTime = true
 copyright = false

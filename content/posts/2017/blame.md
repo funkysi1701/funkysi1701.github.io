@@ -10,7 +10,6 @@ tags = ["Blame", "Culture", "DevOps",  "SoftSkills"]
 category="tech"
 keywords = ["", ""]
 description =  "Blame"
-summary = "Blame"
 showFullContent = false
 readingTime = true
 copyright = false

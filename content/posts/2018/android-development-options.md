@@ -11,7 +11,6 @@ tags = ["Cordova", "Android", "Cross Platform", "Manifest", "Xamarin"]
 category="tech"
 keywords = ["", ""]
 description = "Android Development Options"
-summary = "Android Development Options"
 showFullContent = false
 readingTime = true
 aliases = [

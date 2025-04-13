@@ -10,7 +10,6 @@ tags = ["Git", "SourceCode","Source Control",  "C-Sharp"]
 category="tech"
 keywords = ["", ""]
 description =  "What should be in Source Control?"
-summary = "What should be in Source Control?"
 showFullContent = false
 readingTime = true
 copyright = false

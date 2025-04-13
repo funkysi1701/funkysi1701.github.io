@@ -11,7 +11,6 @@ tags = ["ITAdmin", "StarTrek", "Podcast"]
 category="tech"
 keywords = ["", ""]
 description =  "Podcasts"
-summary = "Podcasts"
 showFullContent = false
 readingTime = true
 copyright = false
