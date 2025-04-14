@@ -1,5 +1,5 @@
 +++
-title = "Adding Open Telemetry Logs to Grafana"
+title = "Integrating OpenTelemetry Logs with Grafana Using Loki and Alloy"
 date = "2025-04-14T20:00:00Z"
 year = "2025"
 month= "2025-04"
@@ -7,9 +7,9 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/social-ai.png"
 images =['/images/social-ai.png']
-tags = []
+tags = ["OpenTelemetry", "Grafana", "Loki", "Alloy", "Logging", "Monitoring", "Docker", "DotNet", "Tech"]
 category="tech"
-description = ""
+description = "Learn how to integrate OpenTelemetry logs with Grafana using Loki and Alloy for efficient log aggregation and monitoring in your .NET applications."
 showFullContent = false
 readingTime = true
 copyright = false
