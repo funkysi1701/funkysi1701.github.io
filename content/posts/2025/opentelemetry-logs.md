@@ -49,12 +49,7 @@ The `docker-compose.yml` file defines the services for Loki and Alloy. Here's wh
 
 ```docker-compose.yml
 # Docker Compose configuration for Loki and Alloy
-  loki:
-    image: grafana/loki:3.4.3
-    container_name: monitoring_loki2
-    ports:
-      - "3100:3100" # Expose Loki on port 3100
-    command: -config.file=/etc/loki/local-config.yaml    
+    command: -config.file=/etc/loki/local-config.yaml # Specifies the configuration file for Loki
 
   alloy:
     image: grafana/alloy:v1.8.1
