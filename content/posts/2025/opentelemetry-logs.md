@@ -65,13 +65,12 @@ The `docker-compose.yml` file defines the services for Loki and Alloy. Here's wh
       - 4319:4318   # HTTP endpoint for OpenTelemetry
     volumes:
       - ./config.alloy:/etc/alloy/config.alloy # Mount Alloy configuration
-      - /var/run/docker.sock:/var/run/docker.sock # Access Docker socket
     command: run --server.http.listen-addr=0.0.0.0:12345 --storage.path=/var/lib/alloy/data /etc/alloy/config.alloy
     depends_on:
       - loki
 ```
 
-Both Loki and Alloy have config files so let's have a look at them as well.
+Here is the config file for Alloy.
 
 ```alloy.config
 otelcol.receiver.otlp "default" {
