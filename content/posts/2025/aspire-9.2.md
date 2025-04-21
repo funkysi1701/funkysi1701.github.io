@@ -1,25 +1,25 @@
 +++
-title = ".Net Aspire 9.2 improvements"
+title = "What's New in .NET Aspire 9.2: Infrastructure Diagrams Made Easy"
 date = "2025-04-21T20:00:00Z"
 year = "2025"
 month= "2025-04"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/exceptions.png"
-images =['/images/exceptions.png']
-tags = []
+cover = "/images/work.PNG"
+images =['/images/work.PNG']
+tags = ["DotNet", "Aspire", "Infrastructure Diagrams", "Visual Studio", "Docker", "Microservices", "Grafana", "Programming"]
 category="tech"
-description = ""
+description = "Explore the new features in .NET Aspire 9.2, including the ability to create infrastructure diagrams effortlessly with simple code examples."
 showFullContent = false
 readingTime = true
 copyright = false
 featured = false
 draft = false
 aliases = [
-    "/aspire-9.2",
-    "/posts/aspire-9.2",
-    "/posts/2025/04/21/aspire-9.2",
-    "/2025/04/21/aspire-9.2" 
+    "/what-is-new-in-aspire-9.2",
+    "/posts/what-is-new-in-aspire-9.2",
+    "/posts/2025/04/21/what-is-new-in-aspire-9.2",
+    "/2025/04/21/what-is-new-in-aspire-9.2" 
 ]
 +++
 .Net Aspire 9.2 is available now. For details of what .Net Aspire is, check out my [post](/posts/2024/aspire) from last year. For the official announcement see [What's new in .NET Aspire 9.2](https://learn.microsoft.com/en-us/dotnet/aspire/whats-new/dotnet-aspire-9.2)
@@ -70,7 +70,7 @@ The parameters for **AddContainer()** are a name that gets displayed on the diag
 
 At my work we use a microservice architecture so I thought it might be fun to try and map out what calls what:
 
-![](/images/work.png)
+![Work Architecture](/images/work.PNG)
 
 I made a start mapping a few of our services, but this doesn't cover everything and I have replaced the names of the services so no commerical secrets can be identified. I was surprised at how complex the system is.
 
