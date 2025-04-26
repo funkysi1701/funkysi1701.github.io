@@ -34,7 +34,7 @@ During the demonstration Oliver used a language called scala and a system that a
 
 A bit of googling and configuring I can answer this as Yes.
 
-The nuget package called [Giles](https://testergiles.herokuapp.com/) is a watcher which will rerun your tests similar to how Oliver did it with his scalar environment. Fans of Buffy the Vampire Slayer will get the joke of why a watcher is called Giles. I couldn’t get this to work with MSTest but works fine with NUnit. There is a powershell script giles.ps1 which you need to run and will update every so often with how many tests have passed or failed. However you may not see this if you are coding in Visual Studio but there is a way to get a notification.
+The nuget package called [Giles](https://github.com/codereflection/Giles) is a watcher which will rerun your tests similar to how Oliver did it with his scalar environment. Fans of Buffy the Vampire Slayer will get the joke of why a watcher is called Giles. I couldn’t get this to work with MSTest but works fine with NUnit. There is a powershell script giles.ps1 which you need to run and will update every so often with how many tests have passed or failed. However you may not see this if you are coding in Visual Studio but there is a way to get a notification.
 
 If you install the application Growl you can get notifications from Giles which pop up and then disappear. So whatever you have on screen you can find out almost instantly if you have broken tests.
 
