@@ -20,4 +20,4 @@ jobs:
         continue-on-error: true
         run: docker stop hugo                  
       - name: hugo
-        run: docker run --name hugo -d --rm -v .:/src -p 1313:1313 floryn90/hugo:0.146.3 server -D --config config-dev.toml --buildFuture --baseUrl="http://server05.local:1313/"
+        run: docker run --name hugo -d --rm -v .:/src -p 1313:1313 floryn90/hugo:0.119.0 server -D --config config-dev.toml --buildFuture --baseURL="http://server05.local:1313/"
