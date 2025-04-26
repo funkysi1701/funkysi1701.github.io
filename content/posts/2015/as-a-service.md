@@ -77,8 +77,4 @@ This is where the management of who you are is managed in the cloud. Single Sign
 
 You get the idea now, storing files on a remote cloud product is an example of Storage as a Service. DropBox or OneDrive are good examples of this.
 
-**FoaaS F Off As a Service**
-
-.NetRocks mentioned this a few weeks ago and is a joke As a Service. http://foaas.herokuapp.com/ The idea is that you can use this service to tell people to F off.
-
 Writing this blog post has given me a better understanding of all the aaS that are out there. I am sure I haven’t explained some of these very well and no doubt missed some off.
