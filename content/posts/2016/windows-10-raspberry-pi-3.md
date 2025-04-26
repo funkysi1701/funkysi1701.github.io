@@ -33,7 +33,7 @@ But first what did I learn.
 
 I had heard that a cut down version of Windows 10 could be installed on the newer Raspberry Pi’s, but I hadn’t really understood how cut down the version of windows is. Having now seen it demonstrated the OS consists of a single page with a few menu options.
 
-The real power of Windows 10 IoT is when you connect remotely to it. There are a couple of ways to do this, PowerShell (check out https://ms-iot.github.io/content/en-US/win10/tools/CommandLineUtils.htm for a few commands), and of course connecting Visual Studio to your Pi.
+The real power of Windows 10 IoT is when you connect remotely to it. There are a couple of ways to do this, PowerShell (check out https://github.com/MicrosoftDocs/windows-iotcore-docs/blob/main/windows-iotcore/manage-your-device/CommandLineUtils.md for a few commands), and of course connecting Visual Studio to your Pi.
 
 When I had previously played with a Pi, it had been with bash scripts and linux commands. The beauty of installing Windows IoT is that you can write c# code, something I do in my day job so theoretically I should find it easier.
 
