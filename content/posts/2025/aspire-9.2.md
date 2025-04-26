@@ -5,8 +5,8 @@ year = "2025"
 month= "2025-04"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/work.PNG"
-images =['/images/work.PNG']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/work.PNG"
+images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/work.PNG']
 tags = ["DotNet", "Aspire", "Infrastructure Diagrams", "Visual Studio", "Docker", "Microservices", "Grafana", "Programming"]
 category="tech"
 description = "Explore the new features in .NET Aspire 9.2, including the ability to create infrastructure diagrams effortlessly with simple code examples."
@@ -28,12 +28,13 @@ For details of what .NET Aspire is, check out my [post](/posts/2024/aspire) from
 
 My favourite feature from this release is the ability to quickly and easily spin up infrastructure diagrams like this:
 
-![Aspire Diagram](/images/aspire-9.2.jpg)
+![Aspire Diagram](https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/aspire-9.2.jpg)
+
 *An example infrastructure diagram created using .NET Aspire 9.2.*
 
 I also created one last week for my blog about [Grafana](/posts/2025/opentelemetry-logs/):
 
-![Grafana Example](/images/grafana-loki-arch.png)
+![Grafana Example](https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/grafana-loki-arch.png)
 
 ## So what code is needed to create one of these diagrams?
 
@@ -78,7 +79,8 @@ The parameters for **AddContainer()** are a name that gets displayed on the diag
 
 At my work we use a microservice architecture so I thought it might be fun to try and map out what calls what:
 
-![Work Architecture](/images/work.PNG)
+![Work Architecture](https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/work.PNG)
+
 *A simplified view of a microservices architecture at work (service names anonymized).*
 
 I made a start mapping a few of our services, but this doesn't cover everything and I have replaced the names of the services so no commerical secrets can be identified. I was surprised at how complex the system is.
