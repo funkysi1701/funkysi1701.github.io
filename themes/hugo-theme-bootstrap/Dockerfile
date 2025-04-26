@@ -14,7 +14,7 @@ RUN hugo version
 RUN cd /src/exampleSite && hugo --themesDir=../../ --theme=src -b ${HUGO_BASEURL}
 
 # Final stage
-FROM nginx:1.27.5
+FROM nginx:1.28.0
 COPY --from=builder /src/exampleSite/public /app
 COPY ./docker/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 RUN useradd -U -u 1000 appuser && \
