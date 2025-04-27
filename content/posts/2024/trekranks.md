@@ -6,8 +6,8 @@ month= "2024-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = "/images/TrekRanks-ep174.jpg"
-images =['/images/TrekRanks-ep174.jpg']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/TrekRanks-ep174.jpg"
+images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/TrekRanks-ep174.jpg']
 tags = ["StarTrek", "Podcast", "TrekRanks" ]
 category="trek"
 keywords = ["", ""]

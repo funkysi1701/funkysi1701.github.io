@@ -5,8 +5,8 @@ year = "2022"
 month= "2022-06"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/mermaid2.png"
-images = ['/images/mermaid2.png']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/mermaid2.png"
+images = ['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/mermaid2.png']
 tags = ["github", "mermaid", "documentation"]
 category="tech"
 description = "Learn how to create diagrams from code and text using Mermaid. This guide covers the basics of Mermaid, how to integrate it into your projects, and tips for generating clear and effective diagrams for your documentation."

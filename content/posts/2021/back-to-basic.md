@@ -5,8 +5,8 @@ year = "2021"
 month= "2021-12"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/FHi_NyOXEAo9YbG.jfif"
-images = ['/images/FHi_NyOXEAo9YbG.jfif']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/FHi_NyOXEAo9YbG.jfif"
+images = ['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/FHi_NyOXEAo9YbG.jfif']
 tags = ["BASIC", "History", "Lynx"]
 category="tech"
 keywords = ["", ""]
