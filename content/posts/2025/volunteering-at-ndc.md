@@ -5,8 +5,8 @@ year = "2025"
 month= "2025-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/ndc-simon.jpg"
-images =['/images/ndc-simon.jpg']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/ndc-simon.jpg"
+images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/ndc-simon.jpg']
 tags = ["NDC London", "Volunteering", "Conference", "DotNet", "Tech Events", "Networking", "Software Development"]
 category="tech"
 description = "Read about my experience volunteering at NDC London, meeting great people, and learning a lot at this premier software development conference."
@@ -44,7 +44,7 @@ It was an early morning, we needed to be at the venue for 7 am, ready to welcome
 
 For my afternoon duties, I needed to report back when the speaker had arrived and count up the number of green/amber/red cards for the session. At NDC feedback for the different speakers is submitted by the attendees by putting cards of different colours in a box. Green for good, amber for ok, red for bad. Throughout the different talks I attended there was always a good proportion of green cards, indicating the high quality of the speakers at NDC.
 
-<img src="/images/ndc-simon.jpg" alt="The NDC Volunteers" width="250px" style="float:left;padding-right: 15px; " />
+<img src="https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/ndc-simon.jpg" alt="The NDC Volunteers" width="250px" style="float:left;padding-right: 15px; " />
 
 Wearing a purple NDC Crew hoodie, gave me a certain amount of confidence, I walked among many of the sponsors and chatted to a few. Elastic Search had a stall, and I mentioned my recent experience at work with them. At some conferences, I can feel a bit out of place, but at NDC being a volunteer, I had an automatic group of friends to chat to, the other volunteers, and this also helped me speak with one or two of the speakers. I enjoyed saying hello to Richard Campbell, who I had listened to on the .Net Rocks and RunAs Radio podcasts for years. I told him he had sent me a mug, and he mentioned it was a collector's item now.
 

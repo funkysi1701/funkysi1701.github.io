@@ -5,8 +5,8 @@ year = "2024"
 month= "2024-11"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/bot-01.png"
-images =['/images/bot-01.png']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/bot-01.png"
+images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/bot-01.png']
 tags = ["DotNet", "Blazor", "EFCore", "C-Sharp", "Visual Studio", "Aspire", "AI", "OpenTelemetry", ".NET 9", "Microsoft"]
 category="tech"
 description =  "Discover the new features and improvements in .NET 9, including updates to Visual Studio, Aspire, Blazor, AI integrations, and more. Learn how to upgrade smoothly and enhance your development experience."

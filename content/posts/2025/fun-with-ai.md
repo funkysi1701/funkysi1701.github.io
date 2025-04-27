@@ -5,8 +5,8 @@ year = "2025"
 month= "2025-04"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/ai-version-of-me.png"
-images =['/images/ai-version-of-me.png']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/ai-version-of-me.png"
+images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/ai-version-of-me.png']
 tags = ["AI", "ChatGPT", "Image Generation", "Fun with AI", "Technology", "Creativity", "Machine Learning"]
 category="tech"
 description = "Exploring ChatGPT's image generation features with a fun action figure prompt and creative results. Check out the AI-generated version of me!"
@@ -53,10 +53,10 @@ This figure should look like a premium toy and everything should be inside the p
   </tr>
   <tr style="border-width:0px 0px 0px 0px">
     <td style="border-width:0px 0px 0px 0px">
-      <img src="/images/ndc-simon.jpg" alt="A picture of me as the source image" width="300" height="400" class="img-fluid" />
+      <img src="https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/ndc-simon.jpg" alt="A picture of me as the source image" width="300" height="400" class="img-fluid" />
     </td>
     <td style="border-width:0px 0px 0px 0px">
-      <img src="/images/ai-version-of-me.png" alt="AI generated version of me" width="300" height="400" class="img-fluid" />
+      <img src="https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/ai-version-of-me.png" alt="AI generated version of me" width="300" height="400" class="img-fluid" />
     </td>
   </tr>
 </table>

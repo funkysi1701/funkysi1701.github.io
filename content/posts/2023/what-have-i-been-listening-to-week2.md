@@ -6,8 +6,8 @@ month= "2023-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = "/images/872.jpg"
-images = ['/images/872.jpg']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/872.jpg"
+images = ['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/872.jpg']
 tags = ["Podcast", "Leadership", "Open Source", "StarTrek", "Mastodon", "Tests"]
 category="tech"
 keywords = ["", ""]
