@@ -23,7 +23,7 @@ aliases = [
     "/2016/03/24/revisiting-teamcity"
 ]
 +++
-Last year I blogged about [Team City](http://www.funkysi1701.com/2015/04/01/teamcity/), well I have been looking at it again recently. In that time they have even changed their logo!
+Last year I blogged about [Team City](https://www.funkysi1701.com/2015/04/01/teamcity/), well I have been looking at it again recently. In that time they have even changed their logo!
 
 Lets start with thinking about what I want my Continuous Integration server to do.
 

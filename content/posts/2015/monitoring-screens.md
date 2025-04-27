@@ -23,7 +23,7 @@ aliases = [
     "/2015/03/25/monitoring-screens"
 ]
 +++
-We all know that it is important to monitor your servers and services, so you can spot issues before they become problems. I personally have spent a lot of time configuring [nagios](http://www.funkysi1701.com/2014/09/24/i-love-nagios/) to email me about issues and I have recently been configuring various different alerts in Azure.
+We all know that it is important to monitor your servers and services, so you can spot issues before they become problems. I personally have spent a lot of time configuring [nagios](https://www.funkysi1701.com/2014/09/24/i-love-nagios/) to email me about issues and I have recently been configuring various different alerts in Azure.
 
 My old boss has this idea that I should have a big monitor screen displaying all the vital stats of my servers and services, I personally disagree with this idea and think that notifications on my phone and email alerts are sufficient. He will no doubt correct my thinking when he reads this, but I believe part of his thinking is to make the monitoring of your infrastructure move visible and make it obvious to anyone that walks past that you have your eye on everything.
 
