@@ -2,7 +2,7 @@
 {{- $icons := slice -}}
 {{- $iconSizes := slice "48x48" "72x72" "96x96" "144x144" "168x168" "192x192" "256x256" "512x512" -}}
 {{- range $iconSizes -}}
-    {{- $icons = $icons | append (dict "src" (printf "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/icons/icon-%s.png" . | absURL) "sizes" .) -}}
+    {{- $icons = $icons | append (dict "src" (printf "/images/icons/icon-%s.png" . | absURL) "sizes" .) -}}
 {{- end -}}
 {{- $params = merge $params (dict "icons" $icons) -}}
 {{- with $.Site.Params.pwa.manifest -}}
