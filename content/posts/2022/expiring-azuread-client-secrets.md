@@ -5,8 +5,8 @@ year = "2022"
 month= "2022-10"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/AzureADSecret.png"
-images = ['/images/AzureADSecret.png']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/AzureADSecret.png"
+images = ['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/AzureADSecret.png']
 tags = ["DotNet", "Azure", "Active Directory", "Secret"]
 category="tech"
 description = "Learn how to handle expiring Azure AD client secrets in your applications. This guide covers troubleshooting steps, best practices for managing client secrets, and how to avoid common pitfalls to ensure your applications remain secure and functional."
