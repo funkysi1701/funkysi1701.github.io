@@ -3,13 +3,13 @@
   "short_name": "Funky Si's Blog",
   "icons": [
     {
-      "src": "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/icons/web-app-manifest-192x192.png",
+      "src": "https://www.funkysi1701.com/cdn-cgi/image/width=192,quality=75/images/icons/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/icons/web-app-manifest-512x512.png",
+      "src": "https://www.funkysi1701.com/cdn-cgi/image/width=512,quality=75/images/icons/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
