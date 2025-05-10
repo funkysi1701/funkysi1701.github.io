@@ -102,4 +102,4 @@ Now if I try http://localhost:3000/login I see the login page for the grafana co
 
 ## Whats next?
 
-I want to replace my local deployment of containers that is currently using a docker compose file with kubernetes. I also want to learn more about [Helm charts](https://helm.sh/) as I believe this will help
+I want to replace my local deployment of containers that is currently using a docker compose file with kubernetes. I also want to learn more about [Helm charts](https://helm.sh/) as I believe these are an excellent way of packaging up changes to kubernetes.
