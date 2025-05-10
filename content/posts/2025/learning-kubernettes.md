@@ -57,7 +57,7 @@ This command allows you to switch contexts, to use with docker desktop you want 
 kubectl get all
 ```
 
-This gives you a list of everything that is running, pods, services, deployments etc
+This gives you a list of everything that is running in the default namespace, pods, services, deployments etc For a complete list, you can add the --all-namespaces flag.
 
 ## Hello World
 
@@ -78,7 +78,7 @@ spec:
         - containerPort: 3000
 ```
 
-This file uses the grafana container image, which I am familiar with (see [my previous blog posts](/posts/2025/setting-up-grafana/)) Its default port is 3000 which you can see is defined in this file. 
+This file uses the grafana container image, which I am familiar with (see [my previous blog posts](/posts/2025/setting-up-grafana/)) It's default port is 3000 which you can see is defined in this file. 
 
 ```powershell
 kubectl apply -f grafana.yaml
