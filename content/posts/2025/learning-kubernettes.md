@@ -28,7 +28,7 @@ I know nothing (or very little) about kubernetes. It is high time I do something
 
 Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. If you want to run your containerized applications, you probably want to learn kubernetes.
 
-I have worked at least two companies so far in my career that have made use of kubernetes to run their microservice architecture. Lets take a look at how to use it.
+I have worked at least two companies so far in my career that have made use of kubernetes to run their microservice architecture. Let's take a look at how to use it.
 
 ## Docker Desktop
 
