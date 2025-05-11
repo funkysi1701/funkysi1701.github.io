@@ -22,7 +22,7 @@ steps:
   #condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.SourceBranch'], 'refs/heads/develop')))
   inputs:
     script: |
-      docker-compose up
+      docker compose up
       docker login funkysi1701.azurecr.io --username funkysi1701 --password $(acrPassword)
       docker tag projectpyramidapi funkysi1701.azurecr.io/funkysi1701/bugo:$(Build.BuildNumber)
       docker push funkysi1701.azurecr.io/funkysi1701/projectpyramidapi:$(Build.BuildNumber)
