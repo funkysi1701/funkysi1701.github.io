@@ -1,0 +1,29 @@
+---
+variables:
+  - name: Build.Number.Major
+    value: 9
+  - name: Build.Number.Minor
+    value: 4
+  - name: Build.Number.Sub
+    value: 1
+  - name: BuildNumber
+    value: $(Build.BuildNumber)
+
+name: $(Build.Number.Major).$(Build.Number.Minor).$(Build.Number.Sub).$(Rev:r)
+
+trigger:
+- develop
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: CmdLine@2
+  displayName: "publish to ACR"
+  condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.SourceBranch'], 'refs/heads/develop')))
+  inputs:
+    script: |
+      docker-compose up
+      docker login funkysi1701.azurecr.io --username funkysi1701 --password $(acrPassword)
+      docker tag projectpyramidapi funkysi1701.azurecr.io/funkysi1701/bugo:$(Build.BuildNumber)
+      docker push funkysi1701.azurecr.io/funkysi1701/projectpyramidapi:$(Build.BuildNumber)
