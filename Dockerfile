@@ -11,4 +11,4 @@ COPY . /src
 EXPOSE 1313
 
 # Run the Hugo server in development mode
-CMD ["server", "-D", "--bind", "0.0.0.0", "--disableFastRender", "--buildFuture"]
+CMD ["server", "-D", "--bind", "0.0.0.0", "--disableFastRender", "--buildFuture", "--baseURL", "$HUGO_BASE_URL"]
