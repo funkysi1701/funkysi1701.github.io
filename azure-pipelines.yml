@@ -19,7 +19,7 @@ pool: Docker
 steps:
 - task: CmdLine@2
   displayName: "publish to ACR"
-  #condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.SourceBranch'], 'refs/heads/develop')))
+  condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.SourceBranch'], 'refs/heads/develop')))
   inputs:
     script: |
       docker compose -f docker-compose-prod.yml up -d
