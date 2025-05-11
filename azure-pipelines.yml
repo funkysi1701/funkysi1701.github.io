@@ -22,9 +22,7 @@ steps:
   condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.SourceBranch'], 'refs/heads/develop')))
   inputs:
     script: |
-      docker compose -f docker-compose-prod.yml up -d
-      echo $(Build.BuildNumber)
+      docker build -t blog .
       docker login funkysi1701.azurecr.io --username funkysi1701 --password $(acrPassword)
-      docker tag floryn90/hugo:0.119.0 funkysi1701.azurecr.io/funkysi1701/blog:$(Build.BuildNumber)
+      docker tag blog funkysi1701.azurecr.io/funkysi1701/blog:$(Build.BuildNumber)
       docker push funkysi1701.azurecr.io/funkysi1701/blog:$(Build.BuildNumber)
-      docker compose -f docker-compose-prod.yml down
