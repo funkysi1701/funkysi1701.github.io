@@ -22,7 +22,8 @@ A list of events I have attended or am planning to attend (no guarantee that I w
 
 | Event/Talk | Date | Location |
 | --- | --- | --- |
-| *SteelCon*  | *12 July 2025*     | *Sheffield* |
+| Coastal 10K | 21 September 2025 | Cleethorpes |
+| Normanby Hall 10k | 13 July 2025 | Normanby Hall |
 | DDD North | 22 February 2025 | Hull      |
 | [NDC London](https://www.funkysi1701.com/posts/2025/volunteering-at-ndc/)  | 29-31 January 2025 | London      |
 | [Night Walk](https://runforwildlife.com/run-for-wildlife-night-5k) | 4 January 2025 | Yorkshire Wildlife Park |
@@ -35,7 +36,6 @@ A list of events I have attended or am planning to attend (no guarantee that I w
 | Code Club | 16 November 2024 | Leeds Library |
 | [Code Club](/posts/2024/codeclub) | 2 November 2024 | Leeds Library |
 | Scottish Summit | 17/19 October 2024 | Aberdeen |
-| ~~SteelCon~~ | ~~20 July 2024~~ | ~~Sheffield~~ |
 | [Charity Walk](/charity-hike) | 8 June 2024 | Peak District |
 | DDD North | 2 March 2024 | Hull |
 
