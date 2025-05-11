@@ -14,13 +14,12 @@ name: $(Build.Number.Major).$(Build.Number.Minor).$(Build.Number.Sub).$(Rev:r)
 trigger:
 - develop
 
-pool:
-  vmImage: ubuntu-latest
+pool: Docker
 
 steps:
 - task: CmdLine@2
   displayName: "publish to ACR"
-  condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.SourceBranch'], 'refs/heads/develop')))
+  #condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.SourceBranch'], 'refs/heads/develop')))
   inputs:
     script: |
       docker-compose up
