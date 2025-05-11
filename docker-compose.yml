@@ -1,5 +1,5 @@
 services:
-  app:
+  blog:
     image: floryn90/hugo:0.119.0
     ports:
       - "1313:1313" # Map container port 1313 to host port 1313
