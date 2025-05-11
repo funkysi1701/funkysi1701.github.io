@@ -23,6 +23,7 @@ steps:
   inputs:
     script: |
       docker compose up -d
+      echo $(Build.BuildNumber)
       docker login funkysi1701.azurecr.io --username funkysi1701 --password $(acrPassword)
       docker tag s-blog-1 funkysi1701.azurecr.io/funkysi1701/s-blog-1:$(Build.BuildNumber)
       docker push funkysi1701.azurecr.io/funkysi1701/funkysi1701/s-blog-1:$(Build.BuildNumber)
