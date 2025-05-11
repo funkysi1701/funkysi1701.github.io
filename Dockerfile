@@ -10,5 +10,6 @@ COPY . /src
 # Expose the default Hugo server port
 EXPOSE 1313
 
+ENV baseURL="http://localhost"
 # Run the Hugo server in development mode
-CMD ["server", "-D", "--bind", "0.0.0.0", "--disableFastRender", "--buildFuture", "--baseURL", "$HUGO_BASE_URL"]
+CMD ["server", "-D", "--bind", "0.0.0.0", "--disableFastRender", "--buildFuture"]
