@@ -1,14 +1,29 @@
-# Use the official Hugo image as the base image
-FROM floryn90/hugo:0.119.0
+# Step 1: Build the Hugo site
+FROM floryn90/hugo:0.119.0 AS builder
 
-# Set the working directory inside the container
+# Set working directory inside the container
 WORKDIR /src
 
-# Copy the entire project into the container
-COPY . /src
+# Copy site files to the container
+COPY . .
 
-# Expose the default Hugo server port
-EXPOSE 1313
+# Build the Hugo site
+RUN hugo --minify --config config-dev.toml --buildFuture
 
-# Run the Hugo server in development mode
-CMD ["server", "-D", "--bind", "0.0.0.0", "--disableFastRender", "--buildFuture", "--baseURL", "http://server05.local:30081"]
+# Step 2: Serve with nginx
+FROM nginx:alpine
+
+# Remove the default nginx static files
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy the generated site from the builder stage
+COPY --from=builder /src/public /usr/share/nginx/html
+
+# Copy custom nginx config (optional)
+# COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose port 80
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
