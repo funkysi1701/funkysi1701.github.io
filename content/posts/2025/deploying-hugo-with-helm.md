@@ -9,7 +9,7 @@ cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/h
 images = ["https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/helm-hugo.png"]
 tags = ["Kubernetes", "Helm", "DevOps", "Hugo", "Blog", "Deployment"]
 category = "tech"
-description = "Learn how to deploy a Hugo static site blog to Kubernetes using Helm charts for easy, repeatable, and configurable deployments."
+description = "Learn how to deploy a Hugo blog to Kubernetes using Helm charts for easy, repeatable, and configurable deployments."
 showFullContent = false
 readingTime = true
 copyright = false
