@@ -5,8 +5,8 @@ year = "2025"
 month= "2025-05"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/kubernetes.png"
-images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/kubernetes.png']
+cover = "/images/kubernetes.png"
+images =['/images/kubernetes.png']
 tags = ["Kubernetes", "Docker", "Grafana", "Container Orchestration", "DevOps", "Microservices"]
 category="tech"
 description = "A beginner's journey into Kubernetes: Learn how to deploy containers, use kubectl, and run a Grafana pod with simple YAML configurations."

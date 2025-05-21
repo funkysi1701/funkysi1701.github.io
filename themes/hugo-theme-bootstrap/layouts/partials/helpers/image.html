@@ -63,6 +63,13 @@
   {{- $link = $img.Permalink -}}
 {{- end -}}
 
-<img class="{{ $className }}" alt="{{ .alt }}" src="{{ $link }}" loading="lazy"
+{{- if eq site.BaseURL "https://www.funkysi1701.com/" -}}
+  <img class="{{ $className }}" alt="{{ .alt }}" src="https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75{{ $link }}" loading="lazy"
   {{ with $img }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}
   {{ if and (not (and $pageResource $resizable)) (or $width $height) }}style="{{ with $width }}width: {{ . }}; {{ end }}{{ with $height }}height: {{ . }}{{ end }}"{{ end }} />
+{{- else }}
+  <img class="{{ $className }}" alt="{{ .alt }}" src="{{ $link }}" loading="lazy"
+  {{ with $img }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}
+  {{ if and (not (and $pageResource $resizable)) (or $width $height) }}style="{{ with $width }}width: {{ . }}; {{ end }}{{ with $height }}height: {{ . }}{{ end }}"{{ end }} />
+{{- end -}}
+
