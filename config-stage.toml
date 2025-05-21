@@ -19,6 +19,7 @@ googleAnalytics = ""
   images = ["https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg"]
   themeColor = "theme-base-0d"
   logo = false
+  cdnImagePrefix = ""
 
 [taxonomies]
   year = "year"
