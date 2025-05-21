@@ -100,7 +100,7 @@ WORKDIR /src
 COPY . .
 
 # Build the Hugo site
-RUN hugo --minify --config config.toml --buildFuture
+RUN hugo --minify --config config.toml
 
 # Step 2: Serve with nginx
 FROM nginx:alpine
