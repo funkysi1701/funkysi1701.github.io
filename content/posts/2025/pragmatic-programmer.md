@@ -5,8 +5,8 @@ year = "2025"
 month= "2025-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/tpp.jpg"
-images =['/images/tpp.jpg']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/tpp.jpg"
+images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/tpp.jpg']
 tags = ["Pragmatic Programmer", "Book Review", "Programming", "Software Development", "Best Practices", "Tech"]
 category="tech"
 description = "'The Pragmatic Programmer' with key takeaways and tips for improving your programming skills and practices."

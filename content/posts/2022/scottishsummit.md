@@ -5,8 +5,8 @@ year = "2022"
 month= "2022-06"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/scottishsummit.jpg"
-images = ['/images/scottishsummit.jpg']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/scottishsummit.jpg"
+images = ['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/scottishsummit.jpg']
 tags = ["conference", "microsoft", "community"]
 category="tech"
 description =  "On the 10th and 11th June 2022 Scottish Summit 2022 happened and I was there."
@@ -33,7 +33,7 @@ On Thursday 9th I travelled down on the train full of excitement about the event
 
 The hotel was less then 5 mins walk to the conference, which was being held at the Technology and Innovation Centre, University of Strathclyde. Registration was simple wave your tickets (which were free, apart from a contribution to charity), and you get your badge and a wrist band. (Pink for people contact, blue for hold back) I then got chatting to [Keith Atherton](https://twitter.com/MrKeithAtherton), who amazingly lived in part of the world where I grew up. (Amazing what you learn at conferences!)
 
-<img src="/images/scottishsummit.jpg" align="left" >Time for the Keynote talk. Which of course because we are in scotland was introduced by bagpipes marching through the room! The talk was given by [Connell McGinley](https://twitter.com/cmcginley) and was titled Disability Awareness & Inclusivity. This talk was amazing. Connell is deaf and gave the entire talk with sign language and this was translated for the rest of us to hear. Connell talked about his career and the barriers he faced. Microsoft Teams was an amazing improvement to his work life, as the captioning allowed him to talk with customers for the first time!
+<img src="https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/scottishsummit.jpg" align="left" >Time for the Keynote talk. Which of course because we are in scotland was introduced by bagpipes marching through the room! The talk was given by [Connell McGinley](https://twitter.com/cmcginley) and was titled Disability Awareness & Inclusivity. This talk was amazing. Connell is deaf and gave the entire talk with sign language and this was translated for the rest of us to hear. Connell talked about his career and the barriers he faced. Microsoft Teams was an amazing improvement to his work life, as the captioning allowed him to talk with customers for the first time!
 
 The purple pound is the amount of spending power people with some kind of disability (15% of the worlds population) have and it is approx $13 trillion. If businesses can open their products up to more people it is a win for everyone. This was a really powerful way to open up the conference.
 

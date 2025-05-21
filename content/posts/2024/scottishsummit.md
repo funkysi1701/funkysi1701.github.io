@@ -5,8 +5,8 @@ year = "2024"
 month= "2024-10"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/scottishsummit.jpg"
-images = ['/images/scottishsummit.jpg']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/scottishsummit.jpg"
+images = ['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/scottishsummit.jpg']
 tags = ["conference", "microsoft", "community"]
 category="tech"
 description =  "Scottish Summit 2024 took place in Aberdeen on October 18th and 19th at the P&J Live Arena, and I was fortunate enough to attend."
@@ -35,7 +35,7 @@ Scott Hanselman was the keynote speaker, and I spotted him mingling with other a
 
 Next, MVP Vesa Nopanen delivered his talk on "Supercharge Your Teams Meetings." I picked up some valuable tips, particularly the importance of adding notes and agendas to enhance meeting effectiveness.
 
-<img src="/images/GaKpRZ3WIAAFsIW.jpg" style="padding-right: 7px" align="left" /> Following that, a couple of the Scottish Summit organizers discussed the technology behind the event. They explained how they used Stripe for payments, integrating it with Power Automate and Power Pages. I found this particularly interesting for a charity event; it demonstrated a commitment to learning while keeping costs manageable.
+<img src="https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/GaKpRZ3WIAAFsIW.jpg" style="padding-right: 7px" align="left" /> Following that, a couple of the Scottish Summit organizers discussed the technology behind the event. They explained how they used Stripe for payments, integrating it with Power Automate and Power Pages. I found this particularly interesting for a charity event; it demonstrated a commitment to learning while keeping costs manageable.
 
 The next session explored what it means to be a modern full-stack software developer, focusing on integrating Power Apps with traditional web development. As someone new to Power Apps, I learned that starting with it can be beneficial, filling gaps with .NET or conventional web development as needed.
 
@@ -51,7 +51,7 @@ Saturday kicked off with a dive into the world of wizards and D&D in a session t
 
 Another engaging talk, "Community - It Just Makes Sense," highlighted the tech community's role in career development. I realized that I’ve only just scratched the surface of community involvement, and I’m eager to explore it further.
 
-<img src="/images/GaP4xTOW0AA6VHI.jpg" style="padding-left: 7px" align="right" /> 
+<img src="https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/GaP4xTOW0AA6VHI.jpg" style="padding-left: 7px" align="right" /> 
 
 Sarah Lean returned to discuss KQL (Kusto Query Language), which Application Insights uses for querying data. Although I've encountered KQL before, learning more about it was fascinating.
 
@@ -69,4 +69,4 @@ I left feeling inspired to become more involved in the community and participate
 
 And yes, I caught a glimpse of Scott Hanselman, which was quite a thrill!
 
-<img src="/images/GaKSNJeXwAA-xyr.jpg" style="padding-right: 7px" align="left" />
+<img src="https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/GaKSNJeXwAA-xyr.jpg" style="padding-right: 7px" align="left" />

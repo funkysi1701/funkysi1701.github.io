@@ -30,7 +30,7 @@ Unfortunately I am running SQL Server 2005 so this process will not work for me 
 
 The next thing I tried was [Microsoft SQL Server Backup to Microsoft Azure Tool](https://www.microsoft.com/en-us/download/details.aspx?id=40740&WT.mc_id=Blog_SQL_Announce_DI). Unfortunately I did not get this tool to work correctly on my setup. However it sounds like a flexible tool that allows compression and encryption of your backup files. This tool redirects your backup files to your Azure Storage so even if I had got it to work correctly it would not have been an ideal solution as I want local copies of my backup files as well.
 
-After this I started to look at powershell again. Following on from my recent success with [powershell](http://www.funkysi1701.com/2015/10/01/copying-settings-to-an-azure-website/) I know how to connect to my Azure account so all I needed to script was copying a file from my server to Azure.
+After this I started to look at powershell again. Following on from my recent success with [powershell](https://www.funkysi1701.com/2015/10/01/copying-settings-to-an-azure-website/) I know how to connect to my Azure account so all I needed to script was copying a file from my server to Azure.
 
 ```
 Get-ChildItem *.bak -File -Recurse | Set-AzureStorageBlobContent -Container $DestContainer -Force

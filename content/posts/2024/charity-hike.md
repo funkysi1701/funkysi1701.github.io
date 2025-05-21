@@ -6,8 +6,8 @@ month= "2024-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = "/images/fsi-hike.jpg"
-images =['/images/fsi-hike.jpg']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/fsi-hike.jpg"
+images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/fsi-hike.jpg']
 tags = [ ]
 category=""
 keywords = ["", ""]
@@ -22,7 +22,7 @@ On June 8th I will walk 13 miles near Bakewell in the Peak District to raise £2
 
 ## So why am I doing this? ##
 
-<img src="/images/fsi-hike-route.png" alt="Hike Route" width="400px" style="float:left;padding-right:8px" />
+<img src="https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/fsi-hike-route.png" alt="Hike Route" width="400px" style="float:left;padding-right:8px" />
 I am a Software Developer in my day to day life, which does not involve a lot of physical activity. I have become very lazy. Doing a half marathon is completely outside of my comfort zone and is not at all a me thing to do.
 
 However last year I realised my mental health was starting to degrade. I have a family which keeps me very busy, I am facing lots of challenges with this, other members of my family have mental health issues which is starting to have a knock on affect on me.
