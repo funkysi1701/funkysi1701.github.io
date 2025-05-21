@@ -6,8 +6,8 @@ month= "2024-12"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = "/images/ai.jpeg"
-images =['/images/ai.jpeg']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/ai.jpeg"
+images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/ai.jpeg']
 tags = ["AI", "Copilot", "RAG", "LLM", "GPT", "Machine Learning", "Natural Language Processing"]
 category="tech"
 description = "Learn about common AI and Copilot terms, including detailed explanations of Retrieval-Augmented Generation (RAG), Large Language Models (LLM), and GPT."

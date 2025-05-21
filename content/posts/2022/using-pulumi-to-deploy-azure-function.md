@@ -5,7 +5,7 @@ year = "2022"
 month= "2022-08"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/scratch.png"
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/scratch.png"
 tags = ["Github", "Pulumi", "DevOps"]
 category="tech"
 description = "Learn how to use Pulumi to deploy Azure Functions. This guide covers the steps and best practices for leveraging Pulumi in your DevOps workflow."

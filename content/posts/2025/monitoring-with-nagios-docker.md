@@ -5,8 +5,8 @@ year = "2025"
 month= "2025-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/nagios.png"
-images =['/images/nagios.png']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/nagios.png"
+images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/nagios.png']
 tags = ["Nagios", "Docker", "Monitoring", "SysAdmin", "DevOps", "Network Monitoring"]
 category="tech"
 description = "Learn how to set up Nagios monitoring using Docker to monitor your local network. Follow this guide to get started with network monitoring in a container."
@@ -120,7 +120,7 @@ docker exec -it mynagioscontainer bin/nagios -v etc/nagios.cfg
 
 It may have been 10 years since I last looked at Nagios, but the UI hasn't changed much. Host are checked if they are Up or Down, and every Host can have a number of services associated with it and this are checked if they are Up or Down. 
 
-![Nagios UI](/images/nagios.png)
+![Nagios UI](https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/nagios.png)
 
 ## Conclusion
 
