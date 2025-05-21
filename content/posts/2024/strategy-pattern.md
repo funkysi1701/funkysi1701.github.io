@@ -5,8 +5,8 @@ year = "2024"
 month= "2024-11"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/flying-machine-blueprint-patent-john-malone.jpg"
-images =['/images/flying-machine-blueprint-patent-john-malone.jpg']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/flying-machine-blueprint-patent-john-malone.jpg"
+images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/flying-machine-blueprint-patent-john-malone.jpg']
 tags = ["design patterns", "architecture", "c-sharp"]
 category="tech"
 description = "Explore the Strategy Design Pattern, a powerful design pattern that allows you to define a family of algorithms, encapsulate each one, and make them interchangeable. Learn why it's useful and how to implement it in your projects."

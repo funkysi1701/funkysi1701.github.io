@@ -5,8 +5,8 @@ year = "2022"
 month= "2022-08"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/blocks.png"
-images = ['/images/blocks.png']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/blocks.png"
+images = ['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/blocks.png']
 tags = ["Scratch", "kids", "MakeCode", "Microbit"]
 category="tech"
 description = "Explore MakeCode and the BBC micro:bit. Learn how to introduce kids to programming with fun and interactive projects using these powerful tools."
@@ -26,7 +26,7 @@ aliases = [
 
 Programming is in my DNA, so when I had children it was obvious that I would attempt to share my passion. It has taken a while, for some reason for loops don't interest toddlers! However my 7 year old son has got a taste for it now. 
 
-<img src="/images/getcoding.jpg"  style="float:left; padding-right: 15px; " />
+<img src="https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/getcoding.jpg"  style="float:left; padding-right: 15px; " />
 
 It was his birthday the other day and he got quite a few tech related things. First off he got some programming books. [Get Coding!](https://www.amazon.co.uk/gp/product/1406366846/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&psc=1), [Coding for Kids: Scratch:](https://www.amazon.co.uk/gp/product/1641522453/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) and [Coding for Kids: Python:](https://www.amazon.co.uk/gp/product/1641521759/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
 

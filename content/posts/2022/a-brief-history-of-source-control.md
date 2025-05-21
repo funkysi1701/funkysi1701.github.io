@@ -5,8 +5,8 @@ year = "2022"
 month= "2022-07"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/svn.jpg"
-images=['/images/svn.jpg']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/svn.jpg"
+images=['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/svn.jpg']
 tags = ["Source Control", "History", "Bitbucket", "AzureDevOps", "GitHub", "Git", "Subversion"]
 category="tech"
 description = "Explore the evolution of source control systems from their early beginnings to modern tools like Git, Bitbucket, and Azure DevOps. Learn about the history, key developments, and how these tools have shaped software development practices."
@@ -31,7 +31,7 @@ It was sometime later that I learnt about source control. I can't remember exact
 
 Source control (or version control) is the practice of tracking and managing changes to code. These tools provide a running history of code development and help to resolve conflicts when merging.
 
-<img src="/images/svn.jpg" width="400px" align="left" />
+<img src="https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/svn.jpg" width="400px" align="left" />
 
 The first source control tool I remember using was subversion. The windows client for this was called [TortoiseSVN](https://tortoisesvn.net/downloads.html) and is still available today. I know this as my current job has some legacy code which still uses it.
 
@@ -45,7 +45,7 @@ The first hosted source control tool I remember using was [bitbucket](https://bi
 
 After bitbucket the git repos where moved to Azure DevOps or Visual Studio Team Services as it was called back then. This move was mainly to take advantage of the builds and releases feature and to decommission some aging build servers.
 
-<img src="/images/azuredevops.png" align="left" width="400px" />
+<img src="https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/azuredevops.png" align="left" width="400px" />
 
 This brings me to today where I have a mix of public repos on github and private repos on Azure DevOps. For building my code I use a mix of github actions and Azure Pipelines. As Microsoft own both services now, there is a fair amount of crossover between the two services, however it is far from certain which service is the future.
 

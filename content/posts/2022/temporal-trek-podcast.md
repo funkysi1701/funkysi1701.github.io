@@ -5,8 +5,8 @@ year = "2022"
 month= "2022-03"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/podcast.jpg"
-images = ['/images/podcast.jpg']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/podcast.jpg"
+images = ['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/podcast.jpg']
 tags = ["StarTrek", "podcast"]
 category="trek"
 description =  "Earlier this year I was a guest on the Temporal Trek Podcast"

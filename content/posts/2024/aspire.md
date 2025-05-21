@@ -5,8 +5,8 @@ year = "2024"
 month= "2024-11"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/aspire-ga-what-is-aspire.png"
-images =['/images/aspire-ga-what-is-aspire.png']
+cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/aspire-ga-what-is-aspire.png"
+images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/aspire-ga-what-is-aspire.png']
 tags = ["DotNet", "Blazor", "C-Sharp", "Visual Studio", "Aspire", "OpenTelemetry", ".Net 9", "Microsoft"]
 category="tech"
 description = "Learn how to get started with .Net Aspire, a comprehensive set of tools, templates, and packages that simplify cloud-native application development using .Net. Explore its key features like orchestration, integrations, and tooling to build observable, production-ready applications with consistent patterns."
