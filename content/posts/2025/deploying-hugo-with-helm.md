@@ -5,8 +5,8 @@ year = "2025"
 month = "2025-05"
 author = "funkysi1701"
 authorTwitter = "funkysi1701"
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/helm-hugo.png"
-images = ["https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/helm-hugo.png"]
+cover = "/images/helm-hugo.png"
+images = ["/images/helm-hugo.png"]
 tags = ["Kubernetes", "Helm", "DevOps", "Hugo", "Blog", "Deployment"]
 category = "tech"
 description = "Learn how to deploy a Hugo blog to Kubernetes using Helm charts for easy, repeatable, and configurable deployments."
@@ -110,9 +110,6 @@ RUN rm -rf /usr/share/nginx/html/*
 
 # Copy the generated site from the builder stage
 COPY --from=builder /src/public /usr/share/nginx/html
-
-# Copy custom nginx config (optional)
-# COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose port 80
 EXPOSE 80
