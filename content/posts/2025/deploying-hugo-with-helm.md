@@ -23,9 +23,9 @@ aliases = [
 ]
 +++
 
-Deploying static sites like this blog to Kubernetes can be made much easier and more maintainable using Helm charts. Helm allows you to package your Kubernetes resources, manage configuration, and deploy updates with a single command.
+Helm allows you to package your Kubernetes resources, manage configuration, and deploy updates with a single command.
 
-In this post, I’ll walk through how I created a Helm chart to deploy this blog, making it easy to spin up new environments or update my site with minimal effort. Currently this blog runs on an Azure static web apps, with my kubernetes cluster used for development and learning, however the principles applied here could be applied to a blog running in production.
+In this post, I’ll share how I used Helm to deploy my Hugo blog, making it easy to manage updates and spin up new environments. Full disclosure: My blog currently runs on an Azure Static Web App, but now that I know how to deploy to a Kubernetes cluster, I have the option to switch if needed.
 
 ## Why Use Helm?
 
@@ -51,14 +51,14 @@ I edited `values.yaml` to set my image and service details:
 
 ```yaml
 image:
-  repository: mydockerhubusername/hugo-blog
-  tag: latest
-  pullPolicy: IfNotPresent
+  repository: mydockerhubusername/hugo-blog # Docker image repository
+  tag: latest # Use the latest tag for the image
+  pullPolicy: IfNotPresent # Pull the image only if it’s not already present
 
 service:
-  type: NodePort
-  port: 80
-  nodePort: 30081
+  type: NodePort # Expose the service on a specific port
+  port: 80 # Internal port for the service
+  nodePort: 30081 # External port for accessing the service
 ```
 
 ### Deploying the Blog
@@ -83,11 +83,11 @@ This triggers a rolling update in Kubernetes.
 
 ### Creating a Docker Image of my Blog
 
-This all assumes that I have a container image of my hugo blog. Creating this was half the work.
+This all assumes that I have a container image of my Hugo blog. Creating this was half the work.
 
-I had been using a docker compose file to build my blog, however this doesn't copy my files into the container it creates a volume so share my files with the container. I needed a Dockerfile that would copy my source code into a container and then save into a container registry.
+I had been using a docker-compose file to build my blog; however, this doesn't copy my files into the container it creates a volume to share my files with the container. I needed a Dockerfile that would copy my source code into a container and then save it into a container registry.
 
-This is the Dockerfile I created, as you can see it is a two stage build. First it takes the hugo base image, copies my files into it and builds Hugo. Then the nginx web server is run and the default web port 80 is exposed.
+This is the Dockerfile I created. As you can see, it is a two-stage build. First, it takes the Hugo base image, copies my files into it, and builds Hugo. Then the NGINX web server is run, and the default web port 80 is exposed.
 
 ```Dockerfile
 # Step 1: Build the Hugo site
@@ -126,6 +126,8 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ## Conclusion
 
-If you’re deploying to Kubernetes, I highly recommend giving Helm Charts a try!
+Helm charts have made deploying my Hugo blog to Kubernetes a seamless and efficient process. With features like templating, versioning, and easy updates, Helm is a must-have tool for Kubernetes deployments.
+
+If you’re managing static sites or microservices, give Helm a try and see how it can simplify your workflow!
 
 Have you used Helm for static sites or blogs? Share your experience in the comments below!
