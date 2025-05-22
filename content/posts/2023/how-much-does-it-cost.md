@@ -6,8 +6,8 @@ month= "2023-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/monthly-costs.png"
-images = ['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/monthly-costs.png']
+cover = "/images/monthly-costs.png"
+images = ['/images/monthly-costs.png']
 tags = ["Azure", "Website", "Side Project", "Costs" ]
 category="tech"
 keywords = ["", ""]

@@ -6,8 +6,8 @@ month= "2023-10"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/ddd_avatar_300.jpg"
-images = ['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/ddd_avatar_300.jpg']
+cover = "/images/ddd_avatar_300.jpg"
+images = ['/images/ddd_avatar_300.jpg']
 tags = ["DotNet", "Community", "Conference", "DDD East Midlands"]
 category="tech"
 keywords = ["", ""]

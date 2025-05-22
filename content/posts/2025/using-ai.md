@@ -5,8 +5,8 @@ year = "2025"
 month= "2025-03"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/social-ai.png"
-images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/social-ai.png']
+cover = "/images/social-ai.png"
+images =['/images/social-ai.png']
 tags = ["AI", "OpenAI", "Semantic Kernel", "DotNet", "RSS", "Social Media", "Automation", "Programming", "Tech"]
 category="tech"
 description = "Learn how to use AI with .NET to automate social media posts from your blog's RSS feed using Semantic Kernel and OpenAI."

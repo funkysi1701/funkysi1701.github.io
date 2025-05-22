@@ -5,8 +5,8 @@ year = "2022"
 month= "2022-10"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/coverage.png"
-images = ['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/coverage.png']
+cover = "/images/coverage.png"
+images = ['/images/coverage.png']
 tags = ["DotNet", "Blazor", "EFCore"]
 category="tech"
 description =  "I have a Blazor application that was built with .Net Core 3, and I have updated it to .Net 5 and later .Net 6 when those versions of were released. In November .Net 7 is released so I have been testing it with the .Net 7 previews."

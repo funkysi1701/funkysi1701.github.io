@@ -5,8 +5,8 @@ year = "2022"
 month= "2022-12"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/dddnorth-hull-developers-conference-2022.jpg"
-images = ['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/dddnorth-hull-developers-conference-2022.jpg']
+cover = "/images/dddnorth-hull-developers-conference-2022.jpg"
+images = ['/images/dddnorth-hull-developers-conference-2022.jpg']
 tags = ["DotNet", "Azure", "Community", "Conference", "DDD North"]
 category="tech"
 description =  "On Saturday 3rd December I attended DDD North. It is a community run conference for Developers (the D’s stand for Developer) and I had a fab time there."
