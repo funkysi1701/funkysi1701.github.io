@@ -5,8 +5,8 @@ year = "2024"
 month= "2024-11"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/Pnb-NvNJ_400x400.jpg"
-images = ['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/Pnb-NvNJ_400x400.jpg']
+cover = "/images/Pnb-NvNJ_400x400.jpg"
+images = ['/images/Pnb-NvNJ_400x400.jpg']
 tags = ["youth", "codeclub", "community"]
 category="tech"
 description = "Discover Code Clubs, free and welcoming spaces for school-aged young people to learn programming and digital skills. Join us to explore the exciting world of coding through hands-on activities and projects."

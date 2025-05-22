@@ -5,8 +5,8 @@ year = "2025"
 month= "2025-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/grafana-dashboard.png"
-images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/grafana-dashboard.png']
+cover = "/images/grafana-dashboard.png"
+images =['/images/grafana-dashboard.png']
 tags = ["Grafana", "Monitoring", "Analytics", "Docker", "Prometheus", "DotNet", "DevOps", "Metrics"]
 category="tech"
 description = "Set up Grafana with Docker and Prometheus to monitor .NET apps. Learn to visualize metrics and create real-time dashboards."

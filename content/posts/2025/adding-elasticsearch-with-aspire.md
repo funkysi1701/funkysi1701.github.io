@@ -5,8 +5,8 @@ year = "2025"
 month= "2025-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/elastic-search.jpg"
-images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/elastic-search.jpg']
+cover = "/images/elastic-search.jpg"
+images =['/images/elastic-search.jpg']
 tags = ["Elasticsearch", "DotNet", "Aspire", "Search", "Indexing", "Development", "Tech"]
 category="tech"
 description = "Learn how to integrate Elasticsearch with .NET Aspire to enhance your application's search capabilities using powerful indexing and search features."

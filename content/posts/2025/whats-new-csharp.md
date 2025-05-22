@@ -5,8 +5,8 @@ year = "2025"
 month= "2025-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/mads-csharp.jpg"
-images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/mads-csharp.jpg']
+cover = "/images/mads-csharp.jpg"
+images =['/images/mads-csharp.jpg']
 tags = ["C-Sharp", "Programming", "DotNet", "Language Features", "Development", "Tech"]
 category="tech"
 description = "Discover the latest features coming to C#, including dictionary expressions and more, as shared by Mads Torgersen at NDC London."

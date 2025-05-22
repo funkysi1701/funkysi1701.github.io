@@ -24,9 +24,9 @@ In my spare time I have created <a href="/pwned-pass">Pwned Pass</a> a Xamarin F
 
 ## Certifications
 
-<a href="https://www.credly.com/badges/adacf718-d696-4254-a68d-5b32f720ac78/public_url" style="float:left"><img src="https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/azure.png" alt="Azure Fundamentals" width="150" /></a>
+<a href="https://www.credly.com/badges/adacf718-d696-4254-a68d-5b32f720ac78/public_url" style="float:left"><img src="/images/azure.png" alt="Azure Fundamentals" width="150" /></a>
 
-<a href="https://www.credly.com/badges/3aab54c8-a109-4018-bcad-dbe0d6a1fc0c/public_url"><img src="https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/awscp.png" alt="AWS Cloud Practitioner" width="150" /></a>
+<a href="https://www.credly.com/badges/3aab54c8-a109-4018-bcad-dbe0d6a1fc0c/public_url"><img src="/images/awscp.png" alt="AWS Cloud Practitioner" width="150" /></a>
 
 ## Tech I have used
 

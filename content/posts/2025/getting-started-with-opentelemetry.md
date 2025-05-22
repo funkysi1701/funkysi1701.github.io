@@ -5,8 +5,8 @@ year = "2025"
 month= "2025-05"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/open-telemetry.png"
-images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/open-telemetry.png']
+cover = "/images/open-telemetry.png"
+images =['/images/open-telemetry.png']
 tags = ["OpenTelemetry", "Observability", "Tracing", "Metrics", "Logging", "DotNet"]
 category="tech"
 description = "Learn how OpenTelemetry simplifies observability by collecting traces, metrics, and logs for modern distributed applications."

@@ -5,8 +5,8 @@ year = "2025"
 month= "2025-04"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/grafana-loki-arch.png"
-images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/grafana-loki-arch.png']
+cover = "/images/grafana-loki-arch.png"
+images =['/images/grafana-loki-arch.png']
 tags = ["OpenTelemetry", "Grafana", "Loki", "Alloy", "Logging", "Monitoring", "Docker", "DotNet", "Tech"]
 category="tech"
 description = "Learn how to integrate OpenTelemetry logs with Grafana using Loki and Alloy for efficient log aggregation and monitoring in your .NET applications."
@@ -99,7 +99,7 @@ otelcol.exporter.otlphttp "loki" {
 3. **Loki Storage**: Loki stores the logs, making them available for querying.
 4. **Grafana Visualization**: Grafana connects to Loki as a data source, allowing you to visualize and analyze the logs.
 
-![Architecture Diagram](https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/grafana-loki-arch.png)
+![Architecture Diagram](/images/grafana-loki-arch.png)
 
 
 ### Handling Aspire Dashboard Logs

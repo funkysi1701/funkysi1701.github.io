@@ -5,8 +5,8 @@ year = "2022"
 month= "2022-04"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/scratch.png"
-images = ['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/scratch.png']
+cover = "/images/scratch.png"
+images = ['/images/scratch.png']
 tags = ["Scratch", "kids"]
 category="tech"
 description =  "My 6 year old boy has been playing with Scratch, so here is a quick introduction to what we have learnt about it"

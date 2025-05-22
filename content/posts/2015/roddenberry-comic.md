@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/1-523x400.webp"
-images = ['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/1-523x400.webp']
+cover = "/images/1-523x400.webp"
+images = ['/images/1-523x400.webp']
 tags = ["Help", "Gene Roddenberry", "Plane", "StarTrek"]
 category="trek"
 keywords = ["", ""]
