@@ -6,8 +6,8 @@ month= "2024-12"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/automatic-pull-requests.png"
-images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/automatic-pull-requests.png']
+cover = "/images/automatic-pull-requests.png"
+images =['/images/automatic-pull-requests.png']
 tags = ["AzureDevOps", "Pull Requests", "Automation", "PowerShell", "CI/CD", "DevOps"]
 category="tech"
 description = "Learn how to automate the creation of pull requests in Azure DevOps using PowerShell scripts to streamline your CI/CD workflow."

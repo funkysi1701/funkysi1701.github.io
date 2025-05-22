@@ -6,8 +6,8 @@ month= "2024-12"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/elec-usage.png"
-images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/elec-usage.png']
+cover = "/images/elec-usage.png"
+images =['/images/elec-usage.png']
 tags = ["Electricity", "Smart Plugs", "Home Assistant", "Energy Monitoring", "Power Consumption"]
 category="tech"
 description = "Discover which devices in your home use the most electricity with smart plugs and Home Assistant. Learn about their power consumption and how to monitor it."

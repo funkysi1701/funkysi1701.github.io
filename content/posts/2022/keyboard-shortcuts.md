@@ -5,8 +5,8 @@ year = "2022"
 month= "2022-07"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/shortcuts.png"
-images = ['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/shortcuts.png']
+cover = "/images/shortcuts.png"
+images = ['/images/shortcuts.png']
 tags = ["Visual Studio", "shortcuts"]
 category="tech"
 description = "Discover essential Visual Studio keyboard shortcuts to boost your productivity and streamline your development workflow."

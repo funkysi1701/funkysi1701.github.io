@@ -6,8 +6,8 @@ month= "2023-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/nexus-nights.jpg"
-images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/nexus-nights.jpg']
+cover = "/images/nexus-nights.jpg"
+images =['/images/nexus-nights.jpg']
 tags = ["StarTrek", "Podcast" ]
 category="trek"
 keywords = ["", ""]

@@ -5,8 +5,8 @@ year = "2025"
 month= "2025-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/central-package-management-with-nuget.png"
-images =['https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75/images/central-package-management-with-nuget.png']
+cover = "/images/central-package-management-with-nuget.png"
+images =['/images/central-package-management-with-nuget.png']
 tags = ["NuGet", "Package Management", "DotNet", "Development", "DevOps"]
 category="tech"
 description = "Learn how to simplify dependency management in .NET projects using NuGet Central Package Management for consistent and efficient package version control."
