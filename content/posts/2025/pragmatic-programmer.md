@@ -149,13 +149,13 @@ Here is the complete list of tips that can be found in the book (I am reading th
 92. Use Saboteurs to Test Your Testing
 93. Test State Coverage, Not Code Coverage
 94. Find Bugs Once
-96. Don't use Manual Procedures
-97. Delight Users, Don't Just Deliver Code
-98. Sign your Work
+95. Don't use Manual Procedures
+96. Delight Users, Don't Just Deliver Code
+97. Sign your Work
 
 ### 
 
-99.  First, Do No Harm
-100. Don't Enable Scumbags
-101. It's Your Life
+98.  First, Do No Harm
+99. Don't Enable Scumbags
+100. It's Your Life
 
