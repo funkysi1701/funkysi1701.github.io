@@ -93,7 +93,7 @@ This is caused by trying to use SQL Server 2017 but it is easy to fix.
 
 In docker desktop there is a volumes section, find the volume you are using with SQL Server and delete the errorlog mentioned above.
 
-![Docker Desktop](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/docker-desktop1.png)
+![Docker Desktop](/images/docker-desktop1.png)
 
 Now if you retry SQL will start OK.
 
