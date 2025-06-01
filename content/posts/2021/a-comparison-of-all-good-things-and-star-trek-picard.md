@@ -5,8 +5,8 @@ year = "2021"
 month= "2021-12"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/picard.jpeg"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/picard.jpeg']
+cover = "/images/picard.jpeg"
+images = ['/images/picard.jpeg']
 tags = ["StarTrek", "Picard"]
 category="trek"
 keywords = ["", ""]
@@ -57,7 +57,7 @@ As we have seen Patrick Stewart does not appear to be ageing. Below is a compari
 
 ![All Good Things..](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/08/all-good-things.jpg?w=584&ssl=1)
 
-![Star Trek Picard](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/picard.jpeg)
+![Star Trek Picard](/images/picard.jpeg)
 
 I really enjoyed the first episode of Star Trek Picard and it is going to be interesting seeing what other similarities and differences there are between it and All Good Things...
 
