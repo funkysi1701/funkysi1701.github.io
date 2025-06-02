@@ -65,7 +65,7 @@ The evenings activity was called Eggbert, and was all about designing a constuct
 
 Tuesday was the first day we spent all day off site. The instructors drove us in a minibus to the Yorkshire three peaks where they were underground caves. We were suited up in cave suits, wellies and helmets with head torches. We were advised to bring a change of clothes for this trip, I didn't think I would need it, I was so wrong. There was a lot of water in the caves which was fine, until the roof got so low you had to crawl, when you are crawling through water, it goes right into your wellies, and you spend the rest of the cave trip with water in them. I may not have been a huge fan of this, but the boys loved it. Climbing/Sliding through the small gaps, getting completely wet in the process. After caving we stopped at Settle for Ice Cream and Hot Chocolate, very well deserved after out caving trip.
 
-The evening activity was Circus Skills and a Camp Fire. This entertain my boys for ages as they tried the different juggling and balance activities, I had a go but didn't master anything. I did enjoy sitting with the wife and other parents around the camp fire.
+The evening activity was Circus Skills and a Camp Fire. This entertained my boys for ages as they tried the different juggling and balance activities, I had a go but didn't master anything. I did enjoy sitting with my wife and other parents around the camp fire.
 
 ## Wednesday
 
