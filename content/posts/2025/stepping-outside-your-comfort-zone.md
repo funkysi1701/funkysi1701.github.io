@@ -22,67 +22,66 @@ aliases = [
     "/2025/06/02/stepping-outside-my-comfort-zone" 
 ]
 +++
-My comfort zone is usually in front of my laptop, but every now and then, it’s important to step away and embrace new experiences. This holiday was a leap into the unknown for me and my family, and it turned out to be one of the most memorable weeks we’ve ever had. If you’re curious about what happens when you trade routine for adventure, read on!
+Stepping outside my comfort zone doesn’t come naturally to me. I’m happiest behind my laptop, but every now and then, I know it’s important to try something new. This year, my family and I decided to do just that—and it turned out to be one of our most memorable weeks ever. Curious about what happens when you swap routine for adventure? Read on!
 
 ## Introduction
 
-This week was our family holiday, our usual plan is to book a cottage somewhere nice, and then explore in our own time. This sometimes results in arguments as everyone wants something different, or the places we visit are not as interesting as we expected, especially if you are 7 or 9 and get bored easily.
+This week was our family holiday. Normally, we’d book a cottage somewhere nice and explore at our own pace. But this often leads to disagreements—everyone wants something different, and sometimes the places we visit aren’t as exciting as we hoped (especially for two kids aged 7 and 9 who get bored easily).
 
-This holiday was different and was action-packed. We booked a family adventure holiday from [High Adventure](https://www.highadventureholidays.co.uk/), which featured climbing, caving, walking, water sports, archery, zip wires and many other organised activities. All meals and accommodation were included, as well as equipment and expert instructors to keep us safe while doing all these new things.
+This time, we chose a different path: a family adventure holiday with [High Adventure](https://www.highadventureholidays.co.uk/). The itinerary was packed: climbing, caving, hiking, water sports, archery, zip wires, and countless other activities. All meals, accommodation, equipment, and expert instructors were included, making it feel both safe and exciting.
 
-Before the holiday there was a certain amount of anxiety about the holiday. I am not an adventurous person, I like [walking](/charity-hike) but have never done anything like this before, my nine-year-old son was dreading the holiday, while my more adventurous seven-year-old was quietly looking forward to it. If my children hated it and didn't engage with the activities I could see this holiday being a huge waste of money. Once we got to the holiday these fears quickly vanished as we got stuck in.
+I’ll admit, I was anxious before we set off. I’m not an adventurous person—I like [walking](/charity-hike), but I’d never tried anything like this. My nine-year-old son was dreading it, while my more adventurous seven-year-old was quietly excited. I worried that if the kids hated it, it would be a waste of money. But as soon as we arrived, those fears melted away.
 
 ## Saturday
 
-We arrived on Saturday afternoon and we were shown to our room. My only complaint from the whole week is that the room was very small, two bunk beds so with four of us and a week's worth of clothes it was hard to keep it tidy and not trip over each other. However, the rest of the place had lots of space and our room was next to the games room so it was a nice location.
+We arrived on Saturday afternoon and were shown to our room. My only real complaint from the whole week: the room was tiny. With two bunk beds and four of us plus a week’s worth of clothes, it was a challenge to keep things tidy. Thankfully, the rest of the facility was spacious, and our room was right next to the games room—a bonus.
 
-Dinner was at 6pm every day and was a home cooked meal. I liked the food, however my fussy eating children were less keen, but there was usually at least something they would eat. We met the other family that would be doing the same activities as us.
+Dinner was served at 6pm every evening, always a home-cooked meal. While I enjoyed the food, my fussy eaters weren’t always convinced, but there was usually something for everyone. We met the other family we’d be doing activities with.
 
-After dinner we went back to the Games Room for Labyrinth. This was a tight maze constructed under the floor. It was dark and we had to wear helmets. The whole family had a go, I was less keen on this activity as was very tight and hard to manoeuvre but my boys loved it.
+After dinner, we explored the Games Room and took on the Labyrinth—a tight, dark maze constructed under the floor. Helmets were required! I found it a bit tight, but my boys absolutely loved it.
 
 ## Sunday
+
 <img src="/images/abseiling.jpg" alt="Abseiling" width="250px" style="padding-right: 15px; " align="left"/>
 
-Sunday started with a cooked breakfast (everyday started this way), and a station to make sandwiches for lunch. In the morning we had a climbing and abseiling session. I had never done climbing before, so I surprised myself at how well I did, I climbed all the way to the top of the 8m climbing wall. Really pleased with myself. My boys didn't quite reach the top, but they pushed themselves high up the wall. Abseiling was also fun, but very similar to coming down from the climbing.
+Every day began with a cooked breakfast and a make-your-own sandwich station for lunch. Sunday morning kicked off with climbing and abseiling. I’d never climbed before, so I was surprised—and proud—to make it all the way to the top of the 8-meter wall. My boys didn’t quite reach the top, but they pushed themselves higher than I expected. Abseiling was fun too, and a great way to come down after the climb.
 
-After lunch it was time to do Archery. I had tried this before at an event at my boys Scout Group, so I was familiar with it, but it took me a fair few arrows to start getting them in the target.
+After lunch, we tried archery. I’d done it once before at my boys’ Scout group, but it took a while to hit the target consistently. Then came bushcraft: foraging for wood, using a knife to make kindling, and lighting a fire with a ferrocerium rod. My nine-year-old and I managed to get a fire going—definitely a memorable moment, especially when we roasted marshmallows.
 
-After that it was time for Bushcraft. Bushcraft is the use of skills to survive and thrive in a natural environment. We went foraging for wood to start a fire, used a knife to create kindling, used a ferrocerium rod to create sparks to light the fire. Me and the 9 year old eventually got a fire going, so I call that a success and very memoriable for the boys. Especially the eating marshmallows roasted on the fire.
-
-After dinner we did an activity called Nightline. This was a blindfolded obstacle course. This was too much for me, but our boys loved it. I had the difficult job of describing the route, what to climb over/under/through and when to stop to avoid colliding with other parents and children.
+The evening’s activity was Nightline: a blindfolded obstacle course. This was a bit much for me, but the boys loved it. My job was to guide them through the course, describing what to climb over, under, or through, and when to stop.
 
 ## Monday
 
-Monday started with a local walk up the hill to Wainman's Pinnacle and some squirreling through the rocks. Squirreling is something the boys loved, especially as they have done it before with their scout group. I didn't do much of the squirreling but I did enjoy the walk.
+Monday started with a walk up the hill to Wainman’s Pinnacle and some “squirreling” through the rocks—a favourite for the boys, especially since they’d done it before with Scouts. I skipped most of the squirreling but enjoyed the walk.
 
-In the afternoon it was time for High ropes and Zip wire. This was great fun, very similar to the climbing. We were roped in at all times so no danger of falling however, there is a certain amount of faith required when you step off a high ledge either to use the zip wire or one of the other high activities. My eldest let fear get the better of him, and had to climb down, however later he faced his fear after seeing me do it, and loved it. This is what the week was all about, encouraging my boys (and me) to do things they never have before.
+In the afternoon, it was time for high ropes and a zip wire. We were safely roped in at all times, but stepping off a high ledge still required a leap of faith. My eldest was nervous and had to climb down at first, but after watching me try, he gave it another go—and loved it. That’s what this week was about: encouraging all of us to try new things.
 
-The evenings activity was called Eggbert, and was all about designing a constuction to save an egg being dropped off a high point. We worked as a family on this, and completely failed to consider that the weight of the egg would flip our construction over so it landed egg first not balloon first. We may have failed but it was great fun seeing all the elaborate ways the different families had built to save their egg.
+The evening activity was Eggbert: designing a contraption to protect an egg dropped from a height. We worked as a family, but failed to consider that the weight would flip the egg so it landed the wrong way up. Oops! We didn’t win, but it was great fun seeing everyone’s creative designs.
 
 ## Tuesday
 
 <img src="/images/caves.jpg" alt="Caving" width="250px" style="padding-left: 15px; " align="right" />
 
-Tuesday was the first day we spent all day off site. The instructors drove us in a minibus to the Yorkshire three peaks where they were underground caves. We were suited up in cave suits, wellies and helmets with head torches. We were advised to bring a change of clothes for this trip, I didn't think I would need it, I was so wrong. There was a lot of water in the caves which was fine, until the roof got so low you had to crawl, when you are crawling through water, it goes right into your wellies, and you spend the rest of the cave trip with water in them. I may not have been a huge fan of this, but the boys loved it. Climbing/Sliding through the small gaps, getting completely wet in the process. After caving we stopped at Settle for Ice Cream and Hot Chocolate, very well deserved after out caving trip.
+Tuesday was our first full day offsite. The instructors drove us in a minibus to the Yorkshire Three Peaks area, where we explored underground caves. Wearing cave suits, wellies, and helmets, we were ready for adventure. I foolishly thought I wouldn’t need a change of clothes—turns out, crawling through water-filled tunnels means your wellies fill up fast! I wasn’t the biggest fan of being soaked, but the boys loved climbing and sliding through the narrow passages. We finished the day with ice cream and hot chocolate in Settle—a well-deserved treat.
 
-The evening activity was Circus Skills and a Camp Fire. This entertained my boys for ages as they tried the different juggling and balance activities, I had a go but didn't master anything. I did enjoy sitting with my wife and other parents around the camp fire.
+That evening, we tried circus skills and gathered around a campfire. The boys were entertained for ages, trying juggling and balance activities. I didn’t master anything, but I enjoyed relaxing by the fire with my wife and the other parents.
 
 ## Wednesday
 
-Tiredness from all these activities was beginning to hit me by Wednesday, which was a five-mile walk around Malham Cove. The walk started at Malham Cove, then onto Gordale Scar and then onto Janet's Foss and back to the minibus. The views on the walk were glorious, and the weather stayed nice so no need for all the waterproofs. Janet's Foss was a lovely waterfall where many had an outside swim or paddle. We didn't intend on getting wet so we didn't bring a towel, my boys didn't get the memo and got far wetter than I would have liked. But we are on holiday, so it's all good fun.
+By Wednesday, tiredness was catching up with me! We tackled a five-mile walk around Malham Cove, taking in stunning views and great weather. The route included Gordale Scar and Janet’s Foss, a lovely waterfall where many people swam or paddled. We hadn’t brought towels, but that didn’t stop my boys from getting soaked. It’s a holiday—why not?
 
-Wednesday evening was the parents' night off, unfortunately a family emergency meant we had to cut this short.
+Wednesday evening was supposed to be a parents’ night off, but we had to cut it short due to a family emergency.
 
 ## Thursday
 
-Thursday was the water sports day. We decided to give this a miss, and have a quieter day. We took a trip to the small town of Haworth. There is a museum about the Brontë sisters, a very picturesque town, a play area for the kids, so a great place for a quiet last day.
+Thursday was water sports day, but we decided on a quieter option and visited Haworth instead. The town is famous for the Brontë sisters, and we enjoyed its picturesque streets, a museum, and a play area for the kids—a great way to wind down after so much activity.
 
-The last evening activity was a quiz, which was fun and even had a round of questions about the week's adventures.
+The final evening was a quiz night, complete with questions about the week’s adventures.
 
 ## Friday
 
-Friday was the going home day, but before we left there was an orienteering activity. As a former member of the Orienteering Club at University I had to take part.
+Friday was going-home day, but not before one last challenge: orienteering. As a former university orienteering club member, I couldn’t resist joining in!
 
 ## Conclusion
 
-This week was all about stepping outside my comfort zone and trying new things. From climbing and caving to bushcraft and zip lines, each activity challenged me in different ways and helped me grow. I discovered that pushing my boundaries can be both exciting and rewarding, and I made memories that will last a lifetime. If you ever get the chance to try something new—even if it feels a bit daunting at first—I highly recommend taking that leap. You might surprise yourself with what you can achieve!
+This week was truly about stepping outside my comfort zone and embracing new experiences. From climbing and caving to bushcraft and zip lines, every activity challenged me and helped me grow. I discovered that pushing your boundaries can be both exciting and rewarding—and creates memories that last a lifetime. If you ever get the chance to try something new, even if it feels a bit daunting, I highly recommend taking the leap. You might just surprise yourself!
