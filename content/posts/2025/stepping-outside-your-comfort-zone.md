@@ -81,7 +81,7 @@ The last evening activity was a quiz, which was fun and even had a round of ques
 
 ## Friday
 
-Friday was the going home day, but before we left there was an orienteering activity. As a former member of the Orienteeting Club at University I had to take part.
+Friday was the going home day, but before we left there was an orienteering activity. As a former member of the Orienteering Club at University I had to take part.
 
 ## Conclusion
 
