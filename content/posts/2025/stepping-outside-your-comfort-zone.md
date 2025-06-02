@@ -77,7 +77,7 @@ Wednesday evening was the parents' night off, unfortunately a family emergency m
 
 Thursday was the water sports day. We decided to give this a miss, and have a quieter day. We took a trip to the small town of Haworth. There is a museum about the Brontë sisters, a very picturesque town, a play area for the kids, so a great place for a quiet last day.
 
-The last evening activity was a quiz, fun even had a round of questions about the weeks adventures.
+The last evening activity was a quiz, which was fun and even had a round of questions about the week's adventures.
 
 ## Friday
 
