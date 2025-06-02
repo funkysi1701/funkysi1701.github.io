@@ -71,7 +71,7 @@ The evening activity was Circus Skills and a Camp Fire. This entertained my boys
 
 Tiredness from all these activities was beginning to hit me by Wednesday, which was a five-mile walk around Malham Cove. The walk started at Malham Cove, then onto Gordale Scar and then onto Janet's Foss and back to the minibus. The views on the walk were glorious, and the weather stayed nice so no need for all the waterproofs. Janet's Foss was a lovely waterfall where many had an outside swim or paddle. We didn't intend on getting wet so we didn't bring a towel, my boys didn't get the memo and got far wetter than I would have liked. But we are on holiday, so it's all good fun.
 
-Wednesday evening was the parents night off, unfortunately a family emergency meant we had to cut this short.
+Wednesday evening was the parents' night off, unfortunately a family emergency meant we had to cut this short.
 
 ## Thursday
 
