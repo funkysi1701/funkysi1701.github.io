@@ -30,7 +30,7 @@ This week was our family holiday, our usual plan is to book a cottage somewhere 
 
 This holiday was different and was action-packed. We booked a family adventure holiday from [High Adventure](https://www.highadventureholidays.co.uk/), which featured climbing, caving, walking, water sports, archery, zip wires and many other organised activities. All meals and accommodation were included, as well as equipment and expert instructors to keep us safe while doing all these new things.
 
-Before the holiday there was a certain amount of anxiety about the holiday. I am not an adventurous person, I like [walking](/charity-hike) but have never done anything like this before, my 9 year old son was dreading the holiday, while my more adventurous 7 year old was quietly looking forward to it. If my children hated it and didn't engage with the activities I could see this holiday being a huge waste of money. Once we got to the holiday these fears quickly vanished as we got stuck in.
+Before the holiday there was a certain amount of anxiety about the holiday. I am not an adventurous person, I like [walking](/charity-hike) but have never done anything like this before, my nine-year-old son was dreading the holiday, while my more adventurous seven-year-old was quietly looking forward to it. If my children hated it and didn't engage with the activities I could see this holiday being a huge waste of money. Once we got to the holiday these fears quickly vanished as we got stuck in.
 
 ## Saturday
 
