@@ -22,7 +22,7 @@ aliases = [
     "/2025/06/02/stepping-outside-my-comfort-zone" 
 ]
 +++
-My comfort zone is in front of my laptop tapping away on its keyboard. However, it is very helpful to occasionally step outside and experience the world. This post doesn't feature much tech and is a personal story of my holiday, feel free to skip over it if this doesn't interest you.
+My comfort zone is usually in front of my laptop, but every now and then, it’s important to step away and embrace new experiences. This holiday was a leap into the unknown for me and my family, and it turned out to be one of the most memorable weeks we’ve ever had. If you’re curious about what happens when you trade routine for adventure, read on!
 
 ## Introduction
 
