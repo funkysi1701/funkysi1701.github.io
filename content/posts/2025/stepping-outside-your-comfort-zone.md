@@ -34,7 +34,7 @@ Before the holiday there was a certain amount of anxiety about the holiday. I am
 
 ## Saturday
 
-We arrived on Saturday afternoon and we were shown to our room. My only complaint from the whole week is that the room was very small, two bunk beds so with four of us and a weeks worth of clothes it was hard to keep it tidy and not trip over each other. However, the rest of the place had lots of space and our room was next to the "games" room so it was a nice location.
+We arrived on Saturday afternoon and we were shown to our room. My only complaint from the whole week is that the room was very small, two bunk beds so with four of us and a week's worth of clothes it was hard to keep it tidy and not trip over each other. However, the rest of the place had lots of space and our room was next to the games room so it was a nice location.
 
 Dinner was at 6pm every day and was a home cooked meal. I liked the food, however my fussy eating children were less keen, but there was usually at least something they would eat. We met the other family that would be doing the same activities as us.
 
