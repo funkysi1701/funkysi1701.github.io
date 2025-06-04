@@ -52,7 +52,7 @@ The evening’s activity was Nightline: a blindfolded obstacle course. This was 
 
 ## Monday
 
-Monday started with a walk up the hill to Wainman’s Pinnacle and some “squirreling” through the rocks—a favourite for the boys, especially since they’d done it before with Scouts. I skipped most of the squirreling but enjoyed the walk.
+Monday started with a walk up the hill to Wainman’s Pinnacle and some “weaseling” through the rocks—a favourite for the boys, especially since they’d done it before with Scouts. I skipped most of the weaseling but enjoyed the walk.
 
 In the afternoon, it was time for high ropes and a zip wire. We were safely roped in at all times, but stepping off a high ledge still required a leap of faith. My eldest was nervous and had to climb down at first, but after watching me try, he gave it another go—and loved it. That’s what this week was about: encouraging all of us to try new things.
 
