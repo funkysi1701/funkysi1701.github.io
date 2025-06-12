@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-12"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/12/20151206_105450.jpg?w=747&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/12/20151206_105450.jpg?w=747&ssl=1']
+cover = "/images/20151206_105450.jpg"
+images = ['/images/20151206_105450.jpg']
 tags = ["James", "Elf", "CHristmas"]
 category="home"
 keywords = ["", ""]

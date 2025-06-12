@@ -1,9 +1,7 @@
 # Build stage
-FROM floryn90/hugo:ubuntu as builder
+FROM floryn90/hugo:ubuntu AS builder
 
-RUN apt-get update -y
-
-RUN apt-get install -y git
+RUN apt-get update -y && apt-get install -y git && rm -rf /var/lib/apt/lists/*
 
 # Build site
 WORKDIR /src
