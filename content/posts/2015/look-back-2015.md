@@ -25,7 +25,7 @@ aliases = [
 +++
 Wow! What an amazing year 2015 has been and with 2015 about to end I thought it would be good to look back at what happened in this amazing year.
 
-![](/images/151218181153-2015-year-in-review-biggest-stories-wrap-up-orig-00025316-large-169.jpg)
+![2015 Year in Review](/images/151218181153-2015-year-in-review-biggest-stories-wrap-up-orig-00025316-large-169.jpg)
 
 **January**
 
