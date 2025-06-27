@@ -14,6 +14,7 @@ description = "A fun concept blending coding challenges with the drama of realit
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/great-british-code-off",
     "/posts/great-british-code-off-2peb",

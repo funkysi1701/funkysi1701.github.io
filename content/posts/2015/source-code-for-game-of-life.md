@@ -14,6 +14,7 @@ description =  "Source Code for Game of Life"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/game-of-life-4dhp",
     "/posts/source-code-for-game-of-life/",

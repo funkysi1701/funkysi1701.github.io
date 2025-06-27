@@ -14,6 +14,7 @@ description =  "My Year of Code"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/my-year-of-code-2iei",
     "/posts/my-year-of-code",

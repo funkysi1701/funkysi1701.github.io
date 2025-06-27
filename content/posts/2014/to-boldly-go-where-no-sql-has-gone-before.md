@@ -14,6 +14,7 @@ description = "Exploring many-to-many relationships in SQL using Star Trek episo
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/to-boldly-go-where-no-sql-has-gone-before-4fe7",
     "/posts/to-boldly-go-where-no-sql-has-gone-before",

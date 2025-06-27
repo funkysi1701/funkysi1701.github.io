@@ -14,6 +14,7 @@ description = "Exploring the factors that help get into the programming zone and
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/in-the-zone-4bkj",
     "/posts/in-the-zone",
