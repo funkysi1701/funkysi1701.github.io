@@ -14,6 +14,7 @@ description =  "Pair Programming"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/pair-programming-4ep6",
     "/posts/pair-programming",

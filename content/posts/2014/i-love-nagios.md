@@ -14,6 +14,7 @@ description = "An overview of Nagios, an open-source server monitoring tool, and
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/i-love-nagios-m6",
     "/posts/i-love-nagios",

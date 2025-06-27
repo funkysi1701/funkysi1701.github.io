@@ -14,6 +14,7 @@ description =  "Javascript progress"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/javascript-progress-3mfd",
     "/posts/javascript-progress",

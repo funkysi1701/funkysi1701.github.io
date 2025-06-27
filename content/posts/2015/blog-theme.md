@@ -14,6 +14,7 @@ description = "Exploring the process of selecting a blog theme, the importance o
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/choosing-a-blog-theme-2n83",
     "/posts/blog-theme",
