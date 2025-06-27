@@ -14,6 +14,7 @@ description =  "How to upgrade to Windows 10"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/how-to-upgrade-to-windows-10",
     "/posts/how-to-upgrade-to-windows-10-eo6",

@@ -14,6 +14,7 @@ description =  "Unmanaged Database Deployment"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/unmanaged-database-deployment",
     "/posts/unmanaged-database-deployment-5edl",

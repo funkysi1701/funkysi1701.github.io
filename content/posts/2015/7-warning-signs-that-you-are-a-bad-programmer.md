@@ -14,6 +14,7 @@ description = "Discover the 7 warning signs that might indicate you're a bad pro
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/7-warning-signs-that-you-are-a-bad-programmer",
     "/posts/7-warning-signs-that-youre-a-bad-programmer",

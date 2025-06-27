@@ -14,6 +14,7 @@ description = "Explore options for adding a failover internet connection to ensu
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/adding-internet-connection-resiliency-o1a",
     "/posts/adding-internet-connection-resiliency",

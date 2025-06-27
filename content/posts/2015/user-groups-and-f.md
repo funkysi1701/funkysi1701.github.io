@@ -14,6 +14,7 @@ description =  "User Groups and F#"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/user-groups-and-f",
     "/posts/user-groups-and-f-37mi",

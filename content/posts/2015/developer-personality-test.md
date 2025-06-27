@@ -14,6 +14,7 @@ description = "Take the Developer Personality Test to discover your coding style
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/developer-personality-test",
     "/posts/developer-personality-test-1eji",

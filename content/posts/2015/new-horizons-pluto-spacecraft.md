@@ -14,6 +14,7 @@ description =  "New Horizons Pluto Spacecraft"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/new-horizons-pluto-spacecraft",
     "/posts/new-horizons-pluto-spacecraft-2ohg",
