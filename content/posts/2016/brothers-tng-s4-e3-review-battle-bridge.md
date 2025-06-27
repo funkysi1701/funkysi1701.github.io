@@ -14,6 +14,7 @@ description =  "Brothers, TNG S4 E3 Review, The Battle Bridge"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/brothers-tng-s4-e3-review-battle-bridge",
     "/posts/2016/05/26/brothers-tng-s4-e3-review-battle-bridge",

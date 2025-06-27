@@ -14,6 +14,7 @@ keywords = ["", ""]
 description = "Mobile App UI Testing"
 showFullContent = false
 readingTime = true
+draft = true
 aliases = [
     "/mobile-app-ui-testing-4p8h",
     "/posts/mobile-app-ui-testing",

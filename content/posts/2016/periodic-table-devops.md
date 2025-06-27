@@ -14,6 +14,7 @@ description =  "Periodic Table of DevOps"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/periodic-table-of-devops-15c7",
     "/posts/periodic-table-devops",

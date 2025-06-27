@@ -14,6 +14,7 @@ keywords = ["", ""]
 description = "New version of Pwned Pass"
 showFullContent = false
 readingTime = true
+draft = true
 aliases = [
     "/new-version-of-pwned-pass-3ke9",
     "/posts/new-version-pwned-pass",
