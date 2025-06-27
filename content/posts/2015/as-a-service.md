@@ -14,6 +14,7 @@ description = "An overview of various 'As A Service' models in cloud computing, 
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/as-a-service",
     "/posts/as-a-service-4fa2",

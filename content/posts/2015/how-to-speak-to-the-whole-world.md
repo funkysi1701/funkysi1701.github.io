@@ -14,6 +14,7 @@ description =  "How to speak to the whole world"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/how-to-speak-to-the-whole-world",
     "/posts/how-to-speak-to-the-whole-world-5e5i",

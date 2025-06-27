@@ -14,6 +14,7 @@ description =  "ICYMI What does it mean?"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/icymi-what-does-it-mean",
     "/posts/icymi-what-does-it-mean-3akg",

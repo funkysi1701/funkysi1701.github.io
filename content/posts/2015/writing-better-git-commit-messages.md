@@ -14,6 +14,7 @@ description =  "Writing better Git commit messages"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/writing-better-git-commit-messages",
     "/posts/writing-better-git-commit-messages-o5i",

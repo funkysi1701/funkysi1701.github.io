@@ -14,6 +14,7 @@ description =  "Surface Book Review"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/surface-book-review-33lh",
     "/posts/surface-book-review",
