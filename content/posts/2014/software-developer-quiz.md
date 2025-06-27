@@ -14,6 +14,7 @@ description = "A fun software developer quiz with questions and answers on vario
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/software-developer-quiz-3p8d",
     "/posts/software-developer-quiz",

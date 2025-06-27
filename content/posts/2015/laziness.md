@@ -14,6 +14,7 @@ description =  "Laziness"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/laziness",
     "/posts/laziness-17n5",

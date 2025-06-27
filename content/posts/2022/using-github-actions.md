@@ -14,6 +14,7 @@ description = "Using a GitHub Actions pipeline to deploy my Azure Static Web App
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/using-github-actions-3jo1",
     "/posts/using-github-actions/",
@@ -193,8 +194,8 @@ First of all I removed the PR stuff and just concentrated on pushes. I wanted my
 4. Once merged code gets pushed into develop
 5. Deploys to Test env
 6. PR develop to main
-4. Once merged code gets pushed into main
-5. Deploys to Prod env (after approval)
+7. Once merged code gets pushed into main
+8. Deploys to Prod env (after approval)
 
 The approval on deploying to production I think is probably overkill, but I still have it setup like that for now.
 

@@ -14,6 +14,7 @@ description =  "Ten Forward Episode #135 – Anti Firbob is Back or Simon’s De
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/ten-forward-episode-135-anti-firbob-is-back-or-simons-desert-island-trek",
     "/posts/ten-forward-episode-135-anti-firbob-is-back-or-simons-desert-island-trek-22mk",
