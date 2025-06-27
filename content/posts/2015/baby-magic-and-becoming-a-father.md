@@ -14,6 +14,7 @@ description = "A heartfelt post about the transformative experience of becoming 
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/baby-magic-and-becoming-a-father",
     "/posts/tidying-my-desktop-2f1a",

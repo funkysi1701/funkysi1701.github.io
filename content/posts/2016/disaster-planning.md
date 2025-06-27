@@ -14,6 +14,7 @@ description =  "Disaster Planning"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/disaster-planning-2oi7",
     "/posts/disaster-planning",

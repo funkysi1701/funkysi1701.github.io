@@ -14,6 +14,7 @@ description =  "Trying Out Azure Active Directory"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/trying-out-azure-active-directory-46pe",
     "/posts/trying-out-azure-active-directory",

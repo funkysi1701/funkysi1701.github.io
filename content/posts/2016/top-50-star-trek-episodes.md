@@ -14,6 +14,7 @@ description =  "Top 50 Star Trek episodes"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/top-50-star-trek-episodes",
     "/posts/2016/01/07/top-50-star-trek-episodes",

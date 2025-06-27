@@ -14,6 +14,7 @@ description = "Discover 10 exciting facts about Windows 10, including its free u
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/10-facts-about-windows-10",
     "/posts/10-facts-about-windows-10-40ia",

@@ -14,6 +14,7 @@ description =  "Trying windows 10"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/trying-windows-10",
     "/posts/trying-windows-10-3k37",
