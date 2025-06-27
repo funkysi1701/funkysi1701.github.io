@@ -14,6 +14,7 @@ description =  "Test Driven Development or TDD"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/test-driven-development-or-tdd-2m06",
     "/posts/test-driven-development-tdd",

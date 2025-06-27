@@ -14,6 +14,7 @@ description = "Documenting your API"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/documenting-your-api-4gcn",
     "/posts/documenting-your-api/",
