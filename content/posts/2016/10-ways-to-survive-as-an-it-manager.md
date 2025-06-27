@@ -14,6 +14,7 @@ description =  "10 Ways to Survive as an IT Manager"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/10-ways-to-survive-as-an-it-manager-2md4",
     "/posts/10-ways-to-survive-as-an-it-manager",

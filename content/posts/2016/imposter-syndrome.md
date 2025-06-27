@@ -14,6 +14,7 @@ description =  "Imposter Syndrome"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/imposter-syndrome-d2c",
     "/posts/imposter-syndrome",
