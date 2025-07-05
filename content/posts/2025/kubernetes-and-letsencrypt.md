@@ -23,7 +23,7 @@ aliases = [
 ]
 +++
 
-I have blogged before about how cool [lets encrypt](/posts/2018/lets-encrypt-is-awesome/) is for getting your web things running under https. However I have just got myself a local kubernetes cluster and it is super easy to spin up new web services with SSL certs.
+I have blogged before about how cool [Let's Encrypt](/posts/2018/lets-encrypt-is-awesome/) is for getting your web things running under https. However I have just got myself a local kubernetes cluster and it is super easy to spin up new web services with SSL certs.
 
 The basic instructions can be found [here](https://www.slingacademy.com/article/how-to-set-up-ssl-with-lets-encrypt-in-kubernetes/) but let's look at what was involved.
 
