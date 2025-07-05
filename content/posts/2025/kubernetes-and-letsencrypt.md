@@ -93,7 +93,7 @@ ingress:
         - helloworld-test.funkysi1701.com
 ```
 
-All I need to do now is add similar code like this to every helm chart I publish and my pod will request a SSL certificate. THe only manual step I have is to set up local DNS pointing to the IP address of my cluster for any domain I want to use.
+All I need to do now is add similar code like this to every helm chart I publish and my pod will request a SSL certificate. The only manual step I have is to set up a DNS record pointing to the IP address of my cluster for any domain I want to use.
 
 ## Conclusion
 
