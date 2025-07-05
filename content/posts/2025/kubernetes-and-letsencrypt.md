@@ -30,7 +30,7 @@ The basic instruction can be found here https://www.slingacademy.com/article/how
 First of all lets get Cert Manager installed on kubernetes.
 
 ```bash
-kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.18.1/cert-manager.yaml
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.18.1/cert-manager.yaml
 ```
 
 Once the cert manager pods are up, you need to create an issuer which communicates with the lets encrypt API. The first code snippet uses the lets encrypt staging environment to avoid any API limits, the second uses production and uses the cloudflare API to authorize SSL requests.
