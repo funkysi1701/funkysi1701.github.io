@@ -69,7 +69,7 @@ spec:
             apiTokenSecretRef:
               key: api-key
               name: cloudflare-api-token-secret
-            email: funkysi1701@gmail.com
+            email: your-email@example.com
 ```
 
 Now that is all configured all I need to do is update my helm chart and any pod I like can have a sub domain of funkysi1701.com with a lets encrypt SSL cert.
