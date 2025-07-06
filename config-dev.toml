@@ -1,4 +1,4 @@
-baseURL = 'https://blog-dev.funkysi1701.com/'
+baseURL = 'https://blog.funkysi1701.com/'
 languageCode = 'en-gb'
 title = "Development Version of Funky Si's Blog"
 theme = 'hugo-theme-bootstrap'
