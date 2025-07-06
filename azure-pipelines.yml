@@ -13,6 +13,7 @@ name: $(Build.Number.Major).$(Build.Number.Minor).$(Build.Number.Sub).$(Rev:r)
 
 trigger:
 - develop
+- main
 
 pool: Docker
 
