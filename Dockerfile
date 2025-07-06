@@ -32,4 +32,4 @@ ENV HUGO_BASEURL="https://blog.funkysi1701.com"
 
 CMD hugo --minify --config config-dev.toml --buildFuture --baseURL "$HUGO_BASEURL" && \
     cp -r /site/public/* /usr/share/nginx/html/ && \
-    nginx -g 'daemon off;'
+    exec nginx -g 'daemon off;'
