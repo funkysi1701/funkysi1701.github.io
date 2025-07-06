@@ -20,6 +20,7 @@ pool: Docker
 steps:
 - task: CmdLine@2
   displayName: "Login"
+  condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['Build.SourceBranch'], 'refs/heads/develop')))
   inputs:
     script: |
       docker build -t blog .
