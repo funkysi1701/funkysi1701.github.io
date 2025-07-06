@@ -8,7 +8,7 @@ WORKDIR /site
 COPY . /site
 
 # Expose port
-EXPOSE 1313
+EXPOSE 80
 
 # Set default base URL (can be overridden at runtime)
 ENV HUGO_BASEURL="http://localhost"
