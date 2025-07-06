@@ -19,11 +19,22 @@ pool: Docker
 
 steps:
 - task: CmdLine@2
-  displayName: "publish to ACR"
-  condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.SourceBranch'], 'refs/heads/develop')))
+  displayName: "Login"
   inputs:
     script: |
       docker build -t blog .
       docker login funkysi1701.azurecr.io --username funkysi1701 --password $(acrPassword)
-      docker tag blog funkysi1701.azurecr.io/funkysi1701/blog:$(Build.BuildNumber)
-      docker push funkysi1701.azurecr.io/funkysi1701/blog:$(Build.BuildNumber)
+- bash: |
+    if [ "$(Build.SourceBranchName)" = "main" ]; then
+      echo "##vso[task.setvariable variable=imageRepoName]blog-main"
+    else
+      echo "##vso[task.setvariable variable=imageRepoName]blog"
+    fi
+  displayName: 'Set image repository name'
+- task: CmdLine@2
+  displayName: "Publish to ACR"
+  condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.SourceBranch'], 'refs/heads/develop')))
+  inputs:
+    script: |
+      docker tag blog funkysi1701.azurecr.io/funkysi1701/$(imageRepoName):$(Build.BuildNumber)
+      docker push funkysi1701.azurecr.io/funkysi1701/$(imageRepoName):$(Build.BuildNumber)
