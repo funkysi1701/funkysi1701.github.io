@@ -1,29 +1,18 @@
-# Step 1: Build the Hugo site
-FROM floryn90/hugo:0.119.0 AS builder
+# Use Hugo to build the site at runtime, allowing BASEURL to be set via environment variable
 
-# Set working directory inside the container
-WORKDIR /src
+FROM floryn90/hugo:0.119.0
 
-# Copy site files to the container
-COPY . .
+WORKDIR /site
 
-# Build the Hugo site
-RUN hugo --minify --config config-dev.toml --buildFuture
+# Copy site source files
+COPY . /site
 
-# Step 2: Serve with nginx
-FROM nginx:alpine
+# Expose port
+EXPOSE 443
 
-# Remove the default nginx static files
-RUN rm -rf /usr/share/nginx/html/*
+# Set default base URL (can be overridden at runtime)
+ENV HUGO_BASEURL="http://localhost"
 
-# Copy the generated site from the builder stage
-COPY --from=builder /src/public /usr/share/nginx/html
-
-# Copy custom nginx config (optional)
-# COPY nginx.conf /etc/nginx/nginx.conf
-
-# Expose port 80
-EXPOSE 80
-
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Build and serve the site at container startup
+ENTRYPOINT []
+CMD hugo server --minify --config config-dev.toml --buildFuture --baseURL "$HUGO_BASEURL" --bind 0.0.0.0 --port 443
