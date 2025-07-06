@@ -8,11 +8,11 @@ WORKDIR /site
 COPY . /site
 
 # Expose port
-EXPOSE 80
+EXPOSE 443
 
 # Set default base URL (can be overridden at runtime)
 ENV HUGO_BASEURL="http://localhost"
 
 # Build and serve the site at container startup
 ENTRYPOINT []
-CMD hugo server --minify --buildFuture --baseURL "$HUGO_BASEURL" --bind 0.0.0.0 --port 80
+CMD hugo server --minify --buildFuture --baseURL "$HUGO_BASEURL" --bind 0.0.0.0 --port 443
