@@ -7,7 +7,7 @@ WORKDIR /site
 # Copy site source files
 COPY . /site
 
-# Expose port 80
+# Expose port
 EXPOSE 1313
 
 # Set default base URL (can be overridden at runtime)
