@@ -13,7 +13,7 @@ enableRobotsTXT = true
       {Name = "Events", URL = "/events/"},
       {Name = "Podcasts", URL = "/podcasts/"},
       {Name = "Search", URL = "/search/"},
-      {Name = "Newsletter", URL = "http://eepurl.com/i7pQno"},
+      {Name = "Newsletter", URL = "https://eepurl.com/i7pQno"},
   ]
 
 [params]
