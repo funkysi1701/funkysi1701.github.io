@@ -11,7 +11,7 @@ COPY . /site
 RUN rm -rf /usr/share/nginx/html/*
 
 # Expose port 80
-EXPOSE 1313
+EXPOSE 80
 
 # Set default base URL (can be overridden at runtime)
 ENV HUGO_BASEURL="http://localhost"
