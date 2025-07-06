@@ -7,9 +7,6 @@ WORKDIR /site
 # Copy site source files
 COPY . /site
 
-# Remove default nginx static files
-RUN rm -rf /usr/share/nginx/html/*
-
 # Expose port 80
 EXPOSE 80
 
