@@ -23,6 +23,7 @@ A list of events I have attended or am planning to attend (no guarantee that I w
 | Event/Talk | Date | Location |
 | --- | --- | --- |
 | Coastal 10K | 21 September 2025 | Cleethorpes |
+| Blackpool Night Run | 27 August 2025 | Blackpool |
 | Normanby Hall 10k | 13 July 2025 | Normanby Hall |
 | DDD North | 22 February 2025 | Hull      |
 | [NDC London](https://www.funkysi1701.com/posts/2025/volunteering-at-ndc/)  | 29-31 January 2025 | London      |
