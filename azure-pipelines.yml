@@ -13,6 +13,7 @@ name: $(Build.Number.Major).$(Build.Number.Minor).$(Build.Number.Sub).$(Rev:r)
 
 trigger:
 - develop
+- test
 - master
 
 pool: Docker
@@ -20,22 +21,51 @@ pool: Docker
 steps:
 - task: CmdLine@2
   displayName: "Login"
-  condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['Build.SourceBranch'], 'refs/heads/develop')))
+  condition: and(succeeded(), in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'))
   inputs:
     script: |
       docker build -t blog .
       docker login funkysi1701.azurecr.io --username funkysi1701 --password $(acrPassword)
 - bash: |
-    if [ "$(Build.SourceBranchName)" = "master" ]; then
-      echo "##vso[task.setvariable variable=imageRepoName]blog-master"
-    elif [ "$(Build.SourceBranchName)" = "develop" ]; then
-      echo "##vso[task.setvariable variable=imageRepoName]blog"
-    fi
+    case "$(Build.SourceBranchName)" in
+      "main")
+        echo "##vso[task.setvariable variable=imageRepoName]blog:$(Build.BuildNumber)-main"
+        ;;
+      "test")
+        echo "##vso[task.setvariable variable=imageRepoName]blog:$(Build.BuildNumber)-test"
+        ;;
+      "develop")
+        echo "##vso[task.setvariable variable=imageRepoName]blog:$(Build.BuildNumber)-develop"
+        ;;
+    esac
   displayName: 'Set image repository name'
 - task: CmdLine@2
   displayName: "Publish to ACR"
-  condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['Build.SourceBranch'], 'refs/heads/develop')))
+  condition: and(succeeded(), in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'))
   inputs:
     script: |
-      docker tag blog funkysi1701.azurecr.io/funkysi1701/$(imageRepoName):$(Build.BuildNumber)
-      docker push funkysi1701.azurecr.io/funkysi1701/$(imageRepoName):$(Build.BuildNumber)
+      docker tag blog funkysi1701.azurecr.io/funkysi1701/$(imageRepoName)
+      docker push funkysi1701.azurecr.io/funkysi1701/$(imageRepoName)
+
+- task: Kubernetes@1
+  displayName: 'Kubernetes Login'
+  inputs:
+    connectionType: Kubernetes Service Connection
+    kubernetesServiceEndpoint: kubernetes
+    command: 'login'     
+- script: |
+    helm lint Helm/blog --namespace develop
+    helm lint Helm/blog --namespace test
+    helm lint Helm/blog --namespace main
+- script: |
+    helm upgrade --install blog ./Helm/blog --namespace develop --set image.tag=$(Build.BuildNumber)-develop
+  condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'develop'))  
+  displayName: 'helm upgrade blog Dev'
+- script: |
+    helm upgrade --install blog ./Helm/blog --namespace test --set image.tag=$(Build.BuildNumber)-test
+  condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'test'))  
+  displayName: 'helm upgrade blog Test'
+- script: |
+    helm upgrade --install blog ./Helm/blog --namespace main --set image.tag=$(Build.BuildNumber)-main
+  condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'main'))  
+  displayName: 'helm upgrade blog Main'
