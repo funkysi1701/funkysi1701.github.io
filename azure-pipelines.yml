@@ -29,13 +29,13 @@ steps:
 - bash: |
     case "$(Build.SourceBranchName)" in
       "main")
-        echo "##vso[task.setvariable variable=imageRepoName]reacthelloworld:$(Build.BuildNumber)-main"
+        echo "##vso[task.setvariable variable=imageRepoName]blog:$(Build.BuildNumber)-main"
         ;;
       "test")
-        echo "##vso[task.setvariable variable=imageRepoName]reacthelloworld:$(Build.BuildNumber)-test"
+        echo "##vso[task.setvariable variable=imageRepoName]blog:$(Build.BuildNumber)-test"
         ;;
       "develop")
-        echo "##vso[task.setvariable variable=imageRepoName]reacthelloworld:$(Build.BuildNumber)-develop"
+        echo "##vso[task.setvariable variable=imageRepoName]blog:$(Build.BuildNumber)-develop"
         ;;
     esac
   displayName: 'Set image repository name'
@@ -54,18 +54,18 @@ steps:
     kubernetesServiceEndpoint: kubernetes
     command: 'login'     
 - script: |
-    helm lint Helm/reacthelloworld --namespace develop
-    helm lint Helm/reacthelloworld --namespace test
-    helm lint Helm/reacthelloworld --namespace main
+    helm lint Helm/blog --namespace develop
+    helm lint Helm/blog --namespace test
+    helm lint Helm/blog --namespace main
 - script: |
-    helm upgrade --install reacthelloworld ./Helm/reacthelloworld --namespace develop --set image.tag=$(Build.BuildNumber)-develop
+    helm upgrade --install blog ./Helm/blog --namespace develop --set image.tag=$(Build.BuildNumber)-develop
   condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'develop'))  
-  displayName: 'helm upgrade reacthelloworld Dev'
+  displayName: 'helm upgrade blog Dev'
 - script: |
-    helm upgrade --install reacthelloworld ./Helm/reacthelloworld --namespace test --set image.tag=$(Build.BuildNumber)-test
+    helm upgrade --install blog ./Helm/blog --namespace test --set image.tag=$(Build.BuildNumber)-test
   condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'test'))  
-  displayName: 'helm upgrade reacthelloworld Test'
+  displayName: 'helm upgrade blog Test'
 - script: |
-    helm upgrade --install reacthelloworld ./Helm/reacthelloworld --namespace main --set image.tag=$(Build.BuildNumber)-main
+    helm upgrade --install blog ./Helm/blog --namespace main --set image.tag=$(Build.BuildNumber)-main
   condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'main'))  
-  displayName: 'helm upgrade reacthelloworld Main'
+  displayName: 'helm upgrade blog Main'
