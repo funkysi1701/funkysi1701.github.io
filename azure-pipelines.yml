@@ -28,7 +28,7 @@ steps:
       docker login funkysi1701.azurecr.io --username funkysi1701 --password $(acrPassword)
 - bash: |
     case "$(Build.SourceBranchName)" in
-      "main")
+      "master")
         echo "##vso[task.setvariable variable=imageRepoName]blog:$(Build.BuildNumber)-main"
         ;;
       "test")
