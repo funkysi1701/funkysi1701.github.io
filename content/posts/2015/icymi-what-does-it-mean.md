@@ -14,6 +14,7 @@ description =  "ICYMI What does it mean?"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/icymi-what-does-it-mean",
     "/posts/icymi-what-does-it-mean-3akg",
@@ -34,6 +35,6 @@ Software Development is littered with acronyms and technical terms that I don’
 
 When reading it is easy to ignore them and try and understand the rest of the article. However there are loads of resources out there that can explain technical terms in a wide variety of different ways.
 
-I have tried to explain a few different terms and concepts on this [blog](http://www.funkysi1701.com/). In the process of writing them I often do a bit of research and read a variety of different definitions, some confuse the heck out of me, while others make me go ahh that makes sense now.
+I have tried to explain a few different terms and concepts on this [blog](https://www.funkysi1701.com/). In the process of writing them I often do a bit of research and read a variety of different definitions, some confuse the heck out of me, while others make me go ahh that makes sense now.
 
 When reading to learn, don’t be afraid to dig deeper and understand it all, don’t read the same terms again and again not understanding them like I did with ICYMI.

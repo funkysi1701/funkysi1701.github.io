@@ -14,6 +14,7 @@ description = "Microsoft Ignite | The Tour – London"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/microsoft-ignite--the-tour--london-38d0",
     "/posts/microsoft-ignite-the-tour-london/",

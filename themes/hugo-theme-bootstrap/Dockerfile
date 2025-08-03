@@ -1,9 +1,7 @@
 # Build stage
-FROM floryn90/hugo:ubuntu as builder
+FROM floryn90/hugo:ubuntu AS builder
 
-RUN apt-get update -y
-
-RUN apt-get install -y git
+RUN apt-get update -y && apt-get install -y git && rm -rf /var/lib/apt/lists/*
 
 # Build site
 WORKDIR /src
@@ -14,7 +12,7 @@ RUN hugo version
 RUN cd /src/exampleSite && hugo --themesDir=../../ --theme=src -b ${HUGO_BASEURL}
 
 # Final stage
-FROM nginx:1.28.0
+FROM nginx:1.29.0
 COPY --from=builder /src/exampleSite/public /app
 COPY ./docker/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 RUN useradd -U -u 1000 appuser && \

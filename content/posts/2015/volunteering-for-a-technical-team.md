@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-08"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/20150802_113719.jpg?resize=1024%2C576&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/20150802_113719.jpg?resize=1024%2C576&ssl=1']
+cover = "/images/20150802_113719.jpg"
+images = ['/images/20150802_113719.jpg']
 tags = ["Easy Worship", "Church", "Volunteers", "Projection"]
 category="tech"
 keywords = ["", ""]
@@ -23,7 +23,7 @@ aliases = [
     "/2015/08/03/volunteering-for-a-technical-team"
 ]
 +++
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/20150802_113719.jpg?resize=1024%2C576&ssl=1)
+![](/images/20150802_113719.jpg)
 For the past few years I have volunteered on the technical team at my local church [St Michael le Belfrey](http://www.belfrey.org/).
 
 For the church to function well it requires volunteers in all sorts of roles, people to welcome visitors, people to pray, people to play music, people to look after children and many other roles.

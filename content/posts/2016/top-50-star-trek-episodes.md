@@ -14,6 +14,7 @@ description =  "Top 50 Star Trek episodes"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/top-50-star-trek-episodes",
     "/posts/2016/01/07/top-50-star-trek-episodes",
@@ -38,7 +39,7 @@ The original Star Trek series first aired on September 8th 1966. It lasted only 
 2. The Devil in the Dark
 3. Balance of Terror
 4. The Trouble with Tribbles
-5. [Arena](http://www.funkysi1701.com/2016/01/21/star-trek-episode-review-arena/)
+5. [Arena](https://www.funkysi1701.com/2016/01/21/star-trek-episode-review-arena/)
 6. This Side of Paradise
 7. Amok Time
 8. Space Seed
@@ -51,7 +52,7 @@ The original Star Trek series first aired on September 8th 1966. It lasted only 
 
 The first spin-off series set 100 years after Kirk featured a new Enterprise continuing to explore space. This series aired between 1987 and 1994 for 178 episodes.
 
-1. [Best of Both Worlds](http://www.funkysi1701.com/2016/02/18/star-trek-episode-review-the-best-of-both-worlds/)
+1. [Best of Both Worlds](https://www.funkysi1701.com/2016/02/18/star-trek-episode-review-the-best-of-both-worlds/)
 2. Yesterdays Enterprise
 3. The Offspring
 4. The Measure of a Man

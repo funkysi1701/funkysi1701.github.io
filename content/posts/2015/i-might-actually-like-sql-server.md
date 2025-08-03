@@ -14,6 +14,7 @@ description =  "I might actually like SQL Server"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/i-might-actually-like-sql-serveri-might-actually-like-sql-server",
     "/posts/i-might-actually-like-sql-server-34j0",
@@ -43,7 +44,7 @@ It’s not like I woke up this morning with SQL Server knowledge. For many years
 
 For every single one of the steps above I googled and looked up the SQL syntax (every time I write an insert or update statement I look up the syntax, one day it will stick in my brain!) I think the main reason is once you have used SQL for a while you get to see how it works and can split it down into small steps.
 
-As I [blogged](http://www.funkysi1701.com/2015/04/21/weakest-database-design/) the other day I am currently working on improving a bad database and today I wanted to test the deployment process. All my changes are in a SSDT project so I took a backup of my database and tried to publish.
+As I [blogged](https://www.funkysi1701.com/2015/04/21/weakest-database-design/) the other day I am currently working on improving a bad database and today I wanted to test the deployment process. All my changes are in a SSDT project so I took a backup of my database and tried to publish.
 
 Error! Your changes will result in data loss, no surprises there as I was expecting that error. The main culprit for this was a trigger I wrote but I didn’t find that out until the end of the day.
 

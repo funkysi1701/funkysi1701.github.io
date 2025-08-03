@@ -1,0 +1,26 @@
+name: Auto PR
+permissions:
+  contents: read
+  pull-requests: write
+on:
+  push:
+    branches:
+    - test
+  
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%d %b %Y')"
+      - name: Check out repository code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: test
+      - name: create pull request
+        run: gh pr create -B master -H test --title 'Release ${{ steps.date.outputs.date }}' --body 'Created by Github action' 
+          || gh pr edit -B master --title 'Release ${{ steps.date.outputs.date }}' --body 'Created by Github action'
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

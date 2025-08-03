@@ -6,8 +6,8 @@ month= "2022-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/header-01.png"
-images =['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/header-01.png']
+cover = "/images/header-01.png"
+images =['/images/header-01.png']
 tags = ["Docker", "SQL"]
 category="tech"
 keywords = ["", ""]
@@ -93,7 +93,7 @@ This is caused by trying to use SQL Server 2017 but it is easy to fix.
 
 In docker desktop there is a volumes section, find the volume you are using with SQL Server and delete the errorlog mentioned above.
 
-![Docker Desktop](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/docker-desktop1.png)
+![Docker Desktop](/images/docker-desktop1.png)
 
 Now if you retry SQL will start OK.
 

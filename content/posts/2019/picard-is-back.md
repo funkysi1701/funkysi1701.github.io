@@ -14,6 +14,7 @@ description = "Picard is back!"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/picard-is-back-3bkm",
     "/posts/picard-is-back",

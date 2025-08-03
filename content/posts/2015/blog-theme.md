@@ -14,6 +14,7 @@ description = "Exploring the process of selecting a blog theme, the importance o
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/choosing-a-blog-theme-2n83",
     "/posts/blog-theme",
@@ -24,7 +25,7 @@ aliases = [
     "/2015/02/15/blog-theme"
 ]
 +++
-You may have noticed that my blog has a new home. It can now be found on its own domain [http://www.funkysi1701.com](http://www.funkysi1701.com). This change not only gives me more flexibility to make any change I like, it also feels good to have a website again. If you had followed my blog, do keep following it at the new location.
+You may have noticed that my blog has a new home. It can now be found on its own domain [https://www.funkysi1701.com](https://www.funkysi1701.com). This change not only gives me more flexibility to make any change I like, it also feels good to have a website again. If you had followed my blog, do keep following it at the new location.
 
 I have also been playing about with giving the site a new look, hope you all like it. I have gone for a more image focussed front page. No doubt in a few weeks I will be bored and change the look again.
 

@@ -14,6 +14,7 @@ description = "An overview of Agile Software Development principles and personal
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/agile-software-development",
     "/posts/agile-software-development-5fkk",

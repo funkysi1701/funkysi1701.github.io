@@ -14,6 +14,7 @@ description = "Star Trek Discovery – thoughts on new trailer"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/star-trek-is-back-with-discovery-4lab",
     "/posts/star-trek-discovery",

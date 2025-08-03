@@ -14,6 +14,7 @@ description =  "Things to know before working on your database"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/things-to-know-before-working-on-your-database",
     "/posts/things-to-know-before-working-on-your-database-1aa3",

@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-11"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/11/86910937_t053ll31.jpg?w=660&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/11/86910937_t053ll31.jpg?w=660&ssl=1']
+cover = "/images/86910937_t053ll31.jpg"
+images = ['/images/86910937_t053ll31.jpg']
 tags = ["Deals", "Blogging", "Blackfriday"]
 category="tech"
 keywords = ["", ""]
@@ -22,7 +22,7 @@ aliases = [
 +++
 ## Over 50% Off this Black Friday!
 
-![Black Friday Deals](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/11/86910937_t053ll31.jpg?w=660&ssl=1)
+![Black Friday Deals](/images/86910937_t053ll31.jpg)
 
 Yes your heard it correctly even www.funkysi1701.com has amazing offers.
 

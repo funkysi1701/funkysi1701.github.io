@@ -4,6 +4,7 @@ title = "Testing Funky Si's Blog"
 theme = 'hugo-theme-bootstrap'
 disqusShortname = "funkysi1701"  
 googleAnalytics = ""
+enableRobotsTXT = true
 
 [Menus]
   main = [
@@ -11,7 +12,8 @@ googleAnalytics = ""
       {Name = "Referral Links", URL = "/referral-links/"},
       {Name = "Events", URL = "/events/"},
       {Name = "Podcasts", URL = "/podcasts/"},
-      {Name = "Search", URL = "/search/"}
+      {Name = "Search", URL = "/search/"},
+      {Name = "Newsletter", URL = "https://eepurl.com/i7pQno"},
   ]
 
 [params]
@@ -19,6 +21,7 @@ googleAnalytics = ""
   images = ["https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg"]
   themeColor = "theme-base-0d"
   logo = false
+  cdnImagePrefix = ""
 
 [taxonomies]
   year = "year"

@@ -14,6 +14,7 @@ description =  "The Hunted, TNG S3 E11, The Battle Bridge"
 showFullContent = false
 readingTime = true
 copyright = false
+draft = true
 aliases = [
     "/posts/the-hunted-tng-s3-e11-the-battle-bridge",
     "/posts/2015/10/08/the-hunted-tng-s3-e11-the-battle-bridge",
