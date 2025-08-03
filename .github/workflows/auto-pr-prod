@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: develop
+          ref: test
       - name: create pull request
         run: gh pr create -B master -H test --title 'Release ${{ steps.date.outputs.date }}' --body 'Created by Github action' 
           || gh pr edit -B master --title 'Release ${{ steps.date.outputs.date }}' --body 'Created by Github action'
