@@ -26,7 +26,7 @@
     "workbox-strategies": "7.3.0"
   },
   "devDependencies": {
-    "@babel/core": "7.28.0",
+    "@babel/core": "7.28.3",
     "@popperjs/core": "2.11.8",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
@@ -65,7 +65,7 @@
     "ts-loader": "9.5.2",
     "typescript": "5.9.2",
     "url-loader": "4.1.1",
-    "webpack": "5.101.1",
+    "webpack": "5.101.2",
     "webpack-bundle-analyzer": "4.10.2",
     "webpack-cli": "6.0.1"
   },
