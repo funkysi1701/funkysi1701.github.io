@@ -44,7 +44,7 @@
     "eslint-webpack-plugin": "4.2.0",
     "file-loader": "6.2.0",
     "glob-all": "3.3.1",
-    "less": "4.4.0",
+    "less": "4.4.1",
     "less-loader": "12.3.0",
     "line-column": "1.0.2",
     "mini-css-extract-plugin": "2.9.4",
