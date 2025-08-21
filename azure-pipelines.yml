@@ -25,7 +25,7 @@ steps:
   inputs:
     script: |
       docker build -t blog .
-      docker login funkysi1701.azurecr.io --username funkysi1701 --password $(acrPassword)
+      printf '%s' "$(acrPassword)" | docker login funkysi1701.azurecr.io --username funkysi1701 --password-stdin
 - bash: |
     case "$(Build.SourceBranchName)" in
       "main")
