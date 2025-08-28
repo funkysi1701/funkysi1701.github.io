@@ -1,8 +1,7 @@
 name: Auto PR
 on:
-  push:
-    branches:
-    - develop
+  schedule:
+    - cron: '40 12 * * *'
 permissions:
   contents: write
   pull-requests: write   
