@@ -3,9 +3,8 @@ permissions:
   contents: read
   pull-requests: write
 on:
-  push:
-    branches:
-    - test
+  schedule:
+    - cron: '40 12 */7 * *'
   
 jobs:
   create-pr:
