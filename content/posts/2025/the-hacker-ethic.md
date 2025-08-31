@@ -64,7 +64,7 @@ Hackers believe in the transformative potential of technology. They see computer
 
 The hacker ethic is alive in open-source communities, maker spaces, and digital activism. It challenges us to question closed systems, embrace sharing, and use technology for good. In a world increasingly shaped by algorithms and artificial intelligence, the hacker ethic reminds us that human creativity, curiosity, and collaboration are still at the heart of progress.
 
-After listening to the book it is very clear to me that many of today's security problems stem from this ethic. Early computers and software was built by design without security in mind. The hackers featured in the book strongly disliked passwords and locks, they believed information and systems should be open to all. I had incorrectly assumed that it was just an oversight and wasn't needed back then.
+After listening to the book it is very clear to me that many of today's security problems stem from this ethic. Early computers and software were built by design without security in mind. The hackers featured in the book strongly disliked passwords and locks, they believed information and systems should be open to all. I had incorrectly assumed that it was just an oversight and wasn't needed back then.
 
 The growth of open source software can clearly be seen as an extension to the sharing of code started by these early hackers, instead of looking in a drawer for paper tape containing the code you want to improve, we go to GitHub, but the principle is the same.
 
