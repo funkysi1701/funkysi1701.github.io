@@ -2,13 +2,13 @@
 title = "The Hacker Ethic"
 date = "2025-09-01T20:00:00Z"
 year = "2025"
-month= "2025-09"
+month = "2025-09"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/hacker.jpg"
-images =['/images/hacker.jpg']
+images = ["/images/hacker.jpg"]
 tags = ["hacking", "ethics", "hacker culture", "technology", "innovation", "curiosity", "security", "digital rights", "open source", "mindset"]
-category="tech"
+category = "tech"
 description = "A concise look at the hacker mindset, exploring ethics, curiosity, and the drive to innovate in technology and society."
 showFullContent = false
 readingTime = true
