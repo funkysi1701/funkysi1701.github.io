@@ -28,7 +28,7 @@ When most people hear the word “hacker,” they imagine shadowy figures breaki
 
 ## What Is the Hacker Ethic?
 
-The term “hacker ethic” was popularized by Steven Levy in his book _Hackers: Heroes of the Computer Revolution_. I have just finished listening to the audio version, and highly recommend it. The book describes a set of beliefs and practices developed by early computer enthusiasts at places like MIT, Stanford, and the Homebrew Computer Club. Far from criminality, the hacker ethic is about playful exploration, sharing knowledge, and questioning limits.
+The term “hacker ethic” was popularized by Steven Levy in his book _Hackers: Heroes of the Computer Revolution_ (I have just finished listening to the audio version and highly recommend it). The book describes a set of beliefs and practices developed by early computer enthusiasts at places like MIT, Stanford, and the Homebrew Computer Club. Far from criminality, the hacker ethic is about playful exploration, sharing knowledge, and questioning limits.
 
 <img src="/images/hacker.jpg" alt="Hackers: Heroes of the Computer Revolution" width="300" height="400" class="img-fluid float-end ms-2" />
 
@@ -64,7 +64,7 @@ Hackers believe in the transformative potential of technology. They see computer
 
 The hacker ethic is alive in open-source communities, maker spaces, and digital activism. It challenges us to question closed systems, embrace sharing, and use technology for good. In a world increasingly shaped by algorithms and artificial intelligence, the hacker ethic reminds us that human creativity, curiosity, and collaboration are still at the heart of progress.
 
-After listening to the book it is very clear to me that many of today's security problems stem from this ethic. Early computers and software were built by design without security in mind. The hackers featured in the book strongly disliked passwords and locks, they believed information and systems should be open to all. I had incorrectly assumed that it was just an oversight and wasn't needed back then.
+After listening to the book, it's clear that many of today's security problems stem from this ethic. Early computers and software were built by design without security in mind. The hackers featured in the book strongly disliked passwords and locks; they believed information and systems should be open to all. I had incorrectly assumed that it was just an oversight and wasn't needed back then.
 
 The growth of open source software can clearly be seen as an extension to the sharing of code started by these early hackers, instead of looking in a drawer for paper tape containing the code you want to improve, we go to GitHub, but the principle is the same.
 
@@ -72,4 +72,4 @@ The growth of open source software can clearly be seen as an extension to the sh
 
 The hacker ethic is far more than a technical mindset—it’s a philosophy of openness, empowerment, and playful problem-solving. By understanding and embracing these principles, we can build a digital future that is more inclusive, innovative, and free.
 
-The more I think about my career with computers, the more I feel I fit more as a hacker than a programmer or any other job title. I started hacking together simple web pages, I then hacked away at networks and active directory, now I hack at dotnet and kubernetes.
+The more I think about my career with computers, the more I feel I fit more as a hacker than a programmer or any other job title. I started hacking together simple web pages, I then hacked away at networks and Active Directory, now I hack at .NET and Kubernetes.
