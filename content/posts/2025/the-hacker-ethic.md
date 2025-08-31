@@ -30,7 +30,7 @@ When most people hear the word “hacker,” they imagine shadowy figures breaki
 
 The term “hacker ethic” was popularized by Steven Levy in his book _Hackers: Heroes of the Computer Revolution_. I have just finished listening to the audio version, and highly recommend it. The book describes a set of beliefs and practices developed by early computer enthusiasts at places like MIT, Stanford, and the Homebrew Computer Club. Far from criminality, the hacker ethic is about playful exploration, sharing knowledge, and questioning limits.
 
-<img src="/images/hacker.jpg" alt="Hackers: Heroes of the Computer Revolution" width="300" height="400" class="img-fluid float-end" style="padding-left:5px" />
+<img src="/images/hacker.jpg" alt="Hackers: Heroes of the Computer Revolution" width="300" height="400" class="img-fluid float-end" style="padding-left:10px" />
 
 ## The Core Principles
 
