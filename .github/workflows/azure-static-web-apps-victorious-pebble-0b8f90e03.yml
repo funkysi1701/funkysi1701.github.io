@@ -1,7 +1,9 @@
 name: Deploy to Production 
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  
+  schedule: 
+    - cron: '5 20 * * 1'
   push:
     branches:
     - main    
@@ -40,5 +42,6 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_PEBBLE_0B8F90E03 }}
           action: "close"
+
 
 
