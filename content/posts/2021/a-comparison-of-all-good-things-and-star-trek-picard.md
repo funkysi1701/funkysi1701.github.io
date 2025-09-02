@@ -55,9 +55,8 @@ In Star Trek Picard one would assume there is no Neutral Zone as well because th
 
 As we have seen Patrick Stewart does not appear to be ageing. Below is a comparison of how he looks in the two time frames.
 
-![All Good Things..](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/08/all-good-things.jpg?w=584&ssl=1)
+![All Good Things..](/images/2021/all-good-things.jpg)
 
-![Star Trek Picard](/images/picard.jpeg)
+![Star Trek Picard](/images/2021/picard.jpeg)
 
 I really enjoyed the first episode of Star Trek Picard and it is going to be interesting seeing what other similarities and differences there are between it and All Good Things...
-

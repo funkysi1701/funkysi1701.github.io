@@ -40,7 +40,7 @@ Now if you are anything like me you want your code merged in as soon as you have
 
 #### Branch Policies
 
-![Branch Policy](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/save-policy-changes.png?resize=599%2C901&ssl=1)
+![Branch Policy](/images/2018/save-policy-changes.png)
 
 Branch policies allow you to specify how your code gets merged in.
 
