@@ -27,7 +27,7 @@ Let’s Encrypt is a free way to get a SSL certificate onto your website and unt
 
 IIS is the web server software the Microsoft include with Windows 10 and Windows Server. I have it installed on my laptop and it displays the default IIS page.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/iis.jpg?resize=768%2C464&ssl=1)
+![](/images/2018/iis.jpg)
 
 It is not really a good idea to host websites on your laptop, use a dedicated web server, or host with a hosting company, however the techniques are the same and it gives me something to write about!
 
@@ -43,18 +43,18 @@ First you need a Let’s Encrypt client, there are a lot of them out there mostl
 
 Run the executable from the zip file and follow the onscreen prompts.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/letsencrypt.jpg?resize=768%2C480&ssl=1)
+![](/images/2018/letsencrypt.jpg)
 
 Press N to create a new certificate.
 
 Then press 1 to bind to single website found in your IIS setup
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/letsencrypt2.jpg?resize=768%2C686&ssl=1)
+![](/images/2018/letsencrypt2.jpg)
 
 And now magically Let’s Encrypt knows what you have setup in IIS.
 
 Now all you need to do is enter an email address incase a renewal fails and agree to the let’s encrypt terms and you are all setup.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/letsencrypt3.jpg?resize=768%2C920&ssl=1)
+![](/images/2018/letsencrypt3.jpg)
 
 How awesome and easy is that for getting your websites working with a SSL certificate. If you have IIS configured on a server, give it a try and you can SSL all your things.
