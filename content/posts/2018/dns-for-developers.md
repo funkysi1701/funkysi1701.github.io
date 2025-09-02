@@ -37,7 +37,7 @@ An example might be google.com which for me resolves to 216.58.204.14
 
 ### How it works
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/dns-rev-1.gif?resize=360%2C320&ssl=1)When your browser makes a request to google.com it makes a request to your ISPs DNS Servers. This resolves google.com to 216.58.204.14
+![](/images/2018/dns-rev-1.gif)When your browser makes a request to google.com it makes a request to your ISPs DNS Servers. This resolves google.com to 216.58.204.14
 
 In more detail your ISPs DNS server will forward the DNS query to another DNS server and will cache the results for a set amount of time. This is the TTL or Time To Live. Next time the ISP DNS Server will be able to reply directly without needing to forward requests.
 
