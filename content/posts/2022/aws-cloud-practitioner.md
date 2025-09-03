@@ -37,4 +37,3 @@ The other difference was the first exam was Azure, this one was AWS. Both exams 
 My memory is the Azure gave you a breakdown of your score at the end, while I am still waiting for that from todays exam. This difference may of course be due to it being in a testing centre.
 
 I still prefer Azure to AWS, however today has proven that I can learn AWS stuff as well. For my next exam I want to get more hands on with my learning, as most of the services I have learnt about so far I haven't seen in action.
-

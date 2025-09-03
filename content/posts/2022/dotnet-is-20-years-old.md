@@ -35,7 +35,7 @@ If you want to celebrate this achievment tweet with the hashtag [#DotNetLovesMe]
 
 On Thursday the 17th Feb the first preview of dotnet 7.0 is going to be released, with the latest version 6.0 only being released last November.
 
-![History of DotNet](https://pbs.twimg.com/media/FLj8kj7XEAcW3ng?format=jpg&name=4096x4096)
+![History of DotNet](/images/2022/FLj8kj7XEAcW3ng.jpg)
 
 The above graphic comes from the following tweet.
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">This is 20 years of <a href="https://twitter.com/hashtag/dotnet?src=hash&amp;ref_src=twsrc%5Etfw">#dotnet</a> releases. <a href="https://twitter.com/hashtag/dotNETLovesMe?src=hash&amp;ref_src=twsrc%5Etfw">#dotNETLovesMe</a> <a href="https://t.co/Zxfe1SdWTq">pic.twitter.com/Zxfe1SdWTq</a></p>&mdash; Khalid 🎟 (@buhakmeh) <a href="https://twitter.com/buhakmeh/status/1493220984916258817?ref_src=twsrc%5Etfw">February 14, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
