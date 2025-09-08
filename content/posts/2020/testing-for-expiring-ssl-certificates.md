@@ -25,9 +25,9 @@ aliases = [
 +++
 Let's Encrypt is amazing, you can easily add SSL certificates to any website and automate the renewal process. I have talked [before](https://www.funkysi1701.com/posts/let-s-encrypt-is-awesome-3f5j/) about how impressive it is.
 
-Once you start adding SSL certificates to your production sites however you may want to check when they expire so you don't get caught out. You can always open your site in your favourite browser and view the certificate information and expiry date. 
+Once you start adding SSL certificates to your production sites however you may want to check when they expire so you don't get caught out. You can always open your site in your favourite browser and view the certificate information and expiry date.
 
-![SSL Cert](https://dev-to-uploads.s3.amazonaws.com/i/jb78re4fmm1ofx81f3mu.JPG)
+![SSL Cert](/images/2020/jb78re4fmm1ofx81f3mu.JPG)
 However there is a way to automate this check.
 
 ```csharp

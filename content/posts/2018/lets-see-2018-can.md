@@ -27,7 +27,7 @@ It is 2018 so it must be time to think about what my plans and goals are for the
 
 ### Buy a house
 
-![House](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/12/LEGO-Classic-10703-Creative-Building-Box-Yellow-House.jpg?resize=300%2C300&ssl=1)
+![House](/images/2018/LEGO-Classic-10703-Creative-Building-Box-Yellow-House.jpg)
 
 This a huge goal for me. For many years I was content with renting and thought owning my own home wasn’t for me, but then I went and started a family and my career started going in the right direction and my thoughts about this have changed.
 
@@ -53,7 +53,7 @@ Wow how has it been five years since we got married? At some point in 2018 I wil
 
 ### Celebrate the birth of my two sons
 
-![Celebrate James and Edward](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/james5.jpg?resize=300%2C225&ssl=1)
+![Celebrate James and Edward](/images/2018/james5.jpg)
 
 I don’t want to get my boys christened as I would like them to make up their own minds when they are old enough, however I do want to celebrate all that they are with a thanksgiving service. Not sure when we are going to sort this, however it is my hope that it will be soon.
 

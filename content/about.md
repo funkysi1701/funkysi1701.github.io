@@ -5,7 +5,7 @@ authorTwitter = "funkysi1701" #do not include @
 cover = ""
 keywords = ["", ""]
 description = "Learn more about Simon Foster, also known as Funky Si. Discover his background, professional experience in IT and software development, and his personal projects like the Pwned Pass app."
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg']
+images = ['/images/1922276.jpg']
 showFullContent = false
 copyright = false
 readingTime = true
@@ -16,8 +16,8 @@ aliases = [
 ]
 +++
 
-<img alt="Funky Si profile image" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg" style="float: left; padding-right: 15px; height: 150px" />
-    
+<img alt="Funky Si profile image" src="/images/1922276.jpg" style="float: left; padding-right: 15px; height: 150px" />
+
 My real name is Simon Foster but my on-line persona is Funky Si a nickname I was given during my university days which has somehow stuck. I am a Developer working in the North of England. I have been working in IT departments since 2006 and have a wide range of experiences. More recently in the Software Development space but also SysAdmin, Server Infrastructure, Databases and DevOps.
 
 In my spare time I have created <a href="/pwned-pass">Pwned Pass</a> a Xamarin Forms mobile app that makes use of the Have I Been Pwned? API to allow searching for breached emails and passwords. This is available from the Google Play store.

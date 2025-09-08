@@ -26,7 +26,7 @@ aliases = [
 
 **Who was your hero growing up?** Mine was Stephen Hawking.
 
-![Stephen Hawking](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/03/Hawking-ZeroG_web-1.jpg?resize=662%2C268&ssl=1)
+![Stephen Hawking](/images/2018/Hawking-ZeroG_web-1.jpg)
 
 **What is a hero?** A lot is said in the media about “Heroes”. Often the sportsperson of the hour is described as a hero. I don’t like this definition and I think there is far more to being a hero than that. One definition I saw describes a hero as _A person who is admired for their courage, outstanding achievements, or noble qualities._
 

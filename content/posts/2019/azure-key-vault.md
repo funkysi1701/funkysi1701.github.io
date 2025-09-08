@@ -31,7 +31,7 @@ For my example I am just going to connect to my Key Vault and get a secret and d
 
 Lets look at some code. I have a .net core application and to start with lets install three nuget packages.
 
-```
+```txt
 Microsoft.Azure.KeyVault
 Microsoft.Azure.Services.AppAuthentication
 Microsoft.Extensions.Configuration.AzureKeyVault
@@ -72,7 +72,7 @@ Now in your Program.cs add the following code, replacing [KeyVaultName] with the
 
 Now all you need to do is look at your configuration to pull out secrets from your Azure Key Vault. If you have a secret called AppSecret then you can use the following code snippet to retrieve its value, assuming \_configuration is an implementation of Microsoft.Extensions.Configuration.IConfiguration.
 
-```
+```txt
 _configuration["AppSecret"];
 ```
 
@@ -80,14 +80,14 @@ Now if you do all of this and run from an Azure Web App or run locally it will f
 
 Once my code has been deployed to an Azure Web App I get the following error.
 
-![Image](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image.png?fit=662%2C292&ssl=1)
+![Image](/images/2019/image.png)
 
 Lets look at fixing that, first lets give my web app an Identity. Open up the Azure portal and find the identity section of your web app and turn the setting on.
 
-![Image](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image-1.png?fit=662%2C396&ssl=1)
+![Image](/images/2019/image-1.png)
 
 Now you need to grant that identity permission to your key vault. In the portal open up Access Policies in your key vault and click add Policy, select the identity of your web app in the principal box and select the following settings to grant access to your secret.
 
-![Image](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image-2.png?resize=206%2C428&ssl=1)
+![Image](/images/2019/image-2.png)
 
 Now you have a website that can pull secrets out of Key Vault but only that unique identity. Anyone who has access to your source code will not have access to your secrets, even if they push your code to a different Azure Web App.

@@ -1,4 +1,4 @@
-name: Auto PR
+name: Test to Main
 permissions:
   contents: read
   pull-requests: write

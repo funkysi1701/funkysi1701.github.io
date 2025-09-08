@@ -39,7 +39,7 @@ Back then, to use Subversion you needed to set up a linux server with subversion
 
 Over the years I installed various web interfaces to allow "*browsing*" of source code, some even had bug trackers built in. The ones I can remember are [Trac](https://trac.edgewall.org/) and [Redmine](https://www.redmine.org/). Both look to still be available and you can probably install them if you want to remember way back when.
 
-<img src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/github-octocat.png?resize=300%2C158&ssl=1" width="400px" align="right" />
+<img src="/images/2022/github-octocat.png" width="400px" align="right" />
 
 The first hosted source control tool I remember using was [bitbucket](https://bitbucket.org/product/) and this as far as I can tell has only ever supported git. So I am guessing I imported my subversion repos into git ones at this point. The reason for bitbucket was chosen was it allowed private repositories for free, at that point github was probably available but only provided public repositories.
 
