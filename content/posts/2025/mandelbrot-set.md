@@ -47,7 +47,7 @@ Zooming in on the edge reveals ever-more complexity, with shapes that are remini
 The Mandelbrot set is more than just a pretty picture. It’s a window into the world of **complex dynamics** and **chaos theory**. The set’s boundary is infinitely complex, showing how simple mathematical rules can generate unexpected and beautiful complexity.
 
 It also has deep implications in mathematics:
-- **Fractals:** The Mandelbrot set is the most famous example of a fractal—a shape that shows similar patterns at every scale.
+- **Fractals:** The Mandelbrot set is the most famous example of a fractal—a shape that shows similar, though not identical, patterns at every scale.
 - **Chaos Theory:** It illustrates sensitive dependence on initial conditions, where tiny changes can lead to drastically different outcomes.
 - **Complex Numbers:** It brings to life the beauty of complex numbers, which are usually abstract concepts in math classes.
 
