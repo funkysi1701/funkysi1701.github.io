@@ -40,7 +40,7 @@ In other words, for each point **c** on the complex plane, you check: if you kee
 
 The real magic happens when you visualize the Mandelbrot set on a computer. Each point in the complex plane is colored based on whether it belongs to the set or how quickly it escapes to infinity. The result is a black, bulbous shape surrounded by intricate, infinitely detailed patterns that resemble swirling galaxies, seahorses, or lightning bolts—the Mandelbrot set and its "fractal boundary."
 
-Zooming in on the edge reveals ever-more complexity, with self-similar shapes echoing the original set at different scales. This property, known as "self-similarity," is a hallmark of fractals.
+Zooming in on the edge reveals ever-more complexity, with shapes that are reminiscent of the original set at different scales. This property, a form of self-similarity, is a hallmark of fractals.
 
 ## Why Is the Mandelbrot Set Important?
 
