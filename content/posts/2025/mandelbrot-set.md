@@ -32,7 +32,7 @@ The Mandelbrot set is one of the most iconic images in mathematics—a mesmerizi
 
 At its core, the Mandelbrot set is a collection of complex numbers. It’s defined by a simple equation, but the results are anything but simple. The definition is:
 
-> A complex number **c** is in the Mandelbrot set if, when you start with **z = 0** and repeatedly apply the function **z = z² + c**, the value of **z** remains bounded (does not go to infinity), no matter how many times you iterate.
+> A complex number **c** is in the Mandelbrot set if, when you start with **z = 0** and repeatedly apply the function `z = z² + c`, the value of **z** remains bounded (does not go to infinity), no matter how many times you iterate.
 
 In other words, for each point **c** on the complex plane, you check: if you keep plugging it into this formula, does it stay small, or does it spiral out of control? If it stays small forever, it's in the Mandelbrot set.
 
@@ -62,7 +62,7 @@ Many websites and software tools let you explore the Mandelbrot set interactivel
 
 ## Final Thoughts
 
-I have been fascinated by fractals since I was young. I remember seeing them generated on a [Lynx computer](/posts/2021/back-to-basic/) and the process was slow, one pixel at a time, after a few hours you would see a complete mandelbrot set. More recently I have looked at generating them in the browser (using .NETs Blazor WebAassembly technology), and the image at the start of this post took only a few seconds to generate.
+I have been fascinated by fractals since I was young. I remember seeing them generated on a [Lynx computer](/posts/2021/back-to-basic/) and the process was slow, one pixel at a time, after a few hours you would see a complete mandelbrot set. More recently I have looked at generating them in the browser (using .NET's Blazor WebAssembly technology), and the image at the start of this post took only a few seconds to generate.
 
 [mandelbrot.funkysi1701.com](https://mandelbrot.funkysi1701.com/) is currently a work in progress but you can generate a mandelbrot set and zoom in using the buttons on the top of the page or by clicking with a mouse. I hope to add some more features in the coming weeks.
 
