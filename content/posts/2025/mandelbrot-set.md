@@ -38,7 +38,7 @@ In other words, for each point **c** on the complex plane, you check: if you kee
 
 ## From Simple Formula to Stunning Images
 
-The real magic happens when you visualize the Mandelbrot set on a computer. Each point in the complex plane is colored based on whether it belongs to the set or how quickly it escapes to infinity. The result is a black, bulbous shape surrounded by intricate, infinitely detailed patterns that resemble swirling galaxies, seahorses, or lightning bolts—the Mandelbrot set and its "fractal boundary."
+The real magic happens when you visualize the Mandelbrot set on a computer. Each point in the complex plane is coloured based on whether it belongs to the set or how quickly it escapes to infinity. The result is a black, bulbous shape surrounded by intricate, infinitely detailed patterns that resemble swirling galaxies, seahorses, or lightning bolts—the Mandelbrot set and its "fractal boundary."
 
 Zooming in on the edge reveals ever-more complexity, with shapes that are reminiscent of the original set at different scales. This property, a form of self-similarity, is a hallmark of fractals.
 
@@ -53,7 +53,7 @@ It also has deep implications in mathematics:
 
 ## The Mandelbrot Set in Art and Culture
 
-Thanks to its stunning visuals, the Mandelbrot set has become a cultural icon. It’s inspired digital art, music, and even jewelry. It also serves as a symbol for how complexity and order can emerge from simple rules, a concept that resonates in fields from biology to computer science.
+Thanks to its stunning visuals, the Mandelbrot set has become a cultural icon. It’s inspired digital art, music, and even jewellery. It also serves as a symbol for how complexity and order can emerge from simple rules, a concept that resonates in fields from biology to computer science.
 
 ## Try It Yourself
 
