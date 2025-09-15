@@ -1,5 +1,6 @@
 ---
 variables:
+  - group: Global
   - name: Build.Number.Major
     value: 9
   - name: Build.Number.Minor
