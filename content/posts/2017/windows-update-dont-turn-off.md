@@ -25,7 +25,7 @@ aliases = [
 +++
 No blog post this week. However why not check out Troy Hunts blog article about [Windows Update](https://www.troyhunt.com/dont-tell-people-to-turn-off-windows-update-just-dont/).
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/05/ximage7.png.pagespeed.gpjpjwpjwsjsrjrprwricpmd.ic_.OmA4sQpZUA.png?w=464&ssl=1)
+![](/images/2017/ximage7.png.pagespeed.gpjpjwpjwsjsrjrprwricpmd.ic_.OmA4sQpZUA.png)
 
 I am probably fairly unique in that I like installing updates whether it be on my phone, my PC or for one of my favourite programs. One of my tasks when I used to work in a sysadmin role was ensuring all windows updates got installed on all servers and client machines. It was a never ending task, as soon as you got almost all updates done, it would be update Tuesday and a new set of updates would be released.
 

@@ -24,7 +24,7 @@ aliases = [
 ]
 +++
 
-![Troy Hunt SSL expert](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/07/Troy-Hunt-Profile-Photo.jpg?resize=150%2C150&ssl=1)
+![Troy Hunt SSL expert](/images/2017/Troy-Hunt-Profile-Photo.jpg)
 
 I recently watched Troy Hunt’s [What Every Developer Must Know about HTTPS](https://www.pluralsight.com/courses/https-every-developer-must-know) course on Pluralsight. Its very good and really make you think about SSL certificates and how to correctly implement them.
 

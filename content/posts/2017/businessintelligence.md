@@ -44,6 +44,6 @@ If your website uses google analytics you can connect it up to Power BI and see 
 
 Another thing you can do is connect Azure Application Insights. This provides some similar data to google analytics about who is visiting your site.
 
-If your code is hosted in Visual Studio Team Services you can get some cool analytics from your commit history. ![Business Intelligence from VSTS](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/06/Capture-1.jpg?resize=662%2C177&ssl=1)
+If your code is hosted in Visual Studio Team Services you can get some cool analytics from your commit history. ![Business Intelligence from VSTS](/images/2017/Capture-1.jpg)
 
 There is a huge long list of apps you can connect to power BI so you can start getting all sorts of analysis very easily. I am hopefully going to talk another time about getting custom data into Power BI.

@@ -5,8 +5,8 @@ year = "2017"
 month= "2017-09"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/09/gqojtfz1dhmxoiri7g8p.png?resize=662%2C372&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/09/gqojtfz1dhmxoiri7g8p.png?resize=662%2C372&ssl=1']
+cover = "/images/2017/gqojtfz1dhmxoiri7g8p.png"
+images = ['/images/2017/gqojtfz1dhmxoiri7g8p.png']
 tags = ["StarTrek", "Discovery"]
 category="trek"
 keywords = ["", ""]
@@ -49,4 +49,4 @@ However in 2009 movie creator JJ Abrams recast the classic crew for the big scre
 
 Two sequels to this film have been produced and are bringing Star Trek back into popularity. This has given rise to Discovery. Star Trek is returning to the TV screen and it is going to be great.
 
-![Discovery](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/09/gqojtfz1dhmxoiri7g8p.png?resize=662%2C372&ssl=1)
+![Discovery](/images/2017/gqojtfz1dhmxoiri7g8p.png)

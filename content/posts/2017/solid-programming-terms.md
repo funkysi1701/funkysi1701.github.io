@@ -41,23 +41,23 @@ SOLID are five principles of object oriented programming and design.
 
 **S** is for Single Responsibility Principle. A class or piece of code should be responsible for doing one thing.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/SingleResponsibilityPrinciple2_71060858.jpg?resize=300%2C240&ssl=1)
+![](/images/2017/SingleResponsibilityPrinciple2_71060858.jpg)
 
 **O** is for Open/Closed Principle. Code should be open for extensions but closed for modifications. Often this refers to the way you can implement an interface and add extra functionality.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/ocp.jpg?resize=300%2C240&ssl=1)
+![](/images/2017/ocp.jpg)
 
 **L** is for Liskov Substitution Principle. Objects in a program can be replaced with subtypes of that object with out changing functionality.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/LiskovSubtitutionPrinciple_52BB5162.jpg?resize=300%2C240&ssl=1)
+![](/images/2017/LiskovSubtitutionPrinciple_52BB5162.jpg)
 
 **I** is for Interface Segregation Principle. Large interfaces should be split down into small interfaces so that clients only know about methods that are of interest.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/isp.jpg?resize=300%2C240&ssl=1)
+![](/images/2017/isp.jpg)
 
 **D** is for Dependency Inversion Principle. High and Low level modules should depend on abstractions.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/dip.jpg?resize=300%2C240&ssl=1)
+![](/images/2017/dip.jpg)
 
 I need to look into SOLID some more but here are some [examples](https://www.codeproject.com/Articles/703634/SOLID-architecture-principles-using-simple-Csharp).
 
