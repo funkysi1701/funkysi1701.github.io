@@ -5,8 +5,8 @@ year = "2017"
 month= "2017-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/02/Exchange-Rate-Calculator.jpg?resize=300%2C202&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/02/Exchange-Rate-Calculator.jpg?resize=300%2C202&ssl=1']
+cover = "/images/2017/Exchange-Rate-Calculator.jpg"
+images = ['/images/2017/Exchange-Rate-Calculator.jpg']
 tags = ["ExchangeRates", "R"]
 category="tech"
 keywords = ["", ""]
@@ -27,7 +27,7 @@ aliases = [
 ]
 +++
 
-![R](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/02/Exchange-Rate-Calculator.jpg?resize=300%2C202&ssl=1)Today I spent some time learning the R language.
+![R](/images/2017/Exchange-Rate-Calculator.jpg)Today I spent some time learning the R language.
 
 The problem I was trying to solve was to convert local prices of some items into Euros. I had been using a fixed exchange rate for all data, but as exchange rates fluctuate so much this is incorrect.
 
