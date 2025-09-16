@@ -27,7 +27,7 @@ aliases = [
 
 Pwned Pass is now available from the [Google Play Store](https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords).
 
-![Pwned Pass](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/08/Screenshot_20170813-205152.png?resize=169%2C300&ssl=1)
+![Pwned Pass](/images/2017/Screenshot_20170813-205152.png)
 
 Pwned Pass is a simple android app that allows you to type in a password and tells you if it has been used in a data breach.
 

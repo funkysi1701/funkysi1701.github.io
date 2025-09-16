@@ -28,7 +28,7 @@ I keep hearing about Azure WebJobs but I have never used them. Time to change th
 
 WebJobs are a feature of Azure App Service that can run a script at a specific time. In my case I would like to hit a specific url of my website at the same time every day.
 
-![WebJobs](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/06/addkeepalivewebjob.png?resize=313%2C615&ssl=1)To the right you can see an example of the WebJobs form on the Azure portal that you need to fill in.
+![WebJobs](/images/2017/addkeepalivewebjob.png)To the right you can see an example of the WebJobs form on the Azure portal that you need to fill in.
 
 You need to supply a name for your webjob.
 

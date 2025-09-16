@@ -5,8 +5,8 @@ year = "2017"
 month= "2017-05"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/05/DAD0hTKUAAAUkTP.jpg?w=1199&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/05/DAD0hTKUAAAUkTP.jpg?w=1199&ssl=1']
+cover = "/images/2017/DAD0hTKUAAAUkTP.jpg"
+images = ['/images/2017/DAD0hTKUAAAUkTP.jpg']
 tags = ["StarTrek", "Discovery"]
 category="trek"
 keywords = ["", ""]
@@ -36,7 +36,7 @@ The rumour mill has been going crazy about Star Trek Discovery but now we have a
 
 When images first surfaced of the ship I wasn’t keen, however all the shots of the ship look great. I assume this must be the USS Discovery, although it is hard to tell anything from a two minute advert.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/05/DAD0hTKUAAAUkTP.jpg?w=1199&ssl=1)
+![](/images/2017/DAD0hTKUAAAUkTP.jpg)
 
 ### The Bridge
 
