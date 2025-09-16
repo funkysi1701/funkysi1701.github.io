@@ -25,7 +25,7 @@ aliases = [
 +++
 I recently came home from a busy day of work to my wife blaming me for allowing our 18 month old son to reach some paint and get it all over the carpet. She was concentrating on the fact that he could reach the paint not on the fact that she had brilliantly got the paint out of the carpet.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/04/blame-shifting.jpg?resize=300%2C300&ssl=1)
+![](/images/2017/blame-shifting.jpg)
 
 My instinct on being blamed is to deny it, or start throwing blame back at her. It is possible I put the paint in his reach, it is also possible it was someone else.
 

@@ -25,7 +25,7 @@ aliases = [
 +++
 High Charts is a javascript library that allows graphs and charts to easily be added to web pages.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/05/chart.jpeg?resize=768%2C512&ssl=1)
+![](/images/2017/chart.jpeg)
 
 A chart like this can easily be added with a few lines of html and javascript.
 
@@ -83,7 +83,7 @@ This adds the data and sets up various options for the charts. More details abou
 
 I am quite a fan of the different gauges that you can put on your site, as you can add a bit of animation and make the needles bounce around. https://www.highcharts.com/demo/gauge-solid
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/05/chart-1.jpeg?resize=750%2C250&ssl=1)
+![](/images/2017/chart-1.jpeg)
 
 As most of the data I deal with lives in a SQL Server database, I have been spending quite a bit of time writing Stored Procedures and functions to mould the data so I can easily pass data from the database to javascript.
 
