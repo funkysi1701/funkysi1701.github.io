@@ -27,7 +27,7 @@ aliases = [
 +++
 A few weeks back I attended a talk at [Agile Yorkshire](http://www.agileyorkshire.org/event-announcements/tuesfebruary21st-drolivershawtestdrivendevelopmentthemostmisusedterminsoftwaredevelopmentandkeithwilliamsdependenciesinjectionandabstractionforfunandprofit) about Test Driven Development or TDD by Dr Oliver Shaw. I was impressed at how easy Oliver made it look, so as I have never tried it I thought I should give it a try.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/tdd_flow.gif?resize=287%2C300&ssl=1)
+![](/images/2017/tdd_flow.gif)
 
 Test Driven Development or TDD is a way of development which starts with writing a Unit Test. First you write a failing test, then you write the code to make it pass, then you refactor your code. This can be remembered by thinking of **Red, Green, Refactor**. Red being the failing test, Green being getting the test to pass, and Refactor being the refactoring.
 

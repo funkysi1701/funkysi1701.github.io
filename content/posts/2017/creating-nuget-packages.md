@@ -25,7 +25,7 @@ aliases = [
 +++
 For a while I have found myself writing the same bits of code for different web projects. This annoys me as it goes against the DRY principle (don’t repeat yourself).
 
-![Nuget](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/07/nuget.png?resize=300%2C91&ssl=1)One possible solution is to write your own nuget packages. You can then add this piece of code to any project you work on.
+![Nuget](/images/2017/nuget.png)One possible solution is to write your own nuget packages. You can then add this piece of code to any project you work on.
 
 [nuget.org](https://www.nuget.org/) is the public nuget feed where any developer can download nuget packages. You could publish your nuget package here, but your might want to restrict access so better to create a private nuget feed.
 

@@ -26,7 +26,7 @@ aliases = [
 
 As 2017 starts to draw to a close let’s look at some of the highlights from the past year.
 
-![Edward](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/DSC_0376-e1510563039193-225x300.jpg?resize=225%2C300&ssl=1)
+![Edward](/images/2017/DSC_0376-e1510563039193-225x300.jpg)
 
 1) Edward
 
@@ -40,7 +40,7 @@ In September the latest Star Trek TV series Discovery arrived on Netflix. I have
 
 In May I helped my employer move to brand new [offices](https://funkysi1701.com/office-move). This was a lot of hard work, but everything went as planned and our new home is great.
 
-4) Side projects ![Google Play](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/08/googleplay.jpg?resize=300%2C300&ssl=1)
+4) Side projects ![Google Play](/images/2017/googleplay.jpg)
 
 I blogged in February about having a side project but it wasn’t until later in the year that this solidified into what I am working on now. It started as a way to understand [interfaces](https://funkysi1701.com/interfaces)this then led to learning Xamarin and creating an android app to help promote this blog. Troy Hunt expanded his HIBP API to include passwords that have been in data breaches, I then started working on [pwned passwords](https://funkysi1701.com/pwned-pass--available-from-the-play-store) which is a simple android frontend for this.
 

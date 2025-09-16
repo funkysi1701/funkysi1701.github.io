@@ -25,7 +25,7 @@ aliases = [
 ]
 +++
 
-![New Rack](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/04/20170422_191127-e1493403982560-169x300.jpg?resize=169%2C300&ssl=1)For the past few weeks my software developing has been taking a back seat as I planned and coordinated the IT requirements of an office move.
+![New Rack](/images/2017/20170422_191127-e1493403982560-169x300.jpg)For the past few weeks my software developing has been taking a back seat as I planned and coordinated the IT requirements of an office move.
 
 The company I work for has been working out of a converted barn, but as the company has grown we have outgrown the building and for quite a while it has been a real squeeze to get everyone in. We now have a shiny new offices with plenty of room for growth.
 
@@ -37,7 +37,7 @@ Soon a weekly conference call was setup so we could coordinate with the IT peopl
 
 One thing I was particularly proud of was YDS. York Data Services (YDS) is an ISP I have worked with in the past at a previous job and I was able to continue my relationship with them and they were contacted and became our primary internet supplier.
 
-Unfortunately most ISPs have to deal with BTOpenreach who have a bit of a monopoly on getting phone lines or leased lines installed. The initial estimate we were given was two weeks after we were due to move in. It was looking like we would move in and two weeks later we would get an internet connection. We were in the process of getting quotes for a temporary internet connection when BT contacted us and could get us connected up. ![New Office](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/05/18121045_1302238519862436_8711390769620542649_o.jpg?resize=300%2C225&ssl=1)
+Unfortunately most ISPs have to deal with BTOpenreach who have a bit of a monopoly on getting phone lines or leased lines installed. The initial estimate we were given was two weeks after we were due to move in. It was looking like we would move in and two weeks later we would get an internet connection. We were in the process of getting quotes for a temporary internet connection when BT contacted us and could get us connected up. ![New Office](/images/2017/18121045_1302238519862436_8711390769620542649_o.jpg)
 
 Soon afterwards a huge cabinet and two pallets full of equipment was delivered. Two days later a team was dispatched to rack everything up. On the rack we had the following equipment: 4 x UPS, 4 x Network Switches, 2 x Routers (for 2 x Leased Lines from different providers, the secondary connection has not been installed yet), 2 x Palo Alto Firewall devices, 2 x New Servers.
 
