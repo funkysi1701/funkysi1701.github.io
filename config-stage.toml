@@ -2,7 +2,6 @@ baseURL = 'https://develop.funkysi1701-github-io.pages.dev/'
 languageCode = 'en-gb'
 title = "Testing Funky Si's Blog"
 theme = 'hugo-theme-bootstrap'
-disqusShortname = "funkysi1701"  
 googleAnalytics = ""
 enableRobotsTXT = true
 
