@@ -2,7 +2,6 @@ baseURL = 'https://www.funkysi1701.com/'
 languageCode = 'en-gb'
 title = "Funky Si's Blog"
 theme = 'hugo-theme-bootstrap'
-disqusShortname = "funkysi1701"  
 googleAnalytics = ""
 enableRobotsTXT = true
 
