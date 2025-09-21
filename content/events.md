@@ -20,14 +20,14 @@ A list of events I have attended or am planning to attend (no guarantee that I w
 
 ## 2025
 
-| Event/Talk | Date | Location | Results | min/km |
-| --- | --- | --- | --- | --- |
-| Coastal 10k | 21 September 2025 | Cleethorpes | 1h 30m 34s | 09m 03s |
-| Blackpool Night Run 7.5k | 27 August 2025 | Blackpool | 1h 04m 49s | 08m 39s |
-| Normanby Hall 10k | 13 July 2025 | Normanby Hall | 1h 36m 58s | 09m 42s |
-| DDD North | 22 February 2025 | Hull      | N/A | N/A |
-| [NDC London](https://www.funkysi1701.com/posts/2025/volunteering-at-ndc/)  | 29-31 January 2025 | London      | N/A | N/A |
-| [Night Walk 5k](https://runforwildlife.com/run-for-wildlife-night-5k) | 4 January 2025 | Yorkshire Wildlife Park | 0h 48m 09s | 09m 38s | 
+| Event/Talk                                                              | Date                 | Location                | Results    | min/km  |
+| ----------------------------------------------------------------------- | -------------------- | ----------------------- | ---------- | ------- |
+| Coastal 10k                                                             | 21 September 2025    | Cleethorpes             | 1h 30m 34s | 09m 03s |
+| Blackpool Night Run 7.5k                                                | 27 August 2025       | Blackpool               | 1h 04m 49s | 08m 39s |
+| Normanby Hall 10k                                                       | 13 July 2025         | Normanby Hall           | 1h 36m 58s | 09m 42s |
+| DDD North                                                               | 22 February 2025     | Hull                    | N/A        | N/A     |
+| [NDC London](https://www.funkysi1701.com/posts/2025/volunteering-at-ndc/) | 29-31 January 2025   | London                  | N/A        | N/A     |
+| [Night Walk 5k](https://runforwildlife.com/run-for-wildlife-night-5k)     | 4 January 2025       | Yorkshire Wildlife Park | 0h 48m 09s | 09m 38s |
 
 ## 2024
 
