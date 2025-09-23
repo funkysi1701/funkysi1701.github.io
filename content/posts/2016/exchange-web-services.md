@@ -96,6 +96,7 @@ foreach (Appointment a in appointments)
     }
 }
 ```
+
 My website queries a SQL database which I can easily populate with a console app that runs at regular intervals throughout the day.
 
 There is a lot more I want to do with this project as this is only the basics of what you can do with Exchange Web Services. So expect more blog posts on this subject as I expand its functionality and learn new ways of doing things.

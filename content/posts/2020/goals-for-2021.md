@@ -45,8 +45,8 @@ Here are a few ideas for my goals for the year ahead.
 
 5) Doing a talk has been on my list for years. I am terrified of doing one and with everything online now I don't know if that makes things easier or harder. I don't think 2021 is going to be the year for this but maybe I will take baby steps towards this goal.
 
-6) Twitter recently reminded me about watching a Mandlebrot generate one pixel at a time in the 1980s. I would love to explore the code used to generate them and how fast they currently are to produce. 
+6) Twitter recently reminded me about watching a Mandlebrot generate one pixel at a time in the 1980s. I would love to explore the code used to generate them and how fast they currently are to produce.
 
 7) My Google play store Xamarin forms app that uses the HIBP API has less than 100 users and I am considering closing it down, especially as I pay a monthly fee for API keys. I haven't really decided what to do, maybe I will spend some time improving it, maybe I will close it down, maybe I will build something else.
 
-8) For many people 2020 has been a hard year, I am one of those 
+8) For many people 2020 has been a hard year, I am one of those.

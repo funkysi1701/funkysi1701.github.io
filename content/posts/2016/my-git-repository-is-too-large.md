@@ -35,13 +35,13 @@ It suggests ways of listing all the large files that are stored in git and a way
 
 I will summarise the steps here.
 
-```
+```txt
 git clone url
 ```
 
 Now you need all the remote branches so there is a bash script to run
 
-```
+```bash
 #!/bin/bash
 for branch in `git branch -a | grep remotes | grep -v HEAD | grep -v master`; do
 git branch –track ${branch##*/} $branch
@@ -50,7 +50,7 @@ done
 
 Another bash script then lists the top 10 large files
 
-```
+```bash
 #!/bin/bash
 #set -x
 # Shows you the largest objects in your repo’s pack file.
@@ -81,13 +81,13 @@ echo -e $output
 
 After running the script you will see details of your largest files. I had *.msi and *.exe files in the mix. To remove them run the following, where filename is the path to the file that needs removing.
 
-```
+```txt
 git filter-branch –tag-name-filter cat –index-filter ‘git rm -r –cached –ignore-unmatch filename’ –prune-empty -f — –all
 ```
 
 To reclaim the disk space run the following commands
 
-```
+```txt
 rm -rf .git/refs/original/
 git reflog expire –expire=now –all
 git gc –prune=now
@@ -96,7 +96,7 @@ git gc –aggressive –prune=now
 
 Now push your changes back to the remote server.
 
-```
+```txt
 git push origin –force –all
 git push origin –force –tags
 ```

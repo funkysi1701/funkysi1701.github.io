@@ -25,7 +25,7 @@ aliases = [
 +++
 One of my favourite podcasts is Troy Hunts weekly update. In it he discusses stuff that he has been working on, plus some personal stuff. I am going to attempt to do something similar. It will probably take me a few of these before we get a look and feel that works.
 
-#### Monday 
+#### Monday
 
 A week off work, mainly to use it up before year end, plus want to get a few jobs around the house done. 
 
@@ -35,15 +35,15 @@ I did ask the following question on Twitter.
 
 As a one person dev team, my biggest weakness is working with others so any ideas of how to change that are great.
 
-#### Tuesday 
+#### Tuesday
 
-Dotnet 5 is out! The latest version of dotnet is released by Microsoft and to celebrate there is [dotnetconf](https://www.dotnetconf.net/) to listen to. Due to time zones and family commitments, I haven't listened to an awful lot of it but I did see the keynote and loved the 3 Scott's chat. 
+Dotnet 5 is out! The latest version of dotnet is released by Microsoft and to celebrate there is [dotnetconf](https://www.dotnetconf.net/) to listen to. Due to time zones and family commitments, I haven't listened to an awful lot of it but I did see the keynote and loved the 3 Scott's chat.
 
-#### Wednesday 
+#### Wednesday
 
 My youngest son was 3 today, due to Coronavirus we didn't do much but we celebrated as a family, and he even had a zoom call.
 
-#### Thursday 
+#### Thursday
 
 Blazor has a new feature [Virtualize](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/virtualization?view=aspnetcore-5.0) where a list of items can only load the ones on screen. I have been trying to get this to work on my blog, works great running locally but not working in production yet.
 
@@ -57,23 +57,27 @@ One additional thing I added to my Blog is the config page which details some of
 
 At the moment we have .net Version, Commit and Build links.
 
-The .Net Version is obtained from 
+The .Net Version is obtained from
+
 ```csharp
 @System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription
 ```
 
-A few other bits of info can be obtained from System.Runtime.InteropServices.RuntimeInformation which I have included on the page for fun. There are probably security concerns with exposing all this info publicly so something to bear in mind if you try this. 
+A few other bits of info can be obtained from System.Runtime.InteropServices.RuntimeInformation which I have included on the page for fun. There are probably security concerns with exposing all this info publicly so something to bear in mind if you try this.
 
 Build Info is passed to my code by a build step
+
 ```yml
 - script: '(echo $(Build.BuildNumber) && echo $(Build.BuildId)) > .buildinfo.json'
   displayName: "Emit build number"
   workingDirectory: '$(Build.SourcesDirectory)/src/WebBlog'
   failOnStderr: true
 ```
+
 This simply passed the build id and number which are stored as variabled and saves them in a text file.
 
 I then have a class that reads them and constructs a link.
+
 ```csharp
 using Microsoft.Extensions.Hosting;
 using System;
@@ -181,13 +185,17 @@ namespace WebBlog
     }
 }
 ```
+
 The BuildId and BuildNumber properties just fetch the details saved into the text file during the build. This can then be passed to build the build link.
+
 ```html
 <a href="https://dev.azure.com/{OrgName}/{RepoName}/_build/results?buildId=@appInfo.BuildId&view=results">
     @appInfo.BuildNumber
 </a>
 ```
+
 Finally, the GitHash properties need to fetch the hash and shorthash of the commit which is a bit more complex. This is achieved using the following line in your build.
+
 ```yml
 - task: DotNetCoreCLI@2
   displayName: 'Publish'
@@ -196,8 +204,11 @@ Finally, the GitHash properties need to fetch the hash and shorthash of the comm
     publishWebProjects: true
     arguments: '--output $(Build.ArtifactStagingDirectory) /p:SourceRevisionId=$(Build.SourceVersion)'
 ```
+
 /p:SourceRevisionId=$(Build.SourceVersion) add the revision hash to [assembly: AssemblyInformationalVersion] during the build which can then be extracted using the gitHash property above, before being passed into the commit link.
+
 ```html
 <a href="https://github.com/{OrgName}/{RepoName}/commit/@appInfo.GitHash">
     @appInfo.ShortGitHash
 </a>
+```

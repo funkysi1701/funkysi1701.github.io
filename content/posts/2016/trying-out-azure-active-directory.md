@@ -5,8 +5,8 @@ year = "2016"
 month= "2016-03"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/03/arch.png?w=600&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/03/arch.png?w=600&ssl=1']
+cover = "/images/2016/arch.png"
+images = ['/images/2016/arch.png']
 tags = ["Active Directory", "Azure", "Authentication", "Azure Active Directory", "DevOps"]
 category="tech"
 keywords = ["", ""]
@@ -29,7 +29,7 @@ One of my plans is to create new MVC Webapps for my companies databases. Once I 
 
 The traditional way to do this would be insert membership tables into my database. The user then has to remember another username and password and I have to secure the storage of these credentials. Lots of work for everyone.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/03/arch.png?w=600&ssl=1)
+![](/images/2016/arch.png)
 
 There is a better way by using Azure Active Directory. You have probably heard of Active Directory, if you are a SysAdmin you probably use it all the time to manage your corporate users and computers. Azure Active Directory is an extension of this into the Cloud.
 

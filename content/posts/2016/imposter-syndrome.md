@@ -5,8 +5,8 @@ year = "2016"
 month= "2016-09"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/09/1429677066685.rendition-medium.jpg?w=598&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/09/1429677066685.rendition-medium.jpg?w=598&ssl=1']
+cover = "/images/2016/1429677066685.rendition-medium.jpg"
+images = ['/images/2016/1429677066685.rendition-medium.jpg']
 tags = ["Newjob","Imposter Syndrome"]
 category="tech"
 keywords = ["", ""]
@@ -33,7 +33,7 @@ However moments after I handed my notice in, a huge wave of uncertainty envelope
 
 *Despite external evidence of their competence, those with the syndrome remain convinced that they are frauds and do not deserve the success they have achieved. Proof of success is dismissed as luck, timing, or as a result of deceiving others into thinking they are more intelligent and competent than they believe themselves to be.*
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/09/1429677066685.rendition-medium.jpg?w=598&ssl=1)
+![](/images/2016/1429677066685.rendition-medium.jpg)
 
 I started to convince myself I couldn’t do the job I had just accepted and that moments after I arrived on my first day I would be found out as a fraud and kicked out the door.
 
