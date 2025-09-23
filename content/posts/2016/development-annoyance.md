@@ -23,7 +23,7 @@ aliases = [
     "/2016/01/29/development-annoyance"
 ]
 +++
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/01/How-you-can-stop-annoyance-or-frustrations-quickly.jpg?w=425&ssl=1)
+![](/images/2016/How-you-can-stop-annoyance-or-frustrations-quickly.jpg)
 
 I spend a lot of my time creating new features that simplify my companies business processes.
 
@@ -31,7 +31,7 @@ A good example of this is an invoicing system I created. Instead of users workin
 
 I am currently expanding this system so more of the companies work can be invoiced quickly and simply.
 
-## I like working on this kind of problem.
+## I like working on this kind of problem
 
 I get to discuss with the different departments involved, finding out how they work and what could make their lives better.
 

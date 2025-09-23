@@ -5,8 +5,8 @@ year = "2016"
 month= "2016-10"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/10/step30.jpg?w=515&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/10/step30.jpg?w=515&ssl=1']
+cover = "/images/2016/step30.jpg"
+images = ['/images/2016/step30.jpg']
 tags = ["LINQ", "SQL",  "C-Sharp"]
 category="tech"
 keywords = ["", ""]
@@ -25,7 +25,7 @@ aliases = [
     "/2016/10/06/linq"
 ]
 +++
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/10/step30.jpg?w=515&ssl=1)
+![](/images/2016/10/step30.jpg)
 
 ### What is LINQ?
 
@@ -38,11 +38,13 @@ To use LINQ the first thing you need to do is add the LINQ using statement.
 ```csharp
 using System.Linq;
 ```
+
 In your code you need a datasource, for this example I am going to use a simple array, but it can be anything eg SQL, XML etc
 
 ```csharp
 int[] data = new int[10] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 ```
+
 Next you need a LINQ query. (Note I know the Q in LINQ means query, so I have just written query query, if you are one of those people who hates seeing PIN number you might not like this blog post.) A LINQ query is very similar to a T-SQL query, so if like me you are good with databases this should make sense to you.
 
 In T-SQL you can have:
@@ -52,6 +54,7 @@ SELECT num
 FROM data
 WHERE num = 1
 ```
+
 In LINQ this becomes:
 
 ```csharp
@@ -69,6 +72,7 @@ foreach (var num in query)
   Console.Write(num);
 }
 ```
+
 ### What other SQL like syntax can I use?
 
 In T-SQL you can control ordering using ORDER BY, LINQ has a similar syntax orderby
@@ -76,6 +80,7 @@ In T-SQL you can control ordering using ORDER BY, LINQ has a similar syntax orde
 ```csharp
 orderby num descending
 ```
+
 In T-SQL you can use GROUP BY, to do something similar with LINQ
 
 ```csharp
