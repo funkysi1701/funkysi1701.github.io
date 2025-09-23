@@ -24,7 +24,7 @@ aliases = [
 ]
 +++
 
-My last blog post was over six months ago. 
+My last blog post was over six months ago.
 
 Covid 19 has hit the world, and I will be honest I have found it a challenging time.
 
@@ -38,10 +38,10 @@ dev.to has an integration with Stackbit/Netlify and this became https://dev.funk
 
 However, as a developer I don't like magic, I want to understand what is going on a fiddle with all the settings and make it do what I want.
 
-dev.to has an API, I can build a site in .Net Core and make API calls to fetch the content I want. I understand APIs, I understand .Net and can customise my site exactly how I want it, plus play about with a .net website. This is what https://www.funkysi1701.com is now.   
+dev.to has an API, I can build a site in .Net Core and make API calls to fetch the content I want. I understand APIs, I understand .Net and can customise my site exactly how I want it, plus play about with a .net website. This is what https://www.funkysi1701.com is now.
 
 So what have I built so far. I have a Server Side Blazor site running .Net 5. Why Server Side and not Client Side I hear you ask? Well only because I have more experience with Server Side and know how to quickly create a website with that technology, I may change it as time goes by, but we will see.
 
-I have two pages a list of my blog posts and a page that displays the content. Both of these use the dev.to API. I lied, there is a third page I hacked together to do some page redirection from the WordPress URLs. This is something I will change as time goes on. 
+I have two pages a list of my blog posts and a page that displays the content. Both of these use the dev.to API. I lied, there is a third page I hacked together to do some page redirection from the WordPress URLs. This is something I will change as time goes on.
 
 There are lots of improvements I want to do, there are probably also lots of broken images or links as well. Hopefully, this will result in a good platform to blog about as well as on.
