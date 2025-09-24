@@ -25,7 +25,7 @@ aliases = [
 +++
 That’s right this is the one hundredth post that I have written on this blog.
 
-![100-posts-old-L-fwCF_f](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/06/100-posts-old-L-fwCF_f-300x247.jpeg?resize=300%2C247)
+![100-posts-old-L-fwCF_f](/images/2016/100-posts-old-L-fwCF_f-300x247.jpeg)
 
 **So what have I learned in the past 100 posts?**
 

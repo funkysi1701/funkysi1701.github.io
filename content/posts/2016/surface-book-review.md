@@ -5,8 +5,8 @@ year = "2016"
 month= "2016-03"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/02/en-INTL-PDP0-Surface-Book-CR9-00001-P2.jpg?w=780&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/02/en-INTL-PDP0-Surface-Book-CR9-00001-P2.jpg?w=780&ssl=1']
+cover = "/images/2016/en-INTL-PDP0-Surface-Book-CR9-00001-P2.jpg"
+images = ['/images/2016/en-INTL-PDP0-Surface-Book-CR9-00001-P2.jpg']
 tags = ["Laptop", "Hardware", "Technology", "Microsoft", "Windows"]
 category="tech"
 keywords = ["", ""]
@@ -25,7 +25,7 @@ aliases = [
     "/2016/03/10/surface-book-review"
 ]
 +++
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/02/en-INTL-PDP0-Surface-Book-CR9-00001-P2.jpg?w=780&ssl=1)
+![](/images/2016/en-INTL-PDP0-Surface-Book-CR9-00001-P2.jpg)
 I have just bought myself a new laptop, but it is not just any laptop it is a [Microsoft Surface Book](https://www.microsoftstore.com/store/msuk/en_GB/pdp/productID.332604800).
 
 I think this is probably the first time I have bought myself a top of the range laptop and after a few days of use I am loving it.

@@ -5,8 +5,8 @@ year = "2016"
 month= "2016-08"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/08/dzone_02.png?w=400&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/08/dzone_02.png?w=400&ssl=1']
+cover = "/images/2016/dzone_02.png"
+images = ['/images/2016/dzone_02.png']
 tags = ["Blogging", "DevOps",  "Social", "DZone"]
 category="tech"
 keywords = ["", ""]
@@ -28,7 +28,7 @@ aliases = [
 +++
 For a while now I have been sharing some of my blog posts on the [Dzone](https://dzone.com/) website.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/08/dzone_02.png?w=400&ssl=1)
+![](/images/2016/dzone_02.png)
 
 The Dzone website allows users to submit links to content and I have been submitting the content I have created on this website. This is how Dzone describes themselves:
 

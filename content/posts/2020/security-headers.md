@@ -27,7 +27,7 @@ Have you wondered what info you are leaking via your response headers?, do you w
 
 Head on over to https://securityheaders.com/ This is a site created by security expert [Scott Helme](https://scotthelme.co.uk) that rates a URL based on what response headers it can see.
 
-I am pleased to say www.funkysi1701.com is now getting an A.![Alt Text](/images/2020/07rwumi94fz141hwessu.PNG)
+I am pleased to say https://www.funkysi1701.com is now getting an A.![Alt Text](/images/2020/07rwumi94fz141hwessu.png)
 
 So how do you add/remove headers in dotnet core?
 
@@ -53,4 +53,5 @@ app.Use(
          };
      });
 ```
+
 I have only included a few of the headers I am adding as the excellent https://securityheaders.com/ can tell you which headers you should add and what options you might want.

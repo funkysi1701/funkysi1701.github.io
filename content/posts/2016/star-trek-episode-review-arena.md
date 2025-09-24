@@ -5,8 +5,8 @@ year = "2016"
 month= "2016-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/01/Gorn.jpg?w=662&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/01/Gorn.jpg?w=662&ssl=1']
+cover = "/images/2016/Gorn.jpg"
+images = ['/images/2016/Gorn.jpg']
 tags = ["StarTrek", "Gorn", "Arena"]
 category="trek"
 keywords = ["", ""]
@@ -21,7 +21,7 @@ aliases = [
     "/2016/01/21/star-trek-episode-review-arena"
 ]
 +++
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/01/Gorn.jpg?w=662&ssl=1)
+![](/images/2016/Gorn.jpg)
 
 - Episode Title: **Arena**
 - Star Trek Type: TOS
@@ -62,7 +62,7 @@ The Metrons allow the Enterprise to watch the last stages of Kirks struggle. The
 
 Kirk starts constructing a weapon using the diamonds, sulphur and potassium nitrate to make a gunpowder explosion to fire the diamonds at the Gorn captain. Just in time he applies a spark to his weapon and his opponent lies defeated.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/01/Gorn_Kirk_cannon.jpg?resize=300%2C225&ssl=1)
+![](/images/2016/Gorn_Kirk_cannon.jpg)
 
 Kirk refused to kill the Gorn captain as they may have been just defending themselves. The Metron announces that Kirk has displayed the advanced trait of mercy and there may be hope for humanity after all.
 

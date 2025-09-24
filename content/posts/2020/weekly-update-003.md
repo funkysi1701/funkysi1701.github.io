@@ -44,7 +44,7 @@ I have been thinking about contributing to open source for a while. However, I h
 
 ### PHP
 
-This week I had a call asking me if I knew PHP? 
+This week I had a call asking me if I knew PHP?
 
 I did, over ten years ago, before I got my first IT job, I spent time learning PHP and MySQL. I created a blog, and I also created a website for my Dad's camera club. The code I created back then was awful. No shared code, all the code was associated with the page, or sorts of bugs occurred and as time went by it became increasingly hard to update. The site was well liked but I eventually lost interest and moved on to learn other things.
 
@@ -52,6 +52,6 @@ This call led to me talking with the head of IT, and later a couple of the devel
 
 I haven't had time to spend a lot of time looking at the code so far, however this is nothing like the PHP I had built before.
 
-The project makes use of the [laravel](https://laravel.com/) framework and the first file I opened had methods and classes, so apart from the syntax you could think you were looking at C#. 
+The project makes use of the [laravel](https://laravel.com/) framework and the first file I opened had methods and classes, so apart from the syntax you could think you were looking at C#.
 
 Another thing that interested me was the project used docker containers, it has automated builds as well. Lots of modern programming ideas that I had some ideas about. I am looking forward to learning more about this project and how I might contribute to it.

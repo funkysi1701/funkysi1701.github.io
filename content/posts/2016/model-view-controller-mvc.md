@@ -23,7 +23,7 @@ aliases = [
     "/2016/03/17/model-view-controller-mvc"
 ]
 +++
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/03/27.jpg?w=327&ssl=1)
+![](/images/2016/27.jpg)
 
 Model View Controller or MVC is a software architectural pattern for implementing user interfaces on computers. It divides a given software application into three interconnected parts, so as to separate internal representations of information from the ways that information is presented to or accepted from the user.
 

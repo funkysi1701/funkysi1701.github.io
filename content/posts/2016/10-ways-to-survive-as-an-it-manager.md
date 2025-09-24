@@ -5,8 +5,8 @@ year = "2016"
 month= "2016-09"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/09/bhrzpww6aehdx1wvrrug.jpg?w=800&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/09/bhrzpww6aehdx1wvrrug.jpg?w=800&ssl=1']
+cover = "/images/2016/bhrzpww6aehdx1wvrrug.jpg"
+images = ['/images/2016/bhrzpww6aehdx1wvrrug.jpg']
 tags = ["ITAdmin", "Backups","DevOps","Technology"]
 category="tech"
 keywords = ["", ""]
@@ -57,7 +57,7 @@ This is a hard one to get the balance right for. You need to tell your boss enou
 
 ## 8. Understand the problems of the business
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/09/bhrzpww6aehdx1wvrrug.jpg?w=800&ssl=1)
+![](/images/2016/bhrzpww6aehdx1wvrrug.jpg)
 
 Businesses need to make money. If the one you work for isn’t making enough money you will soon be looking for another. If you work for IT you will quickly start to see the problems of the business, think about what simple changes IT could make to improve things that would benefit the whole company. Some of your suggestions won’t go anywhere, but some may have a massive impact. I can think of a few changes that IT have spearheaded that I am very proud of, upgrading our internet connection, simplifying or automating processes and delivering new versions of software.
 

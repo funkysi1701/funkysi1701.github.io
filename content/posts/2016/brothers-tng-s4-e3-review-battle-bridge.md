@@ -5,8 +5,8 @@ year = "2016"
 month= "2016-05"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/05/Noonian_Soong_2367.jpg"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/05/Noonian_Soong_2367.jpg']
+cover = "/images/2016/Noonian_Soong_2367.jpg"
+images = ['/images/2016/Noonian_Soong_2367.jpg']
 tags = ["StarTrek", "Trekmate", "Podcast"]
 category="trek"
 keywords = ["", ""]
@@ -28,4 +28,3 @@ Data jeopardizes an emergency mission to save an ill child when he gets a signal
 Today James and Lou discuss (Brothers) and what we think of it, with tonight’s guest host Simon Foster, Funky Si.
 
 Credit: Main Title Theme (TV Edit) was arranged by [Dennis McCarthy](http://en.memory-alpha.org/wiki/Dennis_McCarthy) and composed by [Jerry Goldsmith](http://en.memory-alpha.org/wiki/Jerry_Goldsmith) and [Alexander Courage](https://memory-alpha.fandom.com/wiki/Alexander_Courage)
-
