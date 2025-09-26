@@ -5,8 +5,8 @@ year = "2016"
 month= "2016-06"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/2016/https-xebialabs.com-assets-files-infographics-periodic-table-of-devops-v2.png"
-images = ['/images/2016/https-xebialabs.com-assets-files-infographics-periodic-table-of-devops-v2.png']
+cover = "/images/2016/periodic-table-of-devops-v2.png"
+images = ['/images/2016/periodic-table-of-devops-v2.png']
 tags = ["Chemistry", "DevOps",  "Tools"]
 category="tech"
 keywords = ["", ""]
@@ -14,7 +14,7 @@ description =  "Periodic Table of DevOps"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/periodic-table-of-devops-15c7",
     "/posts/periodic-table-devops",
@@ -27,7 +27,7 @@ aliases = [
 +++
 The periodic table lists all the chemical elements and groups them together based on some key properties. Today I found an article about the [periodic table of DevOps](https://xebialabs.com/periodic-table-of-devops-tools/).
 
-![](/images/2016/https-xebialabs.com-assets-files-infographics-periodic-table-of-devops-v2.png)
+![](/images/2016/periodic-table-of-devops-v2.png)
 
 I am not going to discuss every element but I thought I might go through some that I have heard of or used.
 
