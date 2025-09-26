@@ -25,7 +25,7 @@ aliases = [
     "/2016/10/06/linq"
 ]
 +++
-![](/images/2016/10/step30.jpg)
+![](/images/2016/step30.jpg)
 
 ### What is LINQ?
 
