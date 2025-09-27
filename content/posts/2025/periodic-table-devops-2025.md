@@ -48,7 +48,7 @@ In 2016 we had a whole column of Cloud Platforms, including Rackspace and OpenSh
 
 ## Containerization
 
-In 2016 we had a column of tools like Docker, Docker Swarm and Kubernetes. In 2025 there are far more tools in this space, with the addition of tools like Helm and the various ways you can host containers on cloud platforms (like Azure AKS)
+In 2016 we had a column of tools like Docker, Docker Swarm and Kubernetes. In 2025 there are far more tools in this space, with the addition of tools like Helm and the various ways you can host containers on cloud platforms (like Azure AKS).
 
 ## Build and Deploy tools
 
