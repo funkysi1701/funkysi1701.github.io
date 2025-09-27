@@ -2,7 +2,7 @@
 title = "Periodic Table of DevOps 2025"
 date = "2025-09-29T20:00:45Z"
 year = "2025"
-month= "2025-09"
+month = "2025-09"
 author = "funkysi1701"
 authorTwitter = "funkysi1701"
 cover = "/images/2025/periodic-table-devops-2025.png"
