@@ -44,7 +44,7 @@ Subversion, a source control system I started my career with, has vanished off t
 
 ## Cloud Platforms
 
-In 2016 we had a whole column of Cloud Platforms, including Rackspace and OpenShift, in 2025 this has been reduced to the big three (Azure, AWS and GCP) plus OpenSHift.
+In 2016 we had a whole column of Cloud Platforms, including Rackspace and OpenShift, in 2025 this has been reduced to the big three (Azure, AWS and GCP) plus OpenShift.
 
 ## Containerization
 
