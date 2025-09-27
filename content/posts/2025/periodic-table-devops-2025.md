@@ -11,6 +11,7 @@ tags = ["Chemistry", "DevOps",  "Tools"]
 category="tech"
 keywords = ["", ""]
 description =  "Periodic Table of DevOps 2025"
+description = "Compare DevOps tools from 2016 to 2025 and discover key trends shaping modern software development."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -21,38 +22,58 @@ aliases = [
     "/2025/09/29/periodic-table-devops-2025"
 ]
 +++
+
+DevOps has transformed the way teams build, deploy, and manage software. Over the years, the tools we use have evolved rapidly—some have become industry standards, while others have faded away or emerged to solve new challenges. In this post, I revisit the concept of a "Periodic Table of DevOps" to compare the landscape in 2016 with 2025, highlight key changes, and reflect on what these shifts mean for developers, IT professionals, and organizations embracing modern workflows.
+
 The periodic table lists all the chemical elements and groups them together based on some key properties. In 2016 I found an article about the [periodic table of DevOps](https://xebialabs.com/periodic-table-of-devops-tools/) and wrote a blog [post](/posts/2016/periodic-table-devops/) about it.
+
+### Periodic Table of DevOps Tools 2025
 
 ![Periodic Table of DevOps 2025](/images/2025/periodic-table-devops-2025.png)
 
+### Periodic Table of DevOps Tools 2016
+
+![Periodic Table of DevOps 2016](/images/2016/periodic-table-of-devops-v2.png)
+
 I thought it might be interesting to see what tools are still in use, and what are new.
 
-| Tool       | 2016 | 2025 | Comments |
-| ---        | ---  | ---  | ---      |
-| Git        | 3    | 2    | The primary source control tool has moved from position 3 to 2, no surprises it is still used so widely for versioning scripts, code and config |
-| GitHub     | 1    | 10   | The most widely used web based git repository |
-| Bitbucket  | 11   | 36   |          |
-| Subversion | 37   |      | Subversion was the first source control system I every used and is no longer on the table, replaced by Git for most uses |
-| Azure      | 10   | 101  |          |
-| AWS        | 2    | 103  |          |
-| GCP        | 18   | 102  | Google Cloud |
-| Docker     | 9    | 27   |          |
-| Kubernetes | 71   | 45   |          |
-| Helm       |      | 83   | Helm charts, the packaging system for kubernetes doesn't look to be on the table in 2016 |
-| Npm        | 45   | 58   |          |
-| Nuget      |      | 76   |          |
-| MSBuild    | 75   |      |          |
-| Grafana    |      | 73   |          |
-| Jira       | 100  | 19   |          |
-| Nagios     | 108  |      |          |
-| DataDog    | 110  | 20   |          |
-| ElasticSearch | 111 |    |          |
-| Slack      | 102  | 61   |          |
-| TeamCity   | 64   |      |          |
-| Jenkins    | 29   | 91   |          |
-| Visual Studio | 47 |     |          |
-| Terraform  | 16   |      |          |
-| Team Foundation | 98 |     |          |
-| Azure DevOps Code |      | 92 |          |
-| Azure DevOps Pipelines |   | 5  |          |
-| MS Teams   |      | 24   |          |
+## Source Control
+
+Git the most popular source control system is on both charts, in 2016 it was at position 3, and in 2025 it is at 2.
+GitHub the most widely used web based git repository is also on both charts, moving from 1 to 10.
+Bitbucket (now owned by Atlassian) was a hosted git repository I used to use and is still on the chart, moving from 11 to 36.
+Subversion a source control system I started my career with, has vanished off the chart in 2025. Not really a surprise due to the popularity of git now.
+
+## Cloud Platforms
+
+In 2016 we had a whole column of Cloud Platforms, including Rackspace and OpenShift, in 2025 this has been reduced to the big three (Azure, AWS and GCP) plus OpenSHift.
+
+## Containerization
+
+In 2016 we had a column of tools like Docker, Docker Swarm and Kubernetes. In 2025 there are far more tools in this space, with the addition of tools like Helm and the various ways you can host containers on cloud platforms (like Azure AKS)
+
+## Build and Deploy tools
+
+In 2016 Azure DevOps was still called Team Foundation Server, so this has spread out into the various ways you can use azure devops, eg Pipelines, Code etc. Also since 2016 Github actions has appeared on the market.
+
+In 2016 I was also dabbling with TeamCity, this is no longer used that much so isn't on the chart in 2025. Jenkins is still around on both charts.
+
+## Comms Tools
+
+In 2025 Slack and MS Teams are the goto tools for communicating with distributed teams, Slack was around in 2016, but Teams wasn't a thing back then.
+
+## New Tools
+
+New tools for monitoring like Grafana have appeared, ten years ago I was exclusively using Application Insights from Azure.
+
+## Conclusion & Key Takeaways
+
+The DevOps landscape has changed dramatically over the past decade. Some tools have stood the test of time, while others have faded or emerged to meet new challenges. Here are the key takeaways:
+
+- **Git remains the backbone of source control**, with platforms like GitHub and Bitbucket continuing to thrive.
+- **Cloud platforms (Azure, AWS, GCP) have become central**, reflecting the shift to cloud-native development and operations.
+- **Containerization and orchestration (Docker, Kubernetes, Helm) are now essential**, enabling scalable, flexible deployments.
+- **Monitoring and collaboration tools have evolved**, with newcomers like Grafana and MS Teams joining established solutions.
+- **Legacy tools are disappearing**, showing the importance of adaptability in tech.
+
+As DevOps continues to evolve, staying curious and open to new tools is key. The periodic table analogy reminds us that the right mix of technologies can empower teams to build, deploy, and manage software more effectively. What tools will shape the next decade? Only time will tell.
