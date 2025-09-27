@@ -62,7 +62,7 @@ In 2025 Slack and MS Teams are the go-to tools for communicating with distribute
 
 ## New Tools
 
-New tools for monitoring like Grafana have appeared, ten years ago I was exclusively using Application Insights from Azure.
+New tools for monitoring like Grafana have appeared; back in 2016 I was exclusively using Application Insights from Azure.
 
 ## Conclusion & Key Takeaways
 
