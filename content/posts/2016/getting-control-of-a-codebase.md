@@ -31,7 +31,7 @@ The first thing I did was commit everything that was running live into source co
 
 Next I created a SQL Server Data Tools (SSDT) project to keep track of all the database objects. Previously there was a folder with some stored procedures in it, but these did not match with what was currently running.
 
-![](/images/2015/sql-server-2012-management-studio-splash-screen.png)
+![SQL Server 2012 Management Studio Splash Screen](/images/2016/sql-server-2012-management-studio-splash-screen.png)
 
 I now had in source control the current state of the website and the database, so I knew I could get things back to this state if I made some bad changes.
 
