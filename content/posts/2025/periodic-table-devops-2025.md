@@ -37,7 +37,7 @@ I thought it might be interesting to see what tools are still in use, and what a
 
 ## Source Control
 
-Git, the most popular source control system is on both charts, in 2016 it was at position 3, and in 2025 it is at 2.
+Git, the most popular source control system, is on both charts, in 2016 it was at position 3, and in 2025 it is at 2.
 GitHub, the most widely used web based git repository is also on both charts, moving from 1 to 10.
 Bitbucket (now owned by Atlassian) was a hosted git repository I used to use and is still on the chart, moving from 11 to 36.
 Subversion, a source control system I started my career with, has vanished off the chart in 2025. Not really a surprise due to the popularity of git now.
