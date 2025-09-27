@@ -58,7 +58,7 @@ In 2016 I was also dabbling with TeamCity, this is no longer used that much so i
 
 ## Comms Tools
 
-In 2025 Slack and MS Teams are the goto tools for communicating with distributed teams, Slack was around in 2016, but Teams wasn't a thing back then.
+In 2025 Slack and MS Teams are the go-to tools for communicating with distributed teams, Slack was around in 2016, but Teams wasn't a thing back then.
 
 ## New Tools
 
