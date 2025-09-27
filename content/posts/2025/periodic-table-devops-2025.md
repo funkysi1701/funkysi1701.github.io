@@ -52,7 +52,7 @@ In 2016 we had a column of tools like Docker, Docker Swarm and Kubernetes. In 20
 
 ## Build and Deploy tools
 
-In 2016 Azure DevOps was still called Team Foundation Server, so this has spread out into the various ways you can use Azure DevOps, e.g. Pipelines, Code etc. Also since 2016 GitHub Actions has appeared on the market.
+In 2016 Azure DevOps was still called Team Foundation Server, so this has spread out into the various ways you can use Azure DevOps, such as Pipelines and Code. Also since 2016 GitHub Actions has appeared on the market.
 
 In 2016 I was also dabbling with TeamCity, this is no longer used that much so isn't on the chart in 2025. Jenkins is still around on both charts.
 
