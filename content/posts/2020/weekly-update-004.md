@@ -36,6 +36,7 @@ SELECT name
 FROM tempdb.sys.columns 
 WHERE object_id = object_id('tempdb..#TempTable')
 ```
+
 However I need my list to be horizontal so I can use as column headers. I can use dynamic SQL and a pivot to flip them round.
 
 ```sql

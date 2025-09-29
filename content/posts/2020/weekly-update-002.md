@@ -23,11 +23,11 @@ aliases = [
     "/2020/11/21/weekly-update-002"
 ]
 +++
-I know Active Directory is fussy about clocks being in sync however not sure how todays issue happened. 
+I know Active Directory is fussy about clocks being in sync however not sure how todays issue happened.
 
 I run my docker compose file from Visual Studio and I get a weird error.
 
-```
+```txt
 SecurityTokenNotYetValidException: IDX10222: Lifetime validation failed. The token is not yet valid. ValidFrom: 'System.DateTime', Current time: 'System.DateTime'.
 ```
 
@@ -46,5 +46,5 @@ Swapping to the next version of the step is all I needed to do to fix it.
 ```yaml
   - task: NuGetToolInstaller@1
 ```
-My guess is that support was dropped for this earlier version or there is some other incompatability with .Net 5.
 
+My guess is that support was dropped for this earlier version or there is some other incompatability with .Net 5.

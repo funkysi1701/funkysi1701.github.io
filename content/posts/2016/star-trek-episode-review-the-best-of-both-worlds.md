@@ -5,8 +5,8 @@ year = "2016"
 month= "2016-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/02/Picard_kidnapped_by_the_Borg.jpg"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/02/Picard_kidnapped_by_the_Borg.jpg']
+cover = "/images/2016/Picard_kidnapped_by_the_Borg.jpg"
+images = ['/images/2016/Picard_kidnapped_by_the_Borg.jpg']
 tags = ["StarTrek"]
 category="trek"
 keywords = ["", ""]
@@ -21,7 +21,7 @@ aliases = [
     "/2016/02/18/star-trek-episode-review-the-best-of-both-worlds"
 ]
 +++
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/02/Picard_kidnapped_by_the_Borg.jpg)
+![](/images/2016/Picard_kidnapped_by_the_Borg.jpg)
 - Episode Title: **The Best of Both Worlds**
 - Star Trek Type: TNG
 - Original Air Date: 18 June 1990 & 24 September 1990

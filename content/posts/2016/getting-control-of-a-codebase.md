@@ -31,7 +31,7 @@ The first thing I did was commit everything that was running live into source co
 
 Next I created a SQL Server Data Tools (SSDT) project to keep track of all the database objects. Previously there was a folder with some stored procedures in it, but these did not match with what was currently running.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/12/sql-server-2012-management-studio-splash-screen.png?resize=300%2C204&ssl=1)
+![SQL Server 2012 Management Studio Splash Screen](/images/2016/sql-server-2012-management-studio-splash-screen.png)
 
 I now had in source control the current state of the website and the database, so I knew I could get things back to this state if I made some bad changes.
 
@@ -53,7 +53,7 @@ To get the website running from Visual Studio I started off creating a .Net 4 we
 
 I have not deployed my new version of the website as it needs further testing. No automated testing or even a smoke test checklist currently exist.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/11/Visual-Studio-Team-Services.png?w=960&ssl=1)
+![](/images/2016/Visual-Studio-Team-Services.png)
 
 As my source code is hosted on Visual Studio Team Services (VSTS), I can get VSTS to build each commit and check I haven’t broken the build. This is not that helpful at the moment, hopefully one day I will have automated tests that can be run here as well.
 

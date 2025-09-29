@@ -23,7 +23,7 @@ aliases = [
     "/2016/09/29/looking-back-ten-years"
 ]
 +++
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/09/10-year-term-life-insurance.gif?resize=471%2C314)
+![](/images/2016/10-year-term-life-insurance.gif)
 
 Next month I will celebrate ten years working at my current job, two weeks after that I will start a new chapter of my life at a new company. Lets take this opportunity to look back ten years at some of the great stuff I have achieved.
 
