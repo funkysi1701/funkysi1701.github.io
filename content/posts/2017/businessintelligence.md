@@ -40,7 +40,7 @@ To sign up to use Power BI go to [https://powerbi.microsoft.com/en-us/](https://
 
 Once you are signed in click the get data link in the bottom left corner and browse through the apps you can use.
 
-If your website uses google analytics you can connect it up to Power BI and see some cool analytics. The below map was generated from some google analytics data, you can see that this website has had users across the globe, with UK and USA getting a lot of hits. ![Business Intelligence from Google Analytics](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/06/Capture.jpg?resize=662%2C349&ssl=1)
+If your website uses google analytics you can connect it up to Power BI and see some cool analytics. The below map was generated from some google analytics data, you can see that this website has had users across the globe, with UK and USA getting a lot of hits. ![Business Intelligence from Google Analytics](/images/2017/Capture.jpg)
 
 Another thing you can do is connect Azure Application Insights. This provides some similar data to google analytics about who is visiting your site.
 

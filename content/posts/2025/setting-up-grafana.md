@@ -97,7 +97,7 @@ The next thing we need to do is build a dashboard, well the dotnet team has done
 
 You can do all of this yourself by using the Grafana UI, to add the graphs, guages and other visualizations that you are interested in.
 
-![Dashboard](https://devblogs.microsoft.com/dotnet/wp-content/uploads/sites/10/2024/01/dashboard-screenshot.png)
+![Dashboard](/images/2025/dashboard-screenshot.png)
 
 ## Metrics endpoint
 
