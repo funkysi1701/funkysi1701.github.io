@@ -41,7 +41,7 @@ BACKUP LOG WITH TRUNCATE_ONLY or WITH NO_LOG is deprecated. The simple recovery 
 
 Then I remember what I have done to cause this issue. I have a separate disk for my backup files and earlier in the week I noticed this disk was filling up, a large amount of space was taken up by transactional backup files. I thought I don’t need to backup the transactions for this non critical database, I will just do a full backup at the start of everyday.
 
-However what I forgot is that a transactional backup keeps the log file under control, once this backup was stopped the log file grew uncontrollably. The answer, change the database from FULL mode to SIMPLE.[![image002](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/06/image002-300x270.png?resize=300%2C270)](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/06/image002.png)
+However what I forgot is that a transactional backup keeps the log file under control, once this backup was stopped the log file grew uncontrollably. The answer, change the database from FULL mode to SIMPLE. ![image002](/images/2015/06/image002-300x270.png)
 
 This is my understanding of how backups work in FULL mode. A full backup is done at the start of the day which resets the log file, then changes in the database are stored in the log file, this is backed up into a transactional backup and the log file gets reset. If you have regular transactional backups throughout the day the log file doesn’t grow too much, however with no transactional backups your log file contains an entire days worth of changes and so for a monitoring database this could be quite large.
 
