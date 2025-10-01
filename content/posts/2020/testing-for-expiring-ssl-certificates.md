@@ -27,7 +27,7 @@ Let's Encrypt is amazing, you can easily add SSL certificates to any website and
 
 Once you start adding SSL certificates to your production sites however you may want to check when they expire so you don't get caught out. You can always open your site in your favourite browser and view the certificate information and expiry date.
 
-![SSL Cert](/images/2020/jb78re4fmm1ofx81f3mu.JPG)
+![SSL Cert](/images/2020/jb78re4fmm1ofx81f3mu.jpg)
 However there is a way to automate this check.
 
 ```csharp

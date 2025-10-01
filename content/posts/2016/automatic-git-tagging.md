@@ -28,7 +28,7 @@ One of the features of git is the ability to tag a point in my change history wi
 Now that I am automating my release process with TeamCity I am thinking about how to manage my tags better.
 
 TeamCity has a setting called VCS Labeling which comes in very handy.
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/06/Untitled.jpg?w=1595&ssl=1)
+![](/images/2016/Untitled.jpg)
 
 Configuring it is fairly simple as it only has three settings.
 

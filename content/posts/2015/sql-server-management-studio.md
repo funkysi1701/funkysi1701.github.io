@@ -24,7 +24,7 @@ aliases = [
 +++
 I use SQL Server Management Studio all the time for writing queries, getting data and general SQL development.
 
-![SQL Server Management Studio](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/12/sql-server-2012-management-studio-splash-screen.png?resize=529%2C360)
+![SQL Server Management Studio](/images/2015/sql-server-2012-management-studio-splash-screen.png)
 
 I have enjoyed seeing the improvements that each new version of SQL Server Management Studio (SSMS) introduced. One great improvement was intellisense.
 
@@ -45,4 +45,3 @@ SELECT REPLACE(REPLACE(@str, CHAR(13), "), CHAR(10), ")
 This command replaces any line breaks with an empty string. Both Char(10) and Char(13) are needed because you can have different types of line breaks. This is great if you are writing the script from scratch but isn’t great if your are running a stored procedure or your query has a lot of columns.
 
 The answer to this is to use Visual Studio to run your SQL query. In Visual Studio you can write and run queries via Server Explorer and the results produced don’t contain line breaks. I have only just discovered this solution, but so far it has worked and is very easy to do, plus as I do most of my development in Visual Studio anyway it saves me having to open SSMS to test my queries.
-

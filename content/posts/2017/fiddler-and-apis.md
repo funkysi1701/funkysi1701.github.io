@@ -30,7 +30,7 @@ The BufferAPI package worked great from my console app, but when I tried to use 
 
 There are two main types of API calls GET which gets data from the server and POST which posts data to the server. These come from the types of HTTP requests.  
 
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6wozrfdoqvtjaoxs7j1v.jpg)
+![Alt Text](/images/2017/6wozrfdoqvtjaoxs7j1v.jpg)
 
 I quickly figured out how to use the GET API call to authenticate using https://api.bufferapp.com/1/profiles.json?access_token=XXXX
 
