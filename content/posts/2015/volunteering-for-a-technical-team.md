@@ -34,7 +34,7 @@ The church has three projectors, one big one and two slightly smaller ones for t
 
 EasyWorship contains a huge database of song lyrics, so you can quickly select what ever is being sung and project the lyrics on screen. It also allows the addition of PowerPoint files, image or video files and even a web page and they can be projected. EasyWorship allows different things to be queued up in order and that order can be saved as a schedule.
 
-![](images/2015/CFMwY_UUgAAc2k2.jpg)
+![](/images/2015/CFMwY_UUgAAc2k2.jpg)
 
 The projectionist’s job is to follow along with the order of service and project things onto screen at the right time. Simple! No not really. The worship leader will skip songs, play songs in a different order, add new songs, videos will fail to play, easy worship will freeze up or crash or the liturgy that the vicar wants isn’t in the EasyWorship database.
 
