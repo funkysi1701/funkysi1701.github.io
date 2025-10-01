@@ -5,7 +5,7 @@ permissions:
 on:
   workflow_dispatch:
   schedule:
-    - cron: '40 12 */7 * *'
+    - cron: '40 17 */7 * *'
   
 jobs:
   create-pr:
@@ -20,7 +20,7 @@ jobs:
           fetch-depth: 0
           ref: test
       - name: create pull request
-        run: gh pr create -B main -H test --title 'Release ${{ steps.date.outputs.date }}' --body 'Created by Github action' 
-          || gh pr edit -B main --title 'Release ${{ steps.date.outputs.date }}' --body 'Created by Github action'
+        run: gh pr create -B main -H test --title 'Release ${{ steps.date.outputs.date }} Test to Main' --body 'Created by Github action' 
+          || gh pr edit -B main --title 'Release ${{ steps.date.outputs.date }} Test to Main' --body 'Created by Github action'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -34,7 +34,7 @@ Click the get data link at the bottom left.
 
 Click My Organisation to bring up the app search box.
 
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/46c1lyxy053xcq66fowf.jpg)
+![Alt Text](/images/2017/46c1lyxy053xcq66fowf.jpg)
 
 Click the Apps tab and search for “google” in the search box, you should then see Google Analytics, click into this and then click the get it now button.
 

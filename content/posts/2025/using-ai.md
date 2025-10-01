@@ -112,7 +112,7 @@ string socialMediaPrompt = $"write a social media post under {240 - length} char
 
 Now once I put is all together I have a page that loads my rss feed, and I can click a button to generate a social media post.
 
-![Ai Example](images/ai-example.png)
+![Ai Example](/images/ai-example.png)
 
 ## Conclusion
 
