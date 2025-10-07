@@ -1,3 +1,3 @@
 User-agent: *
-Disallow: /cdn-cgi/
+Disallow: /cdn-cgi/l/email-protection
 Sitemap: {{ "sitemap.xml" | absURL }}
