@@ -3,17 +3,8 @@ Disallow: /cdn-cgi/l/email-protection
 Disallow: /tags/
 Disallow: /year/
 Disallow: /month/
-Disallow: /2014/
-Disallow: /2015/
-Disallow: /2016/
-Disallow: /2017/
-Disallow: /2018/
-Disallow: /2019/
-Disallow: /2020/
-Disallow: /2021/
-Disallow: /2022/
-Disallow: /2023/
-Disallow: /2024/
-Disallow: /2025/
-Disallow: /2026/
+{{- $currentYear := now.Year -}}
+{{- range seq 2014 (add $currentYear 5) -}}
+Disallow: /{{ . }}/
+{{- end -}}
 Sitemap: {{ "sitemap.xml" | absURL }}
