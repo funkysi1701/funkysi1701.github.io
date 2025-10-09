@@ -1,3 +1,10 @@
 User-agent: *
 Disallow: /cdn-cgi/l/email-protection
+Disallow: /tags/
+Disallow: /year/
+Disallow: /month/
+{{- $currentYear := now.Year -}}
+{{- range seq 2014 (add $currentYear 5) -}}
+Disallow: /{{ . }}/
+{{- end -}}
 Sitemap: {{ "sitemap.xml" | absURL }}
