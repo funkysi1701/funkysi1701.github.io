@@ -46,7 +46,7 @@ A list of events I have attended or am planning to attend (no guarantee that I w
 | Event/Talk                                         | Date             | Location  |
 |----------------------------------------------------|------------------|-----------|
 | DevBoss                                            | 16 November 2023 | Leeds     |
-| [DDD East Midlands](/posts/2023/ddd-east-midlands) | 7th October      | Nottingham|
+| [DDD East Midlands](/posts/2023/ddd-east-midlands) | 7th October      | Nottingham |
 | SteelCon                                           | 8 July 2023      | Sheffield |
 | Yorkshire Azure                                    | 13 June 2023     | Leeds     |
 | DevBoss                                            | 20 April 2023    | Leeds     |
