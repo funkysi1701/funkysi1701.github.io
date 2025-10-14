@@ -30,7 +30,7 @@ This week was our family holiday. Normally, we’d book a cottage somewhere nice
 
 This time, we chose a different path: a family adventure holiday with [High Adventure](https://www.highadventureholidays.co.uk/). The itinerary was packed: climbing, caving, hiking, water sports, archery, zip wires, and countless other activities. All meals, accommodation, equipment, and expert instructors were included, making it feel both safe and exciting.
 
-I’ll admit, I was anxious before we set off. I’m not an adventurous person—I like [walking](/charity-hike), but I’d never tried anything like this. My nine-year-old son was dreading it, while my more adventurous seven-year-old was quietly excited. I worried that if the kids hated it, it would be a waste of money. But as soon as we arrived, those fears melted away.
+I’ll admit, I was anxious before we set off. I’m not an adventurous person—I like [walking](/posts/2024/charity-hike), but I’d never tried anything like this. My nine-year-old son was dreading it, while my more adventurous seven-year-old was quietly excited. I worried that if the kids hated it, it would be a waste of money. But as soon as we arrived, those fears melted away.
 
 ## Saturday
 
