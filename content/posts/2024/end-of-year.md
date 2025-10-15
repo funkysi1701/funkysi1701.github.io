@@ -41,7 +41,7 @@ Being a developer is a constant journey of learning, and I have not done enough 
 
 ### Health
 
-2024 took an unusual turn. In June, I walked a [half marathon across the Peak District](/charity-hike), and since then, I have been doing lots of walks. Walking is good for my physical and mental health, so I intend to do more of it in 2025. I have a 5k scheduled for January, which should be lots of fun as it is around the wildlife park. On the same topic, I want to drink more water. Not sure how I am going to accomplish this as I am easily distracted by the current developer problem, instead of thinking about my health.
+2024 took an unusual turn. In June, I walked a [half marathon across the Peak District](/posts/2024/charity-hike), and since then, I have been doing lots of walks. Walking is good for my physical and mental health, so I intend to do more of it in 2025. I have a 5k scheduled for January, which should be lots of fun as it is around the wildlife park. On the same topic, I want to drink more water. Not sure how I am going to accomplish this as I am easily distracted by the current developer problem, instead of thinking about my health.
 
 ### Conferences and User Groups
 
