@@ -32,14 +32,14 @@ A list of events I have attended or am planning to attend (no guarantee that I w
 
 ## 2024
 
-| Event/Talk                              | Date               | Location      |
-|-----------------------------------------|--------------------|---------------|
-| Yorkshire Azure                         | 19 November 2024   | York          |
-| Code Club                               | 16 November 2024   | Leeds Library |
-| [Code Club](/posts/2024/codeclub)       | 2 November 2024    | Leeds Library |
-| Scottish Summit                         | 17/19 October 2024 | Aberdeen      |
-| [Charity Walk](/charity-hike)           | 8 June 2024        | Peak District |
-| DDD North                               | 2 March 2024       | Hull          |
+| Event/Talk                               | Date               | Location      |
+|------------------------------------------|--------------------|---------------|
+| Yorkshire Azure                          | 19 November 2024   | York          |
+| Code Club                                | 16 November 2024   | Leeds Library |
+| [Code Club](/posts/2024/codeclub)        | 2 November 2024    | Leeds Library |
+| Scottish Summit                          | 17/19 October 2024 | Aberdeen      |
+| [Charity Walk](/posts/2024/charity-hike) | 8 June 2024        | Peak District |
+| DDD North                                | 2 March 2024       | Hull          |
 
 ## 2023
 
