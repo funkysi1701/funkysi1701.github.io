@@ -20,6 +20,7 @@ enableRobotsTXT = true
   images = ["/images/1922276.jpg"]
   themeColor = "theme-base-0d"
   logo = false
+  comment = true
   cdnImagePrefix = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75"
   
 [taxonomies]
