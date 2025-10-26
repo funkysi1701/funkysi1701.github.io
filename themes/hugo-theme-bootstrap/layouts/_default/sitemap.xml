@@ -1,7 +1,7 @@
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {{ $exclude := slice "tags" "month" "categories" "year" }}
-  {{ range .Pages }}
+  {{ range .Data.Pages }}
     {{ if not (in $exclude .Data.Plural) }}
       <url>
         <loc>{{ .Permalink }}</loc>
