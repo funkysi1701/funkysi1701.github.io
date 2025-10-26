@@ -22,6 +22,18 @@ enableRobotsTXT = true
   logo = false
   comment = true
   cdnImagePrefix = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75"
+
+[params.giscus]
+  repo = "funkysi1701/Blog-Comments"
+  repoId = "R_kgDOQJKGlA"
+  category = "General"
+  categoryId = "DIC_kwDOQJKGlM4CxELi"
+  mapping = "pathname"
+  strict = "0"
+  reactionsEnabled = "1"
+  emitMetadata = "0"
+  inputPosition = "bottom"
+  lang = "en"  
   
 [taxonomies]
   year = "year"

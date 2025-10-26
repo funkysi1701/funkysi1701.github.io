@@ -1,19 +1,30 @@
 <script>
-        var giscusTheme = localStorage.getItem('hbs-mode') === 'dark' ? 'dark' : 'light';
-        var giscusScript = document.createElement('script');
-        giscusScript.src = "https://giscus.app/client.js";
-        giscusScript.setAttribute('data-repo', "funkysi1701/Blog-Comments");
-        giscusScript.setAttribute('data-repo-id', "R_kgDOQJKGlA");
-        giscusScript.setAttribute('data-category', "General");
-        giscusScript.setAttribute('data-category-id', "DIC_kwDOQJKGlM4CxELi");
-        giscusScript.setAttribute('data-mapping', "pathname");
-        giscusScript.setAttribute('data-strict', "0");
-        giscusScript.setAttribute('data-reactions-enabled', "1");
-        giscusScript.setAttribute('data-emit-metadata', "0");
-        giscusScript.setAttribute('data-input-position', "bottom");
-        giscusScript.setAttribute('data-theme', giscusTheme);
-        giscusScript.setAttribute('data-lang', "en");
-        giscusScript.setAttribute('crossorigin', "anonymous");
-        giscusScript.async = true;
-        document.currentScript.parentNode.appendChild(giscusScript);
+  var giscusTheme = localStorage.getItem('hbs-mode') === 'dark' ? 'dark' : 'light';
+  var giscusRepo = "{{ with .Site.Params.giscus }}{{ .repo }}{{ end }}";
+  var giscusRepoId = "{{ with .Site.Params.giscus }}{{ .repoId }}{{ end }}";
+  var giscusCategory = "{{ with .Site.Params.giscus }}{{ .category }}{{ end }}";
+  var giscusCategoryId = "{{ with .Site.Params.giscus }}{{ .categoryId }}{{ end }}";
+  var giscusMapping = "{{ with .Site.Params.giscus }}{{ .mapping  }}{{ end }}";
+  var giscusStrict = "{{ with .Site.Params.giscus }}{{ .strict  }}{{ end }}";
+  var giscusReactionsEnabled = "{{ with .Site.Params.giscus }}{{ .reactionsEnabled  }}{{ end }}";
+  var giscusEmitMetadata = "{{ with .Site.Params.giscus }}{{ .emitMetadata  }}{{ end }}";
+  var giscusInputPosition = "{{ with .Site.Params.giscus }}{{ .inputPosition }}{{ end }}";
+  var giscusLang = "{{ with .Site.Params.giscus }}{{ .lang  }}{{ end }}";
+
+  var giscusScript = document.createElement('script');
+  giscusScript.src = "https://giscus.app/client.js";
+  giscusScript.setAttribute('data-repo', giscusRepo);
+  giscusScript.setAttribute('data-repo-id', giscusRepoId);
+  giscusScript.setAttribute('data-category', giscusCategory);
+  giscusScript.setAttribute('data-category-id', giscusCategoryId);
+  giscusScript.setAttribute('data-mapping', giscusMapping);
+  giscusScript.setAttribute('data-strict', giscusStrict);
+  giscusScript.setAttribute('data-reactions-enabled', giscusReactionsEnabled);
+  giscusScript.setAttribute('data-emit-metadata', giscusEmitMetadata);
+  giscusScript.setAttribute('data-input-position', giscusInputPosition);
+  giscusScript.setAttribute('data-lang', giscusLang);
+  giscusScript.setAttribute('data-theme', giscusTheme);
+  giscusScript.setAttribute('crossorigin', "anonymous");
+  giscusScript.async = true;
+  document.currentScript.parentNode.appendChild(giscusScript);
 </script>
