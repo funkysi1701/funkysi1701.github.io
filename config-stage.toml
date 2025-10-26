@@ -21,6 +21,7 @@ enableRobotsTXT = true
   themeColor = "theme-base-0d"
   logo = false
   cdnImagePrefix = ""
+  comment = true
 
 [taxonomies]
   year = "year"
