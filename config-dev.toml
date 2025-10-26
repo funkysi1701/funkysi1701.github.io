@@ -21,6 +21,19 @@ enableRobotsTXT = true
   themeColor = "theme-base-0d"
   logo = false
   cdnImagePrefix = ""
+  comment = true
+
+[params.giscus]
+  repo = "funkysi1701/Blog-Comments"
+  repoId = "R_kgDOQJKGlA"
+  category = "General"
+  categoryId = "DIC_kwDOQJKGlM4CxELi"
+  mapping = "title"
+  strict = "0"
+  reactionsEnabled = "1"
+  emitMetadata = "0"
+  inputPosition = "bottom"
+  lang = "en"
 
 [taxonomies]
   year = "year"
