@@ -28,12 +28,12 @@ enableRobotsTXT = true
   repoId = "R_kgDOQJKGlA"
   category = "General"
   categoryId = "DIC_kwDOQJKGlM4CxELi"
-  mapping = "pathname"
+  mapping = "title"
   strict = "0"
   reactionsEnabled = "1"
   emitMetadata = "0"
   inputPosition = "bottom"
-  lang = "en"    
+  lang = "en"
 
 [taxonomies]
   year = "year"
