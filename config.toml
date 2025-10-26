@@ -33,7 +33,7 @@ enableRobotsTXT = true
   reactionsEnabled = "1"
   emitMetadata = "0"
   inputPosition = "bottom"
-  lang = "en"  
+  lang = "en"
   
 [taxonomies]
   year = "year"
