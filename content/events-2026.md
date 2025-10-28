@@ -1,0 +1,20 @@
++++
+title = "Events 2026"
+author = "funkysi1701"
+authorTwitter = "funkysi1701"
+cover = ""
+keywords = ["User Groups", "Conferences", "Events", "Meetups"]
+description = "Events - Conferences, User Groups and other events I have attended or plan to attend in 2026"
+comment = false
+showFullContent = false
+copyright = false
+readingTime = true
+featured = true
+aliases = ["/events/2026"]
++++
+
+## 2026
+
+| Event/Talk | Date                | Location                | Results    | min/km  |
+|------------|---------------------|-------------------------|------------|---------|
+| NDC London | 28-30 January 2026  | London                  | N/A        | N/A     |
