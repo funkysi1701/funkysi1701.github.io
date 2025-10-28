@@ -18,6 +18,12 @@ aliases = [
 
 A list of events I have attended or am planning to attend (no guarantee that I will be there)
 
+## 2026
+
+| Event/Talk | Date                | Location                | Results    | min/km  |
+|------------|---------------------|-------------------------|------------|---------|
+| NDC London | 28-30 January 2025  | London                  | N/A        | N/A     |
+
 ## 2025
 
 | Event/Talk                                                                | Date                | Location                | Results    | min/km  |
