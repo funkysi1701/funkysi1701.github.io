@@ -21,8 +21,8 @@ A list of events I have attended or am planning to attend (no guarantee that I w
 
 ## Event Years
 
-- [2026](events-2026.md)
-- [2025](events-2025.md)
-- [2024](events-2024.md)
-- [2023](events-2023.md)
-- [2022](events-2022.md)
+- [2026](/events/2026)
+- [2025](/events/2025)
+- [2024](/events/2024)
+- [2023](/events/2023)
+- [2022](/events/2022)
