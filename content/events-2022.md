@@ -21,5 +21,5 @@ aliases = ["/events/2022"]
 | [DDD North](/posts/2022/ddd-north)                 | 3 December 2022  | Hull     |
 | LeedsSharp Azure Patterns for Fun and Profit       | 24 November 2022 | Leeds    |
 | .Net Conf (Keynote only)                           | 8 November 2022  | Online   |
-| [Scottish Summit](/posts/2022/scottishsummit/)     | 10/11 June 2022  | Glasgow  |
+| [Scottish Summit](/posts/2022/scottishsummit/)     | 10-11 June 2022  | Glasgow  |
 | The .Network (Networking event)                    | 28 April 2022    | Leeds    |
