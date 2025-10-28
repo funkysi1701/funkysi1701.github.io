@@ -20,6 +20,6 @@ aliases = ["/events/2024"]
 | Yorkshire Azure                          | 19 November 2024   | York          |
 | Code Club                                | 16 November 2024   | Leeds Library |
 | [Code Club](/posts/2024/codeclub)        | 2 November 2024    | Leeds Library |
-| Scottish Summit                          | 17/19 October 2024 | Aberdeen      |
+| Scottish Summit                          | 17-19 October 2024 | Aberdeen      |
 | [Charity Walk](/posts/2024/charity-hike) | 8 June 2024        | Peak District |
 | DDD North                                | 2 March 2024       | Hull          |
