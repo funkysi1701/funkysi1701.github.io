@@ -22,7 +22,7 @@ A list of events I have attended or am planning to attend (no guarantee that I w
 
 | Event/Talk | Date                | Location                | Results    | min/km  |
 |------------|---------------------|-------------------------|------------|---------|
-| NDC London | 28-30 January 2025  | London                  | N/A        | N/A     |
+| NDC London | 28-30 January 2026  | London                  | N/A        | N/A     |
 
 ## 2025
 
