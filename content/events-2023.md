@@ -1,0 +1,25 @@
++++
+title = "Events 2023"
+author = "funkysi1701"
+authorTwitter = "funkysi1701"
+cover = ""
+keywords = ["User Groups", "Conferences", "Events", "Meetups"]
+description = "Events - Conferences, User Groups and other events I have attended or plan to attend in 2023"
+comment = false
+showFullContent = false
+copyright = false
+readingTime = true
+featured = true
+aliases = ["/events/2023"]
++++
+
+## 2023
+
+| Event/Talk                                         | Date             | Location   |
+|----------------------------------------------------|------------------|------------|
+| DevBoss                                            | 16 November 2023 | Leeds      |
+| [DDD East Midlands](/posts/2023/ddd-east-midlands) | 7 October 2023   | Nottingham |
+| SteelCon                                           | 8 July 2023      | Sheffield  |
+| Yorkshire Azure                                    | 13 June 2023     | Leeds      |
+| DevBoss                                            | 20 April 2023    | Leeds      |
+| dotnet York Machine Learning with ML.Net           | 2 March 2023     | York       |
