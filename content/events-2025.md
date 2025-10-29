@@ -10,7 +10,7 @@ showFullContent = false
 copyright = false
 readingTime = true
 featured = true
-aliases = ["/events/2025"]
+aliases = ["/events/2025", "/events"]
 +++
 
 ## 2025
@@ -24,3 +24,13 @@ aliases = ["/events/2025"]
 | DDD North                                                                 | 22 February 2025    | Hull                    | N/A        | N/A     |
 | [NDC London](https://www.funkysi1701.com/posts/2025/volunteering-at-ndc/) | 29-31 January 2025  | London                  | N/A        | N/A     |
 | [Night Walk 5k](https://runforwildlife.com/run-for-wildlife-night-5k)     | 4 January 2025      | Yorkshire Wildlife Park | 0h 48m 09s | 09m 38s |
+
+## Next Year
+
+- [2026](/events/2026)
+
+## Previous Years
+
+- [2024](/events/2024)
+- [2023](/events/2023)
+- [2022](/events/2022)
