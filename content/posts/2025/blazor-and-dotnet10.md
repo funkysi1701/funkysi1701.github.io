@@ -63,7 +63,7 @@ HttpClient response streaming enabled by default
 
 In prior Blazor releases, response streaming for HttpClient requests was opt-in. Now, response streaming is enabled by default.
 
-This is a breaking change because calling HttpContent.ReadAsStreamAsync for an HttpResponseMessage.Content (response.Content.ReadAsStreamAsync()) returns a BrowserHttpReadStream and no longer a MemoryStream. BrowserHttpReadStream doesn't support synchronous operations, such as Stream.Read(Span&lt;Byte&gt;). If your code uses synchronous operations, you can opt-out of response streaming or copy the Stream into a MemoryStream yourself.
+This is a breaking change because calling `HttpContent.ReadAsStreamAsync` for an `HttpResponseMessage.Content` (`response.Content.ReadAsStreamAsync()`) returns a `BrowserHttpReadStream` and no longer a `MemoryStream`. `BrowserHttpReadStream` doesn't support synchronous operations, such as `Stream.Read(Span<Byte>)`. If your code uses synchronous operations, you can opt-out of response streaming or copy the `Stream` into a `MemoryStream` yourself.
 
 To opt-out of response streaming globally, use either of the following approaches:
 
