@@ -87,4 +87,4 @@ For more information, see HttpClient and HttpRequestMessage with Fetch API reque
 
 To test out if this was the culprit I added `<WasmEnableStreamingResponse>false</WasmEnableStreamingResponse>` to my csproj file and sure enough this fixed my issue.
 
-Do check out the docs for a complete list of new features and any other potential breaking changes. [.NET 10 Release Notes](https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-9.0)
+Do check out the docs for a complete list of new features and any other potential breaking changes. [.NET 10 Release Notes](https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0)
