@@ -2,7 +2,7 @@
 title = "Blazor and .NET 10: Breaking Changes, Fixes, and New Features"
 date = "2025-11-17T20:00:00Z"
 year = "2025"
-month= "2025-11"
+month = "2025-11"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/2025/Android Small.png"
