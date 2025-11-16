@@ -51,7 +51,7 @@ System.NotSupportedException: net_http_synchronous_reads_not_supported
    
 ```
 
-This error was getting thrown on a Blazor Wasm page when it tried to make a call to my API. This worked fine in .NET 9 so my suspicion was this might be a break change.
+This error was getting thrown on a Blazor Wasm page when it tried to make a call to my API. This worked fine in .NET 9 so my suspicion was this might be a breaking change.
 
 The list of new features for .NET 10 can be found [.NET 10 Release Notes](https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-9.0)
 
