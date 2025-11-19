@@ -22,7 +22,7 @@ pool: Docker
 steps:
 - task: CmdLine@2
   displayName: "Login"
-  condition: and(succeeded(), in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test', 'refs/heads/feature/festive-tech-calendar'))
+  condition: and(succeeded(), in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test', 'refs/heads/festive-tech-calendar'))
   inputs:
     script: |
       docker build -t blog .
@@ -45,7 +45,7 @@ steps:
   displayName: 'Set image repository name'
 - task: CmdLine@2
   displayName: "Publish to ACR"
-  condition: and(succeeded(), in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test', 'refs/heads/feature/festive-tech-calendar'))
+  condition: and(succeeded(), in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test', 'refs/heads/festive-tech-calendar'))
   inputs:
     script: |
       docker tag blog funkysi1701.azurecr.io/funkysi1701/$(imageRepoName)
