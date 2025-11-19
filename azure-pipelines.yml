@@ -38,7 +38,7 @@ steps:
       "develop")
         echo "##vso[task.setvariable variable=imageRepoName]blog:$(Build.BuildNumber)-develop"
         ;;
-      "feature/festive-tech-calendar")
+      "festive-tech-calendar")
         echo "##vso[task.setvariable variable=imageRepoName]blog:$(Build.BuildNumber)-develop"
         ;;        
     esac
@@ -63,7 +63,7 @@ steps:
     helm lint Helm/blog --namespace main
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace develop --set image.tag=$(Build.BuildNumber)-develop
-  condition: and(succeeded(), in(variables['Build.SourceBranchName'], 'develop', 'feature/festive-tech-calendar'))  
+  condition: and(succeeded(), in(variables['Build.SourceBranchName'], 'develop', 'festive-tech-calendar'))  
   displayName: 'helm upgrade blog Dev'
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace test --set image.tag=$(Build.BuildNumber)-test
