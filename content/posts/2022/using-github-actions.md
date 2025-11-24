@@ -173,11 +173,11 @@ jobs:
           ###### End of Repository/Build Configurations ######     
 ```
 
-The first thing I did was create three Azure Static Web Apps, I am using the free tier so while this is trippling my costs it is all still free! Doing this created three github action workflow files, I deleted two and edited the third, but before I deleted them I made a note of the AZURE_STATIC_WEB_APPS_API_TOKEN. If you look in your settings -> secrets for your repo you will see secrets have been created, this is the secure token that github uses to update your static web app.
+The first thing I did was create three Azure Static Web Apps, I am using the free tier so while this is tripling my costs it is all still free! Doing this created three github action workflow files, I deleted two and edited the third, but before I deleted them I made a note of the AZURE_STATIC_WEB_APPS_API_TOKEN. If you look in your settings -> secrets for your repo you will see secrets have been created, this is the secure token that github uses to update your static web app.
 
 While we are in settings we might as well look at environments. I created a Prod, Test and Dev environment that I was going to use in my github actions.
 
-Environments can have various rules setup on them. 
+Environments can have various rules setup on them.
 
 * Required reviewers - this is like an approver, a user specified here must approve for the workflow to be deployed
 * Wait time - I didn't use this, but it looks like a certain amount of time can be set to pause the deployment. (I assume to do some kind of manual check)
@@ -199,7 +199,7 @@ First of all I removed the PR stuff and just concentrated on pushes. I wanted my
 
 The approval on deploying to production I think is probably overkill, but I still have it setup like that for now.
 
-My gh action has three jobs defined as dev: test: and prod: they are all the same except they have the azure_static_web_apps_api_token that is correct for their environment. 
+My gh action has three jobs defined as dev: test: and prod: they are all the same except they have the azure_static_web_apps_api_token that is correct for their environment.
 
 They also each have a environment defined eg
 
@@ -218,6 +218,6 @@ For Test this needs to only run on develop so
 
 if: github.ref == 'refs/heads/develop'
 
-I could have a test for develop to only run on feature/* but I have allowed it to run everytime.
+I could have a test for develop to only run on feature/* but I have allowed it to run every time.
 
 There is loads more you can do with github actions, but hopefully this gives you a taste of some of the things you can do. I currently have a mix of Azure DevOps and github actions so I will be working on getting github actions to do more.
