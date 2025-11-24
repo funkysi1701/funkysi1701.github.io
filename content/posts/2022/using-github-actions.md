@@ -5,8 +5,8 @@ year = "2022"
 month= "2022-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bj77rx0jetjdf7c24nhk.png"
-images = ['https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bj77rx0jetjdf7c24nhk.png']
+cover = "/images/2022/bj77rx0jetjdf7c24nhk.png"
+images = ['/images/2022/bj77rx0jetjdf7c24nhk.png']
 tags = ["GitHub", "DevOps"]
 category="tech"
 keywords = ["", ""]
@@ -29,11 +29,11 @@ aliases = [
 I've been running my website on Azure Static Web Apps for a while and it is pretty cool.
 
 When you create a Static Web App on Azure you get asked for the github repo of your source code and even the branch to use.
-![GitHub Repo for my Static Web App](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/off7ur2tgsla4smkrhhi.png)
+![GitHub Repo for my Static Web App](/images/2022/off7ur2tgsla4smkrhhi.png)
 
 Once you have selected this, you get asked for the type of code to deploy, mine is Blazor Web Assembly but you can use Angular, React or Vue.
 
-![GitHub Actions workflow creation](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ruhzjeujgl1yjxx5lng8.png)
+![GitHub Actions workflow creation](/images/2022/ruhzjeujgl1yjxx5lng8.png)
 You now have three variables to fill in the location in your code of the Website, the location of your Azure Functions and the output location usually wwwroot. Once you have set these three you can preview the GitHub Actions file that will be created and added to your repository.
 
 I get something like this
@@ -179,7 +179,7 @@ While we are in settings we might as well look at environments. I created a Prod
 
 Environments can have various rules setup on them. 
 
-* Required reviewers - this is like an approver, a user specified here must aprove for the workflow to be deployed
+* Required reviewers - this is like an approver, a user specified here must approve for the workflow to be deployed
 * Wait time - I didn't use this, but it looks like a certain amount of time can be set to pause the deployment. (I assume to do some kind of manual check)
 * Deployment Branch - specify what branch are allowed to be deployed to what environments. I specified develop, main and feature branches could be deployed to the Dev environment, develop and main could go on Test and main could go on Prod 
 * Environment secrets - I didn't use this as my secrets were already created, however it looks like your secrets can be associated with a specific environment
@@ -221,5 +221,3 @@ if: github.ref == 'refs/heads/develop'
 I could have a test for develop to only run on feature/* but I have allowed it to run everytime.
 
 There is loads more you can do with github actions, but hopefully this gives you a taste of some of the things you can do. I currently have a mix of Azure DevOps and github actions so I will be working on getting github actions to do more.
- 
-
