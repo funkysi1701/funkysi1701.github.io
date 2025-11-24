@@ -33,7 +33,7 @@ When you create a Static Web App on Azure you get asked for the github repo of y
 
 Once you have selected this, you get asked for the type of code to deploy, mine is Blazor Web Assembly but you can use Angular, React or Vue.
 
-![GitHub Actions workflow creation](/images/2022/ruhzjeujgl1yjxx5lng8.png)
+![GitHub Actions workflow creation](/images/2022/github-actions-workflow-creation.png)
 You now have three variables to fill in the location in your code of the Website, the location of your Azure Functions and the output location usually wwwroot. Once you have set these three you can preview the GitHub Actions file that will be created and added to your repository.
 
 I get something like this
