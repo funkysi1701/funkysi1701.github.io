@@ -29,7 +29,7 @@ aliases = [
 I've been running my website on Azure Static Web Apps for a while and it is pretty cool.
 
 When you create a Static Web App on Azure you get asked for the github repo of your source code and even the branch to use.
-![GitHub Repo for my Static Web App](/images/2022/off7ur2tgsla4smkrhhi.png)
+![GitHub Repo for my Static Web App](/images/2022/static-web-app-github-repo.png)
 
 Once you have selected this, you get asked for the type of code to deploy, mine is Blazor Web Assembly but you can use Angular, React or Vue.
 
