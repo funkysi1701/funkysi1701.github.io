@@ -22,7 +22,7 @@ enableRobotsTXT = true
   logo = false
   cdnImagePrefix = ""
   comment = true
-  googleAdsense = "pub-3535883966769835"
+  googleAdsense = "ca-pub-3535883966769835"
 
 [params.giscus]
   repo = "funkysi1701/Blog-Comments"
