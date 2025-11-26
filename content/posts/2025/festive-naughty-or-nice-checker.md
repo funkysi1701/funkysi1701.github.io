@@ -54,7 +54,7 @@ It is based on the default Blazor template, with a few extra nuget packages inst
 
 ## Step 2: Integrate Semantic Kernel
 
-Configure Semantic Kernel to use your LLM provider (OpenAI). In the program.cs file you will see the following code, this loads the OpenAI key and model from your appsetting.json config file, and allows it to be used by semantic kernel. 
+Configure Semantic Kernel to use your LLM provider (OpenAI). In the `Program.cs` file you will see the following code, this loads the OpenAI key and model from your `appsettings.json` config file, and allows it to be used by Semantic Kernel.
 
 ```csharp
 var key = builder.Configuration.GetValue<string>("OpenAI:Key");
