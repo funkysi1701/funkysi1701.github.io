@@ -4,6 +4,7 @@ title = "Development Version of Funky Si's Blog"
 theme = 'hugo-theme-bootstrap'
 googleAnalytics = ""
 enableRobotsTXT = true
+googleAdsense = "pub-3535883966769835"
 
 [Menus]
   main = [
