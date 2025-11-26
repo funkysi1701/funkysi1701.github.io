@@ -22,6 +22,7 @@ enableRobotsTXT = true
   logo = false
   cdnImagePrefix = ""
   comment = true
+  googleAdsense = ""
 
 [params.giscus]
   repo = "funkysi1701/Blog-Comments"
