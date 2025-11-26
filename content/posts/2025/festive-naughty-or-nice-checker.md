@@ -49,7 +49,7 @@ We'll create a simple web app that:
 
 ## Step 1: Setting Up the Project
 
-The code for my project can be found on github at https://github.com/funkysi1701/FestiveTechCalendar2025
+The code for my project can be found on github at [https://github.com/funkysi1701/FestiveTechCalendar2025](https://github.com/funkysi1701/FestiveTechCalendar2025)
 It is based on the default Blazor template, with a few extra nuget packages installed to do the AI cleverness.
 
 ## Step 2: Integrate Semantic Kernel
@@ -63,7 +63,7 @@ if (!string.IsNullOrEmpty(key))
 {
     builder.Services.AddOpenAIChatCompletion(
         modelId: model ?? throw new ApplicationException("Missing OpenAI Config"),
-        apiKey: key ?? throw new ApplicationException("Missing OpenAI Config")
+        apiKey: key
     );
 }
 builder.Services.AddSingleton((serviceProvider) => new Kernel(serviceProvider));
@@ -74,8 +74,7 @@ builder.Services.AddSingleton((serviceProvider) => new Kernel(serviceProvider));
 For the prompt I am passing to OpenAI I went through a few iterations. To begin with I tried:
 
 ```csharp
-  var aiResponse = await _kernel.InvokePromptAsync($"You are a tool to help Santa identify if children have been naughty 
-  or nice. Has {childsName} been naughty or nice this year?", cancellationToken: cancellationToken.Token);
+  var aiResponse = await _kernel.InvokePromptAsync($"You are a tool to help Santa identify if children have been naughty or nice. Has {childsName} been naughty or nice this year?", cancellationToken: cancellationToken.Token);
 ```
 
 | Input | Output |
@@ -90,8 +89,7 @@ This is far too wordy, I really just want a Naughty or Nice response.
 Then I tried:
 
 ```csharp
-  var aiResponse = await _kernel.InvokePromptAsync($"Given the following description, decide if the person is Naughty 
-  or Nice for Christmas. Respond only with 'Naughty' or 'Nice'. Description: {childsName}", cancellationToken: cancellationToken.Token);
+  var aiResponse = await _kernel.InvokePromptAsync($"Given the following description, decide if the person is Naughty or Nice for Christmas. Respond only with 'Naughty' or 'Nice'. Description: {childsName}", cancellationToken: cancellationToken.Token);
 ```
 
 | Input | Output |
