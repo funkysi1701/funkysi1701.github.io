@@ -50,7 +50,7 @@ We'll create a simple web app that:
 ## Step 1: Setting Up the Project
 
 The code for my project can be found on github at [https://github.com/funkysi1701/FestiveTechCalendar2025](https://github.com/funkysi1701/FestiveTechCalendar2025)
-It is based on the default Blazor template, with a few extra nuget packages installed to do the AI cleverness.
+It is based on the default Blazor template, with a few extra NuGet packages installed to do the AI cleverness.
 
 ## Step 2: Integrate Semantic Kernel
 
