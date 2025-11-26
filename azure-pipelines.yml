@@ -39,6 +39,9 @@ steps:
       "develop")
         echo "##vso[task.setvariable variable=imageRepoName]blog:$(Build.BuildNumber)-develop"
         ;;
+      *)
+        echo "##vso[task.setvariable variable=imageRepoName]blog:$(Build.BuildNumber)-develop"
+        ;;
     esac
   displayName: 'Set image repository name'
 - task: CmdLine@2
