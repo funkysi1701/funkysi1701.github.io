@@ -99,7 +99,7 @@ Then I tried:
 | James | Nice |
 | Skeletor | Naughty |
 
-This is better but every name I tried is giving me a Nice, so lets see if we can try something a bit more clever.
+This is better but every name I tried is giving me a Nice, so let's see if we can try something a bit more clever.
 
 ## Conclusion
 
