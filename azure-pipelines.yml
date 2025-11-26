@@ -60,7 +60,7 @@ steps:
     helm lint Helm/blog --namespace main
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace develop --set image.tag=$(Build.BuildNumber)-develop
-  condition: and(succeeded(), in(variables['Build.SourceBranchName'], 'develop'))  
+  condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'develop'))  
   displayName: 'helm upgrade blog Dev'
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace test --set image.tag=$(Build.BuildNumber)-test
