@@ -63,7 +63,7 @@ if (!string.IsNullOrEmpty(key))
 {
     builder.Services.AddOpenAIChatCompletion(
         modelId: model ?? throw new ApplicationException("Missing OpenAI Config"),
-        apiKey: key ?? throw new ApplicationException("Missing OpenAI Config")
+        apiKey: key
     );
 }
 builder.Services.AddSingleton((serviceProvider) => new Kernel(serviceProvider));
