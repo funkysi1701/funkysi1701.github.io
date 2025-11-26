@@ -16,13 +16,14 @@ trigger:
 - develop
 - test
 - main
+- feature/*
 
 pool: Docker
 
 steps:
 - task: CmdLine@2
   displayName: "Login"
-  condition: and(succeeded(), in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'))
+  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   inputs:
     script: |
       docker build -t blog .
@@ -42,7 +43,7 @@ steps:
   displayName: 'Set image repository name'
 - task: CmdLine@2
   displayName: "Publish to ACR"
-  condition: and(succeeded(), in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'))
+  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   inputs:
     script: |
       docker tag blog funkysi1701.azurecr.io/funkysi1701/$(imageRepoName)
@@ -60,7 +61,7 @@ steps:
     helm lint Helm/blog --namespace main
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace develop --set image.tag=$(Build.BuildNumber)-develop
-  condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'develop'))  
+  condition: and(succeeded(), or(eq(variables['Build.SourceBranchName'], 'develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   displayName: 'helm upgrade blog Dev'
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace test --set image.tag=$(Build.BuildNumber)-test
