@@ -1,6 +1,6 @@
 +++
 title = "Creating a Festive Naughty or Nice Checker Using Semantic Kernel and .NET"
-date = "2025-12-01T20:00:00Z"
+date = "2025-12-12T07:00:00Z"
 year = "2025"
 month = "2025-12"
 author = "funkysi1701"
@@ -18,8 +18,8 @@ draft = false
 aliases = [
     "/festive-naughty-or-nice-checker",
     "/posts/festive-naughty-or-nice-checker",
-    "/posts/2025/11/17/festive-naughty-or-nice-checker",
-    "/2025/11/17/festive-naughty-or-nice-checker"
+    "/posts/2025/12/12/festive-naughty-or-nice-checker",
+    "/2025/12/12/festive-naughty-or-nice-checker"
 ]
 +++
 
