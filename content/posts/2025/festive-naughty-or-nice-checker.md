@@ -89,8 +89,7 @@ This is far too wordy, I really just want a Naughty or Nice response.
 Then I tried:
 
 ```csharp
-  var aiResponse = await _kernel.InvokePromptAsync($"Given the following description, decide if the person is Naughty 
-  or Nice for Christmas. Respond only with 'Naughty' or 'Nice'. Description: {childsName}", cancellationToken: cancellationToken.Token);
+  var aiResponse = await _kernel.InvokePromptAsync($"Given the following description, decide if the person is Naughty or Nice for Christmas. Respond only with 'Naughty' or 'Nice'. Description: {childsName}", cancellationToken: cancellationToken.Token);
 ```
 
 | Input | Output |
