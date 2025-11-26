@@ -66,7 +66,7 @@ if (!string.IsNullOrEmpty(key))
         apiKey: key
     );
 }
-builder.Services.AddSingleton((serviceProvider) => new Kernel(serviceProvider));
+builder.Services.AddKernel();
 ```
 
 ## Step 3: Create the Naughty or Nice Prompt
