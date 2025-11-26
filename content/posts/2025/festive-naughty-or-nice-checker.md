@@ -27,7 +27,7 @@ aliases = [
 
 ![Festive Tech Calendar](/images/2025/festive-tech-calendar.png)
 
-I am excited to be taking part in this years, [Festive Tech Calendar](https://festivetechcalendar.com/), make sure to check out more excellent content created by the community. In this post, we'll build a "Naughty or Nice" checker using Semantic Kernel and .NET. This playful tool uses AI to analyze text and decide if someone's been naughty or nice!
+I am excited to be taking part in this year's, [Festive Tech Calendar](https://festivetechcalendar.com/), make sure to check out more excellent content created by the community. In this post, we'll build a "Naughty or Nice" checker using Semantic Kernel and .NET. This playful tool uses AI to analyze text and decide if someone's been naughty or nice!
 
 ## What is Semantic Kernel?
 
