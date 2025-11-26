@@ -74,7 +74,7 @@ builder.Services.AddSingleton((serviceProvider) => new Kernel(serviceProvider));
 For the prompt I am passing to OpenAI I went through a few iterations. To begin with I tried:
 
 ```csharp
-  var aiResponse = await _kernel.InvokePromptAsync($"You are a tool to help Santa identify if children have been naughty or nice. Has {childsName} been naughty or nice this year?", cancellationToken: cancellationToken.Token);
+  var aiResponse = await _kernel.InvokePromptAsync($"You are a tool to help Santa identify if children have been naughty or nice. Has {childName} been naughty or nice this year?", cancellationToken: cancellationToken.Token);
 ```
 
 | Input | Output |
