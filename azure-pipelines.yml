@@ -2,9 +2,9 @@
 variables:
   - group: Global
   - name: Build.Number.Major
-    value: 9
+    value: 10
   - name: Build.Number.Minor
-    value: 4
+    value: 1
   - name: Build.Number.Sub
     value: 1
   - name: BuildNumber
