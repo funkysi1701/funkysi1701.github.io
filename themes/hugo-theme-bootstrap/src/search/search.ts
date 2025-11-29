@@ -112,9 +112,30 @@ export class Search {
   }
 
   handleSubmit(event) {
-    this.search(this.input.value);
-    this.searchBarInput.value = this.input.value;
+    const searchQuery = this.input.value;
+    this.search(searchQuery);
+    this.searchBarInput.value = searchQuery;
+    
+    // Call the API to save the search query
+    this.saveSearchToDb(searchQuery);
+    
     event.preventDefault();
+  }
+
+  saveSearchToDb(query: string) {
+    if (!query.trim()) {
+      return;
+    }
+    
+    fetch('https://azurefunction-d4bkcjdahseefphm.uksouth-01.azurewebsites.net/api/SaveToDb', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ query: query }),
+    }).catch((error) => {
+      console.warn('Failed to save search to database:', error);
+    });
   }
 
   static getKeywordFromURL() {
