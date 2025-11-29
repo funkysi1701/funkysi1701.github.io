@@ -127,12 +127,8 @@ export class Search {
       return;
     }
     
-    fetch('https://azurefunction-d4bkcjdahseefphm.uksouth-01.azurewebsites.net/api/SaveToDb', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ query: query }),
+    fetch('https://azurefunction-d4bkcjdahseefphm.uksouth-01.azurewebsites.net/api/SaveToDb?name=' + query, {
+      method: 'GET',
     }).catch((error) => {
       console.warn('Failed to save search to database:', error);
     });
