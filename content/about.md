@@ -3,8 +3,8 @@ title = "About Me"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = ""
-keywords = ["", ""]
-description = "Learn more about Simon Foster, also known as Funky Si. Discover his background, professional experience in IT and software development, and his personal projects like the Pwned Pass app."
+keywords = ["Simon Foster", "Funky Si", "software developer", "DevOps", "Azure", ".NET", "full-stack development"]
+description = "Simon Foster (Funky Si) is a full-stack developer with 18+ years of IT experience. Specializing in .NET, DevOps, Azure, and building scalable applications. Based in the North of England."
 images = ['/images/1922276.jpg']
 showFullContent = false
 copyright = false
@@ -18,9 +18,19 @@ aliases = [
 
 <img alt="Funky Si profile image" src="/images/1922276.jpg" style="float: left; padding-right: 15px; height: 150px" />
 
-My real name is Simon Foster but my on-line persona is Funky Si a nickname I was given during my university days which has somehow stuck. I am a Developer working in the North of England. I have been working in IT departments since 2006 and have a wide range of experiences. More recently in the Software Development space but also SysAdmin, Server Infrastructure, Databases and DevOps.
+## Hey, I'm Simon Foster
 
-In my spare time I have created <a href="/pwned-pass">Pwned Pass</a> a Xamarin Forms mobile app that makes use of the Have I Been Pwned? API to allow searching for breached emails and passwords. This is available from the Google Play store.
+My online persona is **Funky Si** — a nickname from university days that somehow stuck. I'm a full-stack developer passionate about building scalable, maintainable applications and robust DevOps practices.
+
+With **18+ years** in IT departments (since 2006), I've worn many hats: software developer, systems administrator, infrastructure engineer, database specialist, and DevOps advocate. My career has evolved from traditional ops work into modern cloud-native development, and I genuinely enjoy the intersection of development and infrastructure.
+
+### What I Do
+
+I specialize in:
+
+- **Backend Development**: .NET, C#, SQL Server, scalable API design
+- **Cloud & DevOps**: Azure, AWS, Terraform, containerization (Docker/Kubernetes), CI/CD automation
+- **Architecture**: Designing systems that are secure, performant, and maintainable
 
 ## Certifications
 
@@ -28,26 +38,43 @@ In my spare time I have created <a href="/pwned-pass">Pwned Pass</a> a Xamarin F
 
 <a href="https://www.credly.com/badges/3aab54c8-a109-4018-bcad-dbe0d6a1fc0c/public_url"><img src="/images/awscp.png" alt="AWS Cloud Practitioner" width="150" /></a>
 
-## Tech I have used
+## Technology Stack
 
-- .Net
+Organized by category:
+
+**Languages**
 - C#
-- SQL Server
+- JavaScript
+- PowerShell
+- SQL
+
+**Frameworks & Platforms**
+- .NET (Framework & Core)
 - Blazor
-- Javascript
-- jquery
-- Azure
-- Azure DevOps
-- AWS
+- ASP.NET
+
+**Databases**
+- SQL Server
+
+**Cloud & Infrastructure**
+- Microsoft Azure (AppService, Functions, DevOps, KeyVault)
+- Amazon Web Services
 - Terraform
-- Powershell
-- git
-- plus many others...
+- Docker
+- Kubernetes
+- Helm
+
+**Tools & Services**
+- Git
+- Azure DevOps
+- GitHub Actions
+- CI/CD pipelines
+- And many more...
 
 ## Recommendations
 
-*Simon is an excellent developer, always looking for new methods and technology to improve existing solutions, along with his own skills. He is open to new ideas, though not afraid to share his thoughts and feedback and guide others to the best solution possible. It’s worth noting that Simon has vast knowledge on hardware and infrastructure which really does compliment his skill as a developer.* - Alasdair Thomson (Head of Business Data Solutions at NPD Travel Retail)
+*Simon is an excellent developer, always looking for new methods and technology to improve existing solutions, along with his own skills. He is open to new ideas, though not afraid to share his thoughts and feedback and guide others to the best solution possible. It’s worth noting that Simon has vast knowledge on hardware and infrastructure which really does compliment his skill as a developer.*
 
-*Simon worked for my company for a number of years and was a very valued member of staff, and later on management. He is an intelligent and conscientious worker who gives over and above on a regular basis. He leads by example and was respected by his peers and the directors of the company. I would not hesitate to recommend Simon both in terms of the quality of his work and his ethics and values in life in general.* - Alison Davies (CEO at Eurosafe UK)
+*Simon worked for my company for a number of years and was a very valued member of staff, and later on management. He is an intelligent and conscientious worker who gives over and above on a regular basis. He leads by example and was respected by his peers and the directors of the company. I would not hesitate to recommend Simon both in terms of the quality of his work and his ethics and values in life in general.*
 
-*If you want a developer who really understands DevOps, then Si is your man. With a mixture of operations, support, development and management experience, he can bring a balanced skillset to a team, as well as excellent knowledge of Azure, .NET, SQL and the web.* - Keith Williams (Development Manager at IRIS for Cascade HR and KashFlow Payroll)
+*If you want a developer who really understands DevOps, then Si is your man. With a mixture of operations, support, development and management experience, he can bring a balanced skillset to a team, as well as excellent knowledge of Azure, .NET, SQL and the web.*
