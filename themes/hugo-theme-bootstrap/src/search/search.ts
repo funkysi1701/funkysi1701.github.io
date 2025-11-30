@@ -122,7 +122,7 @@ export class Search {
   saveSearchToDb(query: string) {
     
     fetch('https://azurefunction-d4bkcjdahseefphm.uksouth-01.azurewebsites.net/api/SaveToDb?name=' + query, {
-      method: 'GET',
+      method: 'POST',
     }).catch((error) => {
       console.warn('Failed to save search to database:', error);
     });
