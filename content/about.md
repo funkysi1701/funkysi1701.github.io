@@ -32,6 +32,37 @@ I specialize in:
 - **Cloud & DevOps**: Azure, AWS, Terraform, containerization (Docker/Kubernetes), CI/CD automation
 - **Architecture**: Designing systems that are secure, performant, and maintainable
 
+## Community
+
+I'm passionate about sharing knowledge with the tech community:
+
+- **Blogger** - 11+ years of writing about technology, DevOps practices, cloud architecture, and professional development on my blog
+- **Tech Enthusiast** - Continuously learning and exploring emerging technologies like AI, Kubernetes, and observability
+
+## Blog & Writing
+
+I regularly write about topics including:
+
+- Cloud architecture and infrastructure as code
+- .NET and C# development best practices
+- DevOps tooling and automation
+- Azure services and cloud deployment patterns
+- Kubernetes and container orchestration
+- Observability, monitoring, and logging
+- Professional development and career growth
+
+## Featured Technologies & Projects
+
+Recent work and areas of focus:
+
+- **Kubernetes & Helm** - Orchestration and deployment automation
+- **OpenTelemetry** - Observability, logging, and distributed tracing
+- **Elasticsearch** - Search and analytics
+- **Azure Infrastructure** - AppService, Functions, DevOps, networking
+- **Infrastructure as Code** - Terraform, ARM templates, Helm charts
+- **CI/CD Pipelines** - GitHub Actions, Azure Pipelines
+- **AI & Machine Learning** - Exploring applications in modern development
+
 ## Certifications
 
 <a href="https://www.credly.com/badges/adacf718-d696-4254-a68d-5b32f720ac78/public_url" style="float:left"><img src="/images/azure.png" alt="Azure Fundamentals" width="150" /></a>
@@ -42,21 +73,25 @@ I specialize in:
 
 Organized by category:
 
-**Languages**
+### Languages
+
 - C#
 - JavaScript
 - PowerShell
 - SQL
 
-**Frameworks & Platforms**
+### Frameworks & Platforms
+
 - .NET (Framework & Core)
 - Blazor
 - ASP.NET
 
-**Databases**
+### Databases
+
 - SQL Server
 
-**Cloud & Infrastructure**
+### Cloud & Infrastructure
+
 - Microsoft Azure (AppService, Functions, DevOps, KeyVault)
 - Amazon Web Services
 - Terraform
@@ -64,12 +99,25 @@ Organized by category:
 - Kubernetes
 - Helm
 
-**Tools & Services**
+### Tools & Services
+
 - Git
 - Azure DevOps
 - GitHub Actions
 - CI/CD pipelines
 - And many more...
+
+## Connect With Me
+
+Want to collaborate, chat about tech, or discuss DevOps and cloud architecture? Connect with me on:
+
+- **GitHub** - [@funkysi1701](https://github.com/funkysi1701)
+- **Twitter/X** - [@funkysi1701](https://twitter.com/funkysi1701)
+- **BlueSky** - [@funkysi1701.com](https://bsky.app/profile/funkysi1701.com)
+- **LinkedIn** - [Simon Foster](https://linkedin.com/in/simondfoster)
+- **Blog** - Explore my latest posts and articles here on this site
+
+Feel free to reach out with questions, collaboration opportunities, or just to chat about technology!
 
 ## Recommendations
 
