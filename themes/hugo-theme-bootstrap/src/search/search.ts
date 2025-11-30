@@ -123,9 +123,6 @@ export class Search {
   }
 
   saveSearchToDb(query: string) {
-    if (!query.trim()) {
-      return;
-    }
     
     fetch('https://azurefunction-d4bkcjdahseefphm.uksouth-01.azurewebsites.net/api/SaveToDb?name=' + query, {
       method: 'GET',
