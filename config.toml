@@ -25,7 +25,7 @@ enableRobotsTXT = true
   googleAdsense = "ca-pub-3535883966769835"
 
 [params.search]
-  analyticsUrl = "https://azurefunction-d4bkcjdahseefphm.uksouth-01.azurewebsites.net/api/SaveToDb"  
+  analyticsUrl = "https://azurefunction-d4bkcjdahseefphm.uksouth-01.azurewebsites.net/api/SaveToDb"
 
 [params.giscus]
   repo = "funkysi1701/Blog-Comments"
