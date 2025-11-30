@@ -24,9 +24,6 @@ enableRobotsTXT = true
   comment = true
   googleAdsense = ""
 
-[params.search]
-  analyticsUrl = "https://azurefunction-d4bkcjdahseefphm.uksouth-01.azurewebsites.net/api/SaveToDb"
-
 [params.giscus]
   repo = "funkysi1701/Blog-Comments"
   repoId = "R_kgDOQJKGlA"
