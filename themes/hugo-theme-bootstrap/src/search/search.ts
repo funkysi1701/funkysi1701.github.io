@@ -125,6 +125,10 @@ export class Search {
     }
     fetch(window.searchAnalyticsUrl + '?name=' + encodeURIComponent(query), {
       method: 'POST',
+    }).then((response) => {
+      if (!response.ok) {
+        console.warn('Failed to save search to database. Status:', response.status);
+      }
     }).catch((error) => {
       console.warn('Failed to save search to database:', error);
     });
