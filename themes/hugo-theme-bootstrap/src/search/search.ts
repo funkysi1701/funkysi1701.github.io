@@ -104,6 +104,7 @@ export class Search {
       this.input.value = Search.getKeywordFromURL();
     }
     this.searchBarInput.value = this.input.value;
+    this.saveSearchToDb(this.input.value);
     document.querySelector('.search-bar input');
     const instance = this;
     this.form.addEventListener('submit', (event) => {
@@ -112,13 +113,9 @@ export class Search {
   }
 
   handleSubmit(event) {
-    const searchQuery = this.input.value;
-    this.search(searchQuery);
-    this.searchBarInput.value = searchQuery;
-    
-    // Call the API to save the search query
-    this.saveSearchToDb(searchQuery);
-    
+    this.search(this.input.value);
+    this.searchBarInput.value = this.input.value;
+    this.saveSearchToDb(this.input.value);
     event.preventDefault();
   }
 
