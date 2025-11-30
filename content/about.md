@@ -65,9 +65,9 @@ Recent work and areas of focus:
 
 ## Certifications
 
-<a href="https://www.credly.com/badges/adacf718-d696-4254-a68d-5b32f720ac78/public_url" style="float:left"><img src="/images/azure.png" alt="Azure Fundamentals" width="150" /></a>
-
-<a href="https://www.credly.com/badges/3aab54c8-a109-4018-bcad-dbe0d6a1fc0c/public_url"><img src="/images/awscp.png" alt="AWS Cloud Practitioner" width="150" /></a>
+<a href="https://www.credly.com/badges/adacf718-d696-4254-a68d-5b32f720ac78/public_url" style="float:left; padding-right: 15px;"><img src="/images/azure.png" alt="Azure Fundamentals" width="150" /></a>
+<a href="https://www.credly.com/badges/3aab54c8-a109-4018-bcad-dbe0d6a1fc0c/public_url" style="float:left;"><img src="/images/awscp.png" alt="AWS Cloud Practitioner" width="150" /></a>
+<div style="clear: both;"></div>
 
 ## Technology Stack
 
