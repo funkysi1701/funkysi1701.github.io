@@ -122,11 +122,11 @@ export class Search {
   }
 
   saveSearchToDb(query: string) {
-    if (!query || !window.searchAnalyticsUrl) {
+    if (!query || !globalThis.searchAnalyticsUrl) {
       return;
     }
 
-    fetch(window.searchAnalyticsUrl, {
+    fetch(globalThis.searchAnalyticsUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
