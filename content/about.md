@@ -118,11 +118,8 @@ Want to collaborate, chat about tech, or discuss DevOps and cloud architecture? 
 - **Blog** - Explore my latest posts and articles here on this site
 
 Feel free to reach out with questions, collaboration opportunities, or just to chat about technology!
+*Simon is an excellent developer, always looking for new methods and technology to improve existing solutions, along with his own skills. He is open to new ideas, though not afraid to share his thoughts and feedback and guide others to the best solution possible. It’s worth noting that Simon has vast knowledge on hardware and infrastructure which really does compliment his skill as a developer.* - Alasdair Thomson (Head of Business Data Solutions at NPD Travel Retail)
 
-## Recommendations
+*Simon worked for my company for a number of years and was a very valued member of staff, and later on management. He is an intelligent and conscientious worker who gives over and above on a regular basis. He leads by example and was respected by his peers and the directors of the company. I would not hesitate to recommend Simon both in terms of the quality of his work and his ethics and values in life in general.* - Alison Davies (CEO at Eurosafe UK)
 
-*Simon is an excellent developer, always looking for new methods and technology to improve existing solutions, along with his own skills. He is open to new ideas, though not afraid to share his thoughts and feedback and guide others to the best solution possible. It’s worth noting that Simon has vast knowledge on hardware and infrastructure which really does compliment his skill as a developer.*
-
-*Simon worked for my company for a number of years and was a very valued member of staff, and later on management. He is an intelligent and conscientious worker who gives over and above on a regular basis. He leads by example and was respected by his peers and the directors of the company. I would not hesitate to recommend Simon both in terms of the quality of his work and his ethics and values in life in general.*
-
-*If you want a developer who really understands DevOps, then Si is your man. With a mixture of operations, support, development and management experience, he can bring a balanced skillset to a team, as well as excellent knowledge of Azure, .NET, SQL and the web.*
+*If you want a developer who really understands DevOps, then Si is your man. With a mixture of operations, support, development and management experience, he can bring a balanced skillset to a team, as well as excellent knowledge of Azure, .NET, SQL and the web.* - Keith Williams (Development Manager at IRIS for Cascade HR and KashFlow Payroll)
