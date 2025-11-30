@@ -7,6 +7,7 @@ declare global {
     fuseOptions: any;
     searchResultContentWordCount: number;
     searchPaginate: number;
+    searchAnalyticsUrl?: string;
   }
 }
 
@@ -105,7 +106,6 @@ export class Search {
     }
     this.searchBarInput.value = this.input.value;
     this.saveSearchToDb(this.input.value);
-    document.querySelector('.search-bar input');
     const instance = this;
     this.form.addEventListener('submit', (event) => {
       instance.handleSubmit(event);
@@ -120,8 +120,10 @@ export class Search {
   }
 
   saveSearchToDb(query: string) {
-    
-    fetch('https://azurefunction-d4bkcjdahseefphm.uksouth-01.azurewebsites.net/api/SaveToDb?name=' + query, {
+    if (!query || !window.searchAnalyticsUrl) {
+      return;
+    }
+    fetch(window.searchAnalyticsUrl + '?name=' + encodeURIComponent(query), {
       method: 'POST',
     }).catch((error) => {
       console.warn('Failed to save search to database:', error);
