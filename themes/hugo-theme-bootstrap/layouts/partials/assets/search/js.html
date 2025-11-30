@@ -20,7 +20,7 @@
 <script>
   window.searchResultContentWordCount = parseInt('{{ default 240 .Site.Params.search.resultContentWordCount }}');
   window.searchPaginate = parseInt('{{ default 10 .Site.Params.search.paginate }}');
-  window.searchAnalyticsUrl = '{{ .Site.Params.search.analyticsUrl }}';
+  globalThis.searchAnalyticsUrl = '{{ .Site.Params.search.analyticsUrl }}';
   window.fuseOptions = JSON.parse('{{ $options | jsonify | safeHTML }}');
 </script>
 {{- $script := resources.Get "search/index.js" | slice | resources.Concat "js/search.js" | fingerprint -}}
