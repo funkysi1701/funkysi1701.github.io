@@ -105,7 +105,9 @@ export class Search {
       this.input.value = Search.getKeywordFromURL();
     }
     this.searchBarInput.value = this.input.value;
-    this.saveSearchToDb(this.input.value);
+    if (this.input.value !== '') {
+      this.saveSearchToDb(this.input.value);
+    }
     const instance = this;
     this.form.addEventListener('submit', (event) => {
       instance.handleSubmit(event);
