@@ -123,14 +123,13 @@ export class Search {
     if (!query || !window.searchAnalyticsUrl) {
       return;
     }
-    fetch(window.searchAnalyticsUrl + '?name=' + encodeURIComponent(query), {
+
+    fetch(window.searchAnalyticsUrl, {
       method: 'POST',
-    }).then((response) => {
-      if (!response.ok) {
-        console.warn('Failed to save search to database. Status:', response.status);
-      }
-    }).catch((error) => {
-      console.warn('Failed to save search to database:', error);
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name: query }),
     });
   }
 
