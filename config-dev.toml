@@ -10,7 +10,6 @@ enableRobotsTXT = true
       {Name = "About", URL = "/about/"},
       {Name = "Referral Links", URL = "/referral-links/"},
       {Name = "Events", URL = "/posts/events/"},
-      {Name = "Podcasts", URL = "/podcasts/"},
       {Name = "Contact", URL = "/contact/"},
       {Name = "Search", URL = "/search/"},
       {Name = "Newsletter", URL = "https://eepurl.com/i7pQno"},
