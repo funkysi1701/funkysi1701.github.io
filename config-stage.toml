@@ -8,9 +8,8 @@ enableRobotsTXT = true
 [Menus]
   main = [
       {Name = "About", URL = "/about/"},
-      {Name = "Referral Links", URL = "/referral-links/"},
+      {Name = "Tools & Resources", URL = "/tools-and-resources/"},
       {Name = "Events", URL = "/posts/events/"},
-      {Name = "Podcasts", URL = "/podcasts/"},
       {Name = "Contact", URL = "/contact/"},
       {Name = "Search", URL = "/search/"},
       {Name = "Newsletter", URL = "https://eepurl.com/i7pQno"},
