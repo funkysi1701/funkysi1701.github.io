@@ -17,7 +17,7 @@ aliases = [
 
 ## Get In Touch
 
-I'd love to hear from you! Whether you have a question about my blog posts or want to discuss a potential collaboration feel free to reach out.
+I'd love to hear from you! Whether you have a question about my blog posts or want to discuss a potential collaboration, feel free to reach out.
 
 ### Email
 
