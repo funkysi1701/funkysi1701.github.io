@@ -32,37 +32,6 @@ I specialize in:
 - **Cloud & DevOps**: Azure, AWS, Terraform, containerization (Docker/Kubernetes), CI/CD automation
 - **Architecture**: Designing systems that are secure, performant, and maintainable
 
-## Community
-
-I'm passionate about sharing knowledge with the tech community:
-
-- **Blogger** - 11+ years of writing about technology, DevOps practices, cloud architecture, and professional development on my blog
-- **Tech Enthusiast** - Continuously learning and exploring emerging technologies like AI, Kubernetes, and observability
-
-## Blog & Writing
-
-I regularly write about topics including:
-
-- Cloud architecture and infrastructure as code
-- .NET and C# development best practices
-- DevOps tooling and automation
-- Azure services and cloud deployment patterns
-- Kubernetes and container orchestration
-- Observability, monitoring, and logging
-- Professional development and career growth
-
-## Featured Technologies & Projects
-
-Recent work and areas of focus:
-
-- **Kubernetes & Helm** - Orchestration and deployment automation
-- **OpenTelemetry** - Observability, logging, and distributed tracing
-- **Elasticsearch** - Search and analytics
-- **Azure Infrastructure** - AppService, Functions, DevOps, networking
-- **Infrastructure as Code** - Terraform, ARM templates, Helm charts
-- **CI/CD Pipelines** - GitHub Actions, Azure Pipelines
-- **AI & Machine Learning** - Exploring applications in modern development
-
 ## Certifications
 
 <a href="https://www.credly.com/badges/adacf718-d696-4254-a68d-5b32f720ac78/public_url" style="float:left; padding-right: 15px;"><img src="/images/azure.png" alt="Azure Fundamentals" width="150" /></a>
@@ -106,6 +75,37 @@ Organized by category:
 - GitHub Actions
 - CI/CD pipelines
 - And many more...
+
+## Featured Technologies & Projects
+
+Recent work and areas of focus:
+
+- **Kubernetes & Helm** - Orchestration and deployment automation
+- **OpenTelemetry** - Observability, logging, and distributed tracing
+- **Elasticsearch** - Search and analytics
+- **Azure Infrastructure** - AppService, Functions, DevOps, networking
+- **Infrastructure as Code** - Terraform, ARM templates, Helm charts
+- **CI/CD Pipelines** - GitHub Actions, Azure Pipelines
+- **AI & Machine Learning** - Exploring applications in modern development
+
+## Community
+
+I'm passionate about sharing knowledge with the tech community:
+
+- **Blogger** - 11+ years of writing about technology, DevOps practices, cloud architecture, and professional development on my blog
+- **Tech Enthusiast** - Continuously learning and exploring emerging technologies like AI, Kubernetes, and observability
+
+## Blog & Writing
+
+I regularly write about topics including:
+
+- Cloud architecture and infrastructure as code
+- .NET and C# development best practices
+- DevOps tooling and automation
+- Azure services and cloud deployment patterns
+- Kubernetes and container orchestration
+- Observability, monitoring, and logging
+- Professional development and career growth
 
 ## Connect With Me
 
