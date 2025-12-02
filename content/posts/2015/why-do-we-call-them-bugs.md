@@ -14,7 +14,7 @@ description =  "Why do we call them bugs?"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/why-do-we-call-them-bugs",
     "/posts/why-do-we-call-them-bugs-3h8",

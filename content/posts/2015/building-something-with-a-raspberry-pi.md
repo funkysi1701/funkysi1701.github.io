@@ -14,7 +14,7 @@ description = "Exploring electronics with Raspberry Pi, from learning basics to 
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/building-something-with-a-raspberry-pi",
     "/posts/building-something-with-a-raspberry-pi-328j",

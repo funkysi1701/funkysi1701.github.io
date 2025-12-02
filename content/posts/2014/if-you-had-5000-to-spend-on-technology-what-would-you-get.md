@@ -14,7 +14,7 @@ description = "Discussing various technology purchases and upgrades with a hypot
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/if-you-had-ps5000-to-spend-on-technology-what-would-you-get-15ee",
     "/posts/if-you-had-5000-to-spend-on-technology-what-would-you-get",

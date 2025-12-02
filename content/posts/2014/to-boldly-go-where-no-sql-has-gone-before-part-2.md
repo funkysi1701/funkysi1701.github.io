@@ -14,7 +14,7 @@ description = "Continuing the exploration of SQL database schema with Star Trek 
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/to-boldly-go-where-no-sql-has-gone-before-part-2-3po5",
     "/posts/to-boldly-go-where-no-sql-has-gone-before-part-2",
