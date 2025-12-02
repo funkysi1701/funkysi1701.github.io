@@ -114,7 +114,9 @@ Want to collaborate, chat about tech, or discuss DevOps and cloud architecture? 
 - **GitHub** - [@funkysi1701](https://github.com/funkysi1701)
 - **Twitter/X** - [@funkysi1701](https://twitter.com/funkysi1701)
 - **BlueSky** - [@funkysi1701.com](https://bsky.app/profile/funkysi1701.com)
+- **Mastodon** - [@funkysi1701](https://hachyderm.io/@funkysi1701)
 - **LinkedIn** - [funkysi1701](https://linkedin.com/in/funkysi1701)
+- **Facebook** - [funkysi1701](https://www.facebook.com/funkysi1701)
 - **Blog** - Explore my latest posts and articles here on this site
 
 Feel free to reach out with questions, collaboration opportunities, or just to chat about technology!
