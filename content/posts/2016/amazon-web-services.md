@@ -14,7 +14,7 @@ description =  "Amazon Web Services"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/amazon-web-services-32h7",
     "/posts/amazon-web-services/",

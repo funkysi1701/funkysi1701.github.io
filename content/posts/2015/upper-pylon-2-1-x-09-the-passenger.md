@@ -14,7 +14,7 @@ description =  "Upper Pylon 2 – 1 x 09: The Passenger"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/upper-pylon-2-1-x-09-the-passenger",
     "/posts/2015/07/30/upper-pylon-2-1-x-09-the-passenger",

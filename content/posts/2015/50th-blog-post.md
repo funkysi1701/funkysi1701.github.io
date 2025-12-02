@@ -14,7 +14,7 @@ description = "Celebrating the milestone of 50 blog posts with highlights of my 
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/50th-blog-post",
     "/posts/50th-blog-post-11j",

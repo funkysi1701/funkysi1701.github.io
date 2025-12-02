@@ -14,7 +14,7 @@ description =  "How complex are my stored procedures?"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/how-complex-are-my-stored-procedures",
     "/posts/how-complex-are-my-stored-procedures-5b3g",

@@ -14,7 +14,7 @@ description = "Its been a while since I first released Pwned Pass so lets have a
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/pwned-pass-update-55io",
     "/posts/pwned-pass-update/",

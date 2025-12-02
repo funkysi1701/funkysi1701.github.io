@@ -14,7 +14,7 @@ description = "Exploring the surprising announcement of Windows 10, its implicat
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/windows-9-or-do-i-mean-10-241n",
     "/posts/windows-9-or-do-i-mean-10",

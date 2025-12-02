@@ -14,7 +14,7 @@ description = "Reflecting on the achievements and challenges faced in 2014, incl
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/looking-back-at-2014-h3g",
     "/posts/looking-back-at-2014",

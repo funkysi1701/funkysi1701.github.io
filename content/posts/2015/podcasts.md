@@ -14,7 +14,7 @@ description =  "Podcasts"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/podcasts-14j5",
     "/posts/podcasts",

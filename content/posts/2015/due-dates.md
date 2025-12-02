@@ -14,7 +14,7 @@ description = "A reflection on the unpredictability of due dates for both childb
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/due-dates",
     "/posts/2015/08/17/due-dates",

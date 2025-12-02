@@ -14,7 +14,7 @@ description = "Reflecting on Father's Day, technology, and how my dad inspired m
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/fathers-day",
     "/posts/fathers-day-o87",

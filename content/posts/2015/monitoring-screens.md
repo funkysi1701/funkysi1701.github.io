@@ -14,7 +14,7 @@ description =  "Monitoring Screens"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/monitoring-screens",
     "/posts/monitoring-screens-1gdf",

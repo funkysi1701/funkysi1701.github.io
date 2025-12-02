@@ -14,7 +14,7 @@ description =  "He’s really not dead as long as we remember him – Leonard Ni
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/hes-really-not-dead-as-long-as-we-remember-him",
     "/posts/2015/02/28/hes-really-not-dead-as-long-as-we-remember-him",

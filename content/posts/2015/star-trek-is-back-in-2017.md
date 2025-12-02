@@ -14,7 +14,7 @@ description =  "Star Trek is back (in 2017)"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/star-trek-is-back-in-2017/",
     "/posts/star-trek-is-back-in-2017-11np",

@@ -14,7 +14,7 @@ description =  "Overflow"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/overflow",
     "/posts/overflow-24f8",

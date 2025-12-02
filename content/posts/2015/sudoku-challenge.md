@@ -14,7 +14,7 @@ description =  "Sudoku Challenge"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/sudoku-challenge",
     "/posts/sudoku-challenge-1gdd",
