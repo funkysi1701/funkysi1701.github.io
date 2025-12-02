@@ -27,11 +27,12 @@ You can contact me directly at: **[funkysi1701@gmail.com](mailto:funkysi1701@gma
 
 Connect with me on social media:
 
-- **Twitter/X**: [@funkysi1701](https://twitter.com/funkysi1701)
-- **BlueSky**: [@funkysi1701.com](https://bsky.app/profile/funkysi1701.com)
-- **Mastodon**: [@funkysi1701@hachyderm.io](https://hachyderm.io/@funkysi1701)
-- **LinkedIn**: [funkysi1701](https://linkedin.com/in/funkysi1701)
-- **GitHub**: [@funkysi1701](https://github.com/funkysi1701)
+- **GitHub** - [@funkysi1701](https://github.com/funkysi1701)
+- **Twitter/X** - [@funkysi1701](https://twitter.com/funkysi1701)
+- **BlueSky** - [@funkysi1701.com](https://bsky.app/profile/funkysi1701.com)
+- **Mastodon** - [@funkysi1701](https://hachyderm.io/@funkysi1701)
+- **LinkedIn** - [funkysi1701](https://linkedin.com/in/funkysi1701)
+- **Facebook** - [funkysi1701](https://www.facebook.com/funkysi1701)
 
 ### What I Can Help With
 
