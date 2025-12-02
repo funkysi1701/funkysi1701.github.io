@@ -14,7 +14,7 @@ description =  "Star Trek Episode Review The Best of Both Worlds"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/star-trek-episode-review-the-best-of-both-worlds",
     "/posts/2016/02/18/star-trek-episode-review-the-best-of-both-worlds",

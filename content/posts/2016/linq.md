@@ -14,7 +14,7 @@ description =  "LINQ"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/linq-5g67",
     "/posts/linq",

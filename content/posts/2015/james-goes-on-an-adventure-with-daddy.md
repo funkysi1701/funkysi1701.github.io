@@ -14,7 +14,7 @@ description =  "James goes on an adventure with Daddy"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/james-goes-on-an-adventure-with-daddy",
     "/posts/2015/10/22/james-goes-on-an-adventure-with-daddy",

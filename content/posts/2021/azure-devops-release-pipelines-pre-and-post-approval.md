@@ -14,7 +14,7 @@ description = "Azure DevOps release pipelines have lots of options to do things 
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/azure-devops-release-pipelines-pre-and-post-approval-4095",
     "/posts/azure-devops-release-pipelines-pre-and-post-approval/",

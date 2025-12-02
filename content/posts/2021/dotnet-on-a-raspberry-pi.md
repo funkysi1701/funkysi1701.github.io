@@ -14,7 +14,7 @@ description = "DotNet on a Raspberry Pi"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/dotnet-on-a-raspberry-pi-3ldn",
     "/posts/dotnet-on-a-raspberry-pi/",

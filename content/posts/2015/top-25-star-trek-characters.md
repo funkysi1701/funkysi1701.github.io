@@ -14,7 +14,7 @@ description =  "Top 25 Star Trek Characters"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/top-25-star-trek-characters",
     "/posts/2015/05/10/top-25-star-trek-characters",

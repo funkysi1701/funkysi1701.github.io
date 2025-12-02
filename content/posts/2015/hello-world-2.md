@@ -14,7 +14,7 @@ description = "Examples of 'Hello World!' programs in various programming langua
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/hello-world-2e41",
     "/posts/hello-world-2",

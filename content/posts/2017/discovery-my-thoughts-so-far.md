@@ -14,7 +14,7 @@ description = "Discovery – My thoughts so far"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/discovery-my-thoughts-so-far-55bl",
     "/posts/discovery-thoughts-far",

@@ -14,7 +14,7 @@ description = "Automated releases of software are great but how can we add an el
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/gated-release-4772",
     "/posts/gated-release/",
