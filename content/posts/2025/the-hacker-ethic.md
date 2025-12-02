@@ -74,4 +74,4 @@ The hacker ethic is far more than a technical mindset—it’s a philosophy of o
 
 The more I think about my career with computers, the more I identify as a hacker rather than a programmer or any other job title. I started hacking together simple web pages, I then hacked away at networks and Active Directory, now I hack at .NET and Kubernetes.
 
-Sponsored Link: [Hackers](https://amzn.to/49NwGHF)
+Sponsored Link: [Hackers: Heroes of the Computer Revolution (book)](https://amzn.to/49NwGHF)
