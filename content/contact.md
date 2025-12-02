@@ -27,11 +27,12 @@ You can contact me directly at: **[funkysi1701@gmail.com](mailto:funkysi1701@gma
 
 Connect with me on social media:
 
-- **Twitter/X**: [@funkysi1701](https://twitter.com/funkysi1701)
-- **BlueSky**: [@funkysi1701.com](https://bsky.app/profile/funkysi1701.com)
-- **Mastodon**: [@funkysi1701@hachyderm.io](https://hachyderm.io/@funkysi1701)
-- **LinkedIn**: [funkysi1701](https://linkedin.com/in/funkysi1701)
-- **GitHub**: [@funkysi1701](https://github.com/funkysi1701)
+- **GitHub** - [@funkysi1701](https://github.com/funkysi1701)
+- **Twitter/X** - [@funkysi1701](https://twitter.com/funkysi1701)
+- **BlueSky** - [@funkysi1701.com](https://bsky.app/profile/funkysi1701.com)
+- **Mastodon** - [@funkysi1701](https://hachyderm.io/@funkysi1701)
+- **LinkedIn** - [funkysi1701](https://linkedin.com/in/funkysi1701)
+- **Facebook** - [funkysi1701](https://www.facebook.com/funkysi1701)
 
 ### What I Can Help With
 
@@ -48,7 +49,7 @@ If you find my content helpful, consider:
 
 - [Buy Me a Coffee](https://www.buymeacoffee.com/funkysi1701)
 - [GitHub Sponsor](https://github.com/sponsors/funkysi1701)
-- Using my [referral links](/referral-links/)
+- Check out my [Tools & Resources](/tools-and-resources) which includes referral links
 - Sharing my posts with your network
 
 Thank you for reaching out! I look forward to connecting with you.
