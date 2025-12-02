@@ -14,7 +14,7 @@ description =  "Visual Studio"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/visual-studio",
     "/posts/visual-studio-307p",

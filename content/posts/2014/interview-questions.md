@@ -14,7 +14,7 @@ description = "Discussing common interview questions and providing insights on h
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/interview-questions-2a83",
     "/posts/interview-questions",

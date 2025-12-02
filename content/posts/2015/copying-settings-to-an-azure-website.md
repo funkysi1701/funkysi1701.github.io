@@ -14,7 +14,7 @@ description = "Learn how to use PowerShell to automate copying settings to an Az
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/copying-settings-to-an-azure-website",
     "/posts/copying-settings-to-an-azure-website-50ec",

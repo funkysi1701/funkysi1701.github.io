@@ -14,7 +14,7 @@ description = "Road to Certification"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/my-road-to-certification-3bep",
     "/posts/my-road-to-certification/",

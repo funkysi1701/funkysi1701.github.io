@@ -14,7 +14,7 @@ description =  "Learning R"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/learning-r-2p31",
     "/learning-r",

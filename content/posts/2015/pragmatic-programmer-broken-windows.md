@@ -14,7 +14,7 @@ description =  "Don’t Live with Broken Windows"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/pragmatic-programmer-broken-windows",
     "/posts/dont-live-with-broken-windows-npg",

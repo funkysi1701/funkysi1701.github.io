@@ -15,7 +15,7 @@ showFullContent = false
 featured = true
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/charting-my-energy-usage-with-the-octopus-energy-api-em8",
     "/posts/charting-my-energy-usage-with-the-octopus-energy-api/",
