@@ -14,7 +14,7 @@ description = "A festive post with a humorous take on SQL queries and Christmas 
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/happy-christmas-5cfj",
     "/posts/happy-christmas",

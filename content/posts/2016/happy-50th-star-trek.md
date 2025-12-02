@@ -14,7 +14,7 @@ description =  "Happy 50th Star Trek"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/happy-50th-star-trek",
     "/posts/happy-50th-star-trek-37g6",

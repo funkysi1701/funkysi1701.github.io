@@ -14,7 +14,7 @@ description = "Explore my journey and contributions to DZone, including articles
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/dzone-434m",
     "/posts/dzone",

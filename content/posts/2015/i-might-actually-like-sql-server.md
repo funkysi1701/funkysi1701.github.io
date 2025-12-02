@@ -14,7 +14,7 @@ description =  "I might actually like SQL Server"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/i-might-actually-like-sql-serveri-might-actually-like-sql-server",
     "/posts/i-might-actually-like-sql-server-34j0",

@@ -14,7 +14,7 @@ description =  "Star Trek Episode Review Arena"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/star-trek-episode-review-arena",
     "/posts/2016/01/21/star-trek-episode-review-arena",

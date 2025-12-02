@@ -14,7 +14,7 @@ description =  "Requirement Gathering"
 showFullContent = false
 readingTime = true
 copyright = false
-draft = true
+draft = false
 aliases = [
     "/posts/requirement-gathering",
     "/posts/requirement-gathering-1eml",
