@@ -85,7 +85,7 @@ I struggled with slow internet for a while, so as soon as Fibre was available in
 
 ## Mindful Chef
 
-My diet is not great, so I signed up to Mindful Chef to get healthy meals delivered to my door. At first glance it looks expensive, but if you compare it to a takeaway, it is a similar price and with Mindful Chef you get a few health meals to cook, and no guilt that you have been naughty again! If you sign up using my referral link you will get 25% off your first four boxes.
+My diet is not great, so I signed up to Mindful Chef to get healthy meals delivered to my door. At first glance it looks expensive, but if you compare it to a takeaway, it is a similar price and with Mindful Chef you get a few healthy meals to cook, and no guilt that you have been naughty again! If you sign up using my referral link you will get 25% off your first four boxes.
 
 [https://www.mindfulchef.com/ref-F1E4A7](https://www.mindfulchef.com/ref-F1E4A7)
 
