@@ -73,3 +73,5 @@ The growth of open source software can clearly be seen as an extension to the sh
 The hacker ethic is far more than a technical mindset—it’s a philosophy of openness, empowerment, and playful problem-solving. By understanding and embracing these principles, we can build a digital future that is more inclusive, innovative, and free.
 
 The more I think about my career with computers, the more I identify as a hacker rather than a programmer or any other job title. I started hacking together simple web pages, I then hacked away at networks and Active Directory, now I hack at .NET and Kubernetes.
+
+Sponsored Link: [Hackers: Heroes of the Computer Revolution (book)](https://amzn.to/49NwGHF)
