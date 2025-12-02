@@ -14,7 +14,7 @@ description = "Sharing experiences from attending the Destination Star Trek conv
 showFullContent = false
 readingTime = true
 copyright = false
-draft = false # TODO: Fix broken images and republish
+draft = false
 aliases = [
     "/destination-star-trek-38ei",
     "/posts/destination-star-trek",
