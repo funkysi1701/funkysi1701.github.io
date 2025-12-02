@@ -16,7 +16,7 @@ aliases = [
 ]
 +++
 
-A list of podcast I have recorded, mostly about Star Trek.
+A list of podcasts I have recorded, mostly about Star Trek.
 
 [TrekRanks #174](/posts/2024/trekranks/)
 
