@@ -49,7 +49,7 @@ If you find my content helpful, consider:
 
 - [Buy Me a Coffee](https://www.buymeacoffee.com/funkysi1701)
 - [GitHub Sponsor](https://github.com/sponsors/funkysi1701)
-- Using my [referral links](/referral-links/)
+- Check out my [Tools & Resources](/tools-and-resources) which includes referral links
 - Sharing my posts with your network
 
 Thank you for reaching out! I look forward to connecting with you.
