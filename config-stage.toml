@@ -16,7 +16,7 @@ enableRobotsTXT = true
   ]
 
 [params]
-  description = "Simon Foster - North of England-based Software Developer | .NET & C# specialist | More than just another developer."
+  description = "Simon Foster - North of England-based Software Developer | .NET developer | Azure & DevOps specialist | 18+ years building scalable solutions"
   images = ["/images/1922276.jpg"]
   themeColor = "theme-base-0d"
   logo = false
