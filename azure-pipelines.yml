@@ -22,12 +22,20 @@ pool: Docker
 
 steps:
 - task: CmdLine@2
-  displayName: "Login"
+  displayName: "Install AWS CLI"
+  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
+  inputs:
+    script: |
+      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      unzip -q awscliv2.zip
+      sudo ./aws/install --update
+- task: CmdLine@2
+  displayName: "Build and Login to ECR"
   condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   inputs:
     script: |
       docker build -t blog .
-      aws ecr get-login-password --region eu-north-1 | docker login 687611153768.dkr.ecr.eu-north-1.amazonaws.com --username AWS --password-stdin
+      aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 687611153768.dkr.ecr.eu-north-1.amazonaws.com
 - bash: |
     case "$(Build.SourceBranchName)" in
       "main")
