@@ -22,12 +22,27 @@ pool: Docker
 
 steps:
 - task: CmdLine@2
-  displayName: "Login"
+  displayName: "Install AWS CLI"
   condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   inputs:
     script: |
+      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      unzip -q awscliv2.zip
+      ./aws/install --bin-dir ~/.local/bin --install-dir ~/.local/aws-cli --update
+      export PATH=$HOME/.local/bin:$PATH
+      aws --version
+- task: CmdLine@2
+  displayName: "Build and Login to ECR"
+  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
+  env:
+    AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
+    AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
+    AWS_DEFAULT_REGION: eu-north-1
+  inputs:
+    script: |
+      export PATH=$HOME/.local/bin:$PATH
       docker build -t blog .
-      printf '%s' "$(acrPassword)" | docker login funkysi1701.azurecr.io --username funkysi1701 --password-stdin
+      aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 687611153768.dkr.ecr.eu-north-1.amazonaws.com
 - bash: |
     case "$(Build.SourceBranchName)" in
       "main")
@@ -45,12 +60,12 @@ steps:
     esac
   displayName: 'Set image repository name'
 - task: CmdLine@2
-  displayName: "Publish to ACR"
+  displayName: "Publish to ECR"
   condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   inputs:
     script: |
-      docker tag blog funkysi1701.azurecr.io/funkysi1701/$(imageRepoName)
-      docker push funkysi1701.azurecr.io/funkysi1701/$(imageRepoName)
+      docker tag blog 687611153768.dkr.ecr.eu-north-1.amazonaws.com/funkysi1701/$(imageRepoName)
+      docker push 687611153768.dkr.ecr.eu-north-1.amazonaws.com/funkysi1701/$(imageRepoName)
 
 - task: Kubernetes@1
   displayName: 'Kubernetes Login'
