@@ -28,12 +28,19 @@ steps:
     script: |
       curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
       unzip -q awscliv2.zip
-      sudo ./aws/install --update
+      ./aws/install --bin-dir ~/.local/bin --install-dir ~/.local/aws-cli --update
+      export PATH=$HOME/.local/bin:$PATH
+      aws --version
 - task: CmdLine@2
   displayName: "Build and Login to ECR"
   condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
+  env:
+    AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
+    AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
+    AWS_DEFAULT_REGION: eu-north-1
   inputs:
     script: |
+      export PATH=$HOME/.local/bin:$PATH
       docker build -t blog .
       aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 687611153768.dkr.ecr.eu-north-1.amazonaws.com
 - bash: |
