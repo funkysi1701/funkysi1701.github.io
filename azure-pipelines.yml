@@ -27,7 +27,7 @@ steps:
   inputs:
     script: |
       docker build -t blog .
-      printf '%s' "$(acrPassword)" | docker login funkysi1701.azurecr.io --username funkysi1701 --password-stdin
+      printf '%s' "$(oldPassword)" | docker login 687611153768.dkr.ecr.eu-north-1.amazonaws.com --username AWS --password-stdin
 - bash: |
     case "$(Build.SourceBranchName)" in
       "main")
@@ -49,8 +49,8 @@ steps:
   condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   inputs:
     script: |
-      docker tag blog funkysi1701.azurecr.io/funkysi1701/$(imageRepoName)
-      docker push funkysi1701.azurecr.io/funkysi1701/$(imageRepoName)
+      docker tag blog 687611153768.dkr.ecr.eu-north-1.amazonaws.com/funkysi1701/$(imageRepoName)
+      docker push 687611153768.dkr.ecr.eu-north-1.amazonaws.com/funkysi1701/$(imageRepoName)
 
 - task: Kubernetes@1
   displayName: 'Kubernetes Login'
