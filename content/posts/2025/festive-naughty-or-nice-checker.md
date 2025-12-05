@@ -133,7 +133,7 @@ For the prompt I am passing to OpenAI I went through a few iterations. To begin 
 ```csharp
 var aiResponse = await _kernel.InvokePromptAsync(
     $"You are a tool to help Santa identify if children have been naughty or nice. " +
-    $"Has {childName} been naughty or nice this year?", 
+    $"Has {input} been naughty or nice this year?",
     cancellationToken: cancellationToken.Token
 );
 ```
@@ -155,36 +155,47 @@ Then I tried:
 var aiResponse = await _kernel.InvokePromptAsync(
     $"Given the following description, decide if the person is Naughty or Nice for Christmas. " +
     $"Respond only with 'Naughty' or 'Nice'. " +
-    $"Description: {childsName}", 
+    $"Description: {input}",
     cancellationToken: cancellationToken.Token
 );
 ```
 
-| Input | Output |
-|-------|--------|
-| Santa | Nice |
+| Input       | Output  |
+|-------------|---------|
+| Santa       | Nice    |
 | Darth Vader | Naughty |
-| James | Nice |
-| Skeletor | Naughty |
+| James       | Nice    |
+| Skeletor    | Naughty |
 
-This is better but every name I tried is giving me a Nice, so let's see if we can try something a bit more clever.
+This is better but every name I tried is giving me a Nice, so let's see if we can try something a bit more clever. However if instead of only including a name, we include some naughty or nice actions we get some interesting results.
+
+| Input                             | Output  |
+|-----------------------------------|---------|
+| Santa delivered some presents     | Nice    |
+| Darth Vader destroyed Alderaan    | Naughty |
+| James tidied his room             | Nice    |
+| Skeletor got cross with Evil Lynn | Naughty |
 
 ### Version 3
 
 ```csharp
-var aiResponse = await _kernel.InvokeAsync("random", "GenerateRandom");
+var aiResponse = await _kernel.InvokeAsync(
+    pluginName, 
+    "GenerateHash", 
+    new KernelArguments
+    {
+        ["input"] = input
+    }
+);
 ```
 
-This version invokes a semantic kernel plugin function called GenerateRandom. The function itself is defined in a separate class with a KernelFunction attribute, it is really simple just generates a random number. The kernel function requires an extra line to wire up correctly I have places this in the OnAfterRender method.
+This version invokes a semantic kernel plugin function called GenerateHash. The function itself is defined in a separate class with a KernelFunction attribute, it is really simple just generates a hash from the input string. This is just an example of how you can call .NET code from Semantic Kernel. The kernel function requires an extra line to wire up correctly I have places this in the OnInitialized method.
 
 ```csharp
-protected override void OnAfterRender(bool firstRender)
+protected override void OnInitialized()
 {
-    if (firstRender)
-    {
-        var rngPlugin = new RandomNumberPlugin();
-        _kernel.ImportPluginFromObject(rngPlugin, "random");
-    }
+  var rngPlugin = new ExamplePlugin();
+  _kernel.ImportPluginFromObject(rngPlugin, pluginName);
 }
 ```
 
@@ -192,14 +203,15 @@ protected override void OnAfterRender(bool firstRender)
 public class RandomNumberPlugin
 {
     [KernelFunction]
-    public int GenerateRandom()
+    public int GenerateHash(string input)
     {
-        return GetRnd().Next(0, 2);
-    }
+        if (input == null)
+        {
+            throw new ArgumentNullException(nameof(input));
+        }
+        var hash = input.GetHashCode();
 
-    private static Random GetRnd()
-    {
-        return new Random();
+        return hash > 0 ? 0 : 1;
     }
 }
 ```
@@ -209,35 +221,18 @@ public class RandomNumberPlugin
 My last example is very similar to Version 2 but let's have a look at it.
 
 ```csharp
-var input = (childsName ?? string.Empty).Trim();
-if (string.IsNullOrEmpty(input))
-{
-    response = string.Empty;
-    return;
-}
-
-using CancellationTokenSource cancellationToken = new();
 var prompt = "You are Santa's assistant. Given the child's name or short description, " + 
-"decide if they are Naughty or Nice for Christmas. Respond only with one word: Naughty or Nice. " +
-"No punctuation, no explanation. Input: {{$input}}";
-var classifyFunc = _kernel.CreateFunctionFromPrompt(prompt);
-var aiResponse = await _kernel.InvokeAsync(classifyFunc, new() { ["input"] = input }, cancellationToken.Token);
-var text = aiResponse.GetValue<string>()?.Trim();
-
-// Normalize and enforce strict output
-if (string.Equals(text, "naughty", StringComparison.OrdinalIgnoreCase))
-{
-    response = "Naughty";
-}
-else if (string.Equals(text, "nice", StringComparison.OrdinalIgnoreCase))
-{
-    response = "Nice";
-}
-else
-{
-    // Fallback: default to Naughty to avoid leaking other content
-    response = "Naughty";
-}
+            "decide if they are Naughty or Nice for Christmas. Respond only with one word: Naughty or Nice. " +
+            "No punctuation, no explanation. Input: {{$input}}";
+            var classifyFunc = _kernel.CreateFunctionFromPrompt(prompt);
+            var aiResponse = await _kernel.InvokeAsync(
+                classifyFunc, 
+                new() 
+                { 
+                    ["input"] = input 
+                }, 
+                cts.Token
+            );
 ```
 
 Here we have a bit more error checking to make sure we have entered a valid string before calling OpenAI. This time we use the CreateFunctionFromPrompt method to pass in a prompt, we then invoke the prompt along with the string that has been entered.
