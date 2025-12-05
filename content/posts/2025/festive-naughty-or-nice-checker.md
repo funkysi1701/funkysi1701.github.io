@@ -126,11 +126,54 @@ if (!string.IsNullOrEmpty(key))
 builder.Services.AddKernel();
 ```
 
-## Step 3: Create the Naughty or Nice Prompt
+## Step 3: Create the Blazor Component
 
-For the prompt I am passing to OpenAI, I went through several iterations to get the prompt right. To begin with I tried:
+Create a new file `Components/Pages/NaughtyOrNice.razor`:
 
-### Version 1
+```csharp
+@page "/naughty-or-nice"
+@inject Kernel _kernel
+@rendermode InteractiveServer
+
+<PageTitle>Naughty or Nice Checker</PageTitle>
+
+<h3>🎅 Naughty or Nice Checker</h3>
+
+<div class="card">
+    <div class="card-body">
+        <input @bind="input" 
+               placeholder="Describe their behavior..." 
+               class="form-control mb-3" />
+        <button @onclick="CheckStatus" 
+                class="btn btn-primary">
+            Check Status
+        </button>
+        
+        @if (!string.IsNullOrEmpty(response))
+        {
+            <div class="alert alert-@alertClass mt-3">
+                <h4>@response</h4>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private string input = "";
+    private string response = "";
+    private string alertClass => response == "Naughty" ? "danger" : "success";
+    
+    // Version 4 implementation goes here (from Step 3)
+}
+```
+
+Note: The _kernel is injected automatically because we registered it in Program.cs with builder.Services.AddKernel().
+
+## Step 4: Crafting the Perfect Prompt
+
+Getting AI to return exactly what you want requires iteration. I'll walk you through my prompt engineering journey from verbose outputs to production-ready responses.
+
+### Iteration 1: Too Verbose
 
 ```csharp
 var aiResponse = await _kernel.InvokePromptAsync(
@@ -149,7 +192,7 @@ var aiResponse = await _kernel.InvokePromptAsync(
 
 This is far too wordy, I really just want a Naughty or Nice response.
 
-### Version 2
+### Iteration 2: Constraining the Output
 
 Then I tried:
 
@@ -178,7 +221,11 @@ This is better but every name I tried is giving me a Nice, so let's see if we ca
 | James tidied his room             | Nice    |
 | Skeletor got cross with Evil Lynn | Naughty |
 
-### Version 3
+### Version 3: Non-AI Approach (Plugin Example)
+
+This version demonstrates Semantic Kernel's plugin system without using AI. While it doesn't actually help Santa (it just generates a hash-based result), it shows how you can integrate traditional .NET code into Semantic Kernel workflows.
+
+**Why show this?** To illustrate that Semantic Kernel isn't just for AI—you can mix AI calls with regular code execution in the same pipeline.
 
 ```csharp
 var aiResponse = await _kernel.InvokeAsync(
@@ -218,7 +265,7 @@ public class ExamplePlugin
 }
 ```
 
-### Version 4
+### Final Version: Production-Ready Implementation
 
 My last example is very similar to Version 2 but let's have a look at it.
 
@@ -252,6 +299,17 @@ This works quite well if we enter a more descriptive input.
 
 As you can see if we describe the actions of someone we can categorize them as naughty or nice, which is basically what Santa does, so this tool should be a great help to him.
 
+![Is Santa Naughty or Nice?](/images/2025/working-naughty-nice.png)
+
+### Comparing All Versions
+
+| Version | Approach | Pros | Cons | Use Case |
+|---------|----------|------|------|----------|
+| 1 | Open-ended prompt | Rich explanations | Too verbose | Learning/debugging |
+| 2 | Constrained output | Concise | Needs context | Simple classifications |
+| 3 | Hash-based (no AI) | No API costs | Not intelligent | Plugin example only |
+| 4 | Validated prompts | Reliable, safe | More code | Production |
+
 ## Conclusion
 
 In this tutorial, we built a festive AI-powered application using Semantic Kernel and .NET. Here's what we accomplished:
@@ -268,6 +326,22 @@ I have tried to highlight some of the different ways that you can use Semantic K
 - **Prompt engineering matters** - Notice how Version 4's explicit instructions produced better results
 - **Validation is essential** - Always sanitize LLM outputs before displaying to users
 - **Keep it simple** - Complex doesn't mean better (Version 3's random approach was overkill)
+
+### Cost Considerations
+
+During development, I spent only a few pounds on API tokens. For production:
+
+- Use Azure OpenAI for predictable pricing
+- Implement caching for common queries
+- Set up rate limiting to prevent abuse
+
+### Deployment Options
+
+This Blazor app can be deployed to:
+
+- **Azure Static Web Apps** (free tier includes 2 custom domains)
+- **Azure App Service** (full .NET hosting)
+- **Docker containers** (run anywhere)
 
 ### Next Steps
 
