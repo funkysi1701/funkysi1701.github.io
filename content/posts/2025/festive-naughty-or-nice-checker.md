@@ -179,7 +179,8 @@ Create a new file `Components/Pages/NaughtyOrNice.razor`:
 
             using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
             var prompt = "You are Santa's assistant. Given the child's name or short description, " + 
-            "decide if they are Naughty or Nice for Christmas. Respond only with one word: Naughty or Nice. " +
+            "decide if they are Naughty or Nice for Christmas. " + 
+            "Respond only with one word: Naughty or Nice. " +
             "No punctuation, no explanation. Input: {{$input}}";
             var classifyFunc = _kernel.CreateFunctionFromPrompt(prompt);
             var aiResponse = await _kernel.InvokeAsync(
