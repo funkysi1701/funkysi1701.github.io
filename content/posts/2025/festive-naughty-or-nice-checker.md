@@ -73,10 +73,34 @@ We'll create a simple web app that:
 - Semantic Kernel (NuGet package)
 - An OpenAI API key (for LLM access)
 
+
 ## Step 1: Setting Up the Project
 
-The code for my project can be found on GitHub at [https://github.com/funkysi1701/FestiveTechCalendar2025](https://github.com/funkysi1701/FestiveTechCalendar2025)
-It is based on the default Blazor template, with a few extra NuGet packages installed to do the AI cleverness.
+Create a new Blazor Web App:
+
+```bash
+dotnet new blazor -n NaughtyOrNiceChecker
+cd NaughtyOrNiceChecker
+```
+
+Install the required NuGet packages: (Microsoft.SemanticKernel.Connectors.OpenAI Version 1.67.1 as I write this)
+
+```bash
+dotnet add package Microsoft.SemanticKernel.Connectors.OpenAI 
+```
+
+Add your OpenAI configuration to appsettings.json:
+
+```json
+{
+  "OpenAI": {
+    "Key": "your-api-key-here", // Head over to https://platform.openai.com/settings/organization/api-keys
+    "Model": "gpt-5" // I am using gpt-5 but feel free to experiment with other models
+  }
+}
+```
+
+The code for my project can be found on GitHub at [https://github.com/funkysi1701/FestiveTechCalendar2025](https://github.com/funkysi1701/FestiveTechCalendar2025).
 
 ## Step 2: Integrate Semantic Kernel
 
@@ -228,9 +252,29 @@ As you can see if we describe the actions of someone we can categorize them as n
 
 ## Conclusion
 
-With just a few lines of code, you can create a fun and interactive Naughty or Nice checker using Semantic Kernel and .NET. This is a great way to learn about AI integration in .NET while spreading some holiday cheer!
+In this tutorial, we built a festive AI-powered application using Semantic Kernel and .NET. Here's what we accomplished:
+
+- ✅ Integrated OpenAI with Semantic Kernel in a Blazor app
+- ✅ Learned prompt engineering through iteration (4 versions!)
+- ✅ Implemented proper error handling and output validation
+- ✅ Created a fun, interactive holiday application
 
 I have tried to highlight some of the different ways that you can use Semantic Kernel that you could use in your own projects. Some of my examples could be accomplished without the use of Semantic Kernel, for example randomly generating Naughty and Nice doesn't need AI, however hopefully you can see that getting results from AI can then be augmented using traditional .NET code to execute other functions.
+
+### Key Takeaways
+
+- **Prompt engineering matters** - Notice how Version 4's explicit instructions produced better results
+- **Validation is essential** - Always sanitize LLM outputs before displaying to users
+- **Keep it simple** - Complex doesn't mean better (Version 3's random approach was overkill)
+
+### Next Steps
+
+Want to extend this project? Try:
+
+- Add a database to track naughty/nice history
+- Implement user authentication
+- Deploy to Azure Static Web Apps
+- Add more context (age, location) for better AI decisions
 
 Happy coding and Merry Christmas! 🎄
 
