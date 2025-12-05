@@ -27,9 +27,11 @@ aliases = [
 
 ## Introduction
 
-I am excited to be taking part in this year's, [Festive Tech Calendar](https://festivetechcalendar.com/), make sure to check out more excellent content created by the community. In this post, we'll build a "Naughty or Nice" checker using Semantic Kernel and .NET. This playful tool uses AI to analyze text and decide if someone's been naughty or nice!
+I'm excited to be taking part in this year's [Festive Tech Calendar](https://festivetechcalendar.com/), a community-driven advent calendar showcasing amazing technical content throughout December. Make sure to check out the other excellent posts created by developers from around the world!
 
-## AI: What do I think?
+In this festive tutorial, we'll build a fun "Naughty or Nice" checker using Microsoft's Semantic Kernel and .NET. This playful AI-powered tool analyzes text descriptions and delivers a verdict on whether someone has been naughty or nice this year—perfect for adding some holiday cheer to your portfolio! Whether you're new to AI integration or looking to explore Semantic Kernel, this beginner-friendly guide will walk you through creating a complete working application from scratch. By the end, you'll have a deployable web app and understand how to integrate large language models into your .NET projects.
+
+## My Take on AI
 
 Before we jump into the code lets briefly talk about AI. AI is all around us, every blog post is talking about it, including this one. You can do lots of awesome things with it, and build solutions quicker.
 
