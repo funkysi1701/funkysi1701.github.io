@@ -23,11 +23,27 @@ aliases = [
 ]
 +++
 
-## Introduction
-
 ![Festive Tech Calendar](/images/2025/festive-tech-calendar.png)
 
+## Introduction
+
 I am excited to be taking part in this year's, [Festive Tech Calendar](https://festivetechcalendar.com/), make sure to check out more excellent content created by the community. In this post, we'll build a "Naughty or Nice" checker using Semantic Kernel and .NET. This playful tool uses AI to analyze text and decide if someone's been naughty or nice!
+
+## AI: What do I think?
+
+Before we jump into the code lets briefly talk about AI. AI is all around us, every blog post is talking about it, including this one. You can do lots of awesome things with it, and build solutions quicker.
+
+For example while I was building the application for this blog post I easily got a boring looking application ready.
+
+![boring looking application](/images/2025/before.png)
+
+But after a few prompts to [github copilot](https://github.com/copilot) I got a Christmas looking demo site, with loading spinner and festive icons.
+
+![Christmas version](/images/2025/after.png)
+
+I am sure I could have built something like that eventually, but I would much rather put my efforts on the backend querying semantic kernel, rather than figuring out the correct CSS to use.
+
+I like the productivity boost and how it helps me learn new things. However I have often been given incorrect or hallucinated answers, which wastes time so I am not going to say the simple google search is dead yet! I am also concerned about AI generated solutions, who owns the code, and the ideas that AI will replace people. Overall I think it is important to remember that AI is a very useful tool, but it is just a tool to help us, not take over the world.
 
 ## What is Semantic Kernel?
 
