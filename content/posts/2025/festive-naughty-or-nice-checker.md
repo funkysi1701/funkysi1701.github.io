@@ -71,7 +71,7 @@ We'll create a simple web app that:
 
 - .NET 10 (I am not using any .NET 10 specific features so could probably be rewritten with older versions)
 - Semantic Kernel (NuGet package)
-- An OpenAI API key (for LLM access)
+- An OpenAI API key - ⚠️ **Note**: API usage costs ~$0.01-0.05 per request
 
 ### OpenAI and Costs
 
@@ -105,6 +105,8 @@ Add your OpenAI configuration to appsettings.json:
 }
 ```
 
+🔒 **Security**: Never commit API keys to GitHub. Use user secrets or environment variables.
+
 The code for my project can be found on GitHub at [https://github.com/funkysi1701/FestiveTechCalendar2025](https://github.com/funkysi1701/FestiveTechCalendar2025).
 
 ## Step 2: Integrate Semantic Kernel
@@ -126,9 +128,9 @@ builder.Services.AddKernel();
 
 ## Step 3: Create the Naughty or Nice Prompt
 
-### Version 1
+For the prompt I am passing to OpenAI, I went through several iterations to get the prompt right. To begin with I tried:
 
-For the prompt I am passing to OpenAI I went through a few iterations. To begin with I tried:
+### Version 1
 
 ```csharp
 var aiResponse = await _kernel.InvokePromptAsync(
@@ -200,7 +202,7 @@ protected override void OnInitialized()
 ```
 
 ```csharp
-public class RandomNumberPlugin
+public class ExamplePlugin
 {
     [KernelFunction]
     public int GenerateHash(string input)
@@ -231,7 +233,7 @@ var prompt = "You are Santa's assistant. Given the child's name or short descrip
                 { 
                     ["input"] = input 
                 }, 
-                cts.Token
+                cancellationToken.Token
             );
 ```
 
