@@ -75,7 +75,7 @@ We'll create a simple web app that:
 
 ### OpenAI and Costs
 
-For the purposes of this example I have used an OpenAI API Key. This is not free, however while writing this example I have only spent a few pounds in tokens. For more information about OpenAI head over to https://platform.openai.com/
+For this example I have used an OpenAI API Key. This is not free, however while writing this example I have only spent a few pounds in tokens. For more information about OpenAI head over to https://platform.openai.com/
 
 For this reason I have not provided a live demo, (I don't want you all using my API key), and no API keys are included in my example code.
 
@@ -159,11 +159,60 @@ Create a new file `Components/Pages/NaughtyOrNice.razor`:
 </div>
 
 @code {
-    private string input = "";
+    private string childsName = "";
     private string response = "";
     private string alertClass => response == "Naughty" ? "danger" : "success";
-    
-    // Version 4 implementation goes here (from Step 3)
+    private bool isLoading = false;
+
+    public async Task CheckStatus()
+    {
+        isLoading = true;
+        await InvokeAsync(StateHasChanged);
+        response = string.Empty;
+        try
+        {
+            var input = (childsName).Trim();
+            if (string.IsNullOrEmpty(input))
+            {
+                return;
+            }
+
+            using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
+            var prompt = "You are Santa's assistant. Given the child's name or short description, " + 
+            "decide if they are Naughty or Nice for Christmas. Respond only with one word: Naughty or Nice. " +
+            "No punctuation, no explanation. Input: {{$input}}";
+            var classifyFunc = _kernel.CreateFunctionFromPrompt(prompt);
+            var aiResponse = await _kernel.InvokeAsync(
+                classifyFunc, 
+                new() 
+                { 
+                    ["input"] = input 
+                }, 
+                cts.Token
+            );
+            var text = aiResponse.GetValue<string>()?.Trim();
+
+            // Normalize and enforce strict output
+            if (string.Equals(text, "naughty", StringComparison.OrdinalIgnoreCase))
+            {
+                response = "Naughty";
+            }
+            else if (string.Equals(text, "nice", StringComparison.OrdinalIgnoreCase))
+            {
+                response = "Nice";
+            }
+            else
+            {
+                // Fallback: default to Naughty to avoid leaking other content
+                response = "Naughty";
+            }
+        }
+        finally
+        {
+            isLoading = false;
+            await InvokeAsync(StateHasChanged);
+        }
+    }
 }
 ```
 
@@ -238,7 +287,7 @@ var aiResponse = await _kernel.InvokeAsync(
 );
 ```
 
-This version invokes a semantic kernel plugin function called GenerateHash. The function itself is defined in a separate class with a KernelFunction attribute, it is really simple just generates a hash from the input string. This is just an example of how you can call .NET code from Semantic Kernel. The kernel function requires an extra line to wire up correctly I have places this in the OnInitialized method.
+This version invokes a semantic kernel plugin function called GenerateHash. The function itself is defined in a separate class with a KernelFunction attribute, it is really simple just generates a hash from the input string. This is just an example of how you can call .NET code from Semantic Kernel. The kernel function requires an extra line to wire up correctly I have placed this in the OnInitialized method.
 
 ```csharp
 protected override void OnInitialized()
