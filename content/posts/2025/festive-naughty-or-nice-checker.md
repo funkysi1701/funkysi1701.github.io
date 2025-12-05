@@ -97,6 +97,8 @@ builder.Services.AddKernel();
 
 ## Step 3: Create the Naughty or Nice Prompt
 
+### Version 1
+
 For the prompt I am passing to OpenAI I went through a few iterations. To begin with I tried:
 
 ```csharp
@@ -115,6 +117,8 @@ var aiResponse = await _kernel.InvokePromptAsync(
 | Skeletor | Verdict: Naughty. Why: - Repeated attempts to conquer Eternia and seize Castle Grayskull - Habitual scheming, lying, and bullying his own minions - Frequent unleashing of dangerous magic on innocents Path back to the Nice List: - Call a truce with He-Man and protect Eternia for a season - Return stolen artifacts and undo harmful spells - Treat his minions fairly and do a few good deeds without expecting power in return |
 
 This is far too wordy, I really just want a Naughty or Nice response.
+
+### Version 2
 
 Then I tried:
 
@@ -135,6 +139,90 @@ var aiResponse = await _kernel.InvokePromptAsync(
 | Skeletor | Naughty |
 
 This is better but every name I tried is giving me a Nice, so let's see if we can try something a bit more clever.
+
+### Version 3
+
+```csharp
+var aiResponse = await _kernel.InvokeAsync("random", "GenerateRandom");
+```
+
+This version invokes a semantic kernel plugin function called GenerateRandom. The function itself is defined in a separate class with a KernelFunction attribute, it is really simple just generates a random number. The kernel function requires an extra line to wire up correctly I have places this in the OnAfterRender method.
+
+```csharp
+protected override void OnAfterRender(bool firstRender)
+{
+    if (firstRender)
+    {
+        var rngPlugin = new RandomNumberPlugin();
+        _kernel.ImportPluginFromObject(rngPlugin, "random");
+    }
+}
+```
+
+```csharp
+public class RandomNumberPlugin
+{
+    [KernelFunction]
+    public int GenerateRandom()
+    {
+        return GetRnd().Next(0, 2);
+    }
+
+    private static Random GetRnd()
+    {
+        return new Random();
+    }
+}
+```
+
+### Version 4
+
+My last example is very similar to Version 2 but lets have a look at it.
+
+```csharp
+var input = (childsName ?? string.Empty).Trim();
+if (string.IsNullOrEmpty(input))
+{
+    response = string.Empty;
+    return;
+}
+
+using CancellationTokenSource cancellationToken = new();
+var prompt = "You are Santa's assistant. Given the child's name or short description, " + 
+"decide if they are Naughty or Nice for Christmas. Respond only with one word: Naughty or Nice. " +
+"No punctuation, no explanation. Input: {{$input}}";
+var classifyFunc = _kernel.CreateFunctionFromPrompt(prompt);
+var aiResponse = await _kernel.InvokeAsync(classifyFunc, new() { ["input"] = input }, cancellationToken.Token);
+var text = aiResponse.GetValue<string>()?.Trim();
+
+// Normalize and enforce strict output
+if (string.Equals(text, "naughty", StringComparison.OrdinalIgnoreCase))
+{
+    response = "Naughty";
+}
+else if (string.Equals(text, "nice", StringComparison.OrdinalIgnoreCase))
+{
+    response = "Nice";
+}
+else
+{
+    // Fallback: default to Naughty to avoid leaking other content
+    response = "Naughty";
+}
+```
+
+Here we have a bit more error checking to make sure we have entered a valid string before calling OpenAI. This time we use the CreateFunctionFromPrompt method to pass in a prompt, we then invoke the prompt along with the string that has been entered.
+
+This time we check for naughty or nice in the response before returning that to the user, if neither is returned we return Naughty.
+
+This works quite well if we enter a more descriptive input.
+
+| Input                             | Output  |
+|-----------------------------------|---------|
+| Santa delivered some presents     | Nice    |
+| Darth Vader destroyed Alderaan    | Naughty |
+| James tidied his room             | Nice    |
+| Skeletor got cross with Evil Lynn | Naughty |
 
 ## Conclusion
 
