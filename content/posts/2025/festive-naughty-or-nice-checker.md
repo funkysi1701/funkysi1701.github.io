@@ -73,6 +73,11 @@ We'll create a simple web app that:
 - Semantic Kernel (NuGet package)
 - An OpenAI API key (for LLM access)
 
+### OpenAI and Costs
+
+For the purposes of this example I have used an OpenAI API Key. This is not free, however while writing this example I have only spent a few pounds in tokens. For more information about OpenAI head over to https://platform.openai.com/
+
+For this reason I have not provided a live demo, (I don't want you all using my API key), and no API keys are included in my example code.
 
 ## Step 1: Setting Up the Project
 
@@ -201,7 +206,7 @@ public class RandomNumberPlugin
 
 ### Version 4
 
-My last example is very similar to Version 2 but lets have a look at it.
+My last example is very similar to Version 2 but let's have a look at it.
 
 ```csharp
 var input = (childsName ?? string.Empty).Trim();
