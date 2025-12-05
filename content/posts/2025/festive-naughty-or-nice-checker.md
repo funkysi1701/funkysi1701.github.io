@@ -69,8 +69,8 @@ We'll create a simple web app that:
 
 ## Prerequisites
 
-- .NET 10 or later installed
-- Access to Semantic Kernel (NuGet package)
+- .NET 10 (I am not using any .NET 10 specific features so could probably be rewritten with older versions)
+- Semantic Kernel (NuGet package)
 - An OpenAI API key (for LLM access)
 
 ## Step 1: Setting Up the Project
