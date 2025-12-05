@@ -224,9 +224,13 @@ This works quite well if we enter a more descriptive input.
 | James tidied his room             | Nice    |
 | Skeletor got cross with Evil Lynn | Naughty |
 
+As you can see if we describe the actions of someone we can categorize them as naughty or nice, which is basically what Santa does, so this tool should be a great help to him.
+
 ## Conclusion
 
 With just a few lines of code, you can create a fun and interactive Naughty or Nice checker using Semantic Kernel and .NET. This is a great way to learn about AI integration in .NET while spreading some holiday cheer!
+
+I have tried to highlight some of the different ways that you can use Semantic Kernel that you could use in your own projects. Some of my examples could be accomplished without the use of Semantic Kernel, for example randomly generating Naughty and Nice doesn't need AI, however hopefully you can see that getting results from AI can then be augmented using traditional .NET code to execute other functions.
 
 Happy coding and Merry Christmas! 🎄
 
