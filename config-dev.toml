@@ -1,19 +1,5 @@
 baseURL = 'https://blog.funkysi1701.com/'
-languageCode = 'en-gb'
 title = "Development Version of Funky Si's Blog"
-theme = 'hugo-theme-bootstrap'
-googleAnalytics = ""
-enableRobotsTXT = true
-
-[Menus]
-  main = [
-      {Name = "About", URL = "/about/"},
-      {Name = "Tools & Resources", URL = "/tools-and-resources/"},
-      {Name = "Events", URL = "/posts/events/"},
-      {Name = "Contact", URL = "/contact/"},
-      {Name = "Search", URL = "/search/"},
-      {Name = "Newsletter", URL = "https://eepurl.com/i7pQno"},
-  ]
 
 [params]
   description = "Simon Foster - North of England-based Software Developer | .NET developer | Azure & DevOps specialist | 18+ years building scalable solutions"
