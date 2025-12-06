@@ -12,7 +12,7 @@ enableRobotsTXT = true
       {Name = "Events", URL = "/posts/events/"},
       {Name = "Contact", URL = "/contact/"},
       {Name = "Search", URL = "/search/"},
-      {Name = "Newsletter", URL = "https://eepurl.com/i7pQno"},
+      {Name = "Newsletter", URL = "/newsletter/"},
   ]
 
 [params]
