@@ -123,10 +123,10 @@ dnsConfig:
 configuration:
   develop:
     HUGO_BASEURL: "https://blog-dev.funkysi1701.com"
-    Environment: "development"
+    HUGO_ENVIRONMENT: "development"
   test:
     HUGO_BASEURL: "https://blog-test.funkysi1701.com"
-    Environment: "staging"
+    HUGO_ENVIRONMENT: "staging"
   main:
     HUGO_BASEURL: "https://blog.funkysi1701.com"
-    Environment: "production"
+    HUGO_ENVIRONMENT: "production"

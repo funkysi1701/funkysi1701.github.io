@@ -12,8 +12,8 @@ EXPOSE 443
 
 # Set default base URL (can be overridden at runtime)
 ENV HUGO_BASEURL="http://localhost"
-ENV Environment "development"
+ENV HUGO_ENVIRONMENT "development"
 
 # Build and serve the site at container startup
 ENTRYPOINT []
-CMD hugo server --minify --environment "$Environment" --buildFuture --baseURL "$HUGO_BASEURL" --bind 0.0.0.0 --port 443
+CMD hugo server --minify --environment "$HUGO_ENVIRONMENT" --buildFuture --baseURL "$HUGO_BASEURL" --bind 0.0.0.0 --port 443
