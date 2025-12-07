@@ -1,6 +1,6 @@
 +++
 title = "Azure Container Registry vs AWS Elastic Container Registry: A Developer's Comparison"
-date = "2025-12-04T20:00:00Z"
+date = "2025-12-15T20:00:00Z"
 year = "2025"
 month= "2025-12"
 author = "funkysi1701"
@@ -17,7 +17,7 @@ copyright = false
 aliases = [
     "/acr-vs-ecr",
     "/posts/acr-vs-ecr",
-    "/posts/2025/12/04/acr-vs-ecr"
+    "/posts/2025/12/15/acr-vs-ecr"
 ]
 +++
 
@@ -28,12 +28,14 @@ As someone who works with both Azure and AWS regularly, I've had hands-on experi
 Both services provide secure, private Docker container registries that integrate seamlessly with their respective cloud ecosystems. They're designed to store, manage, and deploy container images for your applications.
 
 ### Azure Container Registry (ACR)
+
 - Fully managed Docker registry service
 - Integrated with Azure Kubernetes Service (AKS), Azure Container Instances, and other Azure services
 - Supports Docker images and OCI artifacts
 - Available in multiple tiers: Basic, Standard, Premium
 
 ### AWS Elastic Container Registry (ECR)
+
 - Fully managed Docker container registry
 - Integrated with Amazon ECS, EKS, and AWS Lambda
 - Supports Docker images and OCI artifacts
@@ -52,6 +54,7 @@ ACR uses a **tiered pricing model**:
 - **Premium**: £42.32/month + storage (£0.083/GB) + bandwidth + geo-replication
 
 The Premium tier adds features like:
+
 - Geo-replication across Azure regions
 - Content trust for image signing
 - Private link with private endpoints
@@ -102,6 +105,7 @@ aws ecr get-login-password --region eu-north-1 | \
 ```
 
 In my Azure Pipelines, I had to:
+
 1. Install AWS CLI (not included by default)
 2. Configure AWS credentials as environment variables
 3. Run the login command manually
@@ -216,11 +220,13 @@ Works well once configured, but requires understanding of AWS IAM.
 ### Pain Points
 
 **ACR**:
+
 - Premium tier gets expensive for features that should be standard
 - Minimum £4/month even for tiny projects
 - Geo-replication requires Premium tier (£42/month)
 
 **ECR**:
+
 - Authentication is more complex outside AWS
 - Account ID in image URL
 - Requires AWS CLI installation in non-AWS CI/CD
@@ -233,11 +239,13 @@ For my blog's deployment pipeline, I recently migrated from ACR to ECR primarily
 ### The Migration
 
 **Before (ACR)**:
+
 - Cost: ~£4.50/month (Basic tier + minimal storage)
 - Authentication: Seamless in Azure DevOps
 - Image URLs: Clean and simple
 
 **After (ECR)**:
+
 - Cost: ~£0.80/month (storage only, no base fee)
 - Authentication: Required custom pipeline steps
 - Image URLs: Include AWS account ID
@@ -247,6 +255,7 @@ For my blog's deployment pipeline, I recently migrated from ACR to ECR primarily
 For my small personal project, **yes** - saving £44/year is meaningful. But the setup was more complex than I expected.
 
 For enterprise workloads, I'd still choose ACR Premium if I needed:
+
 - Geo-replication
 - Content trust
 - Azure-native integration
@@ -254,7 +263,7 @@ For enterprise workloads, I'd still choose ACR Premium if I needed:
 
 ## Recommendations
 
-### Choose ACR if:
+### Choose ACR if
 
 ✅ You're heavily invested in Azure ecosystem  
 ✅ You need geo-replication  
@@ -262,7 +271,7 @@ For enterprise workloads, I'd still choose ACR Premium if I needed:
 ✅ You value simplified authentication  
 ✅ You need Azure-native compliance features  
 
-### Choose ECR if:
+### Choose ECR if
 
 ✅ You want zero minimum costs  
 ✅ You're on AWS or multi-cloud  
