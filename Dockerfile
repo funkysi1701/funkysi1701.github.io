@@ -15,4 +15,4 @@ ENV HUGO_BASEURL="http://localhost"
 
 # Build and serve the site at container startup
 ENTRYPOINT []
-CMD hugo server --minify --config config-dev.toml --buildFuture --baseURL "$HUGO_BASEURL" --bind 0.0.0.0 --port 443
+CMD hugo server --minify --environment development --buildFuture --baseURL "$HUGO_BASEURL" --bind 0.0.0.0 --port 443
