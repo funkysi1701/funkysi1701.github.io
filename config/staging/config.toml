@@ -1,0 +1,9 @@
+baseURL = 'https://develop.funkysi1701-github-io.pages.dev/'
+title = "Testing Funky Si's Blog"
+
+[params]
+  cdnImagePrefix = ""
+  googleAdsense = ""
+
+[params.search]
+  analyticsUrl = "https://azurefunction-d4bkcjdahseefphm.uksouth-01.azurewebsites.net/api/SaveToDb"
