@@ -12,7 +12,7 @@ EXPOSE 443
 
 # Set default base URL (can be overridden at runtime)
 ENV HUGO_BASEURL="http://localhost"
-ENV HUGO_ENVIRONMENT "development"
+ENV HUGO_ENVIRONMENT "production"
 
 # Build and serve the site at container startup
 ENTRYPOINT []
