@@ -64,7 +64,7 @@ Here's what I've been writing about lately:
 
 ## 🎯 Ready to Join?
 
-Get practical software development insights delivered to your inbox every Monday.
+Get practical software development insights delivered to your inbox every month.
 
 <div style="text-align: center; margin: 40px 0;">
   <a href="https://eepurl.com/i7pQno" 
