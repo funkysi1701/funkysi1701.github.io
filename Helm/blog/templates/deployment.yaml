@@ -72,6 +72,11 @@ spec:
                 configMapKeyRef:
                   name: {{ include "blog.fullname" . }}-config
                   key: HUGO_BASEURL
+            - name: HUGO_ENVIRONMENT
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "blog.fullname" . }}-config
+                  key: HUGO_ENVIRONMENT
       {{- with .Values.volumes }}
       volumes:
         {{- toYaml . | nindent 8 }}
