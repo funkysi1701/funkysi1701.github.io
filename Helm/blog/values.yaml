@@ -7,13 +7,13 @@ replicaCount: 1
 
 # This sets the container image more information can be found here: https://kubernetes.io/docs/concepts/containers/images/
 image:
-  repository: funkysi1701.azurecr.io/funkysi1701/blog
+  repository: 687611153768.dkr.ecr.eu-north-1.amazonaws.com/funkysi1701/blog
   # This sets the pull policy for images.
   pullPolicy: IfNotPresent
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: 
-  - name: acr-secret
+  - name: ecr-secret
 # This is to override the chart name.
 nameOverride: ""
 fullnameOverride: ""
@@ -89,15 +89,6 @@ resources: {}
     # cpu: 100m
     # memory: 228Mi
 
-# This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
-livenessProbe:
-  httpGet:
-    path: /
-    port: http
-readinessProbe:
-  httpGet:
-    path: /
-    port: http
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
 autoscaling:
@@ -132,7 +123,10 @@ dnsConfig:
 configuration:
   develop:
     HUGO_BASEURL: "https://blog-dev.funkysi1701.com"
+    HUGO_ENVIRONMENT: "development"
   test:
     HUGO_BASEURL: "https://blog-test.funkysi1701.com"
+    HUGO_ENVIRONMENT: "staging"
   main:
-    HUGO_BASEURL: "https://blog.funkysi1701.com"    
+    HUGO_BASEURL: "https://blog.funkysi1701.com"
+    HUGO_ENVIRONMENT: "production"

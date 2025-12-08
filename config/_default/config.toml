@@ -1,6 +1,4 @@
-baseURL = 'https://develop.funkysi1701-github-io.pages.dev/'
 languageCode = 'en-gb'
-title = "Testing Funky Si's Blog"
 theme = 'hugo-theme-bootstrap'
 googleAnalytics = ""
 enableRobotsTXT = true
@@ -12,7 +10,7 @@ enableRobotsTXT = true
       {Name = "Events", URL = "/posts/events/"},
       {Name = "Contact", URL = "/contact/"},
       {Name = "Search", URL = "/search/"},
-      {Name = "Newsletter", URL = "https://eepurl.com/i7pQno"},
+      {Name = "Newsletter", URL = "/newsletter/"},
   ]
 
 [params]
@@ -20,9 +18,7 @@ enableRobotsTXT = true
   images = ["/images/1922276.jpg"]
   themeColor = "theme-base-0d"
   logo = false
-  cdnImagePrefix = ""
   comment = true
-  googleAdsense = ""
 
 [params.giscus]
   repo = "funkysi1701/Blog-Comments"
@@ -35,7 +31,7 @@ enableRobotsTXT = true
   emitMetadata = "0"
   inputPosition = "bottom"
   lang = "en"
-
+  
 [taxonomies]
   year = "year"
   month = "month"
