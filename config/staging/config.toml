@@ -1,5 +1,5 @@
-baseURL = 'https://develop.funkysi1701-github-io.pages.dev/'
-title = "Testing Funky Si's Blog"
+baseURL = 'https://blog-test.funkysi1701.com/'
+title = "Testing Version of Funky Si's Blog"
 
 [params]
   cdnImagePrefix = ""
