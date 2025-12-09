@@ -5,8 +5,8 @@ year = "2014"
 month= "2014-10"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/10/DST3_Logo.jpg"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/10/DST3_Logo.jpg']
+cover = "/images/2014/DST3_Logo.jpg"
+images = ['/images/2014/DST3_Logo.jpg']
 tags = ["StarTrek"]
 category="trek"
 keywords = ["", ""]
@@ -27,7 +27,7 @@ aliases = [
 +++
 As a break from my usual topics I am going to talk about what I did over the weekend.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/10/10670061_10152884492389155_77781042960777157_n.jpg)
+![](/images/2014/10670061_10152884492389155_77781042960777157_n.jpg)
 
 I am a huge star trek fan, so me and my wife Laura went to Destination Star Trek, a convention held in London. This is a picture of us in costume, my wife created a tribble costume (A tribble is an alien race that just consists of a ball of fur) and I am wearing an original series captains uniform. We had a great time.
 

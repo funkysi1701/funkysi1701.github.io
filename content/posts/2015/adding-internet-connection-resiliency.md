@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-09"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/14091d1357164106-internet-connection-drops-every-couple-minutes-cable-sxchu-internet1.jpg?resize=660%2C252&ssl=1"
-images =['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/14091d1357164106-internet-connection-drops-every-couple-minutes-cable-sxchu-internet1.jpg?resize=660%2C252&ssl=1']
+cover = "/images/2015/internet-connection-drops-every-couple-minutes-cable-sxchu-internet1.jpg"
+images =['/images/2015/internet-connection-drops-every-couple-minutes-cable-sxchu-internet1.jpg']
 tags = ["Fibre", "VPN", "Internet"]
 category="tech"
 keywords = ["", ""]
@@ -34,7 +34,7 @@ Currently this office is connected via a wireless link with our head office. Unf
 
 This is one of my first considerations. I need a reliable internet connection and there are a lot of options to consider, lets look at a few.
 
-![Internet Connection](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/14091d1357164106-internet-connection-drops-every-couple-minutes-cable-sxchu-internet1.jpg?resize=660%2C252&ssl=1)
+![Internet Connection](/images/2015/internet-connection-drops-every-couple-minutes-cable-sxchu-internet1.jpg)
 
 **ADSL Connection** This is your standard internet connection that most homes have, you get around 20Mb/s download but only 2Mb/s upload for a fairly low price per month. Speeds are dependent on area and the quality and distance from your exchange, some rural areas have speeds much lower than this. As this connection is for an office I want the best connection I can afford so would rather not go down this option if I can avoid it.
 
@@ -49,6 +49,7 @@ This is one of my first considerations. I need a reliable internet connection an
 **Money Off** While I am talking about internet connections the government has been offering a scheme offering businesses money off upgrading their connections to a superfast connection (either FTTC or Leased Line) More information can be found on your councils website, If you have an office in York have a look here for more details. We got £3000 off installation so worth investigating if you qualify.
 
 ## VPN Connection
+
 Offices require access to far more resources than just the internet. This particular office requires access to our email and database servers as a bare minimum. One way to access a remote offices network resources is through a VPN (Virtual Private Network) connection. So my next consideration is how to establish a VPN link between our offices.
 
 **Software** Windows Server includes RRAS (Routing and Remote Access Service) which you can use to configure a VPN connection. One important thing to note is that the server needs at least two network connections, one on the internet with a public IP and one on the internal network.
@@ -58,6 +59,7 @@ Offices require access to far more resources than just the internet. This partic
 I have used both of these methods in the past. RRAS is a pain to work with but has evolved with the newer versions of windows server, so may not be as bad as I remember. Using a router to do VPN introduces its own set of problems and there is no guarantee of avoiding RRAS, you may still need it to authenticate the VPN provided by your router.
 
 ## Multiple Connection Handling
+
 Internet connectivity is being provided in two ways, the primary way is via a Wireless link and the second way is via one of the options above.
 
 There are lots of options to deal with multiple connections, do I want to load balance both connections and use them all the time, do I want to fail over onto the second connection only if the first one fails, or do I want it to be a manual process or switching over to the backup network if problems occur.

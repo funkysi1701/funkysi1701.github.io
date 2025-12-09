@@ -5,8 +5,8 @@ year = "2014"
 month= "2014-09"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/nagios.png"
-images =['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/nagios.png']
+cover = "/images/2014/nagios.png"
+images =['/images/2014/nagios.png']
 tags = ["ITAdmin", "Monitoring", "Servers", "Nagios"]
 category="tech"
 keywords = ["", ""]
@@ -27,7 +27,7 @@ aliases = [
 ]
 +++
 
-[![Nagios](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/nagios.png?resize=212%2C50)](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/nagios.png)
+![Nagios](/images/2014/nagios.png)
 
 You may not have heard of Nagios but it has saved my bacon quite a few times.
 
