@@ -5,8 +5,8 @@ year = "2014"
 month= "2014-12"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/12/Merry-Christmas-Hat.gif"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/12/Merry-Christmas-Hat.gif']
+cover = "/images/2014/Merry-Christmas-Hat.gif"
+images = ['/images/2014/Merry-Christmas-Hat.gif']
 tags = ["SQL", "Christmas"]
 category="tech"
 keywords = ["", ""]
@@ -27,7 +27,7 @@ aliases = [
 +++
 I saw this tweet on twitter.
 
-```
+```txt
 He’s making a database,
 He’s filtering twice
 SELECT * FROM customers WHERE behaviour = Nice
@@ -36,7 +36,7 @@ Santa Clause is Coming to town.
 
 This started me thinking surely in a normalized database structure behaviour wouldn’t be stored in the customer table, so I propose the following change.
 
-```
+```txt
 He’s making a database,
 He’s filtering twice
 SELECT * FROM customers WHERE EXISTS (select * from behaviour where behaviour.CustomerId = customers.Id and behaviour.Type = Nice)

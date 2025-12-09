@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-04"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/04/download.jpg"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/04/download.jpg']
+cover = "/images/2015/download.jpg"
+images = ['/images/2015/download.jpg']
 tags = ["Learning", "SQL"]
 category="tech"
 keywords = ["", ""]
@@ -26,7 +26,7 @@ aliases = [
 +++
 How did this happen I think I may actually like SQL Server now?
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/04/download.jpg)
+![](/images/2015/download.jpg)
 
 I remember a few years back when I used to grumble about writing a SQL query that included a JOIN. For some reason back then I could never get my head around JOINs.
 
