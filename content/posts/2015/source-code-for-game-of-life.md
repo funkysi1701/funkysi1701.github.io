@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/02/Life.jpg"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/02/Life.jpg']
+cover = "/images/2015/02/Life.jpg"
+images = ['/images/2015/02/Life.jpg']
 tags = ["Java",  "SourceCode"]
 category="tech"
 keywords = ["", ""]
@@ -32,9 +32,9 @@ Well it took some searching through dead hard drives and old USB storage but I f
 
 The file date is November 2004 and the source code has no comments so I don’t know what was going through my head when I wrote it, or even what some of it does.
 
-To view the source code download [Life.src](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/02/Life.src_.zip), to download the finished program download [Life](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/02/Life.zip).
+To view the source code download [Life.src](/images/2015/02/Life.src_.zip), to download the finished program download [Life](/images/2015/02/Life.zip).
 
-![Life](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/02/Life.jpg)
+![Life](/images/2015/02/Life.jpg)
 
 I am actually surprised I was expected the code to be much worse than it was, I am not saying it is good, but I can see more than one method and I can’t see any code that obviously is repeated. I can see some terrible variable names. Note to future self don’t use tmp676_674!
 

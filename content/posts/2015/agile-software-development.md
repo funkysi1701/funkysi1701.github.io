@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-07"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/Agile-Marketing-Series-What-is-Agile-Marketing.png?w=579&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/Agile-Marketing-Series-What-is-Agile-Marketing.png?w=579&ssl=1']
+cover = "/images/2015/07/Agile-Marketing-Series-What-is-Agile-Marketing.png"
+images = ['/images/2015/07/Agile-Marketing-Series-What-is-Agile-Marketing.png']
 tags = ["Agile"]
 category="tech"
 keywords = ["", ""]
@@ -26,7 +26,7 @@ aliases = [
 +++
 I have heard the term **Agile Software Development** quite a bit, but lets see if we can define it and see if I do any of the processes involved with it.
 
-![Agile Software Development](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/Agile-Marketing-Series-What-is-Agile-Marketing.png?w=579&ssl=1)
+![Agile Software Development](/images/2015/07/Agile-Marketing-Series-What-is-Agile-Marketing.png)
 
 The dictionary defines ‘Agile’ as mentally quick, or nimble, or quick in movement.
 

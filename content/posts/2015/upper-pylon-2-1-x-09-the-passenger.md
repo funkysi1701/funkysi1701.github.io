@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-07"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/Bashir-Choked.jpg"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/Bashir-Choked.jpg']
+cover = "/images/2015/07/Bashir-Choked.jpg"
+images = ['/images/2015/07/Bashir-Choked.jpg']
 tags = ["StarTrek", "podcast", "trekmate"]
 category="trek"
 keywords = ["", ""]
@@ -23,7 +23,7 @@ aliases = [
 +++
 I recorded another podcast the other week it can be found http://www.trekmate.org.uk/upper-pylon-2-1-x-09-the-passenger/ and feedback about it can be left on the trekmate forums http://forum.trekmatefamily.com/2015/07/thoughts-on-up2s-the-passenger-or-vantika-x-33/
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/Bashir-Choked.jpg)
+![](/images/2015/07/Bashir-Choked.jpg)
 
 This week on Upper Pylon 2, we are joined by our first UK guest, Simon (aka [funkysi1701](https://twitter.com/funkysi1701)) as we take a look at the Bashir-centric “mystery” episode, “The Passenger.”
 

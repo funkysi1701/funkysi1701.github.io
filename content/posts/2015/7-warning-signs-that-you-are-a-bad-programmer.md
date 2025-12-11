@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-07"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/you_are_coding_it_wrong.png?w=359&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/you_are_coding_it_wrong.png?w=359&ssl=1']
+cover = "/images/2015/07/you_are_coding_it_wrong.png"
+images = ['/images/2015/07/you_are_coding_it_wrong.png']
 tags = ["Bad Programmer", "Plan", "Bad Programmer", "Source Control"]
 category="tech"
 keywords = ["", ""]
@@ -25,7 +25,7 @@ aliases = [
     "/2015/07/23/7-warning-signs-that-youre-a-bad-programmer"
 ]
 +++
-![You are coding it wrong](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/you_are_coding_it_wrong.png?w=359&ssl=1)
+![You are coding it wrong](/images/2015/07/you_are_coding_it_wrong.png)
 
 Am I a good programmer or a bad programmer?
 

@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-06"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/06/top-50-2012.jpg"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/06/top-50-2012.jpg']
+cover = "/images/2015/06/top-50-2012.jpg"
+images = ['/images/2015/06/top-50-2012.jpg']
 tags = ["Blog", "50"]
 category="tech"
 keywords = ["", ""]
@@ -26,7 +26,7 @@ aliases = [
 +++
 WOW! I have reached the milestone of 50 blog posts.
 
-![Top 50](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/06/top-50-2012.jpg)
+![Top 50](/images/2015/06/top-50-2012.jpg)
 
 I have tried to blog at least every week and I have learnt a lot. I have talked about my work, technology, things I have learnt, things I want to do and many more things. It is too soon to tell if my blog is going to be a success, but I think I am starting to find my ‘blog’ voice and I intend to keep on blogging.
 

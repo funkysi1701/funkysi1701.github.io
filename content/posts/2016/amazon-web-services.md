@@ -5,8 +5,8 @@ year = "2016"
 month= "2016-07"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/07/aws-300x169.png?resize=300%2C169"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/07/aws-300x169.png?resize=300%2C169']
+cover = "/images/2016/07/aws-300x169.png"
+images = ['/images/2016/07/aws-300x169.png']
 tags = ["AWS", "Azure","Amazon",  "Clouds"]
 category="tech"
 keywords = ["", ""]
@@ -28,7 +28,7 @@ aliases = [
 
 I am a big fan of Azure but I know zero about its biggest rival – Amazon Web Services or AWS.
 
-So lets sign up for a free trial and see what it can do. ![Amazon Web Services](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/07/aws-300x169.png?resize=300%2C169)
+So lets sign up for a free trial and see what it can do. ![Amazon Web Services](/images/2016/07/aws-300x169.png)
 
 The AWS free trial is available from https://aws.amazon.com/free/ and lasts for 12 months. From memory I think the Azure free trial lasted only one month.
 
