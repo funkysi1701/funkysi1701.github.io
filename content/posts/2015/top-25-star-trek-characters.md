@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-05"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/02/Spock_2293.jpg"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/02/Spock_2293.jpg']
+cover = "/images/2015/02/Spock_2293.jpg"
+images = ['/images/2015/02/Spock_2293.jpg']
 tags = ["StarTrek"]
 category="trek"
 keywords = ["", ""]
@@ -27,7 +27,7 @@ I have just listened to a [podcast](http://www.trekmate.org.uk/ten-forward-episo
 
 1) **Spock**. My number one star trek character is Spock. Leonard Nimoy who recently passed away brilliantly brought this character to life. We have the inner turmoil that many of us can associate with, we have a journey to become more human, we have the pursuit of logic. We have the great interplay between him and McCoy and Kirk.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/02/Spock_2293.jpg)
+![](/images/2015/02/Spock_2293.jpg)
 
 2) **Data**. My second number one star trek character, well OK, second star trek character is Data. His weekly exploration of what it meant to be human is star trek’s best exploration of the human condition. There are so many moments which make me like Data but I think when I builds his daughter, Lal is possibly my favourite.
 

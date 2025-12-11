@@ -5,8 +5,8 @@ year = "2019"
 month= "2019-08"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/08/download.jpg?w=662&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/08/download.jpg?w=662&ssl=1']
+cover = "/images/2018/08/download.jpg"
+images = ['/images/2018/08/download.jpg
 tags = ["StarTrek", "Picard", "PatrickStewart"]
 category="trek"
 keywords = ["", ""]
@@ -70,7 +70,7 @@ How should we react to extremism?
 
 In the last episode of TNG a future version of Picard is shown 25 years into the future. This is a similar time period so it will be interesting to compare the two. Have Picard look back on his life and ask questions about his life choices.
 
-![Picard](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/08/all-good-things.jpg?w=662&ssl=1)
+![Picard](/images/2018/08/all-good-things.jpg)
 
 ## Be consistent with his past
 
@@ -84,7 +84,7 @@ Discovery and Enterprise are TV shows which have a problem. There is Trek going 
 
 This is a TV Show that will take place after every other Trek TV and Film and can do whatever the creators want. This gives freedom, but it also gives the responsibility to reference what has gone before. 
 
-![Picard](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/08/download.jpg?w=662&ssl=1)
+![Picard](/images/2018/08/download.jpg)
 
 The 2009 Star Trek film features the destruction of Romulus and Spock travelling back in time. How about Picard dealing with surviving Romulans helping rebuild their society, continuing the work that Spock started in the TNG episode Unification. 
 

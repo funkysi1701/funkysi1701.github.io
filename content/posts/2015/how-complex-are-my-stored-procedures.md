@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-08"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/complexity.jpg?resize=278%2C289"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/complexity.jpg?resize=278%2C289']
+cover = "/images/2015/08/complexity.jpg"
+images = ['/images/2015/08/complexity.jpg
 tags = ["Complexity", "SQL"]
 category="tech"
 keywords = ["", ""]
@@ -40,6 +40,6 @@ WHEN NumberOfLines * NumberOfDependencies * NumberOfParameters < 10000 THEN ‘M
 ELSE ‘Complex’
 ```
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/reportscreenshot1.png?w=674&ssl=1)
+![](/images/2015/08/reportscreenshot1.png)
 
 This gives a fairly good estimate of which stored procedures are the most complex and which would probably take the longest time to rewrite.

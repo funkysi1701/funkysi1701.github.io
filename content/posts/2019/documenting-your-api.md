@@ -5,8 +5,8 @@ year = "2019"
 month= "2019-03"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image-3.png?w=662&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image-3.png?w=662&ssl=1']
+cover = "/images/2019/03/image-3.png"
+images = ['/images/2019/03/image-3.png
 tags = ["Swagger", "API"]
 category="tech"
 keywords = ["", ""]
@@ -58,18 +58,18 @@ app.UseSwaggerUI(c =>
 
 Now when you browse to your API you will see the swagger documentation system.
 
-![Image](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image-3.png?w=662&ssl=1)
+![Image](/images/2019/03/image-3.png)
 
 The RoutePrefix setting controls the path in which swagger will display. I have my docs at the root, but you might want them under the /docs or similar path.
 
 The IncludeXmlComments setting from the ConfigureServices method allows you to load in any XML comments you have added to methods. For this to work you need to enable a setting to your build.
 
-![Image](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image-4.png?w=662&ssl=1)
+![Image](/images/2019/03/image-4.png)
 
 The XML documentation file must be ticked and contain a path. Everytime you do a build, a XML file will be generated which contains all the comment blocks you have added to your code.
 
-![Image](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image-5.png?w=662&ssl=1)
+![Image](/images/2019/03/image-5.png)
 
 Swagger will then use this XML documentation file to produce lovely looking documentation without you having to do anything extra.
 
-![Image](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image-6.png?fit=662%2C260&ssl=1)
+![Image](/images/2019/03/image-6.png)

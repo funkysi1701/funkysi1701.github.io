@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-08"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/in-case-you-missed-it-small.jpg?w=400&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/in-case-you-missed-it-small.jpg?w=400&ssl=1']
+cover = "/images/2015/08/in-case-you-missed-it-small.jpg"
+images = ['/images/2015/08/in-case-you-missed-it-small.jpg
 tags = ["ICYMI", "Learning"]
 category="tech"
 keywords = ["", ""]
@@ -28,7 +28,7 @@ For a while now I have seen ICYMI splattered around the internet. I had no idea 
 ```
 ICYMI – In Case You Missed It
 ```
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/in-case-you-missed-it-small.jpg?w=400&ssl=1)
+![](/images/2015/08/in-case-you-missed-it-small.jpg)
 ICYMI is often used on social media sites to indicate articles that you might have missed.
 
 Software Development is littered with acronyms and technical terms that I don’t always know the meaning of.

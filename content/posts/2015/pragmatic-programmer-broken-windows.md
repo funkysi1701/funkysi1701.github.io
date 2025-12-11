@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-06"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/06/tpp.jpg?w=1324&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/06/tpp.jpg?w=1324&ssl=1']
+cover = "/images/2015/06/tpp.jpg"
+images = ['/images/2015/06/tpp.jpg
 tags = [ "Windows", "Books", "Tips"]
 category="tech"
 keywords = ["", ""]
@@ -24,13 +24,13 @@ aliases = [
     "/2015/06/08/pragmatic-programmer-broken-windows"
 ]
 +++
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/06/1-ucIHdOcnByPsF5eX0j_mhg.jpeg?resize=1024%2C696&ssl=1)
+![](/images/2015/06/1-ucIHdOcnByPsF5eX0j_mhg.jpeg)
 
 Last night I started reading [The Pragmatic Programmer by Andrew Hunt and David Thomas](https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master-ebook/dp/B003GCTQAE/ref=mt_kindle?_encoding=UTF8&me=).
 
 One practical tip that immediately jumped out at me as useful in my quest to be a better programmer: **Don’t live with broken windows**.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/06/tpp.jpg?w=1324&ssl=1)
+![](/images/2015/06/tpp.jpg)
 
 The theory goes like this: an abandoned building with a single broken window attracts additional broken windows, graffiti, litter, and a sense that no one cares about this building. However this can be avoided if the authorities repair the window straight away.
 

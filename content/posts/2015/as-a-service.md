@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-05"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/05/19656ee.jpg?w=841&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/05/19656ee.jpg?w=841&ssl=1']
+cover = "/images/2015/05/19656ee.jpg"
+images = ['/images/2015/05/19656ee.jpg
 tags = ["Azure", "As A Service", "Clouds", "PaaS", "IaaS", "SaaS"]
 category="tech"
 keywords = ["", ""]
@@ -28,7 +28,7 @@ In Cloud Computing there are a lot of terms that end aas or As a Service. Most o
 
 Any service that is delivered over the internet instead of hosted locally on your network or PC could in theory be described as an As a Service.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/05/19656ee.jpg?w=841&ssl=1)
+![](/images/2015/05/19656ee.jpg)
 
 **PaaS Platform As a Service**
 
