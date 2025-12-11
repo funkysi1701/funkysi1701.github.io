@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-10"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/2015/10/12074836_10153714959677792_5717618456858661253_n.jpg?w=960&ssl=1"
-images = ['/images/2015/10/12074836_10153714959677792_5717618456858661253_n.jpg?w=960&ssl=1']
+cover = "/images/2015/10/12074836_10153714959677792_5717618456858661253_n.jpg"
+images = ['/images/2015/10/12074836_10153714959677792_5717618456858661253_n.jpg
 tags = ["Baby", "James", "Father"]
 category=""
 keywords = ["", ""]
@@ -25,7 +25,7 @@ This weekend I took James on an adventure. As he is only 8 weeks old it was a fa
 
 St Michael le Belfrey have been organizing an event for Dads once a month and this month I wanted to give it a go. I have been looking forward to going for a while.
 
-![](/images/2015/10/12074836_10153714959677792_5717618456858661253_n.jpg?w=960&ssl=1)
+![](/images/2015/10/12074836_10153714959677792_5717618456858661253_n.jpg)
 
 Looking after a baby is woman’s work. Now I am not being sexist but men are just not equipped. We can’t feed them, we don’t form the same emotional bonds and I suspect I am sleeping through the worst of his crying.
 

@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-07"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/2015/07/Windows-10_Product-Family.jpg?resize=1024%2C576&ssl=1"
-images = ['/images/2015/07/Windows-10_Product-Family.jpg?resize=1024%2C576&ssl=1']
+cover = "/images/2015/07/Windows-10_Product-Family.jpg"
+images = ['/images/2015/07/Windows-10_Product-Family.jpg
 tags = ["Microsoft", "Windows 10", "Operating System"]
 category="tech"
 keywords = ["", ""]
@@ -26,7 +26,7 @@ aliases = [
 +++
 Today Microsoft release Windows 10 so what else can I talk about? I like many technology people are very excited today. This version of window is the first that Microsoft have release for free.
 
-![](/images/2015/07/Windows-10_Product-Family.jpg?resize=1024%2C576&ssl=1)
+![](/images/2015/07/Windows-10_Product-Family.jpg)
 
 10 You heard that correct Windows 10 is **free**. If you upgrade your device to windows 10 before 29th July 2016 it is free and will continue working on that device forever.
 
@@ -56,7 +56,7 @@ However I can see that only working for so long. Eventually Microsoft will make 
 
 5 In 2011 Apple introduced the personal assistant Siri, well now Microsoft are bringing us **Cortana** the windows equivalent. With Cortana you can ask your computer to do anything, set reminders, search the internet, answer questions, anything. With advanced voice recognition you can speak as well as type your questions. Cortana is now part of Windows 10.
 
-![](/images/2015/05/win10.jpg?resize=300%2C181&ssl=1)
+![](/images/2015/05/win10.jpg)
 
 4 Windows 10 brings back the start menu. The start menu you have always used to access programs works the same but features of the windows 8 start screen have been incorporated into it.
 

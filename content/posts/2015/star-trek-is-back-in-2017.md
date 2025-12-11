@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-11"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/2015/11/3f448330857e4ca7ba40ab5465a3c2cb62cdb98c.png?resize=620%2C260"
-images = ['/images/2015/11/3f448330857e4ca7ba40ab5465a3c2cb62cdb98c.png?resize=620%2C260']
+cover = "/images/2015/11/3f448330857e4ca7ba40ab5465a3c2cb62cdb98c.png"
+images = ['/images/2015/11/3f448330857e4ca7ba40ab5465a3c2cb62cdb98c.png
 tags = ["StarTrek", "podcast"]
 category="trek"
 keywords = ["", ""]
@@ -25,7 +25,7 @@ aliases = [
 ]
 +++
 
-![3f448330857e4ca7ba40ab5465a3c2cb62cdb98c](/images/2015/11/3f448330857e4ca7ba40ab5465a3c2cb62cdb98c.png?resize=620%2C260)
+![3f448330857e4ca7ba40ab5465a3c2cb62cdb98c](/images/2015/11/3f448330857e4ca7ba40ab5465a3c2cb62cdb98c.png)
 
 As you have probably heard Star Trek is coming back to TV. I recently joined with the Sci Fi Waffle podcast to discuss.
 

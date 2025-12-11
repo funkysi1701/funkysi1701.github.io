@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-07"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/2015/07/git_commit.png?w=439&ssl=1"
-images = ['/images/2015/07/git_commit.png?w=439&ssl=1']
+cover = "/images/2015/07/git_commit.png"
+images = ['/images/2015/07/git_commit.png
 tags = ["Git",  "Source Control"]
 category="tech"
 keywords = ["", ""]
@@ -24,7 +24,7 @@ aliases = [
     "/2015/07/25/writing-better-git-commit-messages"
 ]
 +++
-![](/images/2015/07/git_commit.png?w=439&ssl=1)
+![](/images/2015/07/git_commit.png)
 
 I always use source control for my coding changes, however some of my commit messages leave something to be desired.
 

@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-08"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/2015/08/928f90bcd221f78a30f18541a5ca2e7f.jpg?w=404&ssl=1"
-images = ['/images/2015/08/928f90bcd221f78a30f18541a5ca2e7f.jpg?w=404&ssl=1']
+cover = "/images/2015/08/928f90bcd221f78a30f18541a5ca2e7f.jpg"
+images = ['/images/2015/08/928f90bcd221f78a30f18541a5ca2e7f.jpg
 tags = ["Due Date", "Baby", "Estimate"]
 category="tech"
 keywords = ["", ""]
@@ -21,7 +21,7 @@ aliases = [
     "/2015/08/17/due-dates"
 ]
 +++
-![](/images/2015/08/928f90bcd221f78a30f18541a5ca2e7f.jpg?w=404&ssl=1)
+![](/images/2015/08/928f90bcd221f78a30f18541a5ca2e7f.jpg)
 As I write this I have less than 2 days until the due date for the birth of my first child.
 
 Its a very exciting time, but it is also infuriating waiting for it to arrive. Even in the 21st century science can not predict with any accuracy when a baby is going to arrive and we just have to wait for mother nature to do its thing.

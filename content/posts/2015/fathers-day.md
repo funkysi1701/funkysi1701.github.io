@@ -32,7 +32,7 @@ I am going to sound really old but when I was born there was no internet, no mob
 
 The first computer I remember us owning was a Lynx. A quick google reveals there were a number of different models, I have no idea what we had but here is what I found.
 
-![](/images/2015/06/PRODPIC-2926.jpg?resize=300%2C185&ssl=1)
+![](/images/2015/06/PRODPIC-2926.jpg)
 
 In March 1983 the Lynx 48K was released, in September this was upgraded to 96K. In December 1983 a new Lynx was released with 128K. To put these numbers in perspective on my desktop is an image file that is 123K! The CPU in this computer was rated at between 4 and 6Mhz. (Modern PCs have CPUs around the 1.5Ghz or 1500Mhz)
 

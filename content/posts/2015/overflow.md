@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-05"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/2015/05/error.jpg?w=385&ssl=1"
-images = ['/images/2015/05/error.jpg?w=385&ssl=1']
+cover = "/images/2015/05/error.jpg"
+images = ['/images/2015/05/error.jpg
 tags = ["Database", "Access", "Integer", "SQL", "Overflow", "Variables"]
 category="tech"
 keywords = ["", ""]
@@ -26,7 +26,7 @@ aliases = [
 +++
 Today I encountered a new error.
 
-![](/images/2015/05/error.jpg?w=385&ssl=1)
+![](/images/2015/05/error.jpg)
 
 Run-time error ‘6’: Overflow doesn’t really tell me much. The error was occurring in the Access ADP front-end of our main database. It was only occurring for one particular Id number which was really confusing me.
 

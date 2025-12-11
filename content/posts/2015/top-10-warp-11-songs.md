@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-10"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "/images/2015/10/redAlertCover_02.jpg?w=250&ssl=1"
-images = ['/images/2015/10/redAlertCover_02.jpg?w=250&ssl=1']
+cover = "/images/2015/10/redAlertCover_02.jpg"
+images = ['/images/2015/10/redAlertCover_02.jpg
 tags = ["StarTrek", "Music", "Warp11"]
 category="trek"
 keywords = ["", ""]
@@ -25,7 +25,7 @@ aliases = [
 
 I am a big Warp 11 fan. Warp 11 are a Star Trek rock band from Sacramento, California. Their songs often feature bad language, sex and drinking but always feature references to Star Trek characters and episodes and a good dose of humour.
 
-![](/images/2015/10/redAlertCover_02.jpg?w=250&ssl=1)
+![](/images/2015/10/redAlertCover_02.jpg)
 
 I first listened to Warp 11 in about 2004 and have listened to every album they have released since. The second album Red Alert is probably my favourite but all their albums have a few tracks which I love. They have just released their seventh album and to celebrate this I will list my favourite tracks.
 

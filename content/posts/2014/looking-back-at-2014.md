@@ -27,7 +27,7 @@ aliases = [
 +++
 As today is New Years eve I thought it would be a good chance to look back over the last year.
 
-![](/images/2014/12/tangle.jpg?resize=300%2C256&ssl=1)
+![](/images/2014/12/tangle.jpg)
 
 At the start of the year I finally got agreement for the installation of a 30MB leased line. This was an amazing achievement as I had been really struggling to keep everything working on our ADSL connections and the complexity of the connections was starting to cause problems itself.
 
