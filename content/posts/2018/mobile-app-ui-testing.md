@@ -6,8 +6,8 @@ month= "2018-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/01/01-newproject-vs.png?resize=300%2C182&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/01/01-newproject-vs.png?resize=300%2C182&ssl=1']
+cover = "/images/2018/01/01-newproject-vs.png?resize=300%2C182&ssl=1"
+images = ['/images/2018/01/01-newproject-vs.png?resize=300%2C182&ssl=1']
 tags = ["Android", "Azure", "App"]
 category="tech"
 keywords = ["", ""]
@@ -30,7 +30,7 @@ Since I started creating an android app I have been writing simple UI tests.
 
 I have been taking advantage of the Visual Studio App Center which allows you to test against hundreds of different devices in the **Test Cloud**.  
   
- ![Xamarin UI tests](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/01/01-newproject-vs.png?resize=300%2C182&ssl=1)In order to write a UI test create a UI Test App, this makes use of the nuget package Xamarin UI Test. By default you will now have a test called AppLaunches which will take a screenshot of you app after it starts.
+ ![Xamarin UI tests](/images/2018/01/01-newproject-vs.png?resize=300%2C182&ssl=1)In order to write a UI test create a UI Test App, this makes use of the nuget package Xamarin UI Test. By default you will now have a test called AppLaunches which will take a screenshot of you app after it starts.
 
 You can now run this test against any device from Visual Studio assuming you have it physically plugged into your machine. However, how do you run against the Test Cloud?
 

@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-05"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/05/i1.png"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/05/i1.png']
+cover = "/images/2015/05/i1.png"
+images = ['/images/2015/05/i1.png']
 tags = ["CodeLens", "Azure",  "Visual Studio"]
 category="tech"
 keywords = ["", ""]
@@ -32,7 +32,7 @@ Being as my MSDN subscription is still valid I have installed the professional v
 
 One of the first things I spotted was that the integration with Azure has been improved. In the last version it was difficult to sign in to Azure with the correct credentials, especially if you have more than one Azure account. Now you can add multiple Accounts and Subscriptions.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/05/i1.png)
+![](/images/2015/05/i1.png)
 
 CodeLens is a feature that has been around in Visual Studio since 2013, but in 2015 it is available in Professional meaning more people have access to it.
 

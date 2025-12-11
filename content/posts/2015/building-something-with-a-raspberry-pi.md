@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-04"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/04/Raspberry_Pi_-_Model_A.jpg"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/04/Raspberry_Pi_-_Model_A.jpg']
+cover = "/images/2015/04/Raspberry_Pi_-_Model_A.jpg"
+images = ['/images/2015/04/Raspberry_Pi_-_Model_A.jpg']
 tags = ["MarchIsForMakers", "C-Sharp", "Arduino", "Hardware", "Electronics", "Raspberry Pi", "Project", "Mono"]
 category="tech"
 keywords = ["", ""]
@@ -28,7 +28,7 @@ Many years ago I spent a lot of time learning about electronics. It was great fu
 
 I haven’t really thought about this much as my interests have been concentrated on computers and programming, but recently my interest has been peaked again.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/04/Raspberry_Pi_-_Model_A.jpg)
+![](/images/2015/04/Raspberry_Pi_-_Model_A.jpg)
 
 The [CodeNewbie](http://www.codenewbie.org/) and [Hanselminutes](http://hanselminutes.com/) podcasts have been running a month of stuff about making things and doing clever things with hardware called [#Marchisformakers](http://marchisformakers.com/), this began to start me thinking about this stuff again.
 

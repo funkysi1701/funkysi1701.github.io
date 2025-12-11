@@ -5,8 +5,8 @@ year = "2017"
 month= "2017-03"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/tdd_flow.gif?resize=287%2C300&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/tdd_flow.gif?resize=287%2C300&ssl=1']
+cover = "/images/2017/03/tdd_flow.gif?resize=287%2C300&ssl=1"
+images = ['/images/2017/03/tdd_flow.gif?resize=287%2C300&ssl=1']
 tags = ["Test Driven Development", "Testing",  "Visual Studio"]
 category="tech"
 keywords = ["", ""]

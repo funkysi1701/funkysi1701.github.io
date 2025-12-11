@@ -5,8 +5,8 @@ year = "2014"
 month= "2014-10"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/10/enterprise.jpg"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/10/enterprise.jpg']
+cover = "/images/2014/10/enterprise.jpg"
+images = ['/images/2014/10/enterprise.jpg']
 tags = ["StarTrek", "SQL", "Database"]
 category="tech"
 keywords = ["", ""]
@@ -31,7 +31,7 @@ Years ago I used to have lists of Star Trek episodes, which included such inform
 
 One thing that was hard to keep track of was how many episodes were written by a specific person. This is because episodes are written by multiple people. A column called writer would then need to contain multiple people, another option would be to have columns called writer1, writer2 etc. This wouldn’t help either as you wouldn’t know which column a specific writer had been saved in.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/10/manytomany.jpg?w=559&ssl=1)
+![](/images/2014/10/manytomany.jpg?w=559&ssl=1)
 
 The relationship between writer and episode is known as a many to many relationship. An episode can have many writers and a writer can have written many episodes. To achieve this structure in a SQL database you will need three database tables as it is not possible to create a many to many join between two tables. The first table will contain all the episodes, the second table will contain all the writers, the third table known as a junction table, will contain the relationship between the two.
 

@@ -5,8 +5,8 @@ year = "2019"
 month= "2019-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/02/D0UTj08XgAEo1YJ.jpg?fit=662%2C440&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/02/D0UTj08XgAEo1YJ.jpg?fit=662%2C440&ssl=1']
+cover = "/images/2019/02/D0UTj08XgAEo1YJ.jpg?fit=662%2C440&ssl=1"
+images = ['/images/2019/02/D0UTj08XgAEo1YJ.jpg?fit=662%2C440&ssl=1']
 tags = ["Conference", "Azure", "Microsoft", "DevOps"]
 category="tech"
 keywords = ["", ""]
@@ -28,7 +28,7 @@ aliases = [
 +++
 
 I have just spent the first day at the conference Microsoft Ignite | The Tour. 
-![Alt Text](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/02/D0UTj08XgAEo1YJ.jpg?fit=662%2C440&ssl=1)
+![Alt Text](/images/2019/02/D0UTj08XgAEo1YJ.jpg?fit=662%2C440&ssl=1)
 The conference was free I just needed to arrange travel and accommodation. Microsoft have really looked after me and all the other guests, breakfast and lunch has been provided, I got a free t-shirt, coffee (or tea) all day plus a beer or glass of wine to end the day. And that’s before you collect any free stuff the vendors are giving away.
 
 The first session was Designing resilient cloud applications with [Matt Soucoup](https://twitter.com/CodeMillMatt) and talked about some cloud technologies like Azure key vault and serving static files from blob storage. Unfortunately this had a few technical issues with the demos. I think it was just connectivity with the MongoDB backend but this slightly spoiled the session. As this was the only technical problem I noticed all day I can let it pass.

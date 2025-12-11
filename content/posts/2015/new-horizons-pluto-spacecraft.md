@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-07"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/84270464_p_lorri_fullframe_color.png?w=976&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/84270464_p_lorri_fullframe_color.png?w=976&ssl=1']
+cover = "/images/2015/07/84270464_p_lorri_fullframe_color.png?w=976&ssl=1"
+images = ['/images/2015/07/84270464_p_lorri_fullframe_color.png?w=976&ssl=1']
 tags = ["Pluto", "Hardware", "Spacecraft", "Software", "Technology"]
 category="tech"
 keywords = ["", ""]
@@ -24,7 +24,7 @@ aliases = [
     "/2015/07/14/new-horizons-pluto-spacecraft"
 ]
 +++
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/84270464_p_lorri_fullframe_color.png?w=976&ssl=1)
+![](/images/2015/07/84270464_p_lorri_fullframe_color.png?w=976&ssl=1)
 
 To explore Strange New Worlds, well today the NASA spacecraft New Horizons has been doing just that. This is the most detailed photograph yet of the furthest planet we have ever explored, Pluto.
 
@@ -34,7 +34,7 @@ In 2006 we were still using Windows XP and Office 2003. In 2006 I wasn’t even 
 
 The spacecraft carries two computer systems: the Command and Data Handling system and the Guidance and Control processor. Each of the two systems is duplicated for redundancy, for a total of four computers. The processor used for its flight computers is the Mongoose-V, a 12 MHz radiation-hardened version of the MIPS R3000 CPU. Multiple clocks and timing routines are implemented in hardware and software to help prevent faults and downtime. To conserve heat and mass, spacecraft and instrument electronics are housed together in IEMs (integrated electronics modules). There are two redundant IEMs. Including other functions such as instrument and radio electronics, each IEM contains 9 boards. The processor distributes operating commands to each subsystem, collects and processes instrument data, and sequences information sent back to Earth. It also runs the advanced “autonomy” algorithms that allow the spacecraft to check the status of each system and, if necessary, correct any problems, switch to backup systems or contact operators on Earth for help.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/Mission-Spacecraft-structure.jpg?resize=300%2C218&ssl=1)
+![](/images/2015/07/Mission-Spacecraft-structure.jpg?resize=300%2C218&ssl=1)
 
 For data storage, New Horizons carries two low-power solid-state recorders (one backup) that can hold up to 8 gigabytes each. The main processor collects, compresses, reformats, sorts and stores science and housekeeping (telemetry) data on the recorder – similar to a flash memory card for a digital camera – for transmission to Earth through the telecommunications subsystem.
 

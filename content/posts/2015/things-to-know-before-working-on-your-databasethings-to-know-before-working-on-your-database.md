@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-07"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/uf010206.jpg"
-images =['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/uf010206.jpg']
+cover = "/images/2015/07/uf010206.jpg"
+images =['/images/2015/07/uf010206.jpg']
 tags = ["Backups", "SQL",  "Disaster Recovery"]
 category="tech"
 keywords = ["", ""]
@@ -53,7 +53,7 @@ Luckily most of my apps are internal only so are not seriously affected by slown
 
 I manage the backup schedule for all my databases so I know exactly when each one was last backed up. When ever I do anything to a production database I will run a backup so I can roll back in case of problems. As part of developing changes I run my changes on a backup of the data. I can script all my changes and repeatedly run them against a backup until I am sure no problems will occur.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/uf010206.jpg)
+![](/images/2015/07/uf010206.jpg)
 
 6. **When was the last successful restore test?**
 

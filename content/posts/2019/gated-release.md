@@ -5,8 +5,8 @@ year = "2019"
 month= "2019-04"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/04/image.png?fit=662%2C116&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/04/image.png?fit=662%2C116&ssl=1']
+cover = "/images/2019/04/image.png?fit=662%2C116&ssl=1"
+images = ['/images/2019/04/image.png?fit=662%2C116&ssl=1']
 tags = ["Azure", "API", "ApplicationInsights", "DevOps"]
 category="tech"
 keywords = ["", ""]
@@ -32,7 +32,7 @@ I have been using Azure DevOps to release my [PwnedPass](https://www.funkysi1701
 
 My release starts by publishing to 10% of users on the production track, my next step makes use of the increase rollout option to increase this %, you can have as many of these additional steps as you want until you reach 100% of your users.
 
-![Image](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/04/image.png?fit=662%2C116&ssl=1)
+![Image](/images/2019/04/image.png?fit=662%2C116&ssl=1)
 
 Now if you run this release now it will just run through each of the steps one after the other. Now of course you can add a pre or post approval to your pipeline but this just adds a manual dependency to your release. Whoever does the approving needs to check things are working before approving or worse just approves regardless.
 
@@ -48,7 +48,7 @@ We are going to make use of the Azure Monitor Alert, to create an alert from you
 
 Open up your application insights resource in the Azure portal and look in alerts. Click add new alert rule.
 
-![Image](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/04/image-1.png?fit=662%2C552&ssl=1)
+![Image](/images/2019/04/image-1.png?fit=662%2C552&ssl=1)
 
 Select your application insights resource in Resource, In Condition choose a condition to check, I chose Failed Requests, so every time a failure is registered in my API I can stop the deployment. The exact criteria you want to use is entirely up to you.
 
@@ -56,12 +56,12 @@ Create an action group, I just set my alert to send an email to myself but there
 
 Now all we need to do is make Azure DevOps make use of this alert. In your release pipeline select the pre-deployment conditions of your second step and open up the Gates section.
 
-![Image](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/04/image-2.png?fit=662%2C498&ssl=1)
+![Image](/images/2019/04/image-2.png?fit=662%2C498&ssl=1)
 
 Choose a suitable time to evaluate, I have been using something long like 12 or 24 hours so if there are problems there is time for it to be noticed. Choose Version 1 of the task (I was not able to get it to work with Version 0)
 
 Now select your Azure subscription and Resource Group and leave the rest of the settings as they are. Now your Deployment will stop and analyse application insights for any Failed requests and will halt if it finds any.
 
-![Image](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/04/image-3.png?fit=662%2C88&ssl=1)
+![Image](/images/2019/04/image-3.png?fit=662%2C88&ssl=1)
 
 I am still testing this out but it will take a few days to figure out if this what I want due to the large time scales involved. I feel this is going to be an improvement of manually approving release steps.
