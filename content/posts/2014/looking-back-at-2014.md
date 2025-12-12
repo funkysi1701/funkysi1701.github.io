@@ -5,8 +5,8 @@ year = "2014"
 month= "2014-12"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/12/2014-Numbers-Happy-2014-Wallpaper-New-Year-Image-1024x768.jpg"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/12/2014-Numbers-Happy-2014-Wallpaper-New-Year-Image-1024x768.jpg']
+cover = "/images/2014/12/2014-Numbers-Happy-2014-Wallpaper-New-Year-Image-1024x768.jpg"
+images = ['/images/2014/12/2014-Numbers-Happy-2014-Wallpaper-New-Year-Image-1024x768.jpg']
 tags = ["Goals", "Azure", "ITAdmin"]
 category="tech"
 keywords = ["", ""]
@@ -27,7 +27,7 @@ aliases = [
 +++
 As today is New Years eve I thought it would be a good chance to look back over the last year.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/12/tangle.jpg?resize=300%2C256&ssl=1)
+![](/images/2014/12/tangle.jpg)
 
 At the start of the year I finally got agreement for the installation of a 30MB leased line. This was an amazing achievement as I had been really struggling to keep everything working on our ADSL connections and the complexity of the connections was starting to cause problems itself.
 

@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-06"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/06/Requirements-Gathering-User-Experience-UX-Project-Cartoon.jpg"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/06/Requirements-Gathering-User-Experience-UX-Project-Cartoon.jpg']
+cover = "/images/2015/06/Requirements-Gathering-User-Experience-UX-Project-Cartoon.jpg"
+images = ['/images/2015/06/Requirements-Gathering-User-Experience-UX-Project-Cartoon.jpg']
 tags = [ "Database", "Requirements"]
 category="tech"
 keywords = ["", ""]
@@ -26,7 +26,7 @@ aliases = [
 +++
 **Why is it so hard to find out exactly what is needed when designing changes to a system?**
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/06/Requirements-Gathering-User-Experience-UX-Project-Cartoon.jpg)
+![](/images/2015/06/Requirements-Gathering-User-Experience-UX-Project-Cartoon.jpg)
 
 When adding functionality to databases I always like to dive in and start adding extra columns and new tables. But at some point you need to find out what is needed.
 

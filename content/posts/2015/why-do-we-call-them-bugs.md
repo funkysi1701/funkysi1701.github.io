@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-07"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/11666093_10153470803062792_4914668365512645054_n.jpg?w=960&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/11666093_10153470803062792_4914668365512645054_n.jpg?w=960&ssl=1']
+cover = "/images/2015/07/11666093_10153470803062792_4914668365512645054_n.jpg"
+images = ['/images/2015/07/11666093_10153470803062792_4914668365512645054_n.jpg']
 tags = ["Debugging", "Bugs"]
 category="tech"
 keywords = ["", ""]
@@ -24,13 +24,13 @@ aliases = [
     "/2015/07/07/why-do-we-call-them-bugs"
 ]
 +++
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/11666093_10153470803062792_4914668365512645054_n.jpg?w=960&ssl=1)
+![](/images/2015/07/11666093_10153470803062792_4914668365512645054_n.jpg)
 
 On my way home from the office I spotted this little chap. In my expert opinion it is a "bug".
 
 This particular "bug" is harmlessly sitting outside, but have you ever wondered why computer problems are often named after this little chap (and his friends)?
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/H96566k.jpg?resize=300%2C236&ssl=1)
+![](/images/2015/07/H96566k.jpg)
 
 The first recorded bug report was in 1947 when Grace Hopper found a moth between the relays of a Harvard Mark II, this moth was then tapped in the log book as evidence.
 

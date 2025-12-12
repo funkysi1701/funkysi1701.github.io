@@ -5,8 +5,8 @@ year = "2014"
 month= "2014-10"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/10/how-not-to-ace-the-technical-interview.jpg?w=550&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/10/how-not-to-ace-the-technical-interview.jpg?w=550&ssl=1']
+cover = "/images/2014/10/how-not-to-ace-the-technical-interview.jpg"
+images = ['/images/2014/10/how-not-to-ace-the-technical-interview.jpg']
 tags = ["ITAdmin", "Interview", "Technical"]
 category="tech"
 keywords = ["", ""]
@@ -27,7 +27,7 @@ aliases = [
 +++
 I have done a few interviews from both sides of the table, I’m not very good at either but thought I would have a go at answering my favourite questions.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/10/how-not-to-ace-the-technical-interview.jpg?w=550&ssl=1)
+![](/images/2014/10/how-not-to-ace-the-technical-interview.jpg)
 
 **Describe an IT disaster and what you did to turn it around?**
 

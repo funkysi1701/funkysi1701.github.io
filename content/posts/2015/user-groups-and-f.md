@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-05"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/05/CGHJLlbWEAAbl14.jpg?w=1024&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/05/CGHJLlbWEAAbl14.jpg?w=1024&ssl=1']
+cover = "/images/2015/05/CGHJLlbWEAAbl14.jpg"
+images = ['/images/2015/05/CGHJLlbWEAAbl14.jpg']
 tags = ["F-Sharp", "C-Sharp",  "Leeds-Sharp", "UserGroups"]
 category="tech"
 keywords = ["", ""]
@@ -30,7 +30,7 @@ The user group I went to is called [Leeds Sharp](https://www.meetup.com/Leeds-Sh
 
 The talk was all about F#. I know nothing about [F#](https://fsharp.org/) other than it is in visual studio. The speaker was [Phil Trelford](https://twitter.com/ptrelford) an expert in F# and former game developer who regularly speaks at conferences. Phil is an expert programmer, one of his stories was that while he had a broken arm, he wrote a copy of Excel in F#. Even with two hands I wouldn’t know where to start on something like that.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/05/CGHJLlbWEAAbl14.jpg?w=1024&ssl=1)
+![](/images/2015/05/CGHJLlbWEAAbl14.jpg)
 
 There are plenty of advantages to using F# over C#, fewer lines of code was one. In Phil’s example he had some C# code which was about 30 lines but the F# was 2, part of the reason for this is F# has no {}.
 
