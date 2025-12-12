@@ -31,11 +31,16 @@ steps:
       ./aws/install --bin-dir ~/.local/bin --install-dir ~/.local/aws-cli --update
       export PATH=$HOME/.local/bin:$PATH
       aws --version
+- task: NodeTool@0
+  displayName: "Install Node.js"
+  inputs:
+    versionSpec: '18.x'
 - task: CmdLine@2
-  displayName: "npm build"
+  displayName: "npm install and build"
   inputs:
     script: |
       cd themes/hugo-theme-bootstrap
+      npm ci
       npm run build
 - task: CmdLine@2
   displayName: "Build and Login to ECR"
