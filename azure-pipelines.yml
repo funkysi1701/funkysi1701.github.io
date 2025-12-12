@@ -35,7 +35,7 @@ steps:
   displayName: "npm build"
   inputs:
     script: |
-      cd themes\hugo-theme-bootstrap
+      cd themes/hugo-theme-bootstrap
       npm run build
 - task: CmdLine@2
   displayName: "Build and Login to ECR"
