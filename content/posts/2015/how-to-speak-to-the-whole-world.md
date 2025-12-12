@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-11"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/10/world.png?w=648&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/10/world.png?w=648&ssl=1']
+cover = "/images/2015/10/world.png"
+images = ['/images/2015/10/world.png']
 tags = ["Global", "Blogging", "World"]
 category="tech"
 keywords = ["", ""]
@@ -24,7 +24,7 @@ aliases = [
     "/2015/11/05/how-to-speak-to-the-whole-world"
 ]
 +++
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/10/world.png?w=648&ssl=1)
+![](/images/2015/10/world.png)
 
 Having a website is an easy way to reach people across the globe. This website has reached people in almost every continent.
 

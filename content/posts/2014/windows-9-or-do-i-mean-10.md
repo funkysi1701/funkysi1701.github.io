@@ -5,8 +5,8 @@ year = "2014"
 month= "2014-10"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/10/windows_10_fullwidth.jpg?w=800&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/10/windows_10_fullwidth.jpg?w=800&ssl=1']
+cover = "/images/2014/10/windows_10_fullwidth.jpg"
+images = ['/images/2014/10/windows_10_fullwidth.jpg']
 tags = ["Windows", "Microsoft", "ITAdmin"]
 category="tech"
 keywords = ["", ""]
@@ -29,7 +29,7 @@ Like many systems administrators I watched as the news came out yesterday about 
 
 I was shocked when the name of the new operating system was revealed to be Windows 10. What really!? At first I though someone had tweeted a photoshopped image of the press conference, but no it was really going to be called Windows 10.
 
-![Windows 10](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/10/windows_10_fullwidth.jpg?w=800&ssl=1)
+![Windows 10](/images/2014/10/windows_10_fullwidth.jpg)
 
 Windows 10 is the next operating system to be released after windows 8, many had been calling it windows 9 or windows Threshold.
 

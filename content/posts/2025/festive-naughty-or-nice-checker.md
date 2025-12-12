@@ -1,6 +1,6 @@
 +++
 title = "Creating a Festive Naughty or Nice Checker Using Semantic Kernel and .NET"
-date = "2025-12-12T07:00:00Z"
+date = "2025-12-12T10:00:00Z"
 year = "2025"
 month = "2025-12"
 author = "funkysi1701"
