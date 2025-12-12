@@ -32,6 +32,12 @@ steps:
       export PATH=$HOME/.local/bin:$PATH
       aws --version
 - task: CmdLine@2
+  displayName: "npm build"
+  inputs:
+    script: |
+      cd themes\hugo-theme-bootstrap
+      npm run build
+- task: CmdLine@2
   displayName: "Build and Login to ECR"
   condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   env:
