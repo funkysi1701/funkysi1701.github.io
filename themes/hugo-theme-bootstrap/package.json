@@ -15,7 +15,7 @@
     "mermaid": "11.12.2",
     "mustache": "4.2.0",
     "popper.js": "1.16.1",
-    "viewerjs": "1.11.7",
+    "viewerjs": "1.10.2",
     "workbox-broadcast-update": "7.4.0",
     "workbox-cacheable-response": "7.4.0",
     "workbox-expiration": "7.4.0",
