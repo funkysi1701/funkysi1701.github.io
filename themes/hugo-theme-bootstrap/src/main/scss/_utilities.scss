@@ -1,4 +1,7 @@
-@import 'bootstrap/scss/utilities';
+// Custom utilities configuration
+// Note: Bootstrap's utilities are imported later in _bootstrap.scss
+// This file only defines custom utility classes
+$utilities: () !default;
 $utilities: map-merge(
   $utilities,
   (
