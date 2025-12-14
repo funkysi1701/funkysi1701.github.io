@@ -29,7 +29,6 @@ enableRobotsTXT = true
   avatar = "/images/1922276.jpg"
 
 [params.social]
-  email = "funkysi1701@gmail.com"
   facebook = "funkysi1701"
   twitter = "funkysi1701"
   mastodon = "@funkysi1701"
