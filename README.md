@@ -20,7 +20,7 @@ hugo server -D
 Or use Docker:
 
 ```sh
-docker run --rm -it -v .:/src -p 1313:1313 floryn90/hugo:0.133.1 server -D --disableFastRender
+docker run --rm -it -v .:/src -p 1313:1313 floryn90/hugo:0.134.3 server -D --disableFastRender
 ```
 
 ## 🧪 Testing
