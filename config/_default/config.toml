@@ -26,7 +26,7 @@ enableRobotsTXT = true
   about = "/about"
   bio = "I am Simon Foster (aka funkysi1701) a developer sharing 18+ years of experience in .NET, Azure, and DevOps. I write about cloud architecture, CI/CD pipelines, and building scalable applications."
   email = "funkysi1701@gmail.com"
-  avatar = "images/profile.jpg"
+  avatar = "/images/1922276.jpg"
 
 [params.social]
   facebook = "funkysi1701"
