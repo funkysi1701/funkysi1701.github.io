@@ -2,13 +2,6 @@
 <meta name="keywords" content="{{ if .IsPage }}{{ delimit .Keywords ", " }}{{ else }}{{ $.Site.Params.keywords }}{{ end }}" />
 <meta name="description" content="{{ if .IsPage }}{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}{{ else }}{{ .Title }} - {{ $.Site.Params.description }}{{ end }}" />
 <meta name="fediverse:creator" content="@funkysi1701@hachyderm.io">
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "9r9e7v1myf");
-</script>
 {{- template "_internal/schema.html" . -}}
 {{ template "_internal/opengraph.html" . }}
 {{- template "_internal/twitter_cards.html" . -}}
