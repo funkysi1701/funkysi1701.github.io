@@ -21,6 +21,6 @@
 <div class="profile-contact"><i class="fas fa-fw fa-question-circle"></i><a href="{{ .Permalink }}">{{ .Title }}</a></div>
 {{- end -}}
 {{- end -}}
-{{- with .Site.Params.social -}}
+{{- with .Site.Params.author -}}
 {{- partial "helpers/social-links" (dict "links" . "size" "fa-2x" "OutputFormats" $page.OutputFormats) -}}
 {{- end -}}
