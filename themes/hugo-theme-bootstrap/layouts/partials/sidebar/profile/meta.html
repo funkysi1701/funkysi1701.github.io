@@ -20,7 +20,7 @@
 {{- with $page.GetPage "contact" -}}
 <div class="profile-contact"><i class="fas fa-fw fa-question-circle"></i><a href="{{ .Permalink }}">{{ .Title }}</a></div>
 {{- end -}}
-{{- with .social -}}
-{{- partial "helpers/social-links" (dict "links" . "size" "fa-2x" "OutputFormats" $page.OutputFormats) -}}
 {{- end -}}
+{{- with .Site.Params.social -}}
+{{- partial "helpers/social-links" (dict "links" . "size" "fa-2x" "OutputFormats" $page.OutputFormats) -}}
 {{- end -}}
