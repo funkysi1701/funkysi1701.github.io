@@ -3,7 +3,7 @@ const glob = require('glob-all');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { PurgeCSSPlugin } = require('purgecss-webpack-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 const PATHS = {
   assets: path.join(__dirname, 'assets'),
   layouts: path.join(__dirname, 'layouts'),
@@ -102,7 +102,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name]/index.css'
     }),
-    new PurgeCSSPlugin({
+    new PurgecssPlugin({
       paths: glob.sync([`${PATHS.layouts}/**/*`, `${PATHS.src}/main/js/*`, `${PATHS.src}/search/js/*`],  { nodir: true }),
       only: ['main']
     }),
