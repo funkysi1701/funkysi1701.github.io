@@ -23,7 +23,7 @@ jobs:
             -v ${{ github.workspace }}:/src \
             -w /src \
             floryn90/hugo:0.152.2-ext-alpine \
-            hugo --minify --environment production --noBuildLock
+            --minify --environment production --noBuildLock
       
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
