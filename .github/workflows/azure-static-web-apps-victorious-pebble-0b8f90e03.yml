@@ -18,9 +18,12 @@ jobs:
           submodules: true
       
       - name: Build Hugo Site
-        uses: docker://floryn90/hugo:0.152.2-ext-alpine
-        with:
-          args: --minify --environment production --noBuildLock
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/src \
+            -w /src \
+            floryn90/hugo:0.152.2-ext-alpine \
+            hugo --minify --environment production --noBuildLock
       
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
