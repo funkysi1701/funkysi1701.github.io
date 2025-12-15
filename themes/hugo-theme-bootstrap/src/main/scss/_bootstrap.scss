@@ -1,7 +1,6 @@
 // Configuration
 @import 'bootstrap/scss/functions';
 @import 'bootstrap/scss/variables';
-@import 'bootstrap/scss/maps';
 @import 'bootstrap/scss/mixins';
 @import 'mixins';
 @import 'utilities';
@@ -34,6 +33,7 @@ $theme-colors: (
     "danger":     $danger,
 );
 @import 'bootstrap/scss/alert';
+$theme-colors: ();
 // @import 'bootstrap/scss/progress';
 // @import 'bootstrap/scss/list-group';
 // @import 'bootstrap/scss/close';

@@ -1,3 +1,71 @@
 <div class="row table-responsive mb-3">
-  {{- template "_internal/pagination.html" . -}}
+  {{- $pag := $.Paginator -}}
+  {{- if gt $pag.TotalPages 1 -}}
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      {{- with $pag.First -}}
+        {{- if ne $pag.PageNumber .PageNumber -}}
+        <li class="page-item">
+          <a class="page-link" href="{{ .URL }}" aria-label="First">
+            <span aria-hidden="true">&laquo;&laquo;</span>
+          </a>
+        </li>
+        {{- end -}}
+      {{- end -}}
+      
+      {{- with $pag.Prev -}}
+        <li class="page-item">
+          <a class="page-link" href="{{ .URL }}" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+      {{- end -}}
+      
+      {{- $ellipsisStart := false -}}
+      {{- $ellipsisEnd := false -}}
+      {{- range $pag.Pagers -}}
+        {{- $showPage := false -}}
+        {{- if or (eq .PageNumber 1) (eq .PageNumber $pag.TotalPages) -}}
+          {{- $showPage = true -}}
+        {{- else if and (ge .PageNumber (sub $pag.PageNumber 2)) (le .PageNumber (add $pag.PageNumber 2)) -}}
+          {{- $showPage = true -}}
+        {{- end -}}
+        
+        {{- if $showPage -}}
+          {{- if and (gt .PageNumber 2) (not $ellipsisStart) (lt .PageNumber (sub $pag.PageNumber 2)) -}}
+            <li class="page-item disabled"><span class="page-link">…</span></li>
+            {{- $ellipsisStart = true -}}
+          {{- end -}}
+          
+          <li class="page-item {{ if eq . $pag }}active{{ end }}">
+            <a class="page-link" href="{{ .URL }}">{{ .PageNumber }}</a>
+          </li>
+          
+          {{- if and (lt .PageNumber (sub $pag.TotalPages 1)) (not $ellipsisEnd) (gt .PageNumber (add $pag.PageNumber 2)) -}}
+            <li class="page-item disabled"><span class="page-link">…</span></li>
+            {{- $ellipsisEnd = true -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      
+      {{- with $pag.Next -}}
+        <li class="page-item">
+          <a class="page-link" href="{{ .URL }}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      {{- end -}}
+      
+      {{- with $pag.Last -}}
+        {{- if ne $pag.PageNumber .PageNumber -}}
+        <li class="page-item">
+          <a class="page-link" href="{{ .URL }}" aria-label="Last">
+            <span aria-hidden="true">&raquo;&raquo;</span>
+          </a>
+        </li>
+        {{- end -}}
+      {{- end -}}
+    </ul>
+  </nav>
+  {{- end -}}
 </div>

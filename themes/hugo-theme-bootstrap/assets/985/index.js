@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkhugo_theme_bootstrap=self.webpackChunkhugo_theme_bootstrap||[]).push([[985],{6366:(e,t,h)=>{h.d(t,{createArchitectureServices:()=>r.S});var r=h(8980);h(7425)}}]);
