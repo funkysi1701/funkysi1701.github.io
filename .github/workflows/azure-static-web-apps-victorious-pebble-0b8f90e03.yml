@@ -22,6 +22,7 @@ jobs:
           docker run --rm \
             -v ${{ github.workspace }}:/src \
             -w /src \
+            -u $(id -u):$(id -g) \
             floryn90/hugo:0.152.2-ext-alpine \
             --minify --environment production --noBuildLock
       
@@ -34,10 +35,10 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/" # App source code path
+          app_location: "public" # Pre-built app content directory
           api_location: "" # Api source code path - optional
-          output_location: "public" # Built app content directory - optional
-          skip_app_build: true # Skip the Oryx build since we built with Hugo already
+          output_location: "" # No build needed, files are already built
+          skip_app_build: true # Skip Oryx build since Hugo already built the site
           ###### End of Repository/Build Configurations ######
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
