@@ -16,7 +16,13 @@ jobs:
         with:
           ref: main
           submodules: true
-      - name: Build And Deploy
+      
+      - name: Build Hugo Site
+        uses: docker://floryn90/hugo:0.152.2-ext-alpine
+        with:
+          args: --minify --environment production
+      
+      - name: Deploy to Azure Static Web Apps
         id: builddeploy
         uses: Azure/static-web-apps-deploy@1a947af9992250f3bc2e68ad0754c0b0c11566c9 # v1
         with:
@@ -28,9 +34,8 @@ jobs:
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
           output_location: "public" # Built app content directory - optional
+          skip_app_build: true # Skip the Oryx build since we built with Hugo already
           ###### End of Repository/Build Configurations ######
-        env:
-          HUGO_VERSION: 0.152.2
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
