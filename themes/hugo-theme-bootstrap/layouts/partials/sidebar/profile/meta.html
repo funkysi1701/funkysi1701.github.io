@@ -1,4 +1,5 @@
-{{- with .Site.Author -}}
+{{- $page := . -}}
+{{- with .Site.Params.author -}}
 <div class="profile-name">{{ .name }}</div>
 {{- with .bio -}}
 <div class="profile-bio">{{ . }}</div>
@@ -12,14 +13,14 @@
 {{- if .about -}}
 <div class="profile-about"><i class="fas fa-fw fa-user"></i><a target="_blank" rel="noopener noreferrer" href="{{ .about }}">{{ i18n "about_me" }}</a></div>
 {{- else -}}
-{{- with $.GetPage "about" -}}
+{{- with $page.GetPage "about" -}}
 <div class="profile-about"><i class="fas fa-fw fa-user"></i><a href="{{ .Permalink }}">{{ .Title }}</a></div>
 {{- end -}}
 {{- end -}}
-{{- with $.GetPage "contact" -}}
+{{- with $page.GetPage "contact" -}}
 <div class="profile-contact"><i class="fas fa-fw fa-question-circle"></i><a href="{{ .Permalink }}">{{ .Title }}</a></div>
 {{- end -}}
-{{- with .social -}}
-{{- partial "helpers/social-links" (dict "links" . "size" "fa-2x" "OutputFormats" $.OutputFormats) -}}
 {{- end -}}
+{{- with .Site.Params.author -}}
+{{- partial "helpers/social-links" (dict "links" . "size" "fa-2x" "OutputFormats" $page.OutputFormats) -}}
 {{- end -}}

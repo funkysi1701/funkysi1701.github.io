@@ -8,6 +8,7 @@
         {{ with .Lastmod }}
           <lastmod>{{ .Format "2006-01-02T15:04:05-07:00" }}</lastmod>
         {{ end }}
+        <priority>{{ if .IsHome }}1.0{{ else if .IsPage }}0.8{{ else }}0.5{{ end }}</priority>
       </url>
     {{ end }}
   {{ end }}
