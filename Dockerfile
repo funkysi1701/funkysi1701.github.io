@@ -16,4 +16,4 @@ ENV HUGO_ENVIRONMENT="production"
 
 # Build and serve the site at container startup
 ENTRYPOINT []
-CMD hugo server --minify --environment "$HUGO_ENVIRONMENT" --buildFuture --baseURL "$HUGO_BASEURL" --bind 0.0.0.0 --port 443
+CMD hugo server --minify --environment "$HUGO_ENVIRONMENT" --buildFuture --noBuildLock --baseURL "$HUGO_BASEURL" --bind 0.0.0.0 --port 443
