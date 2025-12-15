@@ -20,6 +20,22 @@ enableRobotsTXT = true
   logo = false
   comment = true
 
+[params.author]
+  name = "Simon Foster"
+  location = "North England"
+  about = "/about"
+  bio = "I am Simon Foster (aka funkysi1701) a developer sharing 18+ years of experience in .NET, Azure, and DevOps. I write about cloud architecture, CI/CD pipelines, and building scalable applications."
+  email = "funkysi1701@gmail.com"
+  avatar = "/images/1922276.jpg"
+
+[params.social]
+  facebook = "funkysi1701"
+  twitter = "funkysi1701"
+  mastodon = "@funkysi1701"
+  github = "funkysi1701"
+  linkedin = "in/funkysi1701/"
+  bluesky = "funkysi1701.com"
+
 [params.giscus]
   repo = "funkysi1701/Blog-Comments"
   repoId = "R_kgDOQJKGlA"
