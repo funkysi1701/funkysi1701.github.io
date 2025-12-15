@@ -1,5 +1,5 @@
 baseURL = 'https://blog-dev.funkysi1701.com/'
-title = "Development Version (0.138.0) of Funky Si's Blog"
+title = "Development Version (0.139.4) of Funky Si's Blog"
 
 [params]
   cdnImagePrefix = ""
