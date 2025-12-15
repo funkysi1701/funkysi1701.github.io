@@ -20,7 +20,7 @@ jobs:
       - name: Build Hugo Site
         uses: docker://floryn90/hugo:0.152.2-ext-alpine
         with:
-          args: --minify --environment production
+          args: --minify --environment production --noBuildLock
       
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
