@@ -22,6 +22,7 @@ jobs:
           docker run --rm \
             -v ${{ github.workspace }}:/src \
             -w /src \
+            -u $(id -u):$(id -g) \
             floryn90/hugo:0.152.2-ext-alpine \
             --minify --environment production --noBuildLock
       
