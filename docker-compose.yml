@@ -1,6 +1,6 @@
 services:
   blog:
-    image: floryn90/hugo:0.138.0
+    image: floryn90/hugo:0.152.2
     ports:
       - "1313:1313" # Map container port 1313 to host port 1313
     command: "server -D -p 1313 --bind 0.0.0.0 --disableFastRender --buildFuture --noBuildLock" 
