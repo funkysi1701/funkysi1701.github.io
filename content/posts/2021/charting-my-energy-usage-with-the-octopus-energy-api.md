@@ -5,8 +5,8 @@ year = "2021"
 month= "2021-03"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/63ep8hp6ipyn2l4emiop.png"
-images = ['https://dev-to-uploads.s3.amazonaws.com/uploads/articles/63ep8hp6ipyn2l4emiop.png']
+cover = "/images/dev-to/63ep8hp6ipyn2l4emiop.png"
+images = ['/images/dev-to/63ep8hp6ipyn2l4emiop.png']
 tags = ["API", "OctopusEnergy"]
 category="tech"
 keywords = ["", ""]
@@ -27,7 +27,7 @@ aliases = [
 ]
 +++
 
-![image](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/63ep8hp6ipyn2l4emiop.png)
+![image](/images/dev-to/63ep8hp6ipyn2l4emiop.png)
  
 Back when I was a kid, I used to record our weekly gas and electricity meter readings in a little notebook. We then typed these reading into a spreadsheet (this was in the pre-Excel days), which allowed plotting as a line graph.
 
@@ -59,6 +59,6 @@ I am still testing this out but so far, I have three charts for gas (and the sam
 For the day and 2 weeks charts, I plot a comparison line of the previous period so you can easily compare the current and previous usage. From my limited testing I have already discovered my usage is very similar day to day. 
 
 Another point of interest is that gas consumption is in m^3 and electricity is in kW/h.
-![image](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r5d35ceh0q5zgc15vos8.png)
+![image](/images/dev-to/r5d35ceh0q5zgc15vos8.png)
 
 If you are interested in trying the Octopus Energy API, here is a referral [link](https://share.octopus.energy/amber-eel-810).
