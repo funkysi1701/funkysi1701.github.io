@@ -6,8 +6,8 @@ month= "2018-03"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = "https://lh3.googleusercontent.com/qZTLiWRfQwS7pT6gExLMTvU1pl8NtTU-kbeoSzD68p1D-EPY3Pg7cz2AN66QJpTTp1c=h900-rw"
-images = ['https://lh3.googleusercontent.com/qZTLiWRfQwS7pT6gExLMTvU1pl8NtTU-kbeoSzD68p1D-EPY3Pg7cz2AN66QJpTTp1c=h900-rw']
+cover = "/images/google/pwned-pass-icon.png"
+images = ['/images/google/pwned-pass-icon.png']
 tags = ["Android", "PwnedPass", "App"]
 category="tech"
 keywords = ["", ""]
@@ -26,7 +26,7 @@ aliases = [
 ]
 +++
 
-![Pwned Pass](https://lh3.googleusercontent.com/qZTLiWRfQwS7pT6gExLMTvU1pl8NtTU-kbeoSzD68p1D-EPY3Pg7cz2AN66QJpTTp1c=h900-rw)A new version of Pwned Pass is available from [Google Play](https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords).
+![Pwned Pass](/images/google/pwned-pass-icon.png)A new version of Pwned Pass is available from [Google Play](https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords).
 
 A couple of weeks ago [Troy Hunt](https://www.troyhunt.com/ive-just-launched-pwned-passwords-version-2/) released V2 of Pwned Pass onto his [haveibeenpwned](https://haveibeenpwned.com/) website. There are now over half a billion passwords that have appeared in data breaches for you to search.
 

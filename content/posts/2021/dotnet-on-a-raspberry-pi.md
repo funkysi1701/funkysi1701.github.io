@@ -5,8 +5,8 @@ year = "2021"
 month= "2021-05"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e21z7vbamy6w6akhhiwd.jpg"
-images = ['https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e21z7vbamy6w6akhhiwd.jpg']
+cover = "/images/dev-to/e21z7vbamy6w6akhhiwd.jpg"
+images = ['/images/dev-to/e21z7vbamy6w6akhhiwd.jpg']
 tags = ["Raspberry Pi", "DotNet"]
 category="tech"
 keywords = ["", ""]
@@ -30,7 +30,7 @@ I have had a Raspberry Pi for a few years and recently I connected it up again, 
 
 To start off you can view photos from the camera with the raspistill command. With a bit of clever scripting and the crontab I got the Pi taking pictures every 60 seconds. Even managed to take a nice picture of a robin.
 
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e21z7vbamy6w6akhhiwd.jpg)
+![Alt Text](/images/dev-to/e21z7vbamy6w6akhhiwd.jpg)
 
 However scripting isn't really programming, and I would like to write a bit more code. Dotnet can run everywhere these days and it made sense to see if it would run on a Raspberry Pi.
 
