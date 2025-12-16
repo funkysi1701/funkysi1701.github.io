@@ -5,8 +5,8 @@ year = "2021"
 month= "2021-05"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eytphopn3inx2x77m9n5.png"
-images = ['https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eytphopn3inx2x77m9n5.png']
+cover = "/images/dev-to/eytphopn3inx2x77m9n5.png"
+images = ['/images/dev-to/eytphopn3inx2x77m9n5.png']
 tags = ["Azure", "Certification"]
 category="tech"
 keywords = ["", ""]
@@ -27,7 +27,7 @@ aliases = [
 +++
 
 So today I sat the Azure Fundamentals Certification Exam and passed!
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eytphopn3inx2x77m9n5.png)
+![Alt Text](/images/dev-to/eytphopn3inx2x77m9n5.png)
 
 Really pleased with myself at achieving this. It was one of my goals for 2021 so I can tick that off.
 
