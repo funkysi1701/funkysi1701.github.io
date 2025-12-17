@@ -5,12 +5,13 @@ enableRobotsTXT = true
 
 [Menus]
   main = [
-      {Name = "About", URL = "/about/"},
-      {Name = "Tools & Resources", URL = "/tools-and-resources/"},
-      {Name = "Events", URL = "/posts/events/"},
-      {Name = "Contact", URL = "/contact/"},
-      {Name = "Search", URL = "/search/"},
-      {Name = "Newsletter", URL = "/newsletter/"},
+      {Name = "About", URL = "/about/", Weight = 1},
+      {Name = "Projects", URL = "/projects/", Weight = 2},
+      {Name = "Tools & Resources", URL = "/tools-and-resources/", Weight = 3},
+      {Name = "Newsletter", URL = "/newsletter/", Weight = 4},
+      {Name = "Contact", URL = "/contact/", Weight = 5},
+      {Name = "Events", URL = "/posts/events/", Weight = 6},
+      {Name = "Search", URL = "/search/", Weight = 7},
   ]
 
 [params]
