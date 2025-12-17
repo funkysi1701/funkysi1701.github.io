@@ -1,5 +1,5 @@
 +++
-title = "Start Here - Best Posts"
+title = "Start Here"
 date = "2025-12-16T12:00:00Z"
 year = "2025"
 month = "2025-12"
