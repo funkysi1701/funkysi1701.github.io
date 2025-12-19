@@ -1,6 +1,7 @@
 # Use Hugo to build the site at runtime, allowing BASEURL to be set via environment variable
 
-FROM floryn90/hugo:0.152.2
+ARG HUGO_VERSION=0.152.2
+FROM floryn90/hugo:${HUGO_VERSION}
 
 WORKDIR /site
 
