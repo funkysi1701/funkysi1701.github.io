@@ -17,10 +17,10 @@ Run locally with Hugo:
 hugo server -D
 ```
 
-Or use Docker:
+Or use Docker (where {version} is the version number from Dockerfile or docker-compose.yml files):
 
 ```sh
-docker run --rm -it -v .:/src -p 1313:1313 floryn90/hugo:0.152.2 server -D --disableFastRender --environment development
+docker run --rm -it -v .:/src -p 1313:1313 floryn90/hugo:{version} server -D --disableFastRender --environment development
 ```
 
 ## 🧪 Testing
