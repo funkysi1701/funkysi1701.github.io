@@ -90,4 +90,4 @@ If you enjoyed this character ranking, check out these other Star Trek articles:
 - [Happy 50th Star Trek](/posts/2016/09/08/happy-50th-star-trek) - Celebrating Star Trek's anniversary
 - [TrekRanks #174](/posts/2024/trekranks) - My appearance on the TrekRanks podcast
 
-**Want more Trek content?** Browse all my [Star Trek articles](/categories/trek)
+**Want more Trek content?** Browse all my [Star Trek articles](/tags/trek)
