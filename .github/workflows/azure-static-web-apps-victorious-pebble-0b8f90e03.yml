@@ -19,13 +19,17 @@ jobs:
           ref: main
           submodules: true
       
+      - name: Load Hugo Version
+        run: |
+          echo "HUGO_VERSION=$(grep HUGO_VERSION .env | cut -d '=' -f2)" >> $GITHUB_ENV
+
       - name: Build Hugo Site
         run: |
           docker run --rm \
             -v ${{ github.workspace }}:/src \
             -w /src \
             -u $(id -u):$(id -g) \
-            floryn90/hugo:0.152.2-ext-alpine \
+            floryn90/hugo:${HUGO_VERSION}-ext-alpine \
             --minify --environment production --noBuildLock
       
       - name: Deploy to Azure Static Web Apps
