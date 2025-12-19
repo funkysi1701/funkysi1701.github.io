@@ -7,10 +7,10 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/2015/02/Spock_2293.jpg"
 images = ['/images/2015/02/Spock_2293.jpg']
-tags = ["StarTrek"]
+tags = ["StarTrek", "TNG", "DS9", "Voyager", "TOS", "Enterprise", "Spock", "Picard", "Data", "Kirk", "Rankings", "SciFi", "Television"]
 category="trek"
-keywords = ["", ""]
-description =  "Top 25 Star Trek Characters"
+keywords = ["Star Trek characters ranked", "best Star Trek characters of all time", "greatest Star Trek characters", "top Star Trek character list", "Spock vs Kirk", "Picard Data Worf", "Star Trek TNG characters", "Star Trek DS9 best characters", "Star Trek Voyager Seven of Nine", "most iconic Star Trek characters", "Star Trek character rankings", "favorite Star Trek characters", "Star Trek all series characters", "Garak Dukat Sisko"]
+description = "Ranking the 25 greatest Star Trek characters from all series including Spock, Data, Picard, Kirk, Sisko, Worf, and more iconic characters from TNG, DS9, Voyager and TOS."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -29,7 +29,7 @@ I have just listened to a [podcast](http://www.trekmate.org.uk/ten-forward-episo
 
 ![](/images/2015/02/Spock_2293.jpg)
 
-2) **Data**. My second number one star trek character, well OK, second star trek character is Data. His weekly exploration of what it meant to be human is star trek’s best exploration of the human condition. There are so many moments which make me like Data but I think when I builds his daughter, Lal is possibly my favourite.
+2) **Data**. My second number one star trek character, well OK, second star trek character is Data. His weekly exploration of what it meant to be human is star trek's best exploration of the human condition. There are so many moments which make me like Data but I think when he builds his daughter, Lal is possibly my favourite.
 
 3) **Picard**. The Captain of the Enterprise. You want to know about leadership or diplomacy you watch Captain Picard in action. If only more of our world leaders could be like Captain Picard we would have all our Earthly problems sorted by tea-time.
 
@@ -37,7 +37,7 @@ I have just listened to a [podcast](http://www.trekmate.org.uk/ten-forward-episo
 
 5) **Worf**. Our favourite Klingon. The most honourable man on this list and could handle himself in a battle. Also popular with the ladies if Troi and Dax have anything to say about it.
 
-6) **Sisko**. Our third captain, but Sisko had much more on his plate than the others. He had a Son to bring up, he lost his wife, he was in the middle of the biggest war the Federation has ever seen (at least on screen anyway), he became a religous icon and later a God.
+6) **Sisko**. Our third captain, but Sisko had much more on his plate than the others. He had a Son to bring up, he lost his wife, he was in the middle of the biggest war the Federation has ever seen (at least on screen anyway), he became a religious icon and later a God.
 
 7) **7 of 9**. The sexy borg from Voyager what’s not to like? Also brought some much needed conflict to the Voyager crew.
 
@@ -55,9 +55,9 @@ I have just listened to a [podcast](http://www.trekmate.org.uk/ten-forward-episo
 
 14) **Damar**. Started life as Dukat’s lieutenant and rose in rank to leader of his people, before switching sides to lead a rebellion.
 
-15) **Scotty**. You cannae change the laws of Physics. An engineer that weekly performed miracles, more often because or large repair estimates.
+15) **Scotty**. You cannae change the laws of Physics. An engineer that weekly performed miracles, more often because of large repair estimates.
 
-16) **Barclay**. The only Starfleet office that was unsure of himself and couldn’t talk to people (Oh a bit like me then)
+16) **Barclay**. The only Starfleet officer that was unsure of himself and couldn't talk to people (Oh a bit like me then)
 
 17) **Riker** The Captain Kirk of Picard’s crew, could inspire his crew and was popular with the ladies, but looks better with a beard.
 
@@ -69,10 +69,24 @@ I have just listened to a [podcast](http://www.trekmate.org.uk/ten-forward-episo
 
 21) **Martok** Klingon with one eye that welcomed Worf into his house after his second dis-commendation.
 
-22) **Zefram Cochrane** Without this guy there would be no Star Trek. Invented the warp drive and enjoying to drink.
+22) **Zefram Cochrane** Without this guy there would be no Star Trek. Invented the warp drive and enjoyed drinking.
 
 23) **Uhura** Just a communications officer, but in reality was so much more. One of the first black women on television and inspired a generation to better themselves, was the other half of the first inter-racial kiss
 
 24) **Mirror Universe Hoshi**. Our universe Hoshi Sato was timid and scared of warp drive, the mirror universe version ended up empress of an entire Empire.
 
-25) **Kai Winn** Power currupts and Absolute power corrupts absolutely and Kai Winn is a prime example of this, so blinded by power she couldn’t hear what her precious Gods were telling her and ended up sleeping with he arch enemy.
+25) **Kai Winn** Power corrupts and Absolute power corrupts absolutely and Kai Winn is a prime example of this, so blinded by power she couldn't hear what her precious Gods were telling her and ended up sleeping with her arch enemy.
+
+---
+
+## More Star Trek Content
+
+If you enjoyed this character ranking, check out these other Star Trek articles:
+
+- [Top 50 Star Trek Episodes](/posts/2016/01/07/top-50-star-trek-episodes) - My ranking of the greatest episodes across all series
+- [A Comparison of All Good Things and Star Trek Picard](/posts/2021/12/15/a-comparison-of-all-good-things-and-star-trek-picard) - Examining how Picard's future was predicted
+- [Star Trek Episode Review: The Best of Both Worlds](/posts/2016/02/18/star-trek-episode-review-the-best-of-both-worlds) - A deep dive into the iconic Borg episode featuring Picard
+- [Picard Season 3](/posts/2023/picard-season-three) - My thoughts on the final season of Star Trek Picard
+- [TrekRanks #174](/posts/2024/trekranks) - My appearance on the TrekRanks podcast
+
+**Want more Trek content?** Browse all my [Star Trek articles](/tags/trek)
