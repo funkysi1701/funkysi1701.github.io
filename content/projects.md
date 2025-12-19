@@ -1,0 +1,61 @@
++++
+title = "Projects"
+author = "funkysi1701"
+authorTwitter = "funkysi1701"
+cover = ""
+keywords = ["projects", "portfolio", "open source", "apps"]
+description = "A collection of my open source projects, applications, and contributions to the developer community."
+showFullContent = false
+copyright = false
+readingTime = true
+comment = false
+aliases = [
+    "/projects"
+]
++++
+
+## 🚀 My Projects
+
+Here are some of the projects I've built and maintain:
+
+### Blog Platform
+
+This blog you're reading! Built with Hugo and deployed to Azure Static Web Apps.
+
+- **Tech Stack**: Hugo, GitHub Actions, Azure Static Web Apps
+- **Features**:
+  - Automated deployments via CI/CD
+  - Custom theme customization
+  - RSS feeds and JSON search index
+  - Giscus comment integration
+- **Links**: [GitHub Repository](https://github.com/funkysi1701/funkysi1701.github.io)
+
+---
+
+## 💡 Side Projects & Experiments
+
+I'm constantly experimenting with new technologies. Recent areas of exploration:
+
+- **.NET Aspire** - Cloud-native application development
+- **Kubernetes** - Container orchestration
+- **Elasticsearch** - Search and analytics
+- **Azure Functions** - Serverless computing
+- **DevOps Automation** - CI/CD pipelines and infrastructure as code
+
+---
+
+## 🤝 Collaborate With Me
+
+Interested in collaborating on a project? Have an idea you'd like to discuss? 
+
+- [Contact Me](/contact/) - Get in touch
+- [GitHub](https://github.com/funkysi1701) - Check out my code
+- [LinkedIn](https://linkedin.com/in/funkysi1701) - Connect professionally
+
+---
+
+## 📚 More Resources
+
+- [Tools & Resources](/tools-and-resources/) - My recommended development tools
+- [About Me](/about/) - Learn more about my experience
+- [Blog Posts](/posts/) - Read my technical articles
