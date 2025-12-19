@@ -87,7 +87,6 @@ If you enjoyed this character ranking, check out these other Star Trek articles:
 - [A Comparison of All Good Things and Star Trek Picard](/posts/2021/12/15/a-comparison-of-all-good-things-and-star-trek-picard) - Examining how Picard's future was predicted
 - [Star Trek Episode Review: The Best of Both Worlds](/posts/2016/02/18/star-trek-episode-review-the-best-of-both-worlds) - A deep dive into the iconic Borg episode featuring Picard
 - [Picard Season 3](/posts/2023/picard-season-three) - My thoughts on the final season of Star Trek Picard
-- [Happy 50th Star Trek](/posts/2016/09/08/happy-50th-star-trek) - Celebrating Star Trek's anniversary
 - [TrekRanks #174](/posts/2024/trekranks) - My appearance on the TrekRanks podcast
 
 **Want more Trek content?** Browse all my [Star Trek articles](/tags/trek)
