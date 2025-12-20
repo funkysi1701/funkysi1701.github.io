@@ -1,5 +1,5 @@
 +++
-title = "Back to Blogging"
+title = "Returning to Blogging: Why I’m Writing Again as a Developer"
 date = "2020-09-25T20:00:45Z"
 year = "2020"
 month= "2020-09"

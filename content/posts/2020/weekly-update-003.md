@@ -1,5 +1,5 @@
 +++
-title = "Weekly Update #003"
+title = "Developer Weekly Update #003: Progress, Challenges, and Insights"
 date = "2020-11-28T00:00:00Z"
 year = "2020"
 month= "2020-11"
