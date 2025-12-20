@@ -118,4 +118,12 @@ Now if I try http://localhost:3000/login I see the login page for the Grafana co
 
 I want to replace my local deployment of containers that is currently using a docker compose file with Kubernetes. I also want to learn more about [Helm charts](https://helm.sh/) as I believe these are an excellent way of packaging up changes to Kubernetes.
 
+
+## Related Posts
+
+- [Setting Up Grafana for Monitoring .NET Apps with Docker](/posts/2025/setting-up-grafana) — Monitoring, Docker, DevOps
+- [Integrating OpenTelemetry Logs with Grafana Using Loki and Alloy](/posts/2025/opentelemetry-logs) — Logging, Monitoring, DotNet
+- [Periodic Table of DevOps 2025](/posts/2025/periodic-table-devops-2025) — DevOps, tools, trends
+- [Simplifying Dependency Management with NuGet Central Package Management](/posts/2025/nuget-central-package-management) — NuGet, DevOps
+
 Have you tried running a pod in Kubernetes? What challenges did you face, and how did you overcome them? Share your thoughts in the comments below!

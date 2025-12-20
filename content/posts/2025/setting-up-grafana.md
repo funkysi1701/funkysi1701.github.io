@@ -117,4 +117,12 @@ If you are not using .NET Aspire, you can add app.MapPrometheusScrapingEndpoint(
 
 By following these steps, you can set up Grafana with Docker and Prometheus to monitor your .NET applications. This setup allows you to visualize metrics and create real-time dashboards, providing valuable insights into your application's performance. Happy monitoring!
 
+
+## Related Posts
+
+- [Integrating OpenTelemetry Logs with Grafana Using Loki and Alloy](/posts/2025/opentelemetry-logs) — Logging, Monitoring, DotNet
+- [Learning Kubernetes: A Beginner's Journey](/posts/2025/learning-kubernetes) — Kubernetes, Docker, DevOps
+- [Periodic Table of DevOps 2025](/posts/2025/periodic-table-devops-2025) — DevOps, tools, trends
+- [Simplifying Dependency Management with NuGet Central Package Management](/posts/2025/nuget-central-package-management) — NuGet, DevOps
+
 If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up to my [newsletter](http://eepurl.com/i7pQno). If you have any questions or comments, please feel free to reach out or leave a comment below.

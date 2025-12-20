@@ -76,4 +76,12 @@ If for any reason you want to disable Central Package Management, you can set th
 
 NuGet Central Package Management simplifies the process of managing package versions across multiple projects in a .NET solution. By defining package versions in a central file, you can ensure consistency, simplify updates, and reduce maintenance efforts. Give it a try in your next .NET project to experience the benefits firsthand.
 
+
+## Related Posts
+
+- [Periodic Table of DevOps 2025](/posts/2025/periodic-table-devops-2025) — DevOps, tools, trends
+- [Setting Up Grafana for Monitoring .NET Apps with Docker](/posts/2025/setting-up-grafana) — Monitoring, Docker, DevOps
+- [Integrating OpenTelemetry Logs with Grafana Using Loki and Alloy](/posts/2025/opentelemetry-logs) — Logging, Monitoring, DotNet
+- [Learning Kubernetes: A Beginner's Journey](/posts/2025/learning-kubernetes) — Kubernetes, Docker, DevOps
+
 For more information, visit the [official NuGet documentation](https://learn.microsoft.com/en-us/nuget/consume-packages/Central-Package-Management).

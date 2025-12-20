@@ -118,6 +118,13 @@ if (useOtlpExporter)
     .WithLogging(logging => logging.AddOtlpExporter(options =>
     {
         options.Endpoint = new Uri(builder.Configuration["GrafanaExporter"]);
+
+      ## Related Posts
+
+      - [Setting Up Grafana for Monitoring .NET Apps with Docker](/posts/2025/setting-up-grafana) — Monitoring, Docker, DevOps
+      - [Learning Kubernetes: A Beginner's Journey](/posts/2025/learning-kubernetes) — Kubernetes, Docker, DevOps
+      - [Periodic Table of DevOps 2025](/posts/2025/periodic-table-devops-2025) — DevOps, tools, trends
+      - [Simplifying Dependency Management with NuGet Central Package Management](/posts/2025/nuget-central-package-management) — NuGet, DevOps
     }))
     .WithMetrics(metrics => metrics.AddOtlpExporter(options =>
     {
