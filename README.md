@@ -5,6 +5,7 @@ This repository contains the source for [funkysi1701.com](https://www.funkysi170
 
 ## 🚀 Getting Started
 
+
 ### Prerequisites
 
 - [Hugo](https://gohugo.io/) must be installed.
@@ -17,10 +18,20 @@ Run locally with Hugo:
 hugo server -D
 ```
 
-Or use Docker:
+#### Docker/Compose Setup
+
+The Hugo version is set in the `.env` file as `HUGO_VERSION`. Update this file to change the version everywhere.
+
+To run with Docker Compose:
 
 ```sh
-docker run --rm -it -v .:/src -p 1313:1313 floryn90/hugo:0.152.2 server -D --disableFastRender
+docker-compose up
+```
+
+To run with Docker directly:
+
+```sh
+docker run --rm -it -v .:/src -p 1313:1313 floryn90/hugo:${HUGO_VERSION} server -D --disableFastRender --environment development
 ```
 
 ## 🧪 Testing

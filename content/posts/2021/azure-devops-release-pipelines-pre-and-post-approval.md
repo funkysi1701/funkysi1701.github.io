@@ -5,8 +5,8 @@ year = "2021"
 month= "2021-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://dev-to-uploads.s3.amazonaws.com/i/9k6vo6pfv434u7yq3mt4.png"
-images = ['https://dev-to-uploads.s3.amazonaws.com/i/9k6vo6pfv434u7yq3mt4.png']
+cover = "/images/dev-to/9k6vo6pfv434u7yq3mt4.png"
+images = ['/images/dev-to/9k6vo6pfv434u7yq3mt4.png']
 tags = ["AzureDevOps", "DevOps", "Azure"]
 category="tech"
 keywords = ["", ""]
@@ -32,7 +32,7 @@ There are two ways you can do approvals Pre and Post deployment. Lets look at bo
 
 ## Pre Deployment Approval
 
-![image](https://dev-to-uploads.s3.amazonaws.com/i/9k6vo6pfv434u7yq3mt4.png)
+![image](/images/dev-to/9k6vo6pfv434u7yq3mt4.png)
 
 Lets imagine you have a simple deployment pipeline that deploys to a test/development environment before deploying to a production environment. 
 
@@ -41,7 +41,7 @@ Pre Deployment Approval happens immediately before the release so in this exampl
 You will get a screen like the above, you can select what users need to approve it and how long approval waits before timing out, the default is 30 days, but I tend to use a shorter time out of 3 days.
 
 ## Post Deployment Approval
-![image](https://dev-to-uploads.s3.amazonaws.com/i/reiulrhinzqyyon6mrqi.png)
+![image](/images/dev-to/reiulrhinzqyyon6mrqi.png)
  
 Post Deployment Approval happens immediately after the release so in this example, click in the circle after the Test release step.
 
@@ -51,7 +51,7 @@ That is pretty much all there is to approvals so either option will prompt you t
 
 ## Deployment Hours
 To complicate matters I make use of the following setting to define deployment hours.
-![image](https://dev-to-uploads.s3.amazonaws.com/i/aku2z0dl3m3xkvfvh7wd.png)
+![image](/images/dev-to/aku2z0dl3m3xkvfvh7wd.png)
  
 This setting will start the Prod deployment at 3am Mon-Fri. 
 
@@ -61,13 +61,13 @@ If I configure Pre Deployment Approval, at 3am Mon-Fri a request for Approval is
 
 So it looks like Post Deployment Approval is more useful for my use case. However if you deny approval either in Pre or Post approval this will mark the deployment as failed and show Red in your list of deployments. 
 
-![image](https://dev-to-uploads.s3.amazonaws.com/i/vichyb1srgc1ln85hj0o.png)
+![image](/images/dev-to/vichyb1srgc1ln85hj0o.png)
 
 From a casual glance it looks like the deployment to Test is failing, it isn't I am just opting to not continue my deployment to production.
 
 ## My Pipeline
 
-![image](https://dev-to-uploads.s3.amazonaws.com/i/9kprp90t59owfmsmqkcp.png)
+![image](/images/dev-to/9kprp90t59owfmsmqkcp.png)
 
 This is how I have my pipeline setup. Deployment happens on Test and doesn't have a post approval step. 
 

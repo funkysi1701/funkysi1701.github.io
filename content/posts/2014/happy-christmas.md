@@ -1,5 +1,5 @@
 +++
-title = "Happy Christmas"
+title = "A Merry Christmas with a SQL Twist: Festive Coding Fun"
 date = "2014-12-24T20:00:45Z"
 year = "2014"
 month= "2014-12"
