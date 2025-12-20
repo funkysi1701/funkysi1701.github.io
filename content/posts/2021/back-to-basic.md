@@ -1,5 +1,5 @@
 +++
-title = "Back to BASIC"
+title = "Rediscovering BASIC: Programming Nostalgia and Lessons Learned"
 date = "2021-12-28T20:00:45Z"
 year = "2021"
 month= "2021-12"
