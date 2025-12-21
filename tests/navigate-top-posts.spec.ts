@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('navigate to www.funkysi1701.com, click top 5 blog posts, check console for errors', async ({ page }) => {
+test('navigate to www.funkysi1701.com, click top blog posts, check console for errors', async ({ page }) => {
   // Collect console errors
   const errors: string[] = [];
   page.on('console', msg => {
@@ -13,7 +13,7 @@ test('navigate to www.funkysi1701.com, click top 5 blog posts, check console for
   await page.goto('https://www.funkysi1701.com');
   await expect(page).toHaveTitle(/Funky Si's Blog/);
 
-  // Step 2: Use explicit URLs for the top 100 blog posts based on MCP output
+  // Step 2: Use explicit URLs for the top blog posts based on MCP output
   const blogPostUrls = [
     'https://www.funkysi1701.com/posts/2025/kubernetes-and-letsencrypt/',
     'https://www.funkysi1701.com/posts/2025/stepping-outside-your-comfort-zone/',
