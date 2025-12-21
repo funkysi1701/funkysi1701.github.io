@@ -42,7 +42,7 @@ class CodeBlock {
     if (lang) {
       const element = document.createElement('div');
       element.className = 'lang';
-      element.innerHTML = lang;
+      element.textContent = lang;
       this.wrapper.appendChild(element);
     }
   }

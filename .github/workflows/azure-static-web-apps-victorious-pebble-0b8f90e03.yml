@@ -1,4 +1,6 @@
 name: Deploy to Production 
+permissions:
+  contents: write
 
 on:
   workflow_dispatch:  
@@ -16,7 +18,21 @@ jobs:
         with:
           ref: main
           submodules: true
-      - name: Build And Deploy
+      
+      - name: Load Hugo Version
+        run: |
+          echo "HUGO_VERSION=$(grep HUGO_VERSION .env | cut -d '=' -f2)" >> $GITHUB_ENV
+
+      - name: Build Hugo Site
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/src \
+            -w /src \
+            -u $(id -u):$(id -g) \
+            floryn90/hugo:${HUGO_VERSION}-ext-alpine \
+            --minify --environment production --noBuildLock
+      
+      - name: Deploy to Azure Static Web Apps
         id: builddeploy
         uses: Azure/static-web-apps-deploy@1a947af9992250f3bc2e68ad0754c0b0c11566c9 # v1
         with:
@@ -25,12 +41,11 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/" # App source code path
+          app_location: "public" # Pre-built app content directory
           api_location: "" # Api source code path - optional
-          output_location: "public" # Built app content directory - optional
+          output_location: "" # No build needed, files are already built
+          skip_app_build: true # Skip Oryx build since Hugo already built the site
           ###### End of Repository/Build Configurations ######
-        env:
-          HUGO_VERSION: 0.152.2
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
