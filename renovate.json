@@ -24,5 +24,16 @@
   ],
   "extends": [
     "config:recommended"
+  ],
+  "customManagers": [
+    {
+      "fileMatch": ["^\\.env$"],
+      "manager": "regex",
+      "datasourceTemplate": "github-releases",
+      "packageNameTemplate": "gohugoio/hugo",
+      "versioningTemplate": "semver",
+      "extractVersionTemplate": "HUGO_VERSION=(?<currentValue>.+)",
+      "depNameTemplate": "hugo"
+    }
   ]
 }
