@@ -28,7 +28,6 @@
   "customManagers": [
     {
       "fileMatch": ["^\\.env$"],
-      "manager": "regex",
       "datasourceTemplate": "github-releases",
       "packageNameTemplate": "gohugoio/hugo",
       "versioningTemplate": "semver",
