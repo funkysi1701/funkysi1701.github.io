@@ -35,5 +35,9 @@
       "extractVersionTemplate": "HUGO_VERSION=(?<currentValue>.+)",
       "depNameTemplate": "hugo"
     }
+  ],
+  "enabledManagers": [
+    "regex",
+    "npm"
   ]
 }
