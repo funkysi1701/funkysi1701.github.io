@@ -28,10 +28,11 @@
   "customManagers": [
     {
       "fileMatch": ["^\\.env$"],
+      "matchStrings": ["HUGO_VERSION=(?<currentValue>.+)"],
+      "currentValueTemplate": "{{currentValue}}",
       "datasourceTemplate": "github-releases",
       "packageNameTemplate": "gohugoio/hugo",
       "versioningTemplate": "semver",
-      "extractVersionTemplate": "HUGO_VERSION=(?<currentValue>.+)",
       "depNameTemplate": "hugo"
     }
   ],
