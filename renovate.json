@@ -28,7 +28,7 @@
   "customManagers": [
     {
       "fileMatch": ["^\\.env$"],
-      "manager": "regex",
+      // removed disallowed 'manager' field
       "datasourceTemplate": "github-releases",
       "packageNameTemplate": "gohugoio/hugo",
       "versioningTemplate": "semver",
