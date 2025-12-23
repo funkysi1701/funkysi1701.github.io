@@ -41,7 +41,8 @@ steps:
   inputs:
     script: |
       export PATH=$HOME/.local/bin:$PATH
-      docker build -t blog .
+      HUGO_VERSION=$(grep '^HUGO_VERSION=' .env | cut -d '=' -f2)
+      docker build --build-arg HUGO_VERSION=$HUGO_VERSION -t blog .
       aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 687611153768.dkr.ecr.eu-north-1.amazonaws.com
 - bash: |
     case "$(Build.SourceBranchName)" in
