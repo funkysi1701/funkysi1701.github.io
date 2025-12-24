@@ -25,21 +25,21 @@ Welcome! If you're new to my blog, here are some of my best and most popular art
 
 ### Cloud & Modern Development
 
-- **[Adding Elasticsearch with Aspire](/posts/2025/01/03/adding-elasticsearch-with-aspire/)** - Learn how to integrate Elasticsearch into .NET Aspire applications for powerful search capabilities.
+- **[Adding Elasticsearch with Aspire](/posts/2025/adding-elasticsearch-with-aspire/)** - Learn how to integrate Elasticsearch into .NET Aspire applications for powerful search capabilities.
 
-- **[Aspire](/posts/2024/11/14/aspire/)** - An introduction to .NET Aspire, Microsoft's opinionated stack for building cloud-native applications with built-in observability.
+- **[Aspire](/posts/2024/aspire/)** - An introduction to .NET Aspire, Microsoft's opinionated stack for building cloud-native applications with built-in observability.
 
-- **[Learning Kubernetes](/posts/2025/01/07/learning-kubernetes/)** - My journey learning Kubernetes, container orchestration, and deploying applications to K8s clusters.
+- **[Learning Kubernetes](/posts/2025/learning-kubernetes/)** - My journey learning Kubernetes, container orchestration, and deploying applications to K8s clusters.
 
 ### .NET & Development
 
-- **[.NET 7](/posts/2022/11/10/dotnet7/)** - Exploring the features and improvements in .NET 7, including performance enhancements and new APIs.
+- **[.NET 7](/posts/2022/dotnet7/)** - Exploring the features and improvements in .NET 7, including performance enhancements and new APIs.
 
-- **[Festive Naughty or Nice Checker](/posts/2025/12/01/festive-naughty-or-nice-checker/)** - Building a fun holiday-themed application with modern .NET practices.
+- **[Festive Naughty or Nice Checker](/posts/2025/festive-naughty-or-nice-checker/)** - Building a fun holiday-themed application with modern .NET practices.
 
 ### DevOps & Automation
 
-- **[Charting My Energy Usage with the Octopus Energy API](/posts/2021/03/07/charting-my-energy-usage-with-the-octopus-energy-api/)** - A practical guide to working with APIs, data visualization, and automation using real-world energy data.
+- **[Charting My Energy Usage with the Octopus Energy API](/posts/2021/charting-my-energy-usage-with-the-octopus-energy-api/)** - A practical guide to working with APIs, data visualization, and automation using real-world energy data.
 
 ---
 
