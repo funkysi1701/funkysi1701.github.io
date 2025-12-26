@@ -31,7 +31,7 @@
       "matchStrings": ["HUGO_VERSION=(?<currentValue>.+)"],
       "currentValueTemplate": "{{currentValue}}",
       "datasourceTemplate": "github-releases",
-      "packageNameTemplate": "gohugoio/hugo",
+      "packageNameTemplate": "floryn90/hugo",
       "versioningTemplate": "semver",
       "depNameTemplate": "hugo"
     }

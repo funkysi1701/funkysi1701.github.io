@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #222;
+}
+header, footer {
+  background: #333;
+  color: #fff;
+  padding: 1em;
+}
+header a, footer a {
+  color: #fff;
+  text-decoration: none;
+}
+main {
+  max-width: 800px;
+  margin: 2em auto;
+  background: #fff;
+  padding: 2em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+nav a {
+  margin-right: 1em;
+}

@@ -1,3 +1,0 @@
-[submodule "themes/boot-style"]
-	path = themes/boot-style
-	url = https://github.com/razonyang/hugo-theme-bootstrap.git
