@@ -1,0 +1,5 @@
+name = "new-hugo-theme"
+description = "A new Hugo theme for funkysi1701.github.io"
+author = "funkysi1701"
+license = "MIT"
+min_version = "0.100.0"

@@ -5,15 +5,15 @@ permissions:
 on:
   workflow_dispatch:
   schedule:
-    - cron: '40 17 */7 * *'
+    - cron: '40 17 * * *'
   
 jobs:
   create-pr:
     runs-on: ubuntu-latest
     steps:
-      - name: Get current date
+      - name: Get current date and time
         id: date
-        run: echo "::set-output name=date::$(date +'%d %b %Y')"
+        run: echo "::set-output name=date::$(date +'%d %b %Y %H:%M:%S')"
       - name: Check out repository code
         uses: actions/checkout@v6
         with:
