@@ -27,8 +27,13 @@
   ],
   "customManagers": [
     {
-      "fileMatch": ["^\\.env$"],
-      "matchStrings": ["HUGO_VERSION=(?<currentValue>.+)"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.env$/"
+      ],
+      "matchStrings": [
+        "HUGO_VERSION=(?<currentValue>.+)"
+      ],
       "currentValueTemplate": "{{currentValue}}",
       "datasourceTemplate": "github-releases",
       "packageNameTemplate": "Florin-Lungu/docker-hugo",
@@ -37,7 +42,7 @@
     }
   ],
   "enabledManagers": [
-    "regex",
+    "custom.regex",
     "npm"
   ]
 }
