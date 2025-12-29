@@ -18,6 +18,13 @@ jobs:
         with:
           fetch-depth: 0
           ref: develop
+      - name: Check for new commits
+        run: |
+          git fetch origin test
+          if [ $(git rev-list --count develop ^test) -eq 0 ]; then
+            echo "No new commits to PR."
+            exit 0
+          fi          
       - name: create pull request
         run: gh pr create -B test -H develop --title 'Release ${{ steps.date.outputs.date }} Dev to Test' --body 'Created by Github action' 
           || gh pr edit -B test --title 'Release ${{ steps.date.outputs.date }} Dev to Test' --body 'Created by Github action'
