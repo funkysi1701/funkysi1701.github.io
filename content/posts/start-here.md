@@ -17,7 +17,6 @@ aliases = [
     "/start-here",
     "/best-posts"
 ]
-++
 +++
 
 ## 👋 New Here? Start With These Posts
