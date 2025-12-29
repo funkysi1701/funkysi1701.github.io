@@ -27,17 +27,22 @@
   ],
   "customManagers": [
     {
-      "fileMatch": ["^\\.env$"],
-      "matchStrings": ["HUGO_VERSION=(?<currentValue>.+)"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.env$/"
+      ],
+      "matchStrings": [
+        "HUGO_VERSION=(?<currentValue>.+)"
+      ],
       "currentValueTemplate": "{{currentValue}}",
       "datasourceTemplate": "github-releases",
-      "packageNameTemplate": "floryn90/hugo",
+      "packageNameTemplate": "Florin-Lungu/docker-hugo",
       "versioningTemplate": "semver",
       "depNameTemplate": "hugo"
     }
   ],
   "enabledManagers": [
-    "regex",
+    "custom.regex",
     "npm"
   ]
 }
