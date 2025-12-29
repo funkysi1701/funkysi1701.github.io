@@ -11,6 +11,7 @@ tags = ["Goals"]
 category="tech"
 keywords = ["", ""]
 description = "A review of last years goals and setting of new ones for 2022"
+description = "By reading this post, you'll learn how to review your past goals, set new ones for the year ahead, and reflect on personal and professional growth."
 showFullContent = false
 readingTime = true
 aliases = [

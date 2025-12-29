@@ -10,6 +10,7 @@ images = ['/images/Pnb-NvNJ_400x400.jpg']
 tags = ["youth", "codeclub", "community"]
 category="tech"
 description = "Discover Code Clubs, free and welcoming spaces for school-aged young people to learn programming and digital skills. Join us to explore the exciting world of coding through hands-on activities and projects."
+description = "By reading this post, you'll learn how to start and run a successful Code Club for kids, including hands-on activities, programming robots, and fostering a love for coding in young people."
 showFullContent = false
 readingTime = true
 copyright = false

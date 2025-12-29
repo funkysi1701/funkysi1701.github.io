@@ -10,6 +10,7 @@ images =['/images/aspire-ga-what-is-aspire.png']
 tags = ["DotNet", "Blazor", "C-Sharp", "Visual Studio", "Aspire", "OpenTelemetry", ".Net 9", "Microsoft"]
 category="tech"
 description = "Learn how to get started with .Net Aspire, a comprehensive set of tools, templates, and packages that simplify cloud-native application development using .Net. Explore its key features like orchestration, integrations, and tooling to build observable, production-ready applications with consistent patterns."
+description = "By reading this post, you'll learn how to get started with .Net Aspire, its key features, and how it simplifies building cloud-native, observable, and production-ready applications."
 showFullContent = false
 readingTime = true
 copyright = false

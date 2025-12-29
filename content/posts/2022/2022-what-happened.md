@@ -12,6 +12,7 @@ tags = ["Goals"]
 category="tech"
 keywords = ["", ""]
 description = "As 2022 draws to a close its time to do my annual look back at what happened"
+description = "By reading this post, you'll learn about the key events and personal milestones from 2022, including tech achievements, challenges, and reflections on the year."
 showFullContent = false
 readingTime = true
 aliases = [
