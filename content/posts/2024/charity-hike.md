@@ -11,7 +11,6 @@ images =['/images/fsi-hike.jpg']
 tags = [ ]
 category=""
 keywords = ["", ""]
-description = "Join Funky Si as he takes on the challenge of walking a half marathon in the Peak District to raise funds for Cancer Research. Learn about his journey, motivations, and how you can support this cause."
 description = "By reading this post, you'll learn about the experience of training for and walking a half marathon for charity, the motivations behind it, and how you can support or take on similar challenges."
 showFullContent = false
 readingTime = true

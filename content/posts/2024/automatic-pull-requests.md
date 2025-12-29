@@ -10,7 +10,6 @@ cover = "/images/automatic-pull-requests.png"
 images =['/images/automatic-pull-requests.png']
 tags = ["AzureDevOps", "Pull Requests", "Automation", "PowerShell", "CI/CD", "DevOps"]
 category="tech"
-description = "Learn how to automate the creation of pull requests in Azure DevOps using PowerShell scripts to streamline your CI/CD workflow."
 description = "By reading this post, you'll learn how to automate the creation of pull requests in Azure DevOps and GitHub using PowerShell scripts, streamlining your CI/CD workflow."
 showFullContent = false
 readingTime = true
