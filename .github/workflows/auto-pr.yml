@@ -19,19 +19,23 @@ jobs:
           fetch-depth: 0
           ref: develop
       - name: Check for new commits
+        id: check_commits
         run: |
           git fetch origin test || true
           if git show-ref --verify --quiet refs/remotes/origin/test; then
             NEW_COMMITS=$(git rev-list --count develop ^origin/test)
+            echo "new_commits=$NEW_COMMITS" >> $GITHUB_OUTPUT
             if [ "$NEW_COMMITS" -eq 0 ]; then
               echo "No new commits to PR."
-              exit 0
             fi
           else
             echo "test branch does not exist; continuing."
-          fi         
+            echo "new_commits=1" >> $GITHUB_OUTPUT
+          fi
+      
       - name: create pull request
+        if: steps.check_commits.outputs.new_commits != '0'
         run: gh pr create -B test -H develop --title 'Release ${{ steps.date.outputs.date }} Dev to Test' --body 'Created by Github action' 
           || gh pr edit -B test --title 'Release ${{ steps.date.outputs.date }} Dev to Test' --body 'Created by Github action'
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
