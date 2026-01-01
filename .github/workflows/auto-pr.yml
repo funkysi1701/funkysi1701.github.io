@@ -2,7 +2,7 @@ name: Dev to Test
 on:
   workflow_dispatch:
   schedule:
-    - cron: '40 17 * * *'
+    - cron: '40 * * * *'
 permissions:
   contents: write
   pull-requests: write   
@@ -10,16 +10,32 @@ jobs:
   create-pr:
     runs-on: ubuntu-latest
     steps:
-      - name: Get current date
+      - name: Get current date and time
         id: date
-        run: echo "::set-output name=date::$(date +'%d %b %Y')"
+        run: echo "::set-output name=date::$(date +'%d %b %Y %H:%M:%S')"
       - name: Check out repository code
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
           ref: develop
+      - name: Check for new commits
+        id: check_commits
+        run: |
+          git fetch origin test || true
+          if git show-ref --verify --quiet refs/remotes/origin/test; then
+            NEW_COMMITS=$(git rev-list --count develop ^origin/test)
+            echo "new_commits=$NEW_COMMITS" >> $GITHUB_OUTPUT
+            if [ "$NEW_COMMITS" -eq 0 ]; then
+              echo "No new commits to PR."
+            fi
+          else
+            echo "test branch does not exist; continuing."
+            echo "new_commits=1" >> $GITHUB_OUTPUT
+          fi
+      
       - name: create pull request
+        if: steps.check_commits.outputs.new_commits != '0'
         run: gh pr create -B test -H develop --title 'Release ${{ steps.date.outputs.date }} Dev to Test' --body 'Created by Github action' 
           || gh pr edit -B test --title 'Release ${{ steps.date.outputs.date }} Dev to Test' --body 'Created by Github action'
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
