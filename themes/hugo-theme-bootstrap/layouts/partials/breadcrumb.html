@@ -18,7 +18,7 @@
 <li class="breadcrumb-item active">{{ if .titleCase }}{{ title .p1.Title }}{{ else }}{{ .p1.Title }}{{ end }}</li>
 {{- else -}}
 {{ if and (in .p1.Title "Events") (eq .p1.Section "events") }}
-  <li class="breadcrumb-item"><a href="/events/2025">{{ .p1.Title }}</a></li>
+  <li class="breadcrumb-item"><a href="/events/2026">{{ .p1.Title }}</a></li>
 {{ else }}
   <li class="breadcrumb-item"><a href="{{ .p1.Permalink }}">{{ if .p1.IsHome }}{{ i18n "home" }}{{ else }}{{ .p1.Title }}{{ end }}</a></li>
 {{ end }}
