@@ -8,8 +8,17 @@ authorTwitter = "funkysi1701"
 cover = "/images/2026/welcome-2026.png"
 images = ['/images/2026/welcome-2026.png']
 tags = ["Retrospective", "Goals", "Yearly Review", "Blogging"]
-categories = ["Personal"]
+categories = ["tech"]
 description = "A look back at my 2025 blog posts and setting goals for 2026"
+showFullContent = false
+readingTime = true
+copyright = false
+featured = false
+draft = false
+aliases = [
+  "/2025-in-review-and-2026-goals",
+  "/posts/2025-in-review-and-2026-goals"
+]
 +++
 
 ## 2025 in Review
