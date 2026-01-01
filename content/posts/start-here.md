@@ -1,11 +1,12 @@
 +++
 title = "Start Here"
-date = "2025-12-16T12:00:00Z"
-year = "2025"
-month = "2025-12"
+date = "2026-01-01T12:00:00Z"
+year = "2026"
+month = "2026-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701"
-cover = ""
+cover = "/images/2026/start-here.png"
+images = ['/images/2026/start-here.png']
 keywords = ["best posts", "featured articles", "start here", "popular posts"]
 description = "New to Funky Si's blog? Start with these featured articles covering .NET, Azure, DevOps, and software development."
 showFullContent = false
