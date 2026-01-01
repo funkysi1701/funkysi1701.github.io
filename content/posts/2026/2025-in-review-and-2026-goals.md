@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701"
 cover = ""
 images = []
-tags = ["Retrospective", "Goals", "Yearly Review", "2025", "2026", "Blogging"]
+tags = ["Retrospective", "Goals", "Yearly Review", "Blogging"]
 categories = ["Personal"]
 description = "A look back at my 2025 blog posts and setting goals for 2026"
 +++
@@ -18,7 +18,7 @@ What a year 2025 has been! I published 24 blog posts covering a wide range of to
 
 ### Cloud-Native and DevOps
 
-This was a major focus area for me in 2025, with deep dives into modern infrastructure:
+This was a major focus area for me in 2025, not really surprising as I moved into a DevOps role this year, with deep dives into modern infrastructure:
 
 - [**Learning Kubernetes**](/learning-kubernetes/) - Started my journey into container orchestration and shared my beginner experiences
 - [**Deploying Hugo with Helm**](/deploying-hugo-with-helm/) - Deployed this very blog to Kubernetes using Helm charts
@@ -46,7 +46,6 @@ Understanding what's happening in production became a key theme:
 
 ### Cloud Platforms
 
-- [**ACR vs ECR**](/acr-vs-ecr/) - Compared Azure and AWS container registries
 - [**Merging Two Projects into One**](/merge-two-projects-into-one/) - Shared my experience consolidating codebases
 
 ### AI and Creativity
@@ -73,8 +72,9 @@ Thank you to everyone who read, commented, and shared my posts throughout the ye
 
 - **24 blog posts** published
 - Major topics: Kubernetes, .NET, OpenTelemetry, AI
-- New skills acquired: Helm, advanced Kubernetes, observability tools
-- Conferences attended: NDC London (as a volunteer)
+- New skills acquired: Helm, Kubernetes, observability tools
+- Conferences attended: NDC London (as a volunteer) and DDD North
+- Submitted content to [https://festivetechcalendar.com](https://festivetechcalendar.com)
 
 ## Goals for 2026
 
@@ -85,8 +85,6 @@ Looking ahead to 2026, I'm excited to build on this momentum. Here are my bloggi
 - **Publish at least 24 posts** - Maintain the pace from 2025
 - **Deep dive into AI/ML** - Go beyond experimentation to practical implementations
 - **More hands-on tutorials** - Provide step-by-step guides that readers can follow along with
-- **Case studies** - Share real-world problem-solving from actual projects
-- **Performance optimization** - Focus on making applications faster and more efficient
 
 ### Technical Skills
 
@@ -96,19 +94,20 @@ Looking ahead to 2026, I'm excited to build on this momentum. Here are my bloggi
 - **AI integration** - Build practical AI-powered features into applications
 - **Platform engineering** - Create better developer experiences and internal platforms
 
-### Community Engagement
+## Walking
 
-- **Speak at a conference or meetup** - Share knowledge beyond the blog
-- **Contribute to open source** - Give back to the projects I use
-- **Mentoring** - Help others on their development journey
-- **Collaborate** - Work with other bloggers and developers on joint content
+At the end of 2024 I made the following goal:
 
-### Blog Improvements
+```txt
+2024 took an unusual turn. In June, I walked a half marathon across the Peak District, and since then, 
+I have been doing lots of walks. Walking is good for my physical and mental health, 
+so I intend to do more of it in 2025. I have a 5k scheduled for January, 
+which should be lots of fun as it is around the wildlife park.
+```
 
-- **Better SEO** - Make posts more discoverable
-- **Visual content** - Add more diagrams, screenshots, and videos
-- **Series posts** - Create multi-part deep dives on complex topics
-- **Newsletter** - Start regular email updates for subscribers
+Well I enjoyed my walk in January 2025, which then led to two 10k walks (in July and September) and a 7.5k night walk (in Blackpool to see the Illuminations). This led me to explore [parkrun](https://www.parkrun.com/) and I completed my 8th run this morning. I say run, not walk as I am slowly becoming more of a runner and less of a walker.
+
+So my goal here is to keep doing this, as I am so far enjoying getting out and about.
 
 ## What Would You Like to See?
 

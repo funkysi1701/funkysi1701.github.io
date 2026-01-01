@@ -1,8 +1,8 @@
 +++
 title = "Start Here"
-date = "2025-12-16T12:00:00Z"
-year = "2025"
-month = "2025-12"
+date = "2026-01-01T12:00:00Z"
+year = "2026"
+month = "2025-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701"
 cover = ""
