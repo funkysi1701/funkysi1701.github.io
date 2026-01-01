@@ -51,7 +51,7 @@ Understanding what's happening in production became a key theme:
 
 - [**Getting Started with OpenTelemetry**](/getting-started-with-opentelemetry/) - Made observability easy with modern tracing
 - [**OpenTelemetry Logs**](/adding-opentelemetry-logs-to-grafana/) - Extended observability to include logging
-- [**Setting up Grafana**](/setting-up-grafana-for-monitoring-net-applications-with-docker/) - Built dashboards for monitoring
+- [**Setting up Grafana**](/posts/2025/setting-up-grafana/) - Built dashboards for monitoring
 
 ### Cloud Platforms
 
