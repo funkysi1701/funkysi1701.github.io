@@ -62,6 +62,10 @@ Here's what I've been writing about lately:
 
 ---
 
+## View Latest Newsletter
+
+- [January 2026](https://us11.campaign-archive.com/?u=110e046407cf8a34c93d56a4c&id=49cfe48cec)
+
 ## 🎯 Ready to Join?
 
 Get practical software development insights delivered to your inbox every month.
