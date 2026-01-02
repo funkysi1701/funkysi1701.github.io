@@ -1,8 +1,8 @@
 +++
 title = "Azure Container Registry vs AWS Elastic Container Registry: A Developer's Comparison"
-date = "2025-12-15T20:00:00Z"
-year = "2025"
-month= "2025-12"
+date = "2026-01-15T20:00:00Z"
+year = "2026"
+month= "2026-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701"
 cover = "/images/elastic-search.jpg"
@@ -17,7 +17,7 @@ copyright = false
 aliases = [
     "/acr-vs-ecr",
     "/posts/acr-vs-ecr",
-    "/posts/2025/12/15/acr-vs-ecr"
+    "/posts/2026/01/15/acr-vs-ecr"
 ]
 +++
 
