@@ -1,0 +1,20 @@
+<div class="container">
+  {{- if not .IsHome -}}
+    {{- partial "breadcrumb" . -}}
+    {{- partial "sections" . -}}
+  {{- end -}}
+  {{- partial "hooks/list-begin" . -}}
+  <div class="posts mb-4">
+  {{- range .Paginator.Pages -}}
+  {{ if .Params.date }}
+    {{- /* Exclude events category from home page and posts section */ -}}
+    {{- $isPostsSection := and (eq $.Section "posts") (eq $.Kind "section") -}}
+    {{- if or (and (not $.IsHome) (not $isPostsSection)) (ne .Params.category "events") -}}
+      {{- partial "list-item" (dict "Page" . "PinnedPosts" ($.Scratch.Get "pinnedPosts")) }}
+    {{- end -}}
+  {{ end }}
+  {{- end -}}
+  </div>
+  {{- partial "hooks/list-end" . -}}
+  {{- partial "pagination" . -}}
+</div>
