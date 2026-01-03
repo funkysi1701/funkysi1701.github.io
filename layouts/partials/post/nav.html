@@ -1,0 +1,73 @@
+{{- if or .Prev .Next -}}
+{{- $prev := .Prev -}}
+{{- $next := .Next -}}
+
+{{- /* If this is an events page, find prev/next within events category */ -}}
+{{- if eq .Params.category "events" -}}
+  {{- $pages := where .Site.RegularPages "Params.category" "events" -}}
+  {{- $currentIndex := 0 -}}
+  {{- range $index, $page := $pages -}}
+    {{- if eq $page.Permalink $.Permalink -}}
+      {{- $currentIndex = $index -}}
+    {{- end -}}
+  {{- end -}}
+  
+  {{- $prevIndex := add $currentIndex 1 -}}
+  {{- $nextIndex := sub $currentIndex 1 -}}
+  
+  {{- if lt $prevIndex (len $pages) -}}
+    {{- $prev = index $pages $prevIndex -}}
+  {{- else -}}
+    {{- $prev = false -}}
+  {{- end -}}
+  
+  {{- if ge $nextIndex 0 -}}
+    {{- $next = index $pages $nextIndex -}}
+  {{- else -}}
+    {{- $next = false -}}
+  {{- end -}}
+{{- else -}}
+  {{- /* For non-events pages, exclude events pages from navigation */ -}}
+  {{- $pages := where .Site.RegularPages "Params.category" "ne" "events" -}}
+  {{- $currentIndex := 0 -}}
+  {{- range $index, $page := $pages -}}
+    {{- if eq $page.Permalink $.Permalink -}}
+      {{- $currentIndex = $index -}}
+    {{- end -}}
+  {{- end -}}
+  
+  {{- $prevIndex := add $currentIndex 1 -}}
+  {{- $nextIndex := sub $currentIndex 1 -}}
+  
+  {{- if lt $prevIndex (len $pages) -}}
+    {{- $prev = index $pages $prevIndex -}}
+  {{- else -}}
+    {{- $prev = false -}}
+  {{- end -}}
+  
+  {{- if ge $nextIndex 0 -}}
+    {{- $next = index $pages $nextIndex -}}
+  {{- else -}}
+    {{- $next = false -}}
+  {{- end -}}
+{{- end -}}
+
+<div class="post-navs d-flex justify-content-evenly">
+  <div class="post-nav post-prev">
+  {{- with $prev -}}
+  {{ if .Params.date }}
+    <i class="fas fa-fw fa-chevron-left"></i>
+    <a href="{{ .Permalink }}">{{ partial "helpers/title" . }}</a>
+  {{ end }}  
+  </div>
+  {{- end -}}
+  {{- with $next -}}
+  <div class="post-nav post-next">
+    {{ if .Params.date }}
+    <a href="{{ .Permalink }}">{{ partial "helpers/title" . }}</a>
+    <i class="fas fa-fw fa-chevron-right"></i>
+    {{ end}}
+  </div>
+  {{- end -}}
+</div>
+{{- end -}}
