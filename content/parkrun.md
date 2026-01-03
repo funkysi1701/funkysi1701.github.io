@@ -18,6 +18,7 @@ aliases = ["/parkrun"]
 | Event/Run                                                                 | Date                | Location                | Results    | min/km  |
 |---------------------------------------------------------------------------|---------------------|-------------------------|------------|---------|
 | Run the Runway                                                            | 21 March 2026       | Doncaster               |            |         |
+| Vermuyden Way parkrun                                                     | 03 January 2026     | Vermuyden Way           | 0h 56m 34s | 11m 18s |
 | Humber Bridge parkrun                                                     | 01 January 2026     | Humber Bridge           | 0h 43m 59s | 08m 47s |
 
 ## 2025
