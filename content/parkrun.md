@@ -18,6 +18,7 @@ aliases = ["/parkrun"]
 | Event/Run                                                                 | Date                | Location                | Results    | min/km  |
 |---------------------------------------------------------------------------|---------------------|-------------------------|------------|---------|
 | Run the Runway                                                            | 21 March 2026       | Doncaster               |            |         |
+| Vermuyden Way parkrun                                                     | 03 January 2026     | Vermuyden Way           | 0h 56m 34s | 11m 18s |
 | Humber Bridge parkrun                                                     | 01 January 2026     | Humber Bridge           | 0h 43m 59s | 08m 47s |
 
 ## 2025
@@ -35,3 +36,9 @@ aliases = ["/parkrun"]
 | Blackpool Night Run 7.5k                                                  | 27 August 2025      | Blackpool               | 1h 04m 49s | 08m 39s |
 | Normanby Hall 10k                                                         | 13 July 2025        | Normanby Hall           | 1h 36m 58s | 09m 42s |
 | [Night Walk 5k](https://runforwildlife.com/run-for-wildlife-night-5k)     | 04 January 2025     | Yorkshire Wildlife Park | 0h 48m 09s | 09m 38s |
+
+## 2024
+
+| Event/Run                                | Date               |               |
+|------------------------------------------|--------------------|---------------|
+| [Charity Walk](/posts/2024/charity-hike) | 8 June 2024        | Peak District |
