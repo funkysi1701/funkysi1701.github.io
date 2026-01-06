@@ -1,7 +1,4 @@
 {
-  "navigationFallback": {
-    "rewrite": "index.html"
-  },
   "responseOverrides": {
     "404": {
       "rewrite": "/404.html"
