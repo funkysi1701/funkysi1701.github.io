@@ -6,5 +6,14 @@
     "404": {
       "rewrite": "/404.html"
     }
+  },
+  "globalHeaders": {
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin",
+    "Permissions-Policy": "geolocation=(), camera=(), fullscreen=(), microphone=(), accelerometer=()",
+    "cross-origin-embedder-policy-report-only": "(unsafe-none|require-corp); report-to=\"default\"",
+    "cross-origin-opener-policy-report-only": "(same-origin|same-origin-allow-popups|unsafe-none); report-to=\"default\""
   }
 }
