@@ -3,8 +3,8 @@
 {{- $next := .Next -}}
 
 {{- /* If this is an events page, find prev/next within events category */ -}}
-{{- if eq .Params.category "events" -}}
-  {{- $pages := where .Site.RegularPages "Params.category" "events" -}}
+{{- if eq .Params.categories "events" -}}
+  {{- $pages := where .Site.RegularPages "Params.categories" "events" -}}
   {{- $currentIndex := 0 -}}
   {{- range $index, $page := $pages -}}
     {{- if eq $page.Permalink $.Permalink -}}
@@ -28,7 +28,7 @@
   {{- end -}}
 {{- else -}}
   {{- /* For non-events pages, exclude events pages from navigation */ -}}
-  {{- $pages := where .Site.RegularPages "Params.category" "ne" "events" -}}
+  {{- $pages := where .Site.RegularPages "Params.categories" "ne" "events" -}}
   {{- $currentIndex := 0 -}}
   {{- range $index, $page := $pages -}}
     {{- if eq $page.Permalink $.Permalink -}}
