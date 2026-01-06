@@ -12,6 +12,7 @@ readingTime = true
 comment = false
 aliases = [
     "/tools-and-resources",
+    "/referral-links",
     "/posts/tools-and-resources"
 ]
 +++
