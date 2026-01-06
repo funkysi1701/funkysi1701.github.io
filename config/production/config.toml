@@ -4,7 +4,7 @@ title = "Funky Si's Blog"
 [params]
   cdnImagePrefix = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75"
   googleAdsense = "ca-pub-3535883966769835"
-  enableGatekeeper = true
+  enableGatekeeper = false
 
 [params.search]
   analyticsUrl = "https://azurefunction-d4bkcjdahseefphm.uksouth-01.azurewebsites.net/api/SaveToDb"
