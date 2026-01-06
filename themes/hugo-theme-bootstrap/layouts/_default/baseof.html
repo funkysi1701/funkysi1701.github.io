@@ -23,6 +23,7 @@
     {{ else -}}
     <link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
     {{ end -}}
+    <script src="https://quge5.com/88/tag.min.js" data-zone="199648" async data-cfasync="false"></script>
   </head>
   <body>
     {{- $bootstrapScript := resources.Get "bootstrap/template.js" | resources.ExecuteAsTemplate "js/bootstrap.js" . | minify -}}
