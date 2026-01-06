@@ -101,9 +101,9 @@ Start your application and observe the telemetry data in the console. You’ll s
 
 ## Aspire and how to view Telemetry
 
-If your .NET code is .Net 8 or higher you can use Aspire which configures OpenTelemetry for free! Check out [Getting started with .Net Aspire](/2024/aspire). Once Aspire is setup, you will be able to see Logs, Traces and Metrics in the Aspire Dashboard.
+If your .NET code is .Net 8 or higher you can use Aspire which configures OpenTelemetry for free! Check out [Getting started with .Net Aspire](/posts/2024/aspire). Once Aspire is setup, you will be able to see Logs, Traces and Metrics in the Aspire Dashboard.
 
-Another popular way to view your data is Grafana, where you can create custom dashboards. I have talked about adding [Logs](/2025/opentelemetry-logs/) to Grafana recently.
+Another popular way to view your data is Grafana, where you can create custom dashboards. I have talked about adding [Logs](/posts/2025/opentelemetry-logs/) to Grafana recently.
 
 There are lots of other ways to view your data, like Application Insights, DataDog, Jaeger, New Relic and many more.
 
