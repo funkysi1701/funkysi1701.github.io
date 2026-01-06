@@ -22,7 +22,7 @@ aliases = [
     "/2018/07/28/2018-the-story-so-far-1lkf"
 ]
 +++
-Remember me? I used to write blog posts but somehow life got in the way. So much has happened this year, lets have a look at my [goals](https://www.funkysi1701.com/2018/lets-see-what-2018-can-do) for 2018 and see how far we have got with them.
+Remember me? I used to write blog posts but somehow life got in the way. So much has happened this year, lets have a look at my [goals](/posts/2018/lets-see-2018-can) for 2018 and see how far we have got with them.
 
 ### Buy a house
 
