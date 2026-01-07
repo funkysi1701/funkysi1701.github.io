@@ -12,6 +12,7 @@ enableRobotsTXT = true
       {Name = "Contact", URL = "/contact/", weight = 5},
       {Name = "Events", URL = "/posts/events/", weight = 6},
       {Name = "Search", URL = "/search/", weight = 7},
+      {Name = "Support this site", URL = "https://otieu.com/4/10431006", weight = 8},
   ]
 
 [params]
