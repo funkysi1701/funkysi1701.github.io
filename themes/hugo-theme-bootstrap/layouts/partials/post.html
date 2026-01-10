@@ -18,13 +18,18 @@
     {{- partial "post/nav" . -}}
     {{ end }}
   </div>
+  {{- if $.Site.Params.enableGatekeeper -}}
   <div id="ezoic-pub-ad-placeholder-109"></div>
   <script>
       ezstandalone.cmd.push(function() {
           ezstandalone.showAds(109);
       });
   </script>
+  {{- end -}}
 </article>
+<div class="text-center my-4">
+  <a href="https://otieu.com/4/10431006" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Support This Site 👉</a>
+</div>
 {{- partial "post/copyright/index" . -}}
 {{ if .Params.date }}
 {{- partial "post/related-posts" . -}}

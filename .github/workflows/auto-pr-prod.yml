@@ -4,8 +4,9 @@ permissions:
   pull-requests: write
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '40 17 * * *'
+  push:
+    branches:
+    - test    
   
 jobs:
   create-pr:
