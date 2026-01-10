@@ -1,17 +1,19 @@
 +++
 title = "Parkrun Results"
+date = "2026-01-10"
 author = "funkysi1701"
 authorTwitter = "funkysi1701"
 cover = "/images/2026/Parkrun.jpg"
 images = ['/images/2026/Parkrun.jpg']
 keywords = ["parkrun", "running", "5k", "fitness", "exercise"]
 description = "My parkrun and running event results over the years"
-comment = false
+comment = true
+category="events"
 showFullContent = false
 copyright = false
 readingTime = true
 featured = false
-aliases = ["/parkrun"]
+aliases = ["/parkrun", "/events/parkrun", "/posts/events/parkrun"]
 +++
 
 ## Parkrun
