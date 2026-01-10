@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: General Question
+    url: https://funkysi1701.com/contact
+    about: For general questions, please use the contact page
+  - name: Blog Comments
+    url: https://github.com/funkysi1701/Blog-Comments/discussions
+    about: Comment on blog posts using GitHub Discussions
