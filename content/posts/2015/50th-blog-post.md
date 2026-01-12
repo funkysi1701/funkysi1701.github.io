@@ -8,7 +8,7 @@ authorTwitter = "funkysi1701" #do not include @
 cover = "/images/2015/06/top-50-2012.jpg"
 images = ['/images/2015/06/top-50-2012.jpg']
 tags = ["Blog", "50"]
-category="tech"
+categories = ["tech"]
 keywords = ["", ""]
 description = "Celebrating the milestone of 50 blog posts with highlights of my favorite posts and experiences."
 showFullContent = false
@@ -40,7 +40,7 @@ To celebrate here are some of my highlights.
 
 4) [Building something with a Raspberry Pi](https://www.funkysi1701.com/2015/04/05/building-something-with-a-raspberry-pi/) I blog about getting a Raspberry Pi to play around with
 
-5) [Improving your Blog](https://www.funkysi1701.com/2015/02/23/improving-your-blog/) John Sonmez tries to help my blog improve
+5) [Improving your Blog](https://www.funkysi1701.com/posts/2015/02/23/improving-your-blog/) John Sonmez tries to help my blog improve
 
 6) [Javascript progress](https://www.funkysi1701.com/2015/01/16/javascript-progress/) About learning javascript
 

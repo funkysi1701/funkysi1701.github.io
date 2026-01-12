@@ -1,0 +1,60 @@
+name: Content Issue
+description: Report an issue with blog content (typo, incorrect information, etc.)
+title: "[Content]: "
+labels: ["content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the content! Please provide details below.
+
+  - type: input
+    id: url
+    attributes:
+      label: Page URL
+      description: The URL of the page with the content issue
+      placeholder: https://funkysi1701.com/posts/...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What type of content issue is this?
+      options:
+        - Typo/Spelling
+        - Grammar
+        - Incorrect Information
+        - Broken Link
+        - Missing Information
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Issue Description
+      description: Describe the content issue in detail
+      placeholder: The issue is...
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested Correction
+      description: If applicable, provide the correct information or suggested fix
+      placeholder: It should say/link to...
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context or screenshots about the issue
+      placeholder: Any additional information...
+    validations:
+      required: false

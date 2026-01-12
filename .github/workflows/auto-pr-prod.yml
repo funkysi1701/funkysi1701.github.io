@@ -4,23 +4,39 @@ permissions:
   pull-requests: write
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '40 17 */7 * *'
+  push:
+    branches:
+    - test    
   
 jobs:
   create-pr:
     runs-on: ubuntu-latest
     steps:
-      - name: Get current date
+      - name: Get current date and time
         id: date
-        run: echo "::set-output name=date::$(date +'%d %b %Y')"
+        run: echo "::set-output name=date::$(date +'%d %b %Y %H:%M:%S')"
       - name: Check out repository code
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
           ref: test
+      - name: Check for new commits
+        id: check_commits
+        run: |
+          git fetch origin main || true
+          if git show-ref --verify --quiet refs/remotes/origin/main; then
+            NEW_COMMITS=$(git rev-list --count test ^origin/main)
+            echo "new_commits=$NEW_COMMITS" >> $GITHUB_OUTPUT
+            if [ "$NEW_COMMITS" -eq 0 ]; then
+              echo "No new commits to PR."
+            fi
+          else
+            echo "main branch does not exist; continuing."
+            echo "new_commits=1" >> $GITHUB_OUTPUT
+          fi          
       - name: create pull request
-        run: gh pr create -B main -H test --title 'Release ${{ steps.date.outputs.date }} Test to Main' --body 'Created by Github action' 
-          || gh pr edit -B main --title 'Release ${{ steps.date.outputs.date }} Test to Main' --body 'Created by Github action'
+        if: steps.check_commits.outputs.new_commits != '0'
+        run: gh pr create -B main -H test --title 'Release ${{ steps.date.outputs.date }} Test to Main' --body 'Release ${{ steps.date.outputs.date }} Test to Main' 
+          || gh pr edit -B main --title 'Release ${{ steps.date.outputs.date }} Test to Main' --body 'Release ${{ steps.date.outputs.date }} Test to Main'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

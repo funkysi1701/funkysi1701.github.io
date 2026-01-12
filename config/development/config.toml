@@ -4,6 +4,7 @@ title = "Development Version of Funky Si's Blog"
 [params]
   cdnImagePrefix = ""
   googleAdsense = ""
+  enableGatekeeper = false
 
 [params.search]
   analyticsUrl = "https://azurefunction-d4bkcjdahseefphm.uksouth-01.azurewebsites.net/api/SaveToDb"

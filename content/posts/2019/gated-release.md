@@ -8,7 +8,7 @@ authorTwitter = "funkysi1701" #do not include @
 cover = "/images/2019/04/image.png"
 images = ['/images/2019/04/image.png']
 tags = ["Azure", "API", "ApplicationInsights", "DevOps"]
-category="tech"
+categories = ["tech"]
 keywords = ["", ""]
 description = "Automated releases of software are great but how can we add an element of feedback so only good releases go live"
 showFullContent = false
@@ -28,7 +28,7 @@ aliases = [
 
 Automated releases of software are great but how can we add an element of feedback so only good releases go live.
 
-I have been using Azure DevOps to release my [PwnedPass](https://www.funkysi1701.com/pwned-pass/) android app to the Google Play Store for a while now. There are options to deploy to the alpha, Beta or Production tracks and even to set % of users to target. For the full range of options check out the Google Play [extension](https://marketplace.visualstudio.com/items?itemName=ms-vsclient.google-play) for Azure DevOps.
+I have been using Azure DevOps to release my PwnedPass android app to the Google Play Store for a while now. There are options to deploy to the alpha, Beta or Production tracks and even to set % of users to target. For the full range of options check out the Google Play [extension](https://marketplace.visualstudio.com/items?itemName=ms-vsclient.google-play) for Azure DevOps.
 
 My release starts by publishing to 10% of users on the production track, my next step makes use of the increase rollout option to increase this %, you can have as many of these additional steps as you want until you reach 100% of your users.
 

@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = ""
 tags = ["C-Sharp", "Azure", "Security"]
-category="tech"
+categories = ["tech"]
 keywords = ["", ""]
 description = "Technology I want to learn more about"
 showFullContent = false
@@ -28,7 +28,7 @@ While at [Microsoft Ignite](https://www.funkysi1701.com/2019/02/26/microsoft-ign
 
 So what can I build that is both useful and will let me play with some new tech?
 
-I have a Xamarin Forms app [Pwned Pass](https://www.funkysi1701.com/pwned-pass/) that has over 500 downloads on [Google play](https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords) and over 80 downloads on the [Microsoft Store](https://www.microsoft.com/en-gb/p/pwned-pass/9nm2whnztnlt?rtc=1). This has given me a small user base that I can use to make use of whatever I build.
+I have a Xamarin Forms app Pwned Pass that has over 500 downloads on [Google play](https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords) and over 80 downloads on the [Microsoft Store](https://www.microsoft.com/en-gb/p/pwned-pass/9nm2whnztnlt?rtc=1). This has given me a small user base that I can use to make use of whatever I build.
 
 My app makes use of the [HIBP API](https://haveibeenpwned.com/API/v3) created by Troy Hunt. I am going to build my own API, initially it will just make calls to the HIBP API. Building this will give me experience of building something with .net Core from design to deployment. I have made a start already on doing this, I have an empty .net core API project which deploys to an Azure web app using the build and release pipelines from Azure DevOps.
 

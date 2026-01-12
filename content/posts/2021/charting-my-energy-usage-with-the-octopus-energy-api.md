@@ -8,7 +8,7 @@ authorTwitter = "funkysi1701" #do not include @
 cover = "/images/dev-to/63ep8hp6ipyn2l4emiop.png"
 images = ['/images/dev-to/63ep8hp6ipyn2l4emiop.png']
 tags = ["API", "OctopusEnergy"]
-category="tech"
+categories = ["tech"]
 keywords = ["", ""]
 description = "Discover how to track and visualize your energy consumption using the Octopus Energy API. Learn step-by-step methods to access and chart your smart meter data for better energy management."
 showFullContent = false
@@ -43,7 +43,7 @@ Other energy suppliers will hopefully follow this example and allow users access
 
 Using the API is straight forward. Octopus supply you with a secret which you use to authenticate against the API with Basic Auth, no password just a username. Then you just need to pass some details of your meters to get an object containing the last few days meter readings. 
 
-[API Docs](https://developer.octopus.energy/docs/api/)
+[API Docs](https://developer.octopus.energy/rest/reference/)
 
 * GET /v1/electricity-meter-points/{mpan}/meters/{serial_number}/consumption/
 * GET /v1/gas-meter-points/{mprn}/meters/{serial_number}/consumption/

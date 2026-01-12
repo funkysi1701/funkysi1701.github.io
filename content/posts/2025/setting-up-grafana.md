@@ -8,7 +8,7 @@ authorTwitter = "funkysi1701" #do not include @
 cover = "/images/grafana-dashboard.png"
 images =['/images/grafana-dashboard.png']
 tags = ["Grafana", "Monitoring", "Analytics", "Docker", "Prometheus", "DotNet", "DevOps", "Metrics"]
-category="tech"
+categories = ["tech"]
 description = "Set up Grafana with Docker and Prometheus to monitor .NET apps. Learn to visualize metrics and create real-time dashboards."
 showFullContent = false
 readingTime = true
@@ -16,10 +16,10 @@ copyright = false
 featured = false
 draft = false
 aliases = [
-    "/setting-up-grafa-for-monitoring-net-applications-with-docker",
-    "/posts/setting-up-grafa-for-monitoring-net-applications-with-docker",
-    "/posts/2025/01/27/setting-up-grafa-for-monitoring-net-applications-with-docker",
-    "/2025/01/27/setting-up-grafa-for-monitoring-net-applications-with-docker" 
+    "/setting-up-grafana-for-monitoring-net-applications-with-docker",
+    "/posts/setting-up-grafana-for-monitoring-net-applications-with-docker",
+    "/posts/2025/01/27/setting-up-grafana-for-monitoring-net-applications-with-docker",
+    "/2025/01/27/setting-up-grafana-for-monitoring-net-applications-with-docker" 
 ]
 +++
 Grafana is an open-source analytics and monitoring platform that allows you to query, visualize, and alert on your metrics data. It is a popular tool for monitoring systems, applications, and services in real-time. In this post, I will guide you through setting up Grafana in Docker to monitor a simple .NET API.

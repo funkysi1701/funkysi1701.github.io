@@ -1,10 +1,10 @@
 {
   "navigationFallback": {
-    "rewrite": "index.html"
+    "rewrite": "/index.html"
   },
   "responseOverrides": {
     "404": {
-      "rewrite": "/index.html"
+      "rewrite": "/404.html"
     }
   },
   "globalHeaders": {
