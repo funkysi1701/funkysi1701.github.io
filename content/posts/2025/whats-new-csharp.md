@@ -52,7 +52,7 @@ WithOut w3 = (string s, out int i) => i = s.Length;
 WithOut w4 = (s, out i) => i = s.Length;
 ```
 
-[Simple lambda parameters with modifiers](https://github.com/dotnet/csharplang/blob/main/proposals/simple-lambda-parameters-with-modifiers.md)
+[Simple lambda parameters with modifiers](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-14.0/simple-lambda-parameters-with-modifiers.md)
 
 ## Unbound generic types in nameof
 
@@ -61,7 +61,7 @@ var t = typeof(List<>);
 var n = nameof(List<>);
 ```
 
-[Unbound generic types in nameof](https://github.com/dotnet/csharplang/blob/main/proposals/unbound-generic-types-in-nameof.md)
+[Unbound generic types in nameof](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-14.0/unbound-generic-types-in-nameof.md)
 
 ## Null conditional assignment
 
@@ -73,7 +73,7 @@ c?.P = "Hello";
 c?.E += () => { };
 ```
 
-[Null conditional assignment](https://github.com/dotnet/csharplang/blob/main/proposals/null-conditional-assignment.md)
+[Null conditional assignment](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-14.0/null-conditional-assignment.md)
 
 ## Partial events and constructors
 
@@ -88,7 +88,7 @@ partial class Partials
 }
 ```
 
-[Partial events and constructors](https://github.com/dotnet/csharplang/blob/main/proposals/partial-events-and-constructors.md)
+[Partial events and constructors](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-14.0/partial-events-and-constructors.md)
 
 ## Field access in auto properties
 
@@ -102,7 +102,7 @@ class Fields
 
 note the field keyword is a potential breaking change if you have field variables in your code.
 
-[Field access in auto properties](https://github.com/dotnet/csharplang/blob/main/proposals/field-keyword.md)
+[Field access in auto properties](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-14.0/field-keyword.md)
 
 This last one revealed a couple of gems of information that I found interesting. Creating a class called var can essentially disable the var keyword, and if you declare a variable called _ it can disable the discard operator. Neither of these things I would want to do in production code, but interesting that the language allows them.
 
@@ -110,7 +110,7 @@ This last one revealed a couple of gems of information that I found interesting.
 
 We have had extension methods for a while, but what about extension members?
 
-[Extension members](https://github.com/dotnet/csharplang/blob/main/proposals/extensions.md)
+[Extension members](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-14.0/extensions.md)
 
 ```csharp
 public static class Enumerable

@@ -81,8 +81,8 @@ Want to put some different DNS records into practise? Buy a domain name and publ
 
 If you have a new website you want to publish consider which of the following is better:
 
-https://www.example.com/newsite
+`https://www.example.com/newsite`
 
-https://newsite.example.com
+`https://newsite.example.com`
 
 I much prefer the second option, it looks cleaner, there is no potential conflict with the parent site, no subfolder issues between production and development.
