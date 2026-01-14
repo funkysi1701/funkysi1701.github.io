@@ -29,7 +29,7 @@ I know how this has happened. This repository was created in 2013 and has been u
 
 Since 2013 I have learnt a lot more about coding and git so the current version of the files in git isn’t too bad. But git keeps the history of changes for every file so bad practices like this are kept.
 
-What can I do about this? Well what does google suggest? I found this http://stevelorek.com/how-to-shrink-a-git-repository.html.
+What can I do about this? Well what does google suggest? I found this `http://stevelorek.com/how-to-shrink-a-git-repository.html` (link no longer exists).
 
 It suggests ways of listing all the large files that are stored in git and a way to remove them. As I am the only person that regularly commits to this repository I see no problem with giving it a go.
 

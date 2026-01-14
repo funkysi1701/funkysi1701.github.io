@@ -52,7 +52,7 @@ WithOut w3 = (string s, out int i) => i = s.Length;
 WithOut w4 = (s, out i) => i = s.Length;
 ```
 
-[Simple lambda parameters with modifiers](https://github.com/dotnet/csharplang/blob/main/proposals/simple-lambda-parameters-with-modifiers.md)
+[Simple lambda parameters with modifiers](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-14.0/simple-lambda-parameters-with-modifiers.md)
 
 ## Unbound generic types in nameof
 
@@ -88,7 +88,7 @@ partial class Partials
 }
 ```
 
-[Partial events and constructors](https://github.com/dotnet/csharplang/blob/main/proposals/partial-events-and-constructors.md)
+[Partial events and constructors](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-14.0/partial-events-and-constructors.md)
 
 ## Field access in auto properties
 
