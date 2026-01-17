@@ -24,14 +24,70 @@ Parkrun is a free, weekly, community event offering 5km timed runs and walks in 
 
 I am new to parkrun and only started in 2025, below are the courses and times I have personally achieved, I will update this page as I go along with park runs and other runs or events.
 
+## Progress Chart
+
+<div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+  <h3 style="margin-top: 0;">5k Parkrun Times</h3>
+  <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 4px;">
+    <tr style="vertical-align: bottom; height: 250px;">
+      <td style="text-align: center; padding: 5px; position: relative;">
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">41:41</div>
+        <div style="background: #2196F3; height: 199px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="font-size: 10px; margin-top: 5px;">11 Oct</div>
+      </td>
+      <td style="text-align: center; padding: 5px; position: relative;">
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">45:57</div>
+        <div style="background: #FF9800; height: 234px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="font-size: 10px; margin-top: 5px;">8 Nov</div>
+      </td>
+      <td style="text-align: center; padding: 5px; position: relative;">
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">40:56</div>
+        <div style="background: #2196F3; height: 191px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="font-size: 10px; margin-top: 5px;">22 Nov</div>
+      </td>
+      <td style="text-align: center; padding: 5px; position: relative;">
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">40:49</div>
+        <div style="background: #2196F3; height: 190px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="font-size: 10px; margin-top: 5px;">29 Nov</div>
+      </td>
+      <td style="text-align: center; padding: 5px; position: relative;">
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">37:28</div>
+        <div style="background: #4CAF50; height: 165px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="font-size: 10px; margin-top: 5px;">13 Dec</div>
+      </td>
+      <td style="text-align: center; padding: 5px; position: relative;">
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">41:13</div>
+        <div style="background: #2196F3; height: 195px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="font-size: 10px; margin-top: 5px;">27 Dec</div>
+      </td>
+      <td style="text-align: center; padding: 5px; position: relative;">
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">43:59</div>
+        <div style="background: #2196F3; height: 210px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="font-size: 10px; margin-top: 5px;">1 Jan</div>
+      </td>
+      <td style="text-align: center; padding: 5px; position: relative;">
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">39:46</div>
+        <div style="background: #4CAF50; height: 180px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="font-size: 10px; margin-top: 5px;">10 Jan</div>
+      </td>
+    </tr>
+  </table>
+  <div style="margin-top: 15px; font-size: 12px; text-align: center; color: #666;">
+    <span style="display: inline-block; margin: 0 10px;"><span style="display: inline-block; width: 15px; height: 15px; background: #4CAF50; border-radius: 2px; vertical-align: middle;"></span> Personal Best</span>
+    <span style="display: inline-block; margin: 0 10px;"><span style="display: inline-block; width: 15px; height: 15px; background: #2196F3; border-radius: 2px; vertical-align: middle;"></span> Regular Time</span>
+    <span style="display: inline-block; margin: 0 10px;"><span style="display: inline-block; width: 15px; height: 15px; background: #FF9800; border-radius: 2px; vertical-align: middle;"></span> Slower Run</span>
+  </div>
+</div>
+
 ## 2026
 
-| Event/Run                                                                 | Date                | Location                | Results    | min/km  |
-|---------------------------------------------------------------------------|---------------------|-------------------------|------------|---------|
-| Run the Runway                                                            | 21 March 2026       | Doncaster               |            |         |
-| Vermuyden Way parkrun                                                     | 10 January 2026     | Vermuyden Way           | 0h 39m 46s | 07m 57s |
-| Vermuyden Way parkrun                                                     | 03 January 2026     | Vermuyden Way           | 0h 56m 34s | 11m 18s |
-| Humber Bridge parkrun                                                     | 01 January 2026     | Humber Bridge           | 0h 43m 59s | 08m 47s |
+| Event/Run                                                                 | Date                | Location                | Results        | min/km  |
+|---------------------------------------------------------------------------|---------------------|-------------------------|----------------|---------|
+| Run the Runway                                                            | 21 March 2026       | Doncaster               |                |         |
+| Vermuyden Way parkrun                                                     | 17 January 2026     | Vermuyden Way           | 1h 17m 00s (v) | 07m 57s |
+| Vermuyden Way parkrun                                                     | 10 January 2026     | Vermuyden Way           | 0h 39m 46s     | 07m 57s |
+| Vermuyden Way parkrun                                                     | 03 January 2026     | Vermuyden Way           | 0h 56m 34s (v) | 11m 18s |
+| Humber Bridge parkrun                                                     | 01 January 2026     | Humber Bridge           | 0h 43m 59s     | 08m 47s |
 
 ## 2025
 
