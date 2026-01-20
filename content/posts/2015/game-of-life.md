@@ -39,6 +39,6 @@ The game has several rules:
 3. Any cell with more than three neighbours will die on the next turn
 4. Any dead cell with three live neighbours will be born on the next turn
 
-Now I had not thought about this game until the other day when I came across a https://chaosnil.wordpress.com/2015/02/09/new-project-conways-game-of-life-in-every-language/ and a https://github.com/chaomodus/gameoflife which sparked my interest again. This version is written in javascript, but the blog mentions a desire to build this program in many different languages. I want to build this with visual studio in C# as it should provide a good training exercise.
+Now I had not thought about this game until the other day when I came across a `https://chaosnil.wordpress.com/2015/02/09/new-project-conways-game-of-life-in-every-language/` and a `https://github.com/chaomodus/gameoflife` which sparked my interest again. This version is written in javascript, but the blog mentions a desire to build this program in many different languages. I want to build this with visual studio in C# as it should provide a good training exercise.
 
 There are several problems I need to overcome to achieve this, I am currently trying to work out how to "draw" the cells. My current thinking is that maybe I can code it using characters to display the cells and then replace with pixels once I have the logic correct. Well lots for me to learn!
