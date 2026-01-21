@@ -30,6 +30,31 @@ This blog you're reading! Built with Hugo and deployed to Azure Static Web Apps.
   - Giscus comment integration
 - **Links**: [GitHub Repository](https://github.com/funkysi1701/funkysi1701.github.io)
 
+### Episode Atlas
+
+A website for tracking what episode you watched last of your favourite TV shows. I am a big Star Trek fan and I built this to track when I last watched what, with over 900 episodes across the different TV shows it is no easy task!
+
+- **Tech Stack**: .NET Blazor, Azure Static Web Apps with Azure function backend and Azure SQL database
+- **URL**: [Episode Atlas](https://www.episodeatlas.com/Episodes/)
+- **Features**:
+  - GitHub Authentication (more auth providers to come)
+  - Sortable list of episodes
+  - Option to mark when you last watched a particular episode
+  - Add new episodes and TV Shows
+  - Links to [Memory Alpha](https://memory-alpha.fandom.com/) for details about the episode
+  - More features to come...
+
+### Mandelbrot Generator
+
+I've always been fascinated by Mandelbrots and now I can generate them in the browser with Blazor webassembly
+
+- **Tech Stack**: .NET Blazor, Azure Static Web Apps
+- **URL**: [Mandelbrot Set](https://mandelbrot.funkysi1701.com/Mandelbrot/)
+- **Features**:
+  - Generates a Mandelbrot Set in the browser no server or backend involved
+  - Zoom In/Out from desktop or mobile
+  - More features to come...
+
 ---
 
 ## 💡 Side Projects & Experiments
