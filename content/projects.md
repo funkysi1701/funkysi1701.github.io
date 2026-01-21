@@ -49,7 +49,7 @@ A website for tracking what episode you watched last of your favourite TV shows.
 I've always been fascinated by Mandelbrots and now I can generate them in the browser with Blazor webassembly
 
 - **Tech Stack**: .NET Blazor, Azure Static Web Apps
-- **URL**: [Mandelbrot Set](https://mandelbrot.funkysi1701.com/Mandelbrot/)
+- **URL**: [Mandelbrot Generator](https://mandelbrot.funkysi1701.com/Mandelbrot/)
 - **Features**:
   - Generates a Mandelbrot Set in the browser no server or backend involved
   - Zoom In/Out from desktop or mobile
