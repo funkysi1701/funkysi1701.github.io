@@ -42,7 +42,7 @@ A website for tracking what episode you watched last of your favourite TV shows.
   - Add new episodes and TV Shows
   - Links to [Memory Alpha](https://memory-alpha.fandom.com/) for details about the episode
   - More features to come...
-- **Links**: [Episode Atlas](https://www.episodeatlas.com/Episodes/)
+- **Links**: [Episode Atlas](https://www.episodeatlas.com/)
 
 ### Mandelbrot Generator
 
@@ -53,7 +53,7 @@ I've always been fascinated by Mandelbrots and now I can generate them in the br
   - Generates a Mandelbrot Set in the browser no server or backend involved
   - Zoom In/Out from desktop or mobile
   - More features to come...
-- **Links**: [Mandelbrot Generator](https://mandelbrot.funkysi1701.com/Mandelbrot/)
+- **Links**: [Mandelbrot Generator](https://mandelbrot.funkysi1701.com/)
 
 ---
 
