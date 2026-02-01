@@ -35,8 +35,10 @@ test.describe('Accessibility', () => {
       // 5. Verify error messages are accessible (if validation exists)
       // This would need form submission to test
 
-      // 6. Check for helpful placeholder text
-      expect(ariaLabel || placeholder).toBeTruthy();
+      // 6. Check for helpful placeholder text or aria-label
+      // Mode switcher has a visible label element, so aria-label is optional
+      const hasLabel = ariaLabel || placeholder || await page.locator(`label[for="${id}"]`).count() > 0;
+      expect(hasLabel).toBeTruthy();
     }
 
     // 7. Test form submission with keyboard only

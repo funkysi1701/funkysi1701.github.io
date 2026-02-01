@@ -15,7 +15,7 @@ test.describe('About and Static Pages', () => {
     await expect(page.locator('text=/Blog Platform|This blog/i').first()).toBeVisible();
 
     // 4. Verify Episode Atlas project is listed
-    await expect(page.locator('text=/Episode Atlas/i')).toBeVisible();
+    await expect(page.locator('text=/Episode Atlas/i').first()).toBeVisible();
 
     // 5. Check for Mandelbrot Generator project
     await expect(page.locator('text=/Mandelbrot/i')).toBeVisible();

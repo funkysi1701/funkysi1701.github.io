@@ -12,7 +12,7 @@ test.describe('Edge Cases and Error Handling', () => {
     await page.getByRole('link', { name: 'About' }).first().click();
     
     // 3. Click on Projects page
-    await page.getByRole('link', { name: 'Projects' }).click();
+    await page.getByRole('link', { name: 'Projects', exact: true }).click();
     await expect(page).toHaveURL(/\/projects\//);
 
     // 4. Click browser back button

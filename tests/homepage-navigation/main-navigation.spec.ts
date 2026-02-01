@@ -10,11 +10,11 @@ test.describe('Homepage and Navigation', () => {
 
     // 2. Verify all navigation items are visible
     await expect(page.getByRole('link', { name: 'About' }).first()).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Projects' })).toBeVisible();
-    await expect(page.getByRole('link', { name: /Tools.*Resources/i })).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Newsletter' })).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Contact' })).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Events' })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Projects', exact: true }).first()).toBeVisible();
+    await expect(page.getByRole('link', { name: /Tools.*Resources/i }).first()).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Newsletter' }).first()).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Contact' }).first()).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Events' }).first()).toBeVisible();
     await expect(page.getByRole('link', { name: 'Search' })).toBeVisible();
     await expect(page.getByRole('link', { name: /Support.*site/i })).toBeVisible();
 

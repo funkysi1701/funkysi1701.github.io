@@ -14,10 +14,10 @@ test.describe('About and Static Pages', () => {
 
     // 3. Check for social media links
     // 4. Verify presence of GitHub, Twitter/X, BlueSky, Mastodon, LinkedIn, Facebook links
-    await expect(page.locator('a[href*="github.com/funkysi1701"]')).toBeVisible();
-    await expect(page.locator('a[href*="twitter.com/funkysi1701"], a[href*="x.com/funkysi1701"]')).toBeVisible();
-    await expect(page.locator('a[href*="bsky.app"], a[href*="bluesky"]')).toBeVisible();
-    await expect(page.locator('a[href*="mastodon"], a[href*="hachyderm.io"]')).toBeVisible();
+    await expect(page.locator('a[href*="github.com/funkysi1701"]').first()).toBeVisible();
+    await expect(page.locator('a[href*="twitter.com/funkysi1701"], a[href*="x.com/funkysi1701"]').first()).toBeVisible();
+    await expect(page.locator('a[href*="bsky.app"], a[href*="bluesky"]').first()).toBeVisible();
+    await expect(page.locator('a[href*="mastodon"], a[href*="hachyderm.io"]').first()).toBeVisible();
     await expect(page.locator('a[href*="linkedin.com"]')).toBeVisible();
     await expect(page.locator('a[href*="facebook.com"]')).toBeVisible();
 

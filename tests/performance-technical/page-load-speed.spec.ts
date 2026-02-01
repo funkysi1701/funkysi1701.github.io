@@ -36,6 +36,6 @@ test.describe('Performance and Technical', () => {
 
     // 8. Verify page is still usable
     await expect(page.locator('nav').first()).toBeVisible();
-    await expect(page.locator('article, .post')).toBeVisible();
+    await expect(page.locator('article, .post').first()).toBeVisible();
   });
 });

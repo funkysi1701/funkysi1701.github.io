@@ -10,8 +10,10 @@ test.describe('Search Functionality', () => {
 
     // 2. Enter a random string unlikely to appear
     // Click the search button to reveal the search input
-    await page.click('button[title="Search"]');
-    await page.waitForTimeout(500); // Wait for search to expand
+    const searchButton = page.locator('button[title="Search"]');
+    await searchButton.waitFor({ state: 'visible', timeout: 10000 });
+    await searchButton.click();
+    await page.waitForSelector('input[type="search"], input[type="text"], input[placeholder*="search" i]', { timeout: 10000 });
     const searchInput = page.locator('input[type="search"], input[type="text"], input[placeholder*="search" i]').first();
     await searchInput.fill('xyzabc123notfound');
 

@@ -31,7 +31,7 @@ test.describe('Homepage and Navigation', () => {
     // Test navigation on Projects page
     await hamburger.click();
     await page.waitForTimeout(500);
-    await page.getByRole('link', { name: 'Projects' }).first().click();
+    await page.getByRole('link', { name: 'Projects', exact: true }).click();
     await expect(page).toHaveURL(/\/projects\//);
 
     // Test navigation on Contact page

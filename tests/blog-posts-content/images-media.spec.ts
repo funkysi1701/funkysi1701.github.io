@@ -29,7 +29,8 @@ test.describe('Blog Posts and Content', () => {
     }
 
     // 5. Test image loading performance
-    await page.waitForLoadState('networkidle');
+    // Wait for images to load
+    await page.waitForLoadState('load');
 
     // 6. Check for lazy loading implementation
     const lazyImages = page.locator('img[loading="lazy"]');

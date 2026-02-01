@@ -21,7 +21,7 @@ test.describe('Homepage and Navigation', () => {
     
     // Verify navigation items are accessible
     await expect(page.getByRole('link', { name: 'About' }).first()).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Projects' })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Projects', exact: true }).first()).toBeVisible();
 
     // 5. Test blog post grid/list layout
     const posts = page.locator('article, .post, [class*="post"]');

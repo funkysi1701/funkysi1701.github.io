@@ -21,7 +21,7 @@ test.describe('About and Static Pages', () => {
 
     // 4. Verify page loads and contains terms content
     await expect(page).toHaveURL(/\/terms\//);
-    await expect(page.locator('text=/terms|conditions|agreement/i')).toBeVisible();
+    await expect(page.locator('text=/terms|conditions|agreement/i').first()).toBeVisible();
 
     // 5. Check that both pages have professional formatting
     const headings = page.locator('h1, h2, h3');

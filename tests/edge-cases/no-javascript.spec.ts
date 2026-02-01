@@ -33,7 +33,7 @@ test.describe('Edge Cases and Error Handling', () => {
     
     // 7. Check if graceful degradation exists
     // Hugo is a static site generator, so it should work without JS
-    const content = page.locator('article, main, .content');
+    const content = page.locator('article, main, .content').first();
     await expect(content).toBeVisible();
 
     await context.close();

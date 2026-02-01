@@ -19,7 +19,7 @@ test.describe('About and Static Pages', () => {
     // Newsletter might use external service, so we just check content is present
     
     // 5. Verify recent topics are mentioned
-    await expect(page.locator('text=/Recent Topics|What I\'ve been writing|Topics/i')).toBeVisible();
+    await expect(page.locator('text=/Recent Topics|What I\'ve been writing|Topics/i').first()).toBeVisible();
 
     // 6. Check for target audience description
     await expect(page.locator('text=/Who Should Subscribe|developers|DevOps/i')).toBeVisible();

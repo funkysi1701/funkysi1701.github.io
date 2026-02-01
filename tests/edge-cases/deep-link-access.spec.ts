@@ -17,7 +17,7 @@ test.describe('Edge Cases and Error Handling', () => {
 
     // 4. Verify tag page loads correctly
     await expect(page).toHaveURL(/\/tags\//);
-    await expect(page.locator('nav')).toBeVisible();
+    await expect(page.locator('nav').first()).toBeVisible();
 
     // 5. Directly navigate to a year archive
     await page.goto('https://www.funkysi1701.com/2024/');

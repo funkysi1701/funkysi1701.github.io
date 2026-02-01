@@ -23,9 +23,9 @@ test.describe('Accessibility', () => {
     console.log('Semantic structure:', semanticStructure);
 
     // 3. Check for <header>, <nav>, <main>, <footer> elements
-    await expect(page.locator('header')).toBeVisible();
-    await expect(page.locator('nav')).toBeVisible();
-    await expect(page.locator('footer')).toBeVisible();
+    await expect(page.locator('header').first()).toBeVisible();
+    await expect(page.locator('nav').first()).toBeVisible();
+    await expect(page.locator('footer').first()).toBeVisible();
 
     // Main element might not be visible if empty, so just check it exists
     const mainCount = await page.locator('main').count();
