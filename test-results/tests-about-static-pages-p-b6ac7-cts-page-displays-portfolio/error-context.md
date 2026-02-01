@@ -1,0 +1,568 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - text: 
+        - link "Funky Si's Blog" [ref=e4] [cursor=pointer]:
+          - /url: https://www.funkysi1701.com/
+        - button "Toggle settings" [ref=e5] [cursor=pointer]:
+          - generic [ref=e6]: 
+        - generic "About Projects Tools & Resources Newsletter Contact Events Search Support this site" [ref=e7]:
+          - text: 
+          - list [ref=e8]:
+            - listitem [ref=e9]:
+              - link "About" [ref=e10] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/about/
+            - listitem [ref=e11]:
+              - link "Projects" [ref=e12] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/projects/
+            - listitem [ref=e13]:
+              - link "Tools & Resources" [ref=e14] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/tools-and-resources/
+            - listitem [ref=e15]:
+              - link "Newsletter" [ref=e16] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/newsletter/
+            - listitem [ref=e17]:
+              - link "Contact" [ref=e18] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/contact/
+            - listitem [ref=e19]:
+              - link "Events" [ref=e20] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/posts/events/
+            - listitem [ref=e21]:
+              - link "Search" [ref=e22] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/search/
+            - listitem [ref=e23]:
+              - link "Support this site" [ref=e24] [cursor=pointer]:
+                - /url: https://otieu.com/4/10431006
+  - main [ref=e25]:
+    - generic [ref=e26]:
+      - generic [ref=e28]:
+        - navigation "breadcrumb" [ref=e29]:
+          - list [ref=e31]:
+            - listitem [ref=e32]:
+              - link "Home" [ref=e33] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/
+            - listitem [ref=e34]: / Projects
+        - generic [ref=e35]:
+          - text: 
+          - button "" [ref=e36] [cursor=pointer]:
+            - generic [ref=e37]: 
+          - button "" [ref=e38] [cursor=pointer]:
+            - generic [ref=e39]: 
+        - article [ref=e40]:
+          - heading "Projects" [level=1] [ref=e42]
+          - generic [ref=e43]:
+            - generic [ref=e44]:
+              - generic "created on 0001-01-01 00:00:00 +0000 UTC." [ref=e45]: ·
+              - text: 2 min read ·
+            - generic [ref=e46]:
+              - heading "🚀 My Projects " [level=2] [ref=e47]:
+                - text: 🚀 My Projects
+                - link "" [ref=e48] [cursor=pointer]:
+                  - /url: "#-my-projects"
+                  - generic [ref=e49]: 
+              - paragraph [ref=e50]: "Here are some of the projects I’ve built and maintain:"
+              - heading "Blog Platform " [level=3] [ref=e51]:
+                - text: Blog Platform
+                - link "" [ref=e52] [cursor=pointer]:
+                  - /url: "#blog-platform"
+                  - generic [ref=e53]: 
+              - paragraph [ref=e54]: This blog you’re reading! Built with Hugo and deployed to Azure Static Web Apps.
+              - list [ref=e55]:
+                - listitem [ref=e56]:
+                  - strong [ref=e57]: Tech Stack
+                  - text: ": Hugo, GitHub Actions, Azure Static Web Apps"
+                - listitem [ref=e58]:
+                  - strong [ref=e59]: Features
+                  - text: ":"
+                  - list [ref=e60]:
+                    - listitem [ref=e61]: Automated deployments via CI/CD
+                    - listitem [ref=e62]: Custom theme customization
+                    - listitem [ref=e63]: RSS feeds and JSON search index
+                    - listitem [ref=e64]: Giscus comment integration
+                - listitem [ref=e65]:
+                  - strong [ref=e66]: Links
+                  - text: ":"
+                  - link "GitHub Repository" [ref=e67] [cursor=pointer]:
+                    - /url: https://github.com/funkysi1701/funkysi1701.github.io
+              - heading "Episode Atlas " [level=3] [ref=e68]:
+                - text: Episode Atlas
+                - link "" [ref=e69] [cursor=pointer]:
+                  - /url: "#episode-atlas"
+                  - generic [ref=e70]: 
+              - paragraph [ref=e71]: A website for tracking what episode you watched last of your favourite TV shows. I am a big Star Trek fan and I built this to track when I last watched what, with over 900 episodes across the different TV shows it is no easy task!
+              - list [ref=e72]:
+                - listitem [ref=e73]:
+                  - strong [ref=e74]: Tech Stack
+                  - text: ": .NET Blazor, Azure Static Web Apps with Azure function backend and Azure SQL database"
+                - listitem [ref=e75]:
+                  - strong [ref=e76]: Features
+                  - text: ":"
+                  - list [ref=e77]:
+                    - listitem [ref=e78]: GitHub Authentication (more auth providers to come)
+                    - listitem [ref=e79]: Sortable list of episodes
+                    - listitem [ref=e80]: Option to mark when you last watched a particular episode
+                    - listitem [ref=e81]: Add new episodes and TV Shows
+                    - listitem [ref=e82]:
+                      - text: Links to
+                      - link "Memory Alpha" [ref=e83] [cursor=pointer]:
+                        - /url: https://memory-alpha.fandom.com/
+                      - text: for details about the episode
+                    - listitem [ref=e84]: More features to come…
+                - listitem [ref=e85]:
+                  - strong [ref=e86]: Links
+                  - text: ":"
+                  - link "Episode Atlas" [ref=e87] [cursor=pointer]:
+                    - /url: https://www.episodeatlas.com/
+              - heading "Mandelbrot Generator " [level=3] [ref=e88]:
+                - text: Mandelbrot Generator
+                - link "" [ref=e89] [cursor=pointer]:
+                  - /url: "#mandelbrot-generator"
+                  - generic [ref=e90]: 
+              - paragraph [ref=e91]: I’ve always been fascinated by Mandelbrots and now I can generate them in the browser with Blazor webassembly
+              - list [ref=e92]:
+                - listitem [ref=e93]:
+                  - strong [ref=e94]: Tech Stack
+                  - text: ": .NET Blazor, Azure Static Web Apps"
+                - listitem [ref=e95]:
+                  - strong [ref=e96]: Features
+                  - text: ":"
+                  - list [ref=e97]:
+                    - listitem [ref=e98]: Generates a Mandelbrot Set in the browser no server or backend involved
+                    - listitem [ref=e99]: Zoom In/Out from desktop or mobile
+                    - listitem [ref=e100]: More features to come…
+                - listitem [ref=e101]:
+                  - strong [ref=e102]: Links
+                  - text: ":"
+                  - link "Mandelbrot Generator" [ref=e103] [cursor=pointer]:
+                    - /url: https://mandelbrot.funkysi1701.com/
+              - separator [ref=e104]
+              - heading "💡 Side Projects & Experiments " [level=2] [ref=e105]:
+                - text: 💡 Side Projects & Experiments
+                - link "" [ref=e106] [cursor=pointer]:
+                  - /url: "#-side-projects--experiments"
+                  - generic [ref=e107]: 
+              - paragraph [ref=e108]: "I’m constantly experimenting with new technologies. Recent areas of exploration:"
+              - list [ref=e109]:
+                - listitem [ref=e110]:
+                  - strong [ref=e111]: .NET Aspire
+                  - text: "- Cloud-native application development"
+                - listitem [ref=e112]:
+                  - strong [ref=e113]: Kubernetes
+                  - text: "- Container orchestration"
+                - listitem [ref=e114]:
+                  - strong [ref=e115]: Elasticsearch
+                  - text: "- Search and analytics"
+                - listitem [ref=e116]:
+                  - strong [ref=e117]: Azure Functions
+                  - text: "- Serverless computing"
+                - listitem [ref=e118]:
+                  - strong [ref=e119]: DevOps Automation
+                  - text: "- CI/CD pipelines and infrastructure as code"
+              - separator [ref=e120]
+              - heading "🤝 Collaborate With Me " [level=2] [ref=e121]:
+                - text: 🤝 Collaborate With Me
+                - link "" [ref=e122] [cursor=pointer]:
+                  - /url: "#-collaborate-with-me"
+                  - generic [ref=e123]: 
+              - paragraph [ref=e124]: Interested in collaborating on a project? Have an idea you’d like to discuss?
+              - list [ref=e125]:
+                - listitem [ref=e126]:
+                  - link "Contact Me" [ref=e127] [cursor=pointer]:
+                    - /url: /contact/
+                  - text: "- Get in touch"
+                - listitem [ref=e128]:
+                  - link "GitHub" [ref=e129] [cursor=pointer]:
+                    - /url: https://github.com/funkysi1701
+                  - text: "- Check out my code"
+                - listitem [ref=e130]:
+                  - link "LinkedIn" [ref=e131] [cursor=pointer]:
+                    - /url: https://linkedin.com/in/funkysi1701
+                  - text: "- Connect professionally"
+              - separator [ref=e132]
+              - heading "📚 More Resources " [level=2] [ref=e133]:
+                - text: 📚 More Resources
+                - link "" [ref=e134] [cursor=pointer]:
+                  - /url: "#-more-resources"
+                  - generic [ref=e135]: 
+              - list [ref=e136]:
+                - listitem [ref=e137]:
+                  - link "Tools & Resources" [ref=e138] [cursor=pointer]:
+                    - /url: /tools-and-resources/
+                  - text: "- My recommended development tools"
+                - listitem [ref=e139]:
+                  - link "About Me" [ref=e140] [cursor=pointer]:
+                    - /url: /about/
+                  - text: "- Learn more about my experience"
+                - listitem [ref=e141]:
+                  - link "Blog Posts" [ref=e142] [cursor=pointer]:
+                    - /url: /posts/
+                  - text: "- Read my technical articles"
+        - link "Support This Site 👉" [ref=e145] [cursor=pointer]:
+          - /url: https://otieu.com/4/10431006
+      - complementary [ref=e146]:
+        - generic [ref=e147]:
+          - generic [ref=e149]:
+            - img "Simon Foster" [ref=e151]
+            - generic [ref=e152]:
+              - generic [ref=e153]: Simon Foster
+              - generic [ref=e154]: I am Simon Foster (aka funkysi1701) a developer sharing 18+ years of experience in .NET, Azure, and DevOps. I write about cloud architecture, CI/CD pipelines, and building scalable applications.
+              - generic [ref=e155]:
+                - generic [ref=e156]: 
+                - text: North England
+              - generic [ref=e157]:
+                - generic [ref=e158]: 
+                - link "About Me" [ref=e159] [cursor=pointer]:
+                  - /url: /about
+              - generic [ref=e160]:
+                - generic [ref=e161]: 
+                - link "Contact" [ref=e162] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/contact/
+              - navigation [ref=e163]:
+                - link "" [ref=e164] [cursor=pointer]:
+                  - /url: mailto:funkysi1701@gmail.com
+                  - generic [ref=e165]: 
+          - generic [ref=e166]:
+            - heading "Search" [level=2] [ref=e168]:
+              - link "Search" [ref=e169] [cursor=pointer]:
+                - /url: /search/
+            - generic [ref=e172]:
+              - generic:
+                - generic: 
+              - searchbox "Search" [ref=e173]
+          - generic [ref=e174]:
+            - heading "Contents" [level=2] [ref=e176]
+            - navigation [ref=e178]:
+              - list [ref=e179]:
+                - listitem [ref=e180]:
+                  - link "🚀 My Projects" [ref=e181] [cursor=pointer]:
+                    - /url: "#-my-projects"
+                  - list [ref=e182]:
+                    - listitem [ref=e183]:
+                      - link "Blog Platform" [ref=e184] [cursor=pointer]:
+                        - /url: "#blog-platform"
+                    - listitem [ref=e185]:
+                      - link "Episode Atlas" [ref=e186] [cursor=pointer]:
+                        - /url: "#episode-atlas"
+                    - listitem [ref=e187]:
+                      - link "Mandelbrot Generator" [ref=e188] [cursor=pointer]:
+                        - /url: "#mandelbrot-generator"
+                - listitem [ref=e189]:
+                  - link "💡 Side Projects & Experiments" [ref=e190] [cursor=pointer]:
+                    - /url: "#-side-projects--experiments"
+                - listitem [ref=e191]:
+                  - link "🤝 Collaborate With Me" [ref=e192] [cursor=pointer]:
+                    - /url: "#-collaborate-with-me"
+                - listitem [ref=e193]:
+                  - link "📚 More Resources" [ref=e194] [cursor=pointer]:
+                    - /url: "#-more-resources"
+          - generic [ref=e195]:
+            - heading "Related Links" [level=2] [ref=e197]
+            - link "Create an Issue on GitHub" [ref=e199] [cursor=pointer]:
+              - /url: https://github.com/funkysi1701/funkysi1701.github.io/issues/new/choose
+          - generic [ref=e200]:
+            - heading "Featured Posts" [level=2] [ref=e202]
+            - list [ref=e204]:
+              - listitem [ref=e205]:
+                - link "Creating a Festive Naughty or Nice Checker Using Semantic Kernel and .NET" [ref=e206] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/festive-naughty-or-nice-checker/
+              - listitem [ref=e207]:
+                - 'link "Learning Kubernetes: A Beginner''s Journey" [ref=e208] [cursor=pointer]':
+                  - /url: https://www.funkysi1701.com/posts/2025/learning-kubernetes/
+              - listitem [ref=e209]:
+                - link "Adding Elasticsearch with .Net Aspire" [ref=e210] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/adding-elasticsearch-with-aspire/
+              - listitem [ref=e211]:
+                - link "Getting started with .Net Aspire" [ref=e212] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2024/aspire/
+              - listitem [ref=e213]:
+                - link "Upgrading to .Net 7" [ref=e214] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2022/dotnet7/
+          - generic [ref=e215]:
+            - heading "Recent Posts" [level=2] [ref=e217]
+            - list [ref=e219]:
+              - listitem [ref=e220]:
+                - link "Start Here" [ref=e221] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/start-here/
+              - listitem [ref=e222]:
+                - link "2025 in Review and Goals for 2026" [ref=e223] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2026/2025-in-review-and-2026-goals/
+              - listitem [ref=e224]:
+                - link "Events 2026" [ref=e225] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/events/2026/
+              - listitem [ref=e226]:
+                - link "Creating a Festive Naughty or Nice Checker Using Semantic Kernel and .NET" [ref=e227] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/festive-naughty-or-nice-checker/
+              - listitem [ref=e228]:
+                - 'link "Blazor and .NET 10: Breaking Changes, Fixes, and New Features" [ref=e229] [cursor=pointer]':
+                  - /url: https://www.funkysi1701.com/posts/2025/blazor-and-dotnet10/
+          - generic [ref=e230]:
+            - heading "Tags" [level=2] [ref=e232]:
+              - link "Tags" [ref=e233] [cursor=pointer]:
+                - /url: /tags
+            - generic [ref=e236]:
+              - link "Access" [ref=e237] [cursor=pointer]:
+                - /url: /tags/access/
+              - link "AI" [ref=e238] [cursor=pointer]:
+                - /url: /tags/ai/
+              - link "Android" [ref=e239] [cursor=pointer]:
+                - /url: /tags/android/
+              - link "API" [ref=e240] [cursor=pointer]:
+                - /url: /tags/api/
+              - link "App" [ref=e241] [cursor=pointer]:
+                - /url: /tags/app/
+              - link "Aspire" [ref=e242] [cursor=pointer]:
+                - /url: /tags/aspire/
+              - link "Automation" [ref=e243] [cursor=pointer]:
+                - /url: /tags/automation/
+              - link "AWS" [ref=e244] [cursor=pointer]:
+                - /url: /tags/aws/
+              - link "Azure" [ref=e245] [cursor=pointer]:
+                - /url: /tags/azure/
+              - link "AzureDevOps" [ref=e246] [cursor=pointer]:
+                - /url: /tags/azuredevops/
+              - link "Baby" [ref=e247] [cursor=pointer]:
+                - /url: /tags/baby/
+              - link "Backups" [ref=e248] [cursor=pointer]:
+                - /url: /tags/backups/
+              - link "Blazor" [ref=e249] [cursor=pointer]:
+                - /url: /tags/blazor/
+              - link "Blogging" [ref=e250] [cursor=pointer]:
+                - /url: /tags/blogging/
+              - link "C-Sharp" [ref=e251] [cursor=pointer]:
+                - /url: /tags/c-sharp/
+              - link "Career" [ref=e252] [cursor=pointer]:
+                - /url: /tags/career/
+              - link "Clouds" [ref=e253] [cursor=pointer]:
+                - /url: /tags/clouds/
+              - link "Community" [ref=e254] [cursor=pointer]:
+                - /url: /tags/community/
+              - link "Conference" [ref=e255] [cursor=pointer]:
+                - /url: /tags/conference/
+              - link "Database" [ref=e256] [cursor=pointer]:
+                - /url: /tags/database/
+              - link "Development" [ref=e257] [cursor=pointer]:
+                - /url: /tags/development/
+              - link "DevOps" [ref=e258] [cursor=pointer]:
+                - /url: /tags/devops/
+              - link "Docker" [ref=e259] [cursor=pointer]:
+                - /url: /tags/docker/
+              - link "DotNet" [ref=e260] [cursor=pointer]:
+                - /url: /tags/dotnet/
+              - link "Family" [ref=e261] [cursor=pointer]:
+                - /url: /tags/family/
+              - link "Git" [ref=e262] [cursor=pointer]:
+                - /url: /tags/git/
+              - link "Github" [ref=e263] [cursor=pointer]:
+                - /url: /tags/github/
+              - link "Goals" [ref=e264] [cursor=pointer]:
+                - /url: /tags/goals/
+              - link "Grafana" [ref=e265] [cursor=pointer]:
+                - /url: /tags/grafana/
+              - link "ITAdmin" [ref=e266] [cursor=pointer]:
+                - /url: /tags/itadmin/
+              - link "JavaScript" [ref=e267] [cursor=pointer]:
+                - /url: /tags/javascript/
+              - link "Learning" [ref=e268] [cursor=pointer]:
+                - /url: /tags/learning/
+              - link "Microsoft" [ref=e269] [cursor=pointer]:
+                - /url: /tags/microsoft/
+              - link "Monitoring" [ref=e270] [cursor=pointer]:
+                - /url: /tags/monitoring/
+              - link "Nagios" [ref=e271] [cursor=pointer]:
+                - /url: /tags/nagios/
+              - link "OpenTelemetry" [ref=e272] [cursor=pointer]:
+                - /url: /tags/opentelemetry/
+              - link "Podcast" [ref=e273] [cursor=pointer]:
+                - /url: /tags/podcast/
+              - link "Powershell" [ref=e274] [cursor=pointer]:
+                - /url: /tags/powershell/
+              - link "Programming" [ref=e275] [cursor=pointer]:
+                - /url: /tags/programming/
+              - link "Raspberry Pi" [ref=e276] [cursor=pointer]:
+                - /url: /tags/raspberry%20pi/
+              - link "Security" [ref=e277] [cursor=pointer]:
+                - /url: /tags/security/
+              - link "Servers" [ref=e278] [cursor=pointer]:
+                - /url: /tags/servers/
+              - link "Source Control" [ref=e279] [cursor=pointer]:
+                - /url: /tags/source%20control/
+              - link "SourceCode" [ref=e280] [cursor=pointer]:
+                - /url: /tags/sourcecode/
+              - link "SQL" [ref=e281] [cursor=pointer]:
+                - /url: /tags/sql/
+              - link "SSL" [ref=e282] [cursor=pointer]:
+                - /url: /tags/ssl/
+              - link "StarTrek" [ref=e283] [cursor=pointer]:
+                - /url: /tags/startrek/
+              - link "Tech" [ref=e284] [cursor=pointer]:
+                - /url: /tags/tech/
+              - link "Technology" [ref=e285] [cursor=pointer]:
+                - /url: /tags/technology/
+              - link "Testing" [ref=e286] [cursor=pointer]:
+                - /url: /tags/testing/
+              - link "Visual Studio" [ref=e287] [cursor=pointer]:
+                - /url: /tags/visual%20studio/
+              - link "Website" [ref=e288] [cursor=pointer]:
+                - /url: /tags/website/
+              - link "Windows" [ref=e289] [cursor=pointer]:
+                - /url: /tags/windows/
+          - generic [ref=e290]:
+            - heading "Links" [level=2] [ref=e292]
+            - list [ref=e294]:
+              - listitem [ref=e295]:
+                - link "Buy Me A Coffee" [ref=e296] [cursor=pointer]:
+                  - /url: https://www.buymeacoffee.com/funkysi1701
+              - listitem [ref=e297]:
+                - link "GitHub Sponsors" [ref=e298] [cursor=pointer]:
+                  - /url: https://github.com/sponsors/funkysi1701
+              - listitem [ref=e299]:
+                - link "Octopus Energy" [ref=e300] [cursor=pointer]:
+                  - /url: https://share.octopus.energy/amber-eel-810
+              - listitem [ref=e301]:
+                - link "DevTo" [ref=e302] [cursor=pointer]:
+                  - /url: https://dev.to/funkysi1701
+              - listitem [ref=e303]:
+                - link "Mastodon" [ref=e304] [cursor=pointer]:
+                  - /url: https://hachyderm.io/@funkysi1701
+              - listitem [ref=e305]:
+                - 'link "Funky Si: The Next Generation" [ref=e306] [cursor=pointer]':
+                  - /url: /funky-si-the-next-generation/
+              - listitem [ref=e307]:
+                - link "Podcasts" [ref=e308] [cursor=pointer]:
+                  - /url: /podcasts/
+              - listitem [ref=e309]:
+                - link "My Monthly Newsletter" [ref=e310] [cursor=pointer]:
+                  - /url: http://eepurl.com/i7pQno
+              - listitem [ref=e311]:
+                - link "Tools & Resources" [ref=e312] [cursor=pointer]:
+                  - /url: /tools-and-resources
+          - generic [ref=e313]:
+            - heading "Years" [level=2] [ref=e315]:
+              - link "Years" [ref=e316] [cursor=pointer]:
+                - /url: /year
+            - list [ref=e318]:
+              - listitem [ref=e319]:
+                - link "2026" [ref=e320] [cursor=pointer]:
+                  - /url: /2026/
+                - text: (2)
+              - listitem [ref=e321]:
+                - link "2025" [ref=e322] [cursor=pointer]:
+                  - /url: /2025/
+                - text: (23)
+              - listitem [ref=e323]:
+                - link "2024" [ref=e324] [cursor=pointer]:
+                  - /url: /2024/
+                - text: (11)
+              - listitem [ref=e325]:
+                - link "2023" [ref=e326] [cursor=pointer]:
+                  - /url: /2023/
+                - text: (7)
+              - listitem [ref=e327]:
+                - link "2022" [ref=e328] [cursor=pointer]:
+                  - /url: /2022/
+                - text: (17)
+              - listitem [ref=e329]:
+                - link "2021" [ref=e330] [cursor=pointer]:
+                  - /url: /2021/
+                - text: (8)
+              - listitem [ref=e331]:
+                - link "2020" [ref=e332] [cursor=pointer]:
+                  - /url: /2020/
+                - text: (10)
+              - listitem [ref=e333]:
+                - link "2019" [ref=e334] [cursor=pointer]:
+                  - /url: /2019/
+                - text: (10)
+              - listitem [ref=e335]:
+                - link "2018" [ref=e336] [cursor=pointer]:
+                  - /url: /2018/
+                - text: (20)
+              - listitem [ref=e337]:
+                - link "2017" [ref=e338] [cursor=pointer]:
+                  - /url: /2017/
+                - text: (35)
+              - listitem [ref=e339]:
+                - link "2016" [ref=e340] [cursor=pointer]:
+                  - /url: /2016/
+                - text: (28)
+              - listitem [ref=e341]:
+                - link "2015" [ref=e342] [cursor=pointer]:
+                  - /url: /2015/
+                - text: (70)
+              - listitem [ref=e343]:
+                - link "2014" [ref=e344] [cursor=pointer]:
+                  - /url: /2014/
+                - text: (11)
+              - listitem [ref=e345]: 257 Posts so far
+          - generic [ref=e346]:
+            - heading "Years" [level=2] [ref=e348]:
+              - link "Years" [ref=e349] [cursor=pointer]:
+                - /url: /year
+            - generic [ref=e352]:
+              - link "2014" [ref=e353] [cursor=pointer]:
+                - /url: /2014/
+              - link "2015" [ref=e354] [cursor=pointer]:
+                - /url: /2015/
+              - link "2016" [ref=e355] [cursor=pointer]:
+                - /url: /2016/
+              - link "2017" [ref=e356] [cursor=pointer]:
+                - /url: /2017/
+              - link "2018" [ref=e357] [cursor=pointer]:
+                - /url: /2018/
+              - link "2019" [ref=e358] [cursor=pointer]:
+                - /url: /2019/
+              - link "2020" [ref=e359] [cursor=pointer]:
+                - /url: /2020/
+              - link "2021" [ref=e360] [cursor=pointer]:
+                - /url: /2021/
+              - link "2022" [ref=e361] [cursor=pointer]:
+                - /url: /2022/
+              - link "2023" [ref=e362] [cursor=pointer]:
+                - /url: /2023/
+              - link "2024" [ref=e363] [cursor=pointer]:
+                - /url: /2024/
+              - link "2025" [ref=e364] [cursor=pointer]:
+                - /url: /2025/
+              - link "2026" [ref=e365] [cursor=pointer]:
+                - /url: /2026/
+  - contentinfo [ref=e366]:
+    - navigation [ref=e367]:
+      - link "" [ref=e368] [cursor=pointer]:
+        - /url: https://bsky.app/profile/funkysi1701.com
+        - generic [ref=e369]: 
+      - link "" [ref=e370] [cursor=pointer]:
+        - /url: https://facebook.com/funkysi1701
+        - generic [ref=e371]: 
+      - link "" [ref=e372] [cursor=pointer]:
+        - /url: https://github.com/funkysi1701
+        - generic [ref=e373]: 
+      - link "" [ref=e374] [cursor=pointer]:
+        - /url: https://linkedin.com/in/funkysi1701/
+        - generic [ref=e375]: 
+      - link "" [ref=e376] [cursor=pointer]:
+        - /url: https://hachyderm.io/web/@funkysi1701
+        - generic [ref=e377]: 
+      - link "" [ref=e378] [cursor=pointer]:
+        - /url: https://twitter.com/funkysi1701
+        - generic [ref=e379]: 
+    - generic [ref=e380]:
+      - text: Powered by
+      - link "Hugo 0.154.4" [ref=e381] [cursor=pointer]:
+        - /url: https://gohugo.io
+      - text: and the
+      - link "Bootstrap" [ref=e382] [cursor=pointer]:
+        - /url: https://github.com/razonyang/hugo-theme-bootstrap
+      - text: theme.
+      - link "Status Page" [ref=e383] [cursor=pointer]:
+        - /url: https://status.funkysi1701.com
+      - text: .
+      - link "Terms and Conditions" [ref=e384] [cursor=pointer]:
+        - /url: /terms/
+      - text: .
+  - button "Scroll to top" [ref=e385] [cursor=pointer]:
+    - generic [ref=e386]: 
+```

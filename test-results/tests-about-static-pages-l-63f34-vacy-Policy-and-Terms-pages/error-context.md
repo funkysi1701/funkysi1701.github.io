@@ -1,0 +1,605 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - text: 
+        - link "Funky Si's Blog" [ref=e4] [cursor=pointer]:
+          - /url: https://www.funkysi1701.com/
+        - button "Toggle settings" [ref=e5] [cursor=pointer]:
+          - generic [ref=e6]: 
+        - generic "About Projects Tools & Resources Newsletter Contact Events Search Support this site" [ref=e7]:
+          - text: 
+          - list [ref=e8]:
+            - listitem [ref=e9]:
+              - link "About" [ref=e10] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/about/
+            - listitem [ref=e11]:
+              - link "Projects" [ref=e12] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/projects/
+            - listitem [ref=e13]:
+              - link "Tools & Resources" [ref=e14] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/tools-and-resources/
+            - listitem [ref=e15]:
+              - link "Newsletter" [ref=e16] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/newsletter/
+            - listitem [ref=e17]:
+              - link "Contact" [ref=e18] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/contact/
+            - listitem [ref=e19]:
+              - link "Events" [ref=e20] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/posts/events/
+            - listitem [ref=e21]:
+              - link "Search" [ref=e22] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/search/
+            - listitem [ref=e23]:
+              - link "Support this site" [ref=e24] [cursor=pointer]:
+                - /url: https://otieu.com/4/10431006
+  - main [ref=e25]:
+    - generic [ref=e26]:
+      - generic [ref=e28]:
+        - navigation "breadcrumb" [ref=e29]:
+          - list [ref=e31]:
+            - listitem [ref=e32]:
+              - link "Home" [ref=e33] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/
+            - listitem [ref=e34]: / Privacy Policy
+        - generic [ref=e35]:
+          - text: 
+          - button "" [ref=e36] [cursor=pointer]:
+            - generic [ref=e37]: 
+        - article [ref=e38]:
+          - heading "Privacy Policy" [level=1] [ref=e40]
+          - generic [ref=e41]:
+            - generic [ref=e42]:
+              - generic "created on 0001-01-01 00:00:00 +0000 UTC." [ref=e43]: ·
+              - text: 11 min read ·
+            - generic [ref=e44]:
+              - heading "Privacy Policy" [level=2] [ref=e45]
+              - paragraph [ref=e46]: "Last updated: March 31, 2022"
+              - paragraph [ref=e47]: This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.
+              - paragraph [ref=e48]:
+                - text: We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the
+                - link "Privacy Policy Template" [ref=e49] [cursor=pointer]:
+                  - /url: https://www.freeprivacypolicy.com/blog/sample-privacy-policy-template/
+                - text: .
+              - heading "Interpretation and Definitions" [level=2] [ref=e50]
+              - heading "Interpretation" [level=3] [ref=e51]
+              - paragraph [ref=e52]: The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
+              - heading "Definitions" [level=3] [ref=e53]
+              - paragraph [ref=e54]: "For the purposes of this Privacy Policy:"
+              - list [ref=e55]:
+                - listitem [ref=e56]:
+                  - paragraph [ref=e57]:
+                    - strong [ref=e58]: Account
+                    - text: means a unique account created for You to access our Service or parts of our Service.
+                - listitem [ref=e59]:
+                  - paragraph [ref=e60]:
+                    - strong [ref=e61]: Company
+                    - text: (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Funky Si's Blog.
+                - listitem [ref=e62]:
+                  - paragraph [ref=e63]:
+                    - strong [ref=e64]: Cookies
+                    - text: are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.
+                - listitem [ref=e65]:
+                  - paragraph [ref=e66]:
+                    - strong [ref=e67]: Country
+                    - text: "refers to: United Kingdom"
+                - listitem [ref=e68]:
+                  - paragraph [ref=e69]:
+                    - strong [ref=e70]: Device
+                    - text: means any device that can access the Service such as a computer, a cellphone or a digital tablet.
+                - listitem [ref=e71]:
+                  - paragraph [ref=e72]:
+                    - strong [ref=e73]: Personal Data
+                    - text: is any information that relates to an identified or identifiable individual.
+                - listitem [ref=e74]:
+                  - paragraph [ref=e75]:
+                    - strong [ref=e76]: Service
+                    - text: refers to the Website.
+                - listitem [ref=e77]:
+                  - paragraph [ref=e78]:
+                    - strong [ref=e79]: Service Provider
+                    - text: means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.
+                - listitem [ref=e80]:
+                  - paragraph [ref=e81]:
+                    - strong [ref=e82]: Usage Data
+                    - text: refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).
+                - listitem [ref=e83]:
+                  - paragraph [ref=e84]:
+                    - strong [ref=e85]: Website
+                    - text: refers to Funky Si's Blog, accessible from
+                    - link "https://www.funkysi1701.com" [ref=e86] [cursor=pointer]:
+                      - /url: https://www.funkysi1701.com
+                - listitem [ref=e87]:
+                  - paragraph [ref=e88]:
+                    - strong [ref=e89]: You
+                    - text: means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
+              - heading "Collecting and Using Your Personal Data" [level=2] [ref=e90]
+              - heading "Types of Data Collected" [level=3] [ref=e91]
+              - heading "Personal Data" [level=4] [ref=e92]
+              - paragraph [ref=e93]: "While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:"
+              - list [ref=e94]:
+                - listitem [ref=e95]:
+                  - paragraph [ref=e96]: Email address
+                - listitem [ref=e97]:
+                  - paragraph [ref=e98]: First name and last name
+                - listitem [ref=e99]:
+                  - paragraph [ref=e100]: Usage Data
+              - heading "Usage Data" [level=4] [ref=e101]
+              - paragraph [ref=e102]: Usage Data is collected automatically when using the Service.
+              - paragraph [ref=e103]: Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
+              - paragraph [ref=e104]: When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.
+              - paragraph [ref=e105]: We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.
+              - heading "Tracking Technologies and Cookies" [level=4] [ref=e106]
+              - paragraph [ref=e107]: "We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:"
+              - list [ref=e108]:
+                - listitem [ref=e109]:
+                  - strong [ref=e110]: Cookies or Browser Cookies.
+                  - text: A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.
+                - listitem [ref=e111]:
+                  - strong [ref=e112]: Flash Cookies.
+                  - text: Certain features of our Service may use local stored objects (or Flash Cookies) to collect and store information about Your preferences or Your activity on our Service. Flash Cookies are not managed by the same browser settings as those used for Browser Cookies. For more information on how You can delete Flash Cookies, please read "Where can I change the settings for disabling, or deleting local shared objects?" available at
+                  - link "https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_" [ref=e113] [cursor=pointer]:
+                    - /url: https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_
+                - listitem [ref=e114]:
+                  - strong [ref=e115]: Web Beacons.
+                  - text: Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).
+              - paragraph [ref=e116]:
+                - text: "Cookies can be \"Persistent\" or \"Session\" Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. Learn more about cookies:"
+                - link "Use of Cookies by Free Privacy Policy" [ref=e117] [cursor=pointer]:
+                  - /url: https://www.freeprivacypolicy.com/blog/sample-privacy-policy-template/#Use_Of_Cookies_And_Tracking
+                - text: .
+              - paragraph [ref=e118]: "We use both Session and Persistent Cookies for the purposes set out below:"
+              - list [ref=e119]:
+                - listitem [ref=e120]:
+                  - paragraph [ref=e121]:
+                    - strong [ref=e122]: Necessary / Essential Cookies
+                  - paragraph [ref=e123]: "Type: Session Cookies"
+                  - paragraph [ref=e124]: "Administered by: Us"
+                  - paragraph [ref=e125]: "Purpose: These Cookies are essential to provide You with services available through the Website and to enable You to use some of its features. They help to authenticate users and prevent fraudulent use of user accounts. Without these Cookies, the services that You have asked for cannot be provided, and We only use these Cookies to provide You with those services."
+                - listitem [ref=e126]:
+                  - paragraph [ref=e127]:
+                    - strong [ref=e128]: Cookies Policy / Notice Acceptance Cookies
+                  - paragraph [ref=e129]: "Type: Persistent Cookies"
+                  - paragraph [ref=e130]: "Administered by: Us"
+                  - paragraph [ref=e131]: "Purpose: These Cookies identify if users have accepted the use of cookies on the Website."
+                - listitem [ref=e132]:
+                  - paragraph [ref=e133]:
+                    - strong [ref=e134]: Functionality Cookies
+                  - paragraph [ref=e135]: "Type: Persistent Cookies"
+                  - paragraph [ref=e136]: "Administered by: Us"
+                  - paragraph [ref=e137]: "Purpose: These Cookies allow us to remember choices You make when You use the Website, such as remembering your login details or language preference. The purpose of these Cookies is to provide You with a more personal experience and to avoid You having to re-enter your preferences every time You use the Website."
+              - paragraph [ref=e138]: For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy or the Cookies section of our Privacy Policy.
+              - heading "Use of Your Personal Data" [level=3] [ref=e139]
+              - paragraph [ref=e140]: "The Company may use Personal Data for the following purposes:"
+              - list [ref=e141]:
+                - listitem [ref=e142]:
+                  - paragraph [ref=e143]:
+                    - strong [ref=e144]: To provide and maintain our Service
+                    - text: ", including to monitor the usage of our Service."
+                - listitem [ref=e145]:
+                  - paragraph [ref=e146]:
+                    - strong [ref=e147]: "To manage Your Account:"
+                    - text: to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.
+                - listitem [ref=e148]:
+                  - paragraph [ref=e149]:
+                    - strong [ref=e150]: "For the performance of a contract:"
+                    - text: the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.
+                - listitem [ref=e151]:
+                  - paragraph [ref=e152]:
+                    - strong [ref=e153]: "To contact You:"
+                    - text: To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.
+                - listitem [ref=e154]:
+                  - paragraph [ref=e155]:
+                    - strong [ref=e156]: To provide You
+                    - text: with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.
+                - listitem [ref=e157]:
+                  - paragraph [ref=e158]:
+                    - strong [ref=e159]: "To manage Your requests:"
+                    - text: To attend and manage Your requests to Us.
+                - listitem [ref=e160]:
+                  - paragraph [ref=e161]:
+                    - strong [ref=e162]: "For business transfers:"
+                    - text: We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred.
+                - listitem [ref=e163]:
+                  - paragraph [ref=e164]:
+                    - strong [ref=e165]: For other purposes
+                    - text: ": We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience."
+              - paragraph [ref=e166]: "We may share Your personal information in the following situations:"
+              - list [ref=e167]:
+                - listitem [ref=e168]:
+                  - strong [ref=e169]: "With Service Providers:"
+                  - text: We may share Your personal information with Service Providers to monitor and analyze the use of our Service, to contact You.
+                - listitem [ref=e170]:
+                  - strong [ref=e171]: "For business transfers:"
+                  - text: We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company.
+                - listitem [ref=e172]:
+                  - strong [ref=e173]: "With Affiliates:"
+                  - text: We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us.
+                - listitem [ref=e174]:
+                  - strong [ref=e175]: "With business partners:"
+                  - text: We may share Your information with Our business partners to offer You certain products, services or promotions.
+                - listitem [ref=e176]:
+                  - strong [ref=e177]: "With other users:"
+                  - text: when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside.
+                - listitem [ref=e178]:
+                  - strong [ref=e179]: With Your consent
+                  - text: ": We may disclose Your personal information for any other purpose with Your consent."
+              - heading "Retention of Your Personal Data" [level=3] [ref=e180]
+              - paragraph [ref=e181]: The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.
+              - paragraph [ref=e182]: The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.
+              - heading "Transfer of Your Personal Data" [level=3] [ref=e183]
+              - paragraph [ref=e184]: Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.
+              - paragraph [ref=e185]: Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.
+              - paragraph [ref=e186]: The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.
+              - heading "Disclosure of Your Personal Data" [level=3] [ref=e187]
+              - heading "Business Transactions" [level=4] [ref=e188]
+              - paragraph [ref=e189]: If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.
+              - heading "Law enforcement" [level=4] [ref=e190]
+              - paragraph [ref=e191]: Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).
+              - heading "Other legal requirements" [level=4] [ref=e192]
+              - paragraph [ref=e193]: "The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:"
+              - list [ref=e194]:
+                - listitem [ref=e195]: Comply with a legal obligation
+                - listitem [ref=e196]: Protect and defend the rights or property of the Company
+                - listitem [ref=e197]: Prevent or investigate possible wrongdoing in connection with the Service
+                - listitem [ref=e198]: Protect the personal safety of Users of the Service or the public
+                - listitem [ref=e199]: Protect against legal liability
+              - heading "Security of Your Personal Data" [level=3] [ref=e200]
+              - paragraph [ref=e201]: The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.
+              - heading "Children's Privacy" [level=2] [ref=e202]
+              - paragraph [ref=e203]: Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.
+              - paragraph [ref=e204]: If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.
+              - heading "Links to Other Websites" [level=2] [ref=e205]
+              - paragraph [ref=e206]: Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.
+              - paragraph [ref=e207]: We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
+              - heading "Changes to this Privacy Policy" [level=2] [ref=e208]
+              - paragraph [ref=e209]: We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.
+              - paragraph [ref=e210]: We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the "Last updated" date at the top of this Privacy Policy.
+              - paragraph [ref=e211]: You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+              - heading "Contact Us" [level=2] [ref=e212]
+              - paragraph [ref=e213]: "If you have any questions about this Privacy Policy, You can contact us:"
+              - list [ref=e214]:
+                - listitem [ref=e215]: "By email: funkysi1701@gmail.com"
+        - link "Support This Site 👉" [ref=e218] [cursor=pointer]:
+          - /url: https://otieu.com/4/10431006
+      - complementary [ref=e219]:
+        - generic [ref=e220]:
+          - generic [ref=e222]:
+            - img "Simon Foster" [ref=e224]
+            - generic [ref=e225]:
+              - generic [ref=e226]: Simon Foster
+              - generic [ref=e227]: I am Simon Foster (aka funkysi1701) a developer sharing 18+ years of experience in .NET, Azure, and DevOps. I write about cloud architecture, CI/CD pipelines, and building scalable applications.
+              - generic [ref=e228]:
+                - generic [ref=e229]: 
+                - text: North England
+              - generic [ref=e230]:
+                - generic [ref=e231]: 
+                - link "About Me" [ref=e232] [cursor=pointer]:
+                  - /url: /about
+              - generic [ref=e233]:
+                - generic [ref=e234]: 
+                - link "Contact" [ref=e235] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/contact/
+              - navigation [ref=e236]:
+                - link "" [ref=e237] [cursor=pointer]:
+                  - /url: mailto:funkysi1701@gmail.com
+                  - generic [ref=e238]: 
+          - generic [ref=e239]:
+            - heading "Search" [level=2] [ref=e241]:
+              - link "Search" [ref=e242] [cursor=pointer]:
+                - /url: /search/
+            - generic [ref=e245]:
+              - generic:
+                - generic: 
+              - searchbox "Search" [ref=e246]
+          - generic [ref=e247]:
+            - heading "Related Links" [level=2] [ref=e249]
+            - link "Create an Issue on GitHub" [ref=e251] [cursor=pointer]:
+              - /url: https://github.com/funkysi1701/funkysi1701.github.io/issues/new/choose
+          - generic [ref=e252]:
+            - heading "Featured Posts" [level=2] [ref=e254]
+            - list [ref=e256]:
+              - listitem [ref=e257]:
+                - link "Creating a Festive Naughty or Nice Checker Using Semantic Kernel and .NET" [ref=e258] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/festive-naughty-or-nice-checker/
+              - listitem [ref=e259]:
+                - 'link "Learning Kubernetes: A Beginner''s Journey" [ref=e260] [cursor=pointer]':
+                  - /url: https://www.funkysi1701.com/posts/2025/learning-kubernetes/
+              - listitem [ref=e261]:
+                - link "Adding Elasticsearch with .Net Aspire" [ref=e262] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/adding-elasticsearch-with-aspire/
+              - listitem [ref=e263]:
+                - link "Getting started with .Net Aspire" [ref=e264] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2024/aspire/
+              - listitem [ref=e265]:
+                - link "Upgrading to .Net 7" [ref=e266] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2022/dotnet7/
+          - generic [ref=e267]:
+            - heading "Recent Posts" [level=2] [ref=e269]
+            - list [ref=e271]:
+              - listitem [ref=e272]:
+                - link "Start Here" [ref=e273] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/start-here/
+              - listitem [ref=e274]:
+                - link "2025 in Review and Goals for 2026" [ref=e275] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2026/2025-in-review-and-2026-goals/
+              - listitem [ref=e276]:
+                - link "Events 2026" [ref=e277] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/events/2026/
+              - listitem [ref=e278]:
+                - link "Creating a Festive Naughty or Nice Checker Using Semantic Kernel and .NET" [ref=e279] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/festive-naughty-or-nice-checker/
+              - listitem [ref=e280]:
+                - 'link "Blazor and .NET 10: Breaking Changes, Fixes, and New Features" [ref=e281] [cursor=pointer]':
+                  - /url: https://www.funkysi1701.com/posts/2025/blazor-and-dotnet10/
+          - generic [ref=e282]:
+            - heading "Tags" [level=2] [ref=e284]:
+              - link "Tags" [ref=e285] [cursor=pointer]:
+                - /url: /tags
+            - generic [ref=e288]:
+              - link "Access" [ref=e289] [cursor=pointer]:
+                - /url: /tags/access/
+              - link "AI" [ref=e290] [cursor=pointer]:
+                - /url: /tags/ai/
+              - link "Android" [ref=e291] [cursor=pointer]:
+                - /url: /tags/android/
+              - link "API" [ref=e292] [cursor=pointer]:
+                - /url: /tags/api/
+              - link "App" [ref=e293] [cursor=pointer]:
+                - /url: /tags/app/
+              - link "Aspire" [ref=e294] [cursor=pointer]:
+                - /url: /tags/aspire/
+              - link "Automation" [ref=e295] [cursor=pointer]:
+                - /url: /tags/automation/
+              - link "AWS" [ref=e296] [cursor=pointer]:
+                - /url: /tags/aws/
+              - link "Azure" [ref=e297] [cursor=pointer]:
+                - /url: /tags/azure/
+              - link "AzureDevOps" [ref=e298] [cursor=pointer]:
+                - /url: /tags/azuredevops/
+              - link "Baby" [ref=e299] [cursor=pointer]:
+                - /url: /tags/baby/
+              - link "Backups" [ref=e300] [cursor=pointer]:
+                - /url: /tags/backups/
+              - link "Blazor" [ref=e301] [cursor=pointer]:
+                - /url: /tags/blazor/
+              - link "Blogging" [ref=e302] [cursor=pointer]:
+                - /url: /tags/blogging/
+              - link "C-Sharp" [ref=e303] [cursor=pointer]:
+                - /url: /tags/c-sharp/
+              - link "Career" [ref=e304] [cursor=pointer]:
+                - /url: /tags/career/
+              - link "Clouds" [ref=e305] [cursor=pointer]:
+                - /url: /tags/clouds/
+              - link "Community" [ref=e306] [cursor=pointer]:
+                - /url: /tags/community/
+              - link "Conference" [ref=e307] [cursor=pointer]:
+                - /url: /tags/conference/
+              - link "Database" [ref=e308] [cursor=pointer]:
+                - /url: /tags/database/
+              - link "Development" [ref=e309] [cursor=pointer]:
+                - /url: /tags/development/
+              - link "DevOps" [ref=e310] [cursor=pointer]:
+                - /url: /tags/devops/
+              - link "Docker" [ref=e311] [cursor=pointer]:
+                - /url: /tags/docker/
+              - link "DotNet" [ref=e312] [cursor=pointer]:
+                - /url: /tags/dotnet/
+              - link "Family" [ref=e313] [cursor=pointer]:
+                - /url: /tags/family/
+              - link "Git" [ref=e314] [cursor=pointer]:
+                - /url: /tags/git/
+              - link "Github" [ref=e315] [cursor=pointer]:
+                - /url: /tags/github/
+              - link "Goals" [ref=e316] [cursor=pointer]:
+                - /url: /tags/goals/
+              - link "Grafana" [ref=e317] [cursor=pointer]:
+                - /url: /tags/grafana/
+              - link "ITAdmin" [ref=e318] [cursor=pointer]:
+                - /url: /tags/itadmin/
+              - link "JavaScript" [ref=e319] [cursor=pointer]:
+                - /url: /tags/javascript/
+              - link "Learning" [ref=e320] [cursor=pointer]:
+                - /url: /tags/learning/
+              - link "Microsoft" [ref=e321] [cursor=pointer]:
+                - /url: /tags/microsoft/
+              - link "Monitoring" [ref=e322] [cursor=pointer]:
+                - /url: /tags/monitoring/
+              - link "Nagios" [ref=e323] [cursor=pointer]:
+                - /url: /tags/nagios/
+              - link "OpenTelemetry" [ref=e324] [cursor=pointer]:
+                - /url: /tags/opentelemetry/
+              - link "Podcast" [ref=e325] [cursor=pointer]:
+                - /url: /tags/podcast/
+              - link "Powershell" [ref=e326] [cursor=pointer]:
+                - /url: /tags/powershell/
+              - link "Programming" [ref=e327] [cursor=pointer]:
+                - /url: /tags/programming/
+              - link "Raspberry Pi" [ref=e328] [cursor=pointer]:
+                - /url: /tags/raspberry%20pi/
+              - link "Security" [ref=e329] [cursor=pointer]:
+                - /url: /tags/security/
+              - link "Servers" [ref=e330] [cursor=pointer]:
+                - /url: /tags/servers/
+              - link "Source Control" [ref=e331] [cursor=pointer]:
+                - /url: /tags/source%20control/
+              - link "SourceCode" [ref=e332] [cursor=pointer]:
+                - /url: /tags/sourcecode/
+              - link "SQL" [ref=e333] [cursor=pointer]:
+                - /url: /tags/sql/
+              - link "SSL" [ref=e334] [cursor=pointer]:
+                - /url: /tags/ssl/
+              - link "StarTrek" [ref=e335] [cursor=pointer]:
+                - /url: /tags/startrek/
+              - link "Tech" [ref=e336] [cursor=pointer]:
+                - /url: /tags/tech/
+              - link "Technology" [ref=e337] [cursor=pointer]:
+                - /url: /tags/technology/
+              - link "Testing" [ref=e338] [cursor=pointer]:
+                - /url: /tags/testing/
+              - link "Visual Studio" [ref=e339] [cursor=pointer]:
+                - /url: /tags/visual%20studio/
+              - link "Website" [ref=e340] [cursor=pointer]:
+                - /url: /tags/website/
+              - link "Windows" [ref=e341] [cursor=pointer]:
+                - /url: /tags/windows/
+          - generic [ref=e342]:
+            - heading "Links" [level=2] [ref=e344]
+            - list [ref=e346]:
+              - listitem [ref=e347]:
+                - link "Buy Me A Coffee" [ref=e348] [cursor=pointer]:
+                  - /url: https://www.buymeacoffee.com/funkysi1701
+              - listitem [ref=e349]:
+                - link "GitHub Sponsors" [ref=e350] [cursor=pointer]:
+                  - /url: https://github.com/sponsors/funkysi1701
+              - listitem [ref=e351]:
+                - link "Octopus Energy" [ref=e352] [cursor=pointer]:
+                  - /url: https://share.octopus.energy/amber-eel-810
+              - listitem [ref=e353]:
+                - link "DevTo" [ref=e354] [cursor=pointer]:
+                  - /url: https://dev.to/funkysi1701
+              - listitem [ref=e355]:
+                - link "Mastodon" [ref=e356] [cursor=pointer]:
+                  - /url: https://hachyderm.io/@funkysi1701
+              - listitem [ref=e357]:
+                - 'link "Funky Si: The Next Generation" [ref=e358] [cursor=pointer]':
+                  - /url: /funky-si-the-next-generation/
+              - listitem [ref=e359]:
+                - link "Podcasts" [ref=e360] [cursor=pointer]:
+                  - /url: /podcasts/
+              - listitem [ref=e361]:
+                - link "My Monthly Newsletter" [ref=e362] [cursor=pointer]:
+                  - /url: http://eepurl.com/i7pQno
+              - listitem [ref=e363]:
+                - link "Tools & Resources" [ref=e364] [cursor=pointer]:
+                  - /url: /tools-and-resources
+          - generic [ref=e365]:
+            - heading "Years" [level=2] [ref=e367]:
+              - link "Years" [ref=e368] [cursor=pointer]:
+                - /url: /year
+            - list [ref=e370]:
+              - listitem [ref=e371]:
+                - link "2026" [ref=e372] [cursor=pointer]:
+                  - /url: /2026/
+                - text: (2)
+              - listitem [ref=e373]:
+                - link "2025" [ref=e374] [cursor=pointer]:
+                  - /url: /2025/
+                - text: (23)
+              - listitem [ref=e375]:
+                - link "2024" [ref=e376] [cursor=pointer]:
+                  - /url: /2024/
+                - text: (11)
+              - listitem [ref=e377]:
+                - link "2023" [ref=e378] [cursor=pointer]:
+                  - /url: /2023/
+                - text: (7)
+              - listitem [ref=e379]:
+                - link "2022" [ref=e380] [cursor=pointer]:
+                  - /url: /2022/
+                - text: (17)
+              - listitem [ref=e381]:
+                - link "2021" [ref=e382] [cursor=pointer]:
+                  - /url: /2021/
+                - text: (8)
+              - listitem [ref=e383]:
+                - link "2020" [ref=e384] [cursor=pointer]:
+                  - /url: /2020/
+                - text: (10)
+              - listitem [ref=e385]:
+                - link "2019" [ref=e386] [cursor=pointer]:
+                  - /url: /2019/
+                - text: (10)
+              - listitem [ref=e387]:
+                - link "2018" [ref=e388] [cursor=pointer]:
+                  - /url: /2018/
+                - text: (20)
+              - listitem [ref=e389]:
+                - link "2017" [ref=e390] [cursor=pointer]:
+                  - /url: /2017/
+                - text: (35)
+              - listitem [ref=e391]:
+                - link "2016" [ref=e392] [cursor=pointer]:
+                  - /url: /2016/
+                - text: (28)
+              - listitem [ref=e393]:
+                - link "2015" [ref=e394] [cursor=pointer]:
+                  - /url: /2015/
+                - text: (70)
+              - listitem [ref=e395]:
+                - link "2014" [ref=e396] [cursor=pointer]:
+                  - /url: /2014/
+                - text: (11)
+              - listitem [ref=e397]: 257 Posts so far
+          - generic [ref=e398]:
+            - heading "Years" [level=2] [ref=e400]:
+              - link "Years" [ref=e401] [cursor=pointer]:
+                - /url: /year
+            - generic [ref=e404]:
+              - link "2014" [ref=e405] [cursor=pointer]:
+                - /url: /2014/
+              - link "2015" [ref=e406] [cursor=pointer]:
+                - /url: /2015/
+              - link "2016" [ref=e407] [cursor=pointer]:
+                - /url: /2016/
+              - link "2017" [ref=e408] [cursor=pointer]:
+                - /url: /2017/
+              - link "2018" [ref=e409] [cursor=pointer]:
+                - /url: /2018/
+              - link "2019" [ref=e410] [cursor=pointer]:
+                - /url: /2019/
+              - link "2020" [ref=e411] [cursor=pointer]:
+                - /url: /2020/
+              - link "2021" [ref=e412] [cursor=pointer]:
+                - /url: /2021/
+              - link "2022" [ref=e413] [cursor=pointer]:
+                - /url: /2022/
+              - link "2023" [ref=e414] [cursor=pointer]:
+                - /url: /2023/
+              - link "2024" [ref=e415] [cursor=pointer]:
+                - /url: /2024/
+              - link "2025" [ref=e416] [cursor=pointer]:
+                - /url: /2025/
+              - link "2026" [ref=e417] [cursor=pointer]:
+                - /url: /2026/
+  - contentinfo [ref=e418]:
+    - navigation [ref=e419]:
+      - link "" [ref=e420] [cursor=pointer]:
+        - /url: https://bsky.app/profile/funkysi1701.com
+        - generic [ref=e421]: 
+      - link "" [ref=e422] [cursor=pointer]:
+        - /url: https://facebook.com/funkysi1701
+        - generic [ref=e423]: 
+      - link "" [ref=e424] [cursor=pointer]:
+        - /url: https://github.com/funkysi1701
+        - generic [ref=e425]: 
+      - link "" [ref=e426] [cursor=pointer]:
+        - /url: https://linkedin.com/in/funkysi1701/
+        - generic [ref=e427]: 
+      - link "" [ref=e428] [cursor=pointer]:
+        - /url: https://hachyderm.io/web/@funkysi1701
+        - generic [ref=e429]: 
+      - link "" [ref=e430] [cursor=pointer]:
+        - /url: https://twitter.com/funkysi1701
+        - generic [ref=e431]: 
+    - generic [ref=e432]:
+      - text: Powered by
+      - link "Hugo 0.154.4" [ref=e433] [cursor=pointer]:
+        - /url: https://gohugo.io
+      - text: and the
+      - link "Bootstrap" [ref=e434] [cursor=pointer]:
+        - /url: https://github.com/razonyang/hugo-theme-bootstrap
+      - text: theme.
+      - link "Status Page" [ref=e435] [cursor=pointer]:
+        - /url: https://status.funkysi1701.com
+      - text: .
+      - link "Terms and Conditions" [ref=e436] [cursor=pointer]:
+        - /url: /terms/
+      - text: .
+  - button "Scroll to top" [ref=e437] [cursor=pointer]:
+    - generic [ref=e438]: 
+```

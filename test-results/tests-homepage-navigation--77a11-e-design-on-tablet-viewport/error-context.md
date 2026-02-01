@@ -1,0 +1,700 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - button "Toggle navigation" [ref=e4] [cursor=pointer]:
+          - generic [ref=e5]: 
+        - heading "Funky Si's Blog" [level=1] [ref=e6]:
+          - link "Funky Si's Blog" [ref=e7] [cursor=pointer]:
+            - /url: https://www.funkysi1701.com/
+        - button "Toggle settings" [ref=e8] [cursor=pointer]:
+          - generic [ref=e9]: 
+        - text: 
+  - main [ref=e10]:
+    - generic [ref=e11]:
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - article [ref=e15]:
+            - generic [ref=e17]: 
+            - heading "Start Here" [level=2] [ref=e19]:
+              - link "Start Here" [ref=e20] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/posts/start-here/
+            - generic [ref=e21]:
+              - img "Start Here" [ref=e22]
+              - generic [ref=e23]:
+                - text: Jan 1, 2026 ·
+                - generic [ref=e24]:
+                  - link "2026-01" [ref=e25] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2026/01/
+                  - link "2026" [ref=e26] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2026/
+              - generic [ref=e27]:
+                - paragraph [ref=e28]: New to Funky Si's blog? Start with these featured articles covering .NET, Azure, DevOps, and software development.
+                - link "Read More" [ref=e30] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/start-here/
+          - article [ref=e31]:
+            - heading "2025 in Review and Goals for 2026" [level=2] [ref=e33]:
+              - link "2025 in Review and Goals for 2026" [ref=e34] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/posts/2026/2025-in-review-and-2026-goals/
+            - generic [ref=e35]:
+              - img "2025 in Review and Goals for 2026" [ref=e36]
+              - generic [ref=e37]:
+                - text: Jan 1, 2026 ·4 min read ·
+                - generic [ref=e38]:
+                  - link "tech" [ref=e39] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/categories/tech/
+                  - link "2026-01" [ref=e40] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2026/01/
+                  - link "Retrospective" [ref=e41] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/retrospective/
+                  - link "Goals" [ref=e42] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/goals/
+                  - link "Yearly Review" [ref=e43] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/yearly-review/
+                  - link "Blogging" [ref=e44] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/blogging/
+                  - link "2026" [ref=e45] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2026/
+              - generic [ref=e46]:
+                - paragraph [ref=e47]: "2025 in Review What a year 2025 has been! I published 24 blog posts covering a wide range of topics from cloud-native technologies to AI experiments, and even some personal reflections. Here are the key themes and highlights from my blogging year: Cloud-Native and DevOps This was a major focus area for me in 2025, not..."
+                - link "Read More" [ref=e49] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2026/2025-in-review-and-2026-goals/
+          - article [ref=e50]:
+            - heading "Creating a Festive Naughty or Nice Checker Using Semantic Kernel and .NET" [level=2] [ref=e52]:
+              - link "Creating a Festive Naughty or Nice Checker Using Semantic Kernel and .NET" [ref=e53] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/posts/2025/festive-naughty-or-nice-checker/
+            - generic [ref=e54]:
+              - img "Creating a Festive Naughty or Nice Checker Using Semantic Kernel and .NET" [ref=e55]
+              - generic [ref=e56]:
+                - text: Dec 12, 2025 ·11 min read ·
+                - generic [ref=e57]:
+                  - link "tech" [ref=e58] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/categories/tech/
+                  - link "2025-12" [ref=e59] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2025/12/
+                  - link ".NET" [ref=e60] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/.net/
+                  - link "Semantic Kernel" [ref=e61] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/semantic-kernel/
+                  - link "AI" [ref=e62] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/ai/
+                  - link "Christmas" [ref=e63] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/christmas/
+                  - link "festive" [ref=e64] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/festive/
+                  - link "naughty or nice" [ref=e65] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/naughty-or-nice/
+                  - link "c-sharp" [ref=e66] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/c-sharp/
+                  - link "machine learning" [ref=e67] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/machine-learning/
+                  - link "tutorial" [ref=e68] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/tutorial/
+                  - link "2025" [ref=e69] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2025/
+              - generic [ref=e70]:
+                - paragraph [ref=e71]: Introduction I’m excited to be taking part in this year’s Festive Tech Calendar , a community-driven advent calendar showcasing amazing technical content throughout December. Make sure to check out the other excellent posts created by developers from around the world! In this festive tutorial, we’ll build a fun...
+                - link "Read More" [ref=e73] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/festive-naughty-or-nice-checker/
+          - article [ref=e74]:
+            - 'heading "Blazor and .NET 10: Breaking Changes, Fixes, and New Features" [level=2] [ref=e76]':
+              - 'link "Blazor and .NET 10: Breaking Changes, Fixes, and New Features" [ref=e77] [cursor=pointer]':
+                - /url: https://www.funkysi1701.com/posts/2025/blazor-and-dotnet10/
+            - generic [ref=e78]:
+              - 'img "Blazor and .NET 10: Breaking Changes, Fixes, and New Features" [ref=e79]'
+              - generic [ref=e80]:
+                - text: Nov 17, 2025 ·2 min read ·
+                - generic [ref=e81]:
+                  - link "tech" [ref=e82] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/categories/tech/
+                  - link "2025-11" [ref=e83] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2025/11/
+                  - link "Blazor" [ref=e84] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/blazor/
+                  - link ".NET 10" [ref=e85] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/.net-10/
+                  - link "WebAssembly" [ref=e86] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/webassembly/
+                  - link "Wasm" [ref=e87] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/wasm/
+                  - link "HttpClient" [ref=e88] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/httpclient/
+                  - link "breaking change" [ref=e89] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/breaking-change/
+                  - link "DotNet" [ref=e90] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/dotnet/
+                  - link "Visual Studio" [ref=e91] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/visual-studio/
+                  - link "release" [ref=e92] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/release/
+                  - link "streaming response" [ref=e93] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/streaming-response/
+                  - link "c-sharp" [ref=e94] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/c-sharp/
+                  - link "2025" [ref=e95] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2025/
+              - generic [ref=e96]:
+                - paragraph [ref=e97]: What’s New in .NET 10? .NET 10 was released this week and it is full of awesome new features. Check it out at .NET Download , there is also a new version of Visual Studio which you should also check out. I quickly upgraded my .NET projects to take advantage of the new version, but my Blazor WebAssembly (Wasm) project...
+                - link "Read More" [ref=e99] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/blazor-and-dotnet10/
+          - article [ref=e100]:
+            - heading "Periodic Table of DevOps 2025" [level=2] [ref=e102]:
+              - link "Periodic Table of DevOps 2025" [ref=e103] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/posts/2025/periodic-table-devops-2025/
+            - generic [ref=e104]:
+              - img "Periodic Table of DevOps 2025" [ref=e105]
+              - generic [ref=e106]:
+                - text: Sep 29, 2025 ·3 min read ·
+                - generic [ref=e107]:
+                  - link "tech" [ref=e108] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/categories/tech/
+                  - link "2025-09" [ref=e109] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2025/09/
+                  - link "DevOps" [ref=e110] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/devops/
+                  - link "Tools" [ref=e111] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/tools/
+                  - link "cloud" [ref=e112] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/cloud/
+                  - link "containerization" [ref=e113] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/containerization/
+                  - link "source control" [ref=e114] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/source-control/
+                  - link "Automation" [ref=e115] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/automation/
+                  - link "2025" [ref=e116] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/2025/
+                  - link "2016" [ref=e117] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/2016/
+                  - link "comparison" [ref=e118] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/comparison/
+                  - link "trends" [ref=e119] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/trends/
+                  - link "Software Development" [ref=e120] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/software-development/
+                  - link "periodic table" [ref=e121] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/periodic-table/
+                  - link "2025" [ref=e122] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2025/
+              - generic [ref=e123]:
+                - paragraph [ref=e124]: DevOps has transformed the way teams build, deploy, and manage software. Over the years, the tools we use have evolved rapidly—some have become industry standards, while others have faded away or emerged to solve new challenges. In this post, I revisit the concept of a “Periodic Table of DevOps” to compare the...
+                - link "Read More" [ref=e126] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/periodic-table-devops-2025/
+          - article [ref=e127]:
+            - heading "The Mandelbrot Set" [level=2] [ref=e129]:
+              - link "The Mandelbrot Set" [ref=e130] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/posts/2025/mandelbrot-set/
+            - generic [ref=e131]:
+              - img "The Mandelbrot Set" [ref=e132]
+              - generic [ref=e133]:
+                - text: Sep 15, 2025 ·4 min read ·
+                - generic [ref=e134]:
+                  - link "tech" [ref=e135] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/categories/tech/
+                  - link "2025-09" [ref=e136] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2025/09/
+                  - link "mandelbrot set" [ref=e137] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/mandelbrot-set/
+                  - link "fractals" [ref=e138] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/fractals/
+                  - link "mathematics" [ref=e139] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/mathematics/
+                  - link "chaos theory" [ref=e140] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/chaos-theory/
+                  - link "complex numbers" [ref=e141] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/complex-numbers/
+                  - link "art" [ref=e142] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/art/
+                  - link "visualization" [ref=e143] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/visualization/
+                  - link "math art" [ref=e144] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/math-art/
+                  - link "self-similarity" [ref=e145] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/self-similarity/
+                  - link "complex dynamics" [ref=e146] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/complex-dynamics/
+                  - link "2025" [ref=e147] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2025/
+              - generic [ref=e148]:
+                - paragraph [ref=e149]: "The Mandelbrot Set: Beauty, Chaos, and Mathematical Art The Mandelbrot set is one of the most iconic images in mathematics—a mesmerizing swirl of fractal patterns, infinite complexity, and unexpected beauty. But what exactly is the Mandelbrot set, and why has it captured the imagination of mathematicians, artists, and..."
+                - link "Read More" [ref=e151] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/mandelbrot-set/
+          - article [ref=e152]:
+            - heading "The Hacker Ethic" [level=2] [ref=e154]:
+              - link "The Hacker Ethic" [ref=e155] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/posts/2025/the-hacker-ethic/
+            - generic [ref=e156]:
+              - img "The Hacker Ethic" [ref=e157]
+              - generic [ref=e158]:
+                - text: Sep 1, 2025 ·4 min read ·
+                - generic [ref=e159]:
+                  - link "tech" [ref=e160] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/categories/tech/
+                  - link "2025-09" [ref=e161] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2025/09/
+                  - link "hacking" [ref=e162] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/hacking/
+                  - link "ethics" [ref=e163] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/ethics/
+                  - link "hacker culture" [ref=e164] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/hacker-culture/
+                  - link "technology" [ref=e165] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/technology/
+                  - link "innovation" [ref=e166] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/innovation/
+                  - link "curiosity" [ref=e167] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/curiosity/
+                  - link "security" [ref=e168] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/security/
+                  - link "digital rights" [ref=e169] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/digital-rights/
+                  - link "Open Source" [ref=e170] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/open-source/
+                  - link "mindset" [ref=e171] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/mindset/
+                  - link "2025" [ref=e172] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2025/
+              - generic [ref=e173]:
+                - paragraph [ref=e174]: "The Hacker Ethic: Principles That Shaped the Digital Age When most people hear the word “hacker,” they imagine shadowy figures breaking into computer systems. But the original meaning of “hacker” is far richer, rooted in curiosity, creativity, and a set of values that have profoundly shaped technology and culture. This..."
+                - link "Read More" [ref=e176] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/the-hacker-ethic/
+          - article [ref=e177]:
+            - heading "Automating SSL for Kubernetes with Let's Encrypt and Cert Manager" [level=2] [ref=e179]:
+              - link "Automating SSL for Kubernetes with Let's Encrypt and Cert Manager" [ref=e180] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/posts/2025/kubernetes-and-letsencrypt/
+            - generic [ref=e181]:
+              - img "Automating SSL for Kubernetes with Let's Encrypt and Cert Manager" [ref=e182]
+              - generic [ref=e183]:
+                - text: Jul 7, 2025 ·2 min read ·
+                - generic [ref=e184]:
+                  - link "tech" [ref=e185] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/categories/tech/
+                  - link "2025-07" [ref=e186] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2025/07/
+                  - link "Kubernetes" [ref=e187] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/kubernetes/
+                  - link "LetsEncrypt" [ref=e188] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/letsencrypt/
+                  - link "SSL" [ref=e189] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/ssl/
+                  - link "Cert Manager" [ref=e190] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/cert-manager/
+                  - link "Helm" [ref=e191] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/helm/
+                  - link "Cloudflare" [ref=e192] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/cloudflare/
+                  - link "DevOps" [ref=e193] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/devops/
+                  - link "security" [ref=e194] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/security/
+                  - link "Automation" [ref=e195] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/automation/
+                  - link "2025" [ref=e196] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2025/
+              - generic [ref=e197]:
+                - paragraph [ref=e198]: I have blogged before about how cool Let’s Encrypt is for getting your web things running under https. However I have just got myself a local kubernetes cluster and it is super easy to spin up new web services with SSL certs. The basic instructions can be found here but let’s look at what was involved. First of all...
+                - link "Read More" [ref=e200] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/kubernetes-and-letsencrypt/
+          - article [ref=e201]:
+            - 'heading "Stepping Outside My Comfort Zone: An Adventure Holiday Experience" [level=2] [ref=e203]':
+              - 'link "Stepping Outside My Comfort Zone: An Adventure Holiday Experience" [ref=e204] [cursor=pointer]':
+                - /url: https://www.funkysi1701.com/posts/2025/stepping-outside-your-comfort-zone/
+            - generic [ref=e205]:
+              - 'img "Stepping Outside My Comfort Zone: An Adventure Holiday Experience" [ref=e206]'
+              - generic [ref=e207]:
+                - text: Jun 2, 2025 ·6 min read ·
+                - generic [ref=e208]:
+                  - link "home" [ref=e209] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/categories/home/
+                  - link "2025-06" [ref=e210] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2025/06/
+                  - link "Adventure" [ref=e211] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/adventure/
+                  - link "Family" [ref=e212] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/family/
+                  - link "Personal Growth" [ref=e213] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/personal-growth/
+                  - link "Travel" [ref=e214] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/travel/
+                  - link "Holiday" [ref=e215] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/holiday/
+                  - link "Outdoors" [ref=e216] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/outdoors/
+                  - link "Parenting" [ref=e217] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/parenting/
+                  - link "Experiences" [ref=e218] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/tags/experiences/
+                  - link "2025" [ref=e219] [cursor=pointer]:
+                    - /url: https://www.funkysi1701.com/2025/
+              - generic [ref=e220]:
+                - paragraph [ref=e221]: Stepping outside my comfort zone doesn’t come naturally to me. I’m happiest behind my laptop, but every now and then, I know it’s important to try something new. This year, my family and I decided to do just that—and it turned out to be one of our most memorable weeks ever. Curious about what happens when you swap...
+                - link "Read More" [ref=e223] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/stepping-outside-your-comfort-zone/
+        - navigation "Page navigation" [ref=e225]:
+          - list [ref=e226]:
+            - listitem [ref=e227]:
+              - link "1" [ref=e228] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e229]:
+              - link "2" [ref=e230] [cursor=pointer]:
+                - /url: /page/2/
+            - listitem [ref=e231]:
+              - link "3" [ref=e232] [cursor=pointer]:
+                - /url: /page/3/
+            - listitem [ref=e233]:
+              - link "26" [ref=e234] [cursor=pointer]:
+                - /url: /page/26/
+            - listitem [ref=e235]:
+              - link "Next" [ref=e236] [cursor=pointer]:
+                - /url: /page/2/
+                - text: »
+            - listitem [ref=e237]:
+              - link "Last" [ref=e238] [cursor=pointer]:
+                - /url: /page/26/
+                - text: »»
+      - complementary [ref=e239]:
+        - generic [ref=e240]:
+          - generic [ref=e242]:
+            - img "Simon Foster" [ref=e244]
+            - generic [ref=e245]:
+              - generic [ref=e246]: Simon Foster
+              - generic [ref=e247]: I am Simon Foster (aka funkysi1701) a developer sharing 18+ years of experience in .NET, Azure, and DevOps. I write about cloud architecture, CI/CD pipelines, and building scalable applications.
+              - generic [ref=e248]:
+                - generic [ref=e249]: 
+                - text: North England
+              - generic [ref=e250]:
+                - generic [ref=e251]: 
+                - link "About Me" [ref=e252] [cursor=pointer]:
+                  - /url: /about
+              - generic [ref=e253]:
+                - generic [ref=e254]: 
+                - link "Contact" [ref=e255] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/contact/
+              - navigation [ref=e256]:
+                - link "" [ref=e257] [cursor=pointer]:
+                  - /url: mailto:funkysi1701@gmail.com
+                  - generic [ref=e258]: 
+                - link "" [ref=e259] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/index.xml
+                  - generic [ref=e260]: 
+          - generic [ref=e261]:
+            - heading "Search" [level=2] [ref=e263]:
+              - link "Search" [ref=e264] [cursor=pointer]:
+                - /url: /search/
+            - generic [ref=e267]:
+              - generic:
+                - generic: 
+              - searchbox "Search" [ref=e268]
+          - generic [ref=e269]:
+            - heading "Related Links" [level=2] [ref=e271]
+            - link "Create an Issue on GitHub" [ref=e273] [cursor=pointer]:
+              - /url: https://github.com/funkysi1701/funkysi1701.github.io/issues/new/choose
+          - generic [ref=e274]:
+            - heading "Featured Posts" [level=2] [ref=e276]
+            - list [ref=e278]:
+              - listitem [ref=e279]:
+                - link "Creating a Festive Naughty or Nice Checker Using Semantic Kernel and .NET" [ref=e280] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/festive-naughty-or-nice-checker/
+              - listitem [ref=e281]:
+                - 'link "Learning Kubernetes: A Beginner''s Journey" [ref=e282] [cursor=pointer]':
+                  - /url: https://www.funkysi1701.com/posts/2025/learning-kubernetes/
+              - listitem [ref=e283]:
+                - link "Adding Elasticsearch with .Net Aspire" [ref=e284] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/adding-elasticsearch-with-aspire/
+              - listitem [ref=e285]:
+                - link "Getting started with .Net Aspire" [ref=e286] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2024/aspire/
+              - listitem [ref=e287]:
+                - link "Upgrading to .Net 7" [ref=e288] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2022/dotnet7/
+          - generic [ref=e289]:
+            - heading "Recent Posts" [level=2] [ref=e291]
+            - list [ref=e293]:
+              - listitem [ref=e294]:
+                - link "Start Here" [ref=e295] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/start-here/
+              - listitem [ref=e296]:
+                - link "2025 in Review and Goals for 2026" [ref=e297] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2026/2025-in-review-and-2026-goals/
+              - listitem [ref=e298]:
+                - link "Events 2026" [ref=e299] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/events/2026/
+              - listitem [ref=e300]:
+                - link "Creating a Festive Naughty or Nice Checker Using Semantic Kernel and .NET" [ref=e301] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/festive-naughty-or-nice-checker/
+              - listitem [ref=e302]:
+                - 'link "Blazor and .NET 10: Breaking Changes, Fixes, and New Features" [ref=e303] [cursor=pointer]':
+                  - /url: https://www.funkysi1701.com/posts/2025/blazor-and-dotnet10/
+          - generic [ref=e304]:
+            - heading "Tags" [level=2] [ref=e306]:
+              - link "Tags" [ref=e307] [cursor=pointer]:
+                - /url: /tags
+            - generic [ref=e310]:
+              - link "Access" [ref=e311] [cursor=pointer]:
+                - /url: /tags/access/
+              - link "AI" [ref=e312] [cursor=pointer]:
+                - /url: /tags/ai/
+              - link "Android" [ref=e313] [cursor=pointer]:
+                - /url: /tags/android/
+              - link "API" [ref=e314] [cursor=pointer]:
+                - /url: /tags/api/
+              - link "App" [ref=e315] [cursor=pointer]:
+                - /url: /tags/app/
+              - link "Aspire" [ref=e316] [cursor=pointer]:
+                - /url: /tags/aspire/
+              - link "Automation" [ref=e317] [cursor=pointer]:
+                - /url: /tags/automation/
+              - link "AWS" [ref=e318] [cursor=pointer]:
+                - /url: /tags/aws/
+              - link "Azure" [ref=e319] [cursor=pointer]:
+                - /url: /tags/azure/
+              - link "AzureDevOps" [ref=e320] [cursor=pointer]:
+                - /url: /tags/azuredevops/
+              - link "Baby" [ref=e321] [cursor=pointer]:
+                - /url: /tags/baby/
+              - link "Backups" [ref=e322] [cursor=pointer]:
+                - /url: /tags/backups/
+              - link "Blazor" [ref=e323] [cursor=pointer]:
+                - /url: /tags/blazor/
+              - link "Blogging" [ref=e324] [cursor=pointer]:
+                - /url: /tags/blogging/
+              - link "C-Sharp" [ref=e325] [cursor=pointer]:
+                - /url: /tags/c-sharp/
+              - link "Career" [ref=e326] [cursor=pointer]:
+                - /url: /tags/career/
+              - link "Clouds" [ref=e327] [cursor=pointer]:
+                - /url: /tags/clouds/
+              - link "Community" [ref=e328] [cursor=pointer]:
+                - /url: /tags/community/
+              - link "Conference" [ref=e329] [cursor=pointer]:
+                - /url: /tags/conference/
+              - link "Database" [ref=e330] [cursor=pointer]:
+                - /url: /tags/database/
+              - link "Development" [ref=e331] [cursor=pointer]:
+                - /url: /tags/development/
+              - link "DevOps" [ref=e332] [cursor=pointer]:
+                - /url: /tags/devops/
+              - link "Docker" [ref=e333] [cursor=pointer]:
+                - /url: /tags/docker/
+              - link "DotNet" [ref=e334] [cursor=pointer]:
+                - /url: /tags/dotnet/
+              - link "Family" [ref=e335] [cursor=pointer]:
+                - /url: /tags/family/
+              - link "Git" [ref=e336] [cursor=pointer]:
+                - /url: /tags/git/
+              - link "Github" [ref=e337] [cursor=pointer]:
+                - /url: /tags/github/
+              - link "Goals" [ref=e338] [cursor=pointer]:
+                - /url: /tags/goals/
+              - link "Grafana" [ref=e339] [cursor=pointer]:
+                - /url: /tags/grafana/
+              - link "ITAdmin" [ref=e340] [cursor=pointer]:
+                - /url: /tags/itadmin/
+              - link "JavaScript" [ref=e341] [cursor=pointer]:
+                - /url: /tags/javascript/
+              - link "Learning" [ref=e342] [cursor=pointer]:
+                - /url: /tags/learning/
+              - link "Microsoft" [ref=e343] [cursor=pointer]:
+                - /url: /tags/microsoft/
+              - link "Monitoring" [ref=e344] [cursor=pointer]:
+                - /url: /tags/monitoring/
+              - link "Nagios" [ref=e345] [cursor=pointer]:
+                - /url: /tags/nagios/
+              - link "OpenTelemetry" [ref=e346] [cursor=pointer]:
+                - /url: /tags/opentelemetry/
+              - link "Podcast" [ref=e347] [cursor=pointer]:
+                - /url: /tags/podcast/
+              - link "Powershell" [ref=e348] [cursor=pointer]:
+                - /url: /tags/powershell/
+              - link "Programming" [ref=e349] [cursor=pointer]:
+                - /url: /tags/programming/
+              - link "Raspberry Pi" [ref=e350] [cursor=pointer]:
+                - /url: /tags/raspberry%20pi/
+              - link "Security" [ref=e351] [cursor=pointer]:
+                - /url: /tags/security/
+              - link "Servers" [ref=e352] [cursor=pointer]:
+                - /url: /tags/servers/
+              - link "Source Control" [ref=e353] [cursor=pointer]:
+                - /url: /tags/source%20control/
+              - link "SourceCode" [ref=e354] [cursor=pointer]:
+                - /url: /tags/sourcecode/
+              - link "SQL" [ref=e355] [cursor=pointer]:
+                - /url: /tags/sql/
+              - link "SSL" [ref=e356] [cursor=pointer]:
+                - /url: /tags/ssl/
+              - link "StarTrek" [ref=e357] [cursor=pointer]:
+                - /url: /tags/startrek/
+              - link "Tech" [ref=e358] [cursor=pointer]:
+                - /url: /tags/tech/
+              - link "Technology" [ref=e359] [cursor=pointer]:
+                - /url: /tags/technology/
+              - link "Testing" [ref=e360] [cursor=pointer]:
+                - /url: /tags/testing/
+              - link "Visual Studio" [ref=e361] [cursor=pointer]:
+                - /url: /tags/visual%20studio/
+              - link "Website" [ref=e362] [cursor=pointer]:
+                - /url: /tags/website/
+              - link "Windows" [ref=e363] [cursor=pointer]:
+                - /url: /tags/windows/
+          - generic [ref=e364]:
+            - heading "Links" [level=2] [ref=e366]
+            - list [ref=e368]:
+              - listitem [ref=e369]:
+                - link "Buy Me A Coffee" [ref=e370] [cursor=pointer]:
+                  - /url: https://www.buymeacoffee.com/funkysi1701
+              - listitem [ref=e371]:
+                - link "GitHub Sponsors" [ref=e372] [cursor=pointer]:
+                  - /url: https://github.com/sponsors/funkysi1701
+              - listitem [ref=e373]:
+                - link "Octopus Energy" [ref=e374] [cursor=pointer]:
+                  - /url: https://share.octopus.energy/amber-eel-810
+              - listitem [ref=e375]:
+                - link "DevTo" [ref=e376] [cursor=pointer]:
+                  - /url: https://dev.to/funkysi1701
+              - listitem [ref=e377]:
+                - link "Mastodon" [ref=e378] [cursor=pointer]:
+                  - /url: https://hachyderm.io/@funkysi1701
+              - listitem [ref=e379]:
+                - 'link "Funky Si: The Next Generation" [ref=e380] [cursor=pointer]':
+                  - /url: /funky-si-the-next-generation/
+              - listitem [ref=e381]:
+                - link "Podcasts" [ref=e382] [cursor=pointer]:
+                  - /url: /podcasts/
+              - listitem [ref=e383]:
+                - link "My Monthly Newsletter" [ref=e384] [cursor=pointer]:
+                  - /url: http://eepurl.com/i7pQno
+              - listitem [ref=e385]:
+                - link "Tools & Resources" [ref=e386] [cursor=pointer]:
+                  - /url: /tools-and-resources
+          - generic [ref=e387]:
+            - heading "Years" [level=2] [ref=e389]:
+              - link "Years" [ref=e390] [cursor=pointer]:
+                - /url: /year
+            - list [ref=e392]:
+              - listitem [ref=e393]:
+                - link "2026" [ref=e394] [cursor=pointer]:
+                  - /url: /2026/
+                - text: (2)
+              - listitem [ref=e395]:
+                - link "2025" [ref=e396] [cursor=pointer]:
+                  - /url: /2025/
+                - text: (23)
+              - listitem [ref=e397]:
+                - link "2024" [ref=e398] [cursor=pointer]:
+                  - /url: /2024/
+                - text: (11)
+              - listitem [ref=e399]:
+                - link "2023" [ref=e400] [cursor=pointer]:
+                  - /url: /2023/
+                - text: (7)
+              - listitem [ref=e401]:
+                - link "2022" [ref=e402] [cursor=pointer]:
+                  - /url: /2022/
+                - text: (17)
+              - listitem [ref=e403]:
+                - link "2021" [ref=e404] [cursor=pointer]:
+                  - /url: /2021/
+                - text: (8)
+              - listitem [ref=e405]:
+                - link "2020" [ref=e406] [cursor=pointer]:
+                  - /url: /2020/
+                - text: (10)
+              - listitem [ref=e407]:
+                - link "2019" [ref=e408] [cursor=pointer]:
+                  - /url: /2019/
+                - text: (10)
+              - listitem [ref=e409]:
+                - link "2018" [ref=e410] [cursor=pointer]:
+                  - /url: /2018/
+                - text: (20)
+              - listitem [ref=e411]:
+                - link "2017" [ref=e412] [cursor=pointer]:
+                  - /url: /2017/
+                - text: (35)
+              - listitem [ref=e413]:
+                - link "2016" [ref=e414] [cursor=pointer]:
+                  - /url: /2016/
+                - text: (28)
+              - listitem [ref=e415]:
+                - link "2015" [ref=e416] [cursor=pointer]:
+                  - /url: /2015/
+                - text: (70)
+              - listitem [ref=e417]:
+                - link "2014" [ref=e418] [cursor=pointer]:
+                  - /url: /2014/
+                - text: (11)
+              - listitem [ref=e419]: 257 Posts so far
+          - generic [ref=e420]:
+            - heading "Years" [level=2] [ref=e422]:
+              - link "Years" [ref=e423] [cursor=pointer]:
+                - /url: /year
+            - generic [ref=e426]:
+              - link "2014" [ref=e427] [cursor=pointer]:
+                - /url: /2014/
+              - link "2015" [ref=e428] [cursor=pointer]:
+                - /url: /2015/
+              - link "2016" [ref=e429] [cursor=pointer]:
+                - /url: /2016/
+              - link "2017" [ref=e430] [cursor=pointer]:
+                - /url: /2017/
+              - link "2018" [ref=e431] [cursor=pointer]:
+                - /url: /2018/
+              - link "2019" [ref=e432] [cursor=pointer]:
+                - /url: /2019/
+              - link "2020" [ref=e433] [cursor=pointer]:
+                - /url: /2020/
+              - link "2021" [ref=e434] [cursor=pointer]:
+                - /url: /2021/
+              - link "2022" [ref=e435] [cursor=pointer]:
+                - /url: /2022/
+              - link "2023" [ref=e436] [cursor=pointer]:
+                - /url: /2023/
+              - link "2024" [ref=e437] [cursor=pointer]:
+                - /url: /2024/
+              - link "2025" [ref=e438] [cursor=pointer]:
+                - /url: /2025/
+              - link "2026" [ref=e439] [cursor=pointer]:
+                - /url: /2026/
+  - contentinfo [ref=e440]:
+    - navigation [ref=e441]:
+      - link "" [ref=e442] [cursor=pointer]:
+        - /url: https://bsky.app/profile/funkysi1701.com
+        - generic [ref=e443]: 
+      - link "" [ref=e444] [cursor=pointer]:
+        - /url: https://facebook.com/funkysi1701
+        - generic [ref=e445]: 
+      - link "" [ref=e446] [cursor=pointer]:
+        - /url: https://github.com/funkysi1701
+        - generic [ref=e447]: 
+      - link "" [ref=e448] [cursor=pointer]:
+        - /url: https://linkedin.com/in/funkysi1701/
+        - generic [ref=e449]: 
+      - link "" [ref=e450] [cursor=pointer]:
+        - /url: https://hachyderm.io/web/@funkysi1701
+        - generic [ref=e451]: 
+      - link "" [ref=e452] [cursor=pointer]:
+        - /url: https://twitter.com/funkysi1701
+        - generic [ref=e453]: 
+      - link "" [ref=e454] [cursor=pointer]:
+        - /url: https://www.funkysi1701.com/index.xml
+        - generic [ref=e455]: 
+    - generic [ref=e456]:
+      - text: Powered by
+      - link "Hugo 0.154.4" [ref=e457] [cursor=pointer]:
+        - /url: https://gohugo.io
+      - text: and the
+      - link "Bootstrap" [ref=e458] [cursor=pointer]:
+        - /url: https://github.com/razonyang/hugo-theme-bootstrap
+      - text: theme.
+      - link "Status Page" [ref=e459] [cursor=pointer]:
+        - /url: https://status.funkysi1701.com
+      - text: .
+      - link "Terms and Conditions" [ref=e460] [cursor=pointer]:
+        - /url: /terms/
+      - text: .
+  - button "Scroll to top" [ref=e461] [cursor=pointer]:
+    - generic [ref=e462]: 
+```

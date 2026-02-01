@@ -1,0 +1,569 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - text: 
+        - link "Funky Si's Blog" [ref=e4] [cursor=pointer]:
+          - /url: https://www.funkysi1701.com/
+        - button "Toggle settings" [ref=e5] [cursor=pointer]:
+          - generic [ref=e6]: 
+        - generic "About Projects Tools & Resources Newsletter Contact Events Search Support this site" [ref=e7]:
+          - text: 
+          - list [ref=e8]:
+            - listitem [ref=e9]:
+              - link "About" [ref=e10] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/about/
+            - listitem [ref=e11]:
+              - link "Projects" [ref=e12] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/projects/
+            - listitem [ref=e13]:
+              - link "Tools & Resources" [ref=e14] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/tools-and-resources/
+            - listitem [ref=e15]:
+              - link "Newsletter" [ref=e16] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/newsletter/
+            - listitem [ref=e17]:
+              - link "Contact" [ref=e18] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/contact/
+            - listitem [ref=e19]:
+              - link "Events" [ref=e20] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/posts/events/
+            - listitem [ref=e21]:
+              - link "Search" [ref=e22] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/search/
+            - listitem [ref=e23]:
+              - link "Support this site" [ref=e24] [cursor=pointer]:
+                - /url: https://otieu.com/4/10431006
+  - main [ref=e25]:
+    - generic [ref=e26]:
+      - generic [ref=e28]:
+        - navigation "breadcrumb" [ref=e29]:
+          - list [ref=e31]:
+            - listitem [ref=e32]:
+              - link "Home" [ref=e33] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/
+            - listitem [ref=e34]:
+              - text: /
+              - link "Posts" [ref=e35] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/posts/
+            - listitem [ref=e36]: / Automating SSL for Kubernetes with Let's Encrypt and Cert Manager
+        - generic [ref=e37]:
+          - text: 
+          - button "" [ref=e38] [cursor=pointer]:
+            - generic [ref=e39]: 
+          - button "Comments" [ref=e40] [cursor=pointer]:
+            - generic [ref=e41]: 
+          - button "" [ref=e42] [cursor=pointer]:
+            - generic [ref=e43]: 
+        - article [ref=e44]:
+          - heading "Automating SSL for Kubernetes with Let's Encrypt and Cert Manager" [level=1] [ref=e46]
+          - generic [ref=e47]:
+            - generic [ref=e48]:
+              - text: Jul 7, 2025 ·2 min read ·
+              - generic [ref=e49]:
+                - link "tech" [ref=e50] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/categories/tech/
+                - link "2025-07" [ref=e51] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/2025/07/
+                - link "Kubernetes" [ref=e52] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/tags/kubernetes/
+                - link "LetsEncrypt" [ref=e53] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/tags/letsencrypt/
+                - link "SSL" [ref=e54] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/tags/ssl/
+                - link "Cert Manager" [ref=e55] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/tags/cert-manager/
+                - link "Helm" [ref=e56] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/tags/helm/
+                - link "Cloudflare" [ref=e57] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/tags/cloudflare/
+                - link "DevOps" [ref=e58] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/tags/devops/
+                - link "security" [ref=e59] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/tags/security/
+                - link "Automation" [ref=e60] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/tags/automation/
+                - link "2025" [ref=e61] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/2025/
+            - generic [ref=e62]:
+              - paragraph [ref=e63]:
+                - text: I have blogged before about how cool
+                - link "Let’s Encrypt" [ref=e64] [cursor=pointer]:
+                  - /url: /posts/2018/lets-encrypt-is-awesome/
+                - text: is for getting your web things running under https. However I have just got myself a local kubernetes cluster and it is super easy to spin up new web services with SSL certs.
+              - paragraph [ref=e65]:
+                - text: The basic instructions can be found
+                - link "here" [ref=e66] [cursor=pointer]:
+                  - /url: https://www.slingacademy.com/article/how-to-set-up-ssl-with-lets-encrypt-in-kubernetes/
+                - text: but let’s look at what was involved.
+              - paragraph [ref=e67]: First of all lets get Cert Manager installed on kubernetes.
+              - generic [ref=e68]:
+                - code [ref=e71]:
+                  - generic [ref=e73]: kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.18.1/cert-manager.yaml
+                - generic [ref=e74]: bash
+                - generic [ref=e75]:
+                  - button "Copy Code" [ref=e76] [cursor=pointer]:
+                    - generic [ref=e77]: 
+                  - button "Line wrap toggler" [ref=e78] [cursor=pointer]:
+                    - generic [ref=e79]: 
+              - paragraph [ref=e80]: Once the cert manager pods are up, you need to create an issuer which communicates with the lets encrypt API. The first code snippet uses the lets encrypt staging environment to avoid any API limits, the second uses production and uses the cloudflare API to authorize SSL requests.
+              - generic [ref=e81]:
+                - code [ref=e84]:
+                  - generic [ref=e86]: "apiVersion: cert-manager.io/v1"
+                  - generic [ref=e88]: "kind: ClusterIssuer"
+                  - generic [ref=e90]: "metadata:"
+                  - generic [ref=e92]: "name: letsencrypt-staging"
+                  - generic [ref=e94]: "spec:"
+                  - generic [ref=e96]: "acme:"
+                  - generic [ref=e98]: "server: https://acme-staging-v02.api.letsencrypt.org/directory"
+                  - generic [ref=e100]: "email: your-email@example.com"
+                  - generic [ref=e102]: "privateKeySecretRef:"
+                  - generic [ref=e104]: "name: letsencrypt-staging"
+                  - generic [ref=e106]: "solvers:"
+                  - generic [ref=e108]: "- http01:"
+                  - generic [ref=e110]: "ingress:"
+                  - generic [ref=e112]: "ingressClassName: nginx"
+                - generic [ref=e113]: yaml
+                - generic [ref=e114]:
+                  - button "Copy Code" [ref=e115] [cursor=pointer]:
+                    - generic [ref=e116]: 
+                  - button "Line wrap toggler" [ref=e117] [cursor=pointer]:
+                    - generic [ref=e118]: 
+              - generic [ref=e119]:
+                - code [ref=e122]:
+                  - generic [ref=e124]: "apiVersion: cert-manager.io/v1"
+                  - generic [ref=e126]: "kind: ClusterIssuer"
+                  - generic [ref=e128]: "metadata:"
+                  - generic [ref=e130]: "name: letsencrypt-prod"
+                  - generic [ref=e132]: "spec:"
+                  - generic [ref=e134]: "acme:"
+                  - generic [ref=e136]: "server: https://acme-v02.api.letsencrypt.org/directory"
+                  - generic [ref=e138]: "email: your-email@example.com"
+                  - generic [ref=e140]: "privateKeySecretRef:"
+                  - generic [ref=e142]: "name: letsencrypt-prod"
+                  - generic [ref=e144]: "solvers:"
+                  - generic [ref=e146]: "- dns01:"
+                  - generic [ref=e148]: "cloudflare:"
+                  - generic [ref=e150]: "apiTokenSecretRef:"
+                  - generic [ref=e152]: "key: api-key"
+                  - generic [ref=e154]: "name: cloudflare-api-token-secret"
+                  - generic [ref=e156]: "email: your-email@example.com"
+                - generic [ref=e157]: yaml
+                - generic [ref=e158]:
+                  - button "Copy Code" [ref=e159] [cursor=pointer]:
+                    - generic [ref=e160]: 
+                  - button "Line wrap toggler" [ref=e161] [cursor=pointer]:
+                    - generic [ref=e162]: 
+              - paragraph [ref=e163]: Now that is all configured all I need to do is update my helm chart and any pod I like can have a sub domain of funkysi1701.com with a lets encrypt SSL cert.
+              - paragraph [ref=e164]: This is a section from my helm chart which defines the domain name to use and what issuer to use for the certificate.
+              - generic [ref=e165]:
+                - code [ref=e168]:
+                  - generic [ref=e170]: "ingress:"
+                  - generic [ref=e172]: "enabled: true"
+                  - generic [ref=e174]: "className: \"nginx\""
+                  - generic [ref=e176]: "annotations:"
+                  - generic [ref=e178]: "cert-manager.io/cluster-issuer: letsencrypt-prod"
+                  - generic [ref=e180]: "devHost: helloworld-dev.funkysi1701.com"
+                  - generic [ref=e182]: "testHost: helloworld-test.funkysi1701.com"
+                  - generic [ref=e184]: "tls:"
+                  - generic [ref=e186]: "- secretName: helloworld-dev.funkysi1701.com"
+                  - generic [ref=e188]: "hosts:"
+                  - generic [ref=e190]: "- helloworld-dev.funkysi1701.com"
+                  - generic [ref=e192]: "- secretName: helloworld-test.funkysi1701.com"
+                  - generic [ref=e194]: "hosts:"
+                  - generic [ref=e196]: "- helloworld-test.funkysi1701.com"
+                - generic [ref=e197]: yaml
+                - generic [ref=e198]:
+                  - button "Copy Code" [ref=e199] [cursor=pointer]:
+                    - generic [ref=e200]: 
+                  - button "Line wrap toggler" [ref=e201] [cursor=pointer]:
+                    - generic [ref=e202]: 
+              - paragraph [ref=e203]: All I need to do now is add similar code like this to every helm chart I publish and my pod will request a SSL certificate. The only manual step I have is to set up a DNS record pointing to the IP address of my cluster for any domain I want to use.
+              - heading "Conclusion " [level=2] [ref=e204]:
+                - text: Conclusion
+                - link "" [ref=e205] [cursor=pointer]:
+                  - /url: "#conclusion"
+                  - generic [ref=e206]: 
+              - paragraph [ref=e207]: Setting up Let’s Encrypt with Kubernetes and Cert Manager has made it incredibly easy to secure my web services with SSL certificates. With just a few YAML configurations and some simple Helm chart updates, I can automatically provision and renew certificates for any subdomain I need. This approach not only saves time but also ensures my services are always protected with up-to-date encryption. If you’re running Kubernetes, I highly recommend giving Cert Manager and Let’s Encrypt a try for hassle-free SSL management.
+          - generic [ref=e209]:
+            - generic [ref=e210]:
+              - generic [ref=e211]: 
+              - 'link "Stepping Outside My Comfort Zone: An Adventure Holiday Experience" [ref=e212] [cursor=pointer]':
+                - /url: https://www.funkysi1701.com/posts/2025/stepping-outside-your-comfort-zone/
+            - generic [ref=e213]:
+              - link "The Hacker Ethic" [ref=e214] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/posts/2025/the-hacker-ethic/
+              - generic [ref=e215]: 
+        - link "Support This Site 👉" [ref=e217] [cursor=pointer]:
+          - /url: https://otieu.com/4/10431006
+        - generic [ref=e218]:
+          - heading "Related Posts" [level=2] [ref=e220]
+          - list [ref=e222]:
+            - listitem [ref=e223]:
+              - link "Deploying My Blog to Kubernetes with Helm Charts" [ref=e224] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/posts/2025/deploying-hugo-with-helm/
+              - generic [ref=e225]: May 26, 2025
+            - listitem [ref=e226]:
+              - link "Let’s Encrypt is awesome" [ref=e227] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/posts/2018/lets-encrypt-is-awesome/
+              - generic [ref=e228]: Apr 30, 2018
+            - listitem [ref=e229]:
+              - link "Chrome distrusts SSL Certificates" [ref=e230] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/posts/2018/ssl-distrusts/
+              - generic [ref=e231]: Feb 19, 2018
+            - listitem [ref=e232]:
+              - 'link "Learning Kubernetes: A Beginner''s Journey" [ref=e233] [cursor=pointer]':
+                - /url: https://www.funkysi1701.com/posts/2025/learning-kubernetes/
+              - generic [ref=e234]: May 12, 2025
+            - listitem [ref=e235]:
+              - link "Automatic Pull Requests" [ref=e236] [cursor=pointer]:
+                - /url: https://www.funkysi1701.com/posts/2024/automatic-pull-requests/
+              - generic [ref=e237]: Dec 16, 2024
+        - heading "Comments" [level=2] [ref=e240]
+      - complementary [ref=e242]:
+        - generic [ref=e243]:
+          - generic [ref=e245]:
+            - img "Simon Foster" [ref=e247]
+            - generic [ref=e248]:
+              - generic [ref=e249]: Simon Foster
+              - generic [ref=e250]: I am Simon Foster (aka funkysi1701) a developer sharing 18+ years of experience in .NET, Azure, and DevOps. I write about cloud architecture, CI/CD pipelines, and building scalable applications.
+              - generic [ref=e251]:
+                - generic [ref=e252]: 
+                - text: North England
+              - generic [ref=e253]:
+                - generic [ref=e254]: 
+                - link "About Me" [ref=e255] [cursor=pointer]:
+                  - /url: /about
+              - generic [ref=e256]:
+                - generic [ref=e257]: 
+                - link "Contact" [ref=e258] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/contact/
+              - navigation [ref=e259]:
+                - link "" [ref=e260] [cursor=pointer]:
+                  - /url: mailto:funkysi1701@gmail.com
+                  - generic [ref=e261]: 
+          - generic [ref=e262]:
+            - heading "Search" [level=2] [ref=e264]:
+              - link "Search" [ref=e265] [cursor=pointer]:
+                - /url: /search/
+            - generic [ref=e268]:
+              - generic:
+                - generic: 
+              - searchbox "Search" [ref=e269]
+          - generic [ref=e270]:
+            - heading "Contents" [level=2] [ref=e272]
+            - navigation [ref=e274]:
+              - list [ref=e275]:
+                - listitem [ref=e276]:
+                  - link "Conclusion" [ref=e277] [cursor=pointer]:
+                    - /url: "#conclusion"
+          - generic [ref=e278]:
+            - heading "Related Links" [level=2] [ref=e280]
+            - link "Create an Issue on GitHub" [ref=e282] [cursor=pointer]:
+              - /url: https://github.com/funkysi1701/funkysi1701.github.io/issues/new/choose
+          - generic [ref=e283]:
+            - heading "Featured Posts" [level=2] [ref=e285]
+            - list [ref=e287]:
+              - listitem [ref=e288]:
+                - link "Creating a Festive Naughty or Nice Checker Using Semantic Kernel and .NET" [ref=e289] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/festive-naughty-or-nice-checker/
+              - listitem [ref=e290]:
+                - 'link "Learning Kubernetes: A Beginner''s Journey" [ref=e291] [cursor=pointer]':
+                  - /url: https://www.funkysi1701.com/posts/2025/learning-kubernetes/
+              - listitem [ref=e292]:
+                - link "Adding Elasticsearch with .Net Aspire" [ref=e293] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/adding-elasticsearch-with-aspire/
+              - listitem [ref=e294]:
+                - link "Getting started with .Net Aspire" [ref=e295] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2024/aspire/
+              - listitem [ref=e296]:
+                - link "Upgrading to .Net 7" [ref=e297] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2022/dotnet7/
+          - generic [ref=e298]:
+            - heading "Recent Posts" [level=2] [ref=e300]
+            - list [ref=e302]:
+              - listitem [ref=e303]:
+                - link "Start Here" [ref=e304] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/start-here/
+              - listitem [ref=e305]:
+                - link "2025 in Review and Goals for 2026" [ref=e306] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2026/2025-in-review-and-2026-goals/
+              - listitem [ref=e307]:
+                - link "Events 2026" [ref=e308] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/events/2026/
+              - listitem [ref=e309]:
+                - link "Creating a Festive Naughty or Nice Checker Using Semantic Kernel and .NET" [ref=e310] [cursor=pointer]:
+                  - /url: https://www.funkysi1701.com/posts/2025/festive-naughty-or-nice-checker/
+              - listitem [ref=e311]:
+                - 'link "Blazor and .NET 10: Breaking Changes, Fixes, and New Features" [ref=e312] [cursor=pointer]':
+                  - /url: https://www.funkysi1701.com/posts/2025/blazor-and-dotnet10/
+          - generic [ref=e313]:
+            - heading "Tags" [level=2] [ref=e315]:
+              - link "Tags" [ref=e316] [cursor=pointer]:
+                - /url: /tags
+            - generic [ref=e319]:
+              - link "Access" [ref=e320] [cursor=pointer]:
+                - /url: /tags/access/
+              - link "AI" [ref=e321] [cursor=pointer]:
+                - /url: /tags/ai/
+              - link "Android" [ref=e322] [cursor=pointer]:
+                - /url: /tags/android/
+              - link "API" [ref=e323] [cursor=pointer]:
+                - /url: /tags/api/
+              - link "App" [ref=e324] [cursor=pointer]:
+                - /url: /tags/app/
+              - link "Aspire" [ref=e325] [cursor=pointer]:
+                - /url: /tags/aspire/
+              - link "Automation" [ref=e326] [cursor=pointer]:
+                - /url: /tags/automation/
+              - link "AWS" [ref=e327] [cursor=pointer]:
+                - /url: /tags/aws/
+              - link "Azure" [ref=e328] [cursor=pointer]:
+                - /url: /tags/azure/
+              - link "AzureDevOps" [ref=e329] [cursor=pointer]:
+                - /url: /tags/azuredevops/
+              - link "Baby" [ref=e330] [cursor=pointer]:
+                - /url: /tags/baby/
+              - link "Backups" [ref=e331] [cursor=pointer]:
+                - /url: /tags/backups/
+              - link "Blazor" [ref=e332] [cursor=pointer]:
+                - /url: /tags/blazor/
+              - link "Blogging" [ref=e333] [cursor=pointer]:
+                - /url: /tags/blogging/
+              - link "C-Sharp" [ref=e334] [cursor=pointer]:
+                - /url: /tags/c-sharp/
+              - link "Career" [ref=e335] [cursor=pointer]:
+                - /url: /tags/career/
+              - link "Clouds" [ref=e336] [cursor=pointer]:
+                - /url: /tags/clouds/
+              - link "Community" [ref=e337] [cursor=pointer]:
+                - /url: /tags/community/
+              - link "Conference" [ref=e338] [cursor=pointer]:
+                - /url: /tags/conference/
+              - link "Database" [ref=e339] [cursor=pointer]:
+                - /url: /tags/database/
+              - link "Development" [ref=e340] [cursor=pointer]:
+                - /url: /tags/development/
+              - link "DevOps" [ref=e341] [cursor=pointer]:
+                - /url: /tags/devops/
+              - link "Docker" [ref=e342] [cursor=pointer]:
+                - /url: /tags/docker/
+              - link "DotNet" [ref=e343] [cursor=pointer]:
+                - /url: /tags/dotnet/
+              - link "Family" [ref=e344] [cursor=pointer]:
+                - /url: /tags/family/
+              - link "Git" [ref=e345] [cursor=pointer]:
+                - /url: /tags/git/
+              - link "Github" [ref=e346] [cursor=pointer]:
+                - /url: /tags/github/
+              - link "Goals" [ref=e347] [cursor=pointer]:
+                - /url: /tags/goals/
+              - link "Grafana" [ref=e348] [cursor=pointer]:
+                - /url: /tags/grafana/
+              - link "ITAdmin" [ref=e349] [cursor=pointer]:
+                - /url: /tags/itadmin/
+              - link "JavaScript" [ref=e350] [cursor=pointer]:
+                - /url: /tags/javascript/
+              - link "Learning" [ref=e351] [cursor=pointer]:
+                - /url: /tags/learning/
+              - link "Microsoft" [ref=e352] [cursor=pointer]:
+                - /url: /tags/microsoft/
+              - link "Monitoring" [ref=e353] [cursor=pointer]:
+                - /url: /tags/monitoring/
+              - link "Nagios" [ref=e354] [cursor=pointer]:
+                - /url: /tags/nagios/
+              - link "OpenTelemetry" [ref=e355] [cursor=pointer]:
+                - /url: /tags/opentelemetry/
+              - link "Podcast" [ref=e356] [cursor=pointer]:
+                - /url: /tags/podcast/
+              - link "Powershell" [ref=e357] [cursor=pointer]:
+                - /url: /tags/powershell/
+              - link "Programming" [ref=e358] [cursor=pointer]:
+                - /url: /tags/programming/
+              - link "Raspberry Pi" [ref=e359] [cursor=pointer]:
+                - /url: /tags/raspberry%20pi/
+              - link "Security" [ref=e360] [cursor=pointer]:
+                - /url: /tags/security/
+              - link "Servers" [ref=e361] [cursor=pointer]:
+                - /url: /tags/servers/
+              - link "Source Control" [ref=e362] [cursor=pointer]:
+                - /url: /tags/source%20control/
+              - link "SourceCode" [ref=e363] [cursor=pointer]:
+                - /url: /tags/sourcecode/
+              - link "SQL" [ref=e364] [cursor=pointer]:
+                - /url: /tags/sql/
+              - link "SSL" [ref=e365] [cursor=pointer]:
+                - /url: /tags/ssl/
+              - link "StarTrek" [ref=e366] [cursor=pointer]:
+                - /url: /tags/startrek/
+              - link "Tech" [ref=e367] [cursor=pointer]:
+                - /url: /tags/tech/
+              - link "Technology" [ref=e368] [cursor=pointer]:
+                - /url: /tags/technology/
+              - link "Testing" [ref=e369] [cursor=pointer]:
+                - /url: /tags/testing/
+              - link "Visual Studio" [ref=e370] [cursor=pointer]:
+                - /url: /tags/visual%20studio/
+              - link "Website" [ref=e371] [cursor=pointer]:
+                - /url: /tags/website/
+              - link "Windows" [ref=e372] [cursor=pointer]:
+                - /url: /tags/windows/
+          - generic [ref=e373]:
+            - heading "Links" [level=2] [ref=e375]
+            - list [ref=e377]:
+              - listitem [ref=e378]:
+                - link "Buy Me A Coffee" [ref=e379] [cursor=pointer]:
+                  - /url: https://www.buymeacoffee.com/funkysi1701
+              - listitem [ref=e380]:
+                - link "GitHub Sponsors" [ref=e381] [cursor=pointer]:
+                  - /url: https://github.com/sponsors/funkysi1701
+              - listitem [ref=e382]:
+                - link "Octopus Energy" [ref=e383] [cursor=pointer]:
+                  - /url: https://share.octopus.energy/amber-eel-810
+              - listitem [ref=e384]:
+                - link "DevTo" [ref=e385] [cursor=pointer]:
+                  - /url: https://dev.to/funkysi1701
+              - listitem [ref=e386]:
+                - link "Mastodon" [ref=e387] [cursor=pointer]:
+                  - /url: https://hachyderm.io/@funkysi1701
+              - listitem [ref=e388]:
+                - 'link "Funky Si: The Next Generation" [ref=e389] [cursor=pointer]':
+                  - /url: /funky-si-the-next-generation/
+              - listitem [ref=e390]:
+                - link "Podcasts" [ref=e391] [cursor=pointer]:
+                  - /url: /podcasts/
+              - listitem [ref=e392]:
+                - link "My Monthly Newsletter" [ref=e393] [cursor=pointer]:
+                  - /url: http://eepurl.com/i7pQno
+              - listitem [ref=e394]:
+                - link "Tools & Resources" [ref=e395] [cursor=pointer]:
+                  - /url: /tools-and-resources
+          - generic [ref=e396]:
+            - heading "Years" [level=2] [ref=e398]:
+              - link "Years" [ref=e399] [cursor=pointer]:
+                - /url: /year
+            - list [ref=e401]:
+              - listitem [ref=e402]:
+                - link "2026" [ref=e403] [cursor=pointer]:
+                  - /url: /2026/
+                - text: (2)
+              - listitem [ref=e404]:
+                - link "2025" [ref=e405] [cursor=pointer]:
+                  - /url: /2025/
+                - text: (23)
+              - listitem [ref=e406]:
+                - link "2024" [ref=e407] [cursor=pointer]:
+                  - /url: /2024/
+                - text: (11)
+              - listitem [ref=e408]:
+                - link "2023" [ref=e409] [cursor=pointer]:
+                  - /url: /2023/
+                - text: (7)
+              - listitem [ref=e410]:
+                - link "2022" [ref=e411] [cursor=pointer]:
+                  - /url: /2022/
+                - text: (17)
+              - listitem [ref=e412]:
+                - link "2021" [ref=e413] [cursor=pointer]:
+                  - /url: /2021/
+                - text: (8)
+              - listitem [ref=e414]:
+                - link "2020" [ref=e415] [cursor=pointer]:
+                  - /url: /2020/
+                - text: (10)
+              - listitem [ref=e416]:
+                - link "2019" [ref=e417] [cursor=pointer]:
+                  - /url: /2019/
+                - text: (10)
+              - listitem [ref=e418]:
+                - link "2018" [ref=e419] [cursor=pointer]:
+                  - /url: /2018/
+                - text: (20)
+              - listitem [ref=e420]:
+                - link "2017" [ref=e421] [cursor=pointer]:
+                  - /url: /2017/
+                - text: (35)
+              - listitem [ref=e422]:
+                - link "2016" [ref=e423] [cursor=pointer]:
+                  - /url: /2016/
+                - text: (28)
+              - listitem [ref=e424]:
+                - link "2015" [ref=e425] [cursor=pointer]:
+                  - /url: /2015/
+                - text: (70)
+              - listitem [ref=e426]:
+                - link "2014" [ref=e427] [cursor=pointer]:
+                  - /url: /2014/
+                - text: (11)
+              - listitem [ref=e428]: 257 Posts so far
+          - generic [ref=e429]:
+            - heading "Years" [level=2] [ref=e431]:
+              - link "Years" [ref=e432] [cursor=pointer]:
+                - /url: /year
+            - generic [ref=e435]:
+              - link "2014" [ref=e436] [cursor=pointer]:
+                - /url: /2014/
+              - link "2015" [ref=e437] [cursor=pointer]:
+                - /url: /2015/
+              - link "2016" [ref=e438] [cursor=pointer]:
+                - /url: /2016/
+              - link "2017" [ref=e439] [cursor=pointer]:
+                - /url: /2017/
+              - link "2018" [ref=e440] [cursor=pointer]:
+                - /url: /2018/
+              - link "2019" [ref=e441] [cursor=pointer]:
+                - /url: /2019/
+              - link "2020" [ref=e442] [cursor=pointer]:
+                - /url: /2020/
+              - link "2021" [ref=e443] [cursor=pointer]:
+                - /url: /2021/
+              - link "2022" [ref=e444] [cursor=pointer]:
+                - /url: /2022/
+              - link "2023" [ref=e445] [cursor=pointer]:
+                - /url: /2023/
+              - link "2024" [ref=e446] [cursor=pointer]:
+                - /url: /2024/
+              - link "2025" [ref=e447] [cursor=pointer]:
+                - /url: /2025/
+              - link "2026" [ref=e448] [cursor=pointer]:
+                - /url: /2026/
+  - contentinfo [ref=e449]:
+    - navigation [ref=e450]:
+      - link "" [ref=e451] [cursor=pointer]:
+        - /url: https://bsky.app/profile/funkysi1701.com
+        - generic [ref=e452]: 
+      - link "" [ref=e453] [cursor=pointer]:
+        - /url: https://facebook.com/funkysi1701
+        - generic [ref=e454]: 
+      - link "" [ref=e455] [cursor=pointer]:
+        - /url: https://github.com/funkysi1701
+        - generic [ref=e456]: 
+      - link "" [ref=e457] [cursor=pointer]:
+        - /url: https://linkedin.com/in/funkysi1701/
+        - generic [ref=e458]: 
+      - link "" [ref=e459] [cursor=pointer]:
+        - /url: https://hachyderm.io/web/@funkysi1701
+        - generic [ref=e460]: 
+      - link "" [ref=e461] [cursor=pointer]:
+        - /url: https://twitter.com/funkysi1701
+        - generic [ref=e462]: 
+    - generic [ref=e463]:
+      - text: Powered by
+      - link "Hugo 0.154.4" [ref=e464] [cursor=pointer]:
+        - /url: https://gohugo.io
+      - text: and the
+      - link "Bootstrap" [ref=e465] [cursor=pointer]:
+        - /url: https://github.com/razonyang/hugo-theme-bootstrap
+      - text: theme.
+      - link "Status Page" [ref=e466] [cursor=pointer]:
+        - /url: https://status.funkysi1701.com
+      - text: .
+      - link "Terms and Conditions" [ref=e467] [cursor=pointer]:
+        - /url: /terms/
+      - text: .
+  - button "Scroll to top" [ref=e468] [cursor=pointer]:
+    - generic [ref=e469]: 
+```
