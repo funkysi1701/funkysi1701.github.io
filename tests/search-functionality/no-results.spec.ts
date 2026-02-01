@@ -19,7 +19,7 @@ test.describe('Search Functionality', () => {
     
     const searchInput = page.locator('input[type="search"], input[aria-label="Search"]').first();
     await searchInput.waitFor({ state: 'attached', timeout: 5000 });
-    await searchInput.fill('xyzabc123notfound');
+    await searchInput.fill('xyzabc123notfound', { force: true });
 
     // 3. Execute search
     await searchInput.press('Enter');

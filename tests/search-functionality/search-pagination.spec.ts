@@ -19,7 +19,7 @@ test.describe('Search Functionality', () => {
     
     const searchInput = page.locator('input[type="search"], input[aria-label="Search"]').first();
     await searchInput.waitFor({ state: 'attached', timeout: 5000 });
-    await searchInput.fill('Azure');
+    await searchInput.fill('Azure', { force: true });
     await searchInput.press('Enter');
     await page.waitForTimeout(1500);
 

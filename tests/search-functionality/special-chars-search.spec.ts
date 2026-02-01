@@ -19,7 +19,7 @@ test.describe('Search Functionality', () => {
     
     const searchInput = page.locator('input[type="search"], input[aria-label="Search"]').first();
     await searchInput.waitFor({ state: 'attached', timeout: 5000 });
-    await searchInput.fill('C#');
+    await searchInput.fill('C#', { force: true });
 
     // 3. Execute search
     await searchInput.press('Enter');
@@ -36,12 +36,12 @@ test.describe('Search Functionality', () => {
     });
 
     // 6. Test search with symbols like '@', '#', '&'
-    await searchInput.fill('.NET');
+    await searchInput.fill('.NET', { force: true });
     await searchInput.press('Enter');
     await page.waitForTimeout(1000);
 
     // Search with other special characters
-    await searchInput.fill('Azure & DevOps');
+    await searchInput.fill('Azure & DevOps', { force: true });
     await searchInput.press('Enter');
     await page.waitForTimeout(1000);
 

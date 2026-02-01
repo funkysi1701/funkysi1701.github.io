@@ -35,6 +35,6 @@ test.describe('Performance and Technical', () => {
     }
 
     // Verify page maintains site design
-    await expect(page.locator('nav')).toBeVisible();
+    await expect(page.locator('nav').first()).toBeVisible();
   });
 });

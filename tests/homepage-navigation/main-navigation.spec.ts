@@ -26,7 +26,7 @@ test.describe('Homepage and Navigation', () => {
     await expect(page.locator('nav').first()).toBeVisible();
 
     // Click on Projects link
-    await page.getByRole('link', { name: 'Projects' }).click();
+    await page.getByRole('link', { name: 'Projects', exact: true }).click();
     await expect(page).toHaveURL(/\/projects\//);
     await expect(page.locator('nav').first()).toBeVisible();
 
