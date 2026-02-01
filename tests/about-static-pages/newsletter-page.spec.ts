@@ -12,7 +12,7 @@ test.describe('About and Static Pages', () => {
     await expect(page).toHaveURL(/\/newsletter\//);
 
     // 3. Check for newsletter description
-    await expect(page.locator('text=/newsletter|subscribe/i')).toBeVisible();
+    await expect(page.locator('text=/newsletter|subscribe/i').first()).toBeVisible();
 
     // 4. Look for subscription form or link
     const subscriptionElement = page.locator('form, a[href*="subscribe"], a[href*="newsletter"], button, input[type="email"]').first();

@@ -21,7 +21,7 @@ test.describe('Homepage and Navigation', () => {
     }
 
     // 5. Verify all navigation items are accessible
-    await expect(page.getByRole('link', { name: 'About' })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'About' }).first()).toBeVisible();
     await expect(page.getByRole('link', { name: 'Projects' })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Contact' })).toBeVisible();
 

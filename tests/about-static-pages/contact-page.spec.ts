@@ -9,7 +9,7 @@ test.describe('About and Static Pages', () => {
     await page.goto('https://www.funkysi1701.com/contact/');
 
     // 2. Verify email address is displayed as mailto link
-    const emailLink = page.locator('a[href="mailto:funkysi1701@gmail.com"]');
+    const emailLink = page.locator('a[href="mailto:funkysi1701@gmail.com"]').first();
     await expect(emailLink).toBeVisible();
 
     // 3. Check for social media links

@@ -12,6 +12,9 @@ test.describe('Search Functionality', () => {
     await expect(page).toHaveURL(/\/search\//);
 
     // 3. Check for search input field
+    // Click the search button to reveal the search input
+    await page.click('button[title="Search"]');
+    await page.waitForTimeout(500); // Wait for search to expand
     const searchInput = page.locator('input[type="search"], input[type="text"], input[placeholder*="search" i]').first();
     await expect(searchInput).toBeVisible();
 

@@ -16,11 +16,11 @@ test.describe('Homepage and Navigation', () => {
     await expect(body).toBeVisible();
 
     // 4. Check navigation menu display
-    const nav = page.locator('nav');
+    const nav = page.locator('nav').first();
     await expect(nav).toBeVisible();
     
     // Verify navigation items are accessible
-    await expect(page.getByRole('link', { name: 'About' })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'About' }).first()).toBeVisible();
     await expect(page.getByRole('link', { name: 'Projects' })).toBeVisible();
 
     // 5. Test blog post grid/list layout

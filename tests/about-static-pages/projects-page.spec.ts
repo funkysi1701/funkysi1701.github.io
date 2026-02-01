@@ -12,7 +12,7 @@ test.describe('About and Static Pages', () => {
     await expect(page).toHaveURL(/\/projects\//);
 
     // 3. Check for Blog Platform project description
-    await expect(page.locator('text=/Blog Platform|This blog/i')).toBeVisible();
+    await expect(page.locator('text=/Blog Platform|This blog/i').first()).toBeVisible();
 
     // 4. Verify Episode Atlas project is listed
     await expect(page.locator('text=/Episode Atlas/i')).toBeVisible();

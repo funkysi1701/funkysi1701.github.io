@@ -18,7 +18,7 @@ test.describe('Edge Cases and Error Handling', () => {
     await expect(page.locator('body')).toBeVisible();
 
     // 4. Check that navigation links work
-    const nav = page.locator('nav');
+    const nav = page.locator('nav').first();
     await expect(nav).toBeVisible();
 
     // Get all navigation links

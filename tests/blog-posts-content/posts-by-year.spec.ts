@@ -10,7 +10,7 @@ test.describe('Blog Posts and Content', () => {
 
     // 2. Verify page shows posts from 2026
     await expect(page).toHaveURL(/\/2026\//);
-    await expect(page.locator('text=/2026/i')).toBeVisible();
+    await expect(page.locator('text=/2026/i').first()).toBeVisible();
 
     // 3. Check that posts are listed chronologically
     const posts = page.locator('article, .post, [class*="post"]');

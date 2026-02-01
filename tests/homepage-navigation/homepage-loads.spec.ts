@@ -15,7 +15,7 @@ test.describe('Homepage and Navigation', () => {
     await expect(page).toHaveTitle(/Simon Foster|Funky Si/i);
 
     // 4. Verify the main navigation menu is visible
-    const nav = page.locator('nav');
+    const nav = page.locator('nav').first();
     await expect(nav).toBeVisible();
 
     // 5. Confirm blog posts are displayed on the homepage

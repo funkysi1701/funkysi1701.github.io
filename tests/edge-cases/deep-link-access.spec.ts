@@ -10,7 +10,7 @@ test.describe('Edge Cases and Error Handling', () => {
 
     // 2. Verify page loads without errors
     await expect(page).toHaveURL(/ndc-london-2026/);
-    await expect(page.locator('nav')).toBeVisible();
+    await expect(page.locator('nav').first()).toBeVisible();
 
     // 3. Directly navigate to a tag page
     await page.goto('https://www.funkysi1701.com/tags/');

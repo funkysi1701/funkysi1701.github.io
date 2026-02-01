@@ -24,8 +24,8 @@ test.describe('Edge Cases and Error Handling', () => {
     await expect(page2).toHaveURL(/\/projects\//);
 
     // 5. Verify content loads correctly in each tab
-    await expect(page.locator('nav')).toBeVisible();
-    await expect(page2.locator('nav')).toBeVisible();
+    await expect(page.locator('nav').first()).toBeVisible();
+    await expect(page2.locator('nav').first()).toBeVisible();
 
     // 6. Check for any state conflicts
     // Static site shouldn't have state conflicts

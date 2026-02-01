@@ -10,7 +10,7 @@ test.describe('About and Static Pages', () => {
 
     // 2. Verify page loads and contains privacy policy content
     await expect(page).toHaveURL(/\/privacy-policy\//);
-    await expect(page.locator('text=/privacy|policy|data|information/i')).toBeVisible();
+    await expect(page.locator('text=/privacy|policy|data|information/i').first()).toBeVisible();
 
     // Verify no Lorem Ipsum placeholder text exists
     const loremIpsum = page.locator('text=/lorem ipsum/i');

@@ -27,8 +27,8 @@ test.describe('Edge Cases and Error Handling', () => {
     // This would require authentication - skipping for basic test
 
     // 6. Check for any session conflicts
-    await expect(page1.locator('nav')).toBeVisible();
-    await expect(page2.locator('nav')).toBeVisible();
+    await expect(page1.locator('nav').first()).toBeVisible();
+    await expect(page2.locator('nav').first()).toBeVisible();
 
     // Navigate to same page in both contexts
     await page1.goto('https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026');

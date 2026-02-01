@@ -16,8 +16,8 @@ test.describe('About and Static Pages', () => {
     await expect(profileImage).toBeVisible();
 
     // 4. Verify author bio is present
-    await expect(page.locator('text=/Simon Foster|Funky Si/i')).toBeVisible();
-    await expect(page.locator('text=/developer|DevOps|Azure|.NET/i')).toBeVisible();
+    await expect(page.locator('text=/Simon Foster|Funky Si/i').first()).toBeVisible();
+    await expect(page.locator('text=/developer|DevOps|Azure|.NET/i').first()).toBeVisible();
 
     // 5. Check that certification badges are displayed
     const azureBadge = page.locator('img[alt*="Azure" i], a[href*="credly"]').first();

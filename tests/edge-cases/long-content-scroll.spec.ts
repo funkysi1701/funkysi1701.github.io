@@ -21,7 +21,7 @@ test.describe('Edge Cases and Error Handling', () => {
     await page.waitForTimeout(500);
 
     // 5. Verify navigation remains accessible
-    const nav = page.locator('nav');
+    const nav = page.locator('nav').first();
     await expect(nav).toBeVisible();
 
     // 6. Check for 'back to top' button (if implemented)

@@ -35,7 +35,7 @@ test.describe('Performance and Technical', () => {
     // This would require CDPSession - skipping in basic test
 
     // 8. Verify page is still usable
-    await expect(page.locator('nav')).toBeVisible();
+    await expect(page.locator('nav').first()).toBeVisible();
     await expect(page.locator('article, .post')).toBeVisible();
   });
 });

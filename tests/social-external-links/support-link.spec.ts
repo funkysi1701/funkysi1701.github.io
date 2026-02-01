@@ -20,7 +20,7 @@ test.describe('Social Media and External Links', () => {
       
       // 4. Check that link doesn't break site navigation
       // Original page should still be accessible
-      await expect(page.locator('nav')).toBeVisible();
+      await expect(page.locator('nav').first()).toBeVisible();
       
       // 5. Verify external site loads (or redirects appropriately)
       // Note: otieu.com might redirect

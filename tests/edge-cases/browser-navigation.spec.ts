@@ -9,7 +9,7 @@ test.describe('Edge Cases and Error Handling', () => {
     await page.goto('https://www.funkysi1701.com');
 
     // 2. Click on About page
-    await page.getByRole('link', { name: 'About' }).click();
+    await page.getByRole('link', { name: 'About' }).first().click();
     
     // 3. Click on Projects page
     await page.getByRole('link', { name: 'Projects' }).click();

@@ -9,7 +9,7 @@ test.describe('Homepage and Navigation', () => {
     await page.goto('https://www.funkysi1701.com');
 
     // 2. Verify all navigation items are visible
-    await expect(page.getByRole('link', { name: 'About' })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'About' }).first()).toBeVisible();
     await expect(page.getByRole('link', { name: 'Projects' })).toBeVisible();
     await expect(page.getByRole('link', { name: /Tools.*Resources/i })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Newsletter' })).toBeVisible();
