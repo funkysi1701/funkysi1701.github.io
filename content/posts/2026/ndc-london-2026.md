@@ -69,21 +69,34 @@ https://speakerdeck.com/97adele/java-sucks-so-c-number-didnt-have-to
 
 This was a good talk about design and made me think.
 
-- design of everyday things
+- book: design of everyday things
 
 ## Thursday
 
 **OpenTelemetry At Scale 101: Intro to OpAMP** by *Aakansha Priya* and *Adriana Villela*
 
+Not really at the scale for this to be a problem I worry about. What option should I run in prod?
+
 **A Defence of Technical Excellence** by *Chris Simon*
+
+https://chrissimon.au/speaking/talks/a-defence-of-technical-excellence/?read-more=1
 
 **How to Git Away with Murder** by *Sergès Goma*
 
-skipped talk but had great chat with Rider (JetBrain)
+Good discussion at end about git mess people have got into
+
+skipped talk but had great chat with Rider (JetBrain) team
 
 **Code that writes code - .NET Source generators** by *Glenn F. Henriksen*
 
 **Warm and Fuzzy: Semantic Search in .NET** by *Jonathan "J." Tower*
+
+Vector Database options SQL Server 2025, CosmosDB or qdrant
+
+- Add semantic search for my website
+- Semantic Kernel now part of Microsoft Agent Framework
+
+https://github.com/trailheadtechnology/dotnet-semantic-search/tree/main/code
 
 **Coding 4 Fun: 8-bit game emulation in .NET** by *Alex Thissen*
 
