@@ -29,10 +29,10 @@ test.describe('Search Functionality', () => {
     }
 
     // 4. Enter a common term like 'Azure' in search box
-    await searchInput.fill('Azure');
+    await searchTrigger.fill('Azure');
 
     // 5. Press Enter or click search button
-    await searchInput.press('Enter');
+    await searchTrigger.press('Enter');
     
     // Wait for results to load
     await page.waitForTimeout(1000);
