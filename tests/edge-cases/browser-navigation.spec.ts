@@ -20,7 +20,7 @@ test.describe('Edge Cases and Error Handling', () => {
 
     // 5. Verify About page loads correctly
     await expect(page).toHaveURL(/\/about\//);
-    await expect(page.locator('nav')).toBeVisible();
+    await expect(page.locator('nav').first()).toBeVisible();
 
     // 6. Click browser forward button
     await page.goForward();

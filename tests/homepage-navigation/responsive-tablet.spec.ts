@@ -16,6 +16,13 @@ test.describe('Homepage and Navigation', () => {
     await expect(body).toBeVisible();
 
     // 4. Check navigation menu display
+    // On tablet, navigation may be in a collapsed hamburger menu
+    const hamburgerButton = page.locator('button:has-text("Toggle navigation")');
+    if (await hamburgerButton.count() > 0) {
+      await hamburgerButton.click();
+      await page.waitForTimeout(500); // Wait for menu animation
+    }
+    
     const nav = page.locator('nav').first();
     await expect(nav).toBeVisible();
     

@@ -9,12 +9,9 @@ test.describe('Search Functionality', () => {
     await page.goto('https://www.funkysi1701.com/search/');
 
     // 2. Enter search term with special characters (e.g., 'C#' or '.NET')
-    // Click the search button to reveal the search input
-    const searchButton = page.locator('button[title="Search"]');
-    await searchButton.waitFor({ state: 'visible', timeout: 10000 });
-    await searchButton.click();
-    await page.waitForSelector('input[type="search"], input[type="text"], input[placeholder*="search" i]', { timeout: 10000 });
+    // The search page already has a visible search input
     const searchInput = page.locator('input[type="search"], input[type="text"], input[placeholder*="search" i]').first();
+    await searchInput.waitFor({ state: 'visible', timeout: 10000 });
     await searchInput.fill('C#');
 
     // 3. Execute search

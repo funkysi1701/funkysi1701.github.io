@@ -20,7 +20,7 @@ test.describe('Blog Posts and Content', () => {
     expect(titleText.length).toBeGreaterThan(0);
 
     // 4. Verify post date is shown
-    await expect(page.locator('text=/2026|Jan|January|31/i')).toBeVisible();
+    await expect(page.locator('text=/2026|Jan|January|31/i').first()).toBeVisible();
 
     // 5. Check for cover image display
     const coverImage = page.locator('img[src*="ndc"], img[alt*="NDC"]').first();
@@ -29,7 +29,7 @@ test.describe('Blog Posts and Content', () => {
     }
 
     // 6. Verify blog content is readable and formatted
-    const content = page.locator('article, .content, main');
+    const content = page.locator('article, .content, main').first();
     await expect(content).toBeVisible();
     
     // Check for headings within content

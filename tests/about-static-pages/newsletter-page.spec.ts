@@ -22,12 +22,12 @@ test.describe('About and Static Pages', () => {
     await expect(page.locator('text=/Recent Topics|What I\'ve been writing|Topics/i').first()).toBeVisible();
 
     // 6. Check for target audience description
-    await expect(page.locator('text=/Who Should Subscribe|developers|DevOps/i')).toBeVisible();
+    await expect(page.locator('text=/Who Should Subscribe|developers|DevOps/i').first()).toBeVisible();
 
     // 7. Verify value proposition is clear
-    await expect(page.locator('text=/monthly|practical|insights|tutorials/i')).toBeVisible();
+    await expect(page.locator('text=/monthly|practical|insights|tutorials/i').first()).toBeVisible();
     
     // Verify newsletter mentions .NET, DevOps, Azure
-    await expect(page.locator('text=/.NET|Azure|DevOps|Cloud/i')).toBeVisible();
+    await expect(page.locator('text=/.NET|Azure|DevOps|Cloud/i').first()).toBeVisible();
   });
 });

@@ -24,7 +24,7 @@ test.describe('Edge Cases and Error Handling', () => {
 
     // 6. Verify archive page loads correctly
     await expect(page).toHaveURL(/\/2024\//);
-    await expect(page.locator('nav')).toBeVisible();
+    await expect(page.locator('nav').first()).toBeVisible();
 
     // 7. Test various deep link patterns
     await page.goto('https://www.funkysi1701.com/about/');

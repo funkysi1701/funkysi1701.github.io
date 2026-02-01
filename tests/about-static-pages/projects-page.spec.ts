@@ -18,10 +18,10 @@ test.describe('About and Static Pages', () => {
     await expect(page.locator('text=/Episode Atlas/i').first()).toBeVisible();
 
     // 5. Check for Mandelbrot Generator project
-    await expect(page.locator('text=/Mandelbrot/i')).toBeVisible();
+    await expect(page.locator('text=/Mandelbrot/i').first()).toBeVisible();
 
     // Verify tech stack information is present
-    await expect(page.locator('text=/Tech Stack|Hugo|Blazor|Azure/i')).toBeVisible();
+    await expect(page.locator('text=/Tech Stack|Hugo|Blazor|Azure/i').first()).toBeVisible();
 
     // 6. Click on Episode Atlas external link
     const episodeAtlasLink = page.locator('a[href*="episodeatlas.com"]').first();
@@ -41,6 +41,6 @@ test.describe('About and Static Pages', () => {
     expect(githubCount).toBeGreaterThan(0);
 
     // 9. Verify tech stack information is present for each project
-    await expect(page.locator('text=/GitHub|Features|Links/i')).toBeVisible();
+    await expect(page.locator('text=/GitHub|Features|Links/i').first()).toBeVisible();
   });
 });

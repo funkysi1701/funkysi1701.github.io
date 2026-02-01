@@ -26,11 +26,13 @@ test.describe('Edge Cases and Error Handling', () => {
     await page.goto('https://www.funkysi1701.com/search/');
 
     // 6. Perform a search
+    // The search page has a visible search input
     const searchInput = page.locator('input[type="search"], input[type="text"]').first();
+    await searchInput.waitFor({ state: 'visible', timeout: 10000 });
     if (await searchInput.count() > 0) {
       await searchInput.fill('Azure');
       await searchInput.press('Enter');
-      await page.waitForTimeout(1000);
+      await page.waitForLoadState('domcontentloaded');
 
       // 7. Refresh the page
       await page.reload();

@@ -15,7 +15,7 @@ test.describe('Homepage and Navigation', () => {
     await expect(page.getByRole('link', { name: 'Newsletter' }).first()).toBeVisible();
     await expect(page.getByRole('link', { name: 'Contact' }).first()).toBeVisible();
     await expect(page.getByRole('link', { name: 'Events' }).first()).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Search' })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Search', exact: true }).first()).toBeVisible();
     await expect(page.getByRole('link', { name: /Support.*site/i })).toBeVisible();
 
     // 3. Click on About link
