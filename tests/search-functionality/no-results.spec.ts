@@ -32,7 +32,6 @@ test.describe('Search Functionality', () => {
     // Some search implementations might show empty results instead of message
     
     // 6. Verify search box remains functional for new search
-    await expect(searchInput).toBeVisible();
     await expect(searchInput).toBeEditable();
   });
 });

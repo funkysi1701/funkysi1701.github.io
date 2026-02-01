@@ -31,7 +31,7 @@ test.describe('Homepage and Navigation', () => {
     await expect(page.locator('nav').first()).toBeVisible();
 
     // Click on Tools & Resources link
-    await page.getByRole('link', { name: /Tools.*Resources/i }).click();
+    await page.getByRole('link', { name: /Tools.*Resources/i }).first().click();
     await expect(page).toHaveURL(/\/tools-and-resources\//);
     await expect(page.locator('nav').first()).toBeVisible();
 

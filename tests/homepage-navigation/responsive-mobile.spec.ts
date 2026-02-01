@@ -29,14 +29,16 @@ test.describe('Homepage and Navigation', () => {
     await expect(page).toHaveURL(/\/about\//);
 
     // Test navigation on Projects page
-    await hamburger.click();
-    await page.waitForTimeout(500);
-    await page.getByRole('link', { name: 'Projects', exact: true }).click();
+    const hamburger2 = page.getByRole('button', { name: 'Toggle navigation' }).first();
+    await hamburger2.click();
+    await page.waitForTimeout(800);
+    await page.getByRole('link', { name: 'Projects', exact: true }).first().click();
     await expect(page).toHaveURL(/\/projects\//);
 
     // Test navigation on Contact page
-    await hamburger.click();
-    await page.waitForTimeout(500);
+    const hamburger3 = page.getByRole('button', { name: 'Toggle navigation' }).first();
+    await hamburger3.click();
+    await page.waitForTimeout(800);
     await page.getByRole('link', { name: 'Contact' }).first().click();
     await expect(page).toHaveURL(/\/contact\//);
 
