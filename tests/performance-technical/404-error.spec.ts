@@ -21,11 +21,11 @@ test.describe('Performance and Technical', () => {
     expect(hasContent).toBeTruthy();
 
     // 3. Check that 404 page has navigation menu
-    const nav = page.locator('nav');
+    const nav = page.locator('nav').first();
     await expect(nav).toBeVisible();
 
     // 4. Verify 404 page has helpful message
-    const content = page.locator('main, article, .content');
+    const content = page.locator('main, article, .content').first();
     await expect(content).toBeVisible();
 
     // 5. Test link back to homepage

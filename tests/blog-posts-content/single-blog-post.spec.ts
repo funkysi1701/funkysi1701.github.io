@@ -43,9 +43,9 @@ test.describe('Blog Posts and Content', () => {
     expect(tagCount).toBeGreaterThan(0);
 
     // 8. Verify author information is displayed
-    await expect(page.locator('text=/funkysi1701|Simon Foster/i')).toBeVisible();
+    await expect(page.locator('text=/funkysi1701|Simon Foster/i').first()).toBeVisible();
 
     // 9. Check for reading time estimate
-    await expect(page.locator('text=/reading time|min read|\d+ min/i')).toBeVisible();
+    await expect(page.locator('text=/reading time|min read|\d+ min/i').first()).toBeVisible();
   });
 });

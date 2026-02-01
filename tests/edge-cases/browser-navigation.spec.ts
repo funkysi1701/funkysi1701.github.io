@@ -27,7 +27,7 @@ test.describe('Edge Cases and Error Handling', () => {
 
     // 7. Verify Projects page loads correctly
     await expect(page).toHaveURL(/\/projects\//);
-    await expect(page.locator('nav')).toBeVisible();
+    await expect(page.locator('nav').first()).toBeVisible();
 
     // 8. Navigate to a blog post
     await page.goto('https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026');
@@ -41,6 +41,6 @@ test.describe('Edge Cases and Error Handling', () => {
     // 10. Verify navigation history works correctly
     const currentUrl = page.url();
     expect(currentUrl).toBeTruthy();
-    await expect(page.locator('nav')).toBeVisible();
+    await expect(page.locator('nav').first()).toBeVisible();
   });
 });

@@ -38,6 +38,6 @@ test.describe('Edge Cases and Error Handling', () => {
 
     // 8. Verify all direct URL accesses work
     // All pages should have navigation
-    await expect(page.locator('nav')).toBeVisible();
+    await expect(page.locator('nav').first()).toBeVisible();
   });
 });

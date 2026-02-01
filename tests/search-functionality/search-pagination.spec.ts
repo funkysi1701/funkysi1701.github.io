@@ -9,9 +9,16 @@ test.describe('Search Functionality', () => {
     await page.goto('https://www.funkysi1701.com/search/');
 
     // 2. Search for a broad term that returns many results (e.g., 'Azure')
-    // The search page already has a visible search input
-    const searchInput = page.locator('input[type="search"], input[type="text"], input[placeholder*="search" i]').first();
-    await searchInput.waitFor({ state: 'visible', timeout: 10000 });
+    // Click the search button/icon to make input visible
+    const searchButton = page.locator('button[aria-label="Search"], .search-toggle, button:has([class*="search"])');
+    const searchButtonVisible = await searchButton.isVisible().catch(() => false);
+    if (searchButtonVisible) {
+      await searchButton.first().click();
+      await page.waitForTimeout(500);
+    }
+    
+    const searchInput = page.locator('input[type="search"], input[aria-label="Search"]').first();
+    await searchInput.waitFor({ state: 'attached', timeout: 5000 });
     await searchInput.fill('Azure');
     await searchInput.press('Enter');
     await page.waitForTimeout(1500);
