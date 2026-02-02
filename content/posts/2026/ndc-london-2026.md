@@ -1,15 +1,15 @@
 +++
 title = "NDC London 2026"
-date = "2026-01-31T15:46:00Z"
+date = "2026-02-02T20:46:00Z"
 year = "2026"
-month= "2026-01"
+month= "2026-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/2026/ndc-me.jpg"
 images =['/images/2026/ndc-me.jpg']
-tags = ["NDC London", "Conference", "DotNet", "Tech Events", "Software Development"]
+tags = ["NDC London", "Conference", "DotNet", "AI", "Accessibility", "WCAG", "Playwright", "Testing", "Azure", "OpenTelemetry", "UX", "Volunteering", "2026"]
 categories = ["tech"]
-description = "Updates and experiences from NDC London 2026."
+description = "NDC London 2026 conference report: AI and Copilot, WCAG accessibility standards, Playwright testing, Azure resilience, and insights from 15+ developer talks."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -18,12 +18,14 @@ draft = false
 aliases = [
     "/ndc-london-2026",
     "/posts/ndc-london-2026",
-    "/posts/2026/01/31/ndc-london-2026",
-    "/2026/01/31/ndc-london-2026" 
+    "/posts/2026/02/02/ndc-london-2026",
+    "/2026/02/02/ndc-london-2026" 
 ]
 +++
 
-NDC London is one of the biggest software developer conferences in Europe, and I was fortunate enough to serve on the volunteer team for the second consecutive year. If you're interested in my first experience, check out my [2025 report](/posts/2025/volunteering-at-ndc/).
+![Volunteering at NDC London 2026](/images/2026/ndc-me.jpg)
+
+For the second year running, I had the privilege of volunteering at NDC London – one of Europe's premier software development conferences. This year's event was packed with insights on AI, accessibility, testing automation, and the future of software development. If you're interested in my first experience, check out my [2025 report](/posts/2025/volunteering-at-ndc/).
 
 The volunteer experience was just as rewarding as last year – the team was fantastic, the energy was incredible, and the sense of community was palpable. In this post, I'll focus on the talks I attended and the key insights I gained from them.
 
@@ -100,10 +102,6 @@ Chris made a compelling argument for maintaining high technical standards even u
 
 A humorous yet practical look at Git workflows and how to recover from common (and not-so-common) Git disasters. The Q&A session at the end turned into a group therapy session where attendees shared their most spectacular Git mishaps and recovery stories. If you've ever accidentally force-pushed to main, this talk was for you!
 
-### Networking Break: JetBrains Rider Team
-
-I skipped one session to have an extended conversation with the [JetBrains Rider](https://www.jetbrains.com/rider) team at their booth. These unstructured conversations are often where you get the most value at conferences – I am a big fan of Visual Studio, but I have never tried Rider, this informal chat has encouraged me to download Rider and give it a try.
-
 ### Code That Writes Code: .NET Source Generators (Speaker: Glenn F. Henriksen)
 
 Source generators are one of .NET's most powerful yet underutilized features. Glenn demonstrated how they can eliminate boilerplate, improve performance by moving work to compile-time, and create type-safe code generation patterns. This is definitely an area I need to explore more for my own projects.
@@ -125,7 +123,7 @@ The talk also touched on **Semantic Kernel**, which is now part of the Microsoft
 
 ### Coding 4 Fun: 8-bit Game Emulation in .NET (Speaker: Alex Thissen)
 
-Pure fun! Alex walked through building an 8-bit game emulator in .NET, demonstrating low-level programming concepts in a modern language. A great reminder that not everything we build needs to be "enterprise-ready" – sometimes coding is just about learning and enjoyment. Lots of shifting bytes around, so a great example of the different things you can so with .NET.
+Pure fun! Alex walked through building an 8-bit game emulator in .NET, demonstrating low-level programming concepts in a modern language. A great reminder that not everything we build needs to be "enterprise-ready" – sometimes coding is just about learning and enjoyment. Lots of shifting bytes around, so a great example of the different things you can do with .NET.
 
 ## Friday
 
@@ -135,7 +133,7 @@ Steve Sanderson delivered an inspiring keynote on how AI is transforming applica
 
 ### What in the Hunger Games is Happening with Recruitment? (Speaker: Suzi Edwards-Alexander)
 
-A frank and often amusing look at the current state of tech recruitment. Suzi traced how we arrived at today's challenging hiring landscape – from the first interview questions created by Thomas Edison, to the rise of LinkedIn and modern recruitment processes. Recruitment is broken, and there are no easy ways of fixing it. 
+A frank and often amusing look at the current state of tech recruitment. Suzi traced how we arrived at today's challenging hiring landscape – from the first interview questions created by Thomas Edison, to the rise of LinkedIn and modern recruitment processes. Recruitment is broken, and there are no easy ways of fixing it.
 
 ### The Great Brain Robbery: Navigating the Dark Future of Online Manipulation (Speaker: Jeff Watkins)
 
@@ -147,7 +145,11 @@ Richard cut through the AI hype to examine what's genuinely transformative versu
 
 ### Resilient by Design (Speaker: Chris Ayers)
 
-The final session I attended focused on building resilient systems in Azure from the ground up. Chris covered how much downtime you can have if your SLA is 99.99% (8.6s a day see https://uptime.is) – but more importantly, the mindset shift required to design for failure rather than just success. In production, it's not *if* things will fail, but *when* and *how gracefully*.
+The final session I attended focused on building resilient systems in Azure from the ground up. Chris covered how much downtime you can have if your SLA is 99.99% (8.6s a day see [uptime.is](https://uptime.is)) – but more importantly, the mindset shift required to design for failure rather than just success. In production, it's not *if* things will fail, but *when* and *how gracefully*.
+
+### Networking Break: JetBrains Rider Team
+
+I skipped one session to have an extended conversation with the [JetBrains Rider](https://www.jetbrains.com/rider) team at their booth. These unstructured conversations are often where you get the most value at conferences – I am a big fan of Visual Studio, but I have never tried Rider, this informal chat has encouraged me to download Rider and give it a try.
 
 ## Final Thoughts
 
@@ -164,4 +166,4 @@ Huge thanks to the NDC organizing team, my fellow volunteers, all the speakers w
 
 See you at NDC London 2027! 🚀
 
-![](/images/2026/ndc-team.jpg)
+![The Awesome Volunteer Team at NDC London](/images/2026/ndc-team.jpg)
