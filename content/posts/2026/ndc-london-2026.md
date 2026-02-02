@@ -14,7 +14,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 featured = false
-draft = true
+draft = false
 aliases = [
     "/ndc-london-2026",
     "/posts/ndc-london-2026",
