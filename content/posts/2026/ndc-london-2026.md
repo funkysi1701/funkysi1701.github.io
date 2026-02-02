@@ -31,8 +31,6 @@ As I mentioned last year, volunteering gave me a **superpower**: increased confi
 
 ## Wednesday
 
-My volunteer duties had me helping distribute conference hoodies at reception (a surprisingly popular task when you're handing out hundreds to eager attendees!), so I missed the opening keynote. However, my first session more than made up for it.
-
 ### Let's Break Some WCAG Rules (Speaker: Elise Kristiansen)
 
 This eye-opening talk examined how pervasively websites violate Web Content Accessibility Guidelines (WCAG). For those unfamiliar, WCAG provides a framework to make web content accessible to everyone, including people with disabilities. The guidelines are organized into three conformance levels:
@@ -58,7 +56,9 @@ A timely reminder that as soon as humans enter the equation, social engineering 
 
 ### Supercharged Testing: AI-Powered Workflows with Playwright + MCP (Speaker: Debbie O'Brien)
 
-I'd heard Debbie and Carl Franklin discuss the Playwright MCP (Model Context Protocol) on .NET Rocks, but seeing it demonstrated live was transformative. This session showed how AI can dramatically enhance testing workflows by understanding test intent and generating Playwright test code.
+I'd heard Debbie discuss the Playwright MCP (Model Context Protocol) on .NET Rocks, but seeing it demonstrated live was transformative. This session showed how AI can dramatically enhance testing workflows by understanding test intent and generating Playwright test code.
+
+I've already started using it to write some tests for this very website!
 
 **Key Takeaway:**
 
@@ -66,7 +66,7 @@ I'd heard Debbie and Carl Franklin discuss the Playwright MCP (Model Context Pro
 
 ### The Undersea Cable Network (Speaker: Richard Campbell)
 
-Richard took us on a fascinating journey through the history of undersea telecommunications cables – the literal backbone of the internet. He explored how these cables are laid, maintained, and the significant challenges when they're damaged (whether by ship anchors, earthquakes, or even shark bites!). It's humbling to realize that our globally connected world depends on physical cables crossing ocean floors.
+Richard took us on a fascinating journey through the history of undersea telecommunications cables – the literal backbone of the internet. He explored how these cables are laid, maintained, and the significant challenges when they're damaged (whether accidental or deliberate). It's humbling to realize that our globally connected world depends on physical cables crossing ocean floors.
 
 ### Java Sucks (So C# Didn't Have To) (Speaker: Adele Carpenter)
 
@@ -77,6 +77,8 @@ An entertaining and insightful exploration of Java's history, examining how its 
 ### Think Like a User: Practical UX Design Tips for Developers (Speaker: Lex Lofthouse)
 
 This session challenged developers to shift perspectives and consider user experience from the ground up. Lex provided practical, actionable advice for creating more intuitive interfaces.
+
+[View the slides](https://www.figma.com/deck/FgeSzQhT74JlnxW3iiONqj/UX-Tips?node-id=1-42&t=h9PIcTBhU6KRDMNU-1)
 
 **Recommended Reading:**
 
