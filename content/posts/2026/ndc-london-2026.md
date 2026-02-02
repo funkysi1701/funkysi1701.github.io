@@ -102,7 +102,7 @@ A humorous yet practical look at Git workflows and how to recover from common (a
 
 ### Networking Break: JetBrains Rider Team
 
-I skipped one session to have an extended conversation with the [JetBrains Rider](https://www.jetbrains.com/rider/) team at their booth. These unstructured conversations are often where you get the most value at conferences – I am a big fan of Visual Studio, but I have never tried Rider, this informal chat has encouraged me to download Rider and give it a try.
+I skipped one session to have an extended conversation with the [JetBrains Rider](https://www.jetbrains.com/rider) team at their booth. These unstructured conversations are often where you get the most value at conferences – I am a big fan of Visual Studio, but I have never tried Rider, this informal chat has encouraged me to download Rider and give it a try.
 
 ### Code That Writes Code: .NET Source Generators (Speaker: Glenn F. Henriksen)
 
@@ -131,7 +131,7 @@ Pure fun! Alex walked through building an 8-bit game emulator in .NET, demonstra
 
 ### Keynote: AI-Powered App Development (Speaker: Steve Sanderson)
 
-Steve Sanderson delivered an inspiring keynote on how AI is transforming application development. The [Github copilot CLI](https://github.com/features/copilot/cli/) was demonstrated, with a new feature added in front of our eyes. Hundreds of Pull Requests can be generated with AI, but they all need reviewing and maintaining by Software Developers and there are no easy answers for managing that.
+Steve Sanderson delivered an inspiring keynote on how AI is transforming application development. The [Github copilot CLI](https://github.com/features/copilot/cli) was demonstrated, with a new feature added in front of our eyes. Hundreds of Pull Requests can be generated with AI, but they all need reviewing and maintaining by Software Developers and there are no easy answers for managing that.
 
 ### What in the Hunger Games is Happening with Recruitment? (Speaker: Suzi Edwards-Alexander)
 
@@ -147,7 +147,7 @@ Richard cut through the AI hype to examine what's genuinely transformative versu
 
 ### Resilient by Design (Speaker: Chris Ayers)
 
-The final session I attended focused on building resilient systems in Azure from the ground up. Chris covered how much downtime you can have if your SLA is 99.99% (8.6s a day see https://uptime.is/) – but more importantly, the mindset shift required to design for failure rather than just success. In production, it's not *if* things will fail, but *when* and *how gracefully*.
+The final session I attended focused on building resilient systems in Azure from the ground up. Chris covered how much downtime you can have if your SLA is 99.99% (8.6s a day see https://uptime.is) – but more importantly, the mindset shift required to design for failure rather than just success. In production, it's not *if* things will fail, but *when* and *how gracefully*.
 
 ## Final Thoughts
 
@@ -163,3 +163,5 @@ My key takeaways from this year:
 Huge thanks to the NDC organizing team, my fellow volunteers, all the speakers who shared their knowledge, and the attendees who made this such an engaging event. If you get the chance to attend (or volunteer at) NDC, I highly recommend it.
 
 See you at NDC London 2027! 🚀
+
+![](/images/2026/ndc-team.jpg)
