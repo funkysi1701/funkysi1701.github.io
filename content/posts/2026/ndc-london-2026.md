@@ -2,7 +2,7 @@
 title = "NDC London 2026"
 date = "2026-02-02T20:46:00Z"
 year = "2026"
-month= "2026-02"
+month = "2026-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/2026/ndc-me.jpg"
@@ -54,7 +54,9 @@ One of the most powerful demonstrations was a colour blindness test where only c
 
 ### Social Engineering: Hacking Humans (Speaker: Pawel Sucholbiak)
 
-A timely reminder that as soon as humans enter the equation, social engineering becomes a significant security risk. This talk explored various tactics malicious actors use to manipulate people into divulging confidential information or performing actions that compromise security. The human element remains the weakest link in any security chain.
+A timely reminder that as soon as humans enter the equation, social engineering becomes a significant security risk. This talk explored various tactics malicious actors use to manipulate people into divulging confidential information or performing actions that compromise security.
+
+Pawel demonstrated real-world scenarios like phishing emails that appear to come from trusted colleagues, pretexting phone calls where attackers impersonate IT support, and how seemingly innocent information shared on social media can be weaponized. The human element remains the weakest link in any security chain.
 
 ### Supercharged Testing: AI-Powered Workflows with Playwright + MCP (Speaker: Debbie O'Brien)
 
@@ -129,7 +131,7 @@ Pure fun! Alex walked through building an 8-bit game emulator in .NET, demonstra
 
 ### Keynote: AI-Powered App Development (Speaker: Steve Sanderson)
 
-Steve Sanderson delivered an inspiring keynote on how AI is transforming application development. The [Github copilot CLI](https://github.com/features/copilot/cli) was demonstrated, with a new feature added in front of our eyes. Hundreds of Pull Requests can be generated with AI, but they all need reviewing and maintaining by Software Developers and there are no easy answers for managing that.
+Steve Sanderson delivered an inspiring keynote on how AI is transforming application development. The [GitHub Copilot CLI](https://github.com/features/copilot/cli) was demonstrated, with a new feature added in front of our eyes. Hundreds of Pull Requests can be generated with AI, but they all need reviewing and maintaining by Software Developers and there are no easy answers for managing that.
 
 ### What in the Hunger Games is Happening with Recruitment? (Speaker: Suzi Edwards-Alexander)
 
@@ -162,7 +164,9 @@ My key takeaways from this year:
 3. **Technical excellence matters** – shortcuts today become tomorrow's technical debt
 4. **Community is everything** – the conversations between sessions were as valuable as the talks themselves
 
-Huge thanks to the NDC organizing team, my fellow volunteers, all the speakers who shared their knowledge, and the attendees who made this such an engaging event. If you get the chance to attend (or volunteer at) NDC, I highly recommend it.
+Huge thanks to the NDC organizing team, my fellow volunteers, all the speakers who shared their knowledge, and the attendees who made this such an engaging event. If you get the chance to attend (or volunteer at) [NDC Conferences](https://ndcconferences.com/), I highly recommend it.
+
+Interested in attending NDC London 2027? Follow [@NDC_Conferences](https://twitter.com/NDC_Conferences) for updates!
 
 See you at NDC London 2027! 🚀
 
