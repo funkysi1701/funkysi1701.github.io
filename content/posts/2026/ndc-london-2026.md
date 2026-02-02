@@ -23,7 +23,7 @@ aliases = [
 ]
 +++
 
-![Volunteering at NDC London 2026](/images/2026/ndc-me.jpg)
+<img src="/images/2026/ndc-me.jpg" alt="Volunteering at NDC London 2026" width="250px" style="float:left;padding-right: 15px; " />
 
 For the second year running, I had the privilege of volunteering at NDC London – one of Europe's premier software development conferences. This year's event was packed with insights on AI, accessibility, testing automation, and the future of software development. If you're interested in my first experience, check out my [2025 report](/posts/2025/volunteering-at-ndc/).
 
