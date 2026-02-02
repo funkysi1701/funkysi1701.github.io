@@ -88,7 +88,7 @@ This session challenged developers to shift perspectives and consider user exper
 
 ### OpenTelemetry At Scale 101: Intro to OpAMP (Speakers: Aakansha Priya and Adriana Villela)
 
-This session introduced OpAMP (Open Agent Management Protocol) for managing OpenTelemetry collectors at scale. While the scale discussed was beyond my current needs, it was valuable to understand the challenges and solutions for production observability in large distributed systems. The question of "which configuration should I run in production?" remains universal regardless of scale.
+This session introduced OpAMP (Open Agent Management Protocol) for managing OpenTelemetry collectors at scale. While the scale discussed was beyond my current needs, it was valuable to understand the challenges and solutions for production observability in large distributed systems.
 
 ### A Defence of Technical Excellence (Speaker: Chris Simon)
 
@@ -102,7 +102,7 @@ A humorous yet practical look at Git workflows and how to recover from common (a
 
 ### Networking Break: JetBrains Rider Team
 
-I skipped one session to have an extended conversation with the JetBrains Rider team at their booth. These unstructured conversations are often where you get the most value at conferences – learning about upcoming features, sharing feedback, and understanding the roadmap directly from the team building the tools you use daily.
+I skipped one session to have an extended conversation with the [JetBrains Rider](https://www.jetbrains.com/rider/) team at their booth. These unstructured conversations are often where you get the most value at conferences – I am a big fan of Visual Studio, but I have never tried Rider, this informal chat has encouraged me to download Rider and give it a try.
 
 ### Code That Writes Code: .NET Source Generators (Speaker: Glenn F. Henriksen)
 
@@ -125,21 +125,21 @@ The talk also touched on **Semantic Kernel**, which is now part of the Microsoft
 
 ### Coding 4 Fun: 8-bit Game Emulation in .NET (Speaker: Alex Thissen)
 
-Pure fun! Alex walked through building an 8-bit game emulator in .NET, demonstrating low-level programming concepts in a modern language. A great reminder that not everything we build needs to be "enterprise-ready" – sometimes coding is just about learning and enjoyment.
+Pure fun! Alex walked through building an 8-bit game emulator in .NET, demonstrating low-level programming concepts in a modern language. A great reminder that not everything we build needs to be "enterprise-ready" – sometimes coding is just about learning and enjoyment. Lots of shifting bytes around, so a great example of the different things you can so with .NET.
 
 ## Friday
 
 ### Keynote: AI-Powered App Development (Speaker: Steve Sanderson)
 
-Steve Sanderson (creator of Blazor and Knockout.js) delivered an inspiring keynote on how AI is transforming application development. Rather than focusing on the hype, he demonstrated practical ways AI tools are already enhancing developer productivity – from code completion to entire feature generation. The key message: AI is a tool that amplifies developers, not replaces them.
+Steve Sanderson delivered an inspiring keynote on how AI is transforming application development. The [Github copilot CLI](https://github.com/features/copilot/cli/) was demonstrated, with a new feature added in front of our eyes. Hundreds of Pull Requests can be generated with AI, but they all need reviewing and maintaining by Software Developers and there are no easy answers for managing that.
 
 ### What in the Hunger Games is Happening with Recruitment? (Speaker: Suzi Edwards-Alexander)
 
-A frank and often amusing look at the current state of tech recruitment. Suzi traced how we arrived at today's challenging hiring landscape – from the over-hiring during the pandemic to the current market correction. She provided practical advice for both job seekers and hiring managers navigating this difficult environment. The Hunger Games comparison was apt!
+A frank and often amusing look at the current state of tech recruitment. Suzi traced how we arrived at today's challenging hiring landscape – from the first interview questions created by Thomas Edison, to the rise of LinkedIn and modern recruitment processes. Recruitment is broken, and there are no easy ways of fixing it. 
 
 ### The Great Brain Robbery: Navigating the Dark Future of Online Manipulation (Speaker: Jeff Watkins)
 
-A sobering examination of how online platforms use psychological manipulation and dark patterns to exploit users' attention and data. Jeff didn't just highlight the problems – he offered strategies for recognizing and resisting these tactics, both as developers and as users. This talk made me reconsider several design patterns I've implemented without questioning their ethical implications.
+A sobering examination of how online platforms use psychological manipulation and dark patterns to exploit users' attention and data. Jeff didn't just highlight the problems – he offered strategies for recognizing and resisting these tactics, both as developers and as users. This talk was rather bleak reinforcing the notion that you can not trust anything you see or read online.
 
 ### Beyond the AI Hype: What's Real, What's Next (Speaker: Richard Campbell)
 
@@ -147,11 +147,11 @@ Richard cut through the AI hype to examine what's genuinely transformative versu
 
 ### Resilient by Design (Speaker: Chris Ayers)
 
-The final session I attended focused on building resilient systems from the ground up. Chris covered patterns like circuit breakers, bulkheads, and retry policies – but more importantly, the mindset shift required to design for failure rather than just success. In production, it's not *if* things will fail, but *when* and *how gracefully*.
+The final session I attended focused on building resilient systems in Azure from the ground up. Chris covered how much downtime you can have if your SLA is 99.99% (8.6s a day see https://uptime.is/) – but more importantly, the mindset shift required to design for failure rather than just success. In production, it's not *if* things will fail, but *when* and *how gracefully*.
 
 ## Final Thoughts
 
-NDC London 2026 was another incredible experience. The breadth of topics – from accessibility and UX to AI, observability, and system resilience – reflects the diverse skills modern developers need. 
+NDC London 2026 was another incredible experience. The breadth of topics – from accessibility and UX to AI, observability, and system resilience – reflects the diverse skills modern developers need.
 
 My key takeaways from this year:
 
