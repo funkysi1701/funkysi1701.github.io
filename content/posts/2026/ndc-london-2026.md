@@ -1,37 +1,37 @@
 +++
 title = "NDC London 2026"
-date = "2026-01-31T15:46:00Z"
+date = "2026-02-02T20:46:00Z"
 year = "2026"
-month= "2026-01"
+month = "2026-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/2026/ndc-me.jpg"
 images =['/images/2026/ndc-me.jpg']
-tags = ["NDC London", "Conference", "DotNet", "Tech Events", "Software Development"]
+tags = ["NDC London", "Conference", "DotNet", "AI", "Accessibility", "WCAG", "Playwright", "Testing", "Azure", "OpenTelemetry", "UX", "Volunteering", "2026"]
 categories = ["tech"]
-description = "Updates and experiences from NDC London 2026."
+description = "NDC London 2026 conference report: AI and Copilot, WCAG accessibility standards, Playwright testing, Azure resilience, and insights from 15+ developer talks."
 showFullContent = false
 readingTime = true
 copyright = false
 featured = false
-draft = true
+draft = false
 aliases = [
     "/ndc-london-2026",
     "/posts/ndc-london-2026",
-    "/posts/2026/01/31/ndc-london-2026",
-    "/2026/01/31/ndc-london-2026" 
+    "/posts/2026/02/02/ndc-london-2026",
+    "/2026/02/02/ndc-london-2026" 
 ]
 +++
 
-NDC London is one of the biggest software developer conferences in Europe, and I was fortunate enough to serve on the volunteer team for the second consecutive year. If you're interested in my first experience, check out my [2025 report](/posts/2025/volunteering-at-ndc/).
+<img src="/images/2026/ndc-me.jpg" alt="Volunteering at NDC London 2026" width="250px" style="float:left;padding-right: 15px; " />
+
+For the second year running, I had the privilege of volunteering at NDC London – one of Europe's premier software development conferences. This year's event was packed with insights on AI, accessibility, testing automation, and the future of software development. If you're interested in my first experience, check out my [2025 report](/posts/2025/volunteering-at-ndc/).
 
 The volunteer experience was just as rewarding as last year – the team was fantastic, the energy was incredible, and the sense of community was palpable. In this post, I'll focus on the talks I attended and the key insights I gained from them.
 
 As I mentioned last year, volunteering gave me a **superpower**: increased confidence to network with speakers, vendors, fellow volunteers, and attendees. The connections you make at conferences like this are invaluable, and being part of the team made it even easier to engage with the community.
 
 ## Wednesday
-
-My volunteer duties had me helping distribute conference hoodies at reception (a surprisingly popular task when you're handing out hundreds to eager attendees!), so I missed the opening keynote. However, my first session more than made up for it.
 
 ### Let's Break Some WCAG Rules (Speaker: Elise Kristiansen)
 
@@ -54,11 +54,15 @@ One of the most powerful demonstrations was a colour blindness test where only c
 
 ### Social Engineering: Hacking Humans (Speaker: Pawel Sucholbiak)
 
-A timely reminder that as soon as humans enter the equation, social engineering becomes a significant security risk. This talk explored various tactics malicious actors use to manipulate people into divulging confidential information or performing actions that compromise security. The human element remains the weakest link in any security chain.
+A timely reminder that as soon as humans enter the equation, social engineering becomes a significant security risk. This talk explored various tactics malicious actors use to manipulate people into divulging confidential information or performing actions that compromise security.
+
+Pawel demonstrated real-world scenarios like phishing emails that appear to come from trusted colleagues, pretexting phone calls where attackers impersonate IT support, and how seemingly innocent information shared on social media can be weaponized. The human element remains the weakest link in any security chain.
 
 ### Supercharged Testing: AI-Powered Workflows with Playwright + MCP (Speaker: Debbie O'Brien)
 
-I'd heard Debbie and Carl Franklin discuss the Playwright MCP (Model Context Protocol) on .NET Rocks, but seeing it demonstrated live was transformative. This session showed how AI can dramatically enhance testing workflows by understanding test intent and generating Playwright test code.
+I'd heard Debbie discuss the Playwright MCP (Model Context Protocol) on .NET Rocks, but seeing it demonstrated live was transformative. This session showed how AI can dramatically enhance testing workflows by understanding test intent and generating Playwright test code.
+
+I've already started using it to write some tests for this very website!
 
 **Key Takeaway:**
 
@@ -66,7 +70,7 @@ I'd heard Debbie and Carl Franklin discuss the Playwright MCP (Model Context Pro
 
 ### The Undersea Cable Network (Speaker: Richard Campbell)
 
-Richard took us on a fascinating journey through the history of undersea telecommunications cables – the literal backbone of the internet. He explored how these cables are laid, maintained, and the significant challenges when they're damaged (whether by ship anchors, earthquakes, or even shark bites!). It's humbling to realize that our globally connected world depends on physical cables crossing ocean floors.
+Richard took us on a fascinating journey through the history of undersea telecommunications cables – the literal backbone of the internet. He explored how these cables are laid, maintained, and the significant challenges when they're damaged (whether accidental or deliberate). It's humbling to realize that our globally connected world depends on physical cables crossing ocean floors.
 
 ### Java Sucks (So C# Didn't Have To) (Speaker: Adele Carpenter)
 
@@ -78,6 +82,8 @@ An entertaining and insightful exploration of Java's history, examining how its 
 
 This session challenged developers to shift perspectives and consider user experience from the ground up. Lex provided practical, actionable advice for creating more intuitive interfaces.
 
+[View the slides](https://www.figma.com/deck/FgeSzQhT74JlnxW3iiONqj/UX-Tips?node-id=1-42&t=h9PIcTBhU6KRDMNU-1)
+
 **Recommended Reading:**
 
 - *The Design of Everyday Things* by Don Norman
@@ -86,7 +92,7 @@ This session challenged developers to shift perspectives and consider user exper
 
 ### OpenTelemetry At Scale 101: Intro to OpAMP (Speakers: Aakansha Priya and Adriana Villela)
 
-This session introduced OpAMP (Open Agent Management Protocol) for managing OpenTelemetry collectors at scale. While the scale discussed was beyond my current needs, it was valuable to understand the challenges and solutions for production observability in large distributed systems. The question of "which configuration should I run in production?" remains universal regardless of scale.
+This session introduced OpAMP (Open Agent Management Protocol) for managing OpenTelemetry collectors at scale. While the scale discussed was beyond my current needs, it was valuable to understand the challenges and solutions for production observability in large distributed systems.
 
 ### A Defence of Technical Excellence (Speaker: Chris Simon)
 
@@ -97,10 +103,6 @@ Chris made a compelling argument for maintaining high technical standards even u
 ### How to Git Away with Murder (Speaker: Sergès Goma)
 
 A humorous yet practical look at Git workflows and how to recover from common (and not-so-common) Git disasters. The Q&A session at the end turned into a group therapy session where attendees shared their most spectacular Git mishaps and recovery stories. If you've ever accidentally force-pushed to main, this talk was for you!
-
-### Networking Break: JetBrains Rider Team
-
-I skipped one session to have an extended conversation with the JetBrains Rider team at their booth. These unstructured conversations are often where you get the most value at conferences – learning about upcoming features, sharing feedback, and understanding the roadmap directly from the team building the tools you use daily.
 
 ### Code That Writes Code: .NET Source Generators (Speaker: Glenn F. Henriksen)
 
@@ -123,21 +125,21 @@ The talk also touched on **Semantic Kernel**, which is now part of the Microsoft
 
 ### Coding 4 Fun: 8-bit Game Emulation in .NET (Speaker: Alex Thissen)
 
-Pure fun! Alex walked through building an 8-bit game emulator in .NET, demonstrating low-level programming concepts in a modern language. A great reminder that not everything we build needs to be "enterprise-ready" – sometimes coding is just about learning and enjoyment.
+Pure fun! Alex walked through building an 8-bit game emulator in .NET, demonstrating low-level programming concepts in a modern language. A great reminder that not everything we build needs to be "enterprise-ready" – sometimes coding is just about learning and enjoyment. Lots of shifting bytes around, so a great example of the different things you can do with .NET.
 
 ## Friday
 
 ### Keynote: AI-Powered App Development (Speaker: Steve Sanderson)
 
-Steve Sanderson (creator of Blazor and Knockout.js) delivered an inspiring keynote on how AI is transforming application development. Rather than focusing on the hype, he demonstrated practical ways AI tools are already enhancing developer productivity – from code completion to entire feature generation. The key message: AI is a tool that amplifies developers, not replaces them.
+Steve Sanderson delivered an inspiring keynote on how AI is transforming application development. The [GitHub Copilot CLI](https://github.com/features/copilot/cli) was demonstrated, with a new feature added in front of our eyes. Hundreds of Pull Requests can be generated with AI, but they all need reviewing and maintaining by Software Developers and there are no easy answers for managing that.
 
 ### What in the Hunger Games is Happening with Recruitment? (Speaker: Suzi Edwards-Alexander)
 
-A frank and often amusing look at the current state of tech recruitment. Suzi traced how we arrived at today's challenging hiring landscape – from the over-hiring during the pandemic to the current market correction. She provided practical advice for both job seekers and hiring managers navigating this difficult environment. The Hunger Games comparison was apt!
+A frank and often amusing look at the current state of tech recruitment. Suzi traced how we arrived at today's challenging hiring landscape – from the first interview questions created by Thomas Edison, to the rise of LinkedIn and modern recruitment processes. Recruitment is broken, and there are no easy ways of fixing it.
 
 ### The Great Brain Robbery: Navigating the Dark Future of Online Manipulation (Speaker: Jeff Watkins)
 
-A sobering examination of how online platforms use psychological manipulation and dark patterns to exploit users' attention and data. Jeff didn't just highlight the problems – he offered strategies for recognizing and resisting these tactics, both as developers and as users. This talk made me reconsider several design patterns I've implemented without questioning their ethical implications.
+A sobering examination of how online platforms use psychological manipulation and dark patterns to exploit users' attention and data. Jeff didn't just highlight the problems – he offered strategies for recognizing and resisting these tactics, both as developers and as users. This talk was rather bleak reinforcing the notion that you can not trust anything you see or read online.
 
 ### Beyond the AI Hype: What's Real, What's Next (Speaker: Richard Campbell)
 
@@ -145,11 +147,15 @@ Richard cut through the AI hype to examine what's genuinely transformative versu
 
 ### Resilient by Design (Speaker: Chris Ayers)
 
-The final session I attended focused on building resilient systems from the ground up. Chris covered patterns like circuit breakers, bulkheads, and retry policies – but more importantly, the mindset shift required to design for failure rather than just success. In production, it's not *if* things will fail, but *when* and *how gracefully*.
+The final session I attended focused on building resilient systems in Azure from the ground up. Chris covered how much downtime you can have if your SLA is 99.99% (8.6s a day see [uptime.is](https://uptime.is)) – but more importantly, the mindset shift required to design for failure rather than just success. In production, it's not *if* things will fail, but *when* and *how gracefully*.
+
+### Networking Break: JetBrains Rider Team
+
+I skipped one session to have an extended conversation with the [JetBrains Rider](https://www.jetbrains.com/rider) team at their booth. These unstructured conversations are often where you get the most value at conferences – I am a big fan of Visual Studio, but I have never tried Rider, this informal chat has encouraged me to download Rider and give it a try.
 
 ## Final Thoughts
 
-NDC London 2026 was another incredible experience. The breadth of topics – from accessibility and UX to AI, observability, and system resilience – reflects the diverse skills modern developers need. 
+NDC London 2026 was another incredible experience. The breadth of topics – from accessibility and UX to AI, observability, and system resilience – reflects the diverse skills modern developers need.
 
 My key takeaways from this year:
 
@@ -158,6 +164,10 @@ My key takeaways from this year:
 3. **Technical excellence matters** – shortcuts today become tomorrow's technical debt
 4. **Community is everything** – the conversations between sessions were as valuable as the talks themselves
 
-Huge thanks to the NDC organizing team, my fellow volunteers, all the speakers who shared their knowledge, and the attendees who made this such an engaging event. If you get the chance to attend (or volunteer at) NDC, I highly recommend it.
+Huge thanks to the NDC organizing team, my fellow volunteers, all the speakers who shared their knowledge, and the attendees who made this such an engaging event. If you get the chance to attend (or volunteer at) [NDC Conferences](https://ndcconferences.com/), I highly recommend it.
+
+Interested in attending NDC London 2027? Follow [@NDC_Conferences](https://twitter.com/NDC_Conferences) for updates!
 
 See you at NDC London 2027! 🚀
+
+![The Awesome Volunteer Team at NDC London](/images/2026/ndc-team.jpg)
