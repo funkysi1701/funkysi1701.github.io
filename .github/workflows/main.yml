@@ -20,7 +20,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx c8 --reporter=lcov --reporter=text --report-dir=coverage npx playwright test --reporter=html
+      run: npx c8 --reporter=lcov --reporter=text --report-dir=coverage playwright test --reporter=html
     - uses: actions/upload-artifact@v6
       if: ${{ !cancelled() }}
       with:
