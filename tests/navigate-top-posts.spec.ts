@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../fixtures';
 
 test('navigate to www.funkysi1701.com, click top blog posts, check console for errors', async ({ page }) => {
   // Collect console errors

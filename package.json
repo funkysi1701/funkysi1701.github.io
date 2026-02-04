@@ -63,7 +63,9 @@
     "workbox-strategies": "^7.0.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.54.2"
+    "@playwright/test": "^1.54.2",
+    "nyc": "^17.1.0",
+    "v8-to-istanbul": "^9.3.0"
   },
   "name": "hugo-theme-bootstrap-skeleton",
   "version": "0.1.0"
