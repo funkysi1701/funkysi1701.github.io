@@ -25,22 +25,27 @@ class PageVisitTrackerReporter implements Reporter {
   }
 
   onTestEnd(test: TestCase, result: TestResult) {
-    // Extract page visits from test attachments or stdout
-    const stdout = result.stdout.map(s => s.toString()).join('');
-    const urlPattern = /https?:\/\/[^\s'"<>]+/g;
-    const urls = stdout.match(urlPattern) || [];
-
-    urls.forEach(url => {
-      // Filter to only track the main site URLs
-      if (url.includes('funkysi1701.com') || url.includes('localhost')) {
-        this.uniqueUrls.add(url);
-        this.visits.push({
-          url,
-          testTitle: test.title,
-          testFile: path.relative(process.cwd(), test.location.file),
-          timestamp: new Date().toISOString(),
-        });
-      }
+    // Extract page visits from test stdout
+    result.stdout.forEach(output => {
+      const text = typeof output === 'string' ? output : output.toString();
+      const lines = text.split('\n');
+      
+      lines.forEach((line: string) => {
+        if (line.includes('PAGE_VISIT:')) {
+          const url = line.split('PAGE_VISIT:')[1].trim();
+          
+          // Filter to only track the main site URLs
+          if (url && (url.includes('funkysi1701.com') || url.includes('localhost'))) {
+            this.uniqueUrls.add(url);
+            this.visits.push({
+              url,
+              testTitle: test.title,
+              testFile: path.relative(process.cwd(), test.location.file),
+              timestamp: new Date().toISOString(),
+            });
+          }
+        }
+      });
     });
   }
 
