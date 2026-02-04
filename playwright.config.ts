@@ -6,7 +6,10 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
+  reporter: [
+    ['html'],
+    ['./reporters/page-visit-tracker.ts'],
+  ],
   use: {
     baseURL: 'https://www.funkysi1701.com',
     trace: 'on-first-retry',
