@@ -34,15 +34,21 @@ class PageVisitTrackerReporter implements Reporter {
         if (line.includes('PAGE_VISIT:')) {
           const url = line.split('PAGE_VISIT:')[1].trim();
           
-          // Filter to only track the main site URLs
-          if (url && (url.includes('funkysi1701.com') || url.includes('localhost'))) {
-            this.uniqueUrls.add(url);
-            this.visits.push({
-              url,
-              testTitle: test.title,
-              testFile: path.relative(process.cwd(), test.location.file),
-              timestamp: new Date().toISOString(),
-            });
+          // Filter to only track the main site URLs (strict host match)
+          try {
+            const parsedUrl = new URL(url);
+            const allowedHosts = ['funkysi1701.com', 'www.funkysi1701.com', 'localhost'];
+            if (allowedHosts.includes(parsedUrl.hostname)) {
+              this.uniqueUrls.add(url);
+              this.visits.push({
+                url,
+                testTitle: test.title,
+                testFile: path.relative(process.cwd(), test.location.file),
+                timestamp: new Date().toISOString(),
+              });
+            }
+          } catch (e) {
+            // Ignore invalid URLs
           }
         }
       });
