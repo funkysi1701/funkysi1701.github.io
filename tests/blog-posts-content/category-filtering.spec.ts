@@ -1,7 +1,7 @@
 // spec: specs/funkysi1701-test-plan.md
 // seed: seed.spec.ts
 
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../fixtures';
 
 test.describe('Blog Posts and Content', () => {
   test('Blog category filtering', async ({ page }) => {

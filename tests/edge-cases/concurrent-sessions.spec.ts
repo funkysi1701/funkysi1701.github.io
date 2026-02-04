@@ -1,7 +1,7 @@
 // spec: specs/funkysi1701-test-plan.md
 // seed: seed.spec.ts
 
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../fixtures';
 
 test.describe('Edge Cases and Error Handling', () => {
   test('Concurrent user sessions', async ({ browser }) => {
