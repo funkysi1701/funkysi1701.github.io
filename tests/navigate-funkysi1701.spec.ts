@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures';
+import { test, expect } from './fixtures';
 
 test('navigate to funkysi1701.com', async ({ page }) => {
   await page.goto('https://www.funkysi1701.com');
