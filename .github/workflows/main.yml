@@ -20,10 +20,24 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test --reporter=html
+      run: npx c8 --reporter=lcov --reporter=text --report-dir=coverage playwright test --reporter=html
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v5
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./coverage/lcov.info
+        flags: playwright
+        name: playwright-coverage
+        fail_ci_if_error: false
     - uses: actions/upload-artifact@v6
       if: ${{ !cancelled() }}
       with:
         name: playwright-report
         path: playwright-report/
+        retention-days: 30
+    - uses: actions/upload-artifact@v6
+      if: ${{ !cancelled() }}
+      with:
+        name: coverage-report
+        path: coverage/
         retention-days: 30
