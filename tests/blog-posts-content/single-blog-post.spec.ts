@@ -5,8 +5,8 @@ import { test, expect } from '../fixtures';
 
 test.describe('Blog Posts and Content', () => {
   test('Individual blog post displays correctly', async ({ page }) => {
-    // 1. Navigate to https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026
-    await page.goto('https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026');
+    // 1. Navigate to https://www.funkysi1701.com/posts/2026/ndc-london-2026
+    await page.goto('https://www.funkysi1701.com/posts/2026/ndc-london-2026');
 
     // 2. Verify blog post loads successfully
     await expect(page).toHaveURL(/ndc-london-2026/);
@@ -20,7 +20,7 @@ test.describe('Blog Posts and Content', () => {
     expect(titleText.length).toBeGreaterThan(0);
 
     // 4. Verify post date is shown
-    await expect(page.locator('text=/2026|Jan|January|31/i').first()).toBeVisible();
+    await expect(page.locator('text=/February 2, 2026|Feb 2, 2026|2 February 2026/i').first()).toBeVisible();
 
     // 5. Check for cover image display
     const coverImage = page.locator('img[src*="ndc"], img[alt*="NDC"]').first();
