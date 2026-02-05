@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.54.2",
-    "@types/node": "^22.0.0",
+    "@types/node": "^24.0.0",
     "nyc": "^17.1.0",
     "v8-to-istanbul": "^9.3.0"
   },
