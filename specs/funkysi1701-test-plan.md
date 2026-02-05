@@ -229,7 +229,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
 **File:** `tests/blog-posts-content/single-blog-post.spec.ts`
 
 **Steps:**
-  1. Navigate to https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026
+  1. Navigate to https://www.funkysi1701.com/posts/2026/ndc-london-2026
   2. Verify blog post loads successfully
   3. Check that post title is displayed
   4. Verify post date is shown
