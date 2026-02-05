@@ -11,7 +11,7 @@
     "bootstrap": "5.3.8",
     "fibers": "5.0.3",
     "fuse.js": "7.1.0",
-    "katex": "0.16.27",
+    "katex": "0.16.28",
     "mark.js": "8.11.1",
     "mermaid": "11.12.2",
     "mustache": "4.2.0",
