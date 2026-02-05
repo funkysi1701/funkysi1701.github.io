@@ -35,9 +35,10 @@
         "HUGO_VERSION=(?<currentValue>.+)"
       ],
       "currentValueTemplate": "{{currentValue}}",
-      "datasourceTemplate": "github-releases",
+      "datasourceTemplate": "github-tags",
       "packageNameTemplate": "Florin-Lungu/docker-hugo",
       "versioningTemplate": "semver",
+      "extractVersionTemplate": "^v?(?<version>.+)$",
       "depNameTemplate": "hugo"
     }
   ],
