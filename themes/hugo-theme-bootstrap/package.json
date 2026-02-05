@@ -47,7 +47,7 @@
     "less": "4.5.1",
     "less-loader": "12.3.0",
     "line-column": "1.0.2",
-    "mini-css-extract-plugin": "2.9.4",
+    "mini-css-extract-plugin": "2.10.0",
     "npm-run-all2": "8.0.4",
     "npm-watch": "0.13.0",
     "postcss": "8.5.6",
