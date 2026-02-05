@@ -5,8 +5,8 @@ import { test, expect } from '../fixtures';
 
 test.describe('Blog Posts and Content', () => {
   test('Individual blog post displays correctly', async ({ page }) => {
-    // 1. Navigate to https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026
-    await page.goto('https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026');
+    // 1. Navigate to https://www.funkysi1701.com/posts/2026/ndc-london-2026
+    await page.goto('https://www.funkysi1701.com/posts/2026/ndc-london-2026');
 
     // 2. Verify blog post loads successfully
     await expect(page).toHaveURL(/ndc-london-2026/);
