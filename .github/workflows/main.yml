@@ -2,8 +2,6 @@ name: Playwright Tests
 permissions:
   contents: read
 on:
-  push:
-    branches: [ main, master, test, develop ]
   pull_request:
     branches: [ main, master, test, develop ]
 jobs:
