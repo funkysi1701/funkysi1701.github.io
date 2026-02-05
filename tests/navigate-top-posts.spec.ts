@@ -15,6 +15,10 @@ test('navigate to www.funkysi1701.com, click top blog posts, check console for e
 
   // Step 2: Use explicit URLs for the top blog posts based on MCP output
   const blogPostUrls = [
+    'https://www.funkysi1701.com/posts/start-here/',
+    'https://www.funkysi1701.com/posts/2026/ndc-london-2026/',
+    'https://www.funkysi1701.com/posts/2026/2025-in-review-and-2026-goals/',
+
     'https://www.funkysi1701.com/posts/2025/kubernetes-and-letsencrypt/',
     'https://www.funkysi1701.com/posts/2025/stepping-outside-your-comfort-zone/',
     'https://www.funkysi1701.com/posts/2025/deploying-hugo-with-helm/',
@@ -38,6 +42,7 @@ test('navigate to www.funkysi1701.com, click top blog posts, check console for e
     'https://www.funkysi1701.com/posts/2025/blazor-and-dotnet10/',
     'https://www.funkysi1701.com/posts/2025/aspire-9.2/',
     'https://www.funkysi1701.com/posts/2025/adding-elasticsearch-with-aspire/',
+
     'https://www.funkysi1701.com/posts/2024/top-electricity-devices/',
     'https://www.funkysi1701.com/posts/2024/strategy-pattern/',
     'https://www.funkysi1701.com/posts/2024/scottishsummit/',
@@ -45,6 +50,7 @@ test('navigate to www.funkysi1701.com, click top blog posts, check console for e
     'https://www.funkysi1701.com/posts/2024/dotnet9/',
     'https://www.funkysi1701.com/posts/2024/common-ai-copilot-terms/',
     'https://www.funkysi1701.com/posts/2024/codeclub/',
+    'https://www.funkysi1701.com/posts/2024/trekranks/',
     'https://www.funkysi1701.com/posts/2024/charity-hike/',
     'https://www.funkysi1701.com/posts/2024/automatic-pull-requests/',
     'https://www.funkysi1701.com/posts/2024/aspire/'
