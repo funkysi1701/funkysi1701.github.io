@@ -40,7 +40,7 @@
     "@fortawesome/free-brands-svg-icons": "^7.0.0",
     "@fortawesome/free-regular-svg-icons": "^7.0.0",
     "@fortawesome/free-solid-svg-icons": "^7.0.0",
-    "@fullhuman/postcss-purgecss": "^7.0.0",
+    "@fullhuman/postcss-purgecss": "^8.0.0",
     "@popperjs/core": "^2.11.2",
     "algoliasearch": "^5.0.0",
     "autoprefixer": "^10.4.2",
@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.54.2",
-    "@types/node": "^22.0.0",
+    "@types/node": "^24.0.0",
     "nyc": "^17.1.0",
     "v8-to-istanbul": "^9.3.0"
   },
