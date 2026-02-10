@@ -12,7 +12,6 @@ copyright = false
 readingTime = true
 aliases = [
     "/podcasts",
-    "/posts/podcasts"
 ]
 +++
 
