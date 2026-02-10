@@ -45,7 +45,7 @@
     "file-loader": "6.2.0",
     "glob-all": "3.3.1",
     "less": "4.5.1",
-    "less-loader": "12.3.0",
+    "less-loader": "12.3.1",
     "line-column": "1.0.2",
     "mini-css-extract-plugin": "2.10.0",
     "npm-run-all2": "8.0.4",
