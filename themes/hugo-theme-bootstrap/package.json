@@ -51,7 +51,7 @@
     "npm-run-all2": "8.0.4",
     "npm-watch": "0.13.0",
     "postcss": "8.5.6",
-    "postcss-loader": "8.2.0",
+    "postcss-loader": "8.2.1",
     "purgecss-webpack-plugin": "8.0.0",
     "sass": "1.97.3",
     "sass-loader": "16.0.7",
