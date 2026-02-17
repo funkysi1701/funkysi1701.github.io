@@ -21,10 +21,10 @@ aliases = [
     "/2016/05/26/brothers-tng-s4-e3-review-battle-bridge"
 ]
 +++
-My latest podcast can be found http://www.trekmate.org.uk/brothers-tng-s4-e3-review-the-battle-bridge/ and feedback can be left on the trekmate forums http://forum.trekmatefamily.com/2016/05/brothers-tng-s4-e3-review-the-battle-bridge/
+My latest podcast can be found https://www.trekmate.org.uk/brothers-tng-s4-e3-review-the-battle-bridge/ and feedback can be left on the trekmate forums http://forum.trekmatefamily.com/2016/05/brothers-tng-s4-e3-review-the-battle-bridge/
 
 Data jeopardizes an emergency mission to save an ill child when he gets a signal from his creator.
 
 Today James and Lou discuss (Brothers) and what we think of it, with tonight’s guest host Simon Foster, Funky Si.
 
-Credit: Main Title Theme (TV Edit) was arranged by [Dennis McCarthy](http://en.memory-alpha.org/wiki/Dennis_McCarthy) and composed by [Jerry Goldsmith](http://en.memory-alpha.org/wiki/Jerry_Goldsmith) and [Alexander Courage](https://memory-alpha.fandom.com/wiki/Alexander_Courage)
+Credit: Main Title Theme (TV Edit) was arranged by [Dennis McCarthy](https://memory-alpha.fandom.com/wiki/Dennis_McCarthy) and composed by [Jerry Goldsmith](https://memory-alpha.fandom.com/wiki/Jerry_Goldsmith) and [Alexander Courage](https://memory-alpha.fandom.com/wiki/Alexander_Courage)

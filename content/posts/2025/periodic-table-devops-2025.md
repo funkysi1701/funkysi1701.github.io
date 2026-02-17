@@ -23,7 +23,7 @@ aliases = [
 
 DevOps has transformed the way teams build, deploy, and manage software. Over the years, the tools we use have evolved rapidly—some have become industry standards, while others have faded away or emerged to solve new challenges. In this post, I revisit the concept of a "Periodic Table of DevOps" to compare the landscape in 2016 with 2025, highlight key changes, and reflect on what these shifts mean for developers, IT professionals, and organizations embracing modern workflows.
 
-The periodic table lists all the chemical elements and groups them together based on some key properties. In 2016 I found an article about the [periodic table of DevOps](https://xebialabs.com/periodic-table-of-devops-tools/) and wrote a blog [post](/posts/2016/periodic-table-devops/) about it.
+The periodic table lists all the chemical elements and groups them together based on some key properties. In 2016 I found an article about the [periodic table of DevOps](https://digital.ai/periodic-table-of-devops-tools/) and wrote a blog [post](/posts/2016/periodic-table-devops/) about it.
 
 ### Periodic Table of DevOps Tools 2025
 
