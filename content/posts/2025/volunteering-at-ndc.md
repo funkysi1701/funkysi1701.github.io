@@ -52,4 +52,4 @@ At the end of the first day, I was invited to the speaker dinner, which was a gr
 
 While I was volunteering, I was often hanging out with the other volunteers. We had a great time, and I made some new friends. We had a lot of fun, and I learned a lot, which I hope to blog about soon. I can't wait to go back next year.
 
-If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up for my [newsletter](http://eepurl.com/i7pQno). If you have any questions or comments, please feel free to reach out or leave a comment below.
+If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up for my [newsletter](/newsletter). If you have any questions or comments, please feel free to reach out or leave a comment below.

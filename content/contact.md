@@ -41,13 +41,13 @@ Connect with me on social media:
 
 ### Newsletter
 
-Want to stay updated with my latest posts and insights? [Subscribe to my newsletter](https://eepurl.com/i7pQno).
+Want to stay updated with my latest posts and insights? [Subscribe to my newsletter](/newsletter).
 
 ### Support My Work
 
 If you find my content helpful, consider:
 
-- [Buy Me a Coffee](https://www.buymeacoffee.com/funkysi1701)
+- [Buy Me a Coffee](https://buymeacoffee.com/funkysi1701)
 - [GitHub Sponsor](https://github.com/sponsors/funkysi1701)
 - Check out my [Tools & Resources](/tools-and-resources) which includes referral links
 - Sharing my posts with your network
