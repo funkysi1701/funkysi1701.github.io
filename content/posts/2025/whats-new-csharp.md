@@ -128,4 +128,4 @@ public static class Enumerable
 
 This was a fascinating look at what is coming up for C#, and it will be interesting to see how these new ways of writing code will get adopted.
 
-If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up for my [newsletter](http://eepurl.com/i7pQno). If you have any questions or comments, please feel free to reach out or leave a comment below.
+If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up for my [newsletter](/newsletter). If you have any questions or comments, please feel free to reach out or leave a comment below.

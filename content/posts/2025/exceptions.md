@@ -69,4 +69,4 @@ catch (Exception ex)
 
 Also don't hide Exogenous Exceptions, if you catch an exception and don't rethrow it, you are hiding the exception from the caller. I have seen code that uses the mediator pattern, it will call a method and not return to the original caller that something went wrong. This is bad, as the original caller needs to know that something went wrong.
 
-If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up for my [newsletter](http://eepurl.com/i7pQno). If you have any questions or comments, please feel free to reach out or leave a comment below.
+If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up for my [newsletter](/newsletter). If you have any questions or comments, please feel free to reach out or leave a comment below.

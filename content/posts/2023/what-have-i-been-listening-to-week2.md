@@ -31,7 +31,7 @@ Another week has gone by so here is a rundown of my podcasts listenings...
 
 [Hanselminutes episode 871](https://hanselminutes.com/872/hachyderms-kris-nova-on-running-a-mastodon-server)
 
-A great chat about how Hachderm grew as people moved from Twitter to Mastodon. You can find me on Hachyderm https://hachyderm.io/web/@funkysi1701 Hachyderm saw amazing growth in a short space of time, so great to hear how that impacted the service, which Kris Nova provides for free in her own time.
+A great chat about how Hachderm grew as people moved from Twitter to Mastodon. You can find me on Hachyderm https://hachyderm.io/@funkysi1701 Hachyderm saw amazing growth in a short space of time, so great to hear how that impacted the service, which Kris Nova provides for free in her own time.
 
 ## The Shipment
 

@@ -23,7 +23,7 @@ aliases = [
     "/2017/09/18/azure-friday"
 ]
 +++
-I think Azure is great, but there is loads to it so I can never know about all of its features. There is a video series hosted by Scott Hanselman called [Azure Fridays](https://channel9.msdn.com/Shows/Azure-Friday) which I have started to watch in an effort to keep more up to date about some of its cool features.
+I think Azure is great, but there is loads to it so I can never know about all of its features. There is a video series hosted by Scott Hanselman called [Azure Fridays](https://learn.microsoft.com/shows/azure-friday) which I have started to watch in an effort to keep more up to date about some of its cool features.
 
 <iframe src="https://docs.microsoft.com/en-us/shows/azure-friday/debug-net-apps-in-production-snapshot-debugger-in-application-insights/player" width="960" height="540" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 
