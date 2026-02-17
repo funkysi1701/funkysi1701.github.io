@@ -41,7 +41,7 @@ How do you get started with YAML builds? Well the first thing is to make sure th
 
 Next look at any of your existing builds and click the View YAML link. This will show you an example YAML file of your existing build. You could just save this as azure-pipelines.yml and checkin to the root of your project. You can also click the add new build pipeline option, this will give you some templates to start you off.
 
-The YAML file consists of a series of build steps usually called tasks, with a few settings before to configure things like parameters or build agents. Detailed docs about the syntax of the file can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema).
+The YAML file consists of a series of build steps usually called tasks, with a few settings before to configure things like parameters or build agents. Detailed docs about the syntax of the file can be found [here](https://learn.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema).
 
 For my mobile app my YAML files consist of downloading nuget packages, building the solution, building specific projects with desired settings, running powershell or other scripts to set things up and finally publishing the results of the build as artifacts so that they can be used in any releases.
 

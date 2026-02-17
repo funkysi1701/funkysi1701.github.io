@@ -25,7 +25,7 @@ aliases = [
 +++
 I use keyboard shortcuts all the time, mostly without thinking, but they can be quite a time saver especially for frequently used tasks.
 
-I recently came across this list of Visual Studio ones. [https://docs.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2022](https://docs.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2022)
+I recently came across this list of Visual Studio ones. [https://learn.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2022](https://learn.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2022)
 
 I was going to do a top ten, but not really sure how you rank keyboard shortcuts, so instead I will mention some of my favourites.
 

@@ -25,7 +25,7 @@ aliases = [
     "/2016/06/30/periodic-table-devops"
 ]
 +++
-The periodic table lists all the chemical elements and groups them together based on some key properties. Today I found an article about the [periodic table of DevOps](https://xebialabs.com/periodic-table-of-devops-tools/).
+The periodic table lists all the chemical elements and groups them together based on some key properties. Today I found an article about the [periodic table of DevOps](https://digital.ai/periodic-table-of-devops-tools/).
 
 ![](/images/2016/periodic-table-of-devops-v2.png)
 

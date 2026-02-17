@@ -86,7 +86,7 @@ resource "azurerm_app_service" "webapp" {
 }
 ```
 There are four guids that you need to fill in from your azure subscription and to find these you need to run a few commands from Azure Cli. Check out
-https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure for more detail on these commands.
+https://learn.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure for more detail on these commands.
 
 Run these either from Azure Cloud Shell or from Powershell command prompt after Azure Cli has been installed.
 
