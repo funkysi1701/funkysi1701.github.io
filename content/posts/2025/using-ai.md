@@ -118,4 +118,4 @@ Now once I put is all together I have a page that loads my rss feed, and I can c
 
 By combining .NET, Semantic Kernel, and OpenAI, I was able to automate the creation of social media posts, saving time and effort. This approach can be adapted for other use cases, such as summarizing content or generating marketing copy. 
 
-If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up to my [newsletter](http://eepurl.com/i7pQno). If you have any questions or want to share your own experiences, feel free to leave a comment below!
+If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up to my [newsletter](/newsletter). If you have any questions or want to share your own experiences, feel free to leave a comment below!

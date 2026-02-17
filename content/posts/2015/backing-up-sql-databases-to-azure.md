@@ -22,7 +22,7 @@ aliases = [
     "/2015/10/15/backing-up-sql-databases-to-azure"
 ]
 +++
-I recently read a blog post by [Pinal Dave](http://blog.sqlauthority.com/2015/10/06/sql-server-steps-to-backup-to-windows-azure-storage/) about how you can backup straight to Azure Storage. The procedure he described is only available for SQL Server 2014 or later.
+I recently read a blog post by [Pinal Dave](https://blog.sqlauthority.com/2015/10/06/sql-server-steps-to-backup-to-windows-azure-storage/) about how you can backup straight to Azure Storage. The procedure he described is only available for SQL Server 2014 or later.
 
 I won’t go into detail of this method as Pinal describes it better than I can, but the basic of it requires setting up credentials and then running a backup command that includes the URL of the storage container on Azure.
 

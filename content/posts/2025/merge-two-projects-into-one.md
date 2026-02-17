@@ -86,4 +86,4 @@ When you look at your PR, it will look like a lot of code has been added. Howeve
 
 This is a remarkably simple way to preserve the history of commits from one repository to another. It is a great way to merge two projects into one repository and keep the history of the commits. A similar process could be followed if you want to create a new repository and merge other repositories into it.
 
-If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up for my [newsletter](http://eepurl.com/i7pQno). If you have any questions or comments, please feel free to reach out or leave a comment below.
+If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up for my [newsletter](/newsletter). If you have any questions or comments, please feel free to reach out or leave a comment below.
