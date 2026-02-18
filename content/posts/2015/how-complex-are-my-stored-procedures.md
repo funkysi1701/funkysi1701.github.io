@@ -30,7 +30,7 @@ One area of improvement we have identified is with our stored procedures, which 
 
 My first thought was maybe to count the number of times each keyword is used and rank them somehow. eg each JOIN gets 5, OUTER APPLY gets 20, each term in WHERE gets 1, and then combine that with the length of the query and how many parameters.
 
-However doing a bit of googling I came across the following [blog](https://aalamrangi.wordpress.com/2012/12/24/calculate-tsql-stored-procedure-complexity) and [sql script](https://gallery.technet.microsoft.com/Calculate-TSQL-Stored-831b683a). This script analyses the stored procedures in terms of number of lines of code, number of parameters and number of dependencies.
+However doing a bit of googling I came across the following [blog](https://aalamrangi.wordpress.com/2012/12/24/calculate-tsql-stored-procedure-complexity) and [sql script](https://learn.microsoft.com/Calculate-TSQL-Stored-831b683a). This script analyses the stored procedures in terms of number of lines of code, number of parameters and number of dependencies.
 
 The complexity is divided into SIMPLE, MEDIUM and COMPLEX.
 
