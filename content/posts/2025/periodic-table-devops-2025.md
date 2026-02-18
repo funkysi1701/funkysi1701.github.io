@@ -9,7 +9,7 @@ cover = "/images/2025/periodic-table-devops-2025.png"
 images = ['/images/2025/periodic-table-devops-2025.png']
 tags = ["DevOps", "tools", "cloud", "containerization", "source control", "automation", "2025", "2016", "comparison", "trends", "software development", "periodic table"]
 categories = ["tech"]
-description = "Compare DevOps tools from 2016 to 2025 and discover key trends shaping modern software development."
+description = "Explore how DevOps tools have evolved from 2016 to 2025, highlighting major trends and shifts in software development practices."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -23,7 +23,7 @@ aliases = [
 
 DevOps has transformed the way teams build, deploy, and manage software. Over the years, the tools we use have evolved rapidly—some have become industry standards, while others have faded away or emerged to solve new challenges. In this post, I revisit the concept of a "Periodic Table of DevOps" to compare the landscape in 2016 with 2025, highlight key changes, and reflect on what these shifts mean for developers, IT professionals, and organizations embracing modern workflows.
 
-The periodic table lists all the chemical elements and groups them together based on some key properties. In 2016 I found an article about the [periodic table of DevOps](https://xebialabs.com/periodic-table-of-devops-tools/) and wrote a blog [post](/posts/2016/periodic-table-devops/) about it.
+The periodic table lists all the chemical elements and groups them together based on some key properties. In 2016 I found an article about the [periodic table of DevOps](https://digital.ai/periodic-table-of-devops-tools/) and wrote a blog [post](/posts/2016/periodic-table-devops/) about it.
 
 ### Periodic Table of DevOps Tools 2025
 
