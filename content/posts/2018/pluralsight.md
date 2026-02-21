@@ -23,7 +23,7 @@ aliases = [
     "/2018/02/05/pluralsight"
 ]
 +++
-Earlier this year I signed up for pluralsight. If you want to sign up to pluralsight as well use this link [http://referral.pluralsight.com/mQd8BJ4](http://referral.pluralsight.com/mQd8BJ4) to get money off.
+Earlier this year I signed up for pluralsight. If you want to sign up to pluralsight as well use this link [https://referral.pluralsight.com/mQd8BJ4](https://referral.pluralsight.com/mQd8BJ4) to get money off.
 
 Pluralsight is a website that sells training videos on a wide variety of technical topics. You sign up for a monthly or annual subscription and you can watch over 6000 courses whenever and where ever you like.
 

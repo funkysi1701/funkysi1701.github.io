@@ -24,7 +24,7 @@ aliases = [
 ]
 +++
 ![](/images/20150802_113719.jpg)
-For the past few years I have volunteered on the technical team at my local church [St Michael le Belfrey](http://www.belfrey.org/).
+For the past few years I have volunteered on the technical team at my local church [St Michael le Belfrey](https://www.belfrey.org/).
 
 For the church to function well it requires volunteers in all sorts of roles, people to welcome visitors, people to pray, people to play music, people to look after children and many other roles.
 

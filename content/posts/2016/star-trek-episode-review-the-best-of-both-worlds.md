@@ -49,4 +49,4 @@ I have heard that Riker’s thoughts about his career was a mirror to writer Mic
 
 In a future episode of DS9 Worf comments that he felt there was nothing that they couldn’t do during this time. I have to agree the tag team of him and Data is a great one. If I want rescuing it would be Data and Worf that I would want.
 
-My good friends at [Trekmate](http://www.trekmate.org.uk/the-best-of-both-worlds-tng-s3-e26-review-the-battle-bridge/) have just reviewed part one, why not have a listen?
+My good friends at [Trekmate](https://www.trekmate.org.uk/the-best-of-both-worlds-tng-s3-e26-review-the-battle-bridge/) have just reviewed part one, why not have a listen?
