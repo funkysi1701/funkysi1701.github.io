@@ -55,7 +55,7 @@ content/posts/YYYY/post-title.md
 - `authorTwitter` – Twitter handle without @
 - `tags` – Array of tags
 - `categories` – Array of categories (e.g., ["tech"])
-- `description` – SEO description
+- `description` – SEO description should be between 110 and 160 characters
 - `draft` – Boolean (set to `false` to publish)
 
 **Optional fields:**
