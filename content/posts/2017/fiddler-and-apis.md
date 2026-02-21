@@ -34,7 +34,7 @@ There are two main types of API calls GET which gets data from the server and PO
 
 I quickly figured out how to use the GET API call to authenticate using https://api.bufferapp.com/1/profiles.json?access_token=XXXX
 
-However POST was defeating me. That was until I remembered [Fiddler](http://www.telerik.com/fiddler).
+However POST was defeating me. That was until I remembered [Fiddler](https://www.telerik.com/fiddler).
 
 I had heard Troy Hunt (and others) talk of using Fiddler to examine what data is being passed among websites. Troy uses it to do a man in the middle test to see what information can be stolen.
 

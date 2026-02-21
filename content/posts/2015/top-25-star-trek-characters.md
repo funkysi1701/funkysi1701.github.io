@@ -23,7 +23,7 @@ aliases = [
 +++
 I am  going to take a break this week from talking about technology to talk about Star Trek.
 
-I have just listened to a [podcast](http://www.trekmate.org.uk/ten-forward-episode-146-lists-are-dumb-but-this-episode-is-not/) where they consider this [list](https://uk.ign.com/articles/2009/05/08/top-25-star-trek-characters) of great Star Trek Characters. I am now going to try and come up with my own top 25 characters. Here we go.
+I have just listened to a [podcast](https://www.trekmate.org.uk/ten-forward-episode-146-lists-are-dumb-but-this-episode-is-not/) where they consider this [list](https://uk.ign.com/articles/2009/05/08/top-25-star-trek-characters) of great Star Trek Characters. I am now going to try and come up with my own top 25 characters. Here we go.
 
 1) **Spock**. My number one star trek character is Spock. Leonard Nimoy who recently passed away brilliantly brought this character to life. We have the inner turmoil that many of us can associate with, we have a journey to become more human, we have the pursuit of logic. We have the great interplay between him and McCoy and Kirk.
 

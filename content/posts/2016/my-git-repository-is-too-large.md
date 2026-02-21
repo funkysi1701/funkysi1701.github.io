@@ -29,7 +29,7 @@ I know how this has happened. This repository was created in 2013 and has been u
 
 Since 2013 I have learnt a lot more about coding and git so the current version of the files in git isn’t too bad. But git keeps the history of changes for every file so bad practices like this are kept.
 
-What can I do about this? Well what does google suggest? I found this `http://stevelorek.com/how-to-shrink-a-git-repository.html` (link no longer exists).
+What can I do about this? Well what does google suggest? I found this `https://stevelorek.com/how-to-shrink-a-git-repository.html` (link no longer exists).
 
 It suggests ways of listing all the large files that are stored in git and a way to remove them. As I am the only person that regularly commits to this repository I see no problem with giving it a go.
 
@@ -56,7 +56,7 @@ Another bash script then lists the top 10 large files
 # Shows you the largest objects in your repo’s pack file.
 # Written for osx.
 #
-# @see http://stubbisms.wordpress.com/2009/07/10/git-script-to-show-largest-pack-objects-and-trim-your-waist-line/
+# @see https://stubbisms.wordpress.com/2009/07/10/git-script-to-show-largest-pack-objects-and-trim-your-waist-line/
 # @author Antony Stubbs
 # set the internal field spereator to line break, so that we can iterate easily over the verify-pack output
 IFS=$’\n’;

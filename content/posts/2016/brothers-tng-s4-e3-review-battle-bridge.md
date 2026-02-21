@@ -21,7 +21,7 @@ aliases = [
     "/2016/05/26/brothers-tng-s4-e3-review-battle-bridge"
 ]
 +++
-My latest podcast can be found https://www.trekmate.org.uk/brothers-tng-s4-e3-review-the-battle-bridge/ and feedback can be left on the trekmate forums http://forum.trekmatefamily.com/2016/05/brothers-tng-s4-e3-review-the-battle-bridge/
+My latest podcast can be found https://www.trekmate.org.uk/brothers-tng-s4-e3-review-the-battle-bridge/ and feedback can be left on the trekmate forums https://forum.trekmatefamily.com/2016/05/brothers-tng-s4-e3-review-the-battle-bridge/
 
 Data jeopardizes an emergency mission to save an ill child when he gets a signal from his creator.
 
