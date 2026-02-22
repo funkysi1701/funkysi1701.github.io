@@ -20,6 +20,12 @@
         "packages:eslint"
       ],
       "groupName": "eslint packages"
+    },
+    {
+      "matchPackageNames": [
+        "*katex*"
+      ],
+      "groupName": "katex packages"
     }
   ],
   "extends": [
