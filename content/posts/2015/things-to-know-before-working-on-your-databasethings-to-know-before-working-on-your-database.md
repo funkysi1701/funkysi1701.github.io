@@ -24,7 +24,7 @@ aliases = [
     "/2015/07/20/things-to-know-before-working-on-your-database"
 ]
 +++
-I recently saw this blog [post](http://www.brentozar.com/archive/2015/07/questions-to-ask-before-you-touch-a-database-server/) by [Brent Ozar](http://www.brentozar.com/team/brent-ozar/) that I thought I might discuss.
+I recently saw this blog [post](https://www.brentozar.com/archive/2015/07/questions-to-ask-before-you-touch-a-database-server/) by [Brent Ozar](https://www.brentozar.com/team/brent-ozar/) that I thought I might discuss.
 
 Brent listed 13 questions to ask about a database before you start working with it. I am going to go through these 13 questions and expand on them based on my experiences.
 

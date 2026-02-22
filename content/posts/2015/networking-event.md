@@ -22,7 +22,7 @@ aliases = [
     "/2015/03/22/networking-event"
 ]
 +++
-I recently went to an event called ITBoss organised by [Core Com Consulting](http://www.corecomconsulting.co.uk/). It was really good, helped partly by a free bar and great food.
+I recently went to an event called ITBoss organised by [Core Com Consulting](https://www.corecomconsulting.co.uk/). It was really good, helped partly by a free bar and great food.
 
 The event was hosted in a pub in central Leeds, so I rushed to the train station from work to get there. And yes I was the first to arrive (Why do I always do that?). The event was targeted at IT Leaders and Managers and was limited to about 20 people.
 

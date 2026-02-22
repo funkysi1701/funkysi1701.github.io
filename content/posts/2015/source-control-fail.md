@@ -30,6 +30,6 @@ At first glance there is nothing wrong with what I have described but what happe
 
 Every change you make to the system **MUST** be committed to source control. If it isn’t that change will look like it never existed. I have worked with source control for over 5 years why do I keep making this rookie mistake over and over.
 
-Troy Hunt has a [blog post](http://www.troyhunt.com/2011/05/10-commandments-of-good-source-control.html) about the 10 commandments of using source control. His number two commandment is “If it’s not in source control, it doesn’t exist” He talks more about code you have written being not saved into source control, but the principal is the same for my example as his.
+Troy Hunt has a [blog post](https://www.troyhunt.com/2011/05/10-commandments-of-good-source-control.html) about the 10 commandments of using source control. His number two commandment is “If it’s not in source control, it doesn’t exist” He talks more about code you have written being not saved into source control, but the principal is the same for my example as his.
 
 There are ways to automatically deploy from source control, however most of the time you don’t want your live database being rebuilt because you fixed a typo. Additional steps will need to be implemented and there is still the chance that you might want to bypass these steps to fix the urgent problem. The only way past this problem is for you and everyone on your team to be disciplined and only ever commit to source control first, and only after that deploy live (either automatically or manually)
