@@ -58,7 +58,7 @@ The third line in this script does something really rather clever it creates a v
 
 This is all rather good but wouldn’t it be rather cool if this images were uploaded somewhere. If someone was up to no good and they might want to disable your security camera. My first thought was to use something like DropBox, but unfortunately it is not supported by the processor on a raspberry pi. However I have found [copy.com](https://copy.com/) to be rather good for syncing files.
 
-To install just run wget http://copy.com/install/linux/Copy.tgz and extract the file to install the client on your raspberry pi.
+To install just run wget `https://copy.com/install/linux/Copy.tgz` and extract the file to install the client on your raspberry pi.
 
 ```
 ./CopyConsole -daemon -u=gary@example.com -p=’mypass’ -root=/home/pi/Copy

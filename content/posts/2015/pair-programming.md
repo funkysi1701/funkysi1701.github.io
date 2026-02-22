@@ -26,7 +26,7 @@ aliases = [
 ]
 +++
 
-So I have been working through the challenges on the [freecodecamp](http://www.freecodecamp.com/) website and one of the unique things that this site does is give you the chance to program with another person.
+So I have been working through the challenges on the [freecodecamp](https://www.freecodecamp.com/) website and one of the unique things that this site does is give you the chance to program with another person.
 
 I am an introvert and if you were to ask me to pick up the phone and ring someone I will procrastinate a lot before doing it (if I do it at all), I also am not good at speaking with strangers but I have been enjoying the pair programming I have done so far.
 

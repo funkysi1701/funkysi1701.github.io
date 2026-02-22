@@ -24,7 +24,7 @@ aliases = [
 +++
 .NET Aspire 9.2 is here, bringing exciting new features to simplify infrastructure visualization. Whether you're managing microservices or exploring Docker-based architectures, this release makes it easier than ever to create detailed infrastructure diagrams with minimal effort. Let’s dive into the highlights and see how you can use these tools to streamline your workflow.
 
-For details of what .NET Aspire is, check out my [post](/posts/2024/aspire) from last year. For the official announcement see [What's new in .NET Aspire 9.2](https://learn.microsoft.com/en-us/dotnet/aspire/whats-new/dotnet-aspire-9.2)
+For details of what .NET Aspire is, check out my [post](/posts/2024/aspire) from last year. For the official announcement see [What's new in .NET Aspire 9.2](https://aspire.dev/whats-new/aspire-13-1/)
 
 My favourite feature from this release is the ability to quickly and easily spin up infrastructure diagrams like this:
 

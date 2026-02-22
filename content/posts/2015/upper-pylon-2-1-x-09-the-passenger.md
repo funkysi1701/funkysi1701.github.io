@@ -21,7 +21,7 @@ aliases = [
     "/2015/07/30/upper-pylon-2-1-x-09-the-passenger"
 ]
 +++
-I recorded another podcast the other week it can be found http://www.trekmate.org.uk/upper-pylon-2-1-x-09-the-passenger/ and feedback about it can be left on the trekmate forums http://forum.trekmatefamily.com/2015/07/thoughts-on-up2s-the-passenger-or-vantika-x-33/
+I recorded another podcast the other week it can be found https://www.trekmate.org.uk/upper-pylon-2-1-x-09-the-passenger/ and feedback about it can be left on the trekmate forums https://forum.trekmatefamily.com/2015/07/thoughts-on-up2s-the-passenger-or-vantika-x-33/
 
 ![](/images/2015/07/Bashir-Choked.jpg)
 
