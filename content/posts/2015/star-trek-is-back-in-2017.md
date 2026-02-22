@@ -35,6 +35,6 @@ In this episode we discuss the great news that Star Trek IS BACK!!.
 
 Shawn and I are joined again by James Roberts and TrekMates News feed Editor Simon Foster to speculate about the announcement of a new Star Trek TV series due to debut in January 2017.
 
-James can be found on our sister podcast [The Battle Bridge](http://www.trekmate.org.uk/category/the-battle-bridge/) and Simon can be found on Twitter [@funkysi1701](https://twitter.com/funkysi1701)
+James can be found on our sister podcast [The Battle Bridge](https://www.trekmate.org.uk/category/the-battle-bridge/) and Simon can be found on Twitter [@funkysi1701](https://twitter.com/funkysi1701)
 
-To listen go [http://www.trekmate.org.uk/sci-fi-waffle-episode-11-star-trek-is-back/](http://www.trekmate.org.uk/sci-fi-waffle-episode-11-star-trek-is-back/), to leave feedback go http://forum.trekmatefamily.com/
+To listen go [https://www.trekmate.org.uk/sci-fi-waffle-episode-11-star-trek-is-back/](https://www.trekmate.org.uk/sci-fi-waffle-episode-11-star-trek-is-back/), to leave feedback go https://forum.trekmatefamily.com/

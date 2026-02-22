@@ -40,7 +40,7 @@ I am going to be using Selenium to achieve my website testing and I am going to 
 Selenium.WebDriver.IEDriverSelenium.Firefox.WebDriver
 ```
 
-[Selenium](http://www.seleniumhq.org/) started life as a plugin for Firefox to help create automated tests, however the latest version of Firefox is not compatible with the plugin as I write this. I have not had to install any plugins or extensions to my browsers to achieve my testing.
+[Selenium](https://www.seleniumhq.org/) started life as a plugin for Firefox to help create automated tests, however the latest version of Firefox is not compatible with the plugin as I write this. I have not had to install any plugins or extensions to my browsers to achieve my testing.
 
 Enough talk lets write a test. First we create two instance variables to store the baseURL and the driver for the browser you are using.
 

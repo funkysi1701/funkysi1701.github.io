@@ -23,7 +23,7 @@ aliases = [
 +++
 ![](/images/2016/07df3N8m.jpg)
 
-In 1966 a TV show called [Star Trek](http://www.startrek.com/) first aired in the USA. Since then 726 episodes have been made and 12 films have been released. 2016 marks the 50th anniversary and Star Trek is as alive as ever with a new film due out this summer and a brand new TV series in the works for broadcast in 2017.
+In 1966 a TV show called [Star Trek](https://www.startrek.com/) first aired in the USA. Since then 726 episodes have been made and 12 films have been released. 2016 marks the 50th anniversary and Star Trek is as alive as ever with a new film due out this summer and a brand new TV series in the works for broadcast in 2017.
 
 But what can I do to celebrate? With that many episodes I don’t have enough time to re-watch every episode so how about a re-watch of the top 50 episodes.
 

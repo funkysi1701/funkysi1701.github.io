@@ -36,7 +36,7 @@ So far I had not plugged in a network cable because that would mean sitting in t
 
 Nothing happened, having some experience of linux I wasn’t surprised. I went to network connections filled in the name of my wifi connection and its password and it connected. WOW! That was easy.
 
-So I then installed [webmin](http://www.webmin.com/download.html) so I could remotely administer it and updated it with YUM. I also started the SSH service so I can use putty to login to my Pi from the comfort of my laptop. Even better than that I found a SSH client for my smart phone so I can even control my Pi from my phone!
+So I then installed [webmin](https://www.webmin.com/download.html) so I could remotely administer it and updated it with YUM. I also started the SSH service so I can use putty to login to my Pi from the comfort of my laptop. Even better than that I found a SSH client for my smart phone so I can even control my Pi from my phone!
 
 EDIT: I forgot that in order to get webmin to work I needed to do the following.
 
@@ -55,7 +55,7 @@ This install apache which is the default (and very popular) web server.
 
 service httpd start
 
-This starts the web server. Going to http://[IP] where [IP] is the ip address of your raspberry pi will show you the default apache page.
+This starts the web server. Going to https://[IP] where [IP] is the ip address of your raspberry pi will show you the default apache page.
 
 Now if you run raspistill -v -o /var/www/html/image1.jpg it will create your photo on the web server.
 

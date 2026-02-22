@@ -42,7 +42,7 @@ Once you are logged in you get a series of links displaying all the different se
 
 First thing to try is setting up a website. I selected create a web app and I get a page asking me for its basic details (very similar to Azure, however AWS asked what language your code is written in, Azure handles all of these) AWS websites appear to support a host of different options similar to Azure.
 
-The actual creation of your website takes a few moments (like on Azure). However the default URL for websites is similar to http://test.vjbbimyv7w.eu-central-1.elasticbeanstalk.com/ which is not quite as nice as the Azure equivalent http://test.azurewebsites.net
+The actual creation of your website takes a few moments (like on Azure). However the default URL for websites is similar to https://test.vjbbimyv7w.eu-central-1.elasticbeanstalk.com/ which is not quite as nice as the Azure equivalent https://test.azurewebsites.net
 
 Azure has a host of command lines available via powershell. AWS has a similar command line interface called AWS CLI, including the option to deploy from git to your website.
 

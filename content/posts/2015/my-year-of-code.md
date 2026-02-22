@@ -27,7 +27,7 @@ aliases = [
 +++
 There is no escaping the fact that we are in 2015 now. My new years resolution is to do more coding.
 
-Over Christmas I thought I would have a go at [http://www.codecademy.com](http://www.codecademy.com) I completed the javascript course and I was just wondering what I should try next when I saw a tweet about [http://www.freecodecamp.com](http://www.freecodecamp.com)
+Over Christmas I thought I would have a go at [https://www.codecademy.com](https://www.codecademy.com) I completed the javascript course and I was just wondering what I should try next when I saw a tweet about [https://www.freecodecamp.com](https://www.freecodecamp.com)
 
 Since then I have been addicted to doing the exercises that they have, almost everyday I have made a bit of progress.
 
