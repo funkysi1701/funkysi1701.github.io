@@ -8,7 +8,7 @@ authorTwitter = "funkysi1701"
 cover = "/images/2026/acr-vs-ecr.png"
 images =['/images/2026/acr-vs-ecr.png']
 tags = ["Azure", "AWS", "Docker", "Containers", "DevOps", "ACR", "ECR", "Cloud"]
-category="tech"
+categories = ["tech"]
 keywords = ["Azure Container Registry", "AWS ECR", "Docker Registry", "Container Storage", "Cloud Comparison"]
 description = "A practical comparison of Azure Container Registry (ACR) and AWS Elastic Container Registry (ECR) based on real-world usage, covering pricing, features, authentication, and developer experience."
 showFullContent = false
@@ -40,6 +40,8 @@ Both services provide secure, private Docker container registries that integrate
 - Integrated with Amazon ECS, EKS, and AWS Lambda
 - Supports Docker images and OCI artifacts
 - Single pricing model with pay-as-you-go
+
+**OCI artifacts** are container-related objects that follow the Open Container Initiative (OCI) specifications. Originally, OCI defined standards for Docker container images, but now it covers a broader range of artifacts—including Helm charts, software bill of materials (SBOMs), and other files—stored in container registries.
 
 ## Pricing Comparison
 
@@ -148,7 +150,7 @@ Includes your AWS account ID:
 687611153768.dkr.ecr.eu-north-1.amazonaws.com/funkysi1701/blog:10.1.1.123-develop
 ```
 
-The account ID in the URL can be a security consideration - it's visible to anyone who has access to your images or deployment configs.
+The account ID in the URL may pose a security consideration - it's visible to anyone who has access to your images or deployment configs. Attackers could use the account ID for targeted phishing, social engineering, or brute-force attacks. If combined with leaked credentials or misconfigured permissions, it makes it easier for someone to identify and target your AWS resources.
 
 **Winner**: ACR (cleaner URLs)
 
@@ -220,12 +222,13 @@ Works well once configured, but requires understanding of AWS IAM.
 - Minimum £4/month even for tiny projects
 - Geo-replication requires Premium tier (£42/month)
 
+Geo-replication is important because it allows your container images and artifacts to be stored and accessed in multiple geographic regions.
+
 **ECR**:
 
 - Authentication is more complex outside AWS
 - Account ID in image URL
 - Requires AWS CLI installation in non-AWS CI/CD
-- Image signing setup is finicky (ran into `signer:SignPayload` permission issues)
 
 ## My Real-World Experience
 
@@ -241,13 +244,13 @@ For my blog's deployment pipeline, I recently migrated from ACR to ECR primarily
 
 **After (ECR)**:
 
-- Cost: ~£0.80/month (storage only, no base fee)
+- Cost: £0/month (due to free trial)
 - Authentication: Required custom pipeline steps
 - Image URLs: Include AWS account ID
 
 ### Was It Worth It?
 
-For my small personal project, **yes** - saving £44/year is meaningful. But the setup was more complex than I expected.
+For my small personal project, **yes** - saving money is meaningful. But the setup was more complex than I expected.
 
 For enterprise workloads, I'd still choose ACR Premium if I needed:
 
@@ -276,7 +279,7 @@ For enterprise workloads, I'd still choose ACR Premium if I needed:
 
 ## Conclusion
 
-Both Azure Container Registry and AWS Elastic Container Registry are excellent services. Your choice should depend on:
+Both ACR and ECR are excellent services. Your choice should depend on:
 
 1. **Your cloud platform** - Use the registry that matches your deployment target
 2. **Your budget** - ECR wins for small projects, ACR Premium for enterprise features
