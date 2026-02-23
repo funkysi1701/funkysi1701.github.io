@@ -98,7 +98,7 @@ ECR authentication requires an extra step:
 # Get login password and pipe to docker login
 aws ecr get-login-password --region eu-north-1 | \
   docker login --username AWS --password-stdin \
-  687611153768.dkr.ecr.eu-north-1.amazonaws.com
+  111111111111.dkr.ecr.eu-north-1.amazonaws.com
 ```
 
 In my Azure Pipelines, I had to:
@@ -126,7 +126,7 @@ In my Azure Pipelines, I had to:
       export PATH=$HOME/.local/bin:$PATH
       aws ecr get-login-password --region eu-north-1 | \
         docker login --username AWS --password-stdin \
-        687611153768.dkr.ecr.eu-north-1.amazonaws.com
+        111111111111.dkr.ecr.eu-north-1.amazonaws.com
 ```
 
 **Winner**: ACR (simpler authentication, especially in Azure DevOps)
@@ -147,7 +147,7 @@ myregistry.azurecr.io/namespace/myapp:latest
 Includes your AWS account ID:
 
 ```
-687611153768.dkr.ecr.eu-north-1.amazonaws.com/funkysi1701/blog:10.1.1.123-develop
+111111111111.dkr.ecr.eu-north-1.amazonaws.com/funkysi1701/blog:10.1.1.123-develop
 ```
 
 The account ID in the URL may pose a security consideration - it's visible to anyone who has access to your images or deployment configs. Attackers could use the account ID for targeted phishing, social engineering, or brute-force attacks. If combined with leaked credentials or misconfigured permissions, it makes it easier for someone to identify and target your AWS resources.
