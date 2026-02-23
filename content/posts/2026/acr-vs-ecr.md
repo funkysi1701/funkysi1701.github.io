@@ -68,11 +68,6 @@ ECR uses **simple pay-as-you-go pricing**:
 - **Data Transfer**: Standard AWS data transfer pricing
 - **No base fee** - you only pay for what you use
 
-For my blog's container images (around 500MB-1GB total), ECR costs me **under £1/month**, while ACR Basic would be at least £4.23/month even with minimal usage.
-
-**Winner for small projects**: ECR (no minimum fees)  
-**Winner for enterprise**: ACR Premium (geo-replication, advanced features)
-
 ## Authentication & Setup
 
 This is where I hit some friction with ECR.
