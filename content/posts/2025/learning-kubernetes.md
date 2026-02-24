@@ -42,7 +42,7 @@ Kubernetes is widely used in modern software development for:
 
 [Docker Desktop](https://www.docker.com/products/docker-desktop/) is a tool for running containers, but it also allows running of Kubernetes.
 
-I am not going to talk through installing docker desktop and getting a Kubernetes cluster set up, for that check out the [documentation](https://docs.docker.com/desktop/features/kubernetes/) however I found it very straightforward.
+I am not going to talk through installing docker desktop and getting a Kubernetes cluster set up, for that check out the [documentation](https://docs.docker.com/desktop/use-desktop/kubernetes/) however I found it very straightforward.
 
 ## kubectl
 
