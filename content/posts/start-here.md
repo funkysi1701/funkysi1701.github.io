@@ -1,8 +1,8 @@
 +++
 title = "Start Here"
-date = "2026-02-03T12:00:00Z"
+date = "2026-02-24T12:00:00Z"
 year = "2026"
-month = "2026-01"
+month = "2026-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701"
 cover = "/images/2026/start-here.png"
