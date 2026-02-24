@@ -25,7 +25,7 @@ aliases = [
 +++
 In December we count down the days to Christmas. People often have advent calendars filled with chocolates or even Lego.
 
-But what about if you are a programmer, how can you count down the days till Christmas? What about if you had a daily Christmas themed coding challenge? Well [www.adventofcode.com](https://www.adventofcode.com/) is the answer.
+But what about if you are a programmer, how can you count down the days till Christmas? What about if you had a daily Christmas themed coding challenge? Well [adventofcode.com](https://adventofcode.com/) is the answer.
 ![](/images/adventofcode.jpg)
 
 Each day a new challenge is available. So far the challenges are related to Christmas and Santa delivering his presents. The challenge is split into two closely linked parts. You are given a randomly generated input and your need to give an answer using a short string or number.
