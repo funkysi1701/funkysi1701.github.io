@@ -47,7 +47,7 @@ If you are familiar with Visual Studio you can use the Xamarin Forms software to
 
 Xamarin Forms allows you to write one a single codebase that can be compiled to run on the different platforms. Xamarin requires the use of XAML a XML like markup language for designing UI elements.
 
-More Information on [Visual Studio](https://www.visualstudio.com/), [Xamarin Forms](https://www.xamarin.com/forms)
+More Information on [Visual Studio](https://www.visualstudio.com/), [Xamarin Forms](https://dotnet.microsoft.com/en-us/apps/xamarin)
 
 #### Android Studio
 
