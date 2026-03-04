@@ -20,7 +20,7 @@
           "@type": "Person",
           "name": "Simon Foster",
           "url": "https://www.funkysi1701.com/about"
-        }]
+        }],
     "headline": "{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}",
     "description": "{{ if .IsPage }}{{ if .Description }}{{ .Description | plainify | htmlUnescape }}{{ else }}{{ .Summary | plainify | htmlUnescape }}{{ end }}{{ else }}{{ (printf "%s - %s" .Title $.Site.Params.description) | plainify | htmlUnescape }}{{ end }}",
     "url": "{{ .Permalink }}",
