@@ -10,6 +10,8 @@
 {{- partial "head/site-verification" . -}}
 {{- if eq .Permalink (absLangURL "search/") -}}
 <meta data-name="search-index" content="{{ absLangURL "index.json" }}">
+{{- end -}}
+{{- partial "head/assets" . -}}
 <script type="application/ld+json">
     {
     "@context": "http://schema.org",
@@ -20,5 +22,3 @@
     "image": "{{ printf "%scdn-cgi/image/width=800,quality=75/images/1922276.jpg" .Site.BaseURL }}"
     }
 </script>
-{{- end -}}
-{{- partial "head/assets" . -}}
