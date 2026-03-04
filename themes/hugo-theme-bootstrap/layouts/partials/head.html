@@ -12,3 +12,13 @@
 <meta data-name="search-index" content="{{ absLangURL "index.json" }}">
 {{- end -}}
 {{- partial "head/assets" . -}}
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Funky Si's Blog",
+    "description": "I am Simon Foster (aka funkysi1701) a developer sharing 18+ years of experience in .NET, Azure, and DevOps. I write about cloud architecture, CI/CD pipelines, and building scalable applications.",
+    "url": "{{ .Site.BaseURL }}",
+    "image": "{{ printf "%scdn-cgi/image/width=800,quality=75/images/1922276.jpg" .Site.BaseURL }}"
+    }
+</script>
