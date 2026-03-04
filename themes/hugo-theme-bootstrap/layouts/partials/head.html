@@ -18,7 +18,7 @@
     "@type": "BlogPosting",
     "author": [{
           "@type": "Person",
-          "name": "Simon Foster",
+          "name": "{{ with .Params.author }}{{ . }}{{ else }}{{ with $.Site.Params.author.name }}{{.}}{{end}}{{end}}",
           "url": "https://www.funkysi1701.com/about"
         }],
     "headline": "{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}",
