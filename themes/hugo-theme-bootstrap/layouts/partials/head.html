@@ -16,9 +16,9 @@
     {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "Funky Si's Blog",
+    "headline": "{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}",
     "description": "{{ if .IsPage }}{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}{{ else }}{{ .Title }} - {{ $.Site.Params.description }}{{ end }}",
-    "url": "{{ .Site.BaseURL }}",
+    "url": "{{ .Permalink }}",
     "image": "{{ printf "%scdn-cgi/image/width=800,quality=75/images/1922276.jpg" .Site.BaseURL }}"
     }
 </script>
