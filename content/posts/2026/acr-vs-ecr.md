@@ -298,7 +298,7 @@ Want a printable, offline-friendly version of this guide? Purchase the PDF below
     name="ACR vs ECR: A Developer's Comparison — PDF Guide"
     description="A printable, offline-friendly PDF of this complete ACR vs ECR comparison. Includes the full pricing breakdown, authentication walkthrough, feature matrix, and real-world migration notes."
     price="£2.99"
-    link="https://buy.stripe.com/your_acr_vs_ecr_link"
+    link="https://buy.stripe.com/test_4gM7sK4dW1EPblS2eTak000"
 >}}
 
 ## Resources
