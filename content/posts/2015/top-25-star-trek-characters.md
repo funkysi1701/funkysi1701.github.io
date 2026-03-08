@@ -90,3 +90,5 @@ If you enjoyed this character ranking, check out these other Star Trek articles:
 - [TrekRanks #174](/posts/2024/trekranks) - My appearance on the TrekRanks podcast
 
 **Want more Trek content?** Browse all my [Star Trek articles](/tags/trek)
+
+All 900+ Star Trek episodes are now available in Episode Atlas. Track episodes featuring your favorite characters.

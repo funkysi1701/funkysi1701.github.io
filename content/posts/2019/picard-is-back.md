@@ -89,3 +89,5 @@ This is a TV Show that will take place after every other Trek TV and Film and ca
 The 2009 Star Trek film features the destruction of Romulus and Spock travelling back in time. How about Picard dealing with surviving Romulans helping rebuild their society, continuing the work that Spock started in the TNG episode Unification. 
 
 I look forward to finding out what the Star Trek production team has in store for us. If they have Patrick Stewart convinced I am sure it is going to be good.
+
+Did you know you can track episodes from TNG and Picard in [Episode Atlas](https://www.episodeatlas.com/).
