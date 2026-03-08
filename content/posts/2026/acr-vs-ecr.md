@@ -290,17 +290,6 @@ For my personal projects, I'm happy with ECR's cost savings. For enterprise work
 
 What's your experience with container registries? Let me know in the comments!
 
-## Download the PDF Version
-
-Want a printable, offline-friendly version of this guide? Purchase the PDF below — great for sharing with your team or keeping as a reference.
-
-{{< stripe-button
-    name="ACR vs ECR: A Developer's Comparison — PDF Guide"
-    description="A printable, offline-friendly PDF of this complete ACR vs ECR comparison. Includes the full pricing breakdown, authentication walkthrough, feature matrix, and real-world migration notes."
-    price="£1.00"
-    link="https://buy.stripe.com/test_4gM7sK4dW1EPblS2eTak000"
->}}
-
 ## Resources
 
 - [Azure Container Registry Documentation](https://learn.microsoft.com/en-us/azure/container-registry/)
