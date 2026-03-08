@@ -41,3 +41,7 @@ I am actually surprised I was expected the code to be much worse than it was, I 
 Assuming that I wrote this in 2004 what would  I have been doing then? It was before I started working in IT. (Hard to imagine I know!) It may even have been before I started living with Keith, before he recruited me for my first IT role. I think I was probably working as an administrator for Defra at this point.
 
 If we put 2004 in technical terms, it was before I joined facebook, Office 2003 and XP would have been installed on my PC, and probably felt brand new.
+
+---
+
+> **Want the source code with extras?** The [Game of Life C# Source Code Bundle](/downloads/) includes the full source, unit tests, and a step-by-step walkthrough document — ideal for exploring cellular automata and TDD in C#.

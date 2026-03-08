@@ -98,3 +98,7 @@ All I need to do now is add similar code like this to every helm chart I publish
 ## Conclusion
 
 Setting up Let's Encrypt with Kubernetes and Cert Manager has made it incredibly easy to secure my web services with SSL certificates. With just a few YAML configurations and some simple Helm chart updates, I can automatically provision and renew certificates for any subdomain I need. This approach not only saves time but also ensures my services are always protected with up-to-date encryption. If you're running Kubernetes, I highly recommend giving Cert Manager and Let's Encrypt a try for hassle-free SSL management.
+
+---
+
+> **Want the complete Kubernetes security guide?** The [Kubernetes for .NET Developers guide](/downloads/) includes this cert-manager setup alongside ingress controllers, Helm templating, and multi-environment patterns — all in one PDF.

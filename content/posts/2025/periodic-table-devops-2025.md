@@ -75,3 +75,7 @@ The DevOps landscape has changed dramatically over the past decade. Some tools h
 - **Legacy tools are disappearing**, showing the importance of adaptability in tech.
 
 As DevOps continues to evolve, staying curious and open to new tools is key. The periodic table analogy reminds us that the right mix of technologies can empower teams to build, deploy, and manage software more effectively. What tools will shape the next decade? Only time will tell.
+
+---
+
+> **Want a print-ready version?** The [DevOps Periodic Table 2025 printable poster](/downloads/) is a high-resolution PDF designed for printing at A3/A2 — great for sticking above your desk or sharing with your team.

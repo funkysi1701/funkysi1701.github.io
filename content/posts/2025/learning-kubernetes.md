@@ -119,3 +119,7 @@ Now if I try http://localhost:3000/login I see the login page for the Grafana co
 I want to replace my local deployment of containers that is currently using a docker compose file with Kubernetes. I also want to learn more about [Helm charts](https://helm.sh/) as I believe these are an excellent way of packaging up changes to Kubernetes.
 
 Have you tried running a pod in Kubernetes? What challenges did you face, and how did you overcome them? Share your thoughts in the comments below!
+
+---
+
+> **Want a deeper dive?** My [Kubernetes for .NET Developers guide](/downloads/) bundles the complete Kubernetes blog series — including Helm charts, cert-manager TLS automation, and multi-environment deployment templates — into one downloadable PDF.
