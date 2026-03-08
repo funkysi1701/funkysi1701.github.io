@@ -32,7 +32,7 @@ All purchases are digital downloads delivered via the Stripe checkout. After pay
     name="Kubernetes for .NET Developers — A Practical Guide"
     description="A curated, hands-on guide distilled from my 2025 blog series covering Kubernetes fundamentals, deploying .NET workloads with Helm, automated TLS with cert-manager, and multi-environment cluster management. Includes all the YAML templates and scripts used on this blog."
     price="£9.99"
-    link="https://buy.stripe.com/your_kubernetes_link"
+    link="https://buy.stripe.com/8x200j5Exe6UgRB5Ne0Ny00"
     badge="Most Popular"
 >}}
 
