@@ -9,7 +9,6 @@ enableRobotsTXT = true
       {Name = "Projects", URL = "/projects/", weight = 2},
       {Name = "Tools & Resources", URL = "/tools-and-resources/", weight = 3},
       {Name = "Newsletter", URL = "/newsletter/", weight = 4},
-      {Name = "Downloads", URL = "/downloads/", weight = 5},
       {Name = "Contact", URL = "/contact/", weight = 6},
       {Name = "Events", URL = "/posts/events/", weight = 7},
       {Name = "Search", URL = "/search/", weight = 8},
