@@ -60,3 +60,5 @@ As we have seen Patrick Stewart does not appear to be ageing. Below is a compari
 ![Star Trek Picard](/images/2021/picard.jpeg)
 
 I really enjoyed the first episode of Star Trek Picard and it is going to be interesting seeing what other similarities and differences there are between it and All Good Things...
+
+Did you know you can track episodes from TNG and Picard in [Episode Atlas](https://www.episodeatlas.com/).

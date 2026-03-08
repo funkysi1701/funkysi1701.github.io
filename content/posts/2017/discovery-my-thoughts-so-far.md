@@ -74,3 +74,5 @@ Other things I noticed
 - Sound effects on the bridge are awesome, it makes me feel at home
 - The USS Discovery doesn’t feature in the first two episodes despite being the title of the show.
 - Others have noted that Captain Georgiou has books on her shelf which feature classic episode titles
+
+Did you know you can track episodes from Star Trek Discovery in [Episode Atlas](https://www.episodeatlas.com/).
