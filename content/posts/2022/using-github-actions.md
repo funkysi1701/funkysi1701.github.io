@@ -221,3 +221,14 @@ if: github.ref == 'refs/heads/develop'
 I could have a test for develop to only run on feature/* but I have allowed it to run every time.
 
 There is loads more you can do with github actions, but hopefully this gives you a taste of some of the things you can do. I currently have a mix of Azure DevOps and github actions so I will be working on getting github actions to do more.
+
+## GitHub Actions Cheat Sheet
+
+Want a quick-reference guide you can keep beside your keyboard? I've put together a one-page GitHub Actions cheat sheet covering workflow structure, triggers, runners, contexts, conditions, matrix builds, caching, artifacts, OIDC permissions, and the most common actions — all on a single A4 page.
+
+{{< stripe-button
+    name="GitHub Actions Cheat Sheet — PDF"
+    description="A one-page A4 quick-reference covering workflow structure, triggers, runners, contexts, conditions, matrix builds, caching, artifacts, OIDC permissions, and the most-used actions."
+    price="£2.99"
+    link="https://buy.stripe.com/your_github_actions_cheatsheet_link"
+>}}
