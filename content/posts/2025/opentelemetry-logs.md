@@ -135,7 +135,3 @@ If I update the AddOpenTelemetryExporters method in my Extensions.cs file in my 
 ## Conclusion
 
 Integrating OpenTelemetry logs with Grafana using Loki and Alloy provides a powerful solution for centralized log aggregation and monitoring. This setup simplifies debugging and enhances visibility into your application's behaviour. If you haven't tried it yet, give it a go and let me know your thoughts in the comments!
-
----
-
-> **Want everything in one place?** The [Observability for .NET Apps guide](/downloads/) bundles this Grafana/Loki post together with the full OpenTelemetry setup series into a downloadable PDF with all code samples.

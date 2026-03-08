@@ -116,7 +116,3 @@ OpenTelemetry simplifies observability by providing a unified framework for coll
 Start using OpenTelemetry today and gain deeper insights into your applications!
 
 Have you tried OpenTelemetry? Share your experiences and tips in the comments below!
-
----
-
-> **Want the complete picture?** The [Observability for .NET Apps guide](/downloads/) combines this post with the Grafana/Loki integration and monitoring dashboards into a single downloadable PDF with all code samples.

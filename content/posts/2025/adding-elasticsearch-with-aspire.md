@@ -122,7 +122,3 @@ To search for data you can use the following code:
 ## Conclusion
 
 By following these steps, you can successfully integrate Elasticsearch and Kibana into your .NET Aspire project. This setup allows you to leverage powerful search and analytics capabilities in your application. Remember to secure your instances in a production environment to ensure data safety.
-
----
-
-> **Want the complete .NET Aspire guide?** The [Getting Started with .NET Aspire guide](/downloads/) bundles the full Aspire blog series — service defaults, Elasticsearch, OpenTelemetry, and Azure deployment — into one downloadable PDF with all code samples.

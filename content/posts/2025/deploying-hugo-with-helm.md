@@ -131,7 +131,3 @@ Helm charts have made deploying my Hugo blog to Kubernetes a seamless and effici
 If you’re managing static sites or microservices, give Helm a try and see how it can simplify your workflow!
 
 Have you used Helm for static sites or blogs? Share your experience in the comments below!
-
----
-
-> **Want the full Kubernetes + Helm workflow?** The [Kubernetes for .NET Developers guide](/downloads/) covers Helm chart creation, multi-environment deployments, and TLS automation in a single downloadable PDF.
