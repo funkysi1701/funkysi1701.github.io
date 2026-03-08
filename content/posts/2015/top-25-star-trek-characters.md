@@ -91,4 +91,4 @@ If you enjoyed this character ranking, check out these other Star Trek articles:
 
 **Want more Trek content?** Browse all my [Star Trek articles](/tags/trek)
 
-All 900+ Star Trek episodes are now available in Episode Atlas. Track episodes featuring your favorite characters.
+All 900+ Star Trek episodes are now available in [Episode Atlas](https://www.episodeatlas.com/). Track episodes featuring your favorite characters.
