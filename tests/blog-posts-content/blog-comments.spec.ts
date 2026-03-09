@@ -3,7 +3,7 @@
 
 import { test, expect } from '../fixtures';
 
-const POST_URL = 'https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026';
+const POST_URL = 'https://www.funkysi1701.com/posts/2026/ndc-london-2026';
 const GISCUS_REPO = 'funkysi1701/Blog-Comments';
 const GISCUS_REPO_ID = 'R_kgDOQJKGlA';
 const GISCUS_CATEGORY = 'General';
@@ -36,7 +36,7 @@ test.describe('Comment Engine - Giscus Integration', () => {
     });
 
     await test.step('Wait for the Giscus client script to be appended to the DOM', async () => {
-      await page.waitForSelector('script[src*="giscus.app/client.js"]', { timeout: 10000 });
+      await page.waitForSelector('script[src*="giscus.app/client.js"]', { state: 'attached', timeout: 10000 });
     });
 
     await test.step('Read Giscus script data-attributes and verify they match site config', async () => {
@@ -118,7 +118,7 @@ test.describe('Comment Engine - Giscus Integration', () => {
     await test.step('Navigate to post with no stored theme preference (light mode)', async () => {
       await page.addInitScript(() => localStorage.removeItem('hbs-mode'));
       await page.goto(POST_URL);
-      await page.waitForSelector('script[src*="giscus.app/client.js"]', { timeout: 10000 });
+      await page.waitForSelector('script[src*="giscus.app/client.js"]', { state: 'attached', timeout: 10000 });
     });
 
     await test.step('Verify the Giscus script uses the light theme by default', async () => {
@@ -132,7 +132,7 @@ test.describe('Comment Engine - Giscus Integration', () => {
     await test.step('Navigate to post with dark mode preference set', async () => {
       await page.addInitScript(() => localStorage.setItem('hbs-mode', 'dark'));
       await page.goto(POST_URL);
-      await page.waitForSelector('script[src*="giscus.app/client.js"]', { timeout: 10000 });
+      await page.waitForSelector('script[src*="giscus.app/client.js"]', { state: 'attached', timeout: 10000 });
     });
 
     await test.step('Verify the Giscus script switches to the dark theme', async () => {
