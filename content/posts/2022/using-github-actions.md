@@ -230,5 +230,5 @@ Want a quick-reference guide you can keep beside your keyboard? I've put togethe
     name="GitHub Actions Cheat Sheet — PDF"
     description="A one-page A4 quick-reference covering workflow structure, triggers, runners, contexts, conditions, matrix builds, caching, artifacts, OIDC permissions, and the most-used actions."
     price="£2.99"
-    link="https://buy.stripe.com/your_github_actions_cheatsheet_link"
+    link="https://buy.stripe.com/8x200j5Exe6UgRB5Ne0Ny00"
 >}}
