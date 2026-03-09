@@ -5,35 +5,55 @@ import { test, expect } from '../fixtures';
 
 test.describe('Performance and Technical', () => {
   test('robots.txt validation', async ({ page }) => {
-    // 1. Navigate to https://www.funkysi1701.com/robots.txt
-    const response = await page.goto('https://www.funkysi1701.com/robots.txt');
-    
-    if (!response) {
-      throw new Error('No response received');
-    }
+    // eslint-disable-next-line prefer-const
+    let content: any;
+    // eslint-disable-next-line prefer-const
+    let hasDisallow: any;
+    // eslint-disable-next-line prefer-const
+    let response: any;
 
-    // 2. Verify robots.txt file loads
-    expect(response.status()).toBe(200);
+    await test.step('Navigate to https://www.funkysi1701.com/robots.txt', async () => {
+      // 1. Navigate to https://www.funkysi1701.com/robots.txt
+      response = await page.goto('https://www.funkysi1701.com/robots.txt');
 
-    const content = await response.text();
+      if (!response) {
+        throw new Error('No response received');
+      }
+    });
 
-    // 3. Check that file is properly formatted
-    expect(content).toContain('User-agent:');
+    await test.step('Verify robots.txt file loads', async () => {
+      // 2. Verify robots.txt file loads
+      expect(response.status()).toBe(200);
 
-    // 4. Verify sitemap location is specified
-    expect(content.toLowerCase()).toContain('sitemap:');
+      content = await response.text();
+    });
 
-    // 5. Check for any disallow rules
-    const hasDisallow = content.toLowerCase().includes('disallow:');
-    
-    // 6. Verify allow rules if any
-    const hasAllow = content.toLowerCase().includes('allow:');
+    await test.step('Check that file is properly formatted', async () => {
+      // 3. Check that file is properly formatted
+      expect(content).toContain('User-agent:');
+    });
 
-    console.log('robots.txt content:', content);
-    console.log('Has Disallow rules:', hasDisallow);
-    console.log('Has Allow rules:', hasAllow);
+    await test.step('Verify sitemap location is specified', async () => {
+      // 4. Verify sitemap location is specified
+      expect(content.toLowerCase()).toContain('sitemap:');
+    });
 
-    // Verify sitemap URL is present
-    expect(content).toMatch(/sitemap:.*\.xml/i);
+    await test.step('Check for any disallow rules', async () => {
+      // 5. Check for any disallow rules
+      hasDisallow = content.toLowerCase().includes('disallow:');
+    });
+
+    await test.step('Verify allow rules if any', async () => {
+      // 6. Verify allow rules if any
+      const hasAllow = content.toLowerCase().includes('allow:');
+
+      console.log('robots.txt content:', content);
+      console.log('Has Disallow rules:', hasDisallow);
+      console.log('Has Allow rules:', hasAllow);
+
+      // Verify sitemap URL is present
+      expect(content).toMatch(/sitemap:.*\.xml/i);
+    });
+
   });
 });

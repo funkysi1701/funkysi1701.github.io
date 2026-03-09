@@ -5,41 +5,63 @@ import { test, expect } from '../fixtures';
 
 test.describe('Edge Cases and Error Handling', () => {
   test('Multiple browser tabs', async ({ context, page }) => {
-    // 1. Open https://www.funkysi1701.com in first tab
-    await page.goto('https://www.funkysi1701.com');
+    // eslint-disable-next-line prefer-const
+    let page2: any;
+    // eslint-disable-next-line prefer-const
+    let page3: any;
 
-    // 2. Open homepage in second tab
-    const page2 = await context.newPage();
-    await page2.goto('https://www.funkysi1701.com');
+    await test.step('Open https://www.funkysi1701.com in first tab', async () => {
+      // 1. Open https://www.funkysi1701.com in first tab
+      await page.goto('https://www.funkysi1701.com');
+    });
 
-    // 3. Navigate to different pages in each tab
-    await page.goto('https://www.funkysi1701.com/about/');
-    await page2.goto('https://www.funkysi1701.com/projects/');
+    await test.step('Open homepage in second tab', async () => {
+      // 2. Open homepage in second tab
+      page2 = await context.newPage();
+      await page2.goto('https://www.funkysi1701.com');
+    });
 
-    // 4. Switch between tabs
-    await page.bringToFront();
-    await expect(page).toHaveURL(/\/about\//);
+    await test.step('Navigate to different pages in each tab', async () => {
+      // 3. Navigate to different pages in each tab
+      await page.goto('https://www.funkysi1701.com/about/');
+      await page2.goto('https://www.funkysi1701.com/projects/');
+    });
 
-    await page2.bringToFront();
-    await expect(page2).toHaveURL(/\/projects\//);
+    await test.step('Switch between tabs', async () => {
+      // 4. Switch between tabs
+      await page.bringToFront();
+      await expect(page).toHaveURL(/\/about\//);
 
-    // 5. Verify content loads correctly in each tab
-    await expect(page.locator('nav').first()).toBeVisible();
-    await expect(page2.locator('nav').first()).toBeVisible();
+      await page2.bringToFront();
+      await expect(page2).toHaveURL(/\/projects\//);
+    });
 
-    // 6. Check for any state conflicts
-    // Static site shouldn't have state conflicts
+    await test.step('Verify content loads correctly in each tab', async () => {
+      // 5. Verify content loads correctly in each tab
+      await expect(page.locator('nav').first()).toBeVisible();
+      await expect(page2.locator('nav').first()).toBeVisible();
+    });
 
-    // 7. Open external links which create new tabs
-    const page3 = await context.newPage();
-    await page3.goto('https://www.funkysi1701.com/contact/');
+    await test.step('Check for any state conflicts', async () => {
+      // 6. Check for any state conflicts
+      // Static site shouldn't have state conflicts
+    });
 
-    // 8. Verify all tabs function independently
-    await expect(page).toHaveURL(/\/about\//);
-    await expect(page2).toHaveURL(/\/projects\//);
-    await expect(page3).toHaveURL(/\/contact\//);
+    await test.step('Open external links which create new tabs', async () => {
+      // 7. Open external links which create new tabs
+      page3 = await context.newPage();
+      await page3.goto('https://www.funkysi1701.com/contact/');
+    });
 
-    await page2.close();
-    await page3.close();
+    await test.step('Verify all tabs function independently', async () => {
+      // 8. Verify all tabs function independently
+      await expect(page).toHaveURL(/\/about\//);
+      await expect(page2).toHaveURL(/\/projects\//);
+      await expect(page3).toHaveURL(/\/contact\//);
+
+      await page2.close();
+      await page3.close();
+    });
+
   });
 });

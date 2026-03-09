@@ -5,50 +5,72 @@ import { test, expect } from '../fixtures';
 
 test.describe('Social Media and External Links', () => {
   test('Social media footer links', async ({ page, context }) => {
-    // 1. Navigate to https://www.funkysi1701.com
-    await page.goto('https://www.funkysi1701.com');
+    // eslint-disable-next-line prefer-const
+    let footer: any;
+    // eslint-disable-next-line prefer-const
+    let socialCount: any;
+    // eslint-disable-next-line prefer-const
+    let socialLinks: any;
 
-    // 2. Scroll to footer
-    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-    await page.waitForTimeout(500);
+    await test.step('Navigate to https://www.funkysi1701.com', async () => {
+      // 1. Navigate to https://www.funkysi1701.com
+      await page.goto('https://www.funkysi1701.com');
+    });
 
-    // 3. Check for social media icons/links
-    const footer = page.locator('footer');
-    await expect(footer).toBeVisible();
+    await test.step('Scroll to footer', async () => {
+      // 2. Scroll to footer
+      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+      await page.waitForTimeout(500);
+    });
 
-    // 4. Verify presence of GitHub, Twitter, LinkedIn, Mastodon, BlueSky, Facebook
-    const socialLinks = {
-      github: page.locator('footer a[href*="github.com/funkysi1701"]'),
-      twitter: page.locator('footer a[href*="twitter.com"], footer a[href*="x.com"]'),
-      linkedin: page.locator('footer a[href*="linkedin.com"]'),
-      mastodon: page.locator('footer a[href*="mastodon"], footer a[href*="hachyderm"]'),
-      bluesky: page.locator('footer a[href*="bsky.app"], footer a[href*="bluesky"]'),
-      facebook: page.locator('footer a[href*="facebook.com"]')
-    };
+    await test.step('Check for social media icons/links', async () => {
+      // 3. Check for social media icons/links
+      footer = page.locator('footer');
+      await expect(footer).toBeVisible();
+    });
 
-    // 5. Click on GitHub link
-    const githubLink = socialLinks.github.first();
-    if (await githubLink.count() > 0) {
-      const pagePromise = context.waitForEvent('page');
-      await githubLink.click();
-      
-      // 6. Verify it opens github.com/funkysi1701 in new tab
-      const newPage = await pagePromise;
-      await expect(newPage).toHaveURL(/github\.com\/funkysi1701/);
-      await newPage.close();
-    }
+    await test.step('Verify presence of GitHub, Twitter, LinkedIn, Mastodon, BlueSky, Facebook', async () => {
+      // 4. Verify presence of GitHub, Twitter, LinkedIn, Mastodon, BlueSky, Facebook
+      socialLinks = {
+        github: page.locator('footer a[href*="github.com/funkysi1701"]'),
+        twitter: page.locator('footer a[href*="twitter.com"], footer a[href*="x.com"]'),
+        linkedin: page.locator('footer a[href*="linkedin.com"]'),
+        mastodon: page.locator('footer a[href*="mastodon"], footer a[href*="hachyderm"]'),
+        bluesky: page.locator('footer a[href*="bsky.app"], footer a[href*="bluesky"]'),
+        facebook: page.locator('footer a[href*="facebook.com"]')
+      };
+    });
 
-    // 7. Test other social media links
-    let socialCount = 0;
-    for (const [platform, locator] of Object.entries(socialLinks)) {
-      const count = await locator.count();
-      if (count > 0) {
-        socialCount++;
-        console.log(`${platform}: found`);
+    await test.step('Click on GitHub link', async () => {
+      // 5. Click on GitHub link
+      const githubLink = socialLinks.github.first();
+      if (await githubLink.count() > 0) {
+        const pagePromise = context.waitForEvent('page');
+        await githubLink.click();
+
+        // 6. Verify it opens github.com/funkysi1701 in new tab
+        const newPage = await pagePromise;
+        await expect(newPage).toHaveURL(/github\.com\/funkysi1701/);
+        await newPage.close();
       }
-    }
+    });
 
-    // 8. Verify all links open in new tabs (checked via target attribute)
-    expect(socialCount).toBeGreaterThanOrEqual(4); // At least 4 social platforms
+    await test.step('Test other social media links', async () => {
+      // 7. Test other social media links
+      socialCount = 0;
+      for (const [platform, locator] of Object.entries(socialLinks)) {
+        const count = await locator.count();
+        if (count > 0) {
+          socialCount++;
+          console.log(`${platform}: found`);
+        }
+      }
+    });
+
+    await test.step('Verify all links open in new tabs (checked via target attribute)', async () => {
+      // 8. Verify all links open in new tabs (checked via target attribute)
+      expect(socialCount).toBeGreaterThanOrEqual(4); // At least 4 social platforms
+    });
+
   });
 });
