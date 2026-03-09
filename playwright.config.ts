@@ -6,13 +6,21 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: [
-    ['html'],
-    ['./reporters/page-visit-tracker.ts'],
-  ],
+  reporter: process.env.CI
+    ? [
+        ['github'],
+        ['list'],
+        ['html', { open: 'never' }],
+        ['./reporters/page-visit-tracker.ts'],
+      ]
+    : [
+        ['html'],
+        ['./reporters/page-visit-tracker.ts'],
+      ],
   use: {
     baseURL: 'https://www.funkysi1701.com',
-    trace: 'on-first-retry',
+    trace: process.env.CI ? 'retain-on-failure' : 'on-first-retry',
+    screenshot: 'only-on-failure',
   },
 
   projects: [
