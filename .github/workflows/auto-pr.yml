@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Get current date and time
         id: date
-        run: echo "::set-output name=date::$(date +'%d %b %Y %H:%M:%S')"
+        run: echo "date=$(date +'%d %b %Y %H:%M:%S')" >> $GITHUB_OUTPUT
       - name: Check out repository code
         uses: actions/checkout@v6
         with:

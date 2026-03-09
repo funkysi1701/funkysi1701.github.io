@@ -69,5 +69,12 @@
     "v8-to-istanbul": "^9.3.0"
   },
   "name": "hugo-theme-bootstrap-skeleton",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ci": "npx playwright test --reporter=github,list,html",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:report": "npx playwright show-report"
+  }
 }
