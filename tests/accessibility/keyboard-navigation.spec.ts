@@ -30,7 +30,7 @@ test.describe('Accessibility', () => {
         await page.waitForTimeout(100);
 
         const focusedElement = await page.evaluate(() => {
-          el = document.activeElement;
+          const el = document.activeElement;
           return {
             tag: el?.tagName,
             href: el?.getAttribute('href'),
@@ -55,7 +55,7 @@ test.describe('Accessibility', () => {
         tabCount++;
 
         const isNavLink = await page.evaluate(() => {
-          el = document.activeElement;
+          const el = document.activeElement;
           return el?.tagName === 'A' && el?.closest('nav') !== null;
         });
 

@@ -6,7 +6,7 @@ import type { Response } from '@playwright/test';
 
 test.describe('Performance and Technical', () => {
   test('Sitemap validation', async ({ page }) => {
-    let content: string | undefined;
+    let content!: string;
     let response!: Response | null;
     let urlCount!: number;
 

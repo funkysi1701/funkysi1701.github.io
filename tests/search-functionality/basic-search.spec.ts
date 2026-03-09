@@ -9,6 +9,7 @@ test.describe('Search Functionality', () => {
     let resultCount!: number;
     let results!: Locator;
     let searchTrigger!: Locator;
+    let searchAvailable = false;
 
     await test.step('Navigate to https://www.funkysi1701.com/search/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/search/
@@ -30,14 +31,14 @@ test.describe('Search Functionality', () => {
       await page.waitForTimeout(2000);
 
       // Check if search is available (either input visible or DocSearch widget loaded)
-      const searchAvailable = await searchTrigger.isVisible().catch(() => false);
-
-      if (!searchAvailable) {
-        // Search might use Algolia which requires JavaScript - skip this test
-        test.skip();
-        return;
-      }
+      searchAvailable = await searchTrigger.isVisible().catch(() => false);
     });
+
+    // test.skip() must be called in the test body, not inside a step
+    if (!searchAvailable) {
+      test.skip();
+      return;
+    }
 
     await test.step("Enter a common term like 'Azure' in search box", async () => {
       // 4. Enter a common term like 'Azure' in search box

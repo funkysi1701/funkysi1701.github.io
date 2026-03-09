@@ -6,7 +6,7 @@ import type { Response } from '@playwright/test';
 
 test.describe('Performance and Technical', () => {
   test('robots.txt validation', async ({ page }) => {
-    let content: string | undefined;
+    let content!: string;
     let hasDisallow!: boolean;
     let response!: Response | null;
 

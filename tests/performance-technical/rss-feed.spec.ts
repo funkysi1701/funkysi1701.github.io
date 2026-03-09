@@ -6,7 +6,7 @@ import type { Response } from '@playwright/test';
 
 test.describe('Performance and Technical', () => {
   test('RSS feed validation', async ({ page }) => {
-    let content: string | undefined;
+    let content!: string;
     let response!: Response | null;
 
     await test.step('Navigate to https://www.funkysi1701.com/index.xml', async () => {

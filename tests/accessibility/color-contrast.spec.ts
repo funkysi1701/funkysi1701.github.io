@@ -14,8 +14,8 @@ test.describe('Accessibility', () => {
       // 2. Verify text has sufficient contrast against background
       // This is a basic check - full contrast validation requires specialized tools
       const bodyStyles = await page.evaluate(() => {
-        body = document.body;
-        styles = window.getComputedStyle(body);
+        const body = document.body;
+        const styles = window.getComputedStyle(body);
         return {
           color: styles.color,
           backgroundColor: styles.backgroundColor,
@@ -31,7 +31,7 @@ test.describe('Accessibility', () => {
       const linkStyles = await page.evaluate(() => {
         const link = document.querySelector('a');
         if (!link) return null;
-        styles = window.getComputedStyle(link);
+        const styles = window.getComputedStyle(link);
         return {
           color: styles.color,
           textDecoration: styles.textDecoration
@@ -57,7 +57,7 @@ test.describe('Accessibility', () => {
       const paragraphs = await page.locator('p').all();
       for (let i = 0; i < Math.min(paragraphs.length, 3); i++) {
         const fontSize = await paragraphs[i].evaluate(el => {
-          styles = window.getComputedStyle(el);
+          const styles = window.getComputedStyle(el);
           return parseFloat(styles.fontSize);
         });
 
@@ -67,7 +67,7 @@ test.describe('Accessibility', () => {
 
       // Check that font sizes are appropriate and scalable
       const headingSize = await page.locator('h1').first().evaluate(el => {
-        styles = window.getComputedStyle(el);
+        const styles = window.getComputedStyle(el);
         return parseFloat(styles.fontSize);
       });
 

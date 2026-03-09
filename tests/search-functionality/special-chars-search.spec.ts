@@ -6,8 +6,15 @@ import type { Locator } from '@playwright/test';
 
 test.describe('Search Functionality', () => {
   test('Search with special characters', async ({ page }) => {
-    let consoleErrors!: string[];
+    const consoleErrors: string[] = [];
     let searchInput!: Locator;
+
+    // Register console error listener before any searches run
+    page.on('console', msg => {
+      if (msg.type() === 'error') {
+        consoleErrors.push(msg.text());
+      }
+    });
 
     await test.step('Navigate to https://www.funkysi1701.com/search/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/search/
@@ -41,13 +48,7 @@ test.describe('Search Functionality', () => {
 
     await test.step('Check that special characters are handled correctly', async () => {
       // 5. Check that special characters are handled correctly
-      // No JavaScript errors should appear
-      consoleErrors = [];
-      page.on('console', msg => {
-        if (msg.type() === 'error') {
-          consoleErrors.push(msg.text());
-        }
-      });
+      // No JavaScript errors should appear (listener was registered before searches)
     });
 
     await test.step("Test search with symbols like '@', '#', '&'", async () => {

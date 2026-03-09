@@ -6,8 +6,9 @@ import type { Response } from '@playwright/test';
 
 test.describe('Performance and Technical', () => {
   test('JSON search index', async ({ page }) => {
-    let content: string | undefined;
-    let jsonData: unknown;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let jsonData!: any[];
+    let content!: string;
     let response!: Response | null;
 
     await test.step('Navigate to https://www.funkysi1701.com/index.json', async () => {

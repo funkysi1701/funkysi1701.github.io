@@ -2,12 +2,9 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
-import type { Page } from '@playwright/test';
 
 test.describe('About and Static Pages', () => {
   test('Contact page functionality', async ({ page, context }) => {
-    let githubPagePromise!: Promise<Page>;
-
     await test.step('Navigate to https://www.funkysi1701.com/contact/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/contact/
       await page.goto('https://www.funkysi1701.com/contact/');
@@ -34,16 +31,15 @@ test.describe('About and Static Pages', () => {
       await expect(page.locator('a[href*="facebook.com/funkysi1701"]').filter({ hasText: /funkysi1701/ }).first()).toBeVisible();
     });
 
-    await test.step('Click on GitHub link', async () => {
+    await test.step('Click on GitHub link and verify it opens to github.com/funkysi1701', async () => {
       // 5. Click on GitHub link
-      const githubLink = page.locator('a[href*="github.com/funkysi1701"]').first();
-      githubPagePromise = context.waitForEvent('page');
-      await githubLink.click();
-    });
-
-    await test.step('Verify it opens to github.com/funkysi1701', async () => {
       // 6. Verify it opens to github.com/funkysi1701
-      const githubPage = await githubPagePromise;
+      // waitForEvent and its trigger must stay together to avoid missing the event
+      const githubLink = page.locator('a[href*="github.com/funkysi1701"]').first();
+      const [githubPage] = await Promise.all([
+        context.waitForEvent('page'),
+        githubLink.click(),
+      ]);
       await expect(githubPage).toHaveURL(/github\.com\/funkysi1701/);
       await githubPage.close();
     });
@@ -51,10 +47,10 @@ test.describe('About and Static Pages', () => {
     await test.step('Test LinkedIn link opens to correct profile', async () => {
       // 7. Test LinkedIn link opens to correct profile
       const linkedinLink = page.locator('a[href*="linkedin.com"]').first();
-      const pagePromise2 = context.waitForEvent('page');
-      await linkedinLink.click();
-
-      const linkedinPage = await pagePromise2;
+      const [linkedinPage] = await Promise.all([
+        context.waitForEvent('page'),
+        linkedinLink.click(),
+      ]);
       await expect(linkedinPage).toHaveURL(/linkedin\.com/);
       await linkedinPage.close();
     });
