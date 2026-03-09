@@ -5,7 +5,7 @@ import { test, expect } from '../fixtures';
 
 test.describe('Accessibility', () => {
   test('ARIA landmarks and regions', async ({ page }) => {
-    let semanticStructure: any;
+    let semanticStructure!: { hasHeader: boolean; hasNav: boolean; hasMain: boolean; hasFooter: boolean; hasArticle: boolean; hasAside: boolean };
 
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 1. Navigate to https://www.funkysi1701.com
