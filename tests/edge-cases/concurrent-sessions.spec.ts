@@ -2,17 +2,14 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { BrowserContext, Page } from '@playwright/test';
 
 test.describe('Edge Cases and Error Handling', () => {
   test('Concurrent user sessions', async ({ browser }) => {
-    // eslint-disable-next-line prefer-const
-    let context1: any;
-    // eslint-disable-next-line prefer-const
-    let context2: any;
-    // eslint-disable-next-line prefer-const
-    let page1: any;
-    // eslint-disable-next-line prefer-const
-    let page2: any;
+    let context1!: BrowserContext;
+    let context2!: BrowserContext;
+    let page1!: Page;
+    let page2!: Page;
 
     await test.step('Open site in regular browser window', async () => {
       // 1. Open site in regular browser window

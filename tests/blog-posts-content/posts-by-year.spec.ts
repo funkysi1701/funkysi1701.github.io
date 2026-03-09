@@ -2,11 +2,11 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { Locator } from '@playwright/test';
 
 test.describe('Blog Posts and Content', () => {
   test('Blog posts by year navigation', async ({ page }) => {
-    // eslint-disable-next-line prefer-const
-    let posts: any;
+    let posts!: Locator;
 
     await test.step('Navigate to https://www.funkysi1701.com/2026/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/2026/

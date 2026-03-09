@@ -2,11 +2,11 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { Page } from '@playwright/test';
 
 test.describe('About and Static Pages', () => {
   test('Contact page functionality', async ({ page, context }) => {
-    // eslint-disable-next-line prefer-const
-    let pagePromise1: any;
+    let pagePromise1!: Promise<Page>;
 
     await test.step('Navigate to https://www.funkysi1701.com/contact/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/contact/

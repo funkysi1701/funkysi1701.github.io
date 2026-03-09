@@ -2,13 +2,12 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { Locator, Response } from '@playwright/test';
 
 test.describe('Performance and Technical', () => {
   test('404 error page handling', async ({ page }) => {
-    // eslint-disable-next-line prefer-const
-    let nav: any;
-    // eslint-disable-next-line prefer-const
-    let response: any;
+    let nav!: Locator;
+    let response!: Response | null;
 
     await test.step('Navigate to a non-existent page', async () => {
       // 1. Navigate to a non-existent page

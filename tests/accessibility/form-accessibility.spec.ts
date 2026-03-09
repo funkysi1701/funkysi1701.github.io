@@ -5,8 +5,7 @@ import { test, expect } from '../fixtures';
 
 test.describe('Accessibility', () => {
   test('Form accessibility (newsletter)', async ({ page }) => {
-    // eslint-disable-next-line prefer-const
-    let label: any;
+    let label!: number;
 
     await test.step('Navigate to newsletter signup form', async () => {
       // 1. Navigate to newsletter signup form

@@ -5,8 +5,7 @@ import { test, expect } from '../fixtures';
 
 test.describe('Performance and Technical', () => {
   test('Security headers validation', async ({ page }) => {
-    // eslint-disable-next-line prefer-const
-    let headers: any;
+    let headers!: Record<string, string>;
 
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 1. Navigate to https://www.funkysi1701.com

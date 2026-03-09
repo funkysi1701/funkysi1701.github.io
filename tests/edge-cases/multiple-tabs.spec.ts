@@ -2,13 +2,12 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { Page } from '@playwright/test';
 
 test.describe('Edge Cases and Error Handling', () => {
   test('Multiple browser tabs', async ({ context, page }) => {
-    // eslint-disable-next-line prefer-const
-    let page2: any;
-    // eslint-disable-next-line prefer-const
-    let page3: any;
+    let page2!: Page;
+    let page3!: Page;
 
     await test.step('Open https://www.funkysi1701.com in first tab', async () => {
       // 1. Open https://www.funkysi1701.com in first tab

@@ -5,9 +5,7 @@ import { test, expect } from '../fixtures';
 
 test.describe('Accessibility', () => {
   test('Color contrast and readability', async ({ page }) => {
-    // eslint-disable-next-line prefer-const
     let body: any;
-    // eslint-disable-next-line prefer-const
     let styles: any;
 
     await test.step('Navigate to https://www.funkysi1701.com', async () => {

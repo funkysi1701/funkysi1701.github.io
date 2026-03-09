@@ -2,13 +2,12 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { Locator } from '@playwright/test';
 
 test.describe('Search Functionality', () => {
   test('Search with special characters', async ({ page }) => {
-    // eslint-disable-next-line prefer-const
-    let consoleErrors: any;
-    // eslint-disable-next-line prefer-const
-    let searchInput: any;
+    let consoleErrors!: string[];
+    let searchInput!: Locator;
 
     await test.step('Navigate to https://www.funkysi1701.com/search/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/search/

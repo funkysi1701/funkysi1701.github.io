@@ -2,15 +2,13 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { Locator } from '@playwright/test';
 
 test.describe('Blog Posts and Content', () => {
   test('Blog post images and media', async ({ page }) => {
-    // eslint-disable-next-line prefer-const
-    let contentImages: any;
-    // eslint-disable-next-line prefer-const
-    let imageCount: any;
-    // eslint-disable-next-line prefer-const
-    let img: any;
+    let contentImages!: Locator;
+    let imageCount!: number;
+    let img!: Locator;
 
     await test.step('Navigate to a blog post with images', async () => {
       // 1. Navigate to a blog post with images

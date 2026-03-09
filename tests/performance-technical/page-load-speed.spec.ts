@@ -5,12 +5,9 @@ import { test, expect } from '../fixtures';
 
 test.describe('Performance and Technical', () => {
   test('Page load performance', async ({ page }) => {
-    // eslint-disable-next-line prefer-const
-    let endTime: any;
-    // eslint-disable-next-line prefer-const
-    let performanceMetrics: any;
-    // eslint-disable-next-line prefer-const
-    let startTime: any;
+    let endTime!: number;
+    let performanceMetrics!: { loadTime: number; domContentLoaded: number; firstPaint: number };
+    let startTime!: number;
 
     await test.step('Clear browser cache', async () => {
       // 1. Clear browser cache

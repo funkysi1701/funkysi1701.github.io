@@ -21,41 +21,50 @@ test.describe('Homepage and Navigation', () => {
       await expect(page.getByRole('link', { name: 'Search', exact: true }).first()).toBeVisible();
     });
 
-    await test.step('Click on About link', async () => {
+    await test.step('Navigate to About page and verify it loads', async () => {
       // 3. Click on About link
       await page.getByRole('link', { name: 'About', exact: true }).first().click();
-    });
-
-    await test.step('Verify About page loads correctly', async () => {
       // 4. Verify About page loads correctly
       await expect(page).toHaveURL(/\/about\//);
       await expect(page.locator('nav').first()).toBeVisible();
+    });
 
+    await test.step('Navigate to Projects page and verify it loads', async () => {
       // Click on Projects link
       await page.getByRole('link', { name: 'Projects', exact: true }).click();
       await expect(page).toHaveURL(/\/projects\//);
       await expect(page.locator('nav').first()).toBeVisible();
+    });
 
+    await test.step('Navigate to Tools & Resources page and verify it loads', async () => {
       // Click on Tools & Resources link
       await page.getByRole('link', { name: /Tools.*Resources/i }).first().click();
       await expect(page).toHaveURL(/\/tools-and-resources\//);
       await expect(page.locator('nav').first()).toBeVisible();
+    });
 
+    await test.step('Navigate to Newsletter page and verify it loads', async () => {
       // Click on Newsletter link
       await page.getByRole('link', { name: 'Newsletter' }).first().click();
       await expect(page).toHaveURL(/\/newsletter\//);
       await expect(page.locator('nav').first()).toBeVisible();
+    });
 
+    await test.step('Navigate to Contact page and verify it loads', async () => {
       // Click on Contact link
       await page.getByRole('link', { name: 'Contact' }).first().click();
       await expect(page).toHaveURL(/\/contact\//);
       await expect(page.locator('nav').first()).toBeVisible();
+    });
 
+    await test.step('Navigate to Events page and verify it loads', async () => {
       // Click on Events link
       await page.getByRole('link', { name: 'Events' }).first().click();
       await expect(page).toHaveURL(/\/posts\/events\//);
       await expect(page.locator('nav').first()).toBeVisible();
+    });
 
+    await test.step('Navigate to Search page and verify it loads', async () => {
       // Click on Search link
       await page.getByRole('link', { name: 'Search' }).first().click();
       await expect(page).toHaveURL(/\/search\//);

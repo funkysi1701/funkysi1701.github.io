@@ -2,15 +2,13 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { Locator } from '@playwright/test';
 
 test.describe('Search Functionality', () => {
   test('Search page loads and basic search', async ({ page }) => {
-    // eslint-disable-next-line prefer-const
-    let resultCount: any;
-    // eslint-disable-next-line prefer-const
-    let results: any;
-    // eslint-disable-next-line prefer-const
-    let searchTrigger: any;
+    let resultCount!: number;
+    let results!: Locator;
+    let searchTrigger!: Locator;
 
     await test.step('Navigate to https://www.funkysi1701.com/search/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/search/

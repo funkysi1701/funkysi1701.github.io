@@ -2,15 +2,13 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { Locator } from '@playwright/test';
 
 test.describe('Social Media and External Links', () => {
   test('Social media footer links', async ({ page, context }) => {
-    // eslint-disable-next-line prefer-const
-    let footer: any;
-    // eslint-disable-next-line prefer-const
-    let socialCount: any;
-    // eslint-disable-next-line prefer-const
-    let socialLinks: any;
+    let footer!: Locator;
+    let socialCount!: number;
+    let socialLinks!: Locator;
 
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 1. Navigate to https://www.funkysi1701.com

@@ -2,11 +2,11 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { Locator } from '@playwright/test';
 
 test.describe('Homepage and Navigation', () => {
   test('Responsive design on mobile viewport', async ({ page }) => {
-    // eslint-disable-next-line prefer-const
-    let hamburger: any;
+    let hamburger!: Locator;
 
     await test.step('Set viewport to mobile size (375x667)', async () => {
       // 1. Set viewport to mobile size (375x667)

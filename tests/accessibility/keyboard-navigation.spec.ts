@@ -5,7 +5,6 @@ import { test, expect } from '../fixtures';
 
 test.describe('Accessibility', () => {
   test('Keyboard navigation', async ({ page }) => {
-    // eslint-disable-next-line prefer-const
     let el: any;
 
     await test.step('Navigate to https://www.funkysi1701.com', async () => {

@@ -2,14 +2,14 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { Locator } from '@playwright/test';
 
 test.describe('Blog Posts and Content', () => {
   test.fixme('Events page functionality', async ({ page }) => {
     // FIXME: The site doesn't have an events category page at /events/
     // Events are referenced at /posts/events/ which lists upcoming events
     // This test needs to be rewritten to check the correct events page structure
-    // eslint-disable-next-line prefer-const
-    let events: any;
+    let events!: Locator;
 
     await test.step('Navigate to https://www.funkysi1701.com/posts/events/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/posts/events/

@@ -2,15 +2,13 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { Locator } from '@playwright/test';
 
 test.describe('Social Media and External Links', () => {
   test('External project links', async ({ page, context }) => {
-    // eslint-disable-next-line prefer-const
-    let githubCount: any;
-    // eslint-disable-next-line prefer-const
-    let githubLinks: any;
-    // eslint-disable-next-line prefer-const
-    let href: any;
+    let githubCount!: number;
+    let githubLinks!: Locator;
+    let href!: string | null;
 
     await test.step('Navigate to https://www.funkysi1701.com/projects/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/projects/

@@ -2,11 +2,11 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { Locator } from '@playwright/test';
 
 test.describe('About and Static Pages', () => {
   test('Tools and Resources page', async ({ page }) => {
-    // eslint-disable-next-line prefer-const
-    let links: any;
+    let links!: Locator;
 
     await test.step('Navigate to https://www.funkysi1701.com/tools-and-resources/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/tools-and-resources/

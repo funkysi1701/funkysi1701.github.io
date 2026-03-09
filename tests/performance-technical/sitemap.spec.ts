@@ -2,15 +2,13 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { Response } from '@playwright/test';
 
 test.describe('Performance and Technical', () => {
   test('Sitemap validation', async ({ page }) => {
-    // eslint-disable-next-line prefer-const
-    let content: any;
-    // eslint-disable-next-line prefer-const
-    let response: any;
-    // eslint-disable-next-line prefer-const
-    let urlCount: any;
+    let content: string | undefined;
+    let response!: Response | null;
+    let urlCount!: number;
 
     await test.step('Navigate to https://www.funkysi1701.com/sitemap.xml', async () => {
       // 1. Navigate to https://www.funkysi1701.com/sitemap.xml

@@ -5,8 +5,7 @@ import { test, expect } from '../fixtures';
 
 test.describe('Accessibility', () => {
   test('Screen reader compatibility', async ({ page }) => {
-    // eslint-disable-next-line prefer-const
-    let ariaLabel: any;
+    let ariaLabel!: string | null;
 
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 1. Navigate to https://www.funkysi1701.com

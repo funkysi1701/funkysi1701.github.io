@@ -2,13 +2,12 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { Locator } from '@playwright/test';
 
 test.describe('Blog Posts and Content', () => {
   test('Blog tag filtering', async ({ page }) => {
-    // eslint-disable-next-line prefer-const
-    let tag: any;
-    // eslint-disable-next-line prefer-const
-    let tagLinks: any;
+    let tag!: Locator;
+    let tagLinks!: Locator;
 
     await test.step('Navigate to a blog post with tags', async () => {
       // 1. Navigate to a blog post with tags
