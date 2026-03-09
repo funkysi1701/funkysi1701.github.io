@@ -1,0 +1,38 @@
+{{/*
+  Stripe buy button shortcode.
+  Usage:
+    {{< stripe-button
+        name="Product Name"
+        description="Short product description"
+        price="£9.99"
+        link="https://buy.stripe.com/XXXXX"
+        badge="Best Seller"
+    >}}
+
+  Parameters:
+    name        - Product title (required)
+    description - Short description shown in the card (required)
+    price       - Price string, e.g. "£9.99" (required)
+    link        - Stripe Payment Link URL (required)
+    badge       - Optional badge label, e.g. "New" or "Best Seller"
+*/}}
+{{ if not (.Get "name") }}{{ errorf "stripe-button: 'name' parameter is required" }}{{ end }}
+{{ if not (.Get "price") }}{{ errorf "stripe-button: 'price' parameter is required" }}{{ end }}
+{{ if not (.Get "link") }}{{ errorf "stripe-button: 'link' parameter is required" }}{{ end }}
+<div class="card mb-4 border-primary">
+  {{ if .Get "badge" }}
+  <div class="card-header bg-primary text-white fw-bold">
+    {{ .Get "badge" }}
+  </div>
+  {{ end }}
+  <div class="card-body">
+    <h5 class="card-title">{{ .Get "name" }}</h5>
+    <p class="card-text text-muted">{{ .Get "description" }}</p>
+    <div class="d-flex justify-content-between align-items-center mt-3">
+      <span class="fs-4 fw-bold text-success">{{ .Get "price" }}</span>
+      <a href="{{ .Get "link" }}" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+        Buy Now &rarr;
+      </a>
+    </div>
+  </div>
+</div>
