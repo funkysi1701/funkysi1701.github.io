@@ -1,0 +1,55 @@
+{{- partial "head/favicons" . -}}
+<meta name="keywords" content="{{ if .IsPage }}{{ delimit .Keywords ", " }}{{ else }}{{ $.Site.Params.keywords }}{{ end }}" />
+<meta name="description" content="{{ if .IsPage }}{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}{{ else }}{{ .Title }} - {{ $.Site.Params.description }}{{ end }}" />
+<meta name="fediverse:creator" content="@funkysi1701@hachyderm.io">
+{{- template "_internal/schema.html" . -}}
+{{ template "_internal/opengraph.html" . }}
+{{- template "_internal/twitter_cards.html" . -}}
+{{- partial "head/meta" . -}}
+{{- partial "head/feed" . -}}
+{{- partial "head/site-verification" . -}}
+{{- if eq .Permalink (absLangURL "search/") -}}
+<meta data-name="search-index" content="{{ absLangURL "index.json" }}">
+{{- end -}}
+{{- partial "head/assets" . -}}
+{{- if .IsHome -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "{{ .Permalink }}#website",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Permalink }}",
+  "description": "{{ $.Site.Params.description | plainify | htmlUnescape }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ $.Site.Params.author.name }}",
+    "url": "{{ absURL "about" }}"
+  }
+}
+</script>
+{{- else if .IsPage -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{ .Permalink }}#article",
+  "headline": "{{ .Title }}",
+  "description": "{{ if .Description }}{{ .Description | plainify | htmlUnescape }}{{ else }}{{ .Summary | plainify | htmlUnescape }}{{ end }}",
+  "url": "{{ .Permalink }}",
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05-07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}",
+  "image": "{{ if .Params.cover }}{{ absURL .Params.cover }}{{ else }}{{ absURL "/images/1922276.jpg" }}{{ end }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Params.author | default $.Site.Params.author.name }}",
+    "url": "{{ absURL "about" }}"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "{{ $.Site.Params.author.name }}",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+{{- end -}}
