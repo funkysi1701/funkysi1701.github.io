@@ -5,6 +5,9 @@ import { test, expect } from '../fixtures';
 
 const POST_URL = 'https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026';
 const GISCUS_REPO = 'funkysi1701/Blog-Comments';
+const GISCUS_REPO_ID = 'R_kgDOQJKGlA';
+const GISCUS_CATEGORY = 'General';
+const GISCUS_CATEGORY_ID = 'DIC_kwDOQJKGlM4CxELi';
 
 test.describe('Comment Engine - Giscus Integration', () => {
   test('Comment section container and heading are present on a blog post', async ({ page }) => {
@@ -46,6 +49,7 @@ test.describe('Comment Engine - Giscus Integration', () => {
           category: script.getAttribute('data-category'),
           categoryId: script.getAttribute('data-category-id'),
           mapping: script.getAttribute('data-mapping'),
+          strict: script.getAttribute('data-strict'),
           reactionsEnabled: script.getAttribute('data-reactions-enabled'),
           emitMetadata: script.getAttribute('data-emit-metadata'),
           inputPosition: script.getAttribute('data-input-position'),
@@ -55,10 +59,11 @@ test.describe('Comment Engine - Giscus Integration', () => {
 
       expect(scriptAttrs).not.toBeNull();
       expect(scriptAttrs!.repo).toBe(GISCUS_REPO);
-      expect(scriptAttrs!.repoId).toBeTruthy();
-      expect(scriptAttrs!.category).toBeTruthy();
-      expect(scriptAttrs!.categoryId).toBeTruthy();
+      expect(scriptAttrs!.repoId).toBe(GISCUS_REPO_ID);
+      expect(scriptAttrs!.category).toBe(GISCUS_CATEGORY);
+      expect(scriptAttrs!.categoryId).toBe(GISCUS_CATEGORY_ID);
       expect(scriptAttrs!.mapping).toBe('title');
+      expect(scriptAttrs!.strict).toBe('0');
       expect(scriptAttrs!.reactionsEnabled).toBe('1');
       expect(scriptAttrs!.emitMetadata).toBe('0');
       expect(scriptAttrs!.inputPosition).toBe('bottom');
@@ -94,27 +99,25 @@ test.describe('Comment Engine - Giscus Integration', () => {
       await expect(page).toHaveURL(/ndc-london-2026/);
     });
 
+    const commentsLink = page.locator('a[href="#post-comments"]').first();
+    if (await commentsLink.count() === 0) {
+      test.skip(true, 'Comments panel link not present on this post');
+    }
+
     await test.step('Locate the comments icon link in the post action panel', async () => {
-      const commentsLink = page.locator('a[href="#post-comments"]').first();
-      if (await commentsLink.count() === 0) {
-        test.skip();
-        return;
-      }
       await expect(commentsLink).toBeVisible();
     });
 
     await test.step('Click the comments link and verify the URL gains the #post-comments fragment', async () => {
-      const commentsLink = page.locator('a[href="#post-comments"]').first();
       await commentsLink.click();
-      expect(page.url()).toContain('#post-comments');
+      await expect(page).toHaveURL(/#post-comments/);
     });
   });
 
   test('Giscus theme matches the site color-scheme setting', async ({ page }) => {
-    await test.step('Clear any stored theme preference and navigate to post (light mode)', async () => {
+    await test.step('Navigate to post with no stored theme preference (light mode)', async () => {
+      await page.addInitScript(() => localStorage.removeItem('hbs-mode'));
       await page.goto(POST_URL);
-      await page.evaluate(() => localStorage.removeItem('hbs-mode'));
-      await page.reload();
       await page.waitForSelector('script[src*="giscus.app/client.js"]', { timeout: 10000 });
     });
 
@@ -126,9 +129,9 @@ test.describe('Comment Engine - Giscus Integration', () => {
       expect(theme).toBe('light');
     });
 
-    await test.step('Set dark mode preference and reload the page', async () => {
-      await page.evaluate(() => localStorage.setItem('hbs-mode', 'dark'));
-      await page.reload();
+    await test.step('Navigate to post with dark mode preference set', async () => {
+      await page.addInitScript(() => localStorage.setItem('hbs-mode', 'dark'));
+      await page.goto(POST_URL);
       await page.waitForSelector('script[src*="giscus.app/client.js"]', { timeout: 10000 });
     });
 
@@ -145,13 +148,13 @@ test.describe('Comment Engine - Giscus Integration', () => {
     await test.step('Verify the homepage has no #post-comments container', async () => {
       await page.goto('https://www.funkysi1701.com/');
       const commentsCard = page.locator('#post-comments');
-      expect(await commentsCard.count()).toBe(0);
+      await expect(commentsCard).toHaveCount(0);
     });
 
     await test.step('Verify the about page has no #post-comments container', async () => {
       await page.goto('https://www.funkysi1701.com/about/');
       const commentsCard = page.locator('#post-comments');
-      expect(await commentsCard.count()).toBe(0);
+      await expect(commentsCard).toHaveCount(0);
     });
   });
 });
