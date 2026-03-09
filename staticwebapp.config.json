@@ -13,6 +13,7 @@
     "X-Content-Type-Options": "nosniff",
     "Referrer-Policy": "strict-origin",
     "Permissions-Policy": "geolocation=(), camera=(), fullscreen=(), microphone=(), accelerometer=()",
+    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app https://pagead2.googlesyndication.com https://platform.twitter.com https://partner.googleadservices.com https://tpc.googlesyndication.com; style-src 'self' 'unsafe-inline' https://use.fontawesome.com; img-src 'self' data: https:; font-src 'self' https://use.fontawesome.com data:; frame-src https://giscus.app https://www.youtube.com https://platform.twitter.com; connect-src 'self' https://giscus.app; object-src 'none'; base-uri 'self';",
     "cross-origin-embedder-policy-report-only": "(unsafe-none|require-corp); report-to=\"default\"",
     "cross-origin-opener-policy-report-only": "(same-origin|same-origin-allow-popups|unsafe-none); report-to=\"default\""
   }
