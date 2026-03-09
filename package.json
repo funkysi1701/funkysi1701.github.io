@@ -72,7 +72,7 @@
   "version": "0.1.0",
   "scripts": {
     "test": "npx playwright test",
-    "test:ci": "npx playwright test --reporter=github,list,html",
+    "test:ci": "npx playwright test",
     "test:headed": "npx playwright test --headed",
     "test:debug": "npx playwright test --debug",
     "test:report": "npx playwright show-report"
