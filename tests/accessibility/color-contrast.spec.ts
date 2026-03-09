@@ -5,9 +5,6 @@ import { test, expect } from '../fixtures';
 
 test.describe('Accessibility', () => {
   test('Color contrast and readability', async ({ page }) => {
-    let body: any;
-    let styles: any;
-
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 1. Navigate to https://www.funkysi1701.com
       await page.goto('https://www.funkysi1701.com');

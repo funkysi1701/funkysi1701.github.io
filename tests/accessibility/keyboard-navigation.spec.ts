@@ -5,8 +5,6 @@ import { test, expect } from '../fixtures';
 
 test.describe('Accessibility', () => {
   test('Keyboard navigation', async ({ page }) => {
-    let el: any;
-
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 1. Navigate to https://www.funkysi1701.com
       await page.goto('https://www.funkysi1701.com');

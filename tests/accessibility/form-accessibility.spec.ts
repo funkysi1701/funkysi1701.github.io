@@ -5,7 +5,7 @@ import { test, expect } from '../fixtures';
 
 test.describe('Accessibility', () => {
   test('Form accessibility (newsletter)', async ({ page }) => {
-    let label!: number;
+    let labelCount!: number;
 
     await test.step('Navigate to newsletter signup form', async () => {
       // 1. Navigate to newsletter signup form
@@ -29,8 +29,8 @@ test.describe('Accessibility', () => {
 
         // 3. Check that labels are associated with inputs (for/id)
         if (inputId) {
-          label = await page.locator(`label[for="${inputId}"]`).count();
-          console.log(`Label for ${inputId}:`, label > 0);
+          labelCount = await page.locator(`label[for="${inputId}"]`).count();
+          console.log(`Label for ${inputId}:`, labelCount > 0);
         }
 
         // 4. Test keyboard navigation through form

@@ -6,7 +6,7 @@ import type { Page } from '@playwright/test';
 
 test.describe('About and Static Pages', () => {
   test('Contact page functionality', async ({ page, context }) => {
-    let pagePromise1!: Promise<Page>;
+    let githubPagePromise!: Promise<Page>;
 
     await test.step('Navigate to https://www.funkysi1701.com/contact/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/contact/
@@ -37,13 +37,13 @@ test.describe('About and Static Pages', () => {
     await test.step('Click on GitHub link', async () => {
       // 5. Click on GitHub link
       const githubLink = page.locator('a[href*="github.com/funkysi1701"]').first();
-      pagePromise1 = context.waitForEvent('page');
+      githubPagePromise = context.waitForEvent('page');
       await githubLink.click();
     });
 
     await test.step('Verify it opens to github.com/funkysi1701', async () => {
       // 6. Verify it opens to github.com/funkysi1701
-      const githubPage = await pagePromise1;
+      const githubPage = await githubPagePromise;
       await expect(githubPage).toHaveURL(/github\.com\/funkysi1701/);
       await githubPage.close();
     });

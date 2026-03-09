@@ -8,7 +8,6 @@ test.describe('Social Media and External Links', () => {
   test('External project links', async ({ page, context }) => {
     let githubCount!: number;
     let githubLinks!: Locator;
-    let href!: string | null;
 
     await test.step('Navigate to https://www.funkysi1701.com/projects/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/projects/
@@ -44,7 +43,7 @@ test.describe('Social Media and External Links', () => {
       // 6. Verify GitHub links open to correct repositories
       if (githubCount > 0) {
         const firstGithubLink = githubLinks.first();
-        href = await firstGithubLink.getAttribute('href');
+        const href = await firstGithubLink.getAttribute('href');
         expect(href).toContain('github.com');
       }
     });
