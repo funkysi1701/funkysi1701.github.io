@@ -5,48 +5,61 @@ import { test, expect } from '../fixtures';
 
 test.describe('Edge Cases and Error Handling', () => {
   test('Page refresh preservation', async ({ page }) => {
-    // 1. Navigate to a blog post
-    await page.goto('https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026');
+    await test.step('Navigate to a blog post', async () => {
+      // 1. Navigate to a blog post
+      await page.goto('https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026');
+    });
 
-    // 2. Scroll halfway down the page
-    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight / 2));
-    await page.waitForTimeout(300);
+    await test.step('Scroll halfway down the page', async () => {
+      // 2. Scroll halfway down the page
+      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight / 2));
+      await page.waitForTimeout(300);
 
-    const scrollBefore = await page.evaluate(() => window.scrollY);
-    console.log('Scroll position before refresh:', scrollBefore);
+      const scrollBefore = await page.evaluate(() => window.scrollY);
+      console.log('Scroll position before refresh:', scrollBefore);
+    });
 
-    // 3. Press F5 or browser refresh button
-    await page.reload();
-
-    // 4. Verify page reloads correctly
-    await expect(page).toHaveURL(/ndc-london-2026/);
-    await expect(page.locator('h1')).toBeVisible();
-
-    // 5. Navigate to search page
-    await page.goto('https://www.funkysi1701.com/search/');
-
-    // 6. Perform a search
-    // The search page uses Algolia DocSearch which may not be immediately available
-    await page.waitForTimeout(2000);
-    const searchInput = page.locator('input[type="search"], input[aria-label="Search"]').first();
-    const searchAvailable = await searchInput.isVisible().catch(() => false);
-    
-    if (searchAvailable) {
-      await searchInput.fill('Azure');
-      await searchInput.press('Enter');
-      await page.waitForLoadState('domcontentloaded');
-
-      // 7. Refresh the page
+    await test.step('Press F5 or browser refresh button', async () => {
+      // 3. Press F5 or browser refresh button
       await page.reload();
+    });
 
-      // 8. Check if search state is preserved (or appropriately reset)
-      const inputValue = await searchInput.inputValue();
-      console.log('Search input after refresh:', inputValue);
-      // Static sites typically don't preserve search state
-    }
+    await test.step('Verify page reloads correctly', async () => {
+      // 4. Verify page reloads correctly
+      await expect(page).toHaveURL(/ndc-london-2026/);
+      await expect(page.locator('h1')).toBeVisible();
+    });
 
-    // Verify page loads correctly after refresh
-    await expect(page).toHaveURL(/\/search\//);
-    await expect(page.locator('nav').first()).toBeVisible();
+    await test.step('Navigate to search page', async () => {
+      // 5. Navigate to search page
+      await page.goto('https://www.funkysi1701.com/search/');
+    });
+
+    await test.step('Perform a search', async () => {
+      // 6. Perform a search
+      // The search page uses Algolia DocSearch which may not be immediately available
+      await page.waitForTimeout(2000);
+      const searchInput = page.locator('input[type="search"], input[aria-label="Search"]').first();
+      const searchAvailable = await searchInput.isVisible().catch(() => false);
+
+      if (searchAvailable) {
+        await searchInput.fill('Azure');
+        await searchInput.press('Enter');
+        await page.waitForLoadState('domcontentloaded');
+
+        // 7. Refresh the page
+        await page.reload();
+
+        // 8. Check if search state is preserved (or appropriately reset)
+        const inputValue = await searchInput.inputValue();
+        console.log('Search input after refresh:', inputValue);
+        // Static sites typically don't preserve search state
+      }
+
+      // Verify page loads correctly after refresh
+      await expect(page).toHaveURL(/\/search\//);
+      await expect(page.locator('nav').first()).toBeVisible();
+    });
+
   });
 });
