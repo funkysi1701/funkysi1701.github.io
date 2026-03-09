@@ -8,7 +8,7 @@
         {{ with .Lastmod }}
           <lastmod>{{ .Format "2006-01-02T15:04:05-07:00" }}</lastmod>
         {{ end }}
-        <changefreq>{{ if .IsHome }}daily{{ else if .IsPage }}monthly{{ else }}weekly{{ end }}</changefreq>
+        <changefreq>{{ if .IsHome }}daily{{ else if and .IsPage (eq .Section "posts") }}monthly{{ else }}weekly{{ end }}</changefreq>
         <priority>{{ if .IsHome }}1.0{{ else if .IsPage }}0.8{{ else }}0.5{{ end }}</priority>
       </url>
     {{ end }}
