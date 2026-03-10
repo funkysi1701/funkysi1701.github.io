@@ -206,6 +206,94 @@ And that hasn't changed at all.
 
 ## The New Developer Skill Stack
 
+If we accept that AI has collapsed the cost of a first draft, then the skill stack shifts upward.
+
+Not because the old skills are irrelevant, but because they're no longer the limiting factor as often.
+
+Syntax still matters. Fundamentals still matter. But the competitive advantage moves towards the parts of the job that are hard to automate: precision, judgment, and system-level thinking.
+
+Think of it as an evolution of the same craft.
+
+### Prompting as a Technical Skill
+
+"Prompting" sounds fluffy until you realise what it actually is in practice: specifying a problem clearly enough that another agent (human or machine) can make progress without guessing.
+
+The better you are at being precise, the more useful the tool becomes.
+
+That means getting specific about:
+
+- The goal (what "done" looks like)
+- The constraints (performance, security, backwards compatibility, tech stack)
+- Inputs/outputs and edge cases
+- The environment (language version, framework, database, deployment model)
+- The trade-offs you care about (simplicity vs flexibility, latency vs cost)
+
+The second part is breaking down problems.
+
+If you ask an AI to "build a feature", you'll get a lot of code, but it will almost always bake in assumptions you didn't mean to make.
+
+The best results come when you treat it like a junior developer with infinite typing speed:
+
+- Ask it to propose an approach first
+- Get it to list assumptions and risks
+- Then implement one slice at a time (and keep the changes small)
+
+Finally, iterative refinement becomes the workflow.
+
+You rarely get the best output on the first prompt. But you can converge quickly if you review the result, point out what is wrong or missing, and re-run with tighter guidance.
+
+In other words, prompting is less about "magic words" and more about feedback loops.
+
+### Code Review Becomes Critical Thinking
+
+When AI can generate 200 lines of code in seconds, reviewing becomes the high-leverage skill.
+
+That review can't just be "does it compile" or "does it look idiomatic". It has to be critical thinking.
+
+AI-generated code often fails in ways that are subtle:
+
+- It handles the happy path beautifully and ignores weird real-world inputs
+- It silently changes behaviour (especially around dates, nulls, and defaults)
+- It introduces concurrency bugs that only show up under load
+- It uses a library/API incorrectly but convincingly
+- It passes tests that are too shallow to be meaningful
+
+The most important thing to review is not the code itself, but the assumptions underneath it.
+
+I find it useful to explicitly ask:
+
+- What does this code assume about the data?
+- What does it assume about ordering, timing, and retries?
+- What happens when dependencies fail?
+- What would I see in logs/metrics if this breaks in production?
+- What tests would convince me this is correct?
+
+This is where experienced developers become even more valuable: not because they can type faster, but because they've seen how systems fail.
+
+### Systems Thinking > Syntax Knowledge
+
+AI is good at syntax and local patterns. It is much worse at understanding the bigger picture.
+
+The developers who thrive in this shift will be the ones who can hold the system in their head:
+
+- How data flows through the application
+- Where the boundaries are between components
+- What needs to be observable in production (logs, metrics, traces)
+- What makes the codebase maintainable for the next person
+
+Systems thinking is what stops an AI-generated "solution" from becoming a future incident.
+
+It's also why the old advice from [The Pragmatic Programmer](/pragmatic-programmer) matters even more now: remember the big picture.
+
+Not "can we generate this function", but:
+
+- Is this the simplest thing that could work?
+- Can we operate it at 2am?
+- Can we change it safely in six months?
+- Are we making the system easier to understand or harder?
+
+AI accelerates output, but it doesn't automatically improve outcomes and that leads to a real risk if we aren't careful.
+
 ## The Risk: Shallow Engineers
 
 ## The Opportunity: 10x Leverage (For the Right People)
