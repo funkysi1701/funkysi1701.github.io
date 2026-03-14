@@ -223,12 +223,10 @@ The better you are at being precise, the more useful the tool becomes.
 That means getting specific about:
 
 - The goal (what "done" looks like)
-- The constraints (performance, security, backwards compatibility, tech stack)
+- The constraints (performance, security, Backward compatibility, tech stack)
 - Inputs/outputs and edge cases
 - The environment (language version, framework, database, deployment model)
 - The trade-offs you care about (simplicity vs flexibility, latency vs cost)
-
-Breaking down problems is important.
 
 If you ask an AI to "build a feature", you'll get a lot of code, but it will almost always bake in assumptions you didn't mean to make.
 
@@ -448,6 +446,18 @@ So the role is not "director instead of builder." It is "builder with broader le
 We are not giving up craftsmanship.
 
 We are applying craftsmanship at a higher level of abstraction.
+
+But let's be honest about the uncomfortable part of this question.
+
+If one developer with AI can now do the work that previously required three, the natural business response is to hire fewer developers. That is already happening. It is likely to continue.
+
+The optimistic framing — that AI creates more software demand and therefore more developer jobs — is plausible in the long run. But it does not help the developer who is looking for work today, and it does not guarantee the transition is smooth or fair.
+
+I am not going to pretend the economics are simple.
+
+What I do believe is that developers who understand systems, take ownership of quality, and use AI as a serious tool will remain competitive for the work that does exist. That work will increasingly require judgment, not just output.
+
+The shift is real. The disruption is real. But the craft is not going away — it is just raising its entry bar.
 
 ## Conclusion – My Opinion
 
