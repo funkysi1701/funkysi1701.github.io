@@ -16,8 +16,8 @@ copyright = false
 featured = false
 draft = false
 aliases = [
-  "/ai-blog-post",
-  "/posts/ai-blog-post"
+  "/ai-wont-replace-developers",
+  "/posts/ai-wont-replace-developers"
 ]
 +++
 
@@ -319,7 +319,7 @@ So yes, AI can make us faster. But if we use it without discipline, it can also 
 
 The antidote is simple, even if not always easy: use AI to accelerate execution, not to bypass understanding.
 
-## The Opportunity: 10x Leverage (For the Right People)
+## The Opportunity: Increased Leverage (For the Right People)
 
 The upside is huge for developers who combine AI with strong engineering habits.
 
