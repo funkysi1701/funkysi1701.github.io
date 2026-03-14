@@ -228,7 +228,7 @@ That means getting specific about:
 - The environment (language version, framework, database, deployment model)
 - The trade-offs you care about (simplicity vs flexibility, latency vs cost)
 
-The second part is breaking down problems.
+Breaking down problems is important.
 
 If you ask an AI to "build a feature", you'll get a lot of code, but it will almost always bake in assumptions you didn't mean to make.
 
@@ -343,7 +343,7 @@ If your fundamentals are weak, AI multiplies your mistakes.
 
 That is the real divide.
 
-## Practical Advice for Developers (Actionable Section)
+## Practical Advice for Developers
 
 If you want to stay relevant and thrive in this shift, here is what I would do right now.
 
@@ -453,19 +453,13 @@ We are applying craftsmanship at a higher level of abstraction.
 
 I do not believe AI will eliminate software developers.
 
-I do believe it will split the field.
+Developers who keep learning, and take ownership of outcomes will become more effective.
 
-Developers who keep learning, think in systems, and take ownership of outcomes will become dramatically more effective.
-
-Developers who treat AI as a shortcut around understanding will struggle.
-
-This shift is uncomfortable, especially during a period where jobs already feel uncertain. I feel that uncertainty personally right now.
-
-But I am still optimistic.
+Developers who treat AI as a shortcut blindly trusting its output will struggle.
 
 The demand for good software is not shrinking. If anything, it is growing. And as the cost of building falls, the value of engineering judgment rises.
 
-For me, the path is clear: adapt, stay curious, sharpen fundamentals, and use AI as a serious tool without surrendering responsibility.
+For me, I need to adapt, stay curious, deepen my fundamental skills, and use AI as a serious tool but remember to question it.
 
 ## Call to Action
 
