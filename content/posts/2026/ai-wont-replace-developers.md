@@ -9,7 +9,7 @@ cover = "/images/2026/ai-wont-replace-developers.png"
 images = ['/images/2026/ai-wont-replace-developers.png']
 tags = ["ai", "software-development", "career", "engineering", "productivity"]
 categories = ["tech"]
-description = "AI is changing software development fast. The winners won't be fastest typists, but engineers who think clearly, design well, and own outcomes."
+description = "AI is changing software development fast. The winners won't be the fastest typists, but engineers who think clearly, design well, and own outcomes."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -23,11 +23,11 @@ aliases = [
 
 ## Introduction – The Shift We are Living Through
 
-As I write this I have just been made redundant. AI is not being used to explain this particular redundancy but many across the industry are.
+As I write this, I have just been made redundant. AI is not being used to explain this particular redundancy, but it is being used to explain many redundancies across the industry.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I just got laid off..... Again...... I am still in shock. I loved my new job and was creating great impact but here we are again. Layoffs are not personal so I am ok but yeh will be looking for something new...... Again......</p>&mdash; Debbie O&#39;Brien (@debs_obrien) <a href="https://twitter.com/debs_obrien/status/2027171846743892254?ref_src=twsrc%5Etfw">February 27, 2026</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-I listened to an excellent talk at [NDC London](/ndc-london-2026) by Debbie O'Brien about using AI to do amazing things with [Playwright MCP](https://youtu.be/Numb52aJkJw). If people that are using AI to its fullest are losing their jobs to AI, what hope is there for our industry? Are we all going to be writing AI prompts and that's it?
+I listened to an excellent talk at [NDC London](/ndc-london-2026) by Debbie O'Brien about using AI to do amazing things with [Playwright MCP](https://youtu.be/Numb52aJkJw).  If people who are using AI to its fullest are losing their jobs to AI, what hope is there for our industry? Are we all going to be writing AI prompts and that's it?
 
 But let's stop for a minute. Software development is an ever-changing industry. There is always something new to learn and this AI craze is no different.
 
@@ -292,7 +292,7 @@ Not "can we generate this function", but:
 - Can we change it safely in six months?
 - Are we making the system easier to understand or harder?
 
-AI accelerates output, but it doesn't automatically improve outcomes and that leads to a real risk if we aren't careful.
+AI accelerates output, but it doesn't automatically improve outcomes, and that creates real risk if we aren't careful.
 
 ## The Risk: Shallow Engineers
 
@@ -430,7 +430,7 @@ Both groups win when curiosity stays high and ego stays low.
 
 ## The Big Question: Are We Becoming Directors Instead of Builders?
 
-Partly, yes and that is not a bad thing.
+Partly, yes, and that is not a bad thing.
 
 More of our time is moving toward direction:
 
