@@ -463,13 +463,15 @@ The shift is real. The disruption is real. But the craft is not going away — i
 
 I do not believe AI will eliminate software developers.
 
-Developers who keep learning, and take ownership of outcomes will become more effective.
+I do believe it will split the field.
 
-Developers who treat AI as a shortcut blindly trusting its output will struggle.
+Developers who keep learning, think in systems, and take ownership of outcomes will become more effective — not despite AI, but partly because of it.
 
-The demand for good software is not shrinking. If anything, it is growing. And as the cost of building falls, the value of engineering judgment rises.
+Developers who treat AI as a shortcut, blindly trusting its output without understanding the system underneath, will increasingly struggle to hold ground.
 
-For me, I need to adapt, stay curious, deepen my fundamental skills, and use AI as a serious tool but remember to question it.
+The disruption happening right now is real. But I think the long-term demand for engineers who can reason clearly, design well, and take responsibility for what they ship is going to hold.
+
+The path forward is straightforward even if the road is uncertain: stay curious, deepen the fundamentals, use AI seriously, and never stop questioning the output — including my own.
 
 ## Call to Action
 
