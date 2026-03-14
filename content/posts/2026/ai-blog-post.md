@@ -1,5 +1,5 @@
 +++
-title = "AI Blog Post Title TBC"
+title = "AI Won't Replace Developers, But It Will Redefine Us"
 date = "2026-03-10T09:00:00Z"
 year = "2026"
 month = "2026-03"
@@ -7,17 +7,17 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701"
 cover = "/images/2026/welcome-2026.png"
 images = ['/images/2026/welcome-2026.png']
-tags = []
+tags = ["ai", "software-development", "career", "engineering", "productivity"]
 categories = ["tech"]
-description = ""
+description = "AI is changing software development fast. The winners won't be fastest typists, but engineers who think clearly, design well, and own outcomes."
 showFullContent = false
 readingTime = true
 copyright = false
 featured = false
 draft = false
 aliases = [
-  "/2025-in-review-and-2026-goals",
-  "/posts/2025-in-review-and-2026-goals"
+  "/ai-blog-post",
+  "/posts/ai-blog-post"
 ]
 +++
 
@@ -27,9 +27,9 @@ As I write this I have just been made redundant. AI is not being used to explain
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I just got laid off..... Again...... I am still in shock. I loved my new job and was creating great impact but here we are again. Layoffs are not personal so I am ok but yeh will be looking for something new...... Again......</p>&mdash; Debbie O&#39;Brien (@debs_obrien) <a href="https://twitter.com/debs_obrien/status/2027171846743892254?ref_src=twsrc%5Etfw">February 27, 2026</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-I listened to an excellent talk at [NDC London](/ndc-london-2026) by Debbie O'Brien about using AI to do amazing things with [Playwright MCP](https://youtu.be/Numb52aJkJw). If people that are using AI to its fullest are losing their jobs to AI, what hope is their for our industry, are we all going to be writing AI prompts and that's it?
+I listened to an excellent talk at [NDC London](/ndc-london-2026) by Debbie O'Brien about using AI to do amazing things with [Playwright MCP](https://youtu.be/Numb52aJkJw). If people that are using AI to its fullest are losing their jobs to AI, what hope is there for our industry? Are we all going to be writing AI prompts and that's it?
 
-But lets stop for a minute. Software Development is an ever changing industry. There is always something new to learn and this AI craze is no different.
+But let's stop for a minute. Software development is an ever-changing industry. There is always something new to learn and this AI craze is no different.
 
 The role of the developer has always shifted as tools improved. We moved from writing assembly to high-level languages, from manual deployments to automated pipelines, and from managing servers to deploying infrastructure with a few commands.
 
@@ -296,16 +296,179 @@ AI accelerates output, but it doesn't automatically improve outcomes and that le
 
 ## The Risk: Shallow Engineers
 
+The biggest danger is not that AI replaces us.
+
+The biggest danger is that it makes us lazy.
+
+If we outsource too much thinking to tools, we can accidentally create a generation of engineers who can ship quickly but cannot explain what they shipped, why it works, or how to fix it when it fails.
+
+That risk shows up in subtle ways:
+
+- Copying generated code without understanding the trade-offs
+- Accepting tests because they are green, even when they don't test anything meaningful
+- Mistaking confidence in the AI's tone for correctness in the implementation
+- Losing touch with fundamentals like debugging, data structures, networking, and performance
+
+This is especially dangerous under delivery pressure. If a team rewards speed above all else, AI can amplify the wrong behaviour: lots of output, little understanding.
+
+And that debt compounds.
+
+Six months later, nobody trusts the codebase, incidents increase, and every change becomes risky.
+
+So yes, AI can make us faster. But if we use it without discipline, it can also make us shallow.
+
+The antidote is simple, even if not always easy: use AI to accelerate execution, not to bypass understanding.
+
 ## The Opportunity: 10x Leverage (For the Right People)
+
+The upside is huge for developers who combine AI with strong engineering habits.
+
+When you can generate a solid first draft in minutes, you can spend more time where value actually lives:
+
+- Better problem framing
+- Better architecture decisions
+- Better test strategy
+- Better operational design
+- Better developer experience for your team
+
+This is where leverage appears.
+
+One thoughtful developer with AI support can now do the kind of end-to-end work that used to require more hand-offs and more waiting.
+
+Not because they became magically smarter overnight, but because the mechanical drag has been reduced.
+
+If your fundamentals are strong, AI multiplies your impact.
+
+If your fundamentals are weak, AI multiplies your mistakes.
+
+That is the real divide.
 
 ## Practical Advice for Developers (Actionable Section)
 
+If you want to stay relevant and thrive in this shift, here is what I would do right now.
+
+### 1. Treat AI Output as a Draft, Not Truth
+
+Assume every generated answer is a proposal.
+
+Read it. Challenge it. Test it.
+
+Never merge code you cannot explain to another developer.
+
+### 2. Strengthen Your Core Engineering Muscles
+
+Double down on:
+
+- Debugging
+- Testing strategy
+- System design
+- Observability
+- Performance and security fundamentals
+
+These are durable skills and AI makes them more valuable, not less.
+
+### 3. Get Better at Problem Framing
+
+Before asking AI to implement anything, write down:
+
+- The problem in one sentence
+- The constraints
+- The non-goals
+- The acceptance criteria
+
+This habit improves both the AI output and your own clarity.
+
+### 4. Work in Small, Reviewable Slices
+
+Ask AI for smaller changes, not giant rewrites.
+
+Small slices make it easier to reason about behaviour, review quality, and rollback safely.
+
+### 5. Raise the Bar for Code Reviews
+
+Review assumptions, failure modes, and operational impact, not just style.
+
+A useful question in every review: "What breaks first in production?"
+
+### 6. Build a Personal AI Workflow
+
+Create repeatable prompt patterns for tasks you do often:
+
+- Writing tests
+- Refactoring legacy code
+- Generating migration scripts
+- Creating docs from code
+
+Treat these as reusable tools in your engineering toolbox.
+
+### 7. Keep Shipping Real Things
+
+The best learning still comes from production reality.
+
+Build, deploy, monitor, and improve. Feedback from real users teaches lessons no model can replace.
+
 ## What This Means for Juniors vs Seniors
+
+AI changes the game for everyone, but not in exactly the same way.
+
+For junior developers, AI can be a force multiplier for learning if used correctly.
+
+It can explain unfamiliar concepts, generate examples, and speed up experimentation. But juniors still need mentorship and deliberate practice to build judgment.
+
+If you skip the fundamentals and rely only on generated output, you'll progress fast on paper and slowly in reality.
+
+For senior developers, the expectation shifts from individual output to system-level impact.
+
+Seniors become the multipliers of multipliers: setting standards, designing guardrails, mentoring teams, and ensuring AI usage improves quality rather than eroding it.
+
+In short:
+
+- Juniors should use AI to learn faster
+- Seniors should use AI to scale better decisions
+
+Both groups win when curiosity stays high and ego stays low.
 
 ## The Big Question: Are We Becoming Directors Instead of Builders?
 
+Partly, yes and that is not a bad thing.
+
+More of our time is moving toward direction:
+
+- Defining intent
+- Making trade-offs
+- Reviewing outputs
+- Orchestrating systems
+
+But we are still builders.
+
+Good directors in software are grounded in reality. They understand implementation details, constraints, and failure modes. They can still get into the code when needed.
+
+So the role is not "director instead of builder." It is "builder with broader leverage."
+
+We are not giving up craftsmanship.
+
+We are applying craftsmanship at a higher level of abstraction.
+
 ## Conclusion – My Opinion
+
+I do not believe AI will eliminate software developers.
+
+I do believe it will split the field.
+
+Developers who keep learning, think in systems, and take ownership of outcomes will become dramatically more effective.
+
+Developers who treat AI as a shortcut around understanding will struggle.
+
+This shift is uncomfortable, especially during a period where jobs already feel uncertain. I feel that uncertainty personally right now.
+
+But I am still optimistic.
+
+The demand for good software is not shrinking. If anything, it is growing. And as the cost of building falls, the value of engineering judgment rises.
+
+For me, the path is clear: adapt, stay curious, sharpen fundamentals, and use AI as a serious tool without surrendering responsibility.
 
 ## CTA
 
-As mentioned at the start of this article I am .NET Developer who is looking for work so if you can help at all please reach out. Also if you are in the same position do reach out, together we can help each other.
+As mentioned at the start of this article, I am a .NET developer looking for my next role. If you know of any opportunities where I could help, please reach out.
+
+And if you are in the same position, message me as well. We are stronger when we support each other.
