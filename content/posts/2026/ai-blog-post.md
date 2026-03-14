@@ -1,12 +1,12 @@
 +++
 title = "AI Won't Replace Developers, But It Will Redefine Us"
-date = "2026-03-10T09:00:00Z"
+date = "2026-03-14T09:00:00Z"
 year = "2026"
 month = "2026-03"
 author = "funkysi1701"
 authorTwitter = "funkysi1701"
-cover = "/images/2026/welcome-2026.png"
-images = ['/images/2026/welcome-2026.png']
+cover = "/images/2026/ai-wont-replace-developers.png"
+images = ['/images/2026/ai-wont-replace-developers.png']
 tags = ["ai", "software-development", "career", "engineering", "productivity"]
 categories = ["tech"]
 description = "AI is changing software development fast. The winners won't be fastest typists, but engineers who think clearly, design well, and own outcomes."
@@ -466,8 +466,6 @@ But I am still optimistic.
 The demand for good software is not shrinking. If anything, it is growing. And as the cost of building falls, the value of engineering judgment rises.
 
 For me, the path is clear: adapt, stay curious, sharpen fundamentals, and use AI as a serious tool without surrendering responsibility.
-
-## CTA
 
 As mentioned at the start of this article, I am a .NET developer looking for my next role. If you know of any opportunities where I could help, please reach out.
 
