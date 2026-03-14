@@ -223,7 +223,7 @@ The better you are at being precise, the more useful the tool becomes.
 That means getting specific about:
 
 - The goal (what "done" looks like)
-- The constraints (performance, security, Backward compatibility, tech stack)
+- The constraints (performance, security, backward compatibility, tech stack)
 - Inputs/outputs and edge cases
 - The environment (language version, framework, database, deployment model)
 - The trade-offs you care about (simplicity vs flexibility, latency vs cost)
@@ -471,7 +471,7 @@ Developers who treat AI as a shortcut, blindly trusting its output without under
 
 The disruption happening right now is real. But I think the long-term demand for engineers who can reason clearly, design well, and take responsibility for what they ship is going to hold.
 
-The path forward is straightforward even if the road is uncertain: stay curious, deepen the fundamentals, use AI seriously, and never stop questioning the output — including my own.
+The path forward is straightforward even if the road is uncertain: stay curious, deepen the fundamentals, use AI seriously, and never stop questioning the output.
 
 ## Call to Action
 
