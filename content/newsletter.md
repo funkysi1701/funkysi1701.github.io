@@ -65,6 +65,8 @@ Here's what I've been writing about lately:
 ## View Latest Newsletter
 
 - [January 2026](https://us11.campaign-archive.com/?u=110e046407cf8a34c93d56a4c&id=49cfe48cec)
+- [February 2026](https://us11.campaign-archive.com/?u=110e046407cf8a34c93d56a4c&id=b88bec7dc1c)
+- [March 2026](https://us11.campaign-archive.com/?u=110e046407cf8a34c93d56a4c&id=3a95a0b889)
 
 ## 🎯 Ready to Join?
 
