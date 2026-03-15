@@ -57,26 +57,26 @@ I am new to parkrun and only started in 2025, below are the courses and times I 
       </td>
       <td style="text-align: center; padding: 5px; position: relative;">
         <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">39:46</div>
-        <div style="background: #4CAF50; height: 180px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="background: #2196F3; height: 180px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
         <div style="font-size: 10px; margin-top: 5px;">10 Jan</div>
       </td>
       <td style="text-align: center; padding: 5px; position: relative;">
         <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">39:42</div>
-        <div style="background: #4CAF50; height: 179px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="background: #2196F3; height: 179px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
         <div style="font-size: 10px; margin-top: 5px;">24 Jan</div>
       </td>
       <td style="text-align: center; padding: 5px; position: relative;">
         <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">38:21</div>
-        <div style="background: #4CAF50; height: 168px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="background: #2196F3; height: 168px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
         <div style="font-size: 10px; margin-top: 5px;">14 Feb</div>
+      </td>
+      <td style="text-align: center; padding: 5px; position: relative;">
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">39:49</div>
+        <div style="background: #2196F3; height: 180px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="font-size: 10px; margin-top: 5px;">14 Mar</div>
       </td>
     </tr>
   </table>
-  <div style="margin-top: 15px; font-size: 12px; text-align: center; color: #666;">
-    <span style="display: inline-block; margin: 0 10px;"><span style="display: inline-block; width: 15px; height: 15px; background: #4CAF50; border-radius: 2px; vertical-align: middle;"></span> Personal Best</span>
-    <span style="display: inline-block; margin: 0 10px;"><span style="display: inline-block; width: 15px; height: 15px; background: #2196F3; border-radius: 2px; vertical-align: middle;"></span> Regular Time</span>
-    <span style="display: inline-block; margin: 0 10px;"><span style="display: inline-block; width: 15px; height: 15px; background: #FF9800; border-radius: 2px; vertical-align: middle;"></span> Slower Run</span>
-  </div>
 </div>
 
 ## 2026
@@ -84,6 +84,7 @@ I am new to parkrun and only started in 2025, below are the courses and times I 
 | Event/Run                                                                 | Date                | Location                | Results        | min/km  |
 |---------------------------------------------------------------------------|---------------------|-------------------------|----------------|---------|
 | Run the Runway                                                            | 21 March 2026       | Doncaster               |                |         |
+| Vermuyden Way parkrun                                                     | 14 March 2026       | Vermuyden Way           | 0h 39m 49s     | 07m 57s |
 | Scunthorpe parkrun                                                        | 14 February 2026    | Scunthorpe              | 0h 38m 21s     | 07m 40s |
 | Vermuyden Way parkrun                                                     | 24 January 2026     | Vermuyden Way           | 0h 39m 42s     | 07m 56s |
 | Vermuyden Way parkrun                                                     | 17 January 2026     | Vermuyden Way           | 1h 17m 00s (v) | 15m 24s |
