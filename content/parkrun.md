@@ -57,17 +57,17 @@ I am new to parkrun and only started in 2025, below are the courses and times I 
       </td>
       <td style="text-align: center; padding: 5px; position: relative;">
         <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">39:46</div>
-        <div style="background: #4CAF50; height: 180px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="background: #2196F3; height: 180px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
         <div style="font-size: 10px; margin-top: 5px;">10 Jan</div>
       </td>
       <td style="text-align: center; padding: 5px; position: relative;">
         <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">39:42</div>
-        <div style="background: #4CAF50; height: 179px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="background: #2196F3; height: 179px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
         <div style="font-size: 10px; margin-top: 5px;">24 Jan</div>
       </td>
       <td style="text-align: center; padding: 5px; position: relative;">
         <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">38:21</div>
-        <div style="background: #4CAF50; height: 168px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="background: #2196F3; height: 168px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
         <div style="font-size: 10px; margin-top: 5px;">14 Feb</div>
       </td>
       <td style="text-align: center; padding: 5px; position: relative;">
@@ -77,11 +77,6 @@ I am new to parkrun and only started in 2025, below are the courses and times I 
       </td>
     </tr>
   </table>
-  <div style="margin-top: 15px; font-size: 12px; text-align: center; color: #666;">
-    <span style="display: inline-block; margin: 0 10px;"><span style="display: inline-block; width: 15px; height: 15px; background: #4CAF50; border-radius: 2px; vertical-align: middle;"></span> Personal Best</span>
-    <span style="display: inline-block; margin: 0 10px;"><span style="display: inline-block; width: 15px; height: 15px; background: #2196F3; border-radius: 2px; vertical-align: middle;"></span> Regular Time</span>
-    <span style="display: inline-block; margin: 0 10px;"><span style="display: inline-block; width: 15px; height: 15px; background: #FF9800; border-radius: 2px; vertical-align: middle;"></span> Slower Run</span>
-  </div>
 </div>
 
 ## 2026
