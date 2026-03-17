@@ -31,11 +31,11 @@ test.describe('Performance and Technical', () => {
       });
     });
 
-    await test.step('Verify page loads in under 3 seconds on good connection', async () => {
-      // 6. Verify page loads in under 3 seconds on good connection
+    await test.step('Verify page load performance (3s goal, 12s CI tolerance)', async () => {
+      // 6. Verify page load performance: target < 3s on a good connection, with 12s allowed in CI
       const totalLoadTime = endTime - startTime;
       console.log(`Page load time: ${totalLoadTime}ms`);
-      expect(totalLoadTime).toBeLessThan(12000); // Allowing 12s for slower CI connections
+      expect(totalLoadTime).toBeLessThan(12000); // Allowing up to 12s for slower CI connections
 
       // First contentful paint within reasonable time
       console.log(`First contentful paint: ${performanceMetrics.firstPaint}ms`);
