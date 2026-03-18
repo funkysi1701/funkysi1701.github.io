@@ -27,7 +27,6 @@ test.describe('Homepage and Navigation', () => {
       // 4. Click hamburger menu to expand
       await expect(hamburger).toBeVisible();
       await hamburger.click();
-      await page.waitForTimeout(500); // Wait for animation
     });
 
     await test.step('Verify all navigation items are accessible', async () => {
@@ -45,15 +44,17 @@ test.describe('Homepage and Navigation', () => {
       // Test navigation on Projects page
       const hamburger2 = page.getByRole('button', { name: 'Toggle navigation' }).first();
       await hamburger2.click();
-      await page.waitForTimeout(800);
-      await page.getByRole('link', { name: 'Projects', exact: true }).first().click();
+      const projectsLink = page.getByRole('link', { name: 'Projects', exact: true }).first();
+      await projectsLink.waitFor({ state: 'visible' });
+      await projectsLink.click();
       await expect(page).toHaveURL(/\/projects\//);
 
       // Test navigation on Contact page
       const hamburger3 = page.getByRole('button', { name: 'Toggle navigation' }).first();
       await hamburger3.click();
-      await page.waitForTimeout(800);
-      await page.getByRole('link', { name: 'Contact' }).first().click();
+      const contactLink = page.getByRole('link', { name: 'Contact' }).first();
+      await contactLink.waitFor({ state: 'visible' });
+      await contactLink.click();
       await expect(page).toHaveURL(/\/contact\//);
     });
 
