@@ -23,7 +23,7 @@ aliases = [
     "/2019/03/19/azure-key-vault"
 ]
 +++
-[Azure Key Vault](https://docs.microsoft.com/en-gb/azure/key-vault/) is a secure way of storing your keys, certificates and secrets so your application can access everything it needs to but you don’t have them being stored insecurely anywhere such as in source control.
+[Azure Key Vault](https://learn.microsoft.com/en-gb/azure/key-vault/) is a secure way of storing your keys, certificates and secrets so your application can access everything it needs to but you don’t have them being stored insecurely anywhere such as in source control.
 
 I have been wanting to give Azure Key Vault a try for a while now as it can make use of Azure Active Directory to give your web app an identity so it can authenticate itself into the key vault to access secrets. Pretty clever but with a lot of moving parts a bit complex.
 
