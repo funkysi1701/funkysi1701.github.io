@@ -26,7 +26,7 @@ aliases = [
 +++
 For a while I have been threatening to try a user group. Well this week I went to my first meeting.
 
-The user group I went to is called [Leeds Sharp](https://www.meetup.com/Leeds-Sharp/) who are celebrating their third birthday, happy birthday guys and thanks for the cake.
+The user group I went to is called [Leeds Sharp](https://www.meetup.com/leeds-sharp/) who are celebrating their third birthday, happy birthday guys and thanks for the cake.
 
 The talk was all about F#. I know nothing about [F#](https://fsharp.org/) other than it is in visual studio. The speaker was [Phil Trelford](https://twitter.com/ptrelford) an expert in F# and former game developer who regularly speaks at conferences. Phil is an expert programmer, one of his stories was that while he had a broken arm, he wrote a copy of Excel in F#. Even with two hands I wouldn’t know where to start on something like that.
 
