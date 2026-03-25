@@ -75,7 +75,7 @@ It will have not escaped your notice that AI is everywhere, and it is no differe
 
 ## SQL Management Studio
 
-I have not used SQL Management Studio for a while as I have trying out Azure Data Studio. However a new Preview of SQL Server Management Studio is now [avaliable](https://learn.microsoft.com/en-us/sql/ssms/ssms-21/release-notes-21?view=sql-server-ver16). This version is 64bit and is based on Visual Studio engine, it even shares the same installer.
+I have not used SQL Management Studio for a while as I have trying out Azure Data Studio. However a new Preview of SQL Server Management Studio is now [avaliable](https://learn.microsoft.com/en-us/ssms/ssms-21/release-notes-21?view=sql-server-ver16). This version is 64bit and is based on Visual Studio engine, it even shares the same installer.
 
 ## Conclusion
 

@@ -34,7 +34,7 @@ My app makes use of the [HIBP API](https://haveibeenpwned.com/API/v3) created by
 
 You may be wondering why I am not making use of Azure Functions to build this API. Azure functions is certainly a great technology that is worth learning about. However I have done a little bit with them in the past and I don’t believe I would be able to learn all the things I want to if I used Azure Functions. My primary goal is learning and sharing that learning via this blog. It may well be I move to using Azure Functions later on.
 
-Another tech I am keen to learn more about is [Azure Key Vault](https://docs.microsoft.com/en-gb/azure/key-vault/). This is a technology that allows the securing of keys, connection strings and certificates. I want my app to securely get keys and security information without any of it having to be committed to source code or shared insecurely.
+Another tech I am keen to learn more about is [Azure Key Vault](https://learn.microsoft.com/en-gb/azure/key-vault/). This is a technology that allows the securing of keys, connection strings and certificates. I want my app to securely get keys and security information without any of it having to be committed to source code or shared insecurely.
 
 Monitoring my app is also a key learning from me. I use application insights already, but I would like to extend my understanding of this so telemetry can be fed back into the build and bad deployments stopped.
 
