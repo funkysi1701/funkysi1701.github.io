@@ -151,7 +151,7 @@ The final session I attended focused on building resilient systems in Azure from
 
 ### Networking Break: JetBrains Rider Team
 
-I skipped one session to have an extended conversation with the [JetBrains Rider](https://www.jetbrains.com/rider) team at their booth. These unstructured conversations are often where you get the most value at conferences – I am a big fan of Visual Studio, but I have never tried Rider, this informal chat has encouraged me to download Rider and give it a try.
+I skipped one session to have an extended conversation with the [JetBrains Rider](https://www.jetbrains.com/rider/) team at their booth. These unstructured conversations are often where you get the most value at conferences – I am a big fan of Visual Studio, but I have never tried Rider, this informal chat has encouraged me to download Rider and give it a try.
 
 ## Final Thoughts
 
