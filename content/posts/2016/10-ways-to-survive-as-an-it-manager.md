@@ -63,7 +63,7 @@ Businesses need to make money. If the one you work for isn’t making enough mon
 
 ## 9. Ask for help
 
-Don’t be afraid of asking for help. There are lots of places to look for help. Other departments could take more on, you could recruit extra help, you could hire external contractors. You can ask questions on support forums like [ServerFault](https://serverfault.com/) or [StackOverflow](https://stackoverflow.com/), many software re-sellers or other suppliers are a good point of contact for questions about things they supply. Microsoft Support was also invaluable for a server issue.
+Don’t be afraid of asking for help. There are lots of places to look for help. Other departments could take more on, you could recruit extra help, you could hire external contractors. You can ask questions on support forums like [ServerFault](https://serverfault.com/) or [StackOverflow](https://stackoverflow.com/questions), many software re-sellers or other suppliers are a good point of contact for questions about things they supply. Microsoft Support was also invaluable for a server issue.
 
 ## 10. Think about disasters
 
