@@ -34,7 +34,7 @@ The original WordPress site can currently be found at https://www.pwnedpass.com/
 
 Most of my WordPress blogs have been imported into dev.to and a few extra have been written on this platform. I like dev.to it is a wonderful place to share content and it has one or two extra features I like.
 
-dev.to has an integration with Stackbit/Netlify and this became https://dev.funkysi1701.com. I like having a personal site, but having the same content as dev.to. To add content to this site all I need to do is write it on dev.to and some magic will go on behind the scenes and new content will be published.
+dev.to has an integration with Stackbit/Netlify and this became https://www.funkysi1701.com. I like having a personal site, but having the same content as dev.to. To add content to this site all I need to do is write it on dev.to and some magic will go on behind the scenes and new content will be published.
 
 However, as a developer I don't like magic, I want to understand what is going on a fiddle with all the settings and make it do what I want.
 
