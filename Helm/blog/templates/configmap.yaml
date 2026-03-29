@@ -6,5 +6,3 @@ metadata:
     {{- include "blog.labels" . | nindent 4 }}
 data:
   {{- $cfg := index .Values.configuration .Release.Namespace }}
-  HUGO_BASEURL: "{{ $cfg.HUGO_BASEURL }}"
-  HUGO_ENVIRONMENT: "{{ $cfg.HUGO_ENVIRONMENT }}"
