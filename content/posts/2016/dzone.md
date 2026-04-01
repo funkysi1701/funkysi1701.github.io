@@ -34,7 +34,7 @@ The Dzone website allows users to submit links to content and I have been submit
 
   With over 1 Million members, DZone.com is one of the web’s largest communities and publishers of technical content for software professionals. Developers from all over the world come to DZone for the latest and best content to hone their skills and advance their careers.
 
-Well this week I have been invited to join the [MVB](https://dzone.com/pages/mvb) (Most Valuable Blogger) programme. The hope is that more of my readers will find my content from the DZone website.
+Well this week I have been invited to join the [MVB](https://dzone.com/pages/contribute) (Most Valuable Blogger) programme. The hope is that more of my readers will find my content from the DZone website.
 
 The DZone team will soon start sharing my content on the DZone website and I hope this will result in even more people reading what I have to say.
 
