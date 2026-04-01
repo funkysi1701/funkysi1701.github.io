@@ -66,4 +66,4 @@ To install just run wget `https://copy.com/install/linux/Copy.tgz` and extract t
 
 This command syncs the folder you have set in -root with copy.com.
 
-The last thing I did was create a php file running on the webserver that allows you to scroll through the different images. I experimented with using javascript to auto scroll through the images but I found the manual way more useful. All the files I have written I have added to my [github](https://github.com/funkysi1701/RaspberryPi) page.
+The last thing I did was create a php file running on the webserver that allows you to scroll through the different images. I experimented with using javascript to auto scroll through the images but I found the manual way more useful. All the files I have written I have added to my [GitHub](https://github.com/funkysi1701/RaspberryPi) page.
