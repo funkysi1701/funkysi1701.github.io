@@ -36,7 +36,7 @@ My first thought was to make use of the DNSimple API. [https://developer.dnsimpl
 
 Azure now has a DNS section. You can go to the portal, add a DNS zone, and then add as many A, CNAME and MX records as you need. This is of course no better than doing it manually.
 
-Azure offers a [SDK](https://docs.microsoft.com/en-us/azure/dns/dns-sdk) and an example Visual Studio project. Lets look at how it works.
+Azure offers a [SDK](https://learn.microsoft.com/en-us/azure/dns/dns-sdk) and an example Visual Studio project. Lets look at how it works.
 
 First you need to setup some credentials to use your Azure subscription. The easiest way to do this is with powershell.
 

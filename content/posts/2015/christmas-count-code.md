@@ -30,7 +30,7 @@ But what about if you are a programmer, how can you count down the days till Chr
 
 Each day a new challenge is available. So far the challenges are related to Christmas and Santa delivering his presents. The challenge is split into two closely linked parts. You are given a randomly generated input and your need to give an answer using a short string or number.
 
-The challenges are getting harder, with some completely defeating me, (not surprising with my limited programming knowledge). The challenges are language independent so you could try them in javascript or c#. I have been using Visual Studio and C# and my code is viewable on [github](https://github.com/funkysi/AdventSolution).
+The challenges are getting harder, with some completely defeating me, (not surprising with my limited programming knowledge). The challenges are language independent so you could try them in javascript or c#. I have been using Visual Studio and C# and my code is viewable on [github](https://github.com/funkysi1701/AdventSolution).
 
 So far I have completed Challenges 1 to 6 and also 10. Partly because I found challenge 7 very difficult but I am hoping to have another go at it.
 

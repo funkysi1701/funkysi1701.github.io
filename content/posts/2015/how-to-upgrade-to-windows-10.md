@@ -26,7 +26,7 @@ aliases = [
 +++
 Microsoft are releasing a new operating system on July 29th called Windows 10.
 
-If you have questions about Windows 10 watch this video by [Scott Hansleman](https://www.hanselman.com/blog/Windows10IsComingheresWhatToTellNontechnicalParent.aspx). He explains how to upgrade from Windows 7 and 8 to Windows 10 and what to expect after you upgrade.
+If you have questions about Windows 10 watch this video by [Scott Hansleman](https://www.hanselman.com/blog/windows-10-is-comingheres-what-to-tell-nontechnical-parent). He explains how to upgrade from Windows 7 and 8 to Windows 10 and what to expect after you upgrade.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nuCpdlMFvUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

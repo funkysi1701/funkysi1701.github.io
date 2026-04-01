@@ -49,4 +49,4 @@ This made me look at the error message again. Overflow suggest something being t
 
 Integer has a size limit of 32,767 and the value I was trying to pass into iProperty was 32779. This was what was causing the problem, my database had grown to such a size that Integer was too small, I needed to change it to a Long Integer. Long has a size of 2,147,483,647 so my database should keep working for a while more.
 
-The famous programming help website [Stack Overflow](https://stackoverflow.com/) is named after such an error. This error shows how difficult it is to decide what variable type to use, as you don’t know how quickly your database will grow.
+The famous programming help website [Stack Overflow](https://stackoverflow.com/questions) is named after such an error. This error shows how difficult it is to decide what variable type to use, as you don’t know how quickly your database will grow.

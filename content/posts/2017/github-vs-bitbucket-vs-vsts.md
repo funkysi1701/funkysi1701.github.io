@@ -55,7 +55,7 @@ At my last job we used Bitbucket extensively for all our projects. All the code 
 
 ![](/images/2017/Visual-Studio-Team-Services.png)
 
-- URL: https://www.visualstudio.com/team-services/
+- URL: https://azure.microsoft.com/services/devops/ 
 - Private Repositories: Unlimited
 - Public Repositories: Not Available
 - Team Size: Less than 5
