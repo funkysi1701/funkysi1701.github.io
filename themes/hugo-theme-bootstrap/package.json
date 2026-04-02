@@ -62,7 +62,7 @@
     "stylelint-config-standard": "40.0.0",
     "stylelint-scss": "7.0.0",
     "terser-webpack-plugin": "5.4.0",
-    "ts-loader": "9.5.4",
+    "ts-loader": "9.5.7",
     "typescript": "6.0.2",
     "url-loader": "4.1.1",
     "webpack": "5.105.4",
