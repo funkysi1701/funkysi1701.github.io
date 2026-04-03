@@ -44,16 +44,18 @@ test.describe('Homepage and Navigation', () => {
       // Test navigation on Projects page
       const hamburger2 = page.getByRole('button', { name: 'Toggle navigation' }).first();
       await hamburger2.click();
-      const projectsLink = page.getByRole('link', { name: 'Projects', exact: true }).first();
-      await projectsLink.waitFor({ state: 'visible' });
+      // Wait for Bootstrap to expand the nav collapse before looking for links
+      await page.locator('#navbarSupportedContent.show').waitFor({ state: 'visible' });
+      const projectsLink = page.locator('#navbarSupportedContent').getByRole('link', { name: 'Projects', exact: true }).first();
       await projectsLink.click();
       await expect(page).toHaveURL(/\/projects\//);
 
       // Test navigation on Contact page
       const hamburger3 = page.getByRole('button', { name: 'Toggle navigation' }).first();
       await hamburger3.click();
-      const contactLink = page.getByRole('link', { name: 'Contact' }).first();
-      await contactLink.waitFor({ state: 'visible' });
+      // Wait for Bootstrap to expand the nav collapse before looking for links
+      await page.locator('#navbarSupportedContent.show').waitFor({ state: 'visible' });
+      const contactLink = page.locator('#navbarSupportedContent').getByRole('link', { name: 'Contact' }).first();
       await contactLink.click();
       await expect(page).toHaveURL(/\/contact\//);
     });
