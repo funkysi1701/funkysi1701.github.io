@@ -27,9 +27,12 @@ test.describe('Accessibility', () => {
 
         console.log('Input:', { type: inputType, id: inputId, ariaLabel, placeholder });
 
-        // 3. Skip checkboxes before any interactions — they may use visual indicators
-        //    and focusing them unnecessarily can cause flakiness.
+        // 3. Checkboxes must have an accessible label (aria-label, aria-labelledby, or associated label element)
         if (inputType === 'checkbox') {
+          const title = await input.getAttribute('title');
+          const ariaLabelledBy = await input.getAttribute('aria-labelledby');
+          const hasCheckboxLabel = ariaLabel || title || ariaLabelledBy || (inputId && await page.locator(`label[for="${inputId}"]`).count() > 0);
+          expect(hasCheckboxLabel).toBeTruthy();
           continue;
         }
 
