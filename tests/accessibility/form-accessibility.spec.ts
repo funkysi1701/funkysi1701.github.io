@@ -5,55 +5,68 @@ import { test, expect } from '../fixtures';
 
 test.describe('Accessibility', () => {
   test('Form accessibility (newsletter)', async ({ page }) => {
-    // 1. Navigate to newsletter signup form
-    await page.goto('https://www.funkysi1701.com/newsletter/');
+    let labelCount!: number;
 
-    // Look for form or search page which has a form
-    await page.goto('https://www.funkysi1701.com/search/');
+    await test.step('Navigate to newsletter signup form', async () => {
+      // 1. Navigate to newsletter signup form
+      await page.goto('https://www.funkysi1701.com/newsletter/');
 
-    // 2. Verify form fields have visible labels
-    const inputs = await page.locator('input').all();
-    
-    for (const input of inputs) {
-      const inputType = await input.getAttribute('type');
-      const inputId = await input.getAttribute('id');
-      const ariaLabel = await input.getAttribute('aria-label');
-      const placeholder = await input.getAttribute('placeholder');
+      // Look for form or search page which has a form
+      await page.goto('https://www.funkysi1701.com/search/');
+    });
 
-      console.log('Input:', { type: inputType, id: inputId, ariaLabel, placeholder });
+    await test.step('Verify form fields have visible labels', async () => {
+      // 2. Verify form fields have visible labels
+      const inputs = await page.locator('input').all();
 
-      // 3. Check that labels are associated with inputs (for/id)
-      if (inputId) {
-        const label = await page.locator(`label[for="${inputId}"]`).count();
-        console.log(`Label for ${inputId}:`, label > 0);
+      for (const input of inputs) {
+        const inputType = await input.getAttribute('type');
+        const inputId = await input.getAttribute('id');
+        const ariaLabel = await input.getAttribute('aria-label');
+        const placeholder = await input.getAttribute('placeholder');
+
+        console.log('Input:', { type: inputType, id: inputId, ariaLabel, placeholder });
+
+        // 3. Checkboxes must have an accessible label (aria-label, aria-labelledby, or associated label element)
+        if (inputType === 'checkbox') {
+          const title = await input.getAttribute('title');
+          const ariaLabelledBy = await input.getAttribute('aria-labelledby');
+          const hasCheckboxLabel = ariaLabel || title || ariaLabelledBy || (inputId && await page.locator(`label[for="${inputId}"]`).count() > 0);
+          expect(hasCheckboxLabel).toBeTruthy();
+          continue;
+        }
+
+        // 4. Check that labels are associated with inputs (for/id)
+        if (inputId) {
+          labelCount = await page.locator(`label[for="${inputId}"]`).count();
+          console.log(`Label for ${inputId}:`, labelCount > 0);
+        }
+
+        // 5. Test keyboard navigation through form
+        await input.focus();
+        await page.waitForTimeout(100);
+
+        // 6. Verify error messages are accessible (if validation exists)
+        // This would need form submission to test
+
+        // 7. Check for helpful placeholder text or aria-label
+        const hasLabel = ariaLabel || placeholder || (inputId && await page.locator(`label[for="${inputId}"]`).count() > 0);
+        expect(hasLabel).toBeTruthy();
       }
+    });
 
-      // 4. Test keyboard navigation through form
-      await input.focus();
-      await page.waitForTimeout(100);
+    await test.step('Test form submission with keyboard only', async () => {
+      // 7. Test form submission with keyboard only
+      // Find a visible search input instead of using the first input (which might be hidden)
+      const searchInput = page.locator('input[type="search"], input[aria-label="Search"]').first();
+      if (await searchInput.count() > 0 && await searchInput.isVisible()) {
+        await searchInput.fill('test query');
+        await page.keyboard.press('Enter');
 
-      // 5. Verify error messages are accessible (if validation exists)
-      // This would need form submission to test
-
-      // 6. Check for helpful placeholder text or aria-label
-      // Skip theme/mode switchers as they typically have visual indicators and are not form inputs
-      if (inputId === 'modeSwitcher' || inputType === 'checkbox') {
-        continue;
+        // Form should submit or execute search
+        await page.waitForTimeout(500);
       }
-      
-      const hasLabel = ariaLabel || placeholder || (inputId && await page.locator(`label[for="${inputId}"]`).count() > 0);
-      expect(hasLabel).toBeTruthy();
-    }
+    });
 
-    // 7. Test form submission with keyboard only
-    // Find a visible search input instead of using the first input (which might be hidden)
-    const searchInput = page.locator('input[type="search"], input[aria-label="Search"]').first();
-    if (await searchInput.count() > 0 && await searchInput.isVisible()) {
-      await searchInput.fill('test query');
-      await page.keyboard.press('Enter');
-      
-      // Form should submit or execute search
-      await page.waitForTimeout(500);
-    }
   });
 });

@@ -36,7 +36,7 @@ My release starts by publishing to 10% of users on the production track, my next
 
 Now if you run this release now it will just run through each of the steps one after the other. Now of course you can add a pre or post approval to your pipeline but this just adds a manual dependency to your release. Whoever does the approving needs to check things are working before approving or worse just approves regardless.
 
-Azure DevOps has the concept of [gated releases](https://docs.microsoft.com/en-us/azure/devops/pipelines/release/deploy-using-approvals?view=azure-devops) which allows you to add automated checks before or after a release happens. These automated checks can be any of the following:
+Azure DevOps has the concept of [gated releases](https://learn.microsoft.com/en-us/azure/devops/pipelines/release/deploy-using-approvals?view=azure-devops) which allows you to add automated checks before or after a release happens. These automated checks can be any of the following:
 
 - An Azure Function
 - A Rest API call

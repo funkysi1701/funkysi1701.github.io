@@ -82,3 +82,5 @@ Interestingly the weapon Kirk builds would likely not work. The US show MythBust
 
 Score: 10/10
 Redshirt Count: Cestus III Outpost, 1 Red Shirt and 1 yellow shirt from away team.
+
+Arena along with all 900+ Star Trek episodes is now available in [Episode Atlas](https://www.episodeatlas.com/).

@@ -45,7 +45,7 @@ echo “Fedora release 20 (Heisenbug)” > /etc/redhat-release
 
 OK So now I am able to configure settings on my Pi from a browser or use SSH (Secure SHell) to login to run any command I like.
 
-Now lets lookup how to use the camera. The [documentation](https://www.raspberrypi.org/documentation/configuration/camera.md) says that the camera first needs enabling using the command raspi-config. This command doesn’t exist in Pidora. Lets skip it and see if it works anyway. It does! The command raspistill -v -o test.jpg took a picture of my ceiling.
+Now lets lookup how to use the camera. The [documentation](https://www.raspberrypi.com/documentation/configuration/camera.md) says that the camera first needs enabling using the command raspi-config. This command doesn’t exist in Pidora. Lets skip it and see if it works anyway. It does! The command raspistill -v -o test.jpg took a picture of my ceiling.
 
 Now how do I look at this picture remotely. SSH is a command line only interface, so I can see a 2Mb file has been created. How about installing a web server on my Pi?
 

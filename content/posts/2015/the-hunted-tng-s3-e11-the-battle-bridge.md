@@ -27,6 +27,6 @@ While the Enterprise-D is reviewing a seemingly idyllic planet’s application f
 
 Today James and Lou discuss (The Hunted) and what we think of it and much more as well as listener feedback with tonight’s guest host Simon.
 
-Credit: Main Title Theme (TV Edit) was arranged by [Dennis McCarthy](https://en.memory-alpha.org/wiki/Dennis_McCarthy) and composed by [Jerry Goldsmith](https://en.memory-alpha.org/wiki/Jerry_Goldsmith) and [Alexander Courage](https://en.memory-alpha.org/wiki/Alexander_Courage/)
+Credit: Main Title Theme (TV Edit) was arranged by [Dennis McCarthy](https://memory-alpha.fandom.com/wiki/Dennis_McCarthy) and composed by [Jerry Goldsmith](https://memory-alpha.fandom.com/wiki/Jerry_Goldsmith) and [Alexander Courage](https://memory-alpha.fandom.com/wiki/Alexander_Courage)
 
-You can download the MP3 version of this show by [clicking here](https://media.blubrry.com/trekmate/p/media.blubrry.com/previouslyalpha/p/media.blubrry.com/trekmatesupplemental/p/media.blubrry.com/loutrekshow/p/media.techpodcasts.com/loutrekshow/p/www.trekmate.org.uk/battlebridge/tbb-s3e11-the_hunted.mp3).
+You can download the MP3 version of this show by [clicking here](https://media.blubrry.com/previouslyalpha/p/media.blubrry.com/trekmatesupplemental/p/media.blubrry.com/loutrekshow/p/media.techpodcasts.com/loutrekshow/p/www.trekmate.org.uk/battlebridge/tbb-s3e11-the_hunted.mp3).

@@ -28,7 +28,7 @@ Last night I had a bit of a chat about season 3 of Star Trek Picard.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Before <a href="https://twitter.com/hashtag/startrek?src=hash&amp;ref_src=twsrc%5Etfw">#startrek</a> <a href="https://twitter.com/hashtag/Picard?src=hash&amp;ref_src=twsrc%5Etfw">#Picard</a> S3ep2 airs this week; <a href="https://twitter.com/danielhuckfield?ref_src=twsrc%5Etfw">@danielhuckfield</a> Special Guest <a href="https://twitter.com/funkysi1701?ref_src=twsrc%5Etfw">@funkysi1701</a> and <a href="https://twitter.com/hitch_daniel?ref_src=twsrc%5Etfw">@hitch_daniel</a> chat about the first episode on the Nexus Nights spin-off show.<a href="https://t.co/Jyov53z7hC">https://t.co/Jyov53z7hC</a></p>&mdash; The Temporal Trek Podcast(s) (@rider_coattail) <a href="https://twitter.com/rider_coattail/status/1628713326149570563?ref_src=twsrc%5Etfw">February 23, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Here is the episode I recorded: [TTNN Ep 36 - PIC S3ep1 Reaction Chat](https://anchor.fm/daniel-peter-hitch/episodes/TTNN-Ep-36---PIC-S3ep1-Reaction-Chat-e1vdglo)
+Here is the episode I recorded: [TTNN Ep 36 - PIC S3ep1 Reaction Chat](https://podcasters.spotify.com/pod/show/daniel-peter-hitch/episodes/TTNN-Ep-36---PIC-S3ep1-Reaction-Chat-e1vdglo)
 
 Dan and Dan are joined by previous Temporal Trek guest Si Foster for a little chinwag over the return of PICARD for the final season.
 

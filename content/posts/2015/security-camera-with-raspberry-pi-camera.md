@@ -56,7 +56,7 @@ rm /var/www/*.jpg
 
 The third line in this script does something really rather clever it creates a video from all the images you have taken. In order for this to work you will need to install mencoder (sudo apt-get install mencoder)
 
-This is all rather good but wouldn’t it be rather cool if this images were uploaded somewhere. If someone was up to no good and they might want to disable your security camera. My first thought was to use something like DropBox, but unfortunately it is not supported by the processor on a raspberry pi. However I have found [copy.com](https://copy.com/) to be rather good for syncing files.
+This is all rather good but wouldn’t it be rather cool if this images were uploaded somewhere. If someone was up to no good and they might want to disable your security camera. My first thought was to use something like DropBox, but unfortunately it is not supported by the processor on a raspberry pi. However I have found `copy.com` to be rather good for syncing files.
 
 To install just run wget `https://copy.com/install/linux/Copy.tgz` and extract the file to install the client on your raspberry pi.
 
@@ -66,4 +66,4 @@ To install just run wget `https://copy.com/install/linux/Copy.tgz` and extract t
 
 This command syncs the folder you have set in -root with copy.com.
 
-The last thing I did was create a php file running on the webserver that allows you to scroll through the different images. I experimented with using javascript to auto scroll through the images but I found the manual way more useful. All the files I have written I have added to my [github](https://github.com/funkysi/RaspberryPi) page.
+The last thing I did was create a php file running on the webserver that allows you to scroll through the different images. I experimented with using javascript to auto scroll through the images but I found the manual way more useful. All the files I have written I have added to my [GitHub](https://github.com/funkysi1701/RaspberryPi) page.

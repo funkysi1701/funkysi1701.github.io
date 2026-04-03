@@ -33,7 +33,9 @@ Ok how did I go about creating this app and getting it in the app store?
 
 Xamarin is now part of Visual Studio so step one is install all the Xamarin features to Visual Studio and build an app.
 
-Next I wanted to monitor my app. Now I know Application Insights doesn’t support apps so what tools are out there? HockeyApp is something I had heard of but they are in the process of being replaced with [Visual Studio Mobile Centre](https://appcenter.ms/apps).
+Next I wanted to monitor my app. Now I know Application Insights doesn’t support apps so what tools are out there? HockeyApp is something I had heard of but they are in the process of being replaced with `https://appcenter.ms/apps`. (Edit: Visual Studio App Center was retired on March 31, 2025)
+
+
 
 It was relatively easy to hook up my app to Visual Studio Mobile Centre. First install the required nuget packages. Then add using statements and the following line to your MainActivity.cs file (these instructions are available on the Mobile Centre)
 

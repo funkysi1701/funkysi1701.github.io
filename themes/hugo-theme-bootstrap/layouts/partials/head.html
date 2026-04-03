@@ -12,3 +12,18 @@
 <meta data-name="search-index" content="{{ absLangURL "index.json" }}">
 {{- end -}}
 {{- partial "head/assets" . -}}
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "author": [{
+          "@type": "Person",
+          "name": "{{ with .Params.author }}{{ . }}{{ else }}{{ with $.Site.Params.author.name }}{{.}}{{end}}{{end}}",
+          "url": "https://www.funkysi1701.com/about"
+        }],
+    "headline": "{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}",
+    "description": "{{ if .IsPage }}{{ if .Description }}{{ .Description | plainify | htmlUnescape }}{{ else }}{{ .Summary | plainify | htmlUnescape }}{{ end }}{{ else }}{{ (printf "%s - %s" .Title $.Site.Params.description) | plainify | htmlUnescape }}{{ end }}",
+    "url": "{{ .Permalink }}",
+    "image": "{{ printf "%scdn-cgi/image/width=800,quality=75/images/1922276.jpg" .Site.BaseURL }}"
+    }
+</script>

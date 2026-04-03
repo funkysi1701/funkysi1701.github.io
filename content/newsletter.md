@@ -65,13 +65,15 @@ Here's what I've been writing about lately:
 ## View Latest Newsletter
 
 - [January 2026](https://us11.campaign-archive.com/?u=110e046407cf8a34c93d56a4c&id=49cfe48cec)
+- [February 2026](https://us11.campaign-archive.com/?u=110e046407cf8a34c93d56a4c&id=b88bec7dc1)
+- [March 2026](https://us11.campaign-archive.com/?u=110e046407cf8a34c93d56a4c&id=3a95a0b889)
 
 ## 🎯 Ready to Join?
 
 Get practical software development insights delivered to your inbox every month.
 
 <div style="text-align: center; margin: 40px 0;">
-  <a href="https://eepurl.com/i7pQno" 
+  <a href="https://funkysi1701.us11.list-manage.com/subscribe?u=110e046407cf8a34c93d56a4c&id=024966b02e" 
      style="background-color: #0066cc; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-size: 18px; font-weight: bold; display: inline-block;">
     📬 Subscribe Now
   </a>

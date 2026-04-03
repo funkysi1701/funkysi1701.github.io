@@ -112,6 +112,6 @@ select new { ProductName = prod.Name, CustomerName = cust.CompanyName };
 
 ### Conclusion
 
-There are loads more LINQ functionality that you can use. While writing this blog I found https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b which has loads of examples of different queries that you can write with LINQ.
+There are loads more LINQ functionality that you can use. While writing this blog I found https://learn.microsoft.com/101-LINQ-Samples-3fb9811b which has loads of examples of different queries that you can write with LINQ.
 
 This has inspired me to use LINQ more in my code and learn more about the different queries that could be written.

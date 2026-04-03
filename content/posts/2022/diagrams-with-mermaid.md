@@ -25,7 +25,7 @@ aliases = [
 +++
 I have been wanting to produce a diagram of the architecture of my side project for some time, but I have put it off as never sure what the correct tools is for this job.
 
-[Mermaid](https://mermaid-js.github.io/mermaid/#/) is a tool that lets you create diagrams from code and text. I first came across this tool about a year ago for use in a project. I had forgotten about this tool until the other day, when I was thinking about this problem again.
+[Mermaid](https://mermaid.js.org/) is a tool that lets you create diagrams from code and text. I first came across this tool about a year ago for use in a project. I had forgotten about this tool until the other day, when I was thinking about this problem again.
 
 Is it possible to embed a mermaid diagram in the markdown used in a github repo? Well the answer is yes, so lets look at how that works.
 

@@ -28,13 +28,13 @@ While at [Microsoft Ignite](https://www.funkysi1701.com/2019/02/26/microsoft-ign
 
 So what can I build that is both useful and will let me play with some new tech?
 
-I have a Xamarin Forms app Pwned Pass that has over 500 downloads on [Google play](https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords) and over 80 downloads on the [Microsoft Store](https://www.microsoft.com/en-gb/p/pwned-pass/9nm2whnztnlt?rtc=1). This has given me a small user base that I can use to make use of whatever I build.
+I have a Xamarin Forms app Pwned Pass that has over 500 downloads on [Google Play](https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords) and over 80 downloads on the Microsoft Store. This has given me a small user base that I can use to make use of whatever I build.
 
 My app makes use of the [HIBP API](https://haveibeenpwned.com/API/v3) created by Troy Hunt. I am going to build my own API, initially it will just make calls to the HIBP API. Building this will give me experience of building something with .net Core from design to deployment. I have made a start already on doing this, I have an empty .net core API project which deploys to an Azure web app using the build and release pipelines from Azure DevOps.
 
 You may be wondering why I am not making use of Azure Functions to build this API. Azure functions is certainly a great technology that is worth learning about. However I have done a little bit with them in the past and I don’t believe I would be able to learn all the things I want to if I used Azure Functions. My primary goal is learning and sharing that learning via this blog. It may well be I move to using Azure Functions later on.
 
-Another tech I am keen to learn more about is [Azure Key Vault](https://docs.microsoft.com/en-gb/azure/key-vault/). This is a technology that allows the securing of keys, connection strings and certificates. I want my app to securely get keys and security information without any of it having to be committed to source code or shared insecurely.
+Another tech I am keen to learn more about is [Azure Key Vault](https://learn.microsoft.com/en-gb/azure/key-vault/). This is a technology that allows the securing of keys, connection strings and certificates. I want my app to securely get keys and security information without any of it having to be committed to source code or shared insecurely.
 
 Monitoring my app is also a key learning from me. I use application insights already, but I would like to extend my understanding of this so telemetry can be fed back into the build and bad deployments stopped.
 

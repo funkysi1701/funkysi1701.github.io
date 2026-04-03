@@ -26,7 +26,7 @@ aliases = [
 ]
 +++
 ![](/images/2016/en-INTL-PDP0-Surface-Book-CR9-00001-P2.jpg)
-I have just bought myself a new laptop, but it is not just any laptop it is a [Microsoft Surface Book](https://www.microsoftstore.com/store/msuk/en_GB/pdp/productID.332604800).
+I have just bought myself a new laptop, but it is not just any laptop it is a [Microsoft Surface Book](https://www.microsoft.com/en-gb/store/d/product/8TXJ08Q9LXDT).
 
 I think this is probably the first time I have bought myself a top of the range laptop and after a few days of use I am loving it.
 

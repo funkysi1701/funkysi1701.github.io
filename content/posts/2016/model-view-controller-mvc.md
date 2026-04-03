@@ -53,4 +53,4 @@ For the first time I have got an app with a working Authentication system from t
 
 It is still very early days for my MVC app and my understanding of it, but I feel I have turned the corner and can actually build something with it now, rather than be stuck in a downward spiral of confusion.
 
-What do you think about MVC why not leave a comment below? For more info about MVC I have been looking at https://www.asp.net/mvc which has more information and tutorials.
+What do you think about MVC why not leave a comment below? For more info about MVC I have been looking at https://dotnet.microsoft.com/en-us/apps/aspnet which has more information and tutorials.

@@ -7,7 +7,6 @@ declare global {
     fuseOptions: any;
     searchResultContentWordCount: number;
     searchPaginate: number;
-    searchAnalyticsUrl?: string;
   }
 }
 
@@ -105,9 +104,6 @@ export class Search {
       this.input.value = Search.getKeywordFromURL();
     }
     this.searchBarInput.value = this.input.value;
-    if (this.input.value !== '') {
-      this.saveSearchToDb(this.input.value);
-    }
     const instance = this;
     this.form.addEventListener('submit', (event) => {
       instance.handleSubmit(event);
@@ -117,22 +113,7 @@ export class Search {
   handleSubmit(event) {
     this.search(this.input.value);
     this.searchBarInput.value = this.input.value;
-    this.saveSearchToDb(this.input.value);
     event.preventDefault();
-  }
-
-  saveSearchToDb(query: string) {
-    if (!query || !globalThis.searchAnalyticsUrl) {
-      return;
-    }
-
-    fetch(globalThis.searchAnalyticsUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name: query }),
-    });
   }
 
   static getKeywordFromURL() {

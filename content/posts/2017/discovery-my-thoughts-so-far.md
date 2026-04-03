@@ -31,7 +31,7 @@ I watched the first two episodes of the brand new Star Trek TV show. As I am an 
 
 I have heard a lot of complaining that the show is not free to watch. CBS is making Star Trek Discovery to make money, if they don’t make money they will stop making it. Its as simple as that.
 
-[Netflix](https://www.netflix.com)costs £5.99 per month and [CBS All Access](https://www.cbs.com/all-access/) costs $5.99 per month. I don’t believe this is a lot of money. The 5.99 above allows you to watch any of the 726 Star Trek episodes at any time of day whenever you want as many times as you want, plus you have access to all the other movies or TV shows available. I don’t think this is too much to ask.
+[Netflix](https://www.netflix.com)costs £5.99 per month and [CBS All Access](https://www.paramountplus.com/home/) costs $5.99 per month. I don’t believe this is a lot of money. The 5.99 above allows you to watch any of the 726 Star Trek episodes at any time of day whenever you want as many times as you want, plus you have access to all the other movies or TV shows available. I don’t think this is too much to ask.
 
 Back to Discovery. I loved it! It felt like Star Trek. I had feared it might only share the name and would be an action filled TV show that had little in common with what he had seen before. I was wrong this is definitely a show that can proudly call itself Star Trek.
 
@@ -74,3 +74,5 @@ Other things I noticed
 - Sound effects on the bridge are awesome, it makes me feel at home
 - The USS Discovery doesn’t feature in the first two episodes despite being the title of the show.
 - Others have noted that Captain Georgiou has books on her shelf which feature classic episode titles
+
+Did you know you can track episodes from Star Trek Discovery in [Episode Atlas](https://www.episodeatlas.com/).

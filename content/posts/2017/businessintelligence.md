@@ -36,7 +36,7 @@ Microsoft describe it as follows: **Power BI** is a suite of business analytics 
 
 One of the first thing you can do with Power Bi is connect some of the apps that you use.
 
-To sign up to use Power BI go to [https://powerbi.microsoft.com/en-us/](https://powerbi.microsoft.com/en-us/)
+To sign up to use Power BI go to the [Power BI website](https://www.microsoft.com/en-us/power-platform/products/power-bi/).
 
 Once you are signed in click the get data link in the bottom left corner and browse through the apps you can use.
 
