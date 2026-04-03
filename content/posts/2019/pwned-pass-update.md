@@ -30,7 +30,7 @@ Its been a while since I first released Pwned Pass so lets have a look at where 
 
 We are very close to 500 Downloads from [Google Play](https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords) and we have recently smashed past 100 active installs, peaking at 116 and even now we are still over 100. I have had 9 reviews (6 x 5*, 2 x 1 * and a 4 *) which averages out at 4 *
 ![Alt Text](/images/2019/01/image.png)
-Over Christmas I released a UWP version that can be found in the Microsoft Store. This has currently had 9 downloads and even had a download to windows mobile (someone out there still likes the platform!)
+Over Christmas I released a UWP version that can be found in the Microsoft Store. This has currently had 9 downloads and even had a download to Windows Mobile (someone out there still likes the platform!)
 ![Alt Text](/images/2019/01/image-1.png)
 I have a fairly smooth deployment process using Azure DevOps. After every check in of code a build runs which compiles the UWP and Android versions. The build also increments the version numbers that is required to deploy to either of the app stores.
 
