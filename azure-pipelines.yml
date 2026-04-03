@@ -161,3 +161,12 @@ steps:
         -e SITE_URL="$SITE_URL" \
         node:20-alpine \
         node /app/scripts/create-accessibility-issues.js
+- task: CmdLine@2
+  displayName: 'Fail build if site was unreachable during Pa11y'
+  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/'), startsWith(variables['Build.SourceBranch'], 'refs/heads/copilot/')))
+  inputs:
+    script: |
+      if grep -q 'ERR_CONNECTION_REFUSED' pa11y-error.log 2>/dev/null; then
+        echo "##vso[task.logissue type=error]Pa11y check failed: site unreachable (ERR_CONNECTION_REFUSED). The site may not have deployed successfully."
+        exit 1
+      fi
