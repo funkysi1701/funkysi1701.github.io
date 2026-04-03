@@ -17,7 +17,6 @@ trigger:
 - test
 - main
 - feature/*
-- copilot/*
 
 pool: Docker
 
