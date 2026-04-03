@@ -105,6 +105,20 @@ steps:
       PA11Y_RUN_FAILED=0
       REPO_ROOT="$(Build.SourcesDirectory)"
 
+      # Determine the site URL to scan based on the branch being built.
+      case "$(Build.SourceBranchName)" in
+        "main")
+          SITE_URL="https://blog.funkysi1701.com"
+          ;;
+        "test")
+          SITE_URL="https://blog-test.funkysi1701.com"
+          ;;
+        *)
+          SITE_URL="https://blog-dev.funkysi1701.com"
+          ;;
+      esac
+      echo "Pa11y scanning: $SITE_URL"
+
       # Bookworm node image lacks Chromium libs; use apt Chromium and point Pa11y at it (scripts/pa11y-pipeline.json).
       # Host redirects ALL container stdout into pa11y-results.json — apt/dpkg print "Selecting..." on stdout; silence it.
       # Pa11y JSON is emitted only via cat /tmp/pa11y-out.json (Pa11y exit 2 = issues found — must still cat after pa11y).
@@ -118,7 +132,7 @@ steps:
           DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends chromium ca-certificates fonts-liberation >/dev/null
           npm install -g pa11y >/dev/null 2>&1
           set +e
-          pa11y --runner axe --runner htmlcs --reporter json --config /tmp/pa11y.json https://blog-dev.funkysi1701.com > /tmp/pa11y-out.json
+          pa11y --runner axe --runner htmlcs --reporter json --config /tmp/pa11y.json '"$SITE_URL"' > /tmp/pa11y-out.json
           code=$?
           cat /tmp/pa11y-out.json
           exit $code' \
@@ -144,5 +158,6 @@ steps:
         -e GITHUB_TOKEN \
         -e BUILD_NUMBER="$(Build.BuildNumber)" \
         -e PA11Y_RUN_FAILED="$PA11Y_RUN_FAILED" \
+        -e SITE_URL="$SITE_URL" \
         node:20-alpine \
         node /app/scripts/create-accessibility-issues.js
