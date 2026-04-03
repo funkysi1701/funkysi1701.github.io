@@ -17,14 +17,13 @@ trigger:
 - test
 - main
 - feature/*
-- copilot/*
 
 pool: Docker
 
 steps:
 - task: CmdLine@2
   displayName: "Install AWS CLI"
-  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/'), startsWith(variables['Build.SourceBranch'], 'refs/heads/copilot/')))
+  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   inputs:
     script: |
       curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -34,7 +33,7 @@ steps:
       aws --version
 - task: CmdLine@2
   displayName: "Build and Login to ECR"
-  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/'), startsWith(variables['Build.SourceBranch'], 'refs/heads/copilot/')))
+  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   env:
     AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
     AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
@@ -63,7 +62,7 @@ steps:
   displayName: 'Set image repository name'
 - task: CmdLine@2
   displayName: "Publish to ECR"
-  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/'), startsWith(variables['Build.SourceBranch'], 'refs/heads/copilot/')))
+  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   inputs:
     script: |
       docker tag blog 687611153768.dkr.ecr.eu-north-1.amazonaws.com/funkysi1701/$(imageRepoName)
@@ -81,7 +80,7 @@ steps:
     helm lint Helm/blog --namespace main
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace develop --set image.tag=$(Build.BuildNumber)-develop
-  condition: and(succeeded(), or(eq(variables['Build.SourceBranchName'], 'develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/'), startsWith(variables['Build.SourceBranch'], 'refs/heads/copilot/')))
+  condition: and(succeeded(), or(eq(variables['Build.SourceBranchName'], 'develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   displayName: 'helm upgrade blog Dev'
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace test --set image.tag=$(Build.BuildNumber)-test
