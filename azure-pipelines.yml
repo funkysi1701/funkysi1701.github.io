@@ -91,3 +91,73 @@ steps:
     helm upgrade --install blog ./Helm/blog --namespace main --set image.tag=$(Build.BuildNumber)-main
   condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'main'))  
   displayName: 'helm upgrade blog Main'
+- task: CmdLine@2
+  displayName: 'Pa11y Accessibility Check'
+  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/'), startsWith(variables['Build.SourceBranch'], 'refs/heads/copilot/')))
+  continueOnError: true
+  env:
+    GITHUB_TOKEN: $(GITHUB_TOKEN)
+  inputs:
+    script: |
+      # Allow 30 seconds for the Kubernetes rollout to finish before scanning
+      sleep 30
+
+      PA11Y_RUN_FAILED=0
+      REPO_ROOT="$(Build.SourcesDirectory)"
+
+      # Determine the site URL to scan based on the branch being built.
+      case "$(Build.SourceBranchName)" in
+        "main")
+          SITE_URL="https://blog.funkysi1701.com"
+          ;;
+        "test")
+          SITE_URL="https://blog-test.funkysi1701.com"
+          ;;
+        *)
+          SITE_URL="https://blog-dev.funkysi1701.com"
+          ;;
+      esac
+      echo "Pa11y scanning: $SITE_URL"
+
+      # Bookworm node image lacks Chromium libs; use apt Chromium and point Pa11y at it (scripts/pa11y-pipeline.json).
+      # Host redirects ALL container stdout into pa11y-results.json — apt/dpkg print "Selecting..." on stdout; silence it.
+      # Pa11y JSON is emitted only via cat /tmp/pa11y-out.json (Pa11y exit 2 = issues found — must still cat after pa11y).
+      set +e
+      docker run --rm --cap-add=SYS_ADMIN --shm-size=2g \
+        -v "$REPO_ROOT/scripts/pa11y-pipeline.json:/tmp/pa11y.json:ro" \
+        node:20-bookworm \
+        bash -c 'set -e
+          export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+          apt-get update -qq >/dev/null
+          DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends chromium ca-certificates fonts-liberation >/dev/null
+          npm install -g pa11y >/dev/null 2>&1
+          set +e
+          pa11y --runner axe --runner htmlcs --reporter json --config /tmp/pa11y.json '"$SITE_URL"' > /tmp/pa11y-out.json
+          code=$?
+          cat /tmp/pa11y-out.json
+          exit $code' \
+        > pa11y-results.json 2>pa11y-error.log
+      PA11Y_EXIT=$?
+      set -e
+
+      # Exit code 0 = no issues, 2 = issues found — both are valid JSON results.
+      # Any other exit code means Pa11y/Chromium failed.
+      if [ "$PA11Y_EXIT" -ne 0 ] && [ "$PA11Y_EXIT" -ne 2 ]; then
+        echo "##vso[task.logissue type=error]Pa11y failed with exit code $PA11Y_EXIT (see pa11y-error.log in logs)."
+        echo "Pa11y failed with exit code $PA11Y_EXIT"
+        cat pa11y-error.log || true
+        echo "[]" > pa11y-results.json
+        PA11Y_RUN_FAILED=1
+      fi
+
+      # Create GitHub issues for any new accessibility violations found.
+      # Use bare -e GITHUB_TOKEN so Docker copies from the agent env (avoids shell mangling PAT characters).
+      docker run --rm \
+        -v "$REPO_ROOT/pa11y-results.json:/app/pa11y-results.json:ro" \
+        -v "$REPO_ROOT/scripts:/app/scripts:ro" \
+        -e GITHUB_TOKEN \
+        -e BUILD_NUMBER="$(Build.BuildNumber)" \
+        -e PA11Y_RUN_FAILED="$PA11Y_RUN_FAILED" \
+        -e SITE_URL="$SITE_URL" \
+        node:20-alpine \
+        node /app/scripts/create-accessibility-issues.js
