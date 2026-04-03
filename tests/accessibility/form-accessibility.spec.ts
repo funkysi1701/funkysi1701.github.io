@@ -27,25 +27,26 @@ test.describe('Accessibility', () => {
 
         console.log('Input:', { type: inputType, id: inputId, ariaLabel, placeholder });
 
-        // 3. Check that labels are associated with inputs (for/id)
+        // 3. Skip checkboxes before any interactions — they may use visual indicators
+        //    and focusing them unnecessarily can cause flakiness.
+        if (inputType === 'checkbox') {
+          continue;
+        }
+
+        // 4. Check that labels are associated with inputs (for/id)
         if (inputId) {
           labelCount = await page.locator(`label[for="${inputId}"]`).count();
           console.log(`Label for ${inputId}:`, labelCount > 0);
         }
 
-        // 4. Test keyboard navigation through form
+        // 5. Test keyboard navigation through form
         await input.focus();
         await page.waitForTimeout(100);
 
-        // 5. Verify error messages are accessible (if validation exists)
+        // 6. Verify error messages are accessible (if validation exists)
         // This would need form submission to test
 
-        // 6. Check for helpful placeholder text or aria-label
-        // Skip theme/mode switchers as they typically have visual indicators and are not form inputs
-        if (inputId === 'modeSwitcher' || inputType === 'checkbox') {
-          continue;
-        }
-
+        // 7. Check for helpful placeholder text or aria-label
         const hasLabel = ariaLabel || placeholder || (inputId && await page.locator(`label[for="${inputId}"]`).count() > 0);
         expect(hasLabel).toBeTruthy();
       }

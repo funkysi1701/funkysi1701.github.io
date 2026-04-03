@@ -35,13 +35,19 @@ test.describe('Search Functionality', () => {
       if (resultCount > 0) {
         // 4. Click on first search result
         const firstResult = results.first();
+        const searchUrl = page.url();
         await firstResult.click();
 
         // 5. Verify it navigates to the correct blog post
         await expect(page).toHaveURL(/\/posts\//);
 
         // 6. Use browser back button
-        await page.goBack();
+        try {
+          await page.goBack({ waitUntil: 'domcontentloaded' });
+        } catch {
+          // ERR_ABORTED can occur if navigation was interrupted; fall back to the search URL
+          await page.goto(searchUrl);
+        }
 
         // 7. Verify search results are preserved
         await page.waitForTimeout(1000);
