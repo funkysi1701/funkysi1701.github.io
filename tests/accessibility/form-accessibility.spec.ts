@@ -41,8 +41,8 @@ test.describe('Accessibility', () => {
         // This would need form submission to test
 
         // 6. Check for helpful placeholder text or aria-label
-        // Skip theme/mode switchers as they typically have visual indicators and are not form inputs
-        if (inputId === 'modeSwitcher' || inputType === 'checkbox') {
+        // Skip non-modeSwitcher checkboxes as they may use visual indicators
+        if (inputType === 'checkbox' && inputId !== 'modeSwitcher') {
           continue;
         }
 
