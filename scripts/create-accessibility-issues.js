@@ -67,22 +67,39 @@ async function ensureLabel() {
 }
 
 async function getExistingIssueTitles() {
-  const res = await githubRequest(
-    'GET',
-    `/repos/${REPO}/issues?labels=accessibility&state=open&per_page=100`,
-    null
-  );
-  if (res.status !== 200) {
-    if (res.status === 401) {
-      console.error(
-        'GitHub API 401: invalid or expired token, or missing repo/issues access. Use a PAT with classic scope "repo" (private) or "public_repo" (public only), or a fine-grained token with Issues read/write on this repository. Ensure the Global variable GITHUB_TOKEN is set and this pipeline is allowed to use it.'
-      );
-    } else {
-      console.warn('Failed to fetch existing issues:', res.status);
+  const perPage = 100;
+  const titles = new Set();
+  let page = 1;
+
+  while (true) {
+    const res = await githubRequest(
+      'GET',
+      `/repos/${REPO}/issues?labels=accessibility&state=open&per_page=${perPage}&page=${page}`,
+      null
+    );
+
+    if (res.status !== 200) {
+      if (res.status === 401) {
+        console.error(
+          'GitHub API 401: invalid or expired token, or missing repo/issues access. Use a PAT with classic scope "repo" (private) or "public_repo" (public only), or a fine-grained token with Issues read/write on this repository. Ensure the Global variable GITHUB_TOKEN is set and this pipeline is allowed to use it.'
+        );
+      } else {
+        console.warn('Failed to fetch existing issues:', res.status);
+      }
+      return new Set();
     }
-    return new Set();
+
+    const issues = Array.isArray(res.body) ? res.body : [];
+    issues.forEach((issue) => titles.add(issue.title));
+
+    if (issues.length < perPage) {
+      break;
+    }
+
+    page += 1;
   }
-  return new Set(Array.isArray(res.body) ? res.body.map((i) => i.title) : []);
+
+  return titles;
 }
 
 function buildIssueBody(code, issues) {
