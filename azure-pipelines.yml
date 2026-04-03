@@ -91,9 +91,16 @@ steps:
     helm upgrade --install blog ./Helm/blog --namespace main --set image.tag=$(Build.BuildNumber)-main
   condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'main'))  
   displayName: 'helm upgrade blog Main'
+- bash: |
+    if [[ "$(Build.SourceBranch)" == refs/heads/main || "$(Build.SourceBranch)" == refs/heads/develop || "$(Build.SourceBranch)" == refs/heads/test || "$(Build.SourceBranch)" == refs/heads/feature/* || "$(Build.SourceBranch)" == refs/heads/copilot/* ]]; then
+      echo "##vso[task.setvariable variable=runPa11y]true"
+    else
+      echo "##vso[task.setvariable variable=runPa11y]false"
+    fi
+  displayName: 'Set runPa11y flag'
 - task: CmdLine@2
   displayName: 'Pa11y Accessibility Check'
-  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/'), startsWith(variables['Build.SourceBranch'], 'refs/heads/copilot/')))
+  condition: and(succeeded(), eq(variables['runPa11y'], 'true'))
   continueOnError: true
   env:
     GITHUB_TOKEN: $(GITHUB_TOKEN)
@@ -161,3 +168,12 @@ steps:
         -e SITE_URL="$SITE_URL" \
         node:20-alpine \
         node /app/scripts/create-accessibility-issues.js
+- task: CmdLine@2
+  displayName: 'Fail build if site was unreachable during Pa11y'
+  condition: and(succeeded(), eq(variables['runPa11y'], 'true'))
+  inputs:
+    script: |
+      if grep -q 'ERR_CONNECTION_REFUSED' pa11y-error.log 2>/dev/null; then
+        echo "##vso[task.logissue type=error]Site was unreachable during Pa11y accessibility check (ERR_CONNECTION_REFUSED). The site may not have deployed successfully."
+        exit 1
+      fi
