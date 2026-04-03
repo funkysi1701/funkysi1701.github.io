@@ -1,5 +1,5 @@
 // spec: specs/funkysi1701-test-plan.md
-// seed: tests/seed.spec.ts
+// seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
 
