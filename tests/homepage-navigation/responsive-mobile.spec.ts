@@ -27,6 +27,8 @@ test.describe('Homepage and Navigation', () => {
       // 4. Click hamburger menu to expand
       await expect(hamburger).toBeVisible();
       await hamburger.click();
+      // Wait for Bootstrap collapse animation to complete before checking links
+      await page.locator('#navbarSupportedContent.show').waitFor({ state: 'visible' });
     });
 
     await test.step('Verify all navigation items are accessible', async () => {
