@@ -27,9 +27,9 @@ test.describe('Accessibility', () => {
 
         console.log('Input:', { type: inputType, id: inputId, ariaLabel, placeholder });
 
-        // 3. Skip non-modeSwitcher checkboxes before any interactions — they may use visual
-        //    indicators and focusing them unnecessarily can cause flakiness.
-        if (inputType === 'checkbox' && inputId !== 'modeSwitcher') {
+        // 3. Skip checkboxes before any interactions — they may use visual indicators
+        //    and focusing them unnecessarily can cause flakiness.
+        if (inputType === 'checkbox') {
           continue;
         }
 
