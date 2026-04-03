@@ -5,8 +5,8 @@ const https = require('https');
 
 const GITHUB_TOKEN = (process.env.GITHUB_TOKEN || process.env.GH_TOKEN || '').trim();
 const BUILD_NUMBER = process.env.BUILD_NUMBER || 'unknown';
-const REPO = 'funkysi1701/ThornePentecostalChurch';
-const SITE_URL = 'https://church.funkysi1701.com';
+const REPO = 'funkysi1701/funkysi1701.github.io';
+const SITE_URL = 'https://bog-dev.funkysi1701.com';
 const RESULTS_PATH = process.env.PA11Y_RESULTS_PATH || '/app/pa11y-results.json';
 
 if (!GITHUB_TOKEN) {
