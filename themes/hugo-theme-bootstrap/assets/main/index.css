@@ -3839,7 +3839,7 @@ fieldset:disabled .btn {
   color: var(--hbs-accent) !important;
 }
 [data-palette="blue"] {
-  --hbs-primary: #1565c0;
+  --hbs-primary: #1363be;
   --hbs-primary-dark: #003c8f;
   --hbs-primary-light: #5e92f3;
   --hbs-on-primary: #fff;
@@ -3976,7 +3976,7 @@ fieldset:disabled .btn {
   --hbs-font-size: 16px;
 }
 :root:not([data-palette]) {
-  --hbs-primary: #1565c0;
+  --hbs-primary: #1363be;
   --hbs-primary-dark: #003c8f;
   --hbs-primary-light: #5e92f3;
   --hbs-on-primary: #fff;
