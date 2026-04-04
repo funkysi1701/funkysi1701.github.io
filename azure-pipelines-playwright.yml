@@ -31,9 +31,9 @@ jobs:
       - checkout: self
 
       - task: NodeTool@0
-        displayName: Use Node.js (LTS)
+        displayName: Use Node.js 20.x (LTS)
         inputs:
-          versionSpec: 'lts/*'
+          versionSpec: '20.x'
 
       - task: Cache@2
         displayName: Cache npm
