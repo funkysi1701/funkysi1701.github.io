@@ -7,12 +7,12 @@ test.describe('Homepage and Navigation', () => {
   test('Homepage loads successfully', async ({ page }) => {
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 1. Navigate to https://www.funkysi1701.com
-      await page.goto('https://www.funkysi1701.com');
+      await page.goto('/');
     });
 
     await test.step('Verify the page loads without errors', async () => {
       // 2. Verify the page loads without errors
-      await expect(page).toHaveURL('https://www.funkysi1701.com/');
+      await expect(page).toHaveURL('/');
     });
 
     await test.step("Check that the page title contains 'Simon Foster' or 'Funky Si'", async () => {

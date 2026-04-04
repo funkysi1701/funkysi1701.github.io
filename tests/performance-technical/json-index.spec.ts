@@ -13,7 +13,7 @@ test.describe('Performance and Technical', () => {
 
     await test.step('Navigate to https://www.funkysi1701.com/index.json', async () => {
       // 1. Navigate to https://www.funkysi1701.com/index.json
-      response = await page.goto('https://www.funkysi1701.com/index.json');
+      response = await page.goto('/index.json');
 
       if (!response) {
         throw new Error('No response received');

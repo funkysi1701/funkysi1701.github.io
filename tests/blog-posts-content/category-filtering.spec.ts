@@ -7,7 +7,7 @@ test.describe('Blog Posts and Content', () => {
   test('Blog category filtering', async ({ page }) => {
     await test.step('Navigate to https://www.funkysi1701.com/categories/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/categories/
-      await page.goto('https://www.funkysi1701.com/categories/');
+      await page.goto('/categories/');
     });
 
     await test.step('Verify categories page loads', async () => {
@@ -30,7 +30,7 @@ test.describe('Blog Posts and Content', () => {
         expect(postCount).toBeGreaterThan(0);
 
         // 6. Test navigation back to all categories
-        await page.goto('https://www.funkysi1701.com/categories/');
+        await page.goto('/categories/');
         await expect(page).toHaveURL(/\/categories\//);
       }
     });

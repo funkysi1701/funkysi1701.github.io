@@ -7,7 +7,7 @@ test.describe('About and Static Pages', () => {
   test('About page content and links', async ({ page, context }) => {
     await test.step('Navigate to https://www.funkysi1701.com/about/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/about/
-      await page.goto('https://www.funkysi1701.com/about/');
+      await page.goto('/about/');
     });
 
     await test.step('Verify page loads successfully', async () => {

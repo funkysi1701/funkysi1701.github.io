@@ -7,7 +7,7 @@ test.describe('About and Static Pages', () => {
   test('Projects page displays portfolio', async ({ page, context }) => {
     await test.step('Navigate to https://www.funkysi1701.com/projects/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/projects/
-      await page.goto('https://www.funkysi1701.com/projects/');
+      await page.goto('/projects/');
     });
 
     await test.step('Verify page loads successfully', async () => {

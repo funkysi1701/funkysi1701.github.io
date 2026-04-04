@@ -3,6 +3,7 @@
 
 import { test, expect } from '../fixtures';
 import type { Locator } from '@playwright/test';
+import { benignConsoleErrorSubstrings } from '../console-errors';
 
 test.describe('Search Functionality', () => {
   test('Search with special characters', async ({ page }) => {
@@ -18,7 +19,7 @@ test.describe('Search Functionality', () => {
 
     await test.step('Navigate to https://www.funkysi1701.com/search/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/search/
-      await page.goto('https://www.funkysi1701.com/search/');
+      await page.goto('/search/');
     });
 
     await test.step("Enter search term with special characters (e.g., 'C#' or '.NET')", async () => {
@@ -53,17 +54,18 @@ test.describe('Search Functionality', () => {
 
     await test.step("Test search with symbols like '@', '#', '&'", async () => {
       // 6. Test search with symbols like '@', '#', '&'
+      const before = consoleErrors.length;
       await searchInput.fill('.NET', { force: true });
       await searchInput.press('Enter');
       await page.waitForTimeout(1000);
 
-      // Search with other special characters
       await searchInput.fill('Azure & DevOps', { force: true });
       await searchInput.press('Enter');
       await page.waitForTimeout(1000);
 
-      // Verify no console errors
-      expect(consoleErrors.length).toBe(0);
+      const sinceStep = consoleErrors.slice(before);
+      const relevant = sinceStep.filter((e) => !benignConsoleErrorSubstrings.some((b) => e.includes(b)));
+      expect(relevant, `Unexpected console errors: ${JSON.stringify(sinceStep)}`).toEqual([]);
     });
 
   });

@@ -3,6 +3,7 @@
 
 import { test, expect } from '../fixtures';
 import type { BrowserContext, Page } from '@playwright/test';
+import { SAMPLE_TAGGED_POST } from '../paths';
 
 test.describe('Edge Cases and Error Handling', () => {
   test('Concurrent user sessions', async ({ browser }) => {
@@ -16,20 +17,20 @@ test.describe('Edge Cases and Error Handling', () => {
         // 1. Open site in regular browser window
         context1 = await browser.newContext();
         page1 = await context1.newPage();
-        await page1.goto('https://www.funkysi1701.com');
+        await page1.goto('/');
       });
 
       await test.step('Open site in incognito/private window', async () => {
         // 2. Open site in incognito/private window
         context2 = await browser.newContext();
         page2 = await context2.newPage();
-        await page2.goto('https://www.funkysi1701.com');
+        await page2.goto('/');
       });
 
       await test.step('Navigate to different pages in each window', async () => {
         // 3. Navigate to different pages in each window
-        await page1.goto('https://www.funkysi1701.com/about/');
-        await page2.goto('https://www.funkysi1701.com/projects/');
+        await page1.goto('/about/');
+        await page2.goto('/projects/');
       });
 
       await test.step('Verify both sessions work independently', async () => {
@@ -49,8 +50,8 @@ test.describe('Edge Cases and Error Handling', () => {
         await expect(page2.locator('nav').first()).toBeVisible();
 
         // Navigate to same page in both contexts
-        await page1.goto('https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026');
-        await page2.goto('https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026');
+        await page1.goto(SAMPLE_TAGGED_POST);
+        await page2.goto(SAMPLE_TAGGED_POST);
 
         // Both should load independently
         await expect(page1.locator('h1')).toBeVisible();

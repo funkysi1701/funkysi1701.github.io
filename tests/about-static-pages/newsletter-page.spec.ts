@@ -7,7 +7,7 @@ test.describe('About and Static Pages', () => {
   test('Newsletter page content', async ({ page }) => {
     await test.step('Navigate to https://www.funkysi1701.com/newsletter/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/newsletter/
-      await page.goto('https://www.funkysi1701.com/newsletter/');
+      await page.goto('/newsletter/');
     });
 
     await test.step('Verify page loads successfully', async () => {

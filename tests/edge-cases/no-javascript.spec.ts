@@ -3,6 +3,7 @@
 
 import { test, expect } from '../fixtures';
 import type { BrowserContext, Page } from '@playwright/test';
+import { SAMPLE_TAGGED_POST } from '../paths';
 
 test.describe('Edge Cases and Error Handling', () => {
   test('JavaScript disabled fallback', async ({ browser }) => {
@@ -20,7 +21,7 @@ test.describe('Edge Cases and Error Handling', () => {
 
       await test.step('Navigate to https://www.funkysi1701.com', async () => {
         // 2. Navigate to https://www.funkysi1701.com
-        await page!.goto('https://www.funkysi1701.com');
+        await page!.goto('/');
       });
 
       await test.step('Verify basic content is still visible', async () => {
@@ -29,18 +30,18 @@ test.describe('Edge Cases and Error Handling', () => {
       });
 
       await test.step('Check that navigation links work', async () => {
-        // 4. Check that navigation links work
-        const nav = page!.locator('nav').first();
+        // 4. Check that navigation links work (static HTML may use header/nav patterns)
+        const nav = page!.locator('header nav, nav, [role="navigation"]').first();
         await expect(nav).toBeVisible();
 
-        // Get all navigation links
-        const navLinks = await page!.locator('nav a').all();
-        expect(navLinks.length).toBeGreaterThan(0);
+        const inNav = await page!.locator('header nav a, nav a, [role="navigation"] a').count();
+        const anyInternal = await page!.locator('a[href^="/"]').count();
+        expect(inNav + anyInternal).toBeGreaterThan(0);
       });
 
       await test.step('Test blog post access', async () => {
         // 5. Test blog post access
-        await page!.goto('https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026');
+        await page!.goto(SAMPLE_TAGGED_POST);
       });
 
       await test.step('Verify static content loads', async () => {

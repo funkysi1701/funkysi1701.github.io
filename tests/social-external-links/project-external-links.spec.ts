@@ -11,7 +11,7 @@ test.describe('Social Media and External Links', () => {
 
     await test.step('Navigate to https://www.funkysi1701.com/projects/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/projects/
-      await page.goto('https://www.funkysi1701.com/projects/');
+      await page.goto('/projects/');
     });
 
     await test.step('Find Episode Atlas project link', async () => {

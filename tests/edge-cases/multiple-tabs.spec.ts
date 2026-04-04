@@ -12,19 +12,19 @@ test.describe('Edge Cases and Error Handling', () => {
     try {
       await test.step('Open https://www.funkysi1701.com in first tab', async () => {
         // 1. Open https://www.funkysi1701.com in first tab
-        await page.goto('https://www.funkysi1701.com');
+        await page.goto('/');
       });
 
       await test.step('Open homepage in second tab', async () => {
         // 2. Open homepage in second tab
         page2 = await context.newPage();
-        await page2.goto('https://www.funkysi1701.com');
+        await page2.goto('/');
       });
 
       await test.step('Navigate to different pages in each tab', async () => {
         // 3. Navigate to different pages in each tab
-        await page.goto('https://www.funkysi1701.com/about/');
-        await page2!.goto('https://www.funkysi1701.com/projects/');
+        await page.goto('/about/');
+        await page2!.goto('/projects/');
       });
 
       await test.step('Switch between tabs', async () => {
@@ -50,7 +50,7 @@ test.describe('Edge Cases and Error Handling', () => {
       await test.step('Open external links which create new tabs', async () => {
         // 7. Open external links which create new tabs
         page3 = await context.newPage();
-        await page3.goto('https://www.funkysi1701.com/contact/');
+        await page3.goto('/contact/');
       });
 
       await test.step('Verify all tabs function independently', async () => {

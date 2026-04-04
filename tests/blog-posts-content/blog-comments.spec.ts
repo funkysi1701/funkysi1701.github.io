@@ -3,7 +3,7 @@
 
 import { test, expect } from '../fixtures';
 
-const POST_URL = 'https://www.funkysi1701.com/posts/2026/ndc-london-2026';
+const POST_URL = '/posts/2026/ndc-london-2026';
 const GISCUS_REPO = 'funkysi1701/Blog-Comments';
 const GISCUS_REPO_ID = 'R_kgDOQJKGlA';
 const GISCUS_CATEGORY = 'General';
@@ -146,13 +146,13 @@ test.describe('Comment Engine - Giscus Integration', () => {
 
   test('Comment section is absent on non-post pages', async ({ page }) => {
     await test.step('Verify the homepage has no #post-comments container', async () => {
-      await page.goto('https://www.funkysi1701.com/');
+      await page.goto('/');
       const commentsCard = page.locator('#post-comments');
       await expect(commentsCard).toHaveCount(0);
     });
 
     await test.step('Verify the about page has no #post-comments container', async () => {
-      await page.goto('https://www.funkysi1701.com/about/');
+      await page.goto('/about/');
       const commentsCard = page.locator('#post-comments');
       await expect(commentsCard).toHaveCount(0);
     });

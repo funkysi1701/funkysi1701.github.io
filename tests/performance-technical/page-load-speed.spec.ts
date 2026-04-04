@@ -17,7 +17,7 @@ test.describe('Performance and Technical', () => {
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 2. Navigate to https://www.funkysi1701.com
       startTime = Date.now();
-      await page.goto('https://www.funkysi1701.com');
+      await page.goto('/');
       endTime = Date.now();
 
       // 3-5. Measure performance metrics

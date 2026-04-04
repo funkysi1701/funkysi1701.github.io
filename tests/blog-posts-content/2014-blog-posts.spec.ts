@@ -6,7 +6,7 @@ import { test, expect } from '../fixtures';
 test.describe('2014 Blog Posts', () => {
   test('Destination Star Trek post displays correctly', async ({ page }) => {
     // Navigate to the Destination Star Trek post
-    await page.goto('https://www.funkysi1701.com/posts/2014/destination-star-trek');
+    await page.goto('/posts/2014/destination-star-trek');
 
     // Verify blog post loads successfully
     await expect(page).toHaveURL(/destination-star-trek/);
@@ -34,7 +34,7 @@ test.describe('2014 Blog Posts', () => {
 
   test('I Love Nagios post displays correctly', async ({ page }) => {
     // Navigate to the I Love Nagios post
-    await page.goto('https://www.funkysi1701.com/posts/2014/i-love-nagios');
+    await page.goto('/posts/2014/i-love-nagios');
 
     // Verify blog post loads successfully
     await expect(page).toHaveURL(/i-love-nagios/);
@@ -62,7 +62,7 @@ test.describe('2014 Blog Posts', () => {
 
   test('Looking Back at 2014 post displays correctly', async ({ page }) => {
     // Navigate to the Looking Back at 2014 post
-    await page.goto('https://www.funkysi1701.com/posts/2014/looking-back-at-2014');
+    await page.goto('/posts/2014/looking-back-at-2014');
 
     // Verify blog post loads successfully
     await expect(page).toHaveURL(/looking-back-at-2014/);
@@ -90,7 +90,7 @@ test.describe('2014 Blog Posts', () => {
 
   test('What is the difference between Dev and Ops post displays correctly', async ({ page }) => {
     // Navigate to the What is the difference between Dev and Ops post
-    await page.goto('https://www.funkysi1701.com/posts/2014/what-is-the-difference-between-dev-and-ops');
+    await page.goto('/posts/2014/what-is-the-difference-between-dev-and-ops');
 
     // Verify blog post loads successfully
     await expect(page).toHaveURL(/what-is-the-difference-between-dev-and-ops/);
@@ -110,7 +110,7 @@ test.describe('2014 Blog Posts', () => {
 
   test('Windows 9 or 10 post displays correctly', async ({ page }) => {
     // Navigate to the Windows 9 or 10 post
-    await page.goto('https://www.funkysi1701.com/posts/2014/windows-9-or-do-i-mean-10');
+    await page.goto('/posts/2014/windows-9-or-do-i-mean-10');
 
     // Verify blog post loads successfully
     await expect(page).toHaveURL(/windows-9-or-do-i-mean-10|windows.*10/);
