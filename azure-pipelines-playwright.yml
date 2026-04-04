@@ -3,6 +3,14 @@ name: $(Build.Number.Major).$(Build.Number.Minor).$(Build.Number.Sub).$(Rev:r)
 
 variables:
   - group: Global
+  - name: Build.Number.Major
+    value: 10
+  - name: Build.Number.Minor
+    value: 1
+  - name: Build.Number.Sub
+    value: 1
+  - name: BuildNumber
+    value: $(Build.BuildNumber)
 
 trigger:
   branches:
