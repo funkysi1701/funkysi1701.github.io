@@ -9,7 +9,7 @@ test.describe('Accessibility', () => {
     let navbarAttributes!: { exists: boolean; hasAriaLabelledby: boolean; ariaLabelledbyValue: string | null };
 
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
-      await page.goto('https://www.funkysi1701.com');
+      await page.goto('/');
     });
 
     await test.step('Check that element with id="navbarSupportedContent" exists', async () => {

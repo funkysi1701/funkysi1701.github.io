@@ -9,7 +9,7 @@ test.describe('Performance and Technical', () => {
 
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 1. Navigate to https://www.funkysi1701.com
-      const response = await page.goto('https://www.funkysi1701.com');
+      const response = await page.goto('/');
 
       if (!response) {
         throw new Error('No response received');

@@ -13,7 +13,7 @@ test.describe('Blog Posts and Content', () => {
 
     await test.step('Navigate to https://www.funkysi1701.com/posts/events/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/posts/events/
-      await page.goto('https://www.funkysi1701.com/posts/events/');
+      await page.goto('/posts/events/');
     });
 
     await test.step('Verify Events page loads successfully', async () => {

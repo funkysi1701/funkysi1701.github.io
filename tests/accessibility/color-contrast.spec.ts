@@ -7,7 +7,7 @@ test.describe('Accessibility', () => {
   test('Color contrast and readability', async ({ page }) => {
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 1. Navigate to https://www.funkysi1701.com
-      await page.goto('https://www.funkysi1701.com');
+      await page.goto('/');
     });
 
     await test.step('Verify text has sufficient contrast against background', async () => {

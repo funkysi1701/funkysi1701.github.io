@@ -7,7 +7,7 @@ test.describe('Edge Cases and Error Handling', () => {
   test('Page refresh preservation', async ({ page }) => {
     await test.step('Navigate to a blog post', async () => {
       // 1. Navigate to a blog post
-      await page.goto('https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026');
+      await page.goto('/posts/2026/01/31/ndc-london-2026');
     });
 
     await test.step('Scroll halfway down the page', async () => {
@@ -32,7 +32,7 @@ test.describe('Edge Cases and Error Handling', () => {
 
     await test.step('Navigate to search page', async () => {
       // 5. Navigate to search page
-      await page.goto('https://www.funkysi1701.com/search/');
+      await page.goto('/search/');
     });
 
     await test.step('Perform a search', async () => {

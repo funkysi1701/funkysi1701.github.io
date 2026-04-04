@@ -7,7 +7,7 @@ test.describe('Accessibility', () => {
   test('Keyboard navigation', async ({ page }) => {
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 1. Navigate to https://www.funkysi1701.com
-      await page.goto('https://www.funkysi1701.com');
+      await page.goto('/');
     });
 
     await test.step('Press Tab key repeatedly', async () => {
@@ -44,7 +44,7 @@ test.describe('Accessibility', () => {
     await test.step('Navigate through main menu using Tab', async () => {
       // 5. Navigate through main menu using Tab
       // Reset to start
-      await page.goto('https://www.funkysi1701.com');
+      await page.goto('/');
 
       // Tab to first menu item
       let tabCount = 0;
@@ -75,7 +75,7 @@ test.describe('Accessibility', () => {
 
     await test.step('Test keyboard navigation on search page', async () => {
       // 8. Test keyboard navigation on search page
-      await page.goto('https://www.funkysi1701.com/search/');
+      await page.goto('/search/');
       await page.keyboard.press('Tab');
     });
 

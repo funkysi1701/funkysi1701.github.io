@@ -7,7 +7,7 @@ test.describe('About and Static Pages', () => {
   test('Contact page functionality', async ({ page, context }) => {
     await test.step('Navigate to https://www.funkysi1701.com/contact/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/contact/
-      await page.goto('https://www.funkysi1701.com/contact/');
+      await page.goto('/contact/');
     });
 
     await test.step('Verify email address is displayed as mailto link', async () => {

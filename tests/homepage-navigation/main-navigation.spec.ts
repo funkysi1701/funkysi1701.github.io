@@ -7,7 +7,7 @@ test.describe('Homepage and Navigation', () => {
   test('Main navigation menu functionality', async ({ page, context }) => {
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 1. Navigate to https://www.funkysi1701.com
-      await page.goto('https://www.funkysi1701.com');
+      await page.goto('/');
     });
 
     await test.step('Verify all navigation items are visible', async () => {

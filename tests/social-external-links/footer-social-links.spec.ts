@@ -12,7 +12,7 @@ test.describe('Social Media and External Links', () => {
 
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 1. Navigate to https://www.funkysi1701.com
-      await page.goto('https://www.funkysi1701.com');
+      await page.goto('/');
     });
 
     await test.step('Scroll to footer', async () => {

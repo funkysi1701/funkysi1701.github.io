@@ -11,7 +11,7 @@ test.describe('Performance and Technical', () => {
 
     await test.step('Navigate to a non-existent page', async () => {
       // 1. Navigate to a non-existent page
-      response = await page.goto('https://www.funkysi1701.com/this-page-does-not-exist');
+      response = await page.goto('/this-page-does-not-exist');
     });
 
     await test.step('Verify HTTP status code is 404', async () => {

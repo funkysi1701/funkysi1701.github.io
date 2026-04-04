@@ -7,7 +7,7 @@ test.describe('Search Functionality', () => {
   test('Search pagination (if applicable)', async ({ page }) => {
     await test.step('Navigate to https://www.funkysi1701.com/search/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/search/
-      await page.goto('https://www.funkysi1701.com/search/');
+      await page.goto('/search/');
     });
 
     await test.step("Search for a broad term that returns many results (e.g., 'Azure')", async () => {

@@ -8,7 +8,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: process.env.CI
     ? [
-        ['github'],
+        ['junit', { outputFile: 'test-results/junit.xml' }],
         ['list'],
         ['html', { open: 'never' }],
         ['./reporters/page-visit-tracker.ts'],
@@ -18,7 +18,7 @@ export default defineConfig({
         ['./reporters/page-visit-tracker.ts'],
       ],
   use: {
-    baseURL: 'https://www.funkysi1701.com',
+    baseURL: process.env.BASE_URL || 'https://www.funkysi1701.com',
     trace: process.env.CI ? 'retain-on-failure' : 'on-first-retry',
     screenshot: 'only-on-failure',
   },
