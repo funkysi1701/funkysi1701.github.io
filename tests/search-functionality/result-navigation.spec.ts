@@ -51,7 +51,7 @@ test.describe('Search Functionality', () => {
           } catch {
             await page.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 20_000 });
           }
-          await page.waitForLoadState('domcontentloaded').catch(() => {});
+          await page.waitForLoadState('domcontentloaded');
         }
 
         // 7. Verify search results are preserved
