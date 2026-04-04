@@ -45,7 +45,7 @@ test.describe('Edge Cases and Error Handling', () => {
 
     await test.step('Navigate to a blog post', async () => {
       // 8. Navigate to a blog post
-      await page.goto('/posts/2026/01/31/ndc-london-2026');
+      await page.goto('/posts/2026/ndc-london-2026/');
     });
 
     await test.step('Use back button multiple times', async () => {

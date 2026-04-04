@@ -16,7 +16,6 @@ trigger:
 - develop
 - test
 - main
-- feature/*
 
 pool: Docker
 
