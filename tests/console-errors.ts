@@ -25,7 +25,6 @@ export const benignConsoleErrorSubstrings: ReadonlyArray<string> = [
   'googleads',
   'doubleclick',
   'googlesyndication',
-  'googletagmanager',
   'giscus',
   'Disqus',
   'Content Security Policy',
