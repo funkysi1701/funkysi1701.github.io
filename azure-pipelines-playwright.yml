@@ -20,8 +20,7 @@ pr:
       - test
       - develop
 
-pool:
-  vmImage: ubuntu-latest
+pool: Docker
 
 jobs:
   - job: playwright
