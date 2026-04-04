@@ -3,6 +3,7 @@
 
 import { test, expect } from '../fixtures';
 import type { Locator } from '@playwright/test';
+import { benignConsoleErrorSubstrings } from '../console-errors';
 
 test.describe('Search Functionality', () => {
   test('Search with special characters', async ({ page }) => {
@@ -52,21 +53,6 @@ test.describe('Search Functionality', () => {
     });
 
     await test.step("Test search with symbols like '@', '#', '&'", async () => {
-      const benign = [
-        'ERR_NAME_NOT_RESOLVED',
-        'ERR_ADDRESS_INVALID',
-        'ERR_BLOCKED_BY_CLIENT',
-        'ResizeObserver',
-        'favicon.ico',
-        'Failed to load resource',
-        'net::ERR',
-        'Script error',
-        'Cross-Origin',
-        'Content Security Policy',
-        'googleads',
-        'googlesyndication',
-      ];
-
       // 6. Test search with symbols like '@', '#', '&'
       const before = consoleErrors.length;
       await searchInput.fill('.NET', { force: true });
@@ -78,7 +64,7 @@ test.describe('Search Functionality', () => {
       await page.waitForTimeout(1000);
 
       const sinceStep = consoleErrors.slice(before);
-      const relevant = sinceStep.filter((e) => !benign.some((b) => e.includes(b)));
+      const relevant = sinceStep.filter((e) => !benignConsoleErrorSubstrings.some((b) => e.includes(b)));
       expect(relevant, `Unexpected console errors: ${JSON.stringify(sinceStep)}`).toEqual([]);
     });
 
