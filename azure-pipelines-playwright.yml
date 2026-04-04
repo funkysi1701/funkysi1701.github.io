@@ -1,5 +1,5 @@
 ---
-name: Playwright Tests
+name: $(Build.Number.Major).$(Build.Number.Minor).$(Build.Number.Sub).$(Rev:r)
 
 variables:
   - group: Global
