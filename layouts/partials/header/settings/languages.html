@@ -6,9 +6,9 @@
     </div>
     <div class="col-auto ms-auto">
       <div class="dropdown">
-        <a class="btn btn-sm btn-outline-primary dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button type="button" class="btn btn-sm btn-outline-primary dropdown-toggle" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
           {{ $.Language.LanguageName }}
-        </a>
+        </button>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
           {{- range $.Site.Home.AllTranslations -}}
             {{- if ne $.Lang .Language.Lang -}}
