@@ -20,6 +20,18 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+      - name: Determine base URL
+        run: |
+          BRANCH="${{ github.base_ref || github.ref_name }}"
+          if [[ "$BRANCH" == "main" || "$BRANCH" == "master" ]]; then
+            echo "BASE_URL=https://www.funkysi1701.com" >> $GITHUB_ENV
+          elif [[ "$BRANCH" == "test" ]]; then
+            echo "BASE_URL=https://blog-test.funkysi1701.com" >> $GITHUB_ENV
+          elif [[ "$BRANCH" == "develop" ]]; then
+            echo "BASE_URL=https://blog-dev.funkysi1701.com" >> $GITHUB_ENV
+          else
+            echo "BASE_URL=https://www.funkysi1701.com" >> $GITHUB_ENV
+          fi
       - name: Run Playwright tests
         run: npx playwright test
       - name: Generate page coverage for Codecov

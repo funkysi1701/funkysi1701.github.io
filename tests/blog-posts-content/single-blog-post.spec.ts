@@ -7,7 +7,7 @@ test.describe('Blog Posts and Content', () => {
   test('Individual blog post displays correctly', async ({ page }) => {
     await test.step('Navigate to https://www.funkysi1701.com/posts/2026/ndc-london-2026', async () => {
       // 1. Navigate to https://www.funkysi1701.com/posts/2026/ndc-london-2026
-      await page.goto('https://www.funkysi1701.com/posts/2026/ndc-london-2026');
+      await page.goto('/posts/2026/ndc-london-2026');
     });
 
     await test.step('Verify blog post loads successfully', async () => {

@@ -7,7 +7,7 @@ test.describe('Edge Cases and Error Handling', () => {
   test('Direct URL access to deep links', async ({ page }) => {
     await test.step('Directly navigate to a blog post', async () => {
       // 1. Directly navigate to a blog post
-      await page.goto('https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026');
+      await page.goto('/posts/2026/01/31/ndc-london-2026');
     });
 
     await test.step('Verify page loads without errors', async () => {
@@ -18,7 +18,7 @@ test.describe('Edge Cases and Error Handling', () => {
 
     await test.step('Directly navigate to a tag page', async () => {
       // 3. Directly navigate to a tag page
-      await page.goto('https://www.funkysi1701.com/tags/');
+      await page.goto('/tags/');
     });
 
     await test.step('Verify tag page loads correctly', async () => {
@@ -29,7 +29,7 @@ test.describe('Edge Cases and Error Handling', () => {
 
     await test.step('Directly navigate to a year archive', async () => {
       // 5. Directly navigate to a year archive
-      await page.goto('https://www.funkysi1701.com/2024/');
+      await page.goto('/2024/');
     });
 
     await test.step('Verify archive page loads correctly', async () => {
@@ -40,13 +40,13 @@ test.describe('Edge Cases and Error Handling', () => {
 
     await test.step('Test various deep link patterns', async () => {
       // 7. Test various deep link patterns
-      await page.goto('https://www.funkysi1701.com/about/');
+      await page.goto('/about/');
       await expect(page).toHaveURL(/\/about\//);
 
-      await page.goto('https://www.funkysi1701.com/projects/');
+      await page.goto('/projects/');
       await expect(page).toHaveURL(/\/projects\//);
 
-      await page.goto('https://www.funkysi1701.com/search/');
+      await page.goto('/search/');
       await expect(page).toHaveURL(/\/search\//);
     });
 

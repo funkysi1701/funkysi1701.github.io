@@ -7,7 +7,7 @@ test.describe('Edge Cases and Error Handling', () => {
   test('Long content scrolling', async ({ page }) => {
     await test.step('Navigate to a long blog post', async () => {
       // 1. Navigate to a long blog post
-      await page.goto('https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026');
+      await page.goto('/posts/2026/01/31/ndc-london-2026');
     });
 
     await test.step('Scroll to bottom of page', async () => {

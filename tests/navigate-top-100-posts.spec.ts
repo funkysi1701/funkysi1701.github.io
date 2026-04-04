@@ -1,10 +1,8 @@
 import { test, expect } from './fixtures';
 
-const BASE_URL = 'https://www.funkysi1701.com';
-
 test('navigate to www.funkysi1701.com, check top 100 blog posts for broken links and images', async ({ page }) => {
   // Step 1: Navigate to the homepage
-  await page.goto(BASE_URL);
+  await page.goto('/');
   await expect(page).toHaveTitle(/Funky Si's Blog/);
 
   // Step 2: Find top 100 blog post URLs (assume links under /posts/)
@@ -12,13 +10,9 @@ test('navigate to www.funkysi1701.com, check top 100 blog posts for broken links
     const seen = new Set();
     const urls = [];
     for (const a of as) {
-      let href = a.getAttribute('href');
+      const href = (a as HTMLAnchorElement).href; // absolute URL resolved from DOM
       if (href && !seen.has(href)) {
         seen.add(href);
-        // Make absolute URL
-        if (href.startsWith('/')) {
-          href = 'https://www.funkysi1701.com' + href;
-        }
         urls.push(href);
         if (urls.length >= 100) break;
       }

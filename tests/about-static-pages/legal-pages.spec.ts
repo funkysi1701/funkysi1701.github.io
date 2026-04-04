@@ -7,7 +7,7 @@ test.describe('About and Static Pages', () => {
   test('Privacy Policy and Terms pages', async ({ page }) => {
     await test.step('Navigate to https://www.funkysi1701.com/privacy-policy/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/privacy-policy/
-      await page.goto('https://www.funkysi1701.com/privacy-policy/');
+      await page.goto('/privacy-policy/');
     });
 
     await test.step('Verify page loads and contains privacy policy content', async () => {
@@ -22,7 +22,7 @@ test.describe('About and Static Pages', () => {
 
     await test.step('Navigate to https://www.funkysi1701.com/terms/', async () => {
       // 3. Navigate to https://www.funkysi1701.com/terms/
-      await page.goto('https://www.funkysi1701.com/terms/');
+      await page.goto('/terms/');
     });
 
     await test.step('Verify page loads and contains terms content', async () => {

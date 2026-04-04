@@ -9,7 +9,7 @@ test.describe('Accessibility', () => {
 
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 1. Navigate to https://www.funkysi1701.com
-      await page.goto('https://www.funkysi1701.com');
+      await page.goto('/');
     });
 
     await test.step('Inspect page structure for semantic HTML', async () => {

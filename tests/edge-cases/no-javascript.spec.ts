@@ -20,7 +20,7 @@ test.describe('Edge Cases and Error Handling', () => {
 
       await test.step('Navigate to https://www.funkysi1701.com', async () => {
         // 2. Navigate to https://www.funkysi1701.com
-        await page!.goto('https://www.funkysi1701.com');
+        await page!.goto('/');
       });
 
       await test.step('Verify basic content is still visible', async () => {
@@ -40,7 +40,7 @@ test.describe('Edge Cases and Error Handling', () => {
 
       await test.step('Test blog post access', async () => {
         // 5. Test blog post access
-        await page!.goto('https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026');
+        await page!.goto('/posts/2026/01/31/ndc-london-2026');
       });
 
       await test.step('Verify static content loads', async () => {

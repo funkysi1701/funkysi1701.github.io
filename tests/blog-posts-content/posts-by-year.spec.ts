@@ -10,7 +10,7 @@ test.describe('Blog Posts and Content', () => {
 
     await test.step('Navigate to https://www.funkysi1701.com/2026/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/2026/
-      await page.goto('https://www.funkysi1701.com/2026/');
+      await page.goto('/2026/');
     });
 
     await test.step('Verify page shows posts from 2026', async () => {
@@ -28,7 +28,7 @@ test.describe('Blog Posts and Content', () => {
 
     await test.step('Navigate to https://www.funkysi1701.com/2025/', async () => {
       // 4. Navigate to https://www.funkysi1701.com/2025/
-      await page.goto('https://www.funkysi1701.com/2025/');
+      await page.goto('/2025/');
     });
 
     await test.step('Verify posts from 2025 are displayed', async () => {
@@ -41,7 +41,7 @@ test.describe('Blog Posts and Content', () => {
 
     await test.step('Navigate to https://www.funkysi1701.com/2024/', async () => {
       // 6. Navigate to https://www.funkysi1701.com/2024/
-      await page.goto('https://www.funkysi1701.com/2024/');
+      await page.goto('/2024/');
     });
 
     await test.step('Verify posts from 2024 are displayed', async () => {
@@ -54,10 +54,10 @@ test.describe('Blog Posts and Content', () => {
 
     await test.step('Test navigation for older years', async () => {
       // 8. Test navigation for older years
-      await page.goto('https://www.funkysi1701.com/2023/');
+      await page.goto('/2023/');
       await expect(page).toHaveURL(/\/2023\//);
 
-      await page.goto('https://www.funkysi1701.com/2022/');
+      await page.goto('/2022/');
       await expect(page).toHaveURL(/\/2022\//);
     });
 

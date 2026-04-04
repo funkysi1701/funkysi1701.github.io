@@ -18,7 +18,7 @@ test.describe('Search Functionality', () => {
 
     await test.step('Navigate to https://www.funkysi1701.com/search/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/search/
-      await page.goto('https://www.funkysi1701.com/search/');
+      await page.goto('/search/');
     });
 
     await test.step("Enter search term with special characters (e.g., 'C#' or '.NET')", async () => {

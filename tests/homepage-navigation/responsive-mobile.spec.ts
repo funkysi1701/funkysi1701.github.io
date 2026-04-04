@@ -15,7 +15,7 @@ test.describe('Homepage and Navigation', () => {
 
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 2. Navigate to https://www.funkysi1701.com
-      await page.goto('https://www.funkysi1701.com');
+      await page.goto('/');
     });
 
     await test.step('Check if navigation menu collapses to hamburger menu', async () => {

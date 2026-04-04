@@ -4,6 +4,8 @@
 import { test, expect } from '../fixtures';
 import type { Response } from '@playwright/test';
 
+const baseURL = process.env.BASE_URL || 'https://www.funkysi1701.com';
+
 test.describe('Performance and Technical', () => {
   test('Sitemap validation', async ({ page }) => {
     let content!: string;
@@ -12,7 +14,7 @@ test.describe('Performance and Technical', () => {
 
     await test.step('Navigate to https://www.funkysi1701.com/sitemap.xml', async () => {
       // 1. Navigate to https://www.funkysi1701.com/sitemap.xml
-      response = await page.goto('https://www.funkysi1701.com/sitemap.xml');
+      response = await page.goto('/sitemap.xml');
 
       if (!response) {
         throw new Error('No response received');
@@ -48,7 +50,7 @@ test.describe('Performance and Technical', () => {
 
     await test.step('Verify URLs are absolute (not relative)', async () => {
       // 6. Verify URLs are absolute (not relative)
-      expect(content).toContain('https://www.funkysi1701.com/');
+      expect(content).toContain(`${baseURL}/`);
       expect(content).not.toMatch(/<loc>\/[^h]/); // URLs should start with http
     });
 

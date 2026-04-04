@@ -7,7 +7,7 @@ test.describe('Social Media and External Links', () => {
   test('Support this site link', async ({ page, context }) => {
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 1. Navigate to https://www.funkysi1701.com
-      await page.goto('https://www.funkysi1701.com');
+      await page.goto('/');
     });
 
     await test.step("Click on 'Support this site' navigation link", async () => {

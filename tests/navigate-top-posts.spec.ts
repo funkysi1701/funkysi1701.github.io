@@ -10,50 +10,50 @@ test('navigate to www.funkysi1701.com, click top blog posts, check console for e
   });
 
   // Step 1: Navigate to the homepage
-  await page.goto('https://www.funkysi1701.com');
+  await page.goto('/');
   await expect(page).toHaveTitle(/Funky Si's Blog/);
 
   // Step 2: Use explicit URLs for the top blog posts based on MCP output
   const blogPostUrls = [
-    'https://www.funkysi1701.com/posts/start-here/',
-    'https://www.funkysi1701.com/posts/2026/ndc-london-2026/',
-    'https://www.funkysi1701.com/posts/2026/2025-in-review-and-2026-goals/',
+    '/posts/start-here/',
+    '/posts/2026/ndc-london-2026/',
+    '/posts/2026/2025-in-review-and-2026-goals/',
 
-    'https://www.funkysi1701.com/posts/2025/kubernetes-and-letsencrypt/',
-    'https://www.funkysi1701.com/posts/2025/stepping-outside-your-comfort-zone/',
-    'https://www.funkysi1701.com/posts/2025/deploying-hugo-with-helm/',
-    'https://www.funkysi1701.com/posts/2025/learning-kubernetes/',
-    'https://www.funkysi1701.com/posts/2025/getting-started-with-opentelemetry/',
-    'https://www.funkysi1701.com/posts/2025/periodic-table-devops-2025/',
-    'https://www.funkysi1701.com/posts/2025/setting-up-grafana/',
-    'https://www.funkysi1701.com/posts/2025/opentelemetry-logs/',
-    'https://www.funkysi1701.com/posts/2025/nuget-central-package-management/',
-    'https://www.funkysi1701.com/posts/2025/merge-two-projects-into-one/',
-    'https://www.funkysi1701.com/posts/2025/mandelbrot-set/',
-    'https://www.funkysi1701.com/posts/2025/pragmatic-programmer/',
-    'https://www.funkysi1701.com/posts/2025/whats-new-csharp/',
-    'https://www.funkysi1701.com/posts/2025/volunteering-at-ndc/',
-    'https://www.funkysi1701.com/posts/2025/using-ai/',
-    'https://www.funkysi1701.com/posts/2025/the-hacker-ethic/',
-    'https://www.funkysi1701.com/posts/2025/monitoring-with-nagios-docker/',
-    'https://www.funkysi1701.com/posts/2025/fun-with-ai/',
-    'https://www.funkysi1701.com/posts/2025/festive-naughty-or-nice-checker/',
-    'https://www.funkysi1701.com/posts/2025/exceptions/',
-    'https://www.funkysi1701.com/posts/2025/blazor-and-dotnet10/',
-    'https://www.funkysi1701.com/posts/2025/aspire-9.2/',
-    'https://www.funkysi1701.com/posts/2025/adding-elasticsearch-with-aspire/',
+    '/posts/2025/kubernetes-and-letsencrypt/',
+    '/posts/2025/stepping-outside-your-comfort-zone/',
+    '/posts/2025/deploying-hugo-with-helm/',
+    '/posts/2025/learning-kubernetes/',
+    '/posts/2025/getting-started-with-opentelemetry/',
+    '/posts/2025/periodic-table-devops-2025/',
+    '/posts/2025/setting-up-grafana/',
+    '/posts/2025/opentelemetry-logs/',
+    '/posts/2025/nuget-central-package-management/',
+    '/posts/2025/merge-two-projects-into-one/',
+    '/posts/2025/mandelbrot-set/',
+    '/posts/2025/pragmatic-programmer/',
+    '/posts/2025/whats-new-csharp/',
+    '/posts/2025/volunteering-at-ndc/',
+    '/posts/2025/using-ai/',
+    '/posts/2025/the-hacker-ethic/',
+    '/posts/2025/monitoring-with-nagios-docker/',
+    '/posts/2025/fun-with-ai/',
+    '/posts/2025/festive-naughty-or-nice-checker/',
+    '/posts/2025/exceptions/',
+    '/posts/2025/blazor-and-dotnet10/',
+    '/posts/2025/aspire-9.2/',
+    '/posts/2025/adding-elasticsearch-with-aspire/',
 
-    'https://www.funkysi1701.com/posts/2024/top-electricity-devices/',
-    'https://www.funkysi1701.com/posts/2024/strategy-pattern/',
-    'https://www.funkysi1701.com/posts/2024/scottishsummit/',
-    'https://www.funkysi1701.com/posts/2024/end-of-year/',
-    'https://www.funkysi1701.com/posts/2024/dotnet9/',
-    'https://www.funkysi1701.com/posts/2024/common-ai-copilot-terms/',
-    'https://www.funkysi1701.com/posts/2024/codeclub/',
-    'https://www.funkysi1701.com/posts/2024/trekranks/',
-    'https://www.funkysi1701.com/posts/2024/charity-hike/',
-    'https://www.funkysi1701.com/posts/2024/automatic-pull-requests/',
-    'https://www.funkysi1701.com/posts/2024/aspire/'
+    '/posts/2024/top-electricity-devices/',
+    '/posts/2024/strategy-pattern/',
+    '/posts/2024/scottishsummit/',
+    '/posts/2024/end-of-year/',
+    '/posts/2024/dotnet9/',
+    '/posts/2024/common-ai-copilot-terms/',
+    '/posts/2024/codeclub/',
+    '/posts/2024/trekranks/',
+    '/posts/2024/charity-hike/',
+    '/posts/2024/automatic-pull-requests/',
+    '/posts/2024/aspire/'
   ];
 
   for (const url of blogPostUrls) {
@@ -63,6 +63,6 @@ test('navigate to www.funkysi1701.com, click top blog posts, check console for e
     const relevantErrors = errors.filter(err => !err.includes('ERR_NAME_NOT_RESOLVED') && !err.includes('ERR_ADDRESS_INVALID'));
     expect(relevantErrors).toEqual([]);
     // Optionally, check that the page loaded a blog post
-    await expect(page).toHaveURL(url);
+    await expect(page).toHaveURL(new RegExp(url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
   }
 });
