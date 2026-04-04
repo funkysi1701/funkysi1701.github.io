@@ -36,8 +36,9 @@ test.describe('Accessibility', () => {
           
           // Check for submit buttons - An `<input type="submit">` or `<input type="image">`
           const submitInputs = form.querySelectorAll('input[type="submit"], input[type="image"]');
-          // A `<button type="submit">` or `<button>` with no type or an invalid type
-          const submitButtons = form.querySelectorAll('button[type="submit"], button:not([type]), button[type=""]');
+          // A <button> is a submit button unless type is explicitly "button" or "reset";
+          // missing or invalid type values default to "submit" per the HTML spec.
+          const allButtons = form.querySelectorAll('button');
           
           if (submitInputs.length > 0) {
             formInfo.hasSubmitButton = true;
@@ -46,12 +47,15 @@ test.describe('Accessibility', () => {
             });
           }
           
-          if (submitButtons.length > 0) {
-            formInfo.hasSubmitButton = true;
-            submitButtons.forEach(button => {
-              formInfo.submitButtons.push(`button[type="${button.type || 'default'}"]`);
-            });
-          }
+          allButtons.forEach(button => {
+            const typeAttr = button.getAttribute('type');
+            const normalizedType = typeAttr ? typeAttr.toLowerCase() : null;
+            const isSubmit = !normalizedType || (normalizedType !== 'button' && normalizedType !== 'reset');
+            if (isSubmit) {
+              formInfo.hasSubmitButton = true;
+              formInfo.submitButtons.push(`button[type="${typeAttr || 'default'}"]`);
+            }
+          });
           
           // Get all inputs for context
           const inputs = form.querySelectorAll('input, button, select, textarea');
@@ -97,7 +101,9 @@ test.describe('Accessibility', () => {
           
           // Check for submit buttons
           const submitInputs = form.querySelectorAll('input[type="submit"], input[type="image"]');
-          const submitButtons = form.querySelectorAll('button[type="submit"], button:not([type]), button[type=""]');
+          // A <button> is a submit button unless type is explicitly "button" or "reset";
+          // missing or invalid type values default to "submit" per the HTML spec.
+          const allButtons = form.querySelectorAll('button');
           
           if (submitInputs.length > 0) {
             formInfo.hasSubmitButton = true;
@@ -106,12 +112,15 @@ test.describe('Accessibility', () => {
             });
           }
           
-          if (submitButtons.length > 0) {
-            formInfo.hasSubmitButton = true;
-            submitButtons.forEach(button => {
-              formInfo.submitButtons.push(`button[type="${button.type || 'default'}"]`);
-            });
-          }
+          allButtons.forEach(button => {
+            const typeAttr = button.getAttribute('type');
+            const normalizedType = typeAttr ? typeAttr.toLowerCase() : null;
+            const isSubmit = !normalizedType || (normalizedType !== 'button' && normalizedType !== 'reset');
+            if (isSubmit) {
+              formInfo.hasSubmitButton = true;
+              formInfo.submitButtons.push(`button[type="${typeAttr || 'default'}"]`);
+            }
+          });
           
           // Get all inputs for context
           const inputs = form.querySelectorAll('input, button, select, textarea');
