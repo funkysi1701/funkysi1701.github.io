@@ -20,19 +20,16 @@ pr:
       - test
       - develop
 
-pool: Docker
-
 jobs:
+  # Browsers + OS libs are preinstalled; avoids `playwright install --with-deps` (sudo/apt on this pool).
+  # Keep tag in sync with @playwright/test in package-lock.json (major.minor.patch).
   - job: playwright
     displayName: Playwright Tests
+    pool: Docker
+    container: mcr.microsoft.com/playwright:v1.54.2-jammy
     timeoutInMinutes: 60
     steps:
       - checkout: self
-
-      - task: NodeTool@0
-        displayName: Use Node.js 20.x (LTS)
-        inputs:
-          versionSpec: '20.x'
 
       - task: Cache@2
         displayName: Cache npm
@@ -49,8 +46,9 @@ jobs:
           npm_config_cache: $(Pipeline.Workspace)/.npm
 
       - bash: |
-          npx playwright install --with-deps
-        displayName: Install Playwright Browsers
+          # No --with-deps (no sudo/apt). Downloads Chromium only if revision differs from the image.
+          npx playwright install chromium
+        displayName: Sync Playwright browser (no system packages)
 
       - bash: |
           set -euo pipefail
