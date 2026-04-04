@@ -1,0 +1,8 @@
+{{- if (default true .Site.Params.searchBar) -}}
+<form class="search-bar my-1" action="{{ absLangURL "search" }}" style="display:none">
+  <div class="input-group input-group-sm">
+    <button type="submit" class="btn btn-search position-absolute left-0" aria-label="Search"><i class="fas fa-fw fa-search"></i></button>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+{{- end -}}
