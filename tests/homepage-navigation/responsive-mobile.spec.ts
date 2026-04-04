@@ -42,6 +42,8 @@ test.describe('Homepage and Navigation', () => {
       // 6. Test navigation on About page
       await page.getByRole('link', { name: 'About' }).first().click();
       await expect(page).toHaveURL(/\/about\//);
+      // Wait for page scripts (Bootstrap) to fully initialize before interacting with the navbar
+      await page.waitForLoadState('domcontentloaded');
 
       // Test navigation on Projects page
       const hamburger2 = page.getByRole('button', { name: 'Toggle navigation' }).first();
@@ -51,6 +53,8 @@ test.describe('Homepage and Navigation', () => {
       const projectsLink = page.locator('#navbarSupportedContent').getByRole('link', { name: 'Projects', exact: true }).first();
       await projectsLink.click();
       await expect(page).toHaveURL(/\/projects\//);
+      // Wait for page scripts (Bootstrap) to fully initialize before interacting with the navbar
+      await page.waitForLoadState('domcontentloaded');
 
       // Test navigation on Contact page
       const hamburger3 = page.getByRole('button', { name: 'Toggle navigation' }).first();
