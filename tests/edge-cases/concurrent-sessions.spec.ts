@@ -3,6 +3,7 @@
 
 import { test, expect } from '../fixtures';
 import type { BrowserContext, Page } from '@playwright/test';
+import { SAMPLE_TAGGED_POST } from '../paths';
 
 test.describe('Edge Cases and Error Handling', () => {
   test('Concurrent user sessions', async ({ browser }) => {
@@ -49,8 +50,8 @@ test.describe('Edge Cases and Error Handling', () => {
         await expect(page2.locator('nav').first()).toBeVisible();
 
         // Navigate to same page in both contexts
-        await page1.goto('/posts/2026/01/31/ndc-london-2026');
-        await page2.goto('/posts/2026/01/31/ndc-london-2026');
+        await page1.goto(SAMPLE_TAGGED_POST);
+        await page2.goto(SAMPLE_TAGGED_POST);
 
         // Both should load independently
         await expect(page1.locator('h1')).toBeVisible();

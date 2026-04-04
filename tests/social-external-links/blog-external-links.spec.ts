@@ -7,7 +7,7 @@ test.describe('Social Media and External Links', () => {
   test('Blog post external links', async ({ page, context }) => {
     await test.step('Navigate to a blog post with external links', async () => {
       // 1. Navigate to a blog post with external links
-      await page.goto('/posts/2026/01/31/ndc-london-2026');
+      await page.goto('/posts/2026/ndc-london-2026/');
     });
 
     await test.step('Identify external links within post content', async () => {

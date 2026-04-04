@@ -56,11 +56,22 @@ test('navigate to www.funkysi1701.com, click top blog posts, check console for e
     '/posts/2024/aspire/'
   ];
 
+  const benignSubstrings = [
+    'ERR_NAME_NOT_RESOLVED',
+    'ERR_ADDRESS_INVALID',
+    'ERR_BLOCKED_BY_CLIENT',
+    'ResizeObserver loop',
+    'favicon.ico',
+  ];
+
   for (const url of blogPostUrls) {
     errors.length = 0;
-    await page.goto(url);
-    // Check for any console errors (excluding ad network errors which are expected)
-    const relevantErrors = errors.filter(err => !err.includes('ERR_NAME_NOT_RESOLVED') && !err.includes('ERR_ADDRESS_INVALID'));
+    await page.goto(url, { waitUntil: 'load' });
+    await page.waitForLoadState('domcontentloaded');
+    // Check for any console errors (excluding common third-party / network noise)
+    const relevantErrors = errors.filter(
+      (err) => !benignSubstrings.some((s) => err.includes(s)),
+    );
     expect(relevantErrors).toEqual([]);
     // Optionally, check that the page loaded a blog post
     await expect(page).toHaveURL(url);

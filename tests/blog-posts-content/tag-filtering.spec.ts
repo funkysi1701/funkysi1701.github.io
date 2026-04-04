@@ -3,6 +3,7 @@
 
 import { test, expect } from '../fixtures';
 import type { Locator } from '@playwright/test';
+import { SAMPLE_TAGGED_POST } from '../paths';
 
 test.describe('Blog Posts and Content', () => {
   test('Blog tag filtering', async ({ page }) => {
@@ -11,7 +12,7 @@ test.describe('Blog Posts and Content', () => {
 
     await test.step('Navigate to a blog post with tags', async () => {
       // 1. Navigate to a blog post with tags
-      await page.goto('/posts/2026/01/31/ndc-london-2026');
+      await page.goto(SAMPLE_TAGGED_POST);
     });
 
     await test.step('Click on a tag', async () => {
