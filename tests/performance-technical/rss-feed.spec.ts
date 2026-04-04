@@ -11,7 +11,7 @@ test.describe('Performance and Technical', () => {
 
     await test.step('Navigate to https://www.funkysi1701.com/index.xml', async () => {
       // 1. Navigate to https://www.funkysi1701.com/index.xml
-      response = await page.goto('https://www.funkysi1701.com/index.xml');
+      response = await page.goto('/index.xml');
 
       if (!response) {
         throw new Error('No response received');

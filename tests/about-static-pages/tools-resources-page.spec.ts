@@ -10,7 +10,7 @@ test.describe('About and Static Pages', () => {
 
     await test.step('Navigate to https://www.funkysi1701.com/tools-and-resources/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/tools-and-resources/
-      await page.goto('https://www.funkysi1701.com/tools-and-resources/');
+      await page.goto('/tools-and-resources/');
     });
 
     await test.step('Verify page loads successfully', async () => {

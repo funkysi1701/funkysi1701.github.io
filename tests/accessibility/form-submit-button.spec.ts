@@ -11,7 +11,7 @@ test.describe('Accessibility', () => {
 
     await test.step('Navigate to the homepage', async () => {
       // 1. Navigate to the homepage https://www.funkysi1701.com
-      await page.goto('https://www.funkysi1701.com');
+      await page.goto('/');
     });
 
     await test.step('Find all forms on homepage and verify submit buttons', async () => {
@@ -77,7 +77,7 @@ test.describe('Accessibility', () => {
 
     await test.step('Navigate to search page', async () => {
       // Also check the search page: Navigate to https://www.funkysi1701.com/search/
-      await page.goto('https://www.funkysi1701.com/search/');
+      await page.goto('/search/');
     });
 
     await test.step('Find search form and verify submit button', async () => {

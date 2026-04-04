@@ -12,7 +12,7 @@ test.describe('Blog Posts and Content', () => {
 
     await test.step('Navigate to a blog post with images', async () => {
       // 1. Navigate to a blog post with images
-      await page.goto('https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026');
+      await page.goto('/posts/2026/ndc-london-2026/');
     });
 
     await test.step('Verify cover image loads correctly', async () => {

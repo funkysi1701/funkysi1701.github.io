@@ -9,10 +9,10 @@ test.describe('Accessibility', () => {
 
     await test.step('Navigate to newsletter signup form', async () => {
       // 1. Navigate to newsletter signup form
-      await page.goto('https://www.funkysi1701.com/newsletter/');
+      await page.goto('/newsletter/');
 
       // Look for form or search page which has a form
-      await page.goto('https://www.funkysi1701.com/search/');
+      await page.goto('/search/');
     });
 
     await test.step('Verify form fields have visible labels', async () => {
