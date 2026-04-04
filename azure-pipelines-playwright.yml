@@ -8,7 +8,6 @@ trigger:
   branches:
     include:
       - main
-      - master
       - test
       - develop
 
@@ -16,7 +15,6 @@ pr:
   branches:
     include:
       - main
-      - master
       - test
       - develop
 
