@@ -26,7 +26,7 @@ jobs:
   - job: playwright
     displayName: Playwright Tests
     pool: Docker
-    container: mcr.microsoft.com/playwright:v1.54.2-jammy
+    container: mcr.microsoft.com/playwright:v1.59.1-jammy
     timeoutInMinutes: 60
     steps:
       - checkout: self
