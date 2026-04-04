@@ -41,12 +41,17 @@ test.describe('Search Functionality', () => {
         // 5. Verify it navigates to the correct blog post
         await expect(page).toHaveURL(/\/posts\//);
 
-        // 6. Use browser back button
+        // 6. Use browser back button (Algolia/DocSearch can trigger a parallel /search/ nav — don't race with goto)
         try {
-          await page.goBack({ waitUntil: 'domcontentloaded' });
+          await page.goBack({ waitUntil: 'domcontentloaded', timeout: 20_000 });
         } catch {
-          // ERR_ABORTED can occur if navigation was interrupted; fall back to the search URL
-          await page.goto(searchUrl);
+          await page.waitForTimeout(500);
+          try {
+            await page.waitForURL((u) => u.pathname.includes('/search/'), { timeout: 15_000 });
+          } catch {
+            await page.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 20_000 });
+          }
+          await page.waitForLoadState('domcontentloaded').catch(() => {});
         }
 
         // 7. Verify search results are preserved
