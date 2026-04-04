@@ -21,8 +21,16 @@ const KNOWN_SITE_ORIGINS = [
   'https://funkysi1701.com',
 ] as const;
 
+/** Hugo / ingress sometimes emits default port explicitly, e.g. https://blog-dev.funkysi1701.com:443/path */
 function funkysiLocPresent(content: string): boolean {
-  return /https:\/\/([^/]+\.)?funkysi1701\.com\//i.test(content);
+  return /https:\/\/([^/]+\.)?funkysi1701\.com(:\d+)?\//i.test(content);
+}
+
+function sitemapHasOriginPrefix(content: string, origin: string): boolean {
+  const o = origin.replace(/\/$/, '');
+  if (content.includes(`${o}/`)) return true;
+  if (content.includes(`${o}:443/`) || content.includes(`${o}:80/`)) return true;
+  return false;
 }
 
 async function getSitemap(
@@ -107,7 +115,7 @@ test.describe('Performance and Technical', () => {
       expect(content).toMatch(/<loc>https?:\/\//);
       const originsToCheck = new Set<string>([deploymentOrigin, ...KNOWN_SITE_ORIGINS]);
       const locHostsOk =
-        [...originsToCheck].some((o) => content.includes(`${o}/`)) || funkysiLocPresent(content);
+        [...originsToCheck].some((o) => sitemapHasOriginPrefix(content, o)) || funkysiLocPresent(content);
       expect(locHostsOk).toBeTruthy();
     });
 
