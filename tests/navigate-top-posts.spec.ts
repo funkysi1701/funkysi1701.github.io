@@ -63,6 +63,6 @@ test('navigate to www.funkysi1701.com, click top blog posts, check console for e
     const relevantErrors = errors.filter(err => !err.includes('ERR_NAME_NOT_RESOLVED') && !err.includes('ERR_ADDRESS_INVALID'));
     expect(relevantErrors).toEqual([]);
     // Optionally, check that the page loaded a blog post
-    await expect(page).toHaveURL(new RegExp(url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+    await expect(page).toHaveURL(url);
   }
 });
