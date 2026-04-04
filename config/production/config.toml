@@ -1,5 +1,6 @@
 baseURL = 'https://www.funkysi1701.com/'
 title = "Funky Si's Blog"
+googleAnalytics = "G-N1YJNQEHR4" # GA4 property for www.funkysi1701.com
 
 [params]
   cdnImagePrefix = "https://www.funkysi1701.com/cdn-cgi/image/width=800,quality=75"
