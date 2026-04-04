@@ -1,4 +1,5 @@
 import { test, expect } from './fixtures';
+import { benignConsoleErrorSubstrings } from './console-errors';
 
 test('navigate to www.funkysi1701.com, click top blog posts, check console for errors', async ({ page }) => {
   test.setTimeout(180_000);
@@ -58,43 +59,13 @@ test('navigate to www.funkysi1701.com, click top blog posts, check console for e
     '/posts/2024/aspire/'
   ];
 
-  const benignSubstrings = [
-    'ERR_NAME_NOT_RESOLVED',
-    'ERR_ADDRESS_INVALID',
-    'ERR_BLOCKED_BY_CLIENT',
-    'ERR_CONNECTION_REFUSED',
-    'ERR_CONNECTION_RESET',
-    'ERR_TIMED_OUT',
-    'ERR_FAILED',
-    'ERR_ABORTED',
-    'ResizeObserver loop',
-    'ResizeObserver',
-    'favicon.ico',
-    'Failed to load resource',
-    'net::ERR',
-    'NS_BINDING_ABORTED',
-    'Script error',
-    'Permissions policy',
-    'Tracking Prevention',
-    'Third-party cookie',
-    'googleads',
-    'doubleclick',
-    'googlesyndication',
-    'giscus',
-    'Disqus',
-    'Content Security Policy',
-    'Refused to execute',
-    'Refused to load',
-    'Cross-Origin',
-  ];
-
   for (const url of blogPostUrls) {
     errors.length = 0;
     // Avoid networkidle — ads/analytics keep connections open and stall CI.
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45_000 });
     await new Promise((r) => setTimeout(r, 400));
     const relevantErrors = errors.filter(
-      (err) => !benignSubstrings.some((s) => err.includes(s)),
+      (err) => !benignConsoleErrorSubstrings.some((s) => err.includes(s)),
     );
     expect(relevantErrors).toEqual([]);
     // Optionally, check that the page loaded a blog post
