@@ -8,7 +8,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: process.env.CI
     ? [
-        ['github'],
+        ['junit', { outputFile: 'test-results/junit.xml' }],
         ['list'],
         ['html', { open: 'never' }],
         ['./reporters/page-visit-tracker.ts'],

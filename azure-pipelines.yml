@@ -16,11 +16,127 @@ trigger:
 - develop
 - test
 - main
+- master
 - feature/*
+- copilot/*
+
+pr:
+  branches:
+    include:
+    - develop
+    - test
+    - main
+    - master
 
 pool: Docker
 
 steps:
+- bash: |
+    if [[ "$(Build.Reason)" == "PullRequest" ]] || \
+       [[ "$(Build.SourceBranch)" == "refs/heads/main" ]] || \
+       [[ "$(Build.SourceBranch)" == "refs/heads/master" ]] || \
+       [[ "$(Build.SourceBranch)" == "refs/heads/develop" ]] || \
+       [[ "$(Build.SourceBranch)" == "refs/heads/test" ]] || \
+       [[ "$(Build.SourceBranch)" == refs/heads/feature/* ]] || \
+       [[ "$(Build.SourceBranch)" == refs/heads/copilot/* ]]; then
+      echo "##vso[task.setvariable variable=runPlaywright]true"
+    else
+      echo "##vso[task.setvariable variable=runPlaywright]false"
+    fi
+  displayName: 'Set runPlaywright flag'
+- task: CmdLine@2
+  displayName: 'Playwright tests (Playwright Docker image)'
+  condition: and(succeeded(), eq(variables['runPlaywright'], 'true'))
+  inputs:
+    script: |
+      set -e
+      REPO_ROOT="$(Build.SourcesDirectory)"
+      if [ -n "$(System.PullRequest.TargetBranch)" ]; then
+        TB="$(System.PullRequest.TargetBranch)"
+        BRANCH="${TB#refs/heads/}"
+      else
+        BRANCH="$(Build.SourceBranchName)"
+      fi
+      case "$BRANCH" in
+        main|master)
+          BASE_URL="https://www.funkysi1701.com"
+          ;;
+        test)
+          BASE_URL="https://blog-test.funkysi1701.com"
+          ;;
+        develop)
+          BASE_URL="https://blog-dev.funkysi1701.com"
+          ;;
+        *)
+          BASE_URL="https://www.funkysi1701.com"
+          ;;
+      esac
+      echo "Playwright BASE_URL=$BASE_URL (branch=$BRANCH)"
+      PW_IMAGE="mcr.microsoft.com/playwright:v1.54.2-jammy"
+      docker pull "$PW_IMAGE"
+      docker run --rm --shm-size=1gb \
+        -v "$REPO_ROOT:/workspace" \
+        -w /workspace \
+        -e CI=true \
+        -e BASE_URL="$BASE_URL" \
+        "$PW_IMAGE" \
+        bash -c 'set +e
+          npm ci
+          npx playwright test
+          TEST_EXIT=$?
+          set -e
+          node scripts/generate-page-coverage.js || true
+          exit $TEST_EXIT'
+- task: CmdLine@2
+  displayName: 'Codecov (page coverage)'
+  condition: and(succeededOrFailed(), eq(variables['runPlaywright'], 'true'))
+  continueOnError: true
+  env:
+    CODECOV_TOKEN: $(CODECOV_TOKEN)
+  inputs:
+    script: |
+      set -e
+      REPO_ROOT="$(Build.SourcesDirectory)"
+      if [ -z "${CODECOV_TOKEN:-}" ] || [ ! -f "$REPO_ROOT/coverage/page-coverage.lcov" ]; then
+        echo "Skipping Codecov (no token or no coverage file)."
+        exit 0
+      fi
+      TMP="$(mktemp -d)"
+      cd "$TMP"
+      curl -fsSL -o codecov "https://cli.codecov.io/latest/linux/codecov"
+      chmod +x codecov
+      ./codecov upload-process -f "$REPO_ROOT/coverage/page-coverage.lcov" -F page-coverage -n page-coverage -C "$(Build.SourceVersion)" -t "$CODECOV_TOKEN"
+- task: PublishTestResults@2
+  displayName: 'Publish Playwright JUnit results'
+  condition: and(succeededOrFailed(), eq(variables['runPlaywright'], 'true'))
+  continueOnError: true
+  inputs:
+    testResultsFormat: JUnit
+    testResultsFiles: '**/test-results/junit.xml'
+    searchFolder: '$(Build.SourcesDirectory)'
+    mergeTestResults: true
+    failTaskOnFailedTests: true
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish Playwright HTML report'
+  condition: and(succeededOrFailed(), eq(variables['runPlaywright'], 'true'))
+  continueOnError: true
+  inputs:
+    targetPath: '$(Build.SourcesDirectory)/playwright-report'
+    artifact: playwright-report
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish page visit report'
+  condition: and(succeededOrFailed(), eq(variables['runPlaywright'], 'true'))
+  continueOnError: true
+  inputs:
+    targetPath: '$(Build.SourcesDirectory)/test-results/page-visits'
+    artifact: page-visit-report
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish page coverage output'
+  condition: and(succeededOrFailed(), eq(variables['runPlaywright'], 'true'))
+  continueOnError: true
+  inputs:
+    targetPath: '$(Build.SourcesDirectory)/coverage'
+    artifact: coverage-report
 - task: CmdLine@2
   displayName: "Install AWS CLI"
   condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))

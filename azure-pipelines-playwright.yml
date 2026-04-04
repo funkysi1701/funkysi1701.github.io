@@ -1,0 +1,135 @@
+---
+name: Playwright Tests
+
+variables:
+  - group: Global
+
+trigger:
+  branches:
+    include:
+      - main
+      - master
+      - test
+      - develop
+
+pr:
+  branches:
+    include:
+      - main
+      - master
+      - test
+      - develop
+
+pool:
+  vmImage: ubuntu-latest
+
+jobs:
+  - job: playwright
+    displayName: Playwright Tests
+    timeoutInMinutes: 60
+    steps:
+      - checkout: self
+
+      - task: NodeTool@0
+        displayName: Use Node.js (LTS)
+        inputs:
+          versionSpec: 'lts/*'
+
+      - task: Cache@2
+        displayName: Cache npm
+        inputs:
+          key: 'npm | "$(Agent.OS)" | package-lock.json'
+          restoreKeys: |
+            npm | "$(Agent.OS)"
+          path: $(Pipeline.Workspace)/.npm
+
+      - bash: |
+          npm ci
+        displayName: Install dependencies
+        env:
+          npm_config_cache: $(Pipeline.Workspace)/.npm
+
+      - bash: |
+          npx playwright install --with-deps
+        displayName: Install Playwright Browsers
+
+      - bash: |
+          set -euo pipefail
+
+          # For PR builds, prefer the target branch (matches GitHub Actions base_ref behavior).
+          BRANCH="$(Build.SourceBranchName)"
+          if [ -n "${SYSTEM_PULLREQUEST_TARGETBRANCH:-}" ]; then
+            BRANCH="${SYSTEM_PULLREQUEST_TARGETBRANCH#refs/heads/}"
+          fi
+
+          case "$BRANCH" in
+            main|master)
+              BASE_URL="https://www.funkysi1701.com"
+              ;;
+            test)
+              BASE_URL="https://blog-test.funkysi1701.com"
+              ;;
+            develop)
+              BASE_URL="https://blog-dev.funkysi1701.com"
+              ;;
+            *)
+              BASE_URL="https://www.funkysi1701.com"
+              ;;
+          esac
+
+          echo "Using BASE_URL=$BASE_URL (branch=$BRANCH)"
+          echo "##vso[task.setvariable variable=BASE_URL]$BASE_URL"
+        displayName: Determine base URL
+
+      - bash: |
+          npx playwright test
+        displayName: Run Playwright tests
+        env:
+          BASE_URL: $(BASE_URL)
+          CI: 'true'
+
+      - bash: |
+          node scripts/generate-page-coverage.js
+        displayName: Generate page coverage for Codecov
+        condition: always()
+
+      - bash: |
+          set -euo pipefail
+          if [ -z "${CODECOV_TOKEN:-}" ]; then
+            echo "CODECOV_TOKEN not set; skipping Codecov upload."
+            exit 0
+          fi
+
+          curl -sSfL https://uploader.codecov.io/latest/linux/codecov -o codecov
+          chmod +x codecov
+          ./codecov -t "$CODECOV_TOKEN" -f ./coverage/page-coverage.lcov -F page-coverage -n page-coverage || true
+        displayName: Upload page coverage to Codecov
+        condition: always()
+        env:
+          CODECOV_TOKEN: $(CODECOV_TOKEN)
+
+      - bash: |
+          mkdir -p test-results/page-visits playwright-report coverage
+        displayName: Ensure artifact directories exist
+        condition: always()
+
+      - task: PublishPipelineArtifact@1
+        displayName: Upload page visit report
+        condition: and(succeededOrFailed(), not(canceled()))
+        inputs:
+          targetPath: test-results/page-visits
+          artifact: page-visit-report
+
+      - task: PublishPipelineArtifact@1
+        displayName: Upload playwright-report
+        condition: and(succeededOrFailed(), not(canceled()))
+        inputs:
+          targetPath: playwright-report
+          artifact: playwright-report
+
+      - task: PublishPipelineArtifact@1
+        displayName: Upload coverage-report
+        condition: and(succeededOrFailed(), not(canceled()))
+        inputs:
+          targetPath: coverage
+          artifact: coverage-report
