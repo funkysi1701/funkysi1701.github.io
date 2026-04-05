@@ -1,12 +1,22 @@
-/* Fix navbar color contrast for WCAG AA compliance.
- * The default #e1e1e1 text on #1363be background yields ~4.51:1 contrast,
- * which is borderline. White (#ffffff) gives ~5.90:1, well above the 4.5:1
- * minimum required by WCAG AA.
+/* Light-mode colour overrides for WCAG AA compliance.
+ *
+ * --hbs-primary-text-on-navbar / --hbs-accent-text-on-navbar:
+ *   The default #e1e1e1 text on #1363be background yields ~4.51:1 contrast,
+ *   which is borderline. White (#ffffff) gives ~5.90:1, well above the 4.5:1
+ *   minimum required by WCAG AA.
+ *
+ * --hbs-secondary-text-on-surface:
+ *   The default rgba(0,0,0,0.54) yields ~4.0:1 on the page background (#f6f8fa)
+ *   and ~4.5:1 on the card surface (#fff), both at or below the 4.5:1 minimum.
+ *   Raising the opacity to 0.7 yields ~5.8:1 on #f6f8fa and ~7.5:1 on #fff,
+ *   well above the threshold. Affected elements include footer .powered-by
+ *   text and .post-summary paragraphs (both flagged by Pa11y / axe-core).
  */
 :root:not([data-mode]),
 [data-mode="light"] {
   --hbs-primary-text-on-navbar: #ffffff;
   --hbs-accent-text-on-navbar: #ffffff;
+  --hbs-secondary-text-on-surface: rgba(0, 0, 0, 0.7);
 }
 
 /* Fix post-taxonomy badge color contrast for WCAG AA compliance.
@@ -16,16 +26,4 @@
  */
 .post-taxonomy {
   opacity: 1;
-}
-
-/* Fix secondary text color contrast for WCAG AA compliance in light mode.
- * The default rgba(0,0,0,0.54) yields ~4.0:1 on the page background (#f6f8fa)
- * and ~4.5:1 on the card surface (#fff), both at or below the 4.5:1 minimum.
- * Raising the opacity to 0.7 yields ~5.8:1 on #f6f8fa and ~7.5:1 on #fff,
- * well above the threshold. Affected elements include footer .powered-by
- * text and .post-summary paragraphs (both flagged by Pa11y / axe-core).
- */
-:root:not([data-mode]),
-[data-mode="light"] {
-  --hbs-secondary-text-on-surface: rgba(0, 0, 0, 0.7);
 }

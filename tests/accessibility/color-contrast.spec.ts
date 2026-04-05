@@ -56,10 +56,40 @@ function relativeLuminance(rgbStr: string): number {
   return 0.2126 * red + 0.7152 * green + 0.0722 * blue;
 }
 
-// Calculate WCAG contrast ratio between two rgb(...) strings
-function contrastRatio(color1: string, color2: string): number {
-  const l1 = relativeLuminance(color1);
-  const l2 = relativeLuminance(color2);
+// Composite a semi-transparent foreground color onto an opaque background
+// using standard alpha compositing (Porter-Duff "over") and return the
+// resulting opaque color.
+function blendOnBackground(
+  fg: { r: number; g: number; b: number; alpha: number },
+  bg: { r: number; g: number; b: number },
+): { r: number; g: number; b: number } {
+  const a = fg.alpha;
+  return {
+    r: Math.round(a * fg.r + (1 - a) * bg.r),
+    g: Math.round(a * fg.g + (1 - a) * bg.g),
+    b: Math.round(a * fg.b + (1 - a) * bg.b),
+  };
+}
+
+// Calculate WCAG contrast ratio between foreground and background rgb(...) strings.
+// Semi-transparent foreground colours are composited over the background before
+// the luminance is calculated so that the ratio reflects the actual rendered colour.
+function contrastRatio(fgStr: string, bgStr: string): number {
+  const fg = parseRgbColor(fgStr);
+  const bg = parseRgbColor(bgStr);
+
+  if (fg.alpha === 0) {
+    throw new Error(
+      `Cannot calculate contrast ratio for fully transparent foreground color "${fgStr}"`,
+    );
+  }
+
+  // Composite semi-transparent foreground over the background.
+  const effectiveFg = fg.alpha < 1 ? blendOnBackground(fg, bg) : fg;
+  const l1 = 0.2126 * channelLuminance(effectiveFg.r) +
+              0.7152 * channelLuminance(effectiveFg.g) +
+              0.0722 * channelLuminance(effectiveFg.b);
+  const l2 = relativeLuminance(bgStr);
   const lighter = Math.max(l1, l2);
   const darker = Math.min(l1, l2);
   return (lighter + 0.05) / (darker + 0.05);
@@ -86,7 +116,7 @@ async function getElementColors(
       if (t === 'transparent') return true;
       const m1 = t.match(/^rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*([\d.]+)\s*\)$/);
       if (m1 && parseFloat(m1[4]) < 0.05) return true;
-      const m2 = t.match(/^rgba\(\s*(\d+)\s+(\d+)\s+(\d+)\s*\/\s*([\d.]+)\s*\)$/);
+      const m2 = t.match(/^rgba?\(\s*(\d+)\s+(\d+)\s+(\d+)\s*\/\s*([\d.]+)\s*\)$/);
       if (m2 && parseFloat(m2[4]) < 0.05) return true;
       return false;
     }
@@ -186,38 +216,11 @@ test.describe('Accessibility', () => {
     });
 
     await test.step('Verify navbar brand link meets WCAG AA color contrast (4.5:1)', async () => {
-      // 7. Check navbar brand link color contrast against effective navbar background
-      // Inner <nav> often has transparent bg; color is on .navbar or header ancestor.
-      const navbarColors = await page.evaluate(() => {
-        function isTransparent(bg: string): boolean {
-          const t = bg.trim().toLowerCase();
-          if (t === 'transparent') return true;
-          const m1 = t.match(/^rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*([\d.]+)\s*\)$/);
-          if (m1 && parseFloat(m1[4]) < 0.05) return true;
-          const m2 = t.match(/^rgba\(\s*(\d+)\s+(\d+)\s+(\d+)\s*\/\s*([\d.]+)\s*\)$/);
-          if (m2 && parseFloat(m2[4]) < 0.05) return true;
-          return false;
-        }
-
-        function effectiveBackground(el: Element | null): string {
-          let n: Element | null = el;
-          for (let i = 0; i < 20 && n; i++) {
-            const bg = window.getComputedStyle(n).backgroundColor;
-            if (!isTransparent(bg)) return bg;
-            n = n.parentElement;
-          }
-          return window.getComputedStyle(document.body).backgroundColor;
-        }
-
-        const brandLink = document.querySelector('header nav h1 a, header nav .navbar-brand');
-        const navbar = document.querySelector('header nav');
-        if (!brandLink || !navbar) return null;
-        const linkStyles = window.getComputedStyle(brandLink);
-        return {
-          color: linkStyles.color,
-          backgroundColor: effectiveBackground(navbar),
-        };
-      });
+      // 7. Check navbar brand link color contrast against effective navbar background.
+      const navbarColors = await getElementColors(
+        page,
+        'header nav h1 a, header nav .navbar-brand',
+      );
 
       console.log('Navbar brand colors:', navbarColors);
       expect(navbarColors).toBeTruthy();
@@ -241,35 +244,7 @@ test.describe('Accessibility', () => {
 
       expect(navLinkCount).toBeGreaterThan(0);
 
-      const navColors = await navLinks.first().evaluate((el) => {
-        function isTransparent(bg: string): boolean {
-          const t = bg.trim().toLowerCase();
-          if (t === 'transparent') return true;
-          const m1 = t.match(/^rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*([\d.]+)\s*\)$/);
-          if (m1 && parseFloat(m1[4]) < 0.05) return true;
-          const m2 = t.match(/^rgba\(\s*(\d+)\s+(\d+)\s+(\d+)\s*\/\s*([\d.]+)\s*\)$/);
-          if (m2 && parseFloat(m2[4]) < 0.05) return true;
-          return false;
-        }
-
-        function effectiveBackground(start: Element | null): string {
-          let n: Element | null = start;
-          for (let i = 0; i < 20 && n; i++) {
-            const bg = window.getComputedStyle(n).backgroundColor;
-            if (!isTransparent(bg)) return bg;
-            n = n.parentElement;
-          }
-          return window.getComputedStyle(document.body).backgroundColor;
-        }
-
-        const navbar = el.closest('nav');
-        if (!navbar) return null;
-        const linkStyles = window.getComputedStyle(el);
-        return {
-          color: linkStyles.color,
-          backgroundColor: effectiveBackground(navbar),
-        };
-      });
+      const navColors = await getElementColors(page, '#navbarSupportedContent ul li a');
 
       console.log('Nav link colors:', navColors);
       expect(navColors).toBeTruthy();
