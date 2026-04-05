@@ -28,18 +28,12 @@
   opacity: 1;
 }
 
-/* Explicit colour override for .post-summary paragraphs in light mode to
- * satisfy WCAG AA 4.5:1 contrast requirement.
- *
- * Pa11y/axe-core reported the <p> inside article:nth-child(3) .post-summary
- * as failing color-contrast at builds 10.1.1.2559 and 10.1.1.2572 because
- * the theme's .post-summary rule inherits --hbs-secondary-text-on-surface
- * which defaults to rgba(0,0,0,0.54) (~4.58:1 on #fff — below threshold).
- *
- * The solid value #4d4d4d is the pre-composited equivalent of rgba(0,0,0,0.7)
- * on a white (#fff) surface, giving a contrast ratio of ~8.46:1.
- */
-:root:not([data-mode]) .post-summary p,
-[data-mode="light"] .post-summary p {
-  color: #4d4d4d;
+/* Post list excerpts: enforce readable text on card surfaces. The theme colours
+ * .post-summary with --hbs-secondary-text-on-surface; we already raise that token
+ * above, but !important on the container covers non-<p> excerpts and wins over
+ * injected styles. Links keep .post-summary a { accent } (more specific on <a>).
+ * #4d4d4d ≈ rgba(0,0,0,0.7) on #fff → ~8.5:1 (Pa11y/axe on .post-summary p). */
+:root:not([data-mode]) .post-summary,
+[data-mode="light"] .post-summary {
+  color: #4d4d4d !important;
 }
