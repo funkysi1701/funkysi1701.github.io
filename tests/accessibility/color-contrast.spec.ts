@@ -127,29 +127,30 @@ test.describe('Accessibility', () => {
 
     await test.step('Verify nav links meet WCAG AA color contrast (4.5:1)', async () => {
       // 8. Check nav link color contrast against navbar background
-      const navLink = await page.locator('#navbarSupportedContent ul li a').first();
-      const navLinkCount = await page.locator('#navbarSupportedContent ul li a').count();
+      const navLinks = page.locator('#navbarSupportedContent ul li a');
+      const navLinkCount = await navLinks.count();
 
-      if (navLinkCount > 0) {
-        const navColors = await navLink.evaluate(el => {
-          const navbar = el.closest('nav');
-          if (!navbar) return null;
-          const linkStyles = window.getComputedStyle(el);
-          const navStyles = window.getComputedStyle(navbar);
-          return {
-            color: linkStyles.color,
-            backgroundColor: navStyles.backgroundColor
-          };
-        });
+      expect(navLinkCount).toBeGreaterThan(0);
 
-        console.log('Nav link colors:', navColors);
+      const navColors = await navLinks.first().evaluate(el => {
+        const navbar = el.closest('nav');
+        if (!navbar) return null;
+        const linkStyles = window.getComputedStyle(el);
+        const navStyles = window.getComputedStyle(navbar);
+        return {
+          color: linkStyles.color,
+          backgroundColor: navStyles.backgroundColor
+        };
+      });
 
-        if (navColors) {
-          const ratio = contrastRatio(navColors.color, navColors.backgroundColor);
-          console.log('Nav link contrast ratio:', ratio.toFixed(2));
-          // WCAG AA requires 4.5:1 for normal text
-          expect(ratio).toBeGreaterThanOrEqual(4.5);
-        }
+      console.log('Nav link colors:', navColors);
+      expect(navColors).toBeTruthy();
+
+      if (navColors) {
+        const ratio = contrastRatio(navColors.color, navColors.backgroundColor);
+        console.log('Nav link contrast ratio:', ratio.toFixed(2));
+        // WCAG AA requires 4.5:1 for normal text
+        expect(ratio).toBeGreaterThanOrEqual(4.5);
       }
     });
 
