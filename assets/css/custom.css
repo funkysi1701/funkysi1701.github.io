@@ -28,12 +28,11 @@
   opacity: 1;
 }
 
-/* Post list excerpts: enforce readable text on card surfaces. The theme colours
- * .post-summary with --hbs-secondary-text-on-surface; we already raise that token
- * above, so this light-mode override can reuse it directly without !important.
- * Links keep .post-summary a { accent } (more specific on <a>). The raised token
- * provides the required WCAG AA contrast for excerpt text on card surfaces. */
+/* Post list excerpts: use an opaque colour on the card (#fff). Some axe-core /
+ * headless Chromium paths treat rgba() text colours inconsistently vs composited
+ * contrast; #4d4d4d matches ~rgba(0,0,0,0.7) on white (~8.5:1). !important
+ * beats injected/third-party CSS. .post-summary a still sets accent on links. */
 :root:not([data-mode]) .post-summary,
 [data-mode="light"] .post-summary {
-  color: var(--hbs-secondary-text-on-surface);
+  color: #4d4d4d !important;
 }
