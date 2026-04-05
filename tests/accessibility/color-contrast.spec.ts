@@ -2,6 +2,7 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { Page } from '@playwright/test';
 
 // Calculate relative luminance for a single 0-255 channel value
 function channelLuminance(value: number): number {
@@ -70,6 +71,41 @@ function tryContrastRatio(color1: string, color2: string): number | null {
   } catch {
     return null;
   }
+}
+
+// Resolve the computed foreground color and effective (non-transparent) background
+// color for any element matching `selector` in the current page.  Returns null when
+// no matching element is found.
+async function getElementColors(
+  page: Page,
+  selector: string,
+): Promise<{ color: string; backgroundColor: string } | null> {
+  return page.evaluate((sel) => {
+    function isTransparent(bg: string): boolean {
+      const t = bg.trim().toLowerCase();
+      if (t === 'transparent') return true;
+      const m1 = t.match(/^rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*([\d.]+)\s*\)$/);
+      if (m1 && parseFloat(m1[4]) < 0.05) return true;
+      const m2 = t.match(/^rgba\(\s*(\d+)\s+(\d+)\s+(\d+)\s*\/\s*([\d.]+)\s*\)$/);
+      if (m2 && parseFloat(m2[4]) < 0.05) return true;
+      return false;
+    }
+
+    function effectiveBackground(el: Element | null): string {
+      let n: Element | null = el;
+      for (let i = 0; i < 20 && n; i++) {
+        const bg = window.getComputedStyle(n).backgroundColor;
+        if (!isTransparent(bg)) return bg;
+        n = n.parentElement;
+      }
+      return window.getComputedStyle(document.body).backgroundColor;
+    }
+
+    const el = document.querySelector(sel);
+    if (!el) return null;
+    const styles = window.getComputedStyle(el);
+    return { color: styles.color, backgroundColor: effectiveBackground(el) };
+  }, selector);
 }
 
 test.describe('Accessibility', () => {
@@ -257,6 +293,44 @@ test.describe('Accessibility', () => {
 
       expect(badgeCount).toBeGreaterThan(0);
       await expect(badges.first()).toBeVisible();
+    });
+
+    await test.step('Verify footer powered-by text meets WCAG AA color contrast (4.5:1)', async () => {
+      // 10. Footer .powered-by text uses --hbs-secondary-text-on-surface which was below threshold.
+      const footerColors = await getElementColors(page, 'footer .powered-by');
+
+      console.log('Footer powered-by colors:', footerColors);
+      expect(footerColors).toBeTruthy();
+
+      if (footerColors) {
+        const ratio = tryContrastRatio(footerColors.color, footerColors.backgroundColor);
+        console.log('Footer powered-by contrast ratio:', ratio?.toFixed(2) ?? 'n/a (unparsed color)');
+        if (ratio === null) {
+          throw new Error(
+            `Could not parse colors for contrast: fg=${footerColors.color} bg=${footerColors.backgroundColor}`,
+          );
+        }
+        expect(ratio).toBeGreaterThanOrEqual(4.5);
+      }
+    });
+
+    await test.step('Verify post-summary paragraph meets WCAG AA color contrast (4.5:1)', async () => {
+      // 11. .post-summary paragraphs use --hbs-secondary-text-on-surface which was below threshold.
+      const summaryColors = await getElementColors(page, '.post-summary p');
+
+      console.log('Post-summary paragraph colors:', summaryColors);
+      expect(summaryColors).toBeTruthy();
+
+      if (summaryColors) {
+        const ratio = tryContrastRatio(summaryColors.color, summaryColors.backgroundColor);
+        console.log('Post-summary contrast ratio:', ratio?.toFixed(2) ?? 'n/a (unparsed color)');
+        if (ratio === null) {
+          throw new Error(
+            `Could not parse colors for contrast: fg=${summaryColors.color} bg=${summaryColors.backgroundColor}`,
+          );
+        }
+        expect(ratio).toBeGreaterThanOrEqual(4.5);
+      }
     });
 
   });

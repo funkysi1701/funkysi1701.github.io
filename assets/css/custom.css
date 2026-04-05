@@ -17,3 +17,15 @@
 .post-taxonomy {
   opacity: 1;
 }
+
+/* Fix secondary text color contrast for WCAG AA compliance in light mode.
+ * The default rgba(0,0,0,0.54) yields ~4.0:1 on the page background (#f6f8fa)
+ * and ~4.5:1 on the card surface (#fff), both at or below the 4.5:1 minimum.
+ * Raising the opacity to 0.7 yields ~5.8:1 on #f6f8fa and ~7.5:1 on #fff,
+ * well above the threshold. Affected elements include .footer .powered-by
+ * text and .post-summary paragraphs (both flagged by Pa11y / axe-core).
+ */
+:root:not([data-mode]),
+[data-mode="light"] {
+  --hbs-secondary-text-on-surface: rgba(0, 0, 0, 0.7);
+}
