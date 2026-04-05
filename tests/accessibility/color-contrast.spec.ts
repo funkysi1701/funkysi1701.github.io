@@ -291,8 +291,9 @@ test.describe('Accessibility', () => {
 
     await test.step('Verify all post-summary paragraphs meet WCAG AA color contrast (4.5:1)', async () => {
       // 11. .post-summary paragraphs use --hbs-secondary-text-on-surface which was below threshold.
-      // Pa11y/axe-core flagged the third article's summary <p> (build 10.1.1.2559) because the
-      // default rgba(0,0,0,0.54) barely met 4.5:1 on white and axe-core reported it as failing.
+      // Pa11y/axe-core flagged the third article's summary <p> (builds 10.1.1.2559 and 10.1.1.2572)
+      // because the default rgba(0,0,0,0.54) barely met 4.5:1 on white and axe-core reported it as
+      // failing. custom.css raises the variable to rgba(0,0,0,0.7) (~8.47:1) to fix this.
       // Check every visible .post-summary p (not just the first) so any article can be caught.
       const allSummaryColors = await page.evaluate(() => {
         const MAX_BACKGROUND_TRAVERSAL_DEPTH = 20;
