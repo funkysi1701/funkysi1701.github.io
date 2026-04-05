@@ -180,8 +180,9 @@ test.describe('Accessibility', () => {
     await test.step('Verify post-taxonomy badges have full opacity for WCAG AA compliance', async () => {
       // 9. Check that .post-taxonomy badges are not rendered with reduced opacity,
       //    which would lower their effective contrast ratio below 4.5:1.
-      const badge = page.locator('a.post-taxonomy').first();
-      const badgeCount = await page.locator('a.post-taxonomy').count();
+      const badges = page.locator('a.post-taxonomy');
+      const badge = badges.first();
+      const badgeCount = await badges.count();
 
       expect(badgeCount).toBeGreaterThan(0);
 
