@@ -8,3 +8,12 @@
   --hbs-primary-text-on-navbar: #ffffff;
   --hbs-accent-text-on-navbar: #ffffff;
 }
+
+/* Fix post-taxonomy badge color contrast for WCAG AA compliance.
+ * The default opacity: 0.6 reduces the effective contrast ratio of the badge
+ * text below the 4.5:1 minimum required by WCAG AA. Setting opacity: 1
+ * ensures the rendered text/background colours meet the threshold.
+ */
+.post-taxonomy {
+  opacity: 1;
+}
