@@ -183,10 +183,7 @@ test.describe('Accessibility', () => {
       const badge = page.locator('a.post-taxonomy').first();
       const badgeCount = await page.locator('a.post-taxonomy').count();
 
-      if (badgeCount === 0) {
-        console.log('No .post-taxonomy badges found on this page, skipping check');
-        return;
-      }
+      expect(badgeCount).toBeGreaterThan(0);
 
       const badgeOpacity = await badge.evaluate(el => {
         return window.getComputedStyle(el).opacity;
