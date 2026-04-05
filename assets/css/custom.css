@@ -30,10 +30,10 @@
 
 /* Post list excerpts: enforce readable text on card surfaces. The theme colours
  * .post-summary with --hbs-secondary-text-on-surface; we already raise that token
- * above, but !important on the container covers non-<p> excerpts and wins over
- * injected styles. Links keep .post-summary a { accent } (more specific on <a>).
- * #4d4d4d ≈ rgba(0,0,0,0.7) on #fff → ~8.5:1 (Pa11y/axe on .post-summary p). */
+ * above, so this light-mode override can reuse it directly without !important.
+ * Links keep .post-summary a { accent } (more specific on <a>). The raised token
+ * provides the required WCAG AA contrast for excerpt text on card surfaces. */
 :root:not([data-mode]) .post-summary,
 [data-mode="light"] .post-summary {
-  color: #4d4d4d !important;
+  color: var(--hbs-secondary-text-on-surface);
 }
