@@ -9,14 +9,37 @@ function channelLuminance(value: number): number {
   return sRGB <= 0.04045 ? sRGB / 12.92 : Math.pow((sRGB + 0.055) / 1.055, 2.4);
 }
 
+function parseRgbColor(rgbStr: string): { r: number; g: number; b: number; alpha: number } {
+  const match = rgbStr.match(
+    /^rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)(?:\s*,\s*(0|1|0?\.\d+))?\s*\)$/i
+  );
+
+  if (!match) {
+    throw new Error(`Unsupported color format for contrast calculation: "${rgbStr}"`);
+  }
+
+  const r = Number.parseInt(match[1], 10);
+  const g = Number.parseInt(match[2], 10);
+  const b = Number.parseInt(match[3], 10);
+  const alpha = match[4] === undefined ? 1 : Number.parseFloat(match[4]);
+
+  return { r, g, b, alpha };
+}
+
 // Calculate relative luminance from an rgb(...) string
 function relativeLuminance(rgbStr: string): number {
-  const match = rgbStr.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
-  if (!match) return 0;
-  const r = channelLuminance(parseInt(match[1], 10));
-  const g = channelLuminance(parseInt(match[2], 10));
-  const b = channelLuminance(parseInt(match[3], 10));
-  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  const { r, g, b, alpha } = parseRgbColor(rgbStr);
+
+  if (alpha === 0) {
+    throw new Error(
+      `Cannot calculate relative luminance for fully transparent color "${rgbStr}" without resolving the effective background color first`
+    );
+  }
+
+  const red = channelLuminance(r);
+  const green = channelLuminance(g);
+  const blue = channelLuminance(b);
+  return 0.2126 * red + 0.7152 * green + 0.0722 * blue;
 }
 
 // Calculate WCAG contrast ratio between two rgb(...) strings
