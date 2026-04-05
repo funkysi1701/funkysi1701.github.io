@@ -13,9 +13,9 @@ function channelLuminance(value: number): number {
 function relativeLuminance(rgbStr: string): number {
   const match = rgbStr.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
   if (!match) return 0;
-  const r = channelLuminance(parseInt(match[1]));
-  const g = channelLuminance(parseInt(match[2]));
-  const b = channelLuminance(parseInt(match[3]));
+  const r = channelLuminance(parseInt(match[1], 10));
+  const g = channelLuminance(parseInt(match[2], 10));
+  const b = channelLuminance(parseInt(match[3], 10));
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
 
