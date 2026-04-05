@@ -1,7 +1,10 @@
 languageCode = 'en-gb'
 theme = 'hugo-theme-bootstrap'
-googleAnalytics = ""
 enableRobotsTXT = true
+
+[services]
+  [services.googleAnalytics]
+    id = ''
 
 [Menus]
   main = [
