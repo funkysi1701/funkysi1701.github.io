@@ -90,7 +90,7 @@ steps:
   condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'main'))  
   displayName: 'helm upgrade blog Main'
 - bash: |
-    if [[ "$(Build.SourceBranch)" == refs/heads/main || "$(Build.SourceBranch)" == refs/heads/develop || "$(Build.SourceBranch)" == refs/heads/test || "$(Build.SourceBranch)" == refs/heads/feature/* || "$(Build.SourceBranch)" == refs/heads/copilot/* ]]; then
+    if [[ "$(Build.SourceBranch)" == refs/heads/main ]]; then
       echo "##vso[task.setvariable variable=runPa11y]true"
     else
       echo "##vso[task.setvariable variable=runPa11y]false"
