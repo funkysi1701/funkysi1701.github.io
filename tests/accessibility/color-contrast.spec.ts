@@ -289,22 +289,49 @@ test.describe('Accessibility', () => {
       }
     });
 
-    await test.step('Verify post-summary paragraph meets WCAG AA color contrast (4.5:1)', async () => {
+    await test.step('Verify all post-summary paragraphs meet WCAG AA color contrast (4.5:1)', async () => {
       // 11. .post-summary paragraphs use --hbs-secondary-text-on-surface which was below threshold.
-      const summaryColors = await getElementColors(page, '.post-summary p');
+      // Pa11y/axe-core flagged the third article's summary <p> (build 10.1.1.2559) because the
+      // default rgba(0,0,0,0.54) barely met 4.5:1 on white and axe-core reported it as failing.
+      // Check every visible .post-summary p (not just the first) so any article can be caught.
+      const allSummaryColors = await page.evaluate(() => {
+        const MAX_BACKGROUND_TRAVERSAL_DEPTH = 20;
+        function isTransparent(bg: string): boolean {
+          const t = bg.trim().toLowerCase();
+          if (t === 'transparent') return true;
+          const m1 = t.match(/^rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*([\d.]+)\s*\)$/);
+          if (m1 && parseFloat(m1[4]) < 0.05) return true;
+          const m2 = t.match(/^rgba?\(\s*(\d+)\s+(\d+)\s+(\d+)\s*\/\s*([\d.]+)\s*\)$/);
+          if (m2 && parseFloat(m2[4]) < 0.05) return true;
+          return false;
+        }
+        function effectiveBackground(el: Element | null): string {
+          let n: Element | null = el;
+          for (let i = 0; i < MAX_BACKGROUND_TRAVERSAL_DEPTH && n; i++) {
+            const bg = window.getComputedStyle(n).backgroundColor;
+            if (!isTransparent(bg)) return bg;
+            n = n.parentElement;
+          }
+          return window.getComputedStyle(document.body).backgroundColor;
+        }
+        return Array.from(document.querySelectorAll('.post-summary p')).map((el) => {
+          const styles = window.getComputedStyle(el);
+          return { color: styles.color, backgroundColor: effectiveBackground(el) };
+        });
+      });
 
-      console.log('Post-summary paragraph colors:', summaryColors);
-      expect(summaryColors).toBeTruthy();
+      expect(allSummaryColors.length).toBeGreaterThan(0);
 
-      if (summaryColors) {
-        const ratio = tryContrastRatio(summaryColors.color, summaryColors.backgroundColor);
-        console.log('Post-summary contrast ratio:', ratio?.toFixed(2) ?? 'n/a (unparsed color)');
+      for (let i = 0; i < allSummaryColors.length; i++) {
+        const { color, backgroundColor } = allSummaryColors[i];
+        const ratio = tryContrastRatio(color, backgroundColor);
+        console.log(`Post-summary para[${i}] contrast ratio: ${ratio?.toFixed(2) ?? 'n/a'} (fg=${color} bg=${backgroundColor})`);
         if (ratio === null) {
           throw new Error(
-            `Could not parse colors for contrast: fg=${summaryColors.color} bg=${summaryColors.backgroundColor}`,
+            `Could not parse colors for post-summary para[${i}]: fg=${color} bg=${backgroundColor}`,
           );
         }
-        expect(ratio).toBeGreaterThanOrEqual(4.5);
+        expect(ratio, `post-summary para[${i}] must meet WCAG AA 4.5:1`).toBeGreaterThanOrEqual(4.5);
       }
     });
 
