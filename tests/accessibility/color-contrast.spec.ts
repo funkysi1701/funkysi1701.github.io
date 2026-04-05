@@ -3,6 +3,31 @@
 
 import { test, expect } from '../fixtures';
 
+// Calculate relative luminance for a single 0-255 channel value
+function channelLuminance(value: number): number {
+  const sRGB = value / 255;
+  return sRGB <= 0.04045 ? sRGB / 12.92 : Math.pow((sRGB + 0.055) / 1.055, 2.4);
+}
+
+// Calculate relative luminance from an rgb(...) string
+function relativeLuminance(rgbStr: string): number {
+  const match = rgbStr.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+  if (!match) return 0;
+  const r = channelLuminance(parseInt(match[1]));
+  const g = channelLuminance(parseInt(match[2]));
+  const b = channelLuminance(parseInt(match[3]));
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+
+// Calculate WCAG contrast ratio between two rgb(...) strings
+function contrastRatio(color1: string, color2: string): number {
+  const l1 = relativeLuminance(color1);
+  const l2 = relativeLuminance(color2);
+  const lighter = Math.max(l1, l2);
+  const darker = Math.min(l1, l2);
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
 test.describe('Accessibility', () => {
   test('Color contrast and readability', async ({ page }) => {
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
@@ -73,6 +98,59 @@ test.describe('Accessibility', () => {
 
       console.log('H1 font size:', headingSize);
       expect(headingSize).toBeGreaterThan(16); // H1 should be larger than body text
+    });
+
+    await test.step('Verify navbar brand link meets WCAG AA color contrast (4.5:1)', async () => {
+      // 7. Check navbar brand link color contrast against navbar background
+      const navbarColors = await page.evaluate(() => {
+        const brandLink = document.querySelector('header nav h1 a, header nav .navbar-brand');
+        const navbar = document.querySelector('header nav');
+        if (!brandLink || !navbar) return null;
+        const linkStyles = window.getComputedStyle(brandLink);
+        const navStyles = window.getComputedStyle(navbar);
+        return {
+          color: linkStyles.color,
+          backgroundColor: navStyles.backgroundColor
+        };
+      });
+
+      console.log('Navbar brand colors:', navbarColors);
+      expect(navbarColors).toBeTruthy();
+
+      if (navbarColors) {
+        const ratio = contrastRatio(navbarColors.color, navbarColors.backgroundColor);
+        console.log('Navbar brand contrast ratio:', ratio.toFixed(2));
+        // WCAG AA requires 4.5:1 for normal text
+        expect(ratio).toBeGreaterThanOrEqual(4.5);
+      }
+    });
+
+    await test.step('Verify nav links meet WCAG AA color contrast (4.5:1)', async () => {
+      // 8. Check nav link color contrast against navbar background
+      const navLink = await page.locator('#navbarSupportedContent ul li a').first();
+      const navLinkCount = await page.locator('#navbarSupportedContent ul li a').count();
+
+      if (navLinkCount > 0) {
+        const navColors = await navLink.evaluate(el => {
+          const navbar = el.closest('nav');
+          if (!navbar) return null;
+          const linkStyles = window.getComputedStyle(el);
+          const navStyles = window.getComputedStyle(navbar);
+          return {
+            color: linkStyles.color,
+            backgroundColor: navStyles.backgroundColor
+          };
+        });
+
+        console.log('Nav link colors:', navColors);
+
+        if (navColors) {
+          const ratio = contrastRatio(navColors.color, navColors.backgroundColor);
+          console.log('Nav link contrast ratio:', ratio.toFixed(2));
+          // WCAG AA requires 4.5:1 for normal text
+          expect(ratio).toBeGreaterThanOrEqual(4.5);
+        }
+      }
     });
 
   });

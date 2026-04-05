@@ -1,0 +1,10 @@
+/* Fix navbar color contrast for WCAG AA compliance.
+ * The default #e1e1e1 text on #1363be background yields ~4.51:1 contrast,
+ * which is borderline. White (#ffffff) gives ~5.90:1, well above the 4.5:1
+ * minimum required by WCAG AA.
+ */
+:root:not([data-mode]),
+[data-mode="light"] {
+  --hbs-primary-text-on-navbar: #ffffff;
+  --hbs-accent-text-on-navbar: #ffffff;
+}
