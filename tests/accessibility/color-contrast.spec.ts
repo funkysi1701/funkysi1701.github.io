@@ -2,6 +2,7 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { Page } from '@playwright/test';
 
 // Calculate relative luminance for a single 0-255 channel value
 function channelLuminance(value: number): number {
@@ -55,10 +56,40 @@ function relativeLuminance(rgbStr: string): number {
   return 0.2126 * red + 0.7152 * green + 0.0722 * blue;
 }
 
-// Calculate WCAG contrast ratio between two rgb(...) strings
-function contrastRatio(color1: string, color2: string): number {
-  const l1 = relativeLuminance(color1);
-  const l2 = relativeLuminance(color2);
+// Composite a semi-transparent foreground color onto an opaque background
+// using standard alpha compositing (Porter-Duff "over") and return the
+// resulting opaque color.
+function blendOnBackground(
+  fg: { r: number; g: number; b: number; alpha: number },
+  bg: { r: number; g: number; b: number },
+): { r: number; g: number; b: number } {
+  const a = fg.alpha;
+  return {
+    r: Math.round(a * fg.r + (1 - a) * bg.r),
+    g: Math.round(a * fg.g + (1 - a) * bg.g),
+    b: Math.round(a * fg.b + (1 - a) * bg.b),
+  };
+}
+
+// Calculate WCAG contrast ratio between foreground and background rgb(...) strings.
+// Semi-transparent foreground colours are composited over the background before
+// the luminance is calculated so that the ratio reflects the actual rendered colour.
+function contrastRatio(fgStr: string, bgStr: string): number {
+  const fg = parseRgbColor(fgStr);
+  const bg = parseRgbColor(bgStr);
+
+  if (fg.alpha === 0) {
+    throw new Error(
+      `Cannot calculate contrast ratio for fully transparent foreground color "${fgStr}"`,
+    );
+  }
+
+  // Composite semi-transparent foreground over the background.
+  const effectiveFg = fg.alpha < 1 ? blendOnBackground(fg, bg) : fg;
+  const l1 = 0.2126 * channelLuminance(effectiveFg.r) +
+              0.7152 * channelLuminance(effectiveFg.g) +
+              0.0722 * channelLuminance(effectiveFg.b);
+  const l2 = relativeLuminance(bgStr);
   const lighter = Math.max(l1, l2);
   const darker = Math.min(l1, l2);
   return (lighter + 0.05) / (darker + 0.05);
@@ -70,6 +101,41 @@ function tryContrastRatio(color1: string, color2: string): number | null {
   } catch {
     return null;
   }
+}
+
+// Resolve the computed foreground color and effective (non-transparent) background
+// color for any element matching `selector` in the current page.  Returns null when
+// no matching element is found.
+async function getElementColors(
+  page: Page,
+  selector: string,
+): Promise<{ color: string; backgroundColor: string } | null> {
+  return page.evaluate((sel) => {
+    function isTransparent(bg: string): boolean {
+      const t = bg.trim().toLowerCase();
+      if (t === 'transparent') return true;
+      const m1 = t.match(/^rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*([\d.]+)\s*\)$/);
+      if (m1 && parseFloat(m1[4]) < 0.05) return true;
+      const m2 = t.match(/^rgba?\(\s*(\d+)\s+(\d+)\s+(\d+)\s*\/\s*([\d.]+)\s*\)$/);
+      if (m2 && parseFloat(m2[4]) < 0.05) return true;
+      return false;
+    }
+
+    function effectiveBackground(el: Element | null): string {
+      let n: Element | null = el;
+      for (let i = 0; i < 20 && n; i++) {
+        const bg = window.getComputedStyle(n).backgroundColor;
+        if (!isTransparent(bg)) return bg;
+        n = n.parentElement;
+      }
+      return window.getComputedStyle(document.body).backgroundColor;
+    }
+
+    const el = document.querySelector(sel);
+    if (!el) return null;
+    const styles = window.getComputedStyle(el);
+    return { color: styles.color, backgroundColor: effectiveBackground(el) };
+  }, selector);
 }
 
 test.describe('Accessibility', () => {
@@ -150,38 +216,11 @@ test.describe('Accessibility', () => {
     });
 
     await test.step('Verify navbar brand link meets WCAG AA color contrast (4.5:1)', async () => {
-      // 7. Check navbar brand link color contrast against effective navbar background
-      // Inner <nav> often has transparent bg; color is on .navbar or header ancestor.
-      const navbarColors = await page.evaluate(() => {
-        function isTransparent(bg: string): boolean {
-          const t = bg.trim().toLowerCase();
-          if (t === 'transparent') return true;
-          const m1 = t.match(/^rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*([\d.]+)\s*\)$/);
-          if (m1 && parseFloat(m1[4]) < 0.05) return true;
-          const m2 = t.match(/^rgba\(\s*(\d+)\s+(\d+)\s+(\d+)\s*\/\s*([\d.]+)\s*\)$/);
-          if (m2 && parseFloat(m2[4]) < 0.05) return true;
-          return false;
-        }
-
-        function effectiveBackground(el: Element | null): string {
-          let n: Element | null = el;
-          for (let i = 0; i < 20 && n; i++) {
-            const bg = window.getComputedStyle(n).backgroundColor;
-            if (!isTransparent(bg)) return bg;
-            n = n.parentElement;
-          }
-          return window.getComputedStyle(document.body).backgroundColor;
-        }
-
-        const brandLink = document.querySelector('header nav h1 a, header nav .navbar-brand');
-        const navbar = document.querySelector('header nav');
-        if (!brandLink || !navbar) return null;
-        const linkStyles = window.getComputedStyle(brandLink);
-        return {
-          color: linkStyles.color,
-          backgroundColor: effectiveBackground(navbar),
-        };
-      });
+      // 7. Check navbar brand link color contrast against effective navbar background.
+      const navbarColors = await getElementColors(
+        page,
+        'header nav h1 a, header nav .navbar-brand',
+      );
 
       console.log('Navbar brand colors:', navbarColors);
       expect(navbarColors).toBeTruthy();
@@ -205,35 +244,7 @@ test.describe('Accessibility', () => {
 
       expect(navLinkCount).toBeGreaterThan(0);
 
-      const navColors = await navLinks.first().evaluate((el) => {
-        function isTransparent(bg: string): boolean {
-          const t = bg.trim().toLowerCase();
-          if (t === 'transparent') return true;
-          const m1 = t.match(/^rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*([\d.]+)\s*\)$/);
-          if (m1 && parseFloat(m1[4]) < 0.05) return true;
-          const m2 = t.match(/^rgba\(\s*(\d+)\s+(\d+)\s+(\d+)\s*\/\s*([\d.]+)\s*\)$/);
-          if (m2 && parseFloat(m2[4]) < 0.05) return true;
-          return false;
-        }
-
-        function effectiveBackground(start: Element | null): string {
-          let n: Element | null = start;
-          for (let i = 0; i < 20 && n; i++) {
-            const bg = window.getComputedStyle(n).backgroundColor;
-            if (!isTransparent(bg)) return bg;
-            n = n.parentElement;
-          }
-          return window.getComputedStyle(document.body).backgroundColor;
-        }
-
-        const navbar = el.closest('nav');
-        if (!navbar) return null;
-        const linkStyles = window.getComputedStyle(el);
-        return {
-          color: linkStyles.color,
-          backgroundColor: effectiveBackground(navbar),
-        };
-      });
+      const navColors = await getElementColors(page, '#navbarSupportedContent ul li a');
 
       console.log('Nav link colors:', navColors);
       expect(navColors).toBeTruthy();
@@ -257,6 +268,44 @@ test.describe('Accessibility', () => {
 
       expect(badgeCount).toBeGreaterThan(0);
       await expect(badges.first()).toBeVisible();
+    });
+
+    await test.step('Verify footer powered-by text meets WCAG AA color contrast (4.5:1)', async () => {
+      // 10. Footer .powered-by text uses --hbs-secondary-text-on-surface which was below threshold.
+      const footerColors = await getElementColors(page, 'footer .powered-by');
+
+      console.log('Footer powered-by colors:', footerColors);
+      expect(footerColors).toBeTruthy();
+
+      if (footerColors) {
+        const ratio = tryContrastRatio(footerColors.color, footerColors.backgroundColor);
+        console.log('Footer powered-by contrast ratio:', ratio?.toFixed(2) ?? 'n/a (unparsed color)');
+        if (ratio === null) {
+          throw new Error(
+            `Could not parse colors for contrast: fg=${footerColors.color} bg=${footerColors.backgroundColor}`,
+          );
+        }
+        expect(ratio).toBeGreaterThanOrEqual(4.5);
+      }
+    });
+
+    await test.step('Verify post-summary paragraph meets WCAG AA color contrast (4.5:1)', async () => {
+      // 11. .post-summary paragraphs use --hbs-secondary-text-on-surface which was below threshold.
+      const summaryColors = await getElementColors(page, '.post-summary p');
+
+      console.log('Post-summary paragraph colors:', summaryColors);
+      expect(summaryColors).toBeTruthy();
+
+      if (summaryColors) {
+        const ratio = tryContrastRatio(summaryColors.color, summaryColors.backgroundColor);
+        console.log('Post-summary contrast ratio:', ratio?.toFixed(2) ?? 'n/a (unparsed color)');
+        if (ratio === null) {
+          throw new Error(
+            `Could not parse colors for contrast: fg=${summaryColors.color} bg=${summaryColors.backgroundColor}`,
+          );
+        }
+        expect(ratio).toBeGreaterThanOrEqual(4.5);
+      }
     });
 
   });
