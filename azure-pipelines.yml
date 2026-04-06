@@ -128,7 +128,8 @@ steps:
       # scripts/pa11y-sitemap/scan.mjs loads ${SITE_URL}/sitemap.xml (or SITEMAP_URL), follows
       # sitemap indexes, filters to the same hostname, runs Pa11y (axe + htmlcs) per page with one
       # shared browser. Optional: PA11Y_MAX_PAGES to cap URL count for debugging.
-      # Host stdout → pa11y-results.json; apt/dpkg chatter stays off stdout.
+      # Host captures Docker stdout → pa11y-results.json. Only the final JSON may go to
+      # stdout (npm/apt must not — e.g. "added 124 packages" breaks JSON.parse).
       set +e
       docker run --rm --cap-add=SYS_ADMIN --shm-size=2g \
         -e "SITE_URL=$SITE_URL" \
@@ -144,7 +145,7 @@ steps:
           cp -a /scripts/pa11y-sitemap /tmp/pa11y-sitemap-work
           cp /scripts/pa11y-pipeline.json /tmp/pa11y.json
           cd /tmp/pa11y-sitemap-work
-          npm ci --omit=dev
+          npm ci --omit=dev --silent >/dev/null
           export PA11Y_CONFIG=/tmp/pa11y.json
           set +e
           node scan.mjs > /tmp/pa11y-out.json
