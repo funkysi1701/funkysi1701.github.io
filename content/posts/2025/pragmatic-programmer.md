@@ -153,7 +153,7 @@ Here is the complete list of tips that can be found in the book (I am reading th
 96. Delight Users, Don't Just Deliver Code
 97. Sign your Work
 
-### Professional ethics
+### Professional Ethics
 
 98. First, Do No Harm
 99. Don't Enable Scumbags
