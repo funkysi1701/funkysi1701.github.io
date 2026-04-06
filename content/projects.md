@@ -40,9 +40,9 @@ A website for tracking what episode you watched last of your favourite TV shows.
   - Sortable list of episodes
   - Option to mark when you last watched a particular episode
   - Add new episodes and TV Shows
-  - Links to [Memory Alpha](https://memory-alpha.fandom.com/) for details about the episode
+  - Links to [Memory Alpha](https://memory-alpha.fandom.com) for details about the episode
   - More features to come...
-- **Links**: [Episode Atlas](https://www.episodeatlas.com/)
+- **Links**: [Episode Atlas](https://www.episodeatlas.com)
 
 ### Mandelbrot Generator
 
@@ -53,7 +53,18 @@ I've always been fascinated by Mandelbrots and now I can generate them in the br
   - Generates a Mandelbrot Set in the browser no server or backend involved
   - Zoom In/Out from desktop or mobile
   - More features to come...
-- **Links**: [Mandelbrot Generator](https://mandelbrot.funkysi1701.com/)
+- **Links**: [Mandelbrot Generator](https://mandelbrot.funkysi1701.com)
+
+### Thorne Pentecostal Church
+
+I've been part of the Thorne Pentecostal Church for many years, and until recently it did not have a website.
+
+- **Tech Stack**: HTML/CSS, Azure Static Web Apps
+- **Features**:
+  - Provides information for existing church members and helps potential new members and visitors learn about us
+  - Simple design
+  - Low-tech solution for adding new events and updating the schedule
+- **Links**: [Thorne Pentecostal Church](https://www.thornepentecostalchurch.co.uk)
 
 ---
 
