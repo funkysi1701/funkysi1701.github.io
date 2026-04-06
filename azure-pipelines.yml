@@ -122,24 +122,32 @@ steps:
           SITE_URL="https://www.funkysi1701.com"
           ;;
       esac
-      echo "Pa11y scanning: $SITE_URL"
+      echo "Pa11y scanning all sitemap URLs under: $SITE_URL (sitemap: ${SITEMAP_URL:-$SITE_URL/sitemap.xml})"
 
       # Bookworm node image lacks Chromium libs; use apt Chromium (scripts/pa11y-pipeline.json).
-      # Config adds a real Chrome user-agent, post-load wait, sRGB profile — avoids CDN/WAF
-      # stripping CSS and reduces headless colour-contrast variance vs default pa11y/* UA.
-      # Host redirects ALL container stdout into pa11y-results.json — apt/dpkg print "Selecting..." on stdout; silence it.
-      # Pa11y JSON is emitted only via cat /tmp/pa11y-out.json (Pa11y exit 2 = issues found — must still cat after pa11y).
+      # scripts/pa11y-sitemap/scan.mjs loads ${SITE_URL}/sitemap.xml (or SITEMAP_URL), follows
+      # sitemap indexes, filters to the same hostname, runs Pa11y (axe + htmlcs) per page with one
+      # shared browser. Optional: PA11Y_MAX_PAGES to cap URL count for debugging.
+      # Host stdout → pa11y-results.json; apt/dpkg chatter stays off stdout.
       set +e
       docker run --rm --cap-add=SYS_ADMIN --shm-size=2g \
-        -v "$REPO_ROOT/scripts/pa11y-pipeline.json:/tmp/pa11y.json:ro" \
+        -e "SITE_URL=$SITE_URL" \
+        -e "SITEMAP_URL=${SITEMAP_URL:-}" \
+        -e "PA11Y_MAX_PAGES=${PA11Y_MAX_PAGES:-}" \
+        -v "$REPO_ROOT/scripts:/scripts:ro" \
         node:20-bookworm \
         bash -c 'set -e
           export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+          export PUPPETEER_SKIP_DOWNLOAD=true
           apt-get update -qq >/dev/null
           DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends chromium ca-certificates fonts-liberation >/dev/null
-          npm install -g pa11y >/dev/null 2>&1
+          cp -a /scripts/pa11y-sitemap /tmp/pa11y-sitemap-work
+          cp /scripts/pa11y-pipeline.json /tmp/pa11y.json
+          cd /tmp/pa11y-sitemap-work
+          npm ci --omit=dev
+          export PA11Y_CONFIG=/tmp/pa11y.json
           set +e
-          pa11y --runner axe --runner htmlcs --reporter json --config /tmp/pa11y.json '"$SITE_URL"' > /tmp/pa11y-out.json
+          node scan.mjs > /tmp/pa11y-out.json
           code=$?
           cat /tmp/pa11y-out.json
           exit $code' \
