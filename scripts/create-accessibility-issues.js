@@ -105,9 +105,9 @@ async function getExistingIssueTitles() {
 function wcagReferenceUrl(code) {
   // WCAG codes are like "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37"
   // Extract the guideline number (e.g. "1_1") to build a reference link.
-  const match = code.match(/Guideline(\d+_\d+)/);
+  const match = code.match(/Guideline(\d+_\d+(?:_\d+)*)/);
   if (match) {
-    const guideline = match[1].replace('_', '-');
+    const guideline = match[1].replace(/_/g, '-');
     return `https://www.w3.org/WAI/WCAG21/Understanding/${guideline}.html`;
   }
   return 'https://www.w3.org/WAI/WCAG21/Understanding/';
