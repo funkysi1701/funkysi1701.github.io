@@ -31,8 +31,15 @@
 /* Post list excerpts: use an opaque colour on the card (#fff). Some axe-core /
  * headless Chromium paths treat rgba() text colours inconsistently vs composited
  * contrast; #4d4d4d matches ~rgba(0,0,0,0.7) on white (~8.5:1). !important
- * beats injected/third-party CSS. .post-summary a still sets accent on links. */
+ * beats injected/third-party CSS. .post-summary a still sets accent on links.
+ * The p rule targets the <p> element directly so axe-core sees an opaque
+ * computed colour rather than an inherited semi-transparent rgba variable. */
 :root:not([data-mode]) .post-summary,
 [data-mode="light"] .post-summary {
   color: #4d4d4d !important;
+}
+
+:root:not([data-mode]) .post-summary p,
+[data-mode="light"] .post-summary p {
+  color: #4d4d4d;
 }
