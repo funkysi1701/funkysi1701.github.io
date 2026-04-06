@@ -102,35 +102,113 @@ async function getExistingIssueTitles() {
   return titles;
 }
 
-function buildIssueBody(code, issues) {
-  const examples = issues
-    .slice(0, 3)
-    .map((issue, i) =>
-      [
-        `### Example ${i + 1}`,
-        '',
-        `**Message**: ${issue.message}`,
-        `**Selector**: \`${issue.selector || 'N/A'}\``,
-        '',
-        '**Context:**',
-        '```html',
-        (issue.context || 'N/A').trim(),
-        '```',
-      ].join('\n')
-    )
-    .join('\n\n');
+function wcagReferenceUrl(code) {
+  // WCAG codes are like "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37"
+  // Extract the guideline number (e.g. "1_1") to build a reference link.
+  const match = code.match(/Guideline(\d+_\d+)/);
+  if (match) {
+    const guideline = match[1].replace('_', '-');
+    return `https://www.w3.org/WAI/WCAG21/Understanding/${guideline}.html`;
+  }
+  return 'https://www.w3.org/WAI/WCAG21/Understanding/';
+}
 
-  return [
+function buildIssueBody(code, issues) {
+  // Extract axe-provided metadata from the first issue that has it
+  const axeExtras = issues.map((i) => i.runnerExtras).find((e) => e && (e.help || e.impact));
+  const impact = axeExtras && axeExtras.impact ? axeExtras.impact : null;
+  const helpText = axeExtras && axeExtras.help ? axeExtras.help : null;
+  const helpUrl = axeExtras && axeExtras.helpUrl ? axeExtras.helpUrl : null;
+  const runners = [...new Set(issues.map((i) => i.runner).filter(Boolean))];
+
+  // Build a summary header
+  const header = [
     '## Accessibility Issue Found by Pa11y',
     '',
     `**WCAG Code**: \`${code}\``,
+    `**WCAG Reference**: ${wcagReferenceUrl(code)}`,
+    impact ? `**Impact**: ${impact}` : null,
+    helpText ? `**Rule**: ${helpText}` : null,
+    helpUrl ? `**Rule Details**: ${helpUrl}` : null,
     `**Total Occurrences**: ${issues.length}`,
+    runners.length ? `**Detected by**: ${runners.join(', ')}` : null,
     `**URL**: ${SITE_URL}`,
     `**Build**: ${BUILD_NUMBER}`,
+  ]
+    .filter((line) => line !== null)
+    .join('\n');
+
+  // How to fix section: use axe help text if available, otherwise derive from message
+  const fixGuidance = helpText || issues[0].message;
+  const howToFix = [
+    '## How to Fix',
+    '',
+    fixGuidance,
+    helpUrl ? `\nSee the full rule documentation: ${helpUrl}` : null,
+  ]
+    .filter((line) => line !== null)
+    .join('\n');
+
+  // List all selectors so an AI agent can locate every affected element
+  const allSelectors = issues
+    .map((issue, i) => `${i + 1}. \`${issue.selector || 'N/A'}\``)
+    .join('\n');
+
+  const selectorSection = [
+    '## All Affected Elements',
+    '',
+    'The following CSS selectors identify every element that needs to be fixed:',
+    '',
+    allSelectors,
+  ].join('\n');
+
+  // Show up to 5 detailed examples with full context so an AI agent can see the HTML to change
+  const maxExamples = Math.min(issues.length, 5);
+  const examples = issues
+    .slice(0, maxExamples)
+    .map((issue, i) => {
+      const extraImpact =
+        issue.runnerExtras && issue.runnerExtras.impact
+          ? `\n**Impact**: ${issue.runnerExtras.impact}`
+          : '';
+      const extraHelp =
+        issue.runnerExtras && issue.runnerExtras.help
+          ? `\n**Fix**: ${issue.runnerExtras.help}`
+          : '';
+      return [
+        `### Occurrence ${i + 1}${issue.runner ? ` _(${issue.runner})_` : ''}`,
+        '',
+        `**Message**: ${issue.message}${extraImpact}${extraHelp}`,
+        `**Selector**: \`${issue.selector || 'N/A'}\``,
+        '',
+        '**HTML Context** _(the snippet below is what needs to be changed)_:',
+        '```html',
+        (issue.context || 'N/A').trim(),
+        '```',
+      ].join('\n');
+    })
+    .join('\n\n');
+
+  const examplesSection = [
+    `## Detailed Examples (showing ${maxExamples} of ${issues.length})`,
+    '',
+    examples,
+  ].join('\n');
+
+  return [
+    header,
     '',
     '---',
     '',
-    examples,
+    howToFix,
+    '',
+    '---',
+    '',
+    selectorSection,
+    '',
+    '---',
+    '',
+    examplesSection,
     '',
     '---',
     '_Detected by [Pa11y](https://pa11y.org/) accessibility checker in Azure Pipeline_',
