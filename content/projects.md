@@ -55,6 +55,17 @@ I've always been fascinated by Mandelbrots and now I can generate them in the br
   - More features to come...
 - **Links**: [Mandelbrot Generator](https://mandelbrot.funkysi1701.com/)
 
+### Thorne Pentecostal Church
+
+I've been part of the Thorne Pentecostal Church for many years but they have not had a website until now.
+
+- **Tech Stack**: HTML/CSS, Azure Static Web Apps
+- **Features**:
+  - Be a source of information for both existing members of the church and let potential new people know about us.
+  - Simple design
+  - Low tech solution for adding new events/schedule
+- **Links**: [Thorne Pentecostal Church](https://www.thornepentecostalchurch.co.uk)
+
 ---
 
 ## 💡 Side Projects & Experiments
