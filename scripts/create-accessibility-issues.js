@@ -121,6 +121,16 @@ function buildIssueBody(code, issues) {
   const helpUrl = axeExtras && axeExtras.helpUrl ? axeExtras.helpUrl : null;
   const runners = [...new Set(issues.map((i) => i.runner).filter(Boolean))];
 
+  const pageUrls = [...new Set(issues.map((i) => i.pageUrl).filter(Boolean))].sort();
+  const urlSection =
+    pageUrls.length === 0
+      ? `**Scan entry URL**: ${SITE_URL}`
+      : pageUrls.length === 1
+        ? `**Page**: ${pageUrls[0]}`
+        : ['**Pages** _(this issue appears on multiple URLs)_:', '', ...pageUrls.map((p) => `- ${p}`)].join(
+            '\n',
+          );
+
   // Build a summary header
   const header = [
     '## Accessibility Issue Found by Pa11y',
@@ -132,7 +142,7 @@ function buildIssueBody(code, issues) {
     helpUrl ? `**Rule Details**: ${helpUrl}` : null,
     `**Total Occurrences**: ${issues.length}`,
     runners.length ? `**Detected by**: ${runners.join(', ')}` : null,
-    `**URL**: ${SITE_URL}`,
+    urlSection,
     `**Build**: ${BUILD_NUMBER}`,
   ]
     .filter((line) => line !== null)
@@ -175,9 +185,11 @@ function buildIssueBody(code, issues) {
         issue.runnerExtras && issue.runnerExtras.help
           ? `\n**Fix**: ${issue.runnerExtras.help}`
           : '';
+      const pageBlock = issue.pageUrl ? [`**Page**: ${issue.pageUrl}`, ''] : [];
       return [
         `### Occurrence ${i + 1}${issue.runner ? ` _(${issue.runner})_` : ''}`,
         '',
+        ...pageBlock,
         `**Message**: ${issue.message}${extraImpact}${extraHelp}`,
         `**Selector**: \`${issue.selector || 'N/A'}\``,
         '',
