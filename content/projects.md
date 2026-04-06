@@ -63,7 +63,7 @@ I've been part of the Thorne Pentecostal Church for many years, and until recent
 - **Features**:
   - Provides information for existing church members and helps potential new members and visitors learn about us.
   - Simple design
-  - Low tech solution for adding new events/schedule
+  - Low-tech solution for adding new events and updating the schedule
 - **Links**: [Thorne Pentecostal Church](https://www.thornepentecostalchurch.co.uk)
 
 ---
