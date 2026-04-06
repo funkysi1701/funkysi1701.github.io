@@ -5,6 +5,6 @@
   "type": "module",
   "description": "Used only in Azure Pipeline Docker to scan all URLs from the live sitemap with Pa11y.",
   "dependencies": {
-    "pa11y": "^8.0.0"
+    "pa11y": "^9.0.0"
   }
 }
