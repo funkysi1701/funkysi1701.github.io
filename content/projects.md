@@ -57,11 +57,11 @@ I've always been fascinated by Mandelbrots and now I can generate them in the br
 
 ### Thorne Pentecostal Church
 
-I've been part of the Thorne Pentecostal Church for many years but they have not had a website until now.
+I've been part of the Thorne Pentecostal Church for many years, and until recently it did not have a website.
 
 - **Tech Stack**: HTML/CSS, Azure Static Web Apps
 - **Features**:
-  - Be a source of information for both existing members of the church and let potential new people know about us.
+  - Provides information for existing church members and helps potential new members and visitors learn about us.
   - Simple design
   - Low tech solution for adding new events/schedule
 - **Links**: [Thorne Pentecostal Church](https://www.thornepentecostalchurch.co.uk)
