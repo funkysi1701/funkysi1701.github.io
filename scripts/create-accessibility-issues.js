@@ -93,7 +93,7 @@ async function getOpenAccessibilityIssues() {
           'GitHub API 401: invalid or expired token, or missing repo/issues access. Use a PAT with classic scope "repo" (private) or "public_repo" (public only), or a fine-grained token with Issues read/write on this repository. Ensure the Global variable GITHUB_TOKEN is set and this pipeline is allowed to use it.'
         );
       } else {
-        console.warn('Failed to fetch existing issues:', res.status);
+        console.warn('Failed to fetch open accessibility issues:', res.status);
       }
       return [];
     }
