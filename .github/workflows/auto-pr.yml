@@ -1,12 +1,12 @@
-name: Dev to Test
+name: Develop to Main
 on:
   workflow_dispatch:
   push:
     branches:
-    - develop        
+      - develop
 permissions:
   contents: read
-  pull-requests: write   
+  pull-requests: write
 jobs:
   create-pr:
     runs-on: ubuntu-latest
@@ -22,21 +22,32 @@ jobs:
       - name: Check for new commits
         id: check_commits
         run: |
-          git fetch origin test || true
-          if git show-ref --verify --quiet refs/remotes/origin/test; then
-            NEW_COMMITS=$(git rev-list --count develop ^origin/test)
+          git fetch origin main || true
+          if git show-ref --verify --quiet refs/remotes/origin/main; then
+            NEW_COMMITS=$(git rev-list --count develop ^origin/main)
             echo "new_commits=$NEW_COMMITS" >> $GITHUB_OUTPUT
             if [ "$NEW_COMMITS" -eq 0 ]; then
-              echo "No new commits to PR."
+              echo "No new commits on develop ahead of main."
             fi
           else
-            echo "test branch does not exist; continuing."
+            echo "main branch does not exist; continuing."
             echo "new_commits=1" >> $GITHUB_OUTPUT
           fi
-      
-      - name: create pull request
+
+      - name: Create or update pull request
         if: steps.check_commits.outputs.new_commits != '0'
-        run: gh pr create -B test -H develop --title 'Release ${{ steps.date.outputs.date }} Dev to Test' --body 'Created by Github action' 
-          || gh pr edit -B test --title 'Release ${{ steps.date.outputs.date }} Dev to Test' --body 'Created by Github action'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TITLE='Release ${{ steps.date.outputs.date }} Develop → Main'
+          BODY='Promote **develop** to **main** (test branch no longer used in the release path). Created by GitHub Actions.'
+          if gh pr create -B main -H develop --title "$TITLE" --body "$BODY"; then
+            exit 0
+          fi
+          PR=$(gh pr list --head develop --base main --state open --json number -q '.[0].number')
+          if [ -n "$PR" ] && [ "$PR" != "null" ]; then
+            gh pr edit "$PR" --title "$TITLE" --body "$BODY"
+          else
+            echo "No open PR found to update."
+            exit 1
+          fi

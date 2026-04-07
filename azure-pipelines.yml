@@ -13,16 +13,15 @@ variables:
 name: $(Build.Number.Major).$(Build.Number.Minor).$(Build.Number.Sub).$(Rev:r)
 
 trigger:
-- develop
-- test
-- main
+  - develop
+  - main
 
 pool: Docker
 
 steps:
 - task: CmdLine@2
   displayName: "Install AWS CLI"
-  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
+  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   inputs:
     script: |
       curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -32,7 +31,7 @@ steps:
       aws --version
 - task: CmdLine@2
   displayName: "Build and Login to ECR"
-  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
+  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   env:
     AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
     AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
@@ -45,13 +44,10 @@ steps:
       aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 687611153768.dkr.ecr.eu-north-1.amazonaws.com
 - bash: |
     case "$(Build.SourceBranchName)" in
-      "main")
+      main)
         echo "##vso[task.setvariable variable=imageRepoName]blog:$(Build.BuildNumber)-main"
         ;;
-      "test")
-        echo "##vso[task.setvariable variable=imageRepoName]blog:$(Build.BuildNumber)-test"
-        ;;
-      "develop")
+      develop)
         echo "##vso[task.setvariable variable=imageRepoName]blog:$(Build.BuildNumber)-develop"
         ;;
       *)
@@ -61,7 +57,7 @@ steps:
   displayName: 'Set image repository name'
 - task: CmdLine@2
   displayName: "Publish to ECR"
-  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop', 'refs/heads/test'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
+  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   inputs:
     script: |
       docker tag blog 687611153768.dkr.ecr.eu-north-1.amazonaws.com/funkysi1701/$(imageRepoName)
@@ -77,18 +73,19 @@ steps:
     helm lint Helm/blog --namespace develop
     helm lint Helm/blog --namespace test
     helm lint Helm/blog --namespace main
+# Non-prod: feature/* → develop namespace only. dev/develop → develop + test (same image tag).
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace develop --set image.tag=$(Build.BuildNumber)-develop
   condition: and(succeeded(), or(eq(variables['Build.SourceBranchName'], 'develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
-  displayName: 'helm upgrade blog Dev'
+  displayName: 'helm upgrade blog (namespace develop)'
 - script: |
-    helm upgrade --install blog ./Helm/blog --namespace test --set image.tag=$(Build.BuildNumber)-test
-  condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'test'))  
-  displayName: 'helm upgrade blog Test'
+    helm upgrade --install blog ./Helm/blog --namespace test --set image.tag=$(Build.BuildNumber)-develop
+  condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'develop'))
+  displayName: 'helm upgrade blog (namespace test)'
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace main --set image.tag=$(Build.BuildNumber)-main
-  condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'main'))  
-  displayName: 'helm upgrade blog Main'
+  condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'main'))
+  displayName: 'helm upgrade blog (namespace main / prod)'
 - bash: |
     if [[ "$(Build.SourceBranchName)" == "main" ]]; then
       echo "##vso[task.setvariable variable=runPa11y]true"
@@ -110,18 +107,8 @@ steps:
       PA11Y_RUN_FAILED=0
       REPO_ROOT="$(Build.SourcesDirectory)"
 
-      # Determine the site URL to scan based on the branch being built.
-      case "$(Build.SourceBranchName)" in
-        "main")
-          SITE_URL="https://blog.funkysi1701.com"
-          ;;
-        "test")
-          SITE_URL="https://blog-test.funkysi1701.com"
-          ;;
-        *)
-          SITE_URL="https://www.funkysi1701.com"
-          ;;
-      esac
+      # Pa11y runs only on main (prod); scan production.
+      SITE_URL="https://blog.funkysi1701.com"
       echo "Pa11y scanning all sitemap URLs under: $SITE_URL (sitemap: ${SITEMAP_URL:-$SITE_URL/sitemap.xml})"
 
       # Bookworm node image lacks Chromium libs; use apt Chromium (scripts/pa11y-pipeline.json).
