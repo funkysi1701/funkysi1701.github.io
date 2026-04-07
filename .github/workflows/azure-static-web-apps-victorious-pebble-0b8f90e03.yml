@@ -1,14 +1,15 @@
-name: Deploy to Production 
+name: Deploy to Production
 permissions:
   contents: read
 
 on:
-  workflow_dispatch:  
-  schedule: 
+  workflow_dispatch:
+  schedule:
     - cron: '5 20 * * 1'
   push:
     branches:
-    - main    
+      - main
+
 jobs:
   build_and_deploy_job:
     runs-on: ubuntu-latest
@@ -18,7 +19,7 @@ jobs:
         with:
           ref: main
           submodules: true
-      
+
       - name: Load Hugo Version
         run: |
           echo "HUGO_VERSION=$(grep HUGO_VERSION .env | cut -d '=' -f2)" >> $GITHUB_ENV
@@ -31,35 +32,19 @@ jobs:
             -u $(id -u):$(id -g) \
             floryn90/hugo:${HUGO_VERSION}-ext-alpine \
             --minify --environment production --noBuildLock
+
       - name: Copy staticwebapp.config.json to public
         run: |
           cp staticwebapp.config.json public/staticwebapp.config.json
-      
+
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
         uses: Azure/static-web-apps-deploy@1a947af9992250f3bc2e68ad0754c0b0c11566c9 # v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_PEBBLE_0B8F90E03 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "public" # Pre-built app content directory
-          api_location: "" # Api source code path - optional
-          output_location: "" # No build needed, files are already built
-          skip_app_build: true # Skip Oryx build since Hugo already built the site
-          ###### End of Repository/Build Configurations ######
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@1a947af9992250f3bc2e68ad0754c0b0c11566c9 # v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_PEBBLE_0B8F90E03 }}
-          action: "close"
-
-
-
+          app_location: "public"
+          api_location: ""
+          output_location: ""
+          skip_app_build: true

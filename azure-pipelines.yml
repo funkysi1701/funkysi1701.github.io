@@ -73,17 +73,24 @@ steps:
     helm lint Helm/blog --namespace develop
     helm lint Helm/blog --namespace test
     helm lint Helm/blog --namespace main
-# Non-prod: feature/* → develop namespace only. dev/develop → develop + test (same image tag).
+# Non-prod: feature/* → develop namespace only. develop → develop + test Kubernetes namespaces (same image tag).
+# --wait/--timeout: block until workloads ready; --atomic: auto-rollback release if upgrade fails.
 - script: |
-    helm upgrade --install blog ./Helm/blog --namespace develop --set image.tag=$(Build.BuildNumber)-develop
+    helm upgrade --install blog ./Helm/blog --namespace develop \
+      --set image.tag=$(Build.BuildNumber)-develop \
+      --wait --timeout 15m --atomic
   condition: and(succeeded(), or(eq(variables['Build.SourceBranchName'], 'develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   displayName: 'helm upgrade blog (namespace develop)'
 - script: |
-    helm upgrade --install blog ./Helm/blog --namespace test --set image.tag=$(Build.BuildNumber)-develop
+    helm upgrade --install blog ./Helm/blog --namespace test \
+      --set image.tag=$(Build.BuildNumber)-develop \
+      --wait --timeout 15m --atomic
   condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'develop'))
   displayName: 'helm upgrade blog (namespace test)'
 - script: |
-    helm upgrade --install blog ./Helm/blog --namespace main --set image.tag=$(Build.BuildNumber)-main
+    helm upgrade --install blog ./Helm/blog --namespace main \
+      --set image.tag=$(Build.BuildNumber)-main \
+      --wait --timeout 15m --atomic
   condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'main'))
   displayName: 'helm upgrade blog (namespace main / prod)'
 - bash: |
@@ -101,14 +108,32 @@ steps:
     GITHUB_TOKEN: $(GITHUB_TOKEN)
   inputs:
     script: |
-      # Allow 30 seconds for the Kubernetes rollout to finish before scanning
-      sleep 30
-
       PA11Y_RUN_FAILED=0
       REPO_ROOT="$(Build.SourcesDirectory)"
 
       # Pa11y runs only on main (prod); scan production.
-      SITE_URL="https://blog.funkysi1701.com"
+      SITE_URL="https://www.funkysi1701.com"
+      # Helm release "blog" + chart name "blog" → Deployment name "blog" in namespace main.
+      if ! kubectl rollout status deployment/blog -n main --timeout=5m; then
+        echo "##vso[task.logissue type=warning]kubectl rollout status did not succeed within 5m; continuing with HTTP check."
+      fi
+      # Public URL (ingress/CDN) may lag behind Deployment ready.
+      READY_URL="${SITE_URL}/"
+      READY=0
+      for i in $(seq 1 36); do
+        HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$READY_URL")
+        if [ "$HTTP_CODE" = "200" ]; then
+          echo "Public URL ready (HTTP 200): $READY_URL"
+          READY=1
+          break
+        fi
+        echo "Attempt $i: received HTTP $HTTP_CODE from $READY_URL; retrying in 5s..."
+        sleep 5
+      done
+      if [ "$READY" -ne 1 ]; then
+        echo "##vso[task.logissue type=warning]No HTTP 200 from $READY_URL after ~180s; running Pa11y anyway."
+      fi
+
       echo "Pa11y scanning all sitemap URLs under: $SITE_URL (sitemap: ${SITEMAP_URL:-$SITE_URL/sitemap.xml})"
 
       # Bookworm node image lacks Chromium libs; use apt Chromium (scripts/pa11y-pipeline.json).
