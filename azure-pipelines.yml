@@ -121,11 +121,13 @@ steps:
       READY_URL="${SITE_URL}/"
       READY=0
       for i in $(seq 1 36); do
-        if curl -fsS -o /dev/null "$READY_URL"; then
-          echo "Public URL ready: $READY_URL"
+        HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$READY_URL")
+        if [ "$HTTP_CODE" = "200" ]; then
+          echo "Public URL ready (HTTP 200): $READY_URL"
           READY=1
           break
         fi
+        echo "Attempt $i: received HTTP $HTTP_CODE from $READY_URL; retrying in 5s..."
         sleep 5
       done
       if [ "$READY" -ne 1 ]; then
