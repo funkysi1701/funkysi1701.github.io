@@ -5,6 +5,8 @@
  *
  * Env: SITE_URL (required), SITEMAP_URL (optional, default SITE_URL/sitemap.xml),
  * PA11Y_CONFIG (optional, default /tmp/pa11y.json), PA11Y_MAX_PAGES (optional cap).
+ * PA11Y_RUNNERS (optional, comma-separated; unset in scan.mjs = axe+htmlcs; Azure pipeline defaults to axe).
+ * PA11Y_WAIT_MS / PA11Y_TIMEOUT_MS (optional) — override JSON wait / timeout per page.
  */
 
 import { readFileSync } from 'node:fs';
@@ -39,6 +41,23 @@ try {
 }
 
 const { chromeLaunchConfig = {}, ...restFileConfig } = fileConfig;
+
+const runnersFromEnv = process.env.PA11Y_RUNNERS?.trim();
+const runners = runnersFromEnv
+  ? runnersFromEnv.split(',').map((r) => r.trim()).filter(Boolean)
+  : ['axe', 'htmlcs'];
+
+function intEnv(name, fallback) {
+  const v = process.env[name];
+  if (v === undefined || v === '') {
+    return fallback;
+  }
+  const n = parseInt(v, 10);
+  return Number.isFinite(n) ? n : fallback;
+}
+
+const waitMs = intEnv('PA11Y_WAIT_MS', restFileConfig.wait ?? 0);
+const timeoutMs = intEnv('PA11Y_TIMEOUT_MS', restFileConfig.timeout ?? 60000);
 
 async function fetchText(url) {
   const res = await fetch(url, {
@@ -116,6 +135,7 @@ async function main() {
   urls = sortUrlsHomeFirst([...new Set(urls)].filter((u) => sameHost(u)));
 
   console.error(`Found ${urls.length} URL(s) for host ${hostname}`);
+  console.error(`Pa11y runners: ${runners.join(', ')}; wait=${waitMs}ms timeout=${timeoutMs}ms`);
 
   if (maxPages > 0 && urls.length > maxPages) {
     console.error(`PA11Y_MAX_PAGES=${maxPages}: scanning first ${maxPages} URLs only`);
@@ -135,7 +155,9 @@ async function main() {
 
   const pa11yBase = {
     ...restFileConfig,
-    runners: ['axe', 'htmlcs'],
+    wait: waitMs,
+    timeout: timeoutMs,
+    runners,
     log: {
       debug: () => {},
       error: (...args) => console.error(...args),
