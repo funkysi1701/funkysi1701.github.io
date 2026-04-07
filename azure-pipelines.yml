@@ -108,7 +108,7 @@ steps:
       REPO_ROOT="$(Build.SourcesDirectory)"
 
       # Pa11y runs only on main (prod); scan production.
-      SITE_URL="https://blog.funkysi1701.com"
+      SITE_URL="https://www.funkysi1701.com"
       echo "Pa11y scanning all sitemap URLs under: $SITE_URL (sitemap: ${SITEMAP_URL:-$SITE_URL/sitemap.xml})"
 
       # Bookworm node image lacks Chromium libs; use apt Chromium (scripts/pa11y-pipeline.json).
