@@ -31,10 +31,11 @@ docker run --rm -it -v .:/src -p 1313:1313 floryn90/hugo:${HUGO_VERSION} server 
 
 ### Deployment Pipeline
 
-- **Master branch (main):** Deploys to production via GitHub Actions + Azure Static Web Apps
-- **Develop branch:** Triggers Azure Pipelines → ECR push → Kubernetes deployment to dev environment
-- **Test branch:** ECR push → Kubernetes deployment to test environment
-- **Feature branches:** Trigger builds but don't auto-deploy
+- **main:** Production — Azure Pipelines → ECR → Kubernetes `main` namespace; GitHub Actions also builds Hugo and deploys Azure Static Web Apps
+- **develop:** Non-prod — Azure Pipelines → ECR → Helm upgrades **both** Kubernetes namespaces `develop` and `test` (same image tag; URLs include blog-dev and blog-test)
+- **feature/\*:** Azure Pipelines build and push image; Helm targets the `develop` namespace only (not `test`)
+
+There is no separate git branch named `dev`; use **`develop`** for integration.
 
 ## Content Conventions
 

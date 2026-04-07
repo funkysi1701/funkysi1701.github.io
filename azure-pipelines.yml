@@ -73,7 +73,7 @@ steps:
     helm lint Helm/blog --namespace develop
     helm lint Helm/blog --namespace test
     helm lint Helm/blog --namespace main
-# Non-prod: feature/* → develop namespace only. dev/develop → develop + test (same image tag).
+# Non-prod: feature/* → develop namespace only. develop → develop + test Kubernetes namespaces (same image tag).
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace develop --set image.tag=$(Build.BuildNumber)-develop
   condition: and(succeeded(), or(eq(variables['Build.SourceBranchName'], 'develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
