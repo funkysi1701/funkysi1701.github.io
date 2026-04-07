@@ -66,9 +66,18 @@ async function ensureLabel() {
   }
 }
 
-async function getExistingIssueTitles() {
+const PA11Y_ISSUE_TITLE_PREFIX = 'Accessibility: ';
+
+function parsePa11yManagedCode(title) {
+  if (typeof title !== 'string' || !title.startsWith(PA11Y_ISSUE_TITLE_PREFIX)) {
+    return null;
+  }
+  return title.slice(PA11Y_ISSUE_TITLE_PREFIX.length).trim() || null;
+}
+
+async function getOpenAccessibilityIssues() {
   const perPage = 100;
-  const titles = new Set();
+  const out = [];
   let page = 1;
 
   while (true) {
@@ -80,17 +89,20 @@ async function getExistingIssueTitles() {
 
     if (res.status !== 200) {
       if (res.status === 401) {
-        console.error(
+        throw new Error(
           'GitHub API 401: invalid or expired token, or missing repo/issues access. Use a PAT with classic scope "repo" (private) or "public_repo" (public only), or a fine-grained token with Issues read/write on this repository. Ensure the Global variable GITHUB_TOKEN is set and this pipeline is allowed to use it.'
         );
-      } else {
-        console.warn('Failed to fetch existing issues:', res.status);
       }
-      return new Set();
+      throw new Error(`Failed to fetch open accessibility issues: ${res.status}`);
     }
 
     const issues = Array.isArray(res.body) ? res.body : [];
-    issues.forEach((issue) => titles.add(issue.title));
+    for (const issue of issues) {
+      if (issue.pull_request) {
+        continue;
+      }
+      out.push({ number: issue.number, title: issue.title });
+    }
 
     if (issues.length < perPage) {
       break;
@@ -99,7 +111,68 @@ async function getExistingIssueTitles() {
     page += 1;
   }
 
-  return titles;
+  return out;
+}
+
+function postIssueComment(issueNumber, body) {
+  return githubRequest('POST', `/repos/${REPO}/issues/${issueNumber}/comments`, { body });
+}
+
+function closeIssue(issueNumber) {
+  return githubRequest('PATCH', `/repos/${REPO}/issues/${issueNumber}`, { state: 'closed' });
+}
+
+/**
+ * Close open "Accessibility: …" issues whose WCAG code was not reported as an error in this run.
+ * Returns the closed count and the remaining open issues (those not closed).
+ */
+async function closeResolvedPa11yIssues(openIssues, errorCodesFound) {
+  const toClose = openIssues.filter((issue) => {
+    const code = parsePa11yManagedCode(issue.title);
+    if (!code) {
+      return false;
+    }
+    return !errorCodesFound.has(code);
+  });
+
+  let closed = 0;
+  const closedNumbers = new Set();
+  for (const issue of toClose) {
+    const comment = [
+      'Pa11y did not report this violation as an **error** in the latest full-site scan.',
+      '',
+      `- **Build**: ${BUILD_NUMBER}`,
+      `- **Site**: ${SITE_URL}`,
+      '',
+      'Closing as resolved. Reopen if you still see the problem or if this was closed in error.',
+    ].join('\n');
+
+    const commentRes = await postIssueComment(issue.number, comment);
+    if (commentRes.status !== 201) {
+      console.warn(
+        `Could not comment on #${issue.number} before close:`,
+        commentRes.status,
+        typeof commentRes.body === 'string' ? commentRes.body : JSON.stringify(commentRes.body)
+      );
+      continue;
+    }
+
+    const closeRes = await closeIssue(issue.number);
+    if (closeRes.status === 200) {
+      console.log(`Closed resolved issue #${issue.number}: ${issue.title}`);
+      closed++;
+      closedNumbers.add(issue.number);
+    } else {
+      console.warn(
+        `Failed to close #${issue.number}:`,
+        closeRes.status,
+        typeof closeRes.body === 'string' ? closeRes.body : JSON.stringify(closeRes.body)
+      );
+    }
+  }
+
+  const remaining = openIssues.filter((i) => !closedNumbers.has(i.number));
+  return { closed, remaining };
 }
 
 function wcagReferenceUrl(code) {
@@ -230,7 +303,7 @@ function buildIssueBody(code, issues) {
 async function run() {
   if (process.env.PA11Y_RUN_FAILED === '1') {
     console.error(
-      'Pa11y did not finish successfully (e.g. Chromium launch failed). Check Azure pipeline logs and pa11y-error.log. Not creating GitHub issues.'
+      'Pa11y did not finish successfully (e.g. Chromium launch failed). Check Azure pipeline logs and pa11y-error.log. Not updating GitHub issues.'
     );
     process.exit(0);
   }
@@ -243,23 +316,43 @@ async function run() {
     return;
   }
 
-  if (!Array.isArray(results) || results.length === 0) {
-    console.log('No accessibility issues found - great work!');
+  if (!Array.isArray(results)) {
+    console.log('Pa11y results are not a JSON array; not updating GitHub issues.');
     return;
   }
 
   const errors = results.filter((r) => r.type === 'error');
+  const errorCodesFound = new Set(errors.map((e) => e.code).filter(Boolean));
+
   console.log(
-    `Found ${results.length} total issues (${errors.length} errors, ${results.length - errors.length} warnings/notices)`
+    `Found ${results.length} total findings (${errors.length} errors, ${results.length - errors.length} warnings/notices)`
   );
 
+  await ensureLabel();
+
+  let openIssues;
+  try {
+    openIssues = await getOpenAccessibilityIssues();
+  } catch (err) {
+    console.error('Aborting: could not list open accessibility issues:', err.message);
+    process.exit(1);
+  }
+
+  const { closed, remaining } = await closeResolvedPa11yIssues(openIssues, errorCodesFound);
+  if (closed > 0) {
+    console.log(`Closed ${closed} issue(s) that Pa11y no longer reports as errors.`);
+  }
+
   if (errors.length === 0) {
-    console.log('No accessibility errors to report (only warnings/notices)');
+    if (results.length === 0) {
+      console.log('No accessibility findings in results — great work!');
+    } else {
+      console.log('No accessibility errors (only warnings/notices); resolved issues were closed if applicable.');
+    }
     return;
   }
 
-  await ensureLabel();
-  const existingTitles = await getExistingIssueTitles();
+  const existingTitles = new Set(remaining.map((i) => i.title));
 
   // Group errors by WCAG code so each unique violation gets one issue
   const byCode = {};
@@ -272,7 +365,7 @@ async function run() {
   let skipped = 0;
 
   for (const [code, issues] of Object.entries(byCode)) {
-    const title = `Accessibility: ${code}`;
+    const title = `${PA11Y_ISSUE_TITLE_PREFIX}${code}`;
     if (existingTitles.has(title)) {
       console.log(`Skipping (already open): ${title}`);
       skipped++;
@@ -297,7 +390,9 @@ async function run() {
     }
   }
 
-  console.log(`Done: ${created} issue(s) created, ${skipped} skipped (already open)`);
+  console.log(
+    `Done: ${closed} closed, ${created} created, ${skipped} skipped (still open with same violation)`
+  );
 }
 
 run().catch((e) => {
