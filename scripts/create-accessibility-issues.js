@@ -89,13 +89,11 @@ async function getOpenAccessibilityIssues() {
 
     if (res.status !== 200) {
       if (res.status === 401) {
-        console.error(
+        throw new Error(
           'GitHub API 401: invalid or expired token, or missing repo/issues access. Use a PAT with classic scope "repo" (private) or "public_repo" (public only), or a fine-grained token with Issues read/write on this repository. Ensure the Global variable GITHUB_TOKEN is set and this pipeline is allowed to use it.'
         );
-      } else {
-        console.warn('Failed to fetch open accessibility issues:', res.status);
       }
-      return [];
+      throw new Error(`Failed to fetch open accessibility issues: ${res.status}`);
     }
 
     const issues = Array.isArray(res.body) ? res.body : [];
@@ -116,25 +114,20 @@ async function getOpenAccessibilityIssues() {
   return out;
 }
 
-async function getExistingIssueTitles() {
-  const issues = await getOpenAccessibilityIssues();
-  return new Set(issues.map((i) => i.title));
-}
-
-async function postIssueComment(issueNumber, body) {
+function postIssueComment(issueNumber, body) {
   return githubRequest('POST', `/repos/${REPO}/issues/${issueNumber}/comments`, { body });
 }
 
-async function closeIssue(issueNumber) {
+function closeIssue(issueNumber) {
   return githubRequest('PATCH', `/repos/${REPO}/issues/${issueNumber}`, { state: 'closed' });
 }
 
 /**
  * Close open "Accessibility: …" issues whose WCAG code was not reported as an error in this run.
+ * Returns the closed count and the remaining open issues (those not closed).
  */
-async function closeResolvedPa11yIssues(errorCodesFound) {
-  const open = await getOpenAccessibilityIssues();
-  const toClose = open.filter((issue) => {
+async function closeResolvedPa11yIssues(openIssues, errorCodesFound) {
+  const toClose = openIssues.filter((issue) => {
     const code = parsePa11yManagedCode(issue.title);
     if (!code) {
       return false;
@@ -143,6 +136,7 @@ async function closeResolvedPa11yIssues(errorCodesFound) {
   });
 
   let closed = 0;
+  const closedNumbers = new Set();
   for (const issue of toClose) {
     const comment = [
       'Pa11y did not report this violation as an **error** in the latest full-site scan.',
@@ -167,6 +161,7 @@ async function closeResolvedPa11yIssues(errorCodesFound) {
     if (closeRes.status === 200) {
       console.log(`Closed resolved issue #${issue.number}: ${issue.title}`);
       closed++;
+      closedNumbers.add(issue.number);
     } else {
       console.warn(
         `Failed to close #${issue.number}:`,
@@ -176,7 +171,8 @@ async function closeResolvedPa11yIssues(errorCodesFound) {
     }
   }
 
-  return closed;
+  const remaining = openIssues.filter((i) => !closedNumbers.has(i.number));
+  return { closed, remaining };
 }
 
 function wcagReferenceUrl(code) {
@@ -334,7 +330,15 @@ async function run() {
 
   await ensureLabel();
 
-  const closed = await closeResolvedPa11yIssues(errorCodesFound);
+  let openIssues;
+  try {
+    openIssues = await getOpenAccessibilityIssues();
+  } catch (err) {
+    console.error('Aborting: could not list open accessibility issues:', err.message);
+    process.exit(1);
+  }
+
+  const { closed, remaining } = await closeResolvedPa11yIssues(openIssues, errorCodesFound);
   if (closed > 0) {
     console.log(`Closed ${closed} issue(s) that Pa11y no longer reports as errors.`);
   }
@@ -348,7 +352,7 @@ async function run() {
     return;
   }
 
-  const existingTitles = await getExistingIssueTitles();
+  const existingTitles = new Set(remaining.map((i) => i.title));
 
   // Group errors by WCAG code so each unique violation gets one issue
   const byCode = {};
