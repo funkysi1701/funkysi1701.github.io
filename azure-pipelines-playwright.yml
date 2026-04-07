@@ -16,14 +16,12 @@ trigger:
   branches:
     include:
       - main
-      - test
       - develop
 
 pr:
   branches:
     include:
       - main
-      - test
       - develop
 
 jobs:
@@ -68,9 +66,6 @@ jobs:
           case "$BRANCH" in
             main|master)
               BASE_URL="https://www.funkysi1701.com"
-              ;;
-            test)
-              BASE_URL="https://blog-test.funkysi1701.com"
               ;;
             develop)
               BASE_URL="https://blog-dev.funkysi1701.com"
