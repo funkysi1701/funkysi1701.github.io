@@ -16,12 +16,21 @@ trigger:
   - develop
   - main
 
+# Nightly accessibility: full sitemap, axe + htmlcs (no image rebuild or Helm deploy).
+schedules:
+  - cron: "0 2 * * *"
+    displayName: Nightly full Pa11y (axe + htmlcs, all URLs)
+    branches:
+      include:
+        - main
+    always: true
+
 pool: Docker
 
 steps:
 - task: CmdLine@2
   displayName: "Install AWS CLI"
-  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   inputs:
     script: |
       curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -31,7 +40,7 @@ steps:
       aws --version
 - task: CmdLine@2
   displayName: "Build and Login to ECR"
-  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   env:
     AWS_ACCESS_KEY_ID: $(AWS_ACCESS_KEY_ID)
     AWS_SECRET_ACCESS_KEY: $(AWS_SECRET_ACCESS_KEY)
@@ -55,9 +64,10 @@ steps:
         ;;
     esac
   displayName: 'Set image repository name'
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'))
 - task: CmdLine@2
   displayName: "Publish to ECR"
-  condition: and(succeeded(), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   inputs:
     script: |
       docker tag blog 687611153768.dkr.ecr.eu-north-1.amazonaws.com/funkysi1701/$(imageRepoName)
@@ -73,25 +83,26 @@ steps:
     helm lint Helm/blog --namespace develop
     helm lint Helm/blog --namespace test
     helm lint Helm/blog --namespace main
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'))
 # Non-prod: feature/* → develop namespace only. develop → develop + test Kubernetes namespaces (same image tag).
 # --wait/--timeout: block until workloads ready; --atomic: auto-rollback release if upgrade fails.
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace develop \
       --set image.tag=$(Build.BuildNumber)-develop \
       --wait --timeout 15m --atomic
-  condition: and(succeeded(), or(eq(variables['Build.SourceBranchName'], 'develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(eq(variables['Build.SourceBranchName'], 'develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   displayName: 'helm upgrade blog (namespace develop)'
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace test \
       --set image.tag=$(Build.BuildNumber)-develop \
       --wait --timeout 15m --atomic
-  condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'develop'))
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), eq(variables['Build.SourceBranchName'], 'develop'))
   displayName: 'helm upgrade blog (namespace test)'
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace main \
       --set image.tag=$(Build.BuildNumber)-main \
       --wait --timeout 15m --atomic
-  condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'main'))
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), eq(variables['Build.SourceBranchName'], 'main'))
   displayName: 'helm upgrade blog (namespace main / prod)'
 - bash: |
     if [[ "$(Build.SourceBranchName)" == "main" ]]; then
@@ -106,12 +117,14 @@ steps:
   continueOnError: true
   env:
     GITHUB_TOKEN: $(GITHUB_TOKEN)
+    BUILD_REASON: $(Build.Reason)
   inputs:
     script: |
       PA11Y_RUN_FAILED=0
       REPO_ROOT="$(Build.SourcesDirectory)"
 
       # Pa11y runs only on main (prod); scan production.
+      # Nightly schedule (see schedules:): axe+htmlcs, full sitemap — no PA11Y_MAX_PAGES cap.
       SITE_URL="https://www.funkysi1701.com"
       # Helm release "blog" + chart name "blog" → Deployment name "blog" in namespace main.
       if ! kubectl rollout status deployment/blog -n main --timeout=5m; then
@@ -136,9 +149,20 @@ steps:
 
       echo "Pa11y scanning all sitemap URLs under: $SITE_URL (sitemap: ${SITEMAP_URL:-$SITE_URL/sitemap.xml})"
 
-      # Speed tuning (Azure variable group or pipeline variables):
-      #   PA11Y_MAX_PAGES=N   — cap URLs (unset = full sitemap). E.g. 50 for a quick gate.
-      #   PA11Y_RUNNERS       — default axe only (~2x faster than axe+htmlcs). Set to "axe,htmlcs" for both.
+      if [ "$BUILD_REASON" = "Schedule" ]; then
+        PA11Y_RUNNERS_VAL="${PA11Y_NIGHTLY_RUNNERS:-axe,htmlcs}"
+        PA11Y_MAX_PAGES_VAL="${PA11Y_NIGHTLY_MAX_PAGES:-}"
+        echo "Nightly scheduled run: PA11Y_RUNNERS=$PA11Y_RUNNERS_VAL; PA11Y_MAX_PAGES (empty=all)=${PA11Y_MAX_PAGES_VAL:-<full sitemap>}"
+      else
+        PA11Y_RUNNERS_VAL="${PA11Y_RUNNERS:-axe}"
+        PA11Y_MAX_PAGES_VAL="${PA11Y_MAX_PAGES:-}"
+      fi
+
+      # Speed tuning (Azure variable group or pipeline variables; CI main push uses defaults above):
+      #   PA11Y_MAX_PAGES=N   — cap URLs on non-schedule builds (unset = full sitemap).
+      #   PA11Y_RUNNERS       — runners on main CI push (default axe).
+      #   PA11Y_NIGHTLY_RUNNERS — schedule only (default axe,htmlcs); ignores PA11Y_RUNNERS.
+      #   PA11Y_NIGHTLY_MAX_PAGES — optional cap for schedule only (unset = full sitemap).
       #   PA11Y_WAIT_MS       — post-load wait per page (JSON default 2000).
       #   PA11Y_TIMEOUT_MS    — per-page nav timeout (JSON default 90000).
       # Bookworm node image lacks Chromium libs; use apt Chromium (scripts/pa11y-pipeline.json).
@@ -148,8 +172,8 @@ steps:
       docker run --rm --cap-add=SYS_ADMIN --shm-size=2g \
         -e "SITE_URL=$SITE_URL" \
         -e "SITEMAP_URL=${SITEMAP_URL:-}" \
-        -e "PA11Y_MAX_PAGES=${PA11Y_MAX_PAGES:-}" \
-        -e "PA11Y_RUNNERS=${PA11Y_RUNNERS:-axe}" \
+        -e "PA11Y_MAX_PAGES=$PA11Y_MAX_PAGES_VAL" \
+        -e "PA11Y_RUNNERS=$PA11Y_RUNNERS_VAL" \
         -e "PA11Y_WAIT_MS=${PA11Y_WAIT_MS:-}" \
         -e "PA11Y_TIMEOUT_MS=${PA11Y_TIMEOUT_MS:-}" \
         -v "$REPO_ROOT/scripts:/scripts:ro" \
