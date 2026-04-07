@@ -136,10 +136,12 @@ steps:
 
       echo "Pa11y scanning all sitemap URLs under: $SITE_URL (sitemap: ${SITEMAP_URL:-$SITE_URL/sitemap.xml})"
 
+      # Speed tuning (Azure variable group or pipeline variables):
+      #   PA11Y_MAX_PAGES=N   — cap URLs (unset = full sitemap). E.g. 50 for a quick gate.
+      #   PA11Y_RUNNERS       — default axe only (~2x faster than axe+htmlcs). Set to "axe,htmlcs" for both.
+      #   PA11Y_WAIT_MS       — post-load wait per page (JSON default 2000).
+      #   PA11Y_TIMEOUT_MS    — per-page nav timeout (JSON default 90000).
       # Bookworm node image lacks Chromium libs; use apt Chromium (scripts/pa11y-pipeline.json).
-      # scripts/pa11y-sitemap/scan.mjs loads ${SITE_URL}/sitemap.xml (or SITEMAP_URL), follows
-      # sitemap indexes, filters to the same hostname, runs Pa11y (axe + htmlcs) per page with one
-      # shared browser. Optional: PA11Y_MAX_PAGES to cap URL count for debugging.
       # Host captures Docker stdout → pa11y-results.json. Only the final JSON may go to
       # stdout (npm/apt must not — e.g. "added 124 packages" breaks JSON.parse).
       set +e
@@ -147,6 +149,9 @@ steps:
         -e "SITE_URL=$SITE_URL" \
         -e "SITEMAP_URL=${SITEMAP_URL:-}" \
         -e "PA11Y_MAX_PAGES=${PA11Y_MAX_PAGES:-}" \
+        -e "PA11Y_RUNNERS=${PA11Y_RUNNERS:-axe}" \
+        -e "PA11Y_WAIT_MS=${PA11Y_WAIT_MS:-}" \
+        -e "PA11Y_TIMEOUT_MS=${PA11Y_TIMEOUT_MS:-}" \
         -v "$REPO_ROOT/scripts:/scripts:ro" \
         node:20-bookworm \
         bash -c 'set -e
