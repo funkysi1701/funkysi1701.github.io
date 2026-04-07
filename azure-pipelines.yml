@@ -108,14 +108,30 @@ steps:
     GITHUB_TOKEN: $(GITHUB_TOKEN)
   inputs:
     script: |
-      # Allow 30 seconds for the Kubernetes rollout to finish before scanning
-      sleep 30
-
       PA11Y_RUN_FAILED=0
       REPO_ROOT="$(Build.SourcesDirectory)"
 
       # Pa11y runs only on main (prod); scan production.
       SITE_URL="https://www.funkysi1701.com"
+      # Helm release "blog" + chart name "blog" → Deployment name "blog" in namespace main.
+      if ! kubectl rollout status deployment/blog -n main --timeout=5m; then
+        echo "##vso[task.logissue type=warning]kubectl rollout status did not succeed within 5m; continuing with HTTP check."
+      fi
+      # Public URL (ingress/CDN) may lag behind Deployment ready.
+      READY_URL="${SITE_URL}/"
+      READY=0
+      for i in $(seq 1 36); do
+        if curl -fsS -o /dev/null "$READY_URL"; then
+          echo "Public URL ready: $READY_URL"
+          READY=1
+          break
+        fi
+        sleep 5
+      done
+      if [ "$READY" -ne 1 ]; then
+        echo "##vso[task.logissue type=warning]No HTTP 200 from $READY_URL after ~180s; running Pa11y anyway."
+      fi
+
       echo "Pa11y scanning all sitemap URLs under: $SITE_URL (sitemap: ${SITEMAP_URL:-$SITE_URL/sitemap.xml})"
 
       # Bookworm node image lacks Chromium libs; use apt Chromium (scripts/pa11y-pipeline.json).
