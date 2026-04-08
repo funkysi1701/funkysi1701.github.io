@@ -41,5 +41,5 @@
 
 :root:not([data-mode]) .post-summary p,
 [data-mode="light"] .post-summary p {
-  color: #4d4d4d;
+  color: #4d4d4d !important;
 }
