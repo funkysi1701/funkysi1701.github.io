@@ -7,6 +7,9 @@
  * PA11Y_CONFIG (optional, default /tmp/pa11y.json), PA11Y_MAX_PAGES (optional cap).
  * PA11Y_RUNNERS (optional, comma-separated; unset in scan.mjs = axe+htmlcs; Azure pipeline defaults to axe).
  * PA11Y_WAIT_MS / PA11Y_TIMEOUT_MS (optional) — override JSON wait / timeout per page.
+ *
+ * pa11y-pipeline.json ignores axe rule frame-tested: cross-origin iframes (e.g. Giscus, Twitter)
+ * cannot be scanned inside the frame; the rule only reports that limitation.
  */
 
 import { readFileSync } from 'node:fs';
