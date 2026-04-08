@@ -28,18 +28,15 @@
   opacity: 1;
 }
 
-/* Post list excerpts: use an opaque colour on the card (#fff). Some axe-core /
- * headless Chromium paths treat rgba() text colours inconsistently vs composited
- * contrast; #4d4d4d matches ~rgba(0,0,0,0.7) on white (~8.5:1). !important
- * beats injected/third-party CSS. .post-summary a still sets accent on links.
- * The p rule targets the <p> element directly so axe-core sees an opaque
- * computed colour rather than an inherited semi-transparent rgba variable. */
-:root:not([data-mode]) .post-summary,
-[data-mode="light"] .post-summary {
-  color: #4d4d4d !important;
+/* Post list excerpts (list-item → .posts only): cards use white #fff even in
+ * dark site mode, while --hbs-secondary-text-on-surface can be light gray — that
+ * yields gray-on-white (axe color-contrast). Rules tied to :root[data-mode] can
+ * also race Pa11y’s wait vs mode switcher JS. Fix by layout scope + opaque colours. */
+.posts .card.post .post-summary,
+.posts .card.post .post-summary p {
+  color: #333333 !important;
 }
 
-:root:not([data-mode]) .post-summary p,
-[data-mode="light"] .post-summary p {
-  color: #4d4d4d !important;
+.posts .card.post .post-summary a {
+  color: #0a58ca !important;
 }
