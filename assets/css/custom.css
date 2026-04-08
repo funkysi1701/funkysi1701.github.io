@@ -37,6 +37,6 @@
   color: #333333 !important;
 }
 
-.posts .card.post .post-summary a {
+.posts .card.post .post-summary a:not(.btn):not(.btn-read-more) {
   color: #0a58ca !important;
 }
