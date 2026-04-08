@@ -29,7 +29,7 @@ In [November 2015](https://www.funkysi1701.com/posts/star-trek-is-back-in-2017) 
 
 Star Trek Discovery launches in the US on 24th September and in the UK on 25th September.
 
-<iframe src="https://www.youtube.com/embed/UoV3kc05Nwc?rel=0" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<iframe title="YouTube video: Star Trek Discovery trailer" src="https://www.youtube.com/embed/UoV3kc05Nwc?rel=0" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 
 Lets have a look back how we got here.
 

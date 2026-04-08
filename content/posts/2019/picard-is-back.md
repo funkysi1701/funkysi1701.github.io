@@ -28,7 +28,7 @@ aliases = [
 
 It has just been announced at the annual Star Trek Las Vegas ([#STLV](https://twitter.com/hashtag/STLV)) convention that Patrick Stewart is going to return to his role as Jean-Luc Picard in a new TV Show.
 
-<iframe type="text/html" width="662" height="373" src="https://www.youtube.com/embed/aCKQp1sGVRQ?version=3&amp;rel=1&amp;fs=1&amp;autohide=2&amp;showsearch=0&amp;showinfo=1&amp;iv_load_policy=1&amp;wmode=transparent" allowfullscreen="true" style="border:0;"></iframe>
+<iframe title="YouTube video: Patrick Stewart on the return of Jean-Luc Picard" type="text/html" width="662" height="373" src="https://www.youtube.com/embed/aCKQp1sGVRQ?version=3&amp;rel=1&amp;fs=1&amp;autohide=2&amp;showsearch=0&amp;showinfo=1&amp;iv_load_policy=1&amp;wmode=transparent" allowfullscreen="true" style="border:0;"></iframe>
 
 Few other details have been announced other than the TV show will take place 20 years after the film Star Trek: Nemesis and will feature the character of Jean-Luc Picard.
 

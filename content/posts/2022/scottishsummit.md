@@ -33,7 +33,7 @@ On Thursday 9th I travelled down on the train full of excitement about the event
 
 The hotel was less then 5 mins walk to the conference, which was being held at the Technology and Innovation Centre, University of Strathclyde. Registration was simple wave your tickets (which were free, apart from a contribution to charity), and you get your badge and a wrist band. (Pink for people contact, blue for hold back) I then got chatting to [Keith Atherton](https://twitter.com/MrKeithAtherton), who amazingly lived in part of the world where I grew up. (Amazing what you learn at conferences!)
 
-<img src="/images/scottishsummit.jpg" align="left" alt="Scottish Summit conference during the keynote, with bagpipers and attendees in the venue" />
+<img src="/images/scottishsummit.jpg" style="float: left; margin-right: 1rem; margin-bottom: 0.5rem;" alt="Scottish Summit conference during the keynote, with bagpipers and attendees in the venue" />
 
 Time for the Keynote talk. Which of course because we are in scotland was introduced by bagpipes marching through the room! The talk was given by [Connell McGinley](https://twitter.com/cmcginley) and was titled Disability Awareness & Inclusivity. This talk was amazing. Connell is deaf and gave the entire talk with sign language and this was translated for the rest of us to hear. Connell talked about his career and the barriers he faced. Microsoft Teams was an amazing improvement to his work life, as the captioning allowed him to talk with customers for the first time!
 

@@ -42,7 +42,7 @@ After dinner, we explored the Games Room and took on the Labyrinth—a tight, da
 
 ## Sunday
 
-<img src="/images/abseiling.jpg" alt="Abseiling" width="250px" style="padding-right: 15px; " align="left"/>
+<img src="/images/abseiling.jpg" alt="Abseiling" width="250px" style="padding-right: 15px; float: left; margin-bottom: 0.5rem;" />
 
 Every day began with a cooked breakfast and a make-your-own sandwich station for lunch. Sunday morning kicked off with climbing and abseiling. I’d never climbed before, so I was surprised—and proud—to make it all the way to the top of the 8-meter wall. My boys didn’t quite reach the top, but they pushed themselves higher than I expected. Abseiling was fun too, and a great way to come down after the climb.
 
@@ -60,7 +60,7 @@ The evening activity was Eggbert: designing a contraption to protect an egg drop
 
 ## Tuesday
 
-<img src="/images/caves.jpg" alt="Caving" width="250px" style="padding-left: 15px; " align="right" />
+<img src="/images/caves.jpg" alt="Caving" width="250px" style="padding-left: 15px; float: right; margin-bottom: 0.5rem;" />
 
 Tuesday was our first full day offsite. The instructors drove us in a minibus to the Yorkshire Three Peaks area, where we explored underground caves. Wearing cave suits, wellies, and helmets, we were ready for adventure. I foolishly thought I wouldn’t need a change of clothes—turns out, crawling through water-filled tunnels means your wellies fill up fast! I wasn’t the biggest fan of being soaked, but the boys loved climbing and sliding through the narrow passages. We finished the day with ice cream and hot chocolate in Settle—a well-deserved treat.
 
