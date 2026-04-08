@@ -35,7 +35,7 @@ Scott Hanselman was the keynote speaker, and I spotted him mingling with other a
 
 Next, MVP Vesa Nopanen delivered his talk on "Supercharge Your Teams Meetings." I picked up some valuable tips, particularly the importance of adding notes and agendas to enhance meeting effectiveness.
 
-<img src="/images/GaKpRZ3WIAAFsIW.jpg" style="padding-right: 7px" align="left" alt="Scottish Summit organizers presenting how they built event registration and payments with Stripe and Power Platform" /> Following that, a couple of the Scottish Summit organizers discussed the technology behind the event. They explained how they used Stripe for payments, integrating it with Power Automate and Power Pages. I found this particularly interesting for a charity event; it demonstrated a commitment to learning while keeping costs manageable.
+<img src="/images/GaKpRZ3WIAAFsIW.jpg" style="padding-right: 7px; float: left; margin-bottom: 0.5rem;" alt="Scottish Summit organizers presenting how they built event registration and payments with Stripe and Power Platform" /> Following that, a couple of the Scottish Summit organizers discussed the technology behind the event. They explained how they used Stripe for payments, integrating it with Power Automate and Power Pages. I found this particularly interesting for a charity event; it demonstrated a commitment to learning while keeping costs manageable.
 
 The next session explored what it means to be a modern full-stack software developer, focusing on integrating Power Apps with traditional web development. As someone new to Power Apps, I learned that starting with it can be beneficial, filling gaps with .NET or conventional web development as needed.
 
@@ -51,7 +51,7 @@ Saturday kicked off with a dive into the world of wizards and D&D in a session t
 
 Another engaging talk, "Community - It Just Makes Sense," highlighted the tech community's role in career development. I realized that I’ve only just scratched the surface of community involvement, and I’m eager to explore it further.
 
-<img src="/images/GaP4xTOW0AA6VHI.jpg" style="padding-left: 7px" align="right" alt="Speaker presenting at Scottish Summit 2024" />
+<img src="/images/GaP4xTOW0AA6VHI.jpg" style="padding-left: 7px; float: right; margin-bottom: 0.5rem;" alt="Speaker presenting at Scottish Summit 2024" />
 
 Sarah Lean returned to discuss KQL (Kusto Query Language), which Application Insights uses for querying data. Although I've encountered KQL before, learning more about it was fascinating.
 
@@ -69,4 +69,4 @@ I left feeling inspired to become more involved in the community and participate
 
 And yes, I caught a glimpse of Scott Hanselman, which was quite a thrill!
 
-<img src="/images/GaKSNJeXwAA-xyr.jpg" style="padding-right: 7px" align="left" alt="Scott Hanselman at Scottish Summit 2024" />
+<img src="/images/GaKSNJeXwAA-xyr.jpg" style="padding-right: 7px; float: left; margin-bottom: 0.5rem;" alt="Scott Hanselman at Scottish Summit 2024" />

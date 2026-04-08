@@ -31,7 +31,7 @@ It was sometime later that I learnt about source control. I can't remember exact
 
 Source control (or version control) is the practice of tracking and managing changes to code. These tools provide a running history of code development and help to resolve conflicts when merging.
 
-<img src="/images/svn.jpg" width="400px" align="left" alt="Apache Subversion (SVN) logo" />
+<img src="/images/svn.jpg" width="400px" style="float: left; margin-right: 1rem; margin-bottom: 0.5rem;" alt="Apache Subversion (SVN) logo" />
 
 The first source control tool I remember using was subversion. The windows client for this was called [TortoiseSVN](https://tortoisesvn.net/downloads.html) and is still available today. I know this as my current job has some legacy code which still uses it.
 
@@ -39,13 +39,13 @@ Back then, to use Subversion you needed to set up a linux server with subversion
 
 Over the years I installed various web interfaces to allow "*browsing*" of source code, some even had bug trackers built in. The ones I can remember are [Trac](https://trac.edgewall.org/) and [Redmine](https://www.redmine.org/). Both look to still be available and you can probably install them if you want to remember way back when.
 
-<img src="/images/2022/github-octocat.png" width="400px" align="right" alt="GitHub Octocat mascot" />
+<img src="/images/2022/github-octocat.png" width="400px" style="float: right; margin-left: 1rem; margin-bottom: 0.5rem;" alt="GitHub Octocat mascot" />
 
 The first hosted source control tool I remember using was [bitbucket](https://bitbucket.org/product/) and this as far as I can tell has only ever supported git. So I am guessing I imported my subversion repos into git ones at this point. The reason for bitbucket was chosen was it allowed private repositories for free, at that point github was probably available but only provided public repositories.
 
 After bitbucket the git repos where moved to Azure DevOps or Visual Studio Team Services as it was called back then. This move was mainly to take advantage of the builds and releases feature and to decommission some aging build servers.
 
-<img src="/images/azuredevops.png" align="left" width="400px" alt="Azure DevOps logo" />
+<img src="/images/azuredevops.png" width="400px" style="float: left; margin-right: 1rem; margin-bottom: 0.5rem;" alt="Azure DevOps logo" />
 
 This brings me to today where I have a mix of public repos on github and private repos on Azure DevOps. For building my code I use a mix of github actions and Azure Pipelines. As Microsoft own both services now, there is a fair amount of crossover between the two services, however it is far from certain which service is the future.
 
