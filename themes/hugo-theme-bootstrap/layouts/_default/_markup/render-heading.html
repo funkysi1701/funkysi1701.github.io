@@ -1,2 +1,3 @@
-{{- $anchor := printf "<a class=\"anchor ms-1\" href=\"#%s\"><i class=\"fas fa-link\"></i></a>" .Anchor | safeHTML -}}
+{{- $permalinkLabel := printf "Permalink: %s" .PlainText -}}
+{{- $anchor := printf "<a class=\"anchor ms-1\" href=\"#%s\" aria-label=\"%s\"><i class=\"fas fa-link\" aria-hidden=\"true\"></i></a>" .Anchor ($permalinkLabel | htmlEscape) | safeHTML -}}
 {{ printf "<h%d id=\"%s\">%s%s</h%d>" .Level .Anchor .PlainText $anchor .Level | safeHTML }}
