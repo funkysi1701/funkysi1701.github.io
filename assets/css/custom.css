@@ -41,5 +41,13 @@
 
 :root:not([data-mode]) .post-summary p,
 [data-mode="light"] .post-summary p {
-  color: #4d4d4d;
+  color: #4d4d4d !important;
+}
+
+/* Listing/post cards keep Bootstrap’s white .card background in dark mode, while
+ * --hbs-secondary-text-on-surface is light gray for real dark surfaces — excerpts
+ * would be ~gray-on-white (axe color-contrast). Force readable body text on cards. */
+[data-mode="dark"] .card.post .post-summary,
+[data-mode="dark"] .card.post .post-summary p {
+  color: #4d4d4d !important;
 }
