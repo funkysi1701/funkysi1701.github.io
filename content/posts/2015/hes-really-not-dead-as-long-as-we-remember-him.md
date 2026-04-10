@@ -10,7 +10,7 @@ images = ['/images/2015/02/74cc28416b646ae6f87d5a502fbd03b7.jpg']
 tags = ["Science", "Leonard Nimoy", "StarTrek", "Spock", "Technology"]
 categories = ["trek"]
 keywords = ["", ""]
-description =  "He’s really not dead as long as we remember him – Leonard Nimoy"
+description = "In the film Star Trek 2: The Wrath of Khan Spock sacrifices himself to save the Enterprise from destruction. What follows is a very moving funeral scene and…"
 showFullContent = false
 readingTime = true
 copyright = false
@@ -21,7 +21,7 @@ aliases = [
     "/2015/02/28/hes-really-not-dead-as-long-as-we-remember-him"
 ]
 +++
-n the film Star Trek 2: The Wrath of Khan Spock sacrifices himself to save the Enterprise from destruction. What follows is a very moving funeral scene and his coffin is launched into space. McCoy tells Kirk that he is not dead as long as we remember him.
+In the film Star Trek 2: The Wrath of Khan Spock sacrifices himself to save the Enterprise from destruction. What follows is a very moving funeral scene and his coffin is launched into space. McCoy tells Kirk that he is not dead as long as we remember him.
 
 ![](/images/2015/02/Spock_2293.jpg)
 
