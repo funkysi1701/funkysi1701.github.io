@@ -83,8 +83,16 @@ There is overlap between Copilot and Cursor in my workflow, and I am fine with t
 | "Finish this method / this pipeline step" | Copilot |
 | Security, secrets, production incidents | Me, plus docs—AI optional and heavily verified |
 
+## Boundaries, privacy, and verification
+
+**What I do not put in AI tools.** I treat anything that could identify a person, anything contractual from work, and anything that unlocks production (passwords, API keys, connection strings, private certificates) as off-limits unless the product’s policy and my employer’s policy both say otherwise. For side projects that usually means personal repos only, secrets in environment variables or Key Vault—not in chat—and if I need help with a failing pipeline I redact resource names and paste error text, not the whole variable block. If you have a day job, your company’s acceptable-use rules beat anything you read in a blog post; when in doubt, use vendor docs and internal support channels instead of a model.
+
+**How I check output before it counts.** I never merge a multi-file change on trust alone: I read the diff file by file, run `hugo` / `dotnet build` / whatever the project’s normal build is, and exercise the path I changed in the browser or with a quick manual test. If the assistant suggested a library call or HTTP API I do not recognise, I cross-check the official documentation or source before I rely on it—side projects are where I have been burned by plausible-but-wrong method names. For anything security-sensitive (auth callbacks, CORS, SQL, dependency upgrades), I assume the model is giving me a sketch and I still apply the same review I would give a junior’s pull request.
+
+**Learning paths are still verified.** When I use ChatGPT to orient around Aspire, Kubernetes, or Elasticsearch, I use it to build a mental map and a reading list, then I confirm version-specific behaviour in Microsoft Learn, Kubernetes docs, or Elastic’s docs. The goal is to shorten *where to look*, not to skip looking.
+
 ## Closing thought
 
 AI tools have not replaced the fun of side projects for me. Projects like Episode Atlas exist because I wanted a better way to track *Star Trek* rewatches across hundreds of episodes; the Mandelbrot app exists because fractals are still cool; this blog exists because writing things down forces clarity. What has changed is how fast I can get through the glue work—if I pick the right assistant for the amount of context the task really needs.
 
-If you are a mid-level developer experimenting with the same stack—.NET, static sites, Azure—how do you split tools today? I would be interested to hear what works for you in the comments.
+If you are a developer experimenting with the same stack—.NET, static sites, Azure—how do you split tools today? I would be interested to hear what works for you in the comments.
