@@ -1,6 +1,6 @@
 +++
 title = "How I Use AI on Side Projects: ChatGPT, Cursor, and Copilot"
-date = "2026-04-10T20:00:00Z"
+date = "2026-04-10T12:00:00Z"
 year = "2026"
 month = "2026-04"
 author = "funkysi1701"
@@ -15,7 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 featured = false
-draft = true
+draft = false
 aliases = [
     "/how-i-use-ai-on-side-projects",
     "/posts/how-i-use-ai-on-side-projects",
