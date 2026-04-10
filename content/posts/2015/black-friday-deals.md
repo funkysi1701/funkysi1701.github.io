@@ -10,7 +10,7 @@ images = ['/images/86910937_t053ll31.jpg']
 tags = ["Deals", "Blogging", "Blackfriday"]
 categories = ["tech"]
 keywords = ["", ""]
-description = "Discover amazing Black Friday deals with over 50% off! Don't miss out on these unmissable offers from funkysi1701.com."
+description = "Over 50% Off this Black Friday! Black Friday Deals Yes you heard it correctly even www.funkysi1701.com has amazing offers."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -24,7 +24,7 @@ aliases = [
 
 ![Black Friday Deals](/images/86910937_t053ll31.jpg)
 
-Yes your heard it correctly even www.funkysi1701.com has amazing offers.
+Yes you heard it correctly even www.funkysi1701.com has amazing offers.
 
 It is like the whole world has gone “Black Friday” mad, with every company in the world offering amazing and unmissable deals.
 
