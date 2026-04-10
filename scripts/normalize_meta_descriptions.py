@@ -24,7 +24,7 @@ DESCRIPTION_LINE = re.compile(
 
 FENCE = re.compile(r"```.*?```", re.DOTALL)
 SHORTCODE = re.compile(r"\{\{<[^>]+>\}\}|\{\{%[^%]+%\}\}")
-HTML_BLOCK = re.compile(r"<(?:script|blockquote|figure|iframe)[^>]*>.*?</(?:script|blockquote|figure|iframe)>", re.DOTALL | re.IGNORECASE)
+HTML_BLOCK = re.compile(r"<(?:script|blockquote|figure|iframe)[^>]*>.*?</(?:script|blockquote|figure|iframe)\s*>", re.DOTALL | re.IGNORECASE)
 HTML_TAG = re.compile(r"<[^>]+>")
 HTML_ENTITY = re.compile(r"&(?:[a-zA-Z]+|#\d+|#x[0-9a-fA-F]+);")
 URL = re.compile(r"https?://\S+")
