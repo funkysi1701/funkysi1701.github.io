@@ -24,7 +24,10 @@ DESCRIPTION_LINE = re.compile(
 
 FENCE = re.compile(r"```.*?```", re.DOTALL)
 SHORTCODE = re.compile(r"\{\{<[^>]+>\}\}|\{\{%[^%]+%\}\}")
+HTML_BLOCK = re.compile(r"<(?:script|blockquote|figure|iframe)[^>]*>.*?</(?:script|blockquote|figure|iframe)>", re.DOTALL | re.IGNORECASE)
 HTML_TAG = re.compile(r"<[^>]+>")
+HTML_ENTITY = re.compile(r"&(?:[a-zA-Z]+|#\d+|#x[0-9a-fA-F]+);")
+URL = re.compile(r"https?://\S+")
 MD_IMAGE = re.compile(r"!\[([^\]]*)\]\([^)]*\)")
 MD_LINK = re.compile(r"\[([^\]]+)\]\([^)]*\)")
 MD_HEADER = re.compile(r"^#{1,6}\s+", re.MULTILINE)
@@ -91,8 +94,11 @@ def markdown_body_to_plain(body: str, max_chars: int = 14000) -> str:
     t = body[:max_chars]
     t = FENCE.sub(" ", t)
     t = SHORTCODE.sub(" ", t)
+    t = HTML_BLOCK.sub(" ", t)
     t = HTML_TAG.sub(" ", t)
-    t = MD_IMAGE.sub(r"\1", t)
+    t = HTML_ENTITY.sub(" ", t)
+    t = URL.sub(" ", t)
+    t = MD_IMAGE.sub(" ", t)
     t = MD_LINK.sub(r"\1", t)
     t = MD_HEADER.sub("", t)
     t = TABLE_ROW.sub(" ", t)
@@ -135,7 +141,7 @@ def sentence_chunks(plain: str) -> list[str]:
 
 
 def grow_with_comma_clauses(text: str, plain: str, min_len: int) -> str:
-    """If sentences are not enough, add clauses split on ';' or long commas."""
+    """If sentences are not enough, add clauses split on '; ' or '. '."""
     if len(text) >= min_len:
         return text
     extra = plain
@@ -273,7 +279,12 @@ def process_file(path: Path, repo_root: Path, dry_run: bool) -> tuple[bool, str]
     if isinstance(raw_kw, list):
         tags.extend(str(k) for k in raw_kw if k)
     seen: set[str] = set()
-    tags = [x for x in tags if x and not (x in seen or seen.add(x))]
+    deduped: list[str] = []
+    for x in tags:
+        if x and x not in seen:
+            seen.add(x)
+            deduped.append(x)
+    tags = deduped
 
     new_desc = description_from_content(title, tags, body)
     new_desc = " ".join(new_desc.split())
@@ -315,10 +326,10 @@ def main() -> int:
         if ok:
             changed += 1
             print(msg)
-        elif "could not fit" in msg:
+        elif "unchanged" not in msg:
             failed.append(msg)
     if failed:
-        print("\nFailures:", file=sys.stderr)
+        print("\nErrors:", file=sys.stderr)
         for f in failed:
             print(f, file=sys.stderr)
         return 1
