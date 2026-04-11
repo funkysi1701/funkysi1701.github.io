@@ -193,6 +193,7 @@ function buildIssueBody(code, issues) {
   const helpText = axeExtras && axeExtras.help ? axeExtras.help : null;
   const helpUrl = axeExtras && axeExtras.helpUrl ? axeExtras.helpUrl : null;
   const runners = [...new Set(issues.map((i) => i.runner).filter(Boolean))];
+  const colourThemes = [...new Set(issues.map((i) => i.pa11yTheme).filter(Boolean))].sort();
 
   const pageUrls = [...new Set(issues.map((i) => i.pageUrl).filter(Boolean))].sort();
   const urlSection =
@@ -215,6 +216,9 @@ function buildIssueBody(code, issues) {
     helpUrl ? `**Rule Details**: ${helpUrl}` : null,
     `**Total Occurrences**: ${issues.length}`,
     runners.length ? `**Detected by**: ${runners.join(', ')}` : null,
+    colourThemes.length
+      ? `**Colour themes (Pa11y)**: ${colourThemes.join(', ')}`
+      : null,
     urlSection,
     `**Build**: ${BUILD_NUMBER}`,
   ]
@@ -259,10 +263,15 @@ function buildIssueBody(code, issues) {
           ? `\n**Fix**: ${issue.runnerExtras.help}`
           : '';
       const pageBlock = issue.pageUrl ? [`**Page**: ${issue.pageUrl}`, ''] : [];
+      const themeBlock =
+        issue.pa11yTheme && typeof issue.pa11yTheme === 'string'
+          ? [`**Colour theme**: ${issue.pa11yTheme}`, '']
+          : [];
       return [
         `### Occurrence ${i + 1}${issue.runner ? ` _(${issue.runner})_` : ''}`,
         '',
         ...pageBlock,
+        ...themeBlock,
         `**Message**: ${issue.message}${extraImpact}${extraHelp}`,
         `**Selector**: \`${issue.selector || 'N/A'}\``,
         '',

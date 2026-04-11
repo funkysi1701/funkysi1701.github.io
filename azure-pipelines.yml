@@ -165,6 +165,7 @@ steps:
       #   PA11Y_NIGHTLY_MAX_PAGES — optional cap for schedule only (unset = full sitemap).
       #   PA11Y_WAIT_MS       — post-load wait per page (JSON default 2000).
       #   PA11Y_TIMEOUT_MS    — per-page nav timeout (JSON default 90000).
+      #   PA11Y_THEMES        — optional: light,dark or one of them (default light,dark). Each sitemap URL is scanned per theme via #modeSwitcher.
       # Bookworm node image lacks Chromium libs; use apt Chromium (scripts/pa11y-pipeline.json).
       # Host captures Docker stdout → pa11y-results.json. Only the final JSON may go to
       # stdout (npm/apt must not — e.g. "added 124 packages" breaks JSON.parse).
@@ -176,6 +177,7 @@ steps:
         -e "PA11Y_RUNNERS=$PA11Y_RUNNERS_VAL" \
         -e "PA11Y_WAIT_MS=${PA11Y_WAIT_MS:-}" \
         -e "PA11Y_TIMEOUT_MS=${PA11Y_TIMEOUT_MS:-}" \
+        -e "PA11Y_THEMES=${PA11Y_THEMES:-light,dark}" \
         -v "$REPO_ROOT/scripts:/scripts:ro" \
         node:20-bookworm \
         bash -c 'set -e
