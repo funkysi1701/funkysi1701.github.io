@@ -236,10 +236,15 @@ function buildIssueBody(code, issues) {
     .filter((line) => line !== null)
     .join('\n');
 
-  // List all selectors so an AI agent can locate every affected element
-  const allSelectors = issues
-    .map((issue, i) => `${i + 1}. \`${issue.selector || 'N/A'}\``)
-    .join('\n');
+  // List selectors so an AI agent can locate affected elements (cap at 100 to avoid GitHub body limit)
+  const MAX_SELECTORS = 100;
+  const selectorLines = issues
+    .slice(0, MAX_SELECTORS)
+    .map((issue, i) => `${i + 1}. \`${issue.selector || 'N/A'}\``);
+  if (issues.length > MAX_SELECTORS) {
+    selectorLines.push(`_… and ${issues.length - MAX_SELECTORS} more (${issues.length} total)_`);
+  }
+  const allSelectors = selectorLines.join('\n');
 
   const selectorSection = [
     '## All Affected Elements',
@@ -381,9 +386,16 @@ async function run() {
       continue;
     }
 
+    const MAX_BODY = 65000;
+    let body = buildIssueBody(code, issues);
+    if (body.length > MAX_BODY) {
+      const truncNote = '\n\n_⚠️ Issue body was truncated to fit GitHub\'s size limit._';
+      body = body.slice(0, MAX_BODY - truncNote.length) + truncNote;
+    }
+
     const res = await githubRequest('POST', `/repos/${REPO}/issues`, {
       title,
-      body: buildIssueBody(code, issues),
+      body,
       labels: ['accessibility'],
     });
 
