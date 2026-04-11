@@ -28,6 +28,7 @@ I am new to parkrun and only started in 2025, below are the courses and times I 
 
 <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
   <h3 style="margin-top: 0;">5k Parkrun Times</h3>
+  <div class="table-responsive">
   <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 4px;">
     <tr style="vertical-align: bottom; height: 250px;">
       <td style="text-align: center; padding: 5px; position: relative;">
@@ -82,6 +83,7 @@ I am new to parkrun and only started in 2025, below are the courses and times I 
       </td>
     </tr>
   </table>
+  </div>
 </div>
 
 ## 2026
