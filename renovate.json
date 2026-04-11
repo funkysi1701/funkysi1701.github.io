@@ -1,6 +1,47 @@
 {
   "packageRules": [
     {
+      "description": "Hugo theme: eslint-config-airbnb 19 only supports ESLint 7–8.",
+      "matchFileNames": [
+        "themes/hugo-theme-bootstrap/package.json"
+      ],
+      "matchPackageNames": [
+        "eslint"
+      ],
+      "allowedVersions": "<9.0.0"
+    },
+    {
+      "description": "Hugo theme: eslint-config-airbnb-typescript 18 requires @typescript-eslint 7.",
+      "matchFileNames": [
+        "themes/hugo-theme-bootstrap/package.json"
+      ],
+      "matchPackageNames": [
+        "@typescript-eslint/eslint-plugin",
+        "@typescript-eslint/parser"
+      ],
+      "allowedVersions": "<8.0.0"
+    },
+    {
+      "description": "Hugo theme: eslint-webpack-plugin 6 requires ESLint 9+; keep 5 with ESLint 8.",
+      "matchFileNames": [
+        "themes/hugo-theme-bootstrap/package.json"
+      ],
+      "matchPackageNames": [
+        "eslint-webpack-plugin"
+      ],
+      "allowedVersions": "<6.0.0"
+    },
+    {
+      "description": "Hugo theme: eslint-config-airbnb 19 peers eslint-plugin-react-hooks ^4.3.",
+      "matchFileNames": [
+        "themes/hugo-theme-bootstrap/package.json"
+      ],
+      "matchPackageNames": [
+        "eslint-plugin-react-hooks"
+      ],
+      "allowedVersions": "<5.0.0"
+    },
+    {
       "matchUpdateTypes": [
         "minor",
         "patch",
