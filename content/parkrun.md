@@ -75,6 +75,11 @@ I am new to parkrun and only started in 2025, below are the courses and times I 
         <div style="background: #2196F3; height: 180px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
         <div style="font-size: 10px; margin-top: 5px;">14 Mar</div>
       </td>
+      <td style="text-align: center; padding: 5px; position: relative;">
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">40:02</div>
+        <div style="background: #2196F3; height: 183px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="font-size: 10px; margin-top: 5px;">11 Apr</div>
+      </td>
     </tr>
   </table>
 </div>
@@ -83,6 +88,7 @@ I am new to parkrun and only started in 2025, below are the courses and times I 
 
 | Event/Run                                                                 | Date                | Location                | Results        | min/km  |
 |---------------------------------------------------------------------------|---------------------|-------------------------|----------------|---------|
+| Vermuyden Way parkrun                                                     | 11 April 2026       | Vermuyden Way           | 0h 40m 02s     | 08m 00s |
 | Run the Runway (5.8k)                                                     | 21 March 2026       | Doncaster               | 0h 38m 55s     | 06m 43s |
 | Vermuyden Way parkrun                                                     | 14 March 2026       | Vermuyden Way           | 0h 39m 49s     | 07m 57s |
 | Scunthorpe parkrun                                                        | 14 February 2026    | Scunthorpe              | 0h 38m 21s     | 07m 40s |
