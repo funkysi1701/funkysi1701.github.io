@@ -207,7 +207,7 @@ steps:
         node /app/scripts/create-accessibility-issues.js
 - task: CmdLine@2
   displayName: 'Fail build if site was unreachable during Pa11y'
-  condition: and(succeeded(), eq(variables['Build.Reason'], 'Schedule'))
+  condition: and(succeededOrFailed(), eq(variables['Build.Reason'], 'Schedule'))
   inputs:
     script: |
       if grep -q 'ERR_CONNECTION_REFUSED' pa11y-error.log 2>/dev/null; then
