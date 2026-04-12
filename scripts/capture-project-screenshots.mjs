@@ -2,7 +2,7 @@
  * Captures above-the-fold screenshots of external projects for the Projects page.
  * Run: npm run screenshots:projects
  */
-import { chromium } from 'playwright';
+import { chromium } from '@playwright/test';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { mkdir } from 'fs/promises';
