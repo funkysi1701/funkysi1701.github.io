@@ -337,5 +337,48 @@ test.describe('Accessibility', () => {
       }
     });
 
+    await test.step('Verify btn-primary meets WCAG AA contrast in dark mode (4.5:1)', async () => {
+      // 12. In dark mode the theme uses --hbs-accent (#5e92f3, light blue) as the
+      // .btn-primary background but keeps white (#fff) as text colour.
+      // White on #5e92f3 yields only ~3.0:1 — below the WCAG AA minimum of 4.5:1.
+      // custom.css overrides the dark-mode .btn-primary to use --hbs-primary (#1363be),
+      // which gives ~5.9:1 contrast with white text.
+      // Simulate dark mode by setting the data-mode attribute, check any .btn-primary,
+      // then restore the original state.
+      const originalMode = await page.evaluate(() =>
+        document.documentElement.getAttribute('data-mode'),
+      );
+
+      await page.evaluate(() => {
+        document.documentElement.setAttribute('data-mode', 'dark');
+      });
+
+      try {
+        const btnColors = await getElementColors(page, '.btn-primary');
+        console.log('Dark-mode btn-primary colors:', btnColors);
+
+        if (btnColors === null) {
+          throw new Error('Expected to find a .btn-primary element to validate dark-mode contrast, but none was found.');
+        }
+
+        const ratio = tryContrastRatio(btnColors.color, btnColors.backgroundColor);
+        console.log('Dark-mode btn-primary contrast ratio:', ratio?.toFixed(2) ?? 'n/a');
+        if (ratio === null) {
+          throw new Error(
+            `Could not parse dark-mode btn-primary colors: fg=${btnColors.color} bg=${btnColors.backgroundColor}`,
+          );
+        }
+        expect(ratio, 'dark-mode .btn-primary must meet WCAG AA 4.5:1').toBeGreaterThanOrEqual(4.5);
+      } finally {
+        await page.evaluate((mode) => {
+          if (mode === null) {
+            document.documentElement.removeAttribute('data-mode');
+          } else {
+            document.documentElement.setAttribute('data-mode', mode);
+          }
+        }, originalMode);
+      }
+    });
+
   });
 });
