@@ -15,7 +15,7 @@ const targets = [
   {
     slug: 'blog',
     url: 'https://www.funkysi1701.com/',
-    waitSelector: 'main, article, [role="main"], body',
+    waitSelector: 'main, article, [role="main"]',
     extraMs: 1500,
   },
   {
