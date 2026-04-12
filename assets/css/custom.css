@@ -31,12 +31,28 @@
 /* Post list excerpts (list-item → .posts only): cards use white #fff even in
  * dark site mode, while --hbs-secondary-text-on-surface can be light gray — that
  * yields gray-on-white (axe color-contrast). Rules tied to :root[data-mode] can
- * also race Pa11y’s wait vs mode switcher JS. Fix by layout scope + opaque colours. */
-.posts .card.post .post-summary,
-.posts .card.post .post-summary p {
+ * also race Pa11y’s wait vs mode switcher JS. Fix by layout scope + opaque colours.
+ *
+ * Light mode: force opaque dark text on the white card surface (#333 on #fff → ~12.6:1).
+ * Dark mode:  force opaque light text on the dark card surface (#e1e1e1 on #1e1e1e → ~8.6:1).
+ */
+:root:not([data-mode]) .posts .card.post .post-summary,
+:root:not([data-mode]) .posts .card.post .post-summary p,
+[data-mode="light"] .posts .card.post .post-summary,
+[data-mode="light"] .posts .card.post .post-summary p {
   color: #333333 !important;
 }
 
-.posts .card.post .post-summary a:not(.btn):not(.btn-read-more) {
+:root:not([data-mode]) .posts .card.post .post-summary a:not(.btn):not(.btn-read-more),
+[data-mode="light"] .posts .card.post .post-summary a:not(.btn):not(.btn-read-more) {
   color: #0a58ca !important;
+}
+
+[data-mode="dark"] .posts .card.post .post-summary,
+[data-mode="dark"] .posts .card.post .post-summary p {
+  color: #e1e1e1 !important;
+}
+
+[data-mode="dark"] .posts .card.post .post-summary a:not(.btn):not(.btn-read-more) {
+  color: #6ea8fe !important;
 }
