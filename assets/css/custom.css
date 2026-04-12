@@ -28,15 +28,37 @@
   opacity: 1;
 }
 
-/* Post list excerpts (list-item → .posts only): cards use white #fff even in
- * dark site mode, while --hbs-secondary-text-on-surface can be light gray — that
- * yields gray-on-white (axe color-contrast). Rules tied to :root[data-mode] can
- * also race Pa11y’s wait vs mode switcher JS. Fix by layout scope + opaque colours. */
-.posts .card.post .post-summary,
-.posts .card.post .post-summary p {
+/* Post list excerpts (list-item → .posts only): the .component class on these
+ * cards sets background: var(--hbs-surface), which resolves to #1e1e1e in dark
+ * mode. The original unscoped !important rules forced dark text (#333333) in all
+ * modes, giving ~1.32:1 contrast against the dark surface — far below the WCAG AA
+ * minimum of 4.5:1.
+ *
+ * Light mode: dark text (#333333) on white card surface (#fff) → ~12.6:1.
+ * Dark mode:  explicitly pin card background to --hbs-surface (#1e1e1e) and use
+ *             light text (#e1e1e1 → ~8.6:1) and link (#6ea8fe → ~5.7:1).
+ */
+:root:not([data-mode]) .posts .card.post .post-summary,
+:root:not([data-mode]) .posts .card.post .post-summary p,
+[data-mode="light"] .posts .card.post .post-summary,
+[data-mode="light"] .posts .card.post .post-summary p {
   color: #333333 !important;
 }
 
-.posts .card.post .post-summary a:not(.btn):not(.btn-read-more) {
+:root:not([data-mode]) .posts .card.post .post-summary a:not(.btn):not(.btn-read-more),
+[data-mode="light"] .posts .card.post .post-summary a:not(.btn):not(.btn-read-more) {
   color: #0a58ca !important;
+}
+
+[data-mode="dark"] .posts .card.post {
+  background-color: var(--hbs-surface) !important;
+}
+
+[data-mode="dark"] .posts .card.post .post-summary,
+[data-mode="dark"] .posts .card.post .post-summary p {
+  color: #e1e1e1 !important;
+}
+
+[data-mode="dark"] .posts .card.post .post-summary a:not(.btn):not(.btn-read-more) {
+  color: #6ea8fe !important;
 }
