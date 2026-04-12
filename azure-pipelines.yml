@@ -104,27 +104,19 @@ steps:
       --wait --timeout 15m --atomic
   condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), eq(variables['Build.SourceBranchName'], 'main'))
   displayName: 'helm upgrade blog (namespace main / prod)'
-- bash: |
-    if [[ "$(Build.SourceBranchName)" == "main" ]]; then
-      echo "##vso[task.setvariable variable=runPa11y]true"
-    else
-      echo "##vso[task.setvariable variable=runPa11y]false"
-    fi
-  displayName: 'Set runPa11y flag'
 - task: CmdLine@2
-  displayName: 'Pa11y Accessibility Check'
-  condition: and(succeeded(), eq(variables['runPa11y'], 'true'))
+  displayName: 'Pa11y Accessibility Check (nightly only)'
+  condition: and(succeeded(), eq(variables['Build.Reason'], 'Schedule'))
   continueOnError: true
   env:
     GITHUB_TOKEN: $(GITHUB_TOKEN)
-    BUILD_REASON: $(Build.Reason)
   inputs:
     script: |
       PA11Y_RUN_FAILED=0
       REPO_ROOT="$(Build.SourcesDirectory)"
 
-      # Pa11y runs only on main (prod); scan production.
-      # Nightly schedule (see schedules:): axe+htmlcs, full sitemap — no PA11Y_MAX_PAGES cap.
+      # Pa11y runs only on scheduled nightly builds (see schedules:); scan production.
+      # Nightly: axe+htmlcs, full sitemap — optional PA11Y_NIGHTLY_MAX_PAGES cap.
       SITE_URL="https://www.funkysi1701.com"
       # Helm release "blog" + chart name "blog" → Deployment name "blog" in namespace main.
       if ! kubectl rollout status deployment/blog -n main --timeout=5m; then
@@ -149,20 +141,13 @@ steps:
 
       echo "Pa11y scanning all sitemap URLs under: $SITE_URL (sitemap: ${SITEMAP_URL:-$SITE_URL/sitemap.xml})"
 
-      if [ "$BUILD_REASON" = "Schedule" ]; then
-        PA11Y_RUNNERS_VAL="${PA11Y_NIGHTLY_RUNNERS:-axe,htmlcs}"
-        PA11Y_MAX_PAGES_VAL="${PA11Y_NIGHTLY_MAX_PAGES:-}"
-        echo "Nightly scheduled run: PA11Y_RUNNERS=$PA11Y_RUNNERS_VAL; PA11Y_MAX_PAGES (empty=all)=${PA11Y_MAX_PAGES_VAL:-<full sitemap>}"
-      else
-        PA11Y_RUNNERS_VAL="${PA11Y_RUNNERS:-axe}"
-        PA11Y_MAX_PAGES_VAL="${PA11Y_MAX_PAGES:-}"
-      fi
+      PA11Y_RUNNERS_VAL="${PA11Y_NIGHTLY_RUNNERS:-axe,htmlcs}"
+      PA11Y_MAX_PAGES_VAL="${PA11Y_NIGHTLY_MAX_PAGES:-}"
+      echo "Nightly scheduled run: PA11Y_RUNNERS=$PA11Y_RUNNERS_VAL; PA11Y_MAX_PAGES (empty=all)=${PA11Y_MAX_PAGES_VAL:-<full sitemap>}"
 
-      # Speed tuning (Azure variable group or pipeline variables; CI main push uses defaults above):
-      #   PA11Y_MAX_PAGES=N   — cap URLs on non-schedule builds (unset = full sitemap).
-      #   PA11Y_RUNNERS       — runners on main CI push (default axe).
-      #   PA11Y_NIGHTLY_RUNNERS — schedule only (default axe,htmlcs); ignores PA11Y_RUNNERS.
-      #   PA11Y_NIGHTLY_MAX_PAGES — optional cap for schedule only (unset = full sitemap).
+      # Speed tuning (Azure variable group or pipeline variables):
+      #   PA11Y_NIGHTLY_RUNNERS — default axe,htmlcs
+      #   PA11Y_NIGHTLY_MAX_PAGES — optional cap (unset = full sitemap)
       #   PA11Y_WAIT_MS       — post-load wait per page (JSON default 2000).
       #   PA11Y_TIMEOUT_MS    — per-page nav timeout (JSON default 90000).
       #   PA11Y_THEMES        — optional: light,dark or one of them (default light,dark). Each sitemap URL is scanned per theme via #modeSwitcher.
@@ -222,7 +207,7 @@ steps:
         node /app/scripts/create-accessibility-issues.js
 - task: CmdLine@2
   displayName: 'Fail build if site was unreachable during Pa11y'
-  condition: and(succeeded(), eq(variables['runPa11y'], 'true'))
+  condition: and(succeeded(), eq(variables['Build.Reason'], 'Schedule'))
   inputs:
     script: |
       if grep -q 'ERR_CONNECTION_REFUSED' pa11y-error.log 2>/dev/null; then
