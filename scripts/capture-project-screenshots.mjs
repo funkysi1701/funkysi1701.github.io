@@ -57,7 +57,11 @@ async function main() {
       timeout: 90_000,
     });
     if (t.waitSelector) {
-      await page.waitForSelector(t.waitSelector, { timeout: 60_000 }).catch(() => {});
+      await page.waitForSelector(t.waitSelector, { timeout: 60_000 }).catch((err) => {
+        console.warn(
+          `Warning: waitForSelector failed for "${t.slug}" (${t.url}) using selector "${t.waitSelector}": ${err instanceof Error ? err.message : String(err)}`
+        );
+      });
     }
     if (t.extraMs) {
       await new Promise((r) => setTimeout(r, t.extraMs));
