@@ -34,7 +34,8 @@
  * also race Pa11y’s wait vs mode switcher JS. Fix by layout scope + opaque colours.
  *
  * Light mode: force opaque dark text on the white card surface (#333 on #fff → ~12.6:1).
- * Dark mode:  force opaque light text on the dark card surface (#e1e1e1 on #1e1e1e → ~8.6:1).
+ * Dark mode:  force opaque light excerpt text (#e1e1e1) so it does not inherit a
+ * low-contrast gray on the same white card surface.
  */
 :root:not([data-mode]) .posts .card.post .post-summary,
 :root:not([data-mode]) .posts .card.post .post-summary p,
