@@ -353,29 +353,31 @@ test.describe('Accessibility', () => {
         document.documentElement.setAttribute('data-mode', 'dark');
       });
 
-      const btnColors = await getElementColors(page, '.btn-primary');
-      console.log('Dark-mode btn-primary colors:', btnColors);
+      try {
+        const btnColors = await getElementColors(page, '.btn-primary');
+        console.log('Dark-mode btn-primary colors:', btnColors);
 
-      await page.evaluate((mode) => {
-        if (mode === null) {
-          document.documentElement.removeAttribute('data-mode');
-        } else {
-          document.documentElement.setAttribute('data-mode', mode);
+        if (btnColors === null) {
+          throw new Error('Expected to find a .btn-primary element to validate dark-mode contrast, but none was found.');
         }
-      }, originalMode);
 
-      if (btnColors === null) {
-        throw new Error('Expected to find a .btn-primary element to validate dark-mode contrast, but none was found.');
+        const ratio = tryContrastRatio(btnColors.color, btnColors.backgroundColor);
+        console.log('Dark-mode btn-primary contrast ratio:', ratio?.toFixed(2) ?? 'n/a');
+        if (ratio === null) {
+          throw new Error(
+            `Could not parse dark-mode btn-primary colors: fg=${btnColors.color} bg=${btnColors.backgroundColor}`,
+          );
+        }
+        expect(ratio, 'dark-mode .btn-primary must meet WCAG AA 4.5:1').toBeGreaterThanOrEqual(4.5);
+      } finally {
+        await page.evaluate((mode) => {
+          if (mode === null) {
+            document.documentElement.removeAttribute('data-mode');
+          } else {
+            document.documentElement.setAttribute('data-mode', mode);
+          }
+        }, originalMode);
       }
-
-      const ratio = tryContrastRatio(btnColors.color, btnColors.backgroundColor);
-      console.log('Dark-mode btn-primary contrast ratio:', ratio?.toFixed(2) ?? 'n/a');
-      if (ratio === null) {
-        throw new Error(
-          `Could not parse dark-mode btn-primary colors: fg=${btnColors.color} bg=${btnColors.backgroundColor}`,
-        );
-      }
-      expect(ratio, 'dark-mode .btn-primary must meet WCAG AA 4.5:1').toBeGreaterThanOrEqual(4.5);
     });
 
   });
