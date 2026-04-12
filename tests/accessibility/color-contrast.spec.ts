@@ -364,16 +364,18 @@ test.describe('Accessibility', () => {
         }
       }, originalMode);
 
-      if (btnColors) {
-        const ratio = tryContrastRatio(btnColors.color, btnColors.backgroundColor);
-        console.log('Dark-mode btn-primary contrast ratio:', ratio?.toFixed(2) ?? 'n/a');
-        if (ratio === null) {
-          throw new Error(
-            `Could not parse dark-mode btn-primary colors: fg=${btnColors.color} bg=${btnColors.backgroundColor}`,
-          );
-        }
-        expect(ratio, 'dark-mode .btn-primary must meet WCAG AA 4.5:1').toBeGreaterThanOrEqual(4.5);
+      if (btnColors === null) {
+        throw new Error('Expected to find a .btn-primary element to validate dark-mode contrast, but none was found.');
       }
+
+      const ratio = tryContrastRatio(btnColors.color, btnColors.backgroundColor);
+      console.log('Dark-mode btn-primary contrast ratio:', ratio?.toFixed(2) ?? 'n/a');
+      if (ratio === null) {
+        throw new Error(
+          `Could not parse dark-mode btn-primary colors: fg=${btnColors.color} bg=${btnColors.backgroundColor}`,
+        );
+      }
+      expect(ratio, 'dark-mode .btn-primary must meet WCAG AA 4.5:1').toBeGreaterThanOrEqual(4.5);
     });
 
   });
