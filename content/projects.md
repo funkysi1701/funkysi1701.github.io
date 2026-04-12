@@ -20,6 +20,8 @@ Here are some of the projects I've built and maintain:
 
 ### Blog Platform
 
+[![Blog homepage: navigation and latest posts](/images/projects/blog.png)](https://www.funkysi1701.com/)
+
 This blog you're reading! Built with Hugo and deployed to Azure Static Web Apps.
 
 - **Tech Stack**: Hugo, GitHub Actions, Azure Static Web Apps
@@ -31,6 +33,8 @@ This blog you're reading! Built with Hugo and deployed to Azure Static Web Apps.
 - **Links**: [GitHub Repository](https://github.com/funkysi1701/funkysi1701.github.io)
 
 ### Episode Atlas
+
+[![Episode Atlas: TV episode tracking app](/images/projects/episode-atlas.png)](https://www.episodeatlas.com)
 
 A website for tracking what episode you watched last of your favourite TV shows. I am a big Star Trek fan and I built this to track when I last watched what, with over 900 episodes across the different TV shows it is no easy task!
 
@@ -46,6 +50,8 @@ A website for tracking what episode you watched last of your favourite TV shows.
 
 ### Mandelbrot Generator
 
+[![Mandelbrot Generator: fractal view in the browser](/images/projects/mandelbrot.png)](https://mandelbrot.funkysi1701.com)
+
 I've always been fascinated by Mandelbrots and now I can generate them in the browser with Blazor webassembly
 
 - **Tech Stack**: .NET Blazor, Azure Static Web Apps
@@ -56,6 +62,8 @@ I've always been fascinated by Mandelbrots and now I can generate them in the br
 - **Links**: [Mandelbrot Generator](https://mandelbrot.funkysi1701.com)
 
 ### Thorne Pentecostal Church
+
+[![Thorne Pentecostal Church website homepage](/images/projects/thorne-pentecostal-church.png)](https://www.thornepentecostalchurch.co.uk)
 
 I've been part of the Thorne Pentecostal Church for many years, and until recently it did not have a website.
 
