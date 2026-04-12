@@ -62,3 +62,28 @@
 [data-mode="dark"] .posts .card.post .post-summary a:not(.btn):not(.btn-read-more) {
   color: #6ea8fe !important;
 }
+
+/* Dark-mode .btn-primary contrast fix.
+ *
+ * The theme overrides .btn-primary background to var(--hbs-accent) rather than
+ * var(--hbs-primary).  In dark mode --hbs-accent resolves to --hbs-primary-light
+ * (#5e92f3, a light blue), which yields only ~3.0:1 contrast against the white
+ * (#fff) button text — well below the WCAG AA minimum of 4.5:1.
+ *
+ * Pinning the dark-mode button background to --hbs-primary (#1363be) restores the
+ * same 5.9:1 contrast ratio as the light-mode button, satisfying WCAG AA.
+ * Hover/focus/active states use --hbs-primary-dark (#003c8f) for even higher contrast.
+ */
+[data-mode="dark"] .btn-primary {
+  background-color: var(--hbs-primary) !important;
+  border-color: var(--hbs-primary) !important;
+  color: var(--hbs-on-primary) !important;
+}
+
+[data-mode="dark"] .btn-primary:hover,
+[data-mode="dark"] .btn-primary:focus,
+[data-mode="dark"] .btn-primary.active,
+[data-mode="dark"] .btn-primary:active {
+  background-color: var(--hbs-primary-dark) !important;
+  border-color: var(--hbs-primary-dark) !important;
+}
