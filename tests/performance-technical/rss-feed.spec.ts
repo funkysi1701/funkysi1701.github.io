@@ -28,6 +28,9 @@ test.describe('Performance and Technical', () => {
       content = await response.text();
       expect(content).toContain('<?xml');
       expect(content).toContain('<rss');
+      expect(content).toContain('xmlns:media="http://search.yahoo.com/mrss/"');
+      expect(content).toContain('<media:content');
+      expect(content).toMatch(/<media:content\b[^>]*\burl="[^"]+"/);
     });
 
     await test.step('Verify feed includes recent blog posts', async () => {
