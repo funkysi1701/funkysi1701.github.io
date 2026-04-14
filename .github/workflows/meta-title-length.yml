@@ -1,0 +1,61 @@
+name: Meta title length
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4 # v4.1.7
+
+      - name: Set up Python
+        uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5.3.0
+        with:
+          python-version: "3.12"
+
+      - name: Check post meta titles (50–60 characters)
+        id: meta
+        continue-on-error: true
+        run: python scripts/check_meta_titles.py --root . --report meta-title-report.md
+
+      - name: Job summary on failure
+        if: steps.meta.outcome == 'failure'
+        run: cat meta-title-report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open or update tracking issue
+        if: >-
+          steps.meta.outcome == 'failure' &&
+          github.ref == 'refs/heads/main' &&
+          github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh label create "meta-titles" --color "5319E7" --description "CI: meta title length tracking" 2>/dev/null || true
+          REPORT="meta-title-report.md"
+          RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          NUM=$(gh issue list --label "meta-titles" --state open --json number -q 'if length > 0 then .[0].number else empty end')
+          if [ -n "${NUM:-}" ]; then
+            gh issue edit "$NUM" --body-file "$REPORT"
+            gh issue comment "$NUM" --body "Updated from [Actions run](${RUN_URL})."
+          else
+            gh issue create \
+              --label "meta-titles" \
+              --title "Blog posts: meta title lengths out of range (50–60 characters)" \
+              --body-file "$REPORT"
+          fi
+
+      - name: Fail if titles are out of range
+        if: steps.meta.outcome == 'failure'
+        run: |
+          echo "::error::One or more post titles are outside 50–60 characters. See the job summary or the tracking issue (main branch pushes)."
+          exit 1
