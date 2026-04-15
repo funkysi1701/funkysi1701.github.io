@@ -32,6 +32,19 @@ This blog you're reading! Built with Hugo and deployed to Azure Static Web Apps.
   - Giscus comment integration
 - **Links**: [GitHub Repository](https://github.com/funkysi1701/funkysi1701.github.io)
 
+### Semantic Search
+
+[![Semantic Search: natural-language blog search](/images/projects/semantic-search.png)](https://search.funkysi1701.com/)
+
+A standalone app for searching this blog by meaning and natural language, not only exact keywords. It complements the built-in Hugo search on the main site (keyword matching over the JSON index).
+
+- **Tech Stack**: .NET, Azure, CosmosDB, OpenAI
+- **Features**:
+  - Natural-language queries over blog content
+  - Semantic / vector-style matching for better discovery when you do not know the exact wording
+  - Linked from the [Search](/search/) page on this blog
+- **Links**: [search.funkysi1701.com](https://search.funkysi1701.com/)
+
 ### Episode Atlas
 
 [![Episode Atlas: TV episode tracking app](/images/projects/episode-atlas.png)](https://www.episodeatlas.com)

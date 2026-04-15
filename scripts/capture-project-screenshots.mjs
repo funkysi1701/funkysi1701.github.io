@@ -19,6 +19,12 @@ const targets = [
     extraMs: 1500,
   },
   {
+    slug: 'semantic-search',
+    url: 'https://search.funkysi1701.com/',
+    waitSelector: 'body',
+    extraMs: 5000,
+  },
+  {
     slug: 'episode-atlas',
     url: 'https://www.episodeatlas.com/',
     waitSelector: 'body',
