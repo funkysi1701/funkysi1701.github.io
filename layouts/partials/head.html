@@ -27,8 +27,8 @@
 {{- $siteDesc := $.Site.Params.description | plainify | htmlUnescape -}}
 {{- $author := dict "@type" "Person" "name" $.Site.Params.author.name "url" (absURL "about") -}}
 {{- $website := dict "@context" "https://schema.org" "@type" "WebSite" "@id" (printf "%s#website" .Permalink) "name" .Site.Title "url" .Permalink "description" $siteDesc "author" $author -}}
-{{- $websiteJSON := $website | jsonify (dict "noHTMLEscape" true) -}}
-{{- printf "<script type=\"application/ld+json\">%s</script>" $websiteJSON | safeHTML -}}
+{{- $websiteJSON := $website | jsonify -}}
+<script type="application/ld+json">{{- $websiteJSON | safeJS -}}</script>
 {{- else if .IsPage -}}
 {{- $desc := .Summary | plainify | htmlUnescape -}}
 {{- with .Description -}}{{- $desc = . | plainify | htmlUnescape -}}{{- end -}}
@@ -38,6 +38,6 @@
 {{- $author := dict "@type" "Person" "name" $authorName "url" (absURL "about") -}}
 {{- $publisher := dict "@type" "Person" "name" $.Site.Params.author.name "url" .Site.BaseURL -}}
 {{- $article := dict "@context" "https://schema.org" "@type" "BlogPosting" "@id" (printf "%s#article" .Permalink) "headline" .Title "description" $desc "url" .Permalink "datePublished" (.Date.Format "2006-01-02T15:04:05-07:00") "dateModified" (.Lastmod.Format "2006-01-02T15:04:05-07:00") "image" $image "author" $author "publisher" $publisher -}}
-{{- $articleJSON := $article | jsonify (dict "noHTMLEscape" true) -}}
-{{- printf "<script type=\"application/ld+json\">%s</script>" $articleJSON | safeHTML -}}
+{{- $articleJSON := $article | jsonify -}}
+<script type="application/ld+json">{{- $articleJSON | safeJS -}}</script>
 {{- end -}}
