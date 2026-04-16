@@ -13,7 +13,7 @@ showFullContent = false
 copyright = false
 readingTime = false
 comment = false
-pinned = true
+pinned = false
 aliases = [
     "/start-here",
     "/best-posts"
