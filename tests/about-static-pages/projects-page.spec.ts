@@ -17,7 +17,7 @@ test.describe('About and Static Pages', () => {
 
     await test.step('Check for Blog Platform project description', async () => {
       // 3. Check for Blog Platform project description
-      await expect(page.locator('text=/Blog Platform|This blog/i').first()).toBeVisible();
+      await expect(page.locator('text=/Blog Platform/i').first()).toBeVisible();
     });
 
     await test.step('Verify Episode Atlas project is listed', async () => {
@@ -29,8 +29,8 @@ test.describe('About and Static Pages', () => {
       // 5. Check for Mandelbrot Generator project
       await expect(page.locator('text=/Mandelbrot/i').first()).toBeVisible();
 
-      // Verify tech stack information is present
-      await expect(page.locator('text=/Tech Stack|Hugo|Blazor|Azure/i').first()).toBeVisible();
+      // Verify tech / hosting information is present
+      await expect(page.locator('text=/Tech used|Hugo|Blazor|Azure/i').first()).toBeVisible();
     });
 
     await test.step('Click on Episode Atlas external link', async () => {
@@ -54,9 +54,15 @@ test.describe('About and Static Pages', () => {
       expect(githubCount).toBeGreaterThan(0);
     });
 
-    await test.step('Verify tech stack information is present for each project', async () => {
-      // 9. Verify tech stack information is present for each project
-      await expect(page.locator('text=/GitHub|Features|Links/i').first()).toBeVisible();
+    await test.step('Verify project structure and engineering signals', async () => {
+      // 9. New layout: What it does / Outcome / signals; legacy: Features / Tech Stack (until prod deploy)
+      await expect(
+        page.locator(
+          'text=/What it does|Why it matters|Why it.?s impressive|Outcome|Features|Tech used|Tech Stack/i'
+        ).first()
+      ).toBeVisible();
+      await expect(page.locator('text=/Deployed to Azure|GitHub Actions|Azure Static Web Apps/i').first()).toBeVisible();
+      await expect(page.locator('text=/Links:?|GitHub repository/i').first()).toBeVisible();
     });
 
   });
