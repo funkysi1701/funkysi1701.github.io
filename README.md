@@ -36,7 +36,7 @@ docker run --rm -it -v .:/src -p 1313:1313 floryn90/hugo:${HUGO_VERSION} server 
 
 ## 🧪 Testing
 
-End-to-end tests use **[Playwright](https://playwright.dev/)** (`@playwright/test`). Specs live under `tests/`; many files reference the high-level plan in **`specs/funkysi1701-test-plan.md`** (see `specs/README.md`).
+End-to-end tests use **[Playwright](https://playwright.dev/)** (`@playwright/test`). Playwright tests (spec files) live under `tests/`; many files reference the high-level plan in **`specs/funkysi1701-test-plan.md`** (see `specs/README.md`).
 
 ```sh
 npm ci
