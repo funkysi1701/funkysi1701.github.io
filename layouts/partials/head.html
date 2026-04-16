@@ -43,10 +43,16 @@
 {{- $published := or .PublishDate .Date -}}
 {{- $modified := or .Lastmod .Date -}}
 {{- $image := absURL "/images/1922276.jpg" -}}
-{{- with .Params.cover -}}
-  {{- $image = absURL . -}}
+{{- $cover := strings.TrimSpace (.Params.cover | default "") -}}
+{{- if ne $cover "" -}}
+  {{- $image = absURL $cover -}}
 {{- else with .Params.images -}}
-  {{- $image = absURL (index . 0) -}}
+  {{- with index . 0 -}}
+    {{- $firstImage := strings.TrimSpace . -}}
+    {{- if ne $firstImage "" -}}
+      {{- $image = absURL $firstImage -}}
+    {{- end -}}
+  {{- end -}}
 {{- end -}}
 {{- $authorName := .Params.author | default $.Site.Params.author.name -}}
 {{- $author := dict "@type" "Person" "name" $authorName "url" (absURL "about") -}}
