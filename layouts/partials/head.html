@@ -46,12 +46,10 @@
 {{- $cover := strings.TrimSpace (.Params.cover | default "") -}}
 {{- if ne $cover "" -}}
   {{- $image = absURL $cover -}}
-{{- else with .Params.images -}}
-  {{- with index . 0 -}}
-    {{- $firstImage := strings.TrimSpace . -}}
-    {{- if ne $firstImage "" -}}
-      {{- $image = absURL $firstImage -}}
-    {{- end -}}
+{{- else if and .Params.images (gt (len .Params.images) 0) -}}
+  {{- $firstImage := strings.TrimSpace (index .Params.images 0 | default "") -}}
+  {{- if ne $firstImage "" -}}
+    {{- $image = absURL $firstImage -}}
   {{- end -}}
 {{- end -}}
 {{- $authorName := .Params.author | default $.Site.Params.author.name -}}
