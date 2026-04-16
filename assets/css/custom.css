@@ -153,6 +153,20 @@
   line-height: 1.5;
 }
 
+/* Senior-level “why this is worth a hiring manager’s attention” (one line). */
+.projects-featured-impressive {
+  font-size: 0.95rem;
+  margin: 0 0 0.55rem;
+  line-height: 1.5;
+  padding: 0.5rem 0.65rem;
+  border-left: 3px solid var(--hbs-primary, #1363be);
+  background-color: color-mix(in srgb, var(--hbs-primary, #1363be) 8%, transparent);
+}
+
+[data-mode="dark"] .projects-featured-impressive {
+  background-color: color-mix(in srgb, var(--hbs-primary-light, #5e92f3) 10%, transparent);
+}
+
 .projects-signals {
   display: flex;
   flex-wrap: wrap;

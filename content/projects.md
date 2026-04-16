@@ -26,6 +26,7 @@ aliases = [
 <a href="https://www.episodeatlas.com" rel="noopener noreferrer"><img src="/images/projects/episode-atlas.png" alt="Episode Atlas: TV episode tracking app" width="800" height="450" loading="lazy"></a>
 <p class="projects-featured-meta"><strong>What it does:</strong> Per-user episode lists, “last watched” markers, and curated metadata links — so long-running franchises stay manageable.</p>
 <p class="projects-featured-meta"><strong>Tech used:</strong> .NET Blazor, Azure Static Web Apps, Azure Functions, Azure SQL, GitHub auth.</p>
+<p class="projects-featured-impressive"><strong>Why it’s impressive:</strong> Demonstrates scalable data modelling and cloud-first architecture for user-driven applications.</p>
 <div class="projects-signals" aria-label="Engineering signals"><span class="projects-signal">Deployed to Azure</span><span class="projects-signal">Implements authentication / APIs / caching</span></div>
 <p class="projects-featured-outcome"><strong>Outcome:</strong> Turned a personal “where was I in 900+ episodes?” problem into a maintainable multi-tenant pattern for identity, persistence, and UX for ongoing shows.</p>
 <p class="projects-featured-links"><strong>Links:</strong> <a href="https://www.episodeatlas.com" rel="noopener noreferrer">episodeatlas.com</a></p>
@@ -36,6 +37,7 @@ aliases = [
 <a href="https://search.funkysi1701.com/" rel="noopener noreferrer"><img src="/images/projects/semantic-search.png" alt="Semantic Search: natural-language blog search" width="800" height="450" loading="lazy"></a>
 <p class="projects-featured-meta"><strong>What it does:</strong> Accepts conversational queries, retrieves meaningfully related posts, and surfaces them alongside the site’s JSON index search.</p>
 <p class="projects-featured-meta"><strong>Tech used:</strong> .NET, Azure, Cosmos DB, OpenAI.</p>
+<p class="projects-featured-impressive"><strong>Why it’s impressive:</strong> Showcases practical LLM integration in .NET beyond basic chat interfaces.</p>
 <div class="projects-signals" aria-label="Engineering signals"><span class="projects-signal">Deployed to Azure</span><span class="projects-signal">Designed with clean architecture</span></div>
 <p class="projects-featured-outcome"><strong>Outcome:</strong> Explored how vector-style retrieval and operational concerns (cost, latency, content freshness) fit next to a static Hugo site without compromising the authoring workflow.</p>
 <p class="projects-featured-links"><strong>Links:</strong> <a href="https://search.funkysi1701.com/" rel="noopener noreferrer">search.funkysi1701.com</a> · linked from <a href="/search/">Search</a></p>
@@ -46,6 +48,7 @@ aliases = [
 <a href="https://www.funkysi1701.com/" rel="noopener noreferrer"><img src="/images/projects/blog.png" alt="Blog homepage: navigation and latest posts" width="800" height="450" loading="lazy"></a>
 <p class="projects-featured-meta"><strong>What it does:</strong> Publishes posts, generates RSS and a JSON search index, integrates Giscus for discussions, and deploys on every merge.</p>
 <p class="projects-featured-meta"><strong>Tech used:</strong> Hugo, GitHub Actions, Azure Static Web Apps, Giscus.</p>
+<p class="projects-featured-impressive"><strong>Why it’s impressive:</strong> Highlights modern static-first architecture with automated deployment pipelines.</p>
 <div class="projects-signals" aria-label="Engineering signals"><span class="projects-signal">Deployed to Azure</span><span class="projects-signal">CI/CD via GitHub Actions</span></div>
 <p class="projects-featured-outcome"><strong>Outcome:</strong> Demonstrates a production-shaped static pipeline — preview builds, repeatable deploys, and content-driven SEO — suitable as a reference architecture for docs and marketing sites.</p>
 <p class="projects-featured-links"><strong>Links:</strong> <a href="https://github.com/funkysi1701/funkysi1701.github.io" rel="noopener noreferrer">GitHub repository</a></p>
@@ -67,7 +70,7 @@ aliases = [
 
 **Tech used** — Hugo, GitHub Actions, Azure Static Web Apps, Giscus.
 
-**Why it matters** — Separates content from delivery: static HTML at the edge, no runtime to patch for read traffic, and pipelines that enforce “build must pass before go-live,” which scales from personal blogs to org documentation patterns.
+**Why it’s impressive** — Highlights modern static-first architecture with automated deployment pipelines.
 
 **Engineering signals:** Deployed to Azure · CI/CD via GitHub Actions
 
@@ -85,7 +88,7 @@ aliases = [
 
 **Tech used** — .NET Blazor, Azure Static Web Apps, Azure Functions, Azure SQL, GitHub authentication.
 
-**Why it matters** — Exercises a realistic full-stack slice: hosted UI, serverless API surface, durable SQL, and identity — the same shape as many internal line-of-business apps, at a scope you can actually finish.
+**Why it’s impressive** — Demonstrates scalable data modelling and cloud-first architecture for user-driven applications.
 
 **Engineering signals:** Deployed to Azure · Implements authentication / APIs / caching
 
@@ -103,7 +106,7 @@ aliases = [
 
 **Tech used** — HTML/CSS, Azure Static Web Apps.
 
-**Why it matters** — Shows pragmatism: the smallest appropriate stack for stakeholders who need reliability and low maintenance, still benefiting from HTTPS, global CDN, and the same deploy model as larger properties.
+**Why it’s impressive** — Demonstrates proportionate engineering: production-grade static hosting and clear information architecture for stakeholders who need reliability, not complexity.
 
 **Engineering signals:** Deployed to Azure · CI/CD via GitHub Actions
 
@@ -125,7 +128,7 @@ aliases = [
 
 **Tech used** — .NET, Azure, Cosmos DB, OpenAI.
 
-**Why it matters** — Bridges classic static-site search with modern retrieval: you keep Hugo’s simplicity while experimenting with embeddings, ranking, and API boundaries in a controlled, observable service.
+**Why it’s impressive** — Showcases practical LLM integration in .NET beyond basic chat interfaces.
 
 **Engineering signals:** Deployed to Azure · Designed with clean architecture
 
@@ -147,7 +150,7 @@ aliases = [
 
 **Tech used** — .NET Blazor WebAssembly, Azure Static Web Apps.
 
-**Why it matters** — Illustrates when to keep logic client-side: predictable cost, offline-friendly behaviour after load, and a clear boundary where Azure only serves static assets.
+**Why it’s impressive** — Demonstrates client-side compute discipline in Blazor WASM: rich, interactive UI with predictable cost because heavy work never hits the server.
 
 **Engineering signals:** Deployed to Azure · Designed with clean architecture
 

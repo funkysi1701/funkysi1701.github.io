@@ -57,7 +57,9 @@ test.describe('About and Static Pages', () => {
     await test.step('Verify project structure and engineering signals', async () => {
       // 9. New layout: What it does / Outcome / signals; legacy: Features / Tech Stack (until prod deploy)
       await expect(
-        page.locator('text=/What it does|Why it matters|Outcome|Features|Tech used|Tech Stack/i').first()
+        page.locator(
+          'text=/What it does|Why it matters|Why it.?s impressive|Outcome|Features|Tech used|Tech Stack/i'
+        ).first()
       ).toBeVisible();
       await expect(page.locator('text=/Deployed to Azure|GitHub Actions|Azure Static Web Apps/i').first()).toBeVisible();
       await expect(page.locator('text=/Links:?|GitHub repository/i').first()).toBeVisible();
