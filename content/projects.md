@@ -61,41 +61,7 @@ aliases = [
 
 ## 💼 Cloud & Production Systems
 
-### 🔧 Blog Platform
-
-*Technical blog on Azure with CI/CD—fast static pages, search, and comments without babysitting an app server.*
-
-[![Blog homepage: navigation and latest posts](/images/projects/blog.png)](https://www.funkysi1701.com/)
-
-**What it does** — Hosts this blog with automated builds, JSON search index generation, RSS, and Giscus comments so publishing stays a git-based workflow.
-
-**Tech used** — Hugo, GitHub Actions, Azure Static Web Apps, Giscus.
-
-**Why it’s impressive** — Highlights modern static-first architecture with automated deployment pipelines.
-
-**Engineering signals:** Deployed to Azure · CI/CD via GitHub Actions
-
-**Outcome:** Built the site to prove out a low-ops, high-signal publishing stack — fast TTFB, predictable deploys, and room to add features (search, analytics hooks) without re-platforming.
-
-**Links:** [Live site](https://www.funkysi1701.com/) · [GitHub repository](https://github.com/funkysi1701/funkysi1701.github.io)
-
-### 🔧 Episode Atlas
-
-*Track TV progress at scale with per-user state and cloud-backed data.*
-
-[![Episode Atlas: TV episode tracking app](/images/projects/episode-atlas.png)](https://www.episodeatlas.com)
-
-**What it does** — Lets signed-in users maintain shows and episodes, mark “last watched,” sort lists, add titles, and jump to reference sites such as Memory Alpha for episode context.
-
-**Tech used** — .NET Blazor, Azure Static Web Apps, Azure Functions, Azure SQL, GitHub authentication.
-
-**Why it’s impressive** — Demonstrates scalable data modelling and cloud-first architecture for user-driven applications.
-
-**Engineering signals:** Deployed to Azure · Implements authentication / APIs / caching
-
-**Outcome:** Shipped a production-style app to solve a real tracking problem (large franchises, hundreds of episodes) while keeping the domain model and UX extensible for more providers and features later.
-
-**Links:** [Episode Atlas](https://www.episodeatlas.com)
+The featured trio — **Episode Atlas**, **this blog** (Hugo on Azure), and **Semantic Search** ([search.funkysi1701.com](https://search.funkysi1701.com/)) — is fully described in **[Featured Projects](#featured-projects-heading)** above and not repeated here. Below is the rest of the catalogue by category.
 
 ### 🔧 Thorne Pentecostal Church
 
@@ -119,23 +85,7 @@ aliases = [
 
 ## 🤖 AI & Experimental Projects
 
-### 🔧 Semantic Search
-
-*AI-powered natural language search for discovering content beyond keywords.*
-
-[![Semantic Search: natural-language blog search](/images/projects/semantic-search.png)](https://search.funkysi1701.com/)
-
-**What it does** — Runs natural-language queries over blog content so readers can discover posts by intent, not only exact keywords, complementing the [Search](/search/) page’s JSON index.
-
-**Tech used** — .NET, Azure, Cosmos DB, OpenAI.
-
-**Why it’s impressive** — Showcases practical LLM integration in .NET beyond basic chat interfaces.
-
-**Engineering signals:** Deployed to Azure · Designed with clean architecture
-
-**Outcome:** Built the service to explore how AI-assisted retrieval pairs with static content pipelines — latency budgets, data refresh, and cost — without locking the main blog into a heavyweight runtime.
-
-**Links:** [search.funkysi1701.com](https://search.funkysi1701.com/)
+**Semantic Search** — details in **[Featured Projects](#featured-projects-heading)** above; it complements the [Search](/search/) JSON index for intent-style queries.
 
 ---
 
