@@ -27,13 +27,13 @@ enableRobotsTXT = true
 
 [params.homeHero]
   headline = "Senior .NET & Azure Engineer specialising in scalable cloud systems, DevOps, and modern architecture"
-  subheading = "18+ years experience delivering production systems across development, infrastructure, and cloud"
+  subheading = "18+ years' experience delivering production systems across development, infrastructure, and cloud"
 
 [params.author]
   name = "Simon Foster"
   location = "North England"
   about = "/about"
-  bio = "18+ years experience delivering production systems across development, infrastructure, and cloud."
+  bio = "18+ years' experience delivering production systems across development, infrastructure, and cloud."
   email = "funkysi1701@gmail.com"
   avatar = "/images/1922276.jpg"
 
