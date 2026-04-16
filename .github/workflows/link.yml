@@ -1,50 +1,21 @@
 name: Broken link check
 permissions:
   contents: read
-on: 
+
+on:
   schedule:
-  - cron: "0 4 1 * *"
+    - cron: "0 4 1 * *"
+  workflow_dispatch:
 
 jobs:
   broken_link_checker_job:
     runs-on: ubuntu-latest
     name: Check for broken links
+    timeout-minutes: 120
     steps:
-    - name: Broken Link Checker Action
-      uses: technote-space/broken-link-checker-action@7820497a025fb09ff736ee11bb8bb12ca715b4fe # v2.3.1
-      with:
-        TARGET: |
-          https://www.funkysi1701.com,
-          https://www.funkysi1701.com/posts/,
-          https://www.funkysi1701.com/posts/about/,
-          https://www.funkysi1701.com/posts/funky-si-the-next-generation/,
-          https://www.funkysi1701.com/posts/pwned-pass/,
-          https://www.funkysi1701.com/posts/2022/a-brief-history-of-source-control/,
-          https://www.funkysi1701.com/posts/2022/keyboard-shortcuts/,
-          https://www.funkysi1701.com/posts/2022/diagrams-with-mermaid/,
-          https://www.funkysi1701.com/posts/2022/scottishsummit/,
-          https://www.funkysi1701.com/posts/2022/scratch/,
-          https://www.funkysi1701.com/posts/2022/temporal-trek-podcast/,
-          https://www.funkysi1701.com/posts/2022/aws-cloud-practitioner/,
-          https://www.funkysi1701.com/posts/2022/updating-sqlserver-with-docker/,
-          https://www.funkysi1701.com/posts/2022/dotnet-is-20-years-old/,
-          https://www.funkysi1701.com/posts/2022/why-do-i-have-a-website/,
-          https://www.funkysi1701.com/posts/2022/using-github-actions/,
-          https://www.funkysi1701.com/posts/2022/2022-goals/,
-          https://www.funkysi1701.com/posts/2021/lone-developer-to-senior-developer-my-2021-story/,
-          https://www.funkysi1701.com/posts/2015/backing-up-sql-databases-to-azure/,
-          https://www.funkysi1701.com/posts/2015/7-warning-signs-that-youre-a-bad-programmer/,
-          https://www.funkysi1701.com/posts/2026/,
-          https://www.funkysi1701.com/posts/2025/,
-          https://www.funkysi1701.com/posts/2024/,
-          https://www.funkysi1701.com/posts/2023/,
-          https://www.funkysi1701.com/posts/2022/,
-          https://www.funkysi1701.com/posts/2021/,
-          https://www.funkysi1701.com/posts/2020/,
-          https://www.funkysi1701.com/posts/2019/,
-          https://www.funkysi1701.com/posts/2018/,
-          https://www.funkysi1701.com/posts/2017/,
-          https://www.funkysi1701.com/posts/2016/,
-          https://www.funkysi1701.com/posts/2015/,
-          https://www.funkysi1701.com/posts/2014/
-        RECURSIVE: false
+      - name: Broken Link Checker Action
+        uses: technote-space/broken-link-checker-action@7820497a025fb09ff736ee11bb8bb12ca715b4fe # v2.3.1
+        with:
+          # SiteChecker follows internal links site-wide from this entry URL (no hand-maintained URL list).
+          TARGET: https://www.funkysi1701.com
+          RECURSIVE: true
