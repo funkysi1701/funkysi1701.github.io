@@ -1,4 +1,5 @@
 languageCode = 'en-gb'
+title = "Funky Si's Blog"
 theme = 'hugo-theme-bootstrap'
 enableRobotsTXT = true
 
@@ -26,7 +27,7 @@ enableRobotsTXT = true
   comment = true
 
 [params.homeHero]
-  headline = "Senior .NET & Azure Engineer specialising in scalable cloud systems, DevOps, and modern architecture"
+  headline = "Senior .NET & Azure Engineer"
   subheading = "18+ years' experience delivering production systems across development, infrastructure, and cloud"
 
 [params.author]
