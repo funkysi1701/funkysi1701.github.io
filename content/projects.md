@@ -3,8 +3,8 @@ title = "Projects"
 author = "funkysi1701"
 authorTwitter = "funkysi1701"
 cover = ""
-keywords = ["projects", "portfolio", "open source", "apps"]
-description = "A collection of my open source projects, applications, and contributions to the developer community."
+keywords = ["projects", "portfolio", "open source", "apps", "Azure", ".NET", "Blazor"]
+description = "Featured work and grouped portfolio: cloud systems, AI-backed apps, and tools — with engineering signals and outcomes."
 showFullContent = false
 copyright = false
 readingTime = true
@@ -14,105 +14,173 @@ aliases = [
 ]
 +++
 
-## 🚀 My Projects
+<h2 id="featured-projects-heading">Featured Projects</h2>
 
-Here are some of the projects I've built and maintain:
+<p class="projects-featured-intro">Three live Azure workloads I own end-to-end — CI/CD static delivery, AI-backed search on real content, and full-stack Blazor with actual users. </p>
 
-### Blog Platform
-
-[![Blog homepage: navigation and latest posts](/images/projects/blog.png)](https://www.funkysi1701.com/)
-
-This blog you're reading! Built with Hugo and deployed to Azure Static Web Apps.
-
-- **Tech Stack**: Hugo, GitHub Actions, Azure Static Web Apps
-- **Features**:
-  - Automated deployments via CI/CD
-  - Custom theme customization
-  - RSS feeds and JSON search index
-  - Giscus comment integration
-- **Links**: [GitHub Repository](https://github.com/funkysi1701/funkysi1701.github.io)
-
-### Semantic Search
-
-[![Semantic Search: natural-language blog search](/images/projects/semantic-search.png)](https://search.funkysi1701.com/)
-
-A standalone app for searching this blog by meaning and natural language, not only exact keywords. It complements the built-in Hugo search on the main site (keyword matching over the JSON index).
-
-- **Tech Stack**: .NET, Azure, CosmosDB, OpenAI
-- **Features**:
-  - Natural-language queries over blog content
-  - Semantic / vector-style matching for better discovery when you do not know the exact wording
-  - Linked from the [Search](/search/) page on this blog
-- **Links**: [search.funkysi1701.com](https://search.funkysi1701.com/)
-
-### Episode Atlas
-
-[![Episode Atlas: TV episode tracking app](/images/projects/episode-atlas.png)](https://www.episodeatlas.com)
-
-A website for tracking what episode you watched last of your favourite TV shows. I am a big Star Trek fan and I built this to track when I last watched what, with over 900 episodes across the different TV shows it is no easy task!
-
-- **Tech Stack**: .NET Blazor, Azure Static Web Apps with Azure function backend and Azure SQL database
-- **Features**:
-  - GitHub Authentication (more auth providers to come)
-  - Sortable list of episodes
-  - Option to mark when you last watched a particular episode
-  - Add new episodes and TV Shows
-  - Links to [Memory Alpha](https://memory-alpha.fandom.com) for details about the episode
-  - More features to come...
-- **Links**: [Episode Atlas](https://www.episodeatlas.com)
-
-### Mandelbrot Generator
-
-[![Mandelbrot Generator: fractal view in the browser](/images/projects/mandelbrot.png)](https://mandelbrot.funkysi1701.com)
-
-I've always been fascinated by Mandelbrots and now I can generate them in the browser with Blazor webassembly
-
-- **Tech Stack**: .NET Blazor, Azure Static Web Apps
-- **Features**:
-  - Generates a Mandelbrot Set in the browser no server or backend involved
-  - Zoom In/Out from desktop or mobile
-  - More features to come...
-- **Links**: [Mandelbrot Generator](https://mandelbrot.funkysi1701.com)
-
-### Thorne Pentecostal Church
-
-[![Thorne Pentecostal Church website homepage](/images/projects/thorne-pentecostal-church.png)](https://www.thornepentecostalchurch.co.uk)
-
-I've been part of the Thorne Pentecostal Church for many years, and until recently it did not have a website.
-
-- **Tech Stack**: HTML/CSS, Azure Static Web Apps
-- **Features**:
-  - Provides information for existing church members and helps potential new members and visitors learn about us
-  - Simple design
-  - Low-tech solution for adding new events and updating the schedule
-- **Links**: [Thorne Pentecostal Church](https://www.thornepentecostalchurch.co.uk)
+<div class="projects-featured" role="region" aria-labelledby="featured-projects-heading">
+<div class="projects-featured-grid">
+<article class="projects-featured-card">
+<a href="https://www.episodeatlas.com" rel="noopener noreferrer"><img src="/images/projects/episode-atlas.png" alt="Episode Atlas: TV episode tracking app" width="800" height="450" loading="lazy"></a>
+<h3 class="projects-featured-title"><a href="https://www.episodeatlas.com" rel="noopener noreferrer">🔧 Episode Atlas</a></h3>
+<p class="projects-featured-value">A cloud-hosted Blazor app for tracking TV progress at scale, designed to survive growing catalogues and per-user state using Azure, APIs, and a relational data model.</p>
+<p class="projects-featured-meta"><strong>What it does:</strong> Per-user episode lists, “last watched” markers, and curated metadata links — so long-running franchises stay manageable.</p>
+<p class="projects-featured-meta"><strong>Tech used:</strong> .NET Blazor, Azure Static Web Apps, Azure Functions, Azure SQL, GitHub auth.</p>
+<div class="projects-signals" aria-label="Engineering signals"><span class="projects-signal">Deployed to Azure</span><span class="projects-signal">Implements authentication / APIs / caching</span></div>
+<p class="projects-featured-outcome"><strong>Outcome:</strong> Turned a personal “where was I in 900+ episodes?” problem into a maintainable multi-tenant pattern for identity, persistence, and UX for ongoing shows.</p>
+<p class="projects-featured-links"><strong>Links:</strong> <a href="https://www.episodeatlas.com" rel="noopener noreferrer">episodeatlas.com</a></p>
+</article>
+<article class="projects-featured-card">
+<a href="https://search.funkysi1701.com/" rel="noopener noreferrer"><img src="/images/projects/semantic-search.png" alt="Semantic Search: natural-language blog search" width="800" height="450" loading="lazy"></a>
+<h3 class="projects-featured-title"><a href="https://search.funkysi1701.com/" rel="noopener noreferrer">🔧 Semantic Search</a></h3>
+<p class="projects-featured-value">An AI-integrated .NET service for natural-language discovery over blog content, designed to complement keyword search when readers do not know exact phrasing.</p>
+<p class="projects-featured-meta"><strong>What it does:</strong> Accepts conversational queries, retrieves meaningfully related posts, and surfaces them alongside the site’s JSON index search.</p>
+<p class="projects-featured-meta"><strong>Tech used:</strong> .NET, Azure, Cosmos DB, OpenAI.</p>
+<div class="projects-signals" aria-label="Engineering signals"><span class="projects-signal">Deployed to Azure</span><span class="projects-signal">Designed with clean architecture</span></div>
+<p class="projects-featured-outcome"><strong>Outcome:</strong> Explored how vector-style retrieval and operational concerns (cost, latency, content freshness) fit next to a static Hugo site without compromising the authoring workflow.</p>
+<p class="projects-featured-links"><strong>Links:</strong> <a href="https://search.funkysi1701.com/" rel="noopener noreferrer">search.funkysi1701.com</a> · linked from <a href="/search/">Search</a></p>
+</article>
+<article class="projects-featured-card">
+<a href="https://www.funkysi1701.com/" rel="noopener noreferrer"><img src="/images/projects/blog.png" alt="Blog homepage: navigation and latest posts" width="800" height="450" loading="lazy"></a>
+<h3 class="projects-featured-title"><a href="https://www.funkysi1701.com/" rel="noopener noreferrer">🔧 Blog Platform</a></h3>
+<p class="projects-featured-value">A Hugo static site on Azure Static Web Apps with automated build and deploy, designed for fast pages, search, and comments without running a traditional app server.</p>
+<p class="projects-featured-meta"><strong>What it does:</strong> Publishes posts, generates RSS and a JSON search index, integrates Giscus for discussions, and deploys on every merge.</p>
+<p class="projects-featured-meta"><strong>Tech used:</strong> Hugo, GitHub Actions, Azure Static Web Apps, Giscus.</p>
+<div class="projects-signals" aria-label="Engineering signals"><span class="projects-signal">Deployed to Azure</span><span class="projects-signal">CI/CD via GitHub Actions</span></div>
+<p class="projects-featured-outcome"><strong>Outcome:</strong> Demonstrates a production-shaped static pipeline — preview builds, repeatable deploys, and content-driven SEO — suitable as a reference architecture for docs and marketing sites.</p>
+<p class="projects-featured-links"><strong>Links:</strong> <a href="https://github.com/funkysi1701/funkysi1701.github.io" rel="noopener noreferrer">GitHub repository</a></p>
+</article>
+</div>
+</div>
 
 ---
 
-## 💡 Side Projects & Experiments
+## 💼 Cloud & Production Systems
 
-I'm constantly experimenting with new technologies. Recent areas of exploration:
+### 🔧 Blog Platform
 
-- **.NET Aspire** - Cloud-native application development
-- **Kubernetes** - Container orchestration
-- **Elasticsearch** - Search and analytics
-- **Azure Functions** - Serverless computing
-- **DevOps Automation** - CI/CD pipelines and infrastructure as code
+[![Blog homepage: navigation and latest posts](/images/projects/blog.png)](https://www.funkysi1701.com/)
+
+**A Hugo-powered static site on Azure Static Web Apps with CI/CD, designed to ship content quickly while keeping search, feeds, and comments coherent for readers.**
+
+**What it does** — Hosts this blog with automated builds, JSON search index generation, RSS, and Giscus comments so publishing stays a git-based workflow.
+
+**Tech used** — Hugo, GitHub Actions, Azure Static Web Apps, Giscus.
+
+**Why it matters** — Separates content from delivery: static HTML at the edge, no runtime to patch for read traffic, and pipelines that enforce “build must pass before go-live,” which scales from personal blogs to org documentation patterns.
+
+**Engineering signals:** Deployed to Azure · CI/CD via GitHub Actions
+
+**Outcome:** Built the site to prove out a low-ops, high-signal publishing stack — fast TTFB, predictable deploys, and room to add features (search, analytics hooks) without re-platforming.
+
+**Links:** [Live site](https://www.funkysi1701.com/) · [GitHub repository](https://github.com/funkysi1701/funkysi1701.github.io)
+
+### 🔧 Episode Atlas
+
+[![Episode Atlas: TV episode tracking app](/images/projects/episode-atlas.png)](https://www.episodeatlas.com)
+
+**A cloud-based Blazor application for tracking TV progress across large episode catalogues, designed to handle per-user state, auth, and relational episode data on Azure.**
+
+**What it does** — Lets signed-in users maintain shows and episodes, mark “last watched,” sort lists, add titles, and jump to reference sites such as Memory Alpha for episode context.
+
+**Tech used** — .NET Blazor, Azure Static Web Apps, Azure Functions, Azure SQL, GitHub authentication.
+
+**Why it matters** — Exercises a realistic full-stack slice: hosted UI, serverless API surface, durable SQL, and identity — the same shape as many internal line-of-business apps, at a scope you can actually finish.
+
+**Engineering signals:** Deployed to Azure · Implements authentication / APIs / caching
+
+**Outcome:** Shipped a production-style app to solve a real tracking problem (large franchises, hundreds of episodes) while keeping the domain model and UX extensible for more providers and features later.
+
+**Links:** [Episode Atlas](https://www.episodeatlas.com)
+
+### 🔧 Thorne Pentecostal Church
+
+[![Thorne Pentecostal Church website homepage](/images/projects/thorne-pentecostal-church.png)](https://www.thornepentecostalchurch.co.uk)
+
+**A lightweight public site on Azure Static Web Apps for a local church, designed to communicate services and events clearly without burdening volunteers with complex tooling.**
+
+**What it does** — Presents service times, beliefs, and visitor information with a simple structure so members and newcomers get answers in one place.
+
+**Tech used** — HTML/CSS, Azure Static Web Apps.
+
+**Why it matters** — Shows pragmatism: the smallest appropriate stack for stakeholders who need reliability and low maintenance, still benefiting from HTTPS, global CDN, and the same deploy model as larger properties.
+
+**Engineering signals:** Deployed to Azure · CI/CD via GitHub Actions
+
+**Outcome:** Delivered a first web presence focused on clarity and sustainability so non-developers can keep content current with minimal process overhead.
+
+**Links:** [Thorne Pentecostal Church](https://www.thornepentecostalchurch.co.uk)
+
+---
+
+## 🤖 AI & Experimental Projects
+
+### 🔧 Semantic Search
+
+[![Semantic Search: natural-language blog search](/images/projects/semantic-search.png)](https://search.funkysi1701.com/)
+
+**A cloud-hosted .NET application for semantic-style blog search, designed to handle “I read something about…” queries using Azure data services and OpenAI alongside your existing index.**
+
+**What it does** — Runs natural-language queries over blog content so readers can discover posts by intent, not only exact keywords, complementing the [Search](/search/) page’s JSON index.
+
+**Tech used** — .NET, Azure, Cosmos DB, OpenAI.
+
+**Why it matters** — Bridges classic static-site search with modern retrieval: you keep Hugo’s simplicity while experimenting with embeddings, ranking, and API boundaries in a controlled, observable service.
+
+**Engineering signals:** Deployed to Azure · Designed with clean architecture
+
+**Outcome:** Built the service to explore how AI-assisted retrieval pairs with static content pipelines — latency budgets, data refresh, and cost — without locking the main blog into a heavyweight runtime.
+
+**Links:** [search.funkysi1701.com](https://search.funkysi1701.com/)
+
+---
+
+## 🛠 Tools & Utilities
+
+### 🔧 Mandelbrot Generator
+
+[![Mandelbrot Generator: fractal view in the browser](/images/projects/mandelbrot.png)](https://mandelbrot.funkysi1701.com)
+
+**A Blazor WebAssembly fractal explorer hosted on Azure Static Web Apps, designed to push interactive rendering entirely to the browser with no server-side compute for the set itself.**
+
+**What it does** — Renders the Mandelbrot set in the client with zoom for desktop and mobile, demonstrating CPU-bound UI work in WASM.
+
+**Tech used** — .NET Blazor WebAssembly, Azure Static Web Apps.
+
+**Why it matters** — Illustrates when to keep logic client-side: predictable cost, offline-friendly behaviour after load, and a clear boundary where Azure only serves static assets.
+
+**Engineering signals:** Deployed to Azure · Designed with clean architecture
+
+**Outcome:** Built the tool to stress-test interactive Blazor WASM performance and touch UX patterns — a small codebase that still informs decisions about heavier client-side workloads.
+
+**Links:** [Mandelbrot Generator](https://mandelbrot.funkysi1701.com)
+
+---
+
+## 💡 Ongoing exploration
+
+Areas I keep hands-on with outside these shipped projects:
+
+- **.NET Aspire** — Cloud-native composition and local dev parity
+- **Kubernetes** — Orchestration and service boundaries
+- **Elasticsearch** — Search and analytics stacks
+- **Azure Functions** — Event-driven and serverless patterns
+- **DevOps automation** — CI/CD, IaC, and release hygiene
 
 ---
 
 ## 🤝 Collaborate With Me
 
-Interested in collaborating on a project? Have an idea you'd like to discuss? 
+Interested in collaborating on a project or discussing an idea?
 
-- [Contact Me](/contact/) - Get in touch
-- [GitHub](https://github.com/funkysi1701) - Check out my code
-- [LinkedIn](https://linkedin.com/in/funkysi1701) - Connect professionally
+- [Contact Me](/contact/) — Get in touch
+- [GitHub](https://github.com/funkysi1701) — Code and experiments
+- [LinkedIn](https://linkedin.com/in/funkysi1701) — Connect professionally
 
 ---
 
-## 📚 More Resources
+## 📚 More resources
 
-- [Tools & Resources](/tools-and-resources/) - My recommended development tools
-- [About Me](/about/) - Learn more about my experience
-- [Blog Posts](/posts/) - Read my technical articles
+- [Tools & Resources](/tools-and-resources/) — Recommended development tools
+- [About Me](/about/) — Background and experience
+- [Blog Posts](/posts/) — Technical writing
