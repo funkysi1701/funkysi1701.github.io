@@ -36,11 +36,29 @@ docker run --rm -it -v .:/src -p 1313:1313 floryn90/hugo:${HUGO_VERSION} server 
 
 ## 🧪 Testing
 
-No automated tests. Manually browse the test site to verify changes.
+End-to-end tests use **[Playwright](https://playwright.dev/)** (`@playwright/test`). Specs live under `tests/`; many files reference the high-level plan in **`specs/funkysi1701-test-plan.md`** (see `specs/README.md`).
 
-## 🚢 Deployment
+```sh
+npm ci
+npx playwright install chromium
+npm test
+```
 
-- **Master branch:** master deploy to [funkysi1701.com](https://www.funkysi1701.com?utm_source=gh) via GitHub Actions.
+By default, `playwright.config.ts` uses **`BASE_URL`** of `https://www.funkysi1701.com` when unset. For local or staging targets, set the variable (PowerShell: `$env:BASE_URL="http://localhost:1313"; npm test`).
+
+**Azure DevOps** runs the full suite in **`azure-pipelines-playwright.yml`**: it sets `BASE_URL` to production for **`main`** (and **`master`** if used) and to **`https://blog-dev.funkysi1701.com`** for **`develop`**. After tests, **`scripts/generate-page-coverage.js`** can feed **Codecov** when `CODECOV_TOKEN` is configured in the pipeline.
+
+**GitHub Actions** (`.github/workflows/`) includes checks such as **meta title** (50–60 characters) and **meta description** (110–160 characters) for `content/posts/**/*.md` via `scripts/check_meta_titles.py` and `scripts/check_meta_descriptions.py`.
+
+For Hugo changes, still verify with `hugo server -D` or a production build (`hugo --minify --environment production`) as needed.
+
+## 🚢 Deployment and branches
+
+- **`main`:** Production ([funkysi1701.com](https://www.funkysi1701.com?utm_source=gh)). GitHub Actions builds Hugo and deploys **Azure Static Web Apps** (`.github/workflows/azure-static-web-apps-victorious-pebble-0b8f90e03.yml`). **Azure Pipelines** also builds the Docker image, pushes to **ECR**, and deploys with **Helm** to the Kubernetes **`main`** namespace (`azure-pipelines.yml`).
+- **`develop`:** Integration branch. Azure Pipelines builds and deploys to the **`develop`** and **`test`** namespaces (e.g. blog-dev / blog-test). **`.github/workflows/auto-pr.yml`** can open or refresh a **develop → main** pull request when `develop` is pushed.
+- **`feature/*`:** Feature branches; Azure Pipelines builds and targets the **`develop`** namespace (not `test`), per pipeline conditions.
+
+There is no separate branch named `dev`; use **`develop`** for integration work.
 
 ## 🛠 Built With
 
