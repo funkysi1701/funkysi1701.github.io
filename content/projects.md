@@ -21,9 +21,9 @@ aliases = [
 <div class="projects-featured" role="region" aria-labelledby="featured-projects-heading">
 <div class="projects-featured-grid">
 <article class="projects-featured-card">
-<a href="https://www.episodeatlas.com" rel="noopener noreferrer"><img src="/images/projects/episode-atlas.png" alt="Episode Atlas: TV episode tracking app" width="800" height="450" loading="lazy"></a>
 <h3 class="projects-featured-title"><a href="https://www.episodeatlas.com" rel="noopener noreferrer">🔧 Episode Atlas</a></h3>
-<p class="projects-featured-value">A cloud-hosted Blazor app for tracking TV progress at scale, designed to survive growing catalogues and per-user state using Azure, APIs, and a relational data model.</p>
+<p class="projects-featured-hook">Track TV progress at scale with per-user state and cloud-backed data.</p>
+<a href="https://www.episodeatlas.com" rel="noopener noreferrer"><img src="/images/projects/episode-atlas.png" alt="Episode Atlas: TV episode tracking app" width="800" height="450" loading="lazy"></a>
 <p class="projects-featured-meta"><strong>What it does:</strong> Per-user episode lists, “last watched” markers, and curated metadata links — so long-running franchises stay manageable.</p>
 <p class="projects-featured-meta"><strong>Tech used:</strong> .NET Blazor, Azure Static Web Apps, Azure Functions, Azure SQL, GitHub auth.</p>
 <div class="projects-signals" aria-label="Engineering signals"><span class="projects-signal">Deployed to Azure</span><span class="projects-signal">Implements authentication / APIs / caching</span></div>
@@ -31,9 +31,9 @@ aliases = [
 <p class="projects-featured-links"><strong>Links:</strong> <a href="https://www.episodeatlas.com" rel="noopener noreferrer">episodeatlas.com</a></p>
 </article>
 <article class="projects-featured-card">
-<a href="https://search.funkysi1701.com/" rel="noopener noreferrer"><img src="/images/projects/semantic-search.png" alt="Semantic Search: natural-language blog search" width="800" height="450" loading="lazy"></a>
 <h3 class="projects-featured-title"><a href="https://search.funkysi1701.com/" rel="noopener noreferrer">🔧 Semantic Search</a></h3>
-<p class="projects-featured-value">An AI-integrated .NET service for natural-language discovery over blog content, designed to complement keyword search when readers do not know exact phrasing.</p>
+<p class="projects-featured-hook">AI-powered natural language search for discovering content beyond keywords.</p>
+<a href="https://search.funkysi1701.com/" rel="noopener noreferrer"><img src="/images/projects/semantic-search.png" alt="Semantic Search: natural-language blog search" width="800" height="450" loading="lazy"></a>
 <p class="projects-featured-meta"><strong>What it does:</strong> Accepts conversational queries, retrieves meaningfully related posts, and surfaces them alongside the site’s JSON index search.</p>
 <p class="projects-featured-meta"><strong>Tech used:</strong> .NET, Azure, Cosmos DB, OpenAI.</p>
 <div class="projects-signals" aria-label="Engineering signals"><span class="projects-signal">Deployed to Azure</span><span class="projects-signal">Designed with clean architecture</span></div>
@@ -41,9 +41,9 @@ aliases = [
 <p class="projects-featured-links"><strong>Links:</strong> <a href="https://search.funkysi1701.com/" rel="noopener noreferrer">search.funkysi1701.com</a> · linked from <a href="/search/">Search</a></p>
 </article>
 <article class="projects-featured-card">
-<a href="https://www.funkysi1701.com/" rel="noopener noreferrer"><img src="/images/projects/blog.png" alt="Blog homepage: navigation and latest posts" width="800" height="450" loading="lazy"></a>
 <h3 class="projects-featured-title"><a href="https://www.funkysi1701.com/" rel="noopener noreferrer">🔧 Blog Platform</a></h3>
-<p class="projects-featured-value">A Hugo static site on Azure Static Web Apps with automated build and deploy, designed for fast pages, search, and comments without running a traditional app server.</p>
+<p class="projects-featured-hook">Technical blog on Azure with CI/CD—fast static pages, search, and comments without babysitting an app server.</p>
+<a href="https://www.funkysi1701.com/" rel="noopener noreferrer"><img src="/images/projects/blog.png" alt="Blog homepage: navigation and latest posts" width="800" height="450" loading="lazy"></a>
 <p class="projects-featured-meta"><strong>What it does:</strong> Publishes posts, generates RSS and a JSON search index, integrates Giscus for discussions, and deploys on every merge.</p>
 <p class="projects-featured-meta"><strong>Tech used:</strong> Hugo, GitHub Actions, Azure Static Web Apps, Giscus.</p>
 <div class="projects-signals" aria-label="Engineering signals"><span class="projects-signal">Deployed to Azure</span><span class="projects-signal">CI/CD via GitHub Actions</span></div>
@@ -59,9 +59,9 @@ aliases = [
 
 ### 🔧 Blog Platform
 
-[![Blog homepage: navigation and latest posts](/images/projects/blog.png)](https://www.funkysi1701.com/)
+*Technical blog on Azure with CI/CD—fast static pages, search, and comments without babysitting an app server.*
 
-**A Hugo-powered static site on Azure Static Web Apps with CI/CD, designed to ship content quickly while keeping search, feeds, and comments coherent for readers.**
+[![Blog homepage: navigation and latest posts](/images/projects/blog.png)](https://www.funkysi1701.com/)
 
 **What it does** — Hosts this blog with automated builds, JSON search index generation, RSS, and Giscus comments so publishing stays a git-based workflow.
 
@@ -77,9 +77,9 @@ aliases = [
 
 ### 🔧 Episode Atlas
 
-[![Episode Atlas: TV episode tracking app](/images/projects/episode-atlas.png)](https://www.episodeatlas.com)
+*Track TV progress at scale with per-user state and cloud-backed data.*
 
-**A cloud-based Blazor application for tracking TV progress across large episode catalogues, designed to handle per-user state, auth, and relational episode data on Azure.**
+[![Episode Atlas: TV episode tracking app](/images/projects/episode-atlas.png)](https://www.episodeatlas.com)
 
 **What it does** — Lets signed-in users maintain shows and episodes, mark “last watched,” sort lists, add titles, and jump to reference sites such as Memory Alpha for episode context.
 
@@ -95,9 +95,9 @@ aliases = [
 
 ### 🔧 Thorne Pentecostal Church
 
-[![Thorne Pentecostal Church website homepage](/images/projects/thorne-pentecostal-church.png)](https://www.thornepentecostalchurch.co.uk)
+*Dependable church presence online—clear for newcomers, simple for volunteers to keep current.*
 
-**A lightweight public site on Azure Static Web Apps for a local church, designed to communicate services and events clearly without burdening volunteers with complex tooling.**
+[![Thorne Pentecostal Church website homepage](/images/projects/thorne-pentecostal-church.png)](https://www.thornepentecostalchurch.co.uk)
 
 **What it does** — Presents service times, beliefs, and visitor information with a simple structure so members and newcomers get answers in one place.
 
@@ -117,9 +117,9 @@ aliases = [
 
 ### 🔧 Semantic Search
 
-[![Semantic Search: natural-language blog search](/images/projects/semantic-search.png)](https://search.funkysi1701.com/)
+*AI-powered natural language search for discovering content beyond keywords.*
 
-**A cloud-hosted .NET application for semantic-style blog search, designed to handle “I read something about…” queries using Azure data services and OpenAI alongside your existing index.**
+[![Semantic Search: natural-language blog search](/images/projects/semantic-search.png)](https://search.funkysi1701.com/)
 
 **What it does** — Runs natural-language queries over blog content so readers can discover posts by intent, not only exact keywords, complementing the [Search](/search/) page’s JSON index.
 
@@ -139,9 +139,9 @@ aliases = [
 
 ### 🔧 Mandelbrot Generator
 
-[![Mandelbrot Generator: fractal view in the browser](/images/projects/mandelbrot.png)](https://mandelbrot.funkysi1701.com)
+*Interactive Mandelbrot exploration in the browser—smooth zoom, pure WASM, zero server-side rendering cost.*
 
-**A Blazor WebAssembly fractal explorer hosted on Azure Static Web Apps, designed to push interactive rendering entirely to the browser with no server-side compute for the set itself.**
+[![Mandelbrot Generator: fractal view in the browser](/images/projects/mandelbrot.png)](https://mandelbrot.funkysi1701.com)
 
 **What it does** — Renders the Mandelbrot set in the client with zoom for desktop and mobile, demonstrating CPU-bound UI work in WASM.
 
