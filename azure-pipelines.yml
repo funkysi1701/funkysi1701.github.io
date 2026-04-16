@@ -13,8 +13,11 @@ variables:
 name: $(Build.Number.Major).$(Build.Number.Minor).$(Build.Number.Sub).$(Rev:r)
 
 trigger:
-  - develop
-  - main
+  batch: true
+  branches:
+    include:
+      - develop
+      - main
 
 # Nightly accessibility: full sitemap, axe + htmlcs (no image rebuild or Helm deploy).
 schedules:
