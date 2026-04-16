@@ -51,7 +51,15 @@
 {{- $authorName := .Params.author | default $.Site.Params.author.name -}}
 {{- $author := dict "@type" "Person" "name" $authorName "url" (absURL "about") -}}
 {{- $publisher := dict "@type" "Person" "name" $.Site.Params.author.name "url" .Site.BaseURL -}}
-{{- $article := dict "@context" "https://schema.org" "@type" "BlogPosting" "@id" (printf "%s#article" .Permalink) "headline" .Title "description" $desc "url" .Permalink "datePublished" ($published.Format $iso8601) "dateModified" ($modified.Format $iso8601) "image" $image "author" $author "publisher" $publisher "wordCount" .WordCount -}}
+{{- $mainEntityOfPage := dict "@type" "WebPage" "@id" .Permalink -}}
+{{- $article := dict "@context" "https://schema.org" "@type" "BlogPosting" "@id" (printf "%s#article" .Permalink) "headline" .Title "description" $desc "url" .Permalink "datePublished" ($published.Format $iso8601) "dateModified" ($modified.Format $iso8601) "image" $image "author" $author "publisher" $publisher "wordCount" .WordCount "mainEntityOfPage" $mainEntityOfPage -}}
+{{- $sectionTitles := slice -}}
+{{- range .GetTerms "categories" -}}
+  {{- $sectionTitles = $sectionTitles | append .Title -}}
+{{- end -}}
+{{- if gt (len $sectionTitles) 0 -}}
+  {{- $article = merge $article (dict "articleSection" (delimit $sectionTitles ", ")) -}}
+{{- end -}}
 {{- $articleJSON := $article | jsonify -}}
 <script type="application/ld+json">{{- $articleJSON | safeJS -}}</script>
 {{- end -}}
