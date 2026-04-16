@@ -1,0 +1,39 @@
+{{/* Override: themes/hugo-theme-bootstrap/layouts/partials/head/title.html — home .Title can be empty without content/_index.md; use Site.Title. */}}
+{{- $title := .Title -}}
+{{- if and .IsHome (eq $title "") -}}
+  {{- $title = .Site.Title -}}
+{{- end -}}
+{{- $pageNumber := "" -}}
+{{- $paginator := false -}}
+{{- if .IsHome -}}
+  {{- $sections := default (slice "posts") .Site.Params.mainSections -}}
+  {{- $allPosts := where .Site.RegularPages "Type" "in" $sections -}}
+  {{- $pinnedPosts := slice -}}
+  {{- if (default true $.Site.Params.pinnedPost) -}}
+  {{- $pinnedPosts = first (default 1 $.Site.Params.pinnedPostCount) (where $allPosts ".Params.pinned" true) -}}
+  {{- range $pinnedPosts -}}
+    {{- with .File.UniqueID -}}
+      {{- $.Scratch.Add "pinnedPosts" (slice .) -}}
+    {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $paginator = .Paginate (union $pinnedPosts $allPosts) -}}
+{{- else if eq .Kind "taxonomy" -}}
+  {{- $paginator = .Paginate .Pages (default 10 $.Site.Params.taxonomyPaginate) -}}
+{{- else if eq .Kind "section" -}}
+  {{- $paginator = .Paginate .RegularPagesRecursive -}}
+{{- end -}}
+{{- if $paginator -}}
+  {{- if gt $paginator.PageNumber 1 -}}
+    {{- $title = printf "%s %s" $title (i18n "pagination_title" $paginator) -}}
+  {{- end -}}
+{{- end  -}}
+{{- $titles := slice $title -}}
+{{- if eq .Kind "term" -}}
+  {{- $titles = $titles | append (i18n .Data.Plural)  -}}
+{{- end -}}
+{{- if not .IsHome -}}
+  {{- $titles = $titles | append .Site.Title -}}
+{{- end -}}
+{{- $separator := printf " %s " (default "-" .Site.Params.titleSeparator) -}}
+{{- delimit $titles $separator -}}
