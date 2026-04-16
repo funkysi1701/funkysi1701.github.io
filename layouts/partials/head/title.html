@@ -1,5 +1,16 @@
-{{/* Override: themes/hugo-theme-bootstrap/layouts/partials/head/title.html — home .Title can be empty without content/_index.md; use Site.Title. */}}
+{{/* Override: themes/hugo-theme-bootstrap/layouts/partials/head/title.html — home .Title can be empty without content/_index.md; use Site.Title. When params.homeHero.headline is set, align <title> with the visible home H1 plus site name (same separator as elsewhere). */}}
 {{- $title := .Title -}}
+{{- $titleSep := printf " %s " (default "-" $.Site.Params.titleSeparator) -}}
+{{- if .IsHome -}}
+  {{- with $.Site.Params.homeHero -}}
+    {{- with .headline -}}
+      {{- $hl := strings.TrimSpace . -}}
+      {{- if ne $hl "" -}}
+        {{- $title = delimit (slice $hl $.Site.Title) $titleSep -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 {{- if and .IsHome (eq $title "") -}}
   {{- $title = .Site.Title -}}
 {{- end -}}
