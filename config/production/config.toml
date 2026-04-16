@@ -6,3 +6,9 @@ title = "Funky Si's Blog"
   googleAdsense = ""
   enableGatekeeper = false
 
+# Home page only (see layouts/partials/head/site-verification.html). Paste values from each tool’s “HTML tag” verification flow.
+# Google Search Console: https://search.google.com/search-console — meta google-site-verification content
+# Bing Webmaster: https://www.bing.com/webmasters — meta msvalidate.01 content
+[params.siteVerification]
+  google = ""
+  bing = ""
