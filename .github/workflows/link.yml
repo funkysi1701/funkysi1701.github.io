@@ -1,7 +1,6 @@
 name: Broken link check
 permissions:
   contents: read
-  issues: write
 
 on:
   schedule:
