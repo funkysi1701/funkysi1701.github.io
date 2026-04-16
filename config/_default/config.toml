@@ -1,4 +1,5 @@
 languageCode = 'en-gb'
+title = "Funky Si's Blog"
 theme = 'hugo-theme-bootstrap'
 enableRobotsTXT = true
 
@@ -18,18 +19,22 @@ enableRobotsTXT = true
   ]
 
 [params]
-  description = "Simon Foster - North of England-based Software Developer | .NET developer | Azure & DevOps specialist | 18+ years building scalable solutions"
+  description = "Senior .NET & Azure Engineer specialising in scalable cloud systems, DevOps, and modern architecture. 18+ years delivering production systems across development, infrastructure, and cloud."
   keywords = ".NET, C#, Azure, DevOps, Software Development, Cloud Architecture, CI/CD, Kubernetes, Docker"
   images = ["/images/1922276.jpg"]
   themeColor = "theme-base-0d"
   logo = false
   comment = true
 
+[params.homeHero]
+  headline = "Senior .NET & Azure Engineer"
+  subheading = "18+ years' experience delivering production systems across development, infrastructure, and cloud"
+
 [params.author]
   name = "Simon Foster"
   location = "North England"
   about = "/about"
-  bio = "I am Simon Foster (aka funkysi1701) a developer sharing 18+ years of experience in .NET, Azure, and DevOps. I write about cloud architecture, CI/CD pipelines, and building scalable applications."
+  bio = "18+ years' experience delivering production systems across development, infrastructure, and cloud."
   email = "funkysi1701@gmail.com"
   avatar = "/images/1922276.jpg"
 
