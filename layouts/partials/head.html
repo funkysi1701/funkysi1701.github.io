@@ -1,16 +1,24 @@
 {{- partial "head/favicons" . -}}
 {{- $keywords := "" -}}
 {{- if .IsPage -}}
-  {{- $pageKeywords := trim (delimit .Keywords ", ") ", " -}}
-  {{- if $pageKeywords -}}
-    {{- $keywords = $pageKeywords -}}
+  {{- $filtered := slice -}}
+  {{- range .Keywords -}}
+    {{- $t := strings.TrimSpace . -}}
+    {{- if ne $t "" -}}
+      {{- $filtered = $filtered | append $t -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if $filtered -}}
+    {{- $keywords = delimit $filtered ", " -}}
   {{- else -}}
-    {{- $keywords = $.Site.Params.keywords -}}
+    {{- $keywords = $.Site.Params.keywords | default "" -}}
   {{- end -}}
 {{- else -}}
-  {{- $keywords = $.Site.Params.keywords -}}
+  {{- $keywords = $.Site.Params.keywords | default "" -}}
 {{- end -}}
-<meta name="keywords" content="{{ $keywords }}" />
+{{- with $keywords -}}
+<meta name="keywords" content="{{ . }}" />
+{{- end -}}
 <meta name="description" content="{{ if .IsPage }}{{ if .Description }}{{ .Description | plainify | htmlUnescape }}{{ else }}{{ .Summary | plainify | htmlUnescape }}{{ end }}{{ else }}{{ .Title }} - {{ $.Site.Params.description }}{{ end }}" />
 <meta name="fediverse:creator" content="@funkysi1701@hachyderm.io">
 {{ template "_internal/opengraph.html" . }}
