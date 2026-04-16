@@ -1,5 +1,8 @@
 +++
 title = "Projects"
+date = "2026-04-15T12:00:00Z"
+year = "2026"
+month = "2026-04"
 author = "funkysi1701"
 authorTwitter = "funkysi1701"
 cover = "/images/projects/episode-atlas.png"
@@ -10,6 +13,7 @@ showFullContent = false
 copyright = false
 readingTime = true
 comment = false
+pinned = true
 aliases = [
     "/projects"
 ]
