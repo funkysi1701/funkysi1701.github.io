@@ -2,7 +2,8 @@
 title = "Projects"
 author = "funkysi1701"
 authorTwitter = "funkysi1701"
-cover = ""
+cover = "/images/projects/episode-atlas.png"
+images = ["/images/projects/episode-atlas.png"]
 keywords = ["projects", "portfolio", "open source", "apps", "Azure", ".NET", "Blazor"]
 description = "Featured work and grouped portfolio: cloud systems, AI-backed apps, and tools — with engineering signals and outcomes."
 showFullContent = false
