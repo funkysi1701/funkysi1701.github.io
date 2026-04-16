@@ -12,7 +12,7 @@ These rules apply to all edits in this repo. Prefer matching existing patterns (
 
 ## Security and configuration
 
-- **Never** commit `.env` (except documented examples if the repo ever adds one), API keys, or deployment tokens. The Azure Static Web Apps deploy token is **only** for GitHub Actions secrets—do not embed it in the repo.
+- This repo intentionally tracks `.env` for non-secret shared configuration such as `HUGO_VERSION`. **Do not** put secrets in `.env` or commit API keys, credentials, or deployment tokens. The Azure Static Web Apps deploy token is **only** for GitHub Actions secrets—do not embed it in the repo.
 - **Giscus** and similar integrations use public repo identifiers in config; still avoid pasting private tokens or unrelated secrets into `config/` or front matter.
 
 ## Frontend, assets, and local development
