@@ -83,12 +83,6 @@ The featured trio — **Episode Atlas**, **this blog** (Hugo on Azure), and **Se
 
 ---
 
-## 🤖 AI & Experimental Projects
-
-**Semantic Search** — details in **[Featured Projects](#featured-projects-heading)** above; it complements the [Search](/search/) JSON index for intent-style queries.
-
----
-
 ## 🛠 Tools & Utilities
 
 ### 🔧 Mandelbrot Generator
