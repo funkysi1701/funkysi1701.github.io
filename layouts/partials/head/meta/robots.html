@@ -1,0 +1,10 @@
+{{- $content := default $.Site.Params.metaRobots .Params.metaRobots -}}
+{{- if and (not (isset .Params "metaRobots")) .IsHome .Paginator (gt .Paginator.PageNumber 1) -}}
+  {{- $hr := strings.TrimSpace (default "" $.Site.Params.homePaginationMetaRobots) -}}
+  {{- if ne $hr "" -}}
+    {{- $content = $hr -}}
+  {{- end -}}
+{{- end -}}
+{{- if and (not (and (isset .Params "metarobots") (not .Params.metaRobots))) $content -}}
+<meta name="robots" content="{{ $content }}" />
+{{- end -}}
