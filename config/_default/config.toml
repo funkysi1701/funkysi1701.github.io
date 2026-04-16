@@ -63,8 +63,12 @@ enableRobotsTXT = true
   year = "/:year/"
   month = "/:year/:month/"  
 
+# Goldmark raw HTML in Markdown (unsafe = true):
+# - This repo is single-author; only merge content you trust. Untrusted HTML in .md would render as live DOM.
+# - Many existing posts use raw HTML (iframes, embeds, markup examples). Setting unsafe = false would strip or break those until converted to shortcodes or fenced code.
+# - To harden later: unsafe = false, then fix pages with Hugo shortcodes or pure Markdown.
 [markup.goldmark.renderer]
-  unsafe= true  
+  unsafe = true
 
 [server]
 [[server.headers]]

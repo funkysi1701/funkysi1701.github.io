@@ -13,6 +13,7 @@ variables:
     value: $(Build.BuildNumber)
 
 trigger:
+  batch: true
   branches:
     include:
       - main
