@@ -13,7 +13,6 @@
 <meta name="keywords" content="{{ $keywords }}" />
 <meta name="description" content="{{ if .IsPage }}{{ if .Description }}{{ .Description | plainify | htmlUnescape }}{{ else }}{{ .Summary | plainify | htmlUnescape }}{{ end }}{{ else }}{{ .Title }} - {{ $.Site.Params.description }}{{ end }}" />
 <meta name="fediverse:creator" content="@funkysi1701@hachyderm.io">
-{{- template "_internal/schema.html" . -}}
 {{ template "_internal/opengraph.html" . }}
 {{- template "_internal/twitter_cards.html" . -}}
 {{- partial "head/meta" . -}}
@@ -32,12 +31,19 @@
 {{- else if .IsPage -}}
 {{- $desc := .Summary | plainify | htmlUnescape -}}
 {{- with .Description -}}{{- $desc = . | plainify | htmlUnescape -}}{{- end -}}
+{{- $iso8601 := "2006-01-02T15:04:05Z07:00" -}}
+{{- $published := or .PublishDate .Date -}}
+{{- $modified := or .Lastmod .Date -}}
 {{- $image := absURL "/images/1922276.jpg" -}}
-{{- with .Params.cover -}}{{- $image = absURL . -}}{{- end -}}
+{{- with .Params.cover -}}
+  {{- $image = absURL . -}}
+{{- else with .Params.images -}}
+  {{- $image = absURL (index . 0) -}}
+{{- end -}}
 {{- $authorName := .Params.author | default $.Site.Params.author.name -}}
 {{- $author := dict "@type" "Person" "name" $authorName "url" (absURL "about") -}}
 {{- $publisher := dict "@type" "Person" "name" $.Site.Params.author.name "url" .Site.BaseURL -}}
-{{- $article := dict "@context" "https://schema.org" "@type" "BlogPosting" "@id" (printf "%s#article" .Permalink) "headline" .Title "description" $desc "url" .Permalink "datePublished" (.Date.Format "2006-01-02T15:04:05-07:00") "dateModified" (.Lastmod.Format "2006-01-02T15:04:05-07:00") "image" $image "author" $author "publisher" $publisher -}}
+{{- $article := dict "@context" "https://schema.org" "@type" "BlogPosting" "@id" (printf "%s#article" .Permalink) "headline" .Title "description" $desc "url" .Permalink "datePublished" ($published.Format $iso8601) "dateModified" ($modified.Format $iso8601) "image" $image "author" $author "publisher" $publisher "wordCount" .WordCount -}}
 {{- $articleJSON := $article | jsonify -}}
 <script type="application/ld+json">{{- $articleJSON | safeJS -}}</script>
 {{- end -}}
