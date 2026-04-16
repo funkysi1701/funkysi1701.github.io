@@ -4,11 +4,15 @@
     {{- partial "sections" . -}}
   {{- end -}}
   {{- partial "hooks/list-begin" . -}}
-  {{- if and .IsHome $.Site.Params.homeHero -}}
+  {{- if .IsHome -}}
+    {{- with $.Site.Params.homeHero -}}
   <header class="home-hero mb-4 pb-3 border-bottom">
-    <h1 class="display-6 fw-bold lh-sm">{{ $.Site.Params.homeHero.headline }}</h1>
-    <p class="lead text-body-secondary mb-0">{{ $.Site.Params.homeHero.subheading }}</p>
+    <h1 class="display-6 fw-bold lh-sm">{{ default "" .headline }}</h1>
+    {{- with .subheading -}}
+    <p class="lead text-body-secondary mb-0">{{ . }}</p>
+    {{- end -}}
   </header>
+    {{- end -}}
   {{- end -}}
   <div class="posts mb-4">
   {{- range .Paginator.Pages -}}
