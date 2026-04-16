@@ -1,3 +1,8 @@
+---
+description: funkysi1701.com Hugo blog — repo conventions for all edits
+alwaysApply: true
+---
+
 # funkysi1701.com (Hugo blog) — Cursor rules (repository)
 
 These rules apply to all edits in this repo. Prefer matching existing patterns (Hugo TOML front matter in `+++` fences, site overrides under root `layouts/` and `static/`, and the conventions already used in `content/`).
