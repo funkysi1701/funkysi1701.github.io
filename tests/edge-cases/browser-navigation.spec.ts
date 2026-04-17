@@ -10,20 +10,22 @@ test.describe('Edge Cases and Error Handling', () => {
       await page.goto('/');
     });
 
+    const mainNav = page.locator('nav.navbar');
+
     await test.step('Click on About page', async () => {
       // 2. Click on About page
-      await page.getByRole('link', { name: 'About' }).first().click();
+      await mainNav.getByRole('link', { name: 'About', exact: true }).click();
     });
 
     await test.step('Click on Projects page', async () => {
       // 3. Click on Projects page
-      await page.getByRole('link', { name: 'Projects', exact: true }).click();
+      await mainNav.getByRole('link', { name: 'Projects', exact: true }).click();
       await expect(page).toHaveURL(/\/projects\//);
     });
 
     await test.step('Click browser back button', async () => {
       // 4. Click browser back button
-      await page.goBack();
+      await page.goBack({ waitUntil: 'load' });
     });
 
     await test.step('Verify About page loads correctly', async () => {
@@ -34,7 +36,7 @@ test.describe('Edge Cases and Error Handling', () => {
 
     await test.step('Click browser forward button', async () => {
       // 6. Click browser forward button
-      await page.goForward();
+      await page.goForward({ waitUntil: 'load' });
     });
 
     await test.step('Verify Projects page loads correctly', async () => {
@@ -44,16 +46,16 @@ test.describe('Edge Cases and Error Handling', () => {
     });
 
     await test.step('Navigate to a blog post', async () => {
-      // 8. Navigate to a blog post
-      await page.goto('/posts/2026/ndc-london-2026/');
+      // 8. Navigate to a blog post (first post on /posts/ so any BASE_URL / deploy branch works)
+      await page.goto('/posts/');
+      await page.locator('article.post .post-title a').first().click();
+      await expect(page).toHaveURL(/\/posts\//);
     });
 
     await test.step('Use back button multiple times', async () => {
       // 9. Use back button multiple times
-      await page.goBack();
-      await page.waitForTimeout(300);
-      await page.goBack();
-      await page.waitForTimeout(300);
+      await page.goBack({ waitUntil: 'load' });
+      await page.goBack({ waitUntil: 'load' });
     });
 
     await test.step('Verify navigation history works correctly', async () => {
