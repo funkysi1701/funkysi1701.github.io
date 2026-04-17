@@ -11,7 +11,7 @@ test.describe('Social Media and External Links', () => {
 
     await test.step('Navigate to https://www.funkysi1701.com/projects/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/projects/
-      await page.goto('/projects/');
+      await page.goto('/projects/', { waitUntil: 'load' });
     });
 
     await test.step('Find Episode Atlas project link', async () => {
@@ -31,8 +31,10 @@ test.describe('Social Media and External Links', () => {
     });
 
     await test.step('Check GitHub repository links', async () => {
-      // 5. Check GitHub repository links
+      // 5. Check GitHub repository links (reload projects — Episode Atlas step may have navigated the tab if a popup was blocked)
+      await page.goto('/projects/', { waitUntil: 'load' });
       githubLinks = page.locator('a[href*="github.com"]');
+      await expect(githubLinks.first()).toBeVisible({ timeout: 30000 });
       githubCount = await githubLinks.count();
       expect(githubCount).toBeGreaterThan(0);
     });
