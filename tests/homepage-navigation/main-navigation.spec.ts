@@ -4,26 +4,30 @@
 import { test, expect } from '../fixtures';
 
 test.describe('Homepage and Navigation', () => {
-  test('Main navigation menu functionality', async ({ page, context }) => {
+  test('Main navigation menu functionality', async ({ page }) => {
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 1. Navigate to https://www.funkysi1701.com
       await page.goto('/');
     });
 
+    // Scope to the top app bar so in-page links (e.g. body copy, sidebar) cannot
+    // collide with the same accessible names (Playwright strict mode).
+    const mainNav = page.locator('nav.navbar');
+
     await test.step('Verify all navigation items are visible', async () => {
       // 2. Verify all navigation items are visible
-      await expect(page.getByRole('link', { name: 'About' }).first()).toBeVisible();
-      await expect(page.getByRole('link', { name: 'Projects', exact: true }).first()).toBeVisible();
-      await expect(page.getByRole('link', { name: /Tools.*Resources/i }).first()).toBeVisible();
-      await expect(page.getByRole('link', { name: 'Newsletter' }).first()).toBeVisible();
-      await expect(page.getByRole('link', { name: 'Contact' }).first()).toBeVisible();
-      await expect(page.getByRole('link', { name: 'Events' }).first()).toBeVisible();
-      await expect(page.getByRole('link', { name: 'Search', exact: true }).first()).toBeVisible();
+      await expect(mainNav.getByRole('link', { name: 'About' })).toBeVisible();
+      await expect(mainNav.getByRole('link', { name: 'Projects', exact: true })).toBeVisible();
+      await expect(mainNav.getByRole('link', { name: /Tools.*Resources/i })).toBeVisible();
+      await expect(mainNav.getByRole('link', { name: 'Newsletter' })).toBeVisible();
+      await expect(mainNav.getByRole('link', { name: 'Contact' })).toBeVisible();
+      await expect(mainNav.getByRole('link', { name: 'Events' })).toBeVisible();
+      await expect(mainNav.getByRole('link', { name: 'Search', exact: true })).toBeVisible();
     });
 
     await test.step('Navigate to About page and verify it loads', async () => {
       // 3. Click on About link
-      await page.getByRole('link', { name: 'About', exact: true }).first().click();
+      await mainNav.getByRole('link', { name: 'About', exact: true }).click();
       // 4. Verify About page loads correctly
       await expect(page).toHaveURL(/\/about\//);
       await expect(page.locator('nav').first()).toBeVisible();
@@ -31,42 +35,42 @@ test.describe('Homepage and Navigation', () => {
 
     await test.step('Navigate to Projects page and verify it loads', async () => {
       // Click on Projects link
-      await page.getByRole('link', { name: 'Projects', exact: true }).click();
+      await mainNav.getByRole('link', { name: 'Projects', exact: true }).click();
       await expect(page).toHaveURL(/\/projects\//);
       await expect(page.locator('nav').first()).toBeVisible();
     });
 
     await test.step('Navigate to Tools & Resources page and verify it loads', async () => {
       // Click on Tools & Resources link
-      await page.getByRole('link', { name: /Tools.*Resources/i }).first().click();
+      await mainNav.getByRole('link', { name: /Tools.*Resources/i }).click();
       await expect(page).toHaveURL(/\/tools-and-resources\//);
       await expect(page.locator('nav').first()).toBeVisible();
     });
 
     await test.step('Navigate to Newsletter page and verify it loads', async () => {
       // Click on Newsletter link
-      await page.getByRole('link', { name: 'Newsletter' }).first().click();
+      await mainNav.getByRole('link', { name: 'Newsletter' }).click();
       await expect(page).toHaveURL(/\/newsletter\//);
       await expect(page.locator('nav').first()).toBeVisible();
     });
 
     await test.step('Navigate to Contact page and verify it loads', async () => {
       // Click on Contact link
-      await page.getByRole('link', { name: 'Contact' }).first().click();
+      await mainNav.getByRole('link', { name: 'Contact' }).click();
       await expect(page).toHaveURL(/\/contact\//);
       await expect(page.locator('nav').first()).toBeVisible();
     });
 
     await test.step('Navigate to Events page and verify it loads', async () => {
       // Click on Events link
-      await page.getByRole('link', { name: 'Events' }).first().click();
+      await mainNav.getByRole('link', { name: 'Events' }).click();
       await expect(page).toHaveURL(/\/posts\/events\//);
       await expect(page.locator('nav').first()).toBeVisible();
     });
 
     await test.step('Navigate to Search page and verify it loads', async () => {
       // Click on Search link
-      await page.getByRole('link', { name: 'Search' }).first().click();
+      await mainNav.getByRole('link', { name: 'Search', exact: true }).click();
       await expect(page).toHaveURL(/\/search\//);
       await expect(page.locator('nav').first()).toBeVisible();
     });
