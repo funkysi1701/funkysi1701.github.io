@@ -11,7 +11,7 @@ async function clickVisibleMainNavLink(
   opts: { name: string | RegExp; exact?: boolean },
 ) {
   const link = mainNav.getByRole('link', opts);
-  const toggler = page.locator('nav.navbar').getByRole('button', { name: 'Toggle navigation' });
+  const toggler = mainNav.getByRole('button', { name: 'Toggle navigation' });
   if (!(await link.isVisible())) {
     await toggler.click();
   }
@@ -31,7 +31,6 @@ test.describe('Homepage and Navigation', () => {
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 2. Navigate to https://www.funkysi1701.com
       await page.goto('/');
-      await page.waitForLoadState('load');
     });
 
     const mainNav = page.locator('nav.navbar');
