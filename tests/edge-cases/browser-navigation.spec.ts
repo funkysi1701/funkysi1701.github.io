@@ -24,8 +24,8 @@ test.describe('Edge Cases and Error Handling', () => {
     });
 
     await test.step('Click browser back button', async () => {
-      // 4. Click browser back button
-      await page.goBack({ waitUntil: 'load' });
+      // 4. Click browser back button — use 'commit' so Chromium does not wait for 'load' (avoids net::ERR_ABORTED / bfcache)
+      await page.goBack({ waitUntil: 'commit' });
     });
 
     await test.step('Verify About page loads correctly', async () => {
@@ -36,7 +36,7 @@ test.describe('Edge Cases and Error Handling', () => {
 
     await test.step('Click browser forward button', async () => {
       // 6. Click browser forward button
-      await page.goForward({ waitUntil: 'load' });
+      await page.goForward({ waitUntil: 'commit' });
     });
 
     await test.step('Verify Projects page loads correctly', async () => {
@@ -54,8 +54,8 @@ test.describe('Edge Cases and Error Handling', () => {
 
     await test.step('Use back button multiple times', async () => {
       // 9. Use back button multiple times
-      await page.goBack({ waitUntil: 'load' });
-      await page.goBack({ waitUntil: 'load' });
+      await page.goBack({ waitUntil: 'commit' });
+      await page.goBack({ waitUntil: 'commit' });
     });
 
     await test.step('Verify navigation history works correctly', async () => {

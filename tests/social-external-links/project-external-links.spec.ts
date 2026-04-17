@@ -19,14 +19,12 @@ test.describe('Social Media and External Links', () => {
       const episodeAtlasLink = page.locator('a[href*="episodeatlas.com"]').first();
 
       if (await episodeAtlasLink.count() > 0) {
-        // 3. Click on episodeatlas.com link
-        const pagePromise = context.waitForEvent('page');
-        await episodeAtlasLink.click();
+        // 3–4. Open link and new tab — register listener before click to avoid races
+        const [newPage] = await Promise.all([
+          context.waitForEvent('page'),
+          episodeAtlasLink.click(),
+        ]);
 
-        // 4. Verify it opens in new tab
-        const newPage = await pagePromise;
-
-        // Verify episodeatlas.com loads
         await expect(newPage).toHaveURL(/episodeatlas\.com/);
         await newPage.close();
       }
