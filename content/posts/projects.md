@@ -1,5 +1,5 @@
 +++
-title = "Projects"
+title = "Portfolio: Live Azure Workloads, AI Search, and Dev Tools"
 date = "2026-04-15T12:00:00Z"
 year = "2026"
 month = "2026-04"
