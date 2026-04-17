@@ -4,14 +4,17 @@
 import { test, expect } from '../fixtures';
 import type { Locator, Page } from '@playwright/test';
 
-/** On narrow viewports, toggle the navbar if the target menu link is not visible yet. */
+/** Main menu links live under #navbarSupportedContent (scope here, not the whole nav). */
 async function clickVisibleMainNavLink(
   page: Page,
-  mainNav: Locator,
   opts: { name: string | RegExp; exact?: boolean },
 ) {
-  const link = mainNav.getByRole('link', opts);
-  const toggler = mainNav.getByRole('button', { name: 'Toggle navigation' });
+  const navMenu = page.locator('#navbarSupportedContent');
+  const link = navMenu.getByRole('link', opts);
+  const toggler = page.locator('nav.navbar').getByRole('button', { name: 'Toggle navigation' });
+  if (!(await link.isVisible())) {
+    await toggler.click();
+  }
   if (!(await link.isVisible())) {
     await toggler.click();
   }
@@ -31,9 +34,10 @@ test.describe('Homepage and Navigation', () => {
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 2. Navigate to https://www.funkysi1701.com
       await page.goto('/');
+      await page.waitForLoadState('load');
     });
 
-    const mainNav = page.locator('nav.navbar');
+    const navMenu = page.locator('#navbarSupportedContent');
 
     await test.step('Check if navigation menu collapses to hamburger menu', async () => {
       // 3. Check if navigation menu collapses to hamburger menu (scope to main header — avoid duplicate controls)
@@ -43,7 +47,7 @@ test.describe('Homepage and Navigation', () => {
     await test.step('Click hamburger menu to expand', async () => {
       // 4. Click hamburger menu to expand (do not assert aria-expanded — some pages update visibility without a reliable attribute)
       await expect(hamburger).toBeVisible();
-      const aboutLink = mainNav.getByRole('link', { name: 'About', exact: true });
+      const aboutLink = navMenu.getByRole('link', { name: 'About', exact: true });
       if (!(await aboutLink.isVisible())) {
         await hamburger.click();
       }
@@ -52,22 +56,22 @@ test.describe('Homepage and Navigation', () => {
 
     await test.step('Verify all navigation items are accessible', async () => {
       // 5. Verify all navigation items are accessible
-      await expect(mainNav.getByRole('link', { name: 'About', exact: true })).toBeVisible();
-      await expect(mainNav.getByRole('link', { name: 'Projects', exact: true })).toBeVisible();
-      await expect(mainNav.getByRole('link', { name: 'Contact' })).toBeVisible();
+      await expect(navMenu.getByRole('link', { name: 'About', exact: true })).toBeVisible();
+      await expect(navMenu.getByRole('link', { name: 'Projects', exact: true })).toBeVisible();
+      await expect(navMenu.getByRole('link', { name: 'Contact', exact: true })).toBeVisible();
     });
 
     await test.step('Test navigation on About page', async () => {
       // 6. Test navigation on About, Projects, and Contact (open menu only when links are hidden)
-      await clickVisibleMainNavLink(page, mainNav, { name: 'About', exact: true });
+      await clickVisibleMainNavLink(page, { name: 'About', exact: true });
       await expect(page).toHaveURL(/\/about\//);
       await page.waitForLoadState('load');
 
-      await clickVisibleMainNavLink(page, mainNav, { name: 'Projects', exact: true });
+      await clickVisibleMainNavLink(page, { name: 'Projects', exact: true });
       await expect(page).toHaveURL(/\/projects\//);
       await page.waitForLoadState('load');
 
-      await clickVisibleMainNavLink(page, mainNav, { name: 'Contact' });
+      await clickVisibleMainNavLink(page, { name: 'Contact', exact: true });
       await expect(page).toHaveURL(/\/contact\//);
     });
 
