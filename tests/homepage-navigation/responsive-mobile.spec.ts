@@ -14,11 +14,9 @@ async function clickVisibleMainNavLink(
   const toggler = page.locator('nav.navbar').getByRole('button', { name: 'Toggle navigation' });
   if (!(await link.isVisible())) {
     await toggler.click();
+    // Wait for the collapse animation to complete before asserting visibility
+    await expect(link).toBeVisible({ timeout: 15000 });
   }
-  if (!(await link.isVisible())) {
-    await toggler.click();
-  }
-  await expect(link).toBeVisible({ timeout: 15000 });
   await link.click();
 }
 

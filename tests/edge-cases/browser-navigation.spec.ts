@@ -4,11 +4,22 @@
 import { test, expect } from '../fixtures';
 import type { Page } from '@playwright/test';
 
+/** Returns true if the error is a known transient navigation abort (e.g. Chromium net::ERR_ABORTED / bfcache). */
+function isTransientNavigationError(err: unknown): boolean {
+  const message = err instanceof Error ? err.message : String(err);
+  return (
+    message.includes('net::ERR_ABORTED') ||
+    message.includes('Navigation was aborted') ||
+    message.includes('net::ERR_CACHE_MISS')
+  );
+}
+
 /** Prefer history navigation; fall back to direct URL if Chromium aborts the navigation (common under parallel load). */
 async function goBackOrTo(page: Page, urlRegex: RegExp, fallbackPath: string) {
   try {
     await page.goBack({ waitUntil: 'domcontentloaded', timeout: 20000 });
-  } catch {
+  } catch (err) {
+    if (!isTransientNavigationError(err)) throw err;
     // net::ERR_ABORTED / bfcache — ignore; assert + fallback below
   }
   try {
@@ -22,8 +33,9 @@ async function goBackOrTo(page: Page, urlRegex: RegExp, fallbackPath: string) {
 async function goForwardOrTo(page: Page, urlRegex: RegExp, fallbackPath: string) {
   try {
     await page.goForward({ waitUntil: 'domcontentloaded', timeout: 20000 });
-  } catch {
-    // ignore
+  } catch (err) {
+    if (!isTransientNavigationError(err)) throw err;
+    // net::ERR_ABORTED / bfcache — ignore; assert + fallback below
   }
   try {
     await expect(page).toHaveURL(urlRegex, { timeout: 8000 });
