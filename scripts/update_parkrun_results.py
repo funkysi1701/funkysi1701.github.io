@@ -22,6 +22,8 @@ from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 
+import urllib.parse
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -62,13 +64,15 @@ def fetch_html(session: requests.Session, url: str) -> str:
 def discover_event_urls(
     session: requests.Session, profile_url: str, parkrun_id: str
 ) -> list[str]:
+    parsed_base = urllib.parse.urlparse(profile_url)
+    base_origin = f"{parsed_base.scheme}://{parsed_base.netloc}"
     html = fetch_html(session, profile_url)
     soup = BeautifulSoup(html, "html.parser")
     found: set[str] = set()
     for a in soup.find_all("a", href=True):
-        href = a["href"]
+        href = urllib.parse.urljoin(profile_url, a["href"])
         m = re.match(
-            r"^https?://(?:www\.)?parkrun\.org\.uk/([^/]+)/parkrunner/(\d+)/?$",
+            r"^https?://[^/]+/([^/]+)/parkrunner/(\d+)/?$",
             href,
         )
         if not m:
@@ -76,7 +80,7 @@ def discover_event_urls(
         slug, pid = m.group(1), m.group(2)
         if pid != parkrun_id or slug == "parkrunner":
             continue
-        found.add(f"https://www.parkrun.org.uk/{slug}/parkrunner/{pid}/")
+        found.add(f"{base_origin}/{slug}/parkrunner/{pid}/")
     return sorted(found)
 
 
@@ -307,7 +311,7 @@ def replace_generated(md: str, generated: str) -> str:
     return pre + MARKER_START + "\n" + generated + "\n" + MARKER_END + post
 
 
-def main() -> None:
+def main() -> int:
     parkrun_id = os.environ.get("PARKRUN_ID", "11453050").strip()
     base = os.environ.get("PARKRUN_BASE", "https://www.parkrun.org.uk").rstrip("/")
     profile_url = f"{base}/parkrunner/{parkrun_id}/"
@@ -316,7 +320,7 @@ def main() -> None:
     urls = discover_event_urls(session, profile_url, parkrun_id)
     if not urls:
         print("No per-event parkrunner URLs found; check PARKRUN_ID and profile page.", file=sys.stderr)
-        sys.exit(1)
+        return 1
     print(f"Found {len(urls)} event page(s)")
 
     all_runs: list[Run] = []
@@ -361,7 +365,8 @@ def main() -> None:
     new_text = replace_generated(text, generated)
     PARKRUN_MD.write_text(new_text, encoding="utf-8", newline="\n")
     print(f"Wrote {len(unique)} unique runs to {PARKRUN_MD.relative_to(ROOT)}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
