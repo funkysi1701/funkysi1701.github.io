@@ -39,6 +39,10 @@ There is no separate git branch named `dev`; use **`develop`** for integration.
 
 ## Content Conventions
 
+### Parkrun page (`content/parkrun.md`)
+
+Official parkrun 5k results and the bar chart are produced by `scripts/update_parkrun_results.py` and written between HTML markers `<!-- BEGIN PARKRUN_GENERATED -->` and `<!-- END PARKRUN_GENERATED -->`. Do not hand-edit that block; run the script after `pip install -r scripts/requirements-parkrun.txt`. Other races, walks, and explanatory notes are edited manually in the same file (below the markers). Optional row exclusions: `data/parkrun_suppress.json`.
+
 ### Blog Post Structure
 
 Blog posts use **TOML frontmatter** and are organized by year:

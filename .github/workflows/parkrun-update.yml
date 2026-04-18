@@ -1,0 +1,37 @@
+name: Update parkrun results
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "20 11 * * 6"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+
+      - uses: actions/setup-python@e797f83bcb11b83ae66e02369f649f9d866694a4 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements-parkrun.txt
+
+      - name: Refresh parkrun markdown
+        run: python scripts/update_parkrun_results.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/parkrun.md
+          if git diff --staged --quiet; then
+            echo "No changes."
+          else
+            git commit -m "chore: refresh parkrun results"
+            git push
+          fi

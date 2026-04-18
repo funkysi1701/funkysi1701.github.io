@@ -32,7 +32,7 @@ aliases = [
 <p class="projects-featured-meta"><strong>What it does:</strong> Per-user episode lists, “last watched” markers, and curated metadata links — so long-running franchises stay manageable.</p>
 <p class="projects-featured-meta"><strong>Tech used:</strong> .NET Blazor, Azure Static Web Apps, Azure Functions, Azure SQL, GitHub auth.</p>
 <p class="projects-featured-impressive"><strong>Why it’s impressive:</strong> Demonstrates scalable data modelling and cloud-first architecture for user-driven applications.</p>
-<div class="projects-signals" aria-label="Engineering signals"><span class="projects-signal">Deployed to Azure</span><span class="projects-signal">Implements authentication / APIs / caching</span></div>
+<div class="projects-signals" role="group" aria-label="Engineering signals"><span class="projects-signal">Deployed to Azure</span><span class="projects-signal">Implements authentication / APIs / caching</span></div>
 <p class="projects-featured-outcome"><strong>Outcome:</strong> Turned a personal “where was I in 900+ episodes?” problem into a maintainable multi-tenant pattern for identity, persistence, and UX for ongoing shows.</p>
 <p class="projects-featured-links"><strong>Links:</strong> <a href="https://www.episodeatlas.com" target="_blank" rel="noopener noreferrer">episodeatlas.com</a></p>
 </article>
@@ -43,7 +43,7 @@ aliases = [
 <p class="projects-featured-meta"><strong>What it does:</strong> Accepts conversational queries, retrieves meaningfully related posts, and surfaces them alongside the site’s JSON index search.</p>
 <p class="projects-featured-meta"><strong>Tech used:</strong> .NET, Azure, Cosmos DB, OpenAI.</p>
 <p class="projects-featured-impressive"><strong>Why it’s impressive:</strong> Showcases practical LLM integration in .NET beyond basic chat interfaces.</p>
-<div class="projects-signals" aria-label="Engineering signals"><span class="projects-signal">Deployed to Azure</span><span class="projects-signal">Designed with clean architecture</span></div>
+<div class="projects-signals" role="group" aria-label="Engineering signals"><span class="projects-signal">Deployed to Azure</span><span class="projects-signal">Designed with clean architecture</span></div>
 <p class="projects-featured-outcome"><strong>Outcome:</strong> Explored how vector-style retrieval and operational concerns (cost, latency, content freshness) fit next to a static Hugo site without compromising the authoring workflow.</p>
 <p class="projects-featured-links"><strong>Links:</strong> <a href="https://search.funkysi1701.com/" target="_blank" rel="noopener noreferrer">search.funkysi1701.com</a> · linked from <a href="/search/">Search</a></p>
 </article>
@@ -54,7 +54,7 @@ aliases = [
 <p class="projects-featured-meta"><strong>What it does:</strong> Publishes posts, generates RSS and a JSON search index, integrates Giscus for discussions, and deploys on every merge.</p>
 <p class="projects-featured-meta"><strong>Tech used:</strong> Hugo, GitHub Actions, Azure Static Web Apps, Giscus.</p>
 <p class="projects-featured-impressive"><strong>Why it’s impressive:</strong> Highlights modern static-first architecture with automated deployment pipelines.</p>
-<div class="projects-signals" aria-label="Engineering signals"><span class="projects-signal">Deployed to Azure</span><span class="projects-signal">CI/CD via GitHub Actions</span></div>
+<div class="projects-signals" role="group" aria-label="Engineering signals"><span class="projects-signal">Deployed to Azure</span><span class="projects-signal">CI/CD via GitHub Actions</span></div>
 <p class="projects-featured-outcome"><strong>Outcome:</strong> Demonstrates a production-shaped static pipeline — preview builds, repeatable deploys, and content-driven SEO — suitable as a reference architecture for docs and marketing sites.</p>
 <p class="projects-featured-links"><strong>Links:</strong> <a href="https://github.com/funkysi1701/funkysi1701.github.io" target="_blank" rel="noopener noreferrer">GitHub repository</a></p>
 </article>

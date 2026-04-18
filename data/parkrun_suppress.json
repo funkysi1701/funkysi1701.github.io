@@ -1,0 +1,9 @@
+{
+  "suppress": [
+    {
+      "event": "Cusworth Hall parkrun",
+      "date": "2025-12-06",
+      "reason": "Official feed disagrees with your recorded DNF; row omitted from generated table — see manual notes."
+    }
+  ]
+}
