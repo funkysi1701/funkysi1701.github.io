@@ -38,6 +38,8 @@ USER_AGENT = (
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 )
 REQUEST_DELAY_SEC = 1.0
+# Bar chart shows only the most recent N runs; markdown tables list the full history.
+CHART_MAX_RUNS = 10
 
 
 @dataclass(frozen=True)
@@ -233,14 +235,15 @@ def build_markdown_tables(runs: list[Run]) -> str:
 
 
 def build_chart_html(runs: list[Run]) -> str:
-    """Bar chart: chronological 5k times; taller bar = slower time."""
+    """Bar chart: last CHART_MAX_RUNS runs, chronological; taller bar = slower time."""
     ordered = sorted(runs, key=lambda x: x.when)
     if not ordered:
         return (
             '<p style="color:#666;">No parkrun results were returned from the scraper.</p>\n'
         )
+    chart_runs = ordered[-CHART_MAX_RUNS:]
     secs = []
-    for r in ordered:
+    for r in chart_runs:
         s = parse_time_to_seconds(r.time_str)
         if s is not None:
             secs.append(s)
@@ -254,7 +257,7 @@ def build_chart_html(runs: list[Run]) -> str:
         return int(120 + (s - lo) / span * 90)
 
     tds = []
-    for r in ordered:
+    for r in chart_runs:
         s = parse_time_to_seconds(r.time_str)
         if s is None:
             continue
@@ -272,7 +275,7 @@ def build_chart_html(runs: list[Run]) -> str:
     row_inner = "\n".join(tds)
     return f"""<div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0; color: #333333;">
   <h3 style="margin-top: 0;">5k Parkrun Times</h3>
-  <p style="font-size: 0.9em; margin-top: 0;">Chronological finish times from official parkrun results (taller bar = slower time). Green bars are personal bests at that course.</p>
+  <p style="font-size: 0.9em; margin-top: 0;">Most recent {CHART_MAX_RUNS} runs (left to right by date); official parkrun results (taller bar = slower time). Green bars are personal bests at that course.</p>
   <div class="table-responsive">
   <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 4px;">
     <tr style="vertical-align: bottom; height: 250px;">
@@ -355,9 +358,7 @@ def main() -> int:
         + chart
         + "\n## Parkrun results\n\n"
         f"Official 5 km parkrun times from [parkrun.org.uk]"
-        f"({base}/parkrunner/{parkrun_id}/). "
-        "Regenerate this block from the repo root: "
-        "`python scripts/update_parkrun_results.py` (see `README.md`).\n\n"
+        f"({base}/parkrunner/{parkrun_id}/). \n\n"
         + tables
     )
 
