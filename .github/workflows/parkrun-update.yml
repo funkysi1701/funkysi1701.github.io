@@ -3,7 +3,7 @@ name: Update parkrun results
 on:
   workflow_dispatch:
   schedule:
-    - cron: "20 8 * * 1"
+    - cron: "20 11 * * 6"
 
 permissions:
   contents: write
