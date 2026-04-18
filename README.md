@@ -52,6 +52,17 @@ By default, `playwright.config.ts` uses **`BASE_URL`** of `https://www.funkysi17
 
 For Hugo changes, still verify with `hugo server -D` or a production build (`hugo --minify --environment production`) as needed.
 
+### Parkrun results (`content/parkrun.md`)
+
+Official parkrun 5k tables and the progress chart are **generated** by `scripts/update_parkrun_results.py`, which reads each course’s parkrunner page under [parkrun.org.uk](https://www.parkrun.org.uk/). Non-parkrun races and manual notes live **outside** the `<!-- BEGIN PARKRUN_GENERATED -->` … `<!-- END PARKRUN_GENERATED -->` block.
+
+```sh
+pip install -r scripts/requirements-parkrun.txt
+python scripts/update_parkrun_results.py
+```
+
+Optional environment variables: `PARKRUN_ID` (default `11453050`), `PARKRUN_BASE` (default `https://www.parkrun.org.uk`). To omit a scraped row that you disagree with (for example a DNF), add an entry to `data/parkrun_suppress.json`. You can refresh results manually from GitHub Actions via **Update parkrun results** (`.github/workflows/parkrun-update.yml`).
+
 ## 🚢 Deployment and branches
 
 - **`main`:** Production ([funkysi1701.com](https://www.funkysi1701.com?utm_source=gh)). GitHub Actions builds Hugo and deploys **Azure Static Web Apps** (`.github/workflows/azure-static-web-apps-victorious-pebble-0b8f90e03.yml`). **Azure Pipelines** also builds the Docker image, pushes to **ECR**, and deploys with **Helm** to the Kubernetes **`main`** namespace (`azure-pipelines.yml`).
