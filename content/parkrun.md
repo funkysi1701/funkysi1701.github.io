@@ -29,35 +29,10 @@ I started parkrun in 2025. The **parkrun results** table below is generated from
 
 <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0; color: #333333;">
   <h3 style="margin-top: 0;">5k Parkrun Times</h3>
-  <p style="font-size: 0.9em; margin-top: 0;">Chronological finish times from official parkrun results (taller bar = slower time). Green bars are personal bests at that course.</p>
+  <p style="font-size: 0.9em; margin-top: 0;">Most recent 10 runs (left to right by date); official parkrun results (taller bar = slower time). Green bars are personal bests at that course.</p>
   <div class="table-responsive">
   <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 4px;">
     <tr style="vertical-align: bottom; height: 250px;">
-      <td style="text-align: center; padding: 5px; position: relative;">
-        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">41m 41s</div>
-        <div style="background: #2196F3; height: 131px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
-        <div style="font-size: 10px; margin-top: 5px;">11 Oct</div>
-      </td>
-      <td style="text-align: center; padding: 5px; position: relative;">
-        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">45m 57s</div>
-        <div style="background: #2196F3; height: 141px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
-        <div style="font-size: 10px; margin-top: 5px;">8 Nov</div>
-      </td>
-      <td style="text-align: center; padding: 5px; position: relative;">
-        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">40m 56s</div>
-        <div style="background: #2196F3; height: 129px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
-        <div style="font-size: 10px; margin-top: 5px;">22 Nov</div>
-      </td>
-      <td style="text-align: center; padding: 5px; position: relative;">
-        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">40m 49s</div>
-        <div style="background: #2196F3; height: 129px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
-        <div style="font-size: 10px; margin-top: 5px;">29 Nov</div>
-      </td>
-      <td style="text-align: center; padding: 5px; position: relative;">
-        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">37m 28s</div>
-        <div style="background: #2196F3; height: 122px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
-        <div style="font-size: 10px; margin-top: 5px;">13 Dec</div>
-      </td>
       <td style="text-align: center; padding: 5px; position: relative;">
         <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">41m 13s</div>
         <div style="background: #4CAF50; height: 130px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
@@ -115,7 +90,7 @@ I started parkrun in 2025. The **parkrun results** table below is generated from
 
 ## Parkrun results
 
-Official 5 km parkrun times from [parkrun.org.uk](https://www.parkrun.org.uk/parkrunner/11453050/). Regenerate this block from the repo root: `python scripts/update_parkrun_results.py` (see `README.md`).
+Official 5 km parkrun times from [parkrun.org.uk](https://www.parkrun.org.uk/parkrunner/11453050/). 
 
 ### 2026
 
