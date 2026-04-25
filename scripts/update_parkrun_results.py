@@ -35,8 +35,27 @@ MARKER_END = "<!-- END PARKRUN_GENERATED -->"
 
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 )
+# WAFs (e.g. on parkrun) often expect a “real browser” header set, not a bare
+# User-Agent. GitHub Actions can get 403/405 while a desktop IP gets 200.
+BROWSER_HEADERS: dict[str, str] = {
+    "User-Agent": USER_AGENT,
+    "Accept": (
+        "text/html,application/xhtml+xml,application/xml;q=0.9,"
+        "image/avif,image/webp,image/apng,*/*;q=0.8"
+    ),
+    "Accept-Language": "en-GB,en;q=0.9",
+    "Cache-Control": "max-age=0",
+    "Sec-Ch-Ua": '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+    "Sec-Ch-Ua-Mobile": "?0",
+    "Sec-Ch-Ua-Platform": '"Windows"',
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+    "Upgrade-Insecure-Requests": "1",
+}
 REQUEST_DELAY_SEC = 1.0
 # Bar chart shows only the most recent N runs; markdown tables list the full history.
 CHART_MAX_RUNS = 10
@@ -53,14 +72,60 @@ class Run:
 
 def _session() -> requests.Session:
     s = requests.Session()
-    s.headers.update({"User-Agent": USER_AGENT, "Accept-Language": "en-GB,en;q=0.9"})
+    s.headers.update(BROWSER_HEADERS)
     return s
 
 
-def fetch_html(session: requests.Session, url: str) -> str:
-    r = session.get(url, timeout=45)
-    r.raise_for_status()
-    return r.text
+def _warmup_session(session: requests.Session, base: str) -> None:
+    """Load site root so cookies/edge WAFs see a normal top-level navigation."""
+    home = f"{base.rstrip('/')}/"
+    r = session.get(home, timeout=45)
+    if not r.ok:
+        print(
+            f"Note: site warm-up {home!r} returned {r.status_code} "
+            "(continuing anyway).",
+            file=sys.stderr,
+        )
+    time.sleep(REQUEST_DELAY_SEC)
+
+
+def _navigate_headers(
+    request_url: str, referer: str | None, base_origin: str
+) -> dict[str, str] | None:
+    """Tweak Sec-Fetch-* / Referer to match a browser follow-up request."""
+    extra: dict[str, str] = {}
+    if referer:
+        extra["Referer"] = referer
+    parsed = urllib.parse.urlparse(request_url)
+    if parsed.netloc and parsed.netloc == urllib.parse.urlparse(base_origin).netloc:
+        extra["Sec-Fetch-Site"] = "same-origin" if referer else "none"
+    else:
+        extra["Sec-Fetch-Site"] = "cross-site"
+    return extra or None
+
+
+def fetch_html(
+    session: requests.Session,
+    url: str,
+    *,
+    referer: str | None = None,
+    base_origin: str | None = None,
+) -> str:
+    for attempt in range(2):
+        h = _navigate_headers(url, referer, base_origin) if base_origin else None
+        last = session.get(url, timeout=45, headers=h)
+        if last.status_code in (403, 405, 429) and attempt == 0:
+            time.sleep(2.0)
+            continue
+        if last.status_code in (403, 405) and os.environ.get("GITHUB_ACTIONS") == "true":
+            print(
+                "Note: parkrun may block GitHub Actions IPs. Run "
+                "`python scripts/update_parkrun_results.py` locally, commit the update, "
+                "or use a self-hosted runner for this workflow.",
+                file=sys.stderr,
+            )
+        last.raise_for_status()
+        return last.text
 
 
 def discover_event_urls(
@@ -68,7 +133,12 @@ def discover_event_urls(
 ) -> list[str]:
     parsed_base = urllib.parse.urlparse(profile_url)
     base_origin = f"{parsed_base.scheme}://{parsed_base.netloc}"
-    html = fetch_html(session, profile_url)
+    html = fetch_html(
+        session,
+        profile_url,
+        referer=f"{base_origin}/",
+        base_origin=base_origin,
+    )
     soup = BeautifulSoup(html, "html.parser")
     found: set[str] = set()
     for a in soup.find_all("a", href=True):
@@ -122,8 +192,10 @@ def format_min_km(seconds: int) -> str:
     return f"{m:02d}m {s:02d}s"
 
 
-def parse_event_page(session: requests.Session, url: str) -> list[Run]:
-    html = fetch_html(session, url)
+def parse_event_page(
+    session: requests.Session, url: str, *, referer: str, base_origin: str
+) -> list[Run]:
+    html = fetch_html(session, url, referer=referer, base_origin=base_origin)
     soup = BeautifulSoup(html, "html.parser")
     runs: list[Run] = []
     for table in soup.find_all("table"):
@@ -318,8 +390,14 @@ def main() -> int:
     parkrun_id = os.environ.get("PARKRUN_ID", "11453050").strip()
     base = os.environ.get("PARKRUN_BASE", "https://www.parkrun.org.uk").rstrip("/")
     profile_url = f"{base}/parkrunner/{parkrun_id}/"
+    parsed = urllib.parse.urlparse(f"{base}/")
+    if not parsed.scheme or not parsed.netloc:
+        print("Invalid PARKRUN_BASE: expected https://www.parkrun.org.uk (or site origin).", file=sys.stderr)
+        return 1
+    base_origin = f"{parsed.scheme}://{parsed.netloc}"
 
     session = _session()
+    _warmup_session(session, base)
     urls = discover_event_urls(session, profile_url, parkrun_id)
     if not urls:
         print("No per-event parkrunner URLs found; check PARKRUN_ID and profile page.", file=sys.stderr)
@@ -331,7 +409,9 @@ def main() -> int:
         if i:
             time.sleep(REQUEST_DELAY_SEC)
         try:
-            runs = parse_event_page(session, url)
+            runs = parse_event_page(
+                session, url, referer=profile_url, base_origin=base_origin
+            )
         except requests.RequestException as e:
             print(f"WARN: {url}: {e}", file=sys.stderr)
             continue
