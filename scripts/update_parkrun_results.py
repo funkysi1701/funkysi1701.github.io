@@ -392,7 +392,11 @@ def main() -> int:
     profile_url = f"{base}/parkrunner/{parkrun_id}/"
     parsed = urllib.parse.urlparse(f"{base}/")
     if not parsed.scheme or not parsed.netloc:
-        print("Invalid PARKRUN_BASE: expected https://www.parkrun.org.uk (or site origin).", file=sys.stderr)
+        print(
+            "Invalid PARKRUN_BASE: expected https://www.parkrun.org.uk "
+            f"(or site origin), got {base!r}.",
+            file=sys.stderr,
+        )
         return 1
     base_origin = f"{parsed.scheme}://{parsed.netloc}"
 
