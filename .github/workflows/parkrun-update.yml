@@ -7,12 +7,16 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+        with:
+          ref: develop
+          fetch-depth: 0
 
       - uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38 # v5.4.0
         with:
@@ -24,14 +28,23 @@ jobs:
       - name: Refresh parkrun markdown
         run: python scripts/update_parkrun_results.py
 
-      - name: Commit if changed
+      - name: Commit and open pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add content/parkrun.md
           if git diff --staged --quiet; then
             echo "No changes."
-          else
-            git commit -m "chore: refresh parkrun results"
-            git push
+            exit 0
           fi
+          BRANCH="chore/parkrun-results-${GITHUB_RUN_ID}"
+          git checkout -b "$BRANCH"
+          git commit -m "chore: refresh parkrun results"
+          git push -u origin "$BRANCH"
+          gh pr create \
+            --base develop \
+            --head "$BRANCH" \
+            --title "chore: refresh parkrun results" \
+            --body "Automated update of \`content/parkrun.md\` from \`scripts/update_parkrun_results.py\`. Merge to refresh the live site on the usual develop → main path."
