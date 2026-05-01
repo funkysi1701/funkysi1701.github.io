@@ -1,4 +1,4 @@
 {{- $displayDate := or .PublishDate .Date -}}
 {{- if not $displayDate.IsZero -}}
-{{ $displayDate | time.Format (default "Jan 2, 2006" $.Site.Params.dateFormat) }}
+{{ $displayDate | time.Format (default "January 2, 2006" $.Site.Params.dateFormat) }}
 {{- end -}}
