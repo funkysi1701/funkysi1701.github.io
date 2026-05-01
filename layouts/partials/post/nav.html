@@ -55,7 +55,8 @@
 <div class="post-navs d-flex justify-content-evenly">
   <div class="post-nav post-prev">
   {{- with $prev -}}
-  {{ if .Params.date }}
+  {{- $prevDisplayDate := or .PublishDate .Date -}}
+  {{ if not $prevDisplayDate.IsZero }}
     <i class="fas fa-fw fa-chevron-left"></i>
     <a href="{{ .Permalink }}">{{ partial "helpers/title" . }}</a>
   {{ end }}  
@@ -63,7 +64,8 @@
   {{- end -}}
   {{- with $next -}}
   <div class="post-nav post-next">
-    {{ if .Params.date }}
+    {{- $nextDisplayDate := or .PublishDate .Date -}}
+    {{ if not $nextDisplayDate.IsZero }}
     <a href="{{ .Permalink }}">{{ partial "helpers/title" . }}</a>
     <i class="fas fa-fw fa-chevron-right"></i>
     {{ end}}
