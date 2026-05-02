@@ -16,7 +16,8 @@
   {{- end -}}
   <div class="posts mb-4">
   {{- range .Paginator.Pages -}}
-  {{ if .Params.date }}
+  {{- $displayDate := or .PublishDate .Date -}}
+  {{ if not $displayDate.IsZero }}
     {{- /* Exclude events category from home page and posts section */ -}}
     {{- $isPostsSection := and (eq $.Section "posts") (eq $.Kind "section") -}}
     {{- if or (and (not $.IsHome) (not $isPostsSection)) (ne .Params.category "events") -}}
