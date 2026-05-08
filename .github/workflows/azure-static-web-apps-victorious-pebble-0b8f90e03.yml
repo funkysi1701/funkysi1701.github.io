@@ -60,5 +60,4 @@ jobs:
           api_key: ${{ secrets.SEOCHECKER_CI_API_KEY }}
           sitemap_url: ${{ vars.SEOCHECKER_DEFAULT_SITEMAP_URL }}
           fail_mode: error
-          comment_on_pr: ${{ github.event_name == 'pull_request' }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          comment_on_pr: true
