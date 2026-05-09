@@ -1,0 +1,16 @@
+# Page coverage is synthetic LCOV from Playwright visits → content/*.md
+# (scripts/generate-page-coverage.js), not line coverage of application code.
+# Totals move when you add Markdown, tests skip, or BASE_URL differs, so default
+# Codecov gates are noisy on PRs. Statuses stay green while reports remain in Codecov.
+# To enforce thresholds later, set informational: false and add target / threshold.
+coverage:
+  status:
+    project:
+      default:
+        informational: true
+    patch:
+      default:
+        informational: true
+
+comment:
+  require_changes: true
