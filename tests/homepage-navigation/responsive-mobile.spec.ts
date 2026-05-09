@@ -4,17 +4,38 @@
 import { test, expect } from '../fixtures';
 import type { Locator, Page } from '@playwright/test';
 
+function escapeForAnchoredTextRegex(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * Main menu page links live under #navbarSupportedContent.
+ * Use real <a class="nav-link" href> nodes, not getByRole alone: when the Bootstrap collapse
+ * is closed, descendants are display:none and are omitted from the a11y tree, so role queries
+ * can match 0 elements until the panel is shown.
+ */
+function mainNavPageLink(navMenu: Locator, opts: { name: string | RegExp; exact?: boolean }) {
+  if (typeof opts.name === 'string') {
+    const hasText =
+      opts.exact === true
+        ? new RegExp(`^${escapeForAnchoredTextRegex(opts.name)}$`)
+        : opts.name;
+    return navMenu.locator('a.nav-link[href]').filter({ hasText });
+  }
+  return navMenu.locator('a.nav-link[href]').filter({ hasText: opts.name });
+}
+
 /** Main menu links live under #navbarSupportedContent (scope here, not the whole nav). */
 async function clickVisibleMainNavLink(
   page: Page,
   opts: { name: string | RegExp; exact?: boolean },
 ) {
   const navMenu = page.locator('#navbarSupportedContent');
-  const link = navMenu.getByRole('link', opts);
+  const link = mainNavPageLink(navMenu, opts);
   const toggler = page.locator('nav.navbar').getByRole('button', { name: 'Toggle navigation' });
   if (!(await link.isVisible())) {
     await toggler.click();
-    // Wait for the collapse animation to complete before asserting visibility
+    await expect(navMenu).toHaveClass(/show/, { timeout: 15000 });
     await expect(link).toBeVisible({ timeout: 15000 });
   }
   await link.click();
@@ -45,18 +66,19 @@ test.describe('Homepage and Navigation', () => {
     await test.step('Click hamburger menu to expand', async () => {
       // 4. Click hamburger menu to expand (do not assert aria-expanded — some pages update visibility without a reliable attribute)
       await expect(hamburger).toBeVisible();
-      const aboutLink = navMenu.getByRole('link', { name: 'About', exact: true });
+      const aboutLink = mainNavPageLink(navMenu, { name: 'About', exact: true });
       if (!(await aboutLink.isVisible())) {
         await hamburger.click();
+        await expect(navMenu).toHaveClass(/show/, { timeout: 15000 });
       }
       await expect(aboutLink).toBeVisible({ timeout: 15000 });
     });
 
     await test.step('Verify all navigation items are accessible', async () => {
       // 5. Verify all navigation items are accessible
-      await expect(navMenu.getByRole('link', { name: 'About', exact: true })).toBeVisible();
-      await expect(navMenu.getByRole('link', { name: 'Projects', exact: true })).toBeVisible();
-      await expect(navMenu.getByRole('link', { name: 'Contact', exact: true })).toBeVisible();
+      await expect(mainNavPageLink(navMenu, { name: 'About', exact: true })).toBeVisible();
+      await expect(mainNavPageLink(navMenu, { name: 'Projects', exact: true })).toBeVisible();
+      await expect(mainNavPageLink(navMenu, { name: 'Contact', exact: true })).toBeVisible();
     });
 
     await test.step('Test navigation on About page', async () => {
