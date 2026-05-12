@@ -52,12 +52,13 @@ jobs:
     needs: build_and_deploy_job
     runs-on: ubuntu-latest
     steps:
-      - name: Run SeoChecker crawl
+      - name: Run Signal Diff crawl
         id: seo_crawl
-        uses: funkysi1701/seo-checker-action@v1
+        uses: funkysi1701/signal-diff-action@v1
         with:
-          api_base_url: ${{ secrets.SEOCHECKER_API_BASE_URL }}
-          api_key: ${{ secrets.SEOCHECKER_CI_API_KEY }}
-          sitemap_url: ${{ vars.SEOCHECKER_DEFAULT_SITEMAP_URL }}
+          api_base_url: ${{ secrets.SIGNALDIFF_API_BASE_URL }}
+          api_key: ${{ secrets.SIGNALDIFF_CI_API_KEY }}
+          sitemap_url: ${{ vars.SIGNALDIFF_DEFAULT_SITEMAP_URL }}
           fail_mode: none
           comment_on_pr: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
