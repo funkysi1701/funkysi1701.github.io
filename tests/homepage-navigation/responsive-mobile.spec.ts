@@ -97,17 +97,17 @@ test.describe('Homepage and Navigation', () => {
 
     await test.step('Verify content is readable and not cut off', async () => {
       // 7. Verify content is readable and not cut off
-      const body = page.locator('body');
-      const bodyBox = await body.boundingBox();
-      expect(bodyBox?.width).toBeLessThanOrEqual(375);
-
-      // No horizontal overflow (scrollWidth can exceed 375 on small viewports with wide assets;
-      // compare to clientWidth instead of the viewport number.)
-      const { scrollWidth, clientWidth } = await page.evaluate(() => ({
+      // Use innerWidth (not clientWidth): on Linux/classic scrollbars, clientWidth excludes the
+      // vertical gutter while vw/100vw-based layout uses the full viewport width, so
+      // scrollWidth > clientWidth can happen with zero broken layout. innerWidth matches vw.
+      const { scrollWidth, innerWidth, bodyWidth } = await page.evaluate(() => ({
         scrollWidth: document.documentElement.scrollWidth,
-        clientWidth: document.documentElement.clientWidth,
+        innerWidth: window.innerWidth,
+        bodyWidth: document.body.getBoundingClientRect().width,
       }));
-      expect(scrollWidth).toBeLessThanOrEqual(clientWidth + 1);
+      const slack = 2; // subpixel / rounding
+      expect(bodyWidth).toBeLessThanOrEqual(innerWidth + slack);
+      expect(scrollWidth).toBeLessThanOrEqual(innerWidth + slack);
     });
 
   });
