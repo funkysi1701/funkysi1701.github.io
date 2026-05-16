@@ -6,8 +6,9 @@ rewrite the generated block in content/parkrun.md (between HTML markers).
 Requires: pip install -r scripts/requirements-parkrun.txt
 
 Environment:
-  PARKRUN_ID   parkrunner id (default: 11453050)
-  PARKRUN_BASE default https://www.parkrun.org.uk
+  PARKRUN_ID       parkrunner id (default: 11453050)
+  PARKRUN_BASE     default https://www.parkrun.org.uk
+  PARKRUN_STRICT   if set, fail (exit 1) when parkrun blocks CI instead of skip (exit 2)
 """
 
 from __future__ import annotations
@@ -59,6 +60,21 @@ BROWSER_HEADERS: dict[str, str] = {
 REQUEST_DELAY_SEC = 1.0
 # Bar chart shows only the most recent N runs; markdown tables list the full history.
 CHART_MAX_RUNS = 10
+# curl_cffi impersonation target (must match an installed curl-impersonate profile).
+CURL_IMPERSONATE = "chrome124"
+
+
+class ParkrunBlockedError(RuntimeError):
+    """parkrun.org.uk refused the request (common on GitHub-hosted runners)."""
+
+    def __init__(self, url: str, status_code: int) -> None:
+        self.url = url
+        self.status_code = status_code
+        super().__init__(f"HTTP {status_code} for {url}")
+
+
+def _strict_on_block() -> bool:
+    return os.environ.get("PARKRUN_STRICT", "").strip().lower() in ("1", "true", "yes")
 
 
 @dataclass(frozen=True)
@@ -71,6 +87,18 @@ class Run:
 
 
 def _session() -> requests.Session:
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        try:
+            from curl_cffi import requests as curl_requests
+
+            s = curl_requests.Session(impersonate=CURL_IMPERSONATE)
+            s.headers.update(BROWSER_HEADERS)
+            return s
+        except ImportError:
+            print(
+                "Note: curl_cffi not installed; using requests (often blocked on GHA).",
+                file=sys.stderr,
+            )
     s = requests.Session()
     s.headers.update(BROWSER_HEADERS)
     return s
@@ -115,15 +143,16 @@ def fetch_html(
         h = _navigate_headers(url, referer, base_origin) if base_origin else None
         last = session.get(url, timeout=45, headers=h)
         if last.status_code in (403, 405, 429) and attempt == 0:
-            time.sleep(2.0)
+            time.sleep(5.0 if last.status_code == 429 else 2.0)
             continue
-        if last.status_code in (403, 405) and os.environ.get("GITHUB_ACTIONS") == "true":
+        if last.status_code in (403, 405, 429) and os.environ.get("GITHUB_ACTIONS") == "true":
             print(
                 "Note: parkrun may block GitHub Actions IPs. Run "
                 "`python scripts/update_parkrun_results.py` locally, commit the update, "
                 "or use a self-hosted runner for this workflow.",
                 file=sys.stderr,
             )
+            raise ParkrunBlockedError(url, last.status_code)
         last.raise_for_status()
         return last.text
 
@@ -401,8 +430,15 @@ def main() -> int:
     base_origin = f"{parsed.scheme}://{parsed.netloc}"
 
     session = _session()
-    _warmup_session(session, base)
-    urls = discover_event_urls(session, profile_url, parkrun_id)
+    try:
+        _warmup_session(session, base)
+        urls = discover_event_urls(session, profile_url, parkrun_id)
+    except ParkrunBlockedError as e:
+        if _strict_on_block():
+            print(f"Failed parkrun update (strict mode): {e}", file=sys.stderr)
+            return 1
+        print(f"Skipped parkrun update: {e}", file=sys.stderr)
+        return 2
     if not urls:
         print("No per-event parkrunner URLs found; check PARKRUN_ID and profile page.", file=sys.stderr)
         return 1
@@ -416,6 +452,12 @@ def main() -> int:
             runs = parse_event_page(
                 session, url, referer=profile_url, base_origin=base_origin
             )
+        except ParkrunBlockedError as e:
+            if _strict_on_block():
+                print(f"Failed parkrun update (strict mode): {e}", file=sys.stderr)
+                return 1
+            print(f"Skipped parkrun update: {e}", file=sys.stderr)
+            return 2
         except requests.RequestException as e:
             print(f"WARN: {url}: {e}", file=sys.stderr)
             continue

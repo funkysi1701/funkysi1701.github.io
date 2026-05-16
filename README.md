@@ -62,7 +62,7 @@ pip install -r scripts/requirements-parkrun.txt
 python scripts/update_parkrun_results.py
 ```
 
-Optional environment variables: `PARKRUN_ID` (default `11453050`), `PARKRUN_BASE` (default `https://www.parkrun.org.uk`). To omit a scraped row that you disagree with (for example a DNF), add an entry to `data/parkrun_suppress.json`. You can refresh results manually from GitHub Actions via **Update parkrun results** (`.github/workflows/parkrun-update.yml`); it opens a pull request into **develop** (it does not push to protected **develop** directly).
+Optional environment variables: `PARKRUN_ID` (default `11453050`), `PARKRUN_BASE` (default `https://www.parkrun.org.uk`), `PARKRUN_STRICT` (fail instead of skip when parkrun blocks the runner). To omit a scraped row that you disagree with (for example a DNF), add an entry to `data/parkrun_suppress.json`. You can refresh results manually from GitHub Actions via **Update parkrun results** (`.github/workflows/parkrun-update.yml`); it opens a pull request into **develop** when the scrape succeeds. parkrun.org.uk often returns HTTP 403/405 to GitHub-hosted IPs—the workflow then exits successfully with a skip notice; run the script locally and commit, or use a self-hosted runner.
 
 ## 🚢 Deployment and branches
 
