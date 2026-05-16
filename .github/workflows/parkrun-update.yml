@@ -26,7 +26,14 @@ jobs:
         run: pip install -r scripts/requirements-parkrun.txt
 
       - name: Refresh parkrun markdown
-        run: python scripts/update_parkrun_results.py
+        run: |
+          python scripts/update_parkrun_results.py
+          ec=$?
+          if [ "$ec" -eq 2 ]; then
+            echo "::notice title=Parkrun update skipped::parkrun.org.uk blocked this runner. Run \`python scripts/update_parkrun_results.py\` locally and commit, or use a self-hosted runner."
+            exit 0
+          fi
+          exit "$ec"
 
       - name: Commit and open pull request
         env:
