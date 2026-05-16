@@ -41,7 +41,7 @@ There is no separate git branch named `dev`; use **`develop`** for integration.
 
 ### Parkrun page (`content/parkrun.md`)
 
-Official parkrun 5k results and the bar chart are produced by `scripts/update_parkrun_results.py` and written between HTML markers `<!-- BEGIN PARKRUN_GENERATED -->` and `<!-- END PARKRUN_GENERATED -->`. Do not hand-edit that block; run the script after `pip install -r scripts/requirements-parkrun.txt`. Other races, walks, and explanatory notes are edited manually in the same file (below the markers). Optional row exclusions: `data/parkrun_suppress.json`. Scheduled or manual **Update parkrun results** (`.github/workflows/parkrun-update.yml`) opens a **pull request into `develop`** (it does not push to protected `develop` directly); merge the PR to apply the update.
+Official parkrun 5k results and the bar chart are produced by `scripts/update_parkrun_results.py` and written between HTML markers `<!-- BEGIN PARKRUN_GENERATED -->` and `<!-- END PARKRUN_GENERATED -->`. Do not hand-edit that block; run the script after `pip install -r scripts/requirements-parkrun.txt`. Other races, walks, and explanatory notes are edited manually in the same file (below the markers). Optional row exclusions: `data/parkrun_suppress.json`. Scheduled or manual **Update parkrun results** (`.github/workflows/parkrun-update.yml`) opens a **pull request into `develop`** when the scrape succeeds (it does not push to protected `develop` directly); merge the PR to apply the update. parkrun.org.uk often blocks GitHub-hosted runner IPs (HTTP 403/405); the workflow then succeeds with a skip notice—run `python scripts/update_parkrun_results.py` locally and commit, or use a self-hosted runner.
 
 ### Blog Post Structure
 
