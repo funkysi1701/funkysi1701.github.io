@@ -91,7 +91,9 @@ def _session() -> requests.Session:
         try:
             from curl_cffi import requests as curl_requests
 
-            return curl_requests.Session(impersonate=CURL_IMPERSONATE)
+            s = curl_requests.Session(impersonate=CURL_IMPERSONATE)
+            s.headers.update(BROWSER_HEADERS)
+            return s
         except ImportError:
             print(
                 "Note: curl_cffi not installed; using requests (often blocked on GHA).",
@@ -150,8 +152,7 @@ def fetch_html(
                 "or use a self-hosted runner for this workflow.",
                 file=sys.stderr,
             )
-            if not _strict_on_block():
-                raise ParkrunBlockedError(url, last.status_code)
+            raise ParkrunBlockedError(url, last.status_code)
         last.raise_for_status()
         return last.text
 
@@ -433,6 +434,9 @@ def main() -> int:
         _warmup_session(session, base)
         urls = discover_event_urls(session, profile_url, parkrun_id)
     except ParkrunBlockedError as e:
+        if _strict_on_block():
+            print(f"Failed parkrun update (strict mode): {e}", file=sys.stderr)
+            return 1
         print(f"Skipped parkrun update: {e}", file=sys.stderr)
         return 2
     if not urls:
@@ -449,6 +453,9 @@ def main() -> int:
                 session, url, referer=profile_url, base_origin=base_origin
             )
         except ParkrunBlockedError as e:
+            if _strict_on_block():
+                print(f"Failed parkrun update (strict mode): {e}", file=sys.stderr)
+                return 1
             print(f"Skipped parkrun update: {e}", file=sys.stderr)
             return 2
         except requests.RequestException as e:
