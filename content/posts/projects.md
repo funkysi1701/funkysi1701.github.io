@@ -30,7 +30,7 @@ aliases = [
 <p class="projects-featured-hook">Track TV progress at scale with per-user state and cloud-backed data.</p>
 <a href="https://www.episodeatlas.com" target="_blank" rel="noopener noreferrer"><img src="/images/projects/episode-atlas.png" alt="Episode Atlas: TV episode tracking app" width="800" height="450" loading="lazy"></a>
 <p class="projects-featured-meta"><strong>What it does:</strong> Per-user episode lists, “last watched” markers, and curated metadata links — so long-running franchises stay manageable.</p>
-<p class="projects-featured-meta"><strong>Tech used:</strong> .NET Blazor, Azure Static Web Apps, Azure Functions, Azure SQL, GitHub auth.</p>
+<p class="projects-featured-meta"><strong>Tech used:</strong> .NET Blazor, Azure Static Web Apps, Azure Functions, Cosmos DB, GitHub auth.</p>
 <p class="projects-featured-impressive"><strong>Why it’s impressive:</strong> Demonstrates scalable data modelling and cloud-first architecture for user-driven applications.</p>
 <div class="projects-signals" role="group" aria-label="Engineering signals"><span class="projects-signal">Deployed to Azure</span><span class="projects-signal">Implements authentication / APIs / caching</span></div>
 <p class="projects-featured-outcome"><strong>Outcome:</strong> Turned a personal “where was I in 900+ episodes?” problem into a maintainable multi-tenant pattern for identity, persistence, and UX for ongoing shows.</p>
