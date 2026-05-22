@@ -25,6 +25,35 @@ function mainNavPageLink(navMenu: Locator, opts: { name: string | RegExp; exact?
   return navMenu.locator('a.nav-link[href]').filter({ hasText: opts.name });
 }
 
+/** Bootstrap collapse can ignore the first toggler click; retry until the target link is visible. */
+async function ensureMobileNavLinkVisible(page: Page, link: Locator) {
+  if (await link.isVisible()) {
+    return;
+  }
+  const toggler = page.locator('nav.navbar').getByRole('button', { name: 'Toggle navigation' });
+  const navMenu = page.locator('#navbarSupportedContent');
+  for (let attempt = 0; attempt < 4; attempt++) {
+    if (await link.isVisible()) {
+      return;
+    }
+    const isExpanded = ((await navMenu.getAttribute('class')) ?? '').split(/\s+/).includes('show');
+    if (!isExpanded) {
+      await toggler.click();
+    }
+    try {
+      await expect(link).toBeVisible({ timeout: 5000 });
+      return;
+    } catch {
+      // Collapse may still be animating or the first click was a no-op — try toggler again.
+    }
+  }
+  const isExpanded = ((await navMenu.getAttribute('class')) ?? '').split(/\s+/).includes('show');
+  if (!isExpanded) {
+    await toggler.click();
+  }
+  await expect(link).toBeVisible({ timeout: 15000 });
+}
+
 /** Main menu links live under #navbarSupportedContent (scope here, not the whole nav). */
 async function clickVisibleMainNavLink(
   page: Page,
@@ -32,12 +61,7 @@ async function clickVisibleMainNavLink(
 ) {
   const navMenu = page.locator('#navbarSupportedContent');
   const link = mainNavPageLink(navMenu, opts);
-  const toggler = page.locator('nav.navbar').getByRole('button', { name: 'Toggle navigation' });
-  if (!(await link.isVisible())) {
-    await toggler.click();
-    await expect(navMenu).toHaveClass(/show/, { timeout: 15000 });
-    await expect(link).toBeVisible({ timeout: 15000 });
-  }
+  await ensureMobileNavLinkVisible(page, link);
   await link.click();
 }
 
@@ -64,14 +88,10 @@ test.describe('Homepage and Navigation', () => {
     });
 
     await test.step('Click hamburger menu to expand', async () => {
-      // 4. Click hamburger menu to expand (do not assert aria-expanded — some pages update visibility without a reliable attribute)
+      // 4. Click hamburger menu to expand (retry toggler — first click can be a no-op while collapse initializes)
       await expect(hamburger).toBeVisible();
       const aboutLink = mainNavPageLink(navMenu, { name: 'About', exact: true });
-      if (!(await aboutLink.isVisible())) {
-        await hamburger.click();
-        await expect(navMenu).toHaveClass(/show/, { timeout: 15000 });
-      }
-      await expect(aboutLink).toBeVisible({ timeout: 15000 });
+      await ensureMobileNavLinkVisible(page, aboutLink);
     });
 
     await test.step('Verify all navigation items are accessible', async () => {
@@ -88,7 +108,8 @@ test.describe('Homepage and Navigation', () => {
       await page.waitForLoadState('load');
 
       await clickVisibleMainNavLink(page, { name: 'Projects', exact: true });
-      await expect(page).toHaveURL(/\/projects\//);
+      // Menu href is /projects/; Hugo alias serves the portfolio at /posts/projects/
+      await expect(page).toHaveURL(/\/(?:posts\/)?projects\/?$/);
       await page.waitForLoadState('load');
 
       await clickVisibleMainNavLink(page, { name: 'Contact', exact: true });
