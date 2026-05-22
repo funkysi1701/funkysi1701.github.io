@@ -31,17 +31,25 @@ async function ensureMobileNavLinkVisible(page: Page, link: Locator) {
     return;
   }
   const toggler = page.locator('nav.navbar').getByRole('button', { name: 'Toggle navigation' });
+  const navMenu = page.locator('#navbarSupportedContent');
   for (let attempt = 0; attempt < 4; attempt++) {
     if (await link.isVisible()) {
       return;
     }
-    await toggler.click();
+    const isExpanded = ((await navMenu.getAttribute('class')) ?? '').split(/\s+/).includes('show');
+    if (!isExpanded) {
+      await toggler.click();
+    }
     try {
       await expect(link).toBeVisible({ timeout: 5000 });
       return;
     } catch {
       // Collapse may still be animating or the first click was a no-op — try toggler again.
     }
+  }
+  const isExpanded = ((await navMenu.getAttribute('class')) ?? '').split(/\s+/).includes('show');
+  if (!isExpanded) {
+    await toggler.click();
   }
   await expect(link).toBeVisible({ timeout: 15000 });
 }
