@@ -66,4 +66,7 @@
 {{- end -}}
 {{- $articleJSON := $article | jsonify -}}
 <script type="application/ld+json">{{- $articleJSON | safeJS -}}</script>
+{{- if eq .Section "posts" -}}
+{{- partial "head/breadcrumb-list" . -}}
+{{- end -}}
 {{- end -}}
