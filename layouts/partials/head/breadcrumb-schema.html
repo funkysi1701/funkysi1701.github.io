@@ -21,13 +21,7 @@
     {{- $name = title $name -}}
   {{- end -}}
   {{- $url := .Permalink -}}
-  {{- if and (in .Title "Events") (eq .Section "events") -}}
-    {{- $url = absURL "/events/2026" -}}
-  {{- end -}}
-  {{- $li := dict "@type" "ListItem" "position" $pos "name" $name -}}
-  {{- if ne . $page -}}
-    {{- $li = merge $li (dict "item" $url) -}}
-  {{- end -}}
+  {{- $li := dict "@type" "ListItem" "position" $pos "name" $name "item" $url -}}
   {{- $listItems = $listItems | append $li -}}
 {{- end -}}
 {{- if eq (len $listItems) 0 -}}
