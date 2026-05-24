@@ -5,9 +5,9 @@
 {{- return -}}
 {{- end -}}
 {{- $titleCase := default false $page.Site.Params.titleCase -}}
-{{- $chain := $page.Ancestors -}}
-{{- if and (not $page.IsHome) (eq (len $chain) 0) -}}
-  {{- $chain = slice $page.Site.Home -}}
+{{- $chain := $page.Ancestors | collections.Reverse -}}
+{{- if and (not $page.IsHome) (not (in $chain $page.Site.Home)) -}}
+  {{- $chain = $page.Site.Home | append $chain -}}
 {{- end -}}
 {{- $chain = $chain | append $page -}}
 {{- $listItems := slice -}}
