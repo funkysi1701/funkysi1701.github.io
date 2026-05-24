@@ -66,7 +66,9 @@
 {{- end -}}
 {{- $structured := dict -}}
 {{- if eq .Section "posts" -}}
-  {{- $breadcrumb := partial "head/breadcrumb-schema" . -}}
+  {{- $schemaScratch := newScratch -}}
+  {{- partial "head/breadcrumb-schema" (dict "page" . "target" $schemaScratch) -}}
+  {{- $breadcrumb := $schemaScratch.Get "schema" -}}
   {{- if $breadcrumb -}}
     {{- $structured = dict "@context" "https://schema.org" "@graph" (slice $article $breadcrumb) -}}
   {{- else -}}
