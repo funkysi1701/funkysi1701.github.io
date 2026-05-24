@@ -1,0 +1,35 @@
+{{- if not (and (default true .Site.Params.breadcrumb) (default true .Params.breadcrumb)) -}}
+{{- return false -}}
+{{- end -}}
+{{- $titleCase := default false $.Site.Params.titleCase -}}
+{{- $chain := .Ancestors -}}
+{{- if and (not .IsHome) (eq (len $chain) 0) -}}
+  {{- $chain = slice .Site.Home -}}
+{{- end -}}
+{{- $chain = $chain | append . -}}
+{{- $page := . -}}
+{{- $listItems := slice -}}
+{{- $pos := 0 -}}
+{{- range $chain -}}
+  {{- $pos = add $pos 1 -}}
+  {{- $name := .Title -}}
+  {{- if .IsHome -}}
+    {{- $name = i18n "home" -}}
+  {{- else if $titleCase -}}
+    {{- $name = title $name -}}
+  {{- end -}}
+  {{- $url := .Permalink -}}
+  {{- if and (in .Title "Events") (eq .Section "events") -}}
+    {{- $url = absURL "/events/2026" -}}
+  {{- end -}}
+  {{- $li := dict "@type" "ListItem" "position" $pos "name" $name -}}
+  {{- if ne . $page -}}
+    {{- $li = merge $li (dict "item" $url) -}}
+  {{- end -}}
+  {{- $listItems = $listItems | append $li -}}
+{{- end -}}
+{{- if eq (len $listItems) 0 -}}
+{{- return false -}}
+{{- end -}}
+{{- $breadcrumb := dict "@type" "BreadcrumbList" "@id" (printf "%s#breadcrumb" $page.Permalink) "itemListElement" $listItems -}}
+{{- return $breadcrumb -}}
