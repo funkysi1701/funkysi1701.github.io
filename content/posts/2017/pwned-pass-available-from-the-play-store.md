@@ -25,7 +25,7 @@ aliases = [
 ]
 +++
 
-Pwned Pass is now available from the [Google Play Store](https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords).
+Pwned Pass is now available from the Google Play Store.
 
 ![Pwned Pass](/images/2017/Screenshot_20170813-205152.png)
 

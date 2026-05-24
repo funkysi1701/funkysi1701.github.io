@@ -26,7 +26,7 @@ aliases = [
 ]
 +++
 
-![Pwned Pass](/images/google/pwned-pass-icon.png)A new version of Pwned Pass is available from [Google Play](https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords).
+![Pwned Pass](/images/google/pwned-pass-icon.png)A new version of Pwned Pass is available from Google Play.
 
 A couple of weeks ago [Troy Hunt](https://www.troyhunt.com/ive-just-launched-pwned-passwords-version-2/) released V2 of Pwned Pass onto his [haveibeenpwned](https://haveibeenpwned.com/) website. There are now over half a billion passwords that have appeared in data breaches for you to search.
 
