@@ -1,0 +1,32 @@
+{{- $page := .page -}}
+{{- $target := .target -}}
+{{- if not (and (default true $page.Site.Params.breadcrumb) (default true $page.Params.breadcrumb)) -}}
+{{- $target.Set "schema" false -}}
+{{- return -}}
+{{- end -}}
+{{- $titleCase := default false $page.Site.Params.titleCase -}}
+{{- $chain := $page.Ancestors | collections.Reverse -}}
+{{- if and (not $page.IsHome) (not (in $chain $page.Site.Home)) -}}
+  {{- $chain = $page.Site.Home | append $chain -}}
+{{- end -}}
+{{- $chain = $chain | append $page -}}
+{{- $listItems := slice -}}
+{{- $pos := 0 -}}
+{{- range $chain -}}
+  {{- $pos = add $pos 1 -}}
+  {{- $name := .Title -}}
+  {{- if .IsHome -}}
+    {{- $name = i18n "home" -}}
+  {{- else if $titleCase -}}
+    {{- $name = title $name -}}
+  {{- end -}}
+  {{- $url := .Permalink -}}
+  {{- $li := dict "@type" "ListItem" "position" $pos "name" $name "item" $url -}}
+  {{- $listItems = $listItems | append $li -}}
+{{- end -}}
+{{- if eq (len $listItems) 0 -}}
+{{- $target.Set "schema" false -}}
+{{- return -}}
+{{- end -}}
+{{- $breadcrumb := dict "@type" "BreadcrumbList" "@id" (printf "%s#breadcrumb" $page.Permalink) "itemListElement" $listItems -}}
+{{- $target.Set "schema" $breadcrumb -}}
