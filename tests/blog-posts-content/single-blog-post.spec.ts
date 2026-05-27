@@ -66,5 +66,16 @@ test.describe('Blog Posts and Content', () => {
       await expect(page.locator('text=/reading time|min read|\d+ min/i').first()).toBeVisible();
     });
 
+    await test.step('Verify SEO meta description from front matter', async () => {
+      const description = page.locator('meta[name="description"]');
+      await expect(description).toHaveCount(1);
+      await expect(description).toHaveAttribute(
+        'content',
+        /For the second year running, I had the privilege of volunteering at NDC London/i,
+      );
+      const content = await description.getAttribute('content');
+      expect(content?.length ?? 0).toBeGreaterThanOrEqual(110);
+    });
+
   });
 });
