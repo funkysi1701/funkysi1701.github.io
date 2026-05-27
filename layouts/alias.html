@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode | default "en-gb" }}">
+<head>
+  <title>{{ .Title }}</title>
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{- $pageDesc := "" -}}
+  {{- with .Params.description -}}
+    {{- $pageDesc = . -}}
+  {{- else -}}
+    {{- with .Description -}}
+      {{- $pageDesc = . -}}
+    {{- else -}}
+      {{- $pageDesc = .Summary -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $pageDesc = $pageDesc | plainify | htmlUnescape -}}
+  {{- if not $pageDesc -}}
+    {{- $pageDesc = .Title | plainify | htmlUnescape -}}
+  {{- end -}}
+  <meta name="description" content="{{ $pageDesc }}">
+  <meta name="robots" content="noindex,follow">
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url={{ .Permalink }}">
+</head>
+</html>
