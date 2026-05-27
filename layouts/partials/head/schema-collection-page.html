@@ -1,9 +1,9 @@
 {{- $page := .page -}}
 {{- $pageDesc := printf "%s - %s" $page.Title ($page.Site.Params.description | default "") | plainify | htmlUnescape -}}
 {{- $pageURL := $page.Permalink -}}
-{{- with $page.Paginator -}}
-  {{- if gt .PageNumber 1 -}}
-    {{- $pageURL = .URL | absLangURL -}}
+{{- if $page.Paginator -}}
+  {{- if gt $page.Paginator.PageNumber 1 -}}
+    {{- $pageURL = $page.Paginator.URL | absLangURL -}}
   {{- end -}}
 {{- else if strings.Contains $page.RelPermalink "/page/" -}}
   {{- $pageURL = $page.RelPermalink | absLangURL -}}
