@@ -1,11 +1,7 @@
 {{- $page := .page -}}
 {{- $pageDesc := printf "%s - %s" $page.Title ($page.Site.Params.description | default "") | plainify | htmlUnescape -}}
 {{- $pageURL := $page.Permalink -}}
-{{- if $page.Paginator -}}
-  {{- if gt $page.Paginator.PageNumber 1 -}}
-    {{- $pageURL = $page.Paginator.URL | absLangURL -}}
-  {{- end -}}
-{{- else if strings.Contains $page.RelPermalink "/page/" -}}
+{{- if strings.Contains $page.RelPermalink "/page/" -}}
   {{- $pageURL = $page.RelPermalink | absLangURL -}}
 {{- end -}}
 {{- $website := dict "@type" "WebSite" "@id" (printf "%s#website" $page.Site.Home.Permalink) "name" $page.Site.Title "url" $page.Site.Home.Permalink -}}

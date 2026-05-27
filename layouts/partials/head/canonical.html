@@ -3,11 +3,7 @@
 <link rel="canonical" href="{{ . | relLangURL }}" itemprop="url" />
 {{ else }}
   {{- $canonical := .Permalink -}}
-  {{- if .Paginator -}}
-    {{- if gt .Paginator.PageNumber 1 -}}
-      {{- $canonical = .Paginator.URL | absLangURL -}}
-    {{- end -}}
-  {{- else if strings.Contains .RelPermalink "/page/" -}}
+  {{- if strings.Contains .RelPermalink "/page/" -}}
     {{- $canonical = .RelPermalink | absLangURL -}}
   {{- end -}}
 <link rel="canonical" href="{{ $canonical }}" itemprop="url" />
