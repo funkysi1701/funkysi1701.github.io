@@ -3,9 +3,9 @@
 <link rel="canonical" href="{{ . | relLangURL }}" itemprop="url" />
 {{ else }}
   {{- $canonical := .Permalink -}}
-  {{- with .Paginator -}}
-    {{- if gt .PageNumber 1 -}}
-      {{- $canonical = .URL | absLangURL -}}
+  {{- if .Paginator -}}
+    {{- if gt .Paginator.PageNumber 1 -}}
+      {{- $canonical = .Paginator.URL | absLangURL -}}
     {{- end -}}
   {{- else if strings.Contains .RelPermalink "/page/" -}}
     {{- $canonical = .RelPermalink | absLangURL -}}
