@@ -67,13 +67,12 @@ test.describe('Blog Posts and Content', () => {
     });
 
     await test.step('Verify SEO meta description from front matter', async () => {
+      const expectedDescription =
+        'For the second year running, I had the privilege of volunteering at NDC London';
       const description = page.locator('meta[name="description"]');
       await expect(description).toHaveCount(1);
-      await expect(description).toHaveAttribute(
-        'content',
-        /For the second year running, I had the privilege of volunteering at NDC London/i,
-      );
       const content = await description.getAttribute('content');
+      expect(content?.trim()).toBe(expectedDescription);
       expect(content?.length ?? 0).toBeGreaterThanOrEqual(110);
     });
 
