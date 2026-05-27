@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode | default "en-gb" }}">
+<html lang="{{ site.LanguageCode }}">
 <head>
+  <meta charset="utf-8">
   <title>{{ .Title }}</title>
   <link rel="canonical" href="{{ .Permalink }}">
   {{- $pageDesc := "" -}}
@@ -17,9 +18,35 @@
   {{- if not $pageDesc -}}
     {{- $pageDesc = .Title | plainify | htmlUnescape -}}
   {{- end -}}
+  {{- $title := .Title | plainify | htmlUnescape -}}
+  {{- $image := absURL "/images/1922276.jpg" -}}
+  {{- $cover := .Params.cover | default "" -}}
+  {{- if ne $cover "" -}}
+    {{- $image = absURL $cover -}}
+  {{- else if isset .Params "images" -}}
+    {{- with .Params.images -}}
+      {{- if gt (len .) 0 -}}
+        {{- $firstImage := index . 0 | default "" -}}
+        {{- if ne $firstImage "" -}}
+          {{- $image = absURL $firstImage -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
   <meta name="description" content="{{ $pageDesc }}">
   <meta name="robots" content="noindex,follow">
-  <meta charset="utf-8">
+  <meta property="og:title" content="{{ $title }}">
+  <meta property="og:description" content="{{ $pageDesc }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:image" content="{{ $image }}">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ $title }}">
+  <meta name="twitter:description" content="{{ $pageDesc }}">
+  <meta name="twitter:image" content="{{ $image }}">
+  {{- with site.Params.social.twitter -}}
+  <meta name="twitter:site" content="@{{ . }}">
+  {{- end -}}
   <meta http-equiv="refresh" content="0; url={{ .Permalink }}">
 </head>
 <body>
