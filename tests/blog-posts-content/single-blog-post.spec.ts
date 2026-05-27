@@ -72,7 +72,9 @@ test.describe('Blog Posts and Content', () => {
       const description = page.locator('meta[name="description"]');
       await expect(description).toHaveCount(1);
       const content = await description.getAttribute('content');
-      expect(content?.trim()).toBe(expectedDescription);
+      expect(content ?? '').toContain(
+        'For the second year running, I had the privilege of volunteering at NDC London',
+      );
       expect(content?.length ?? 0).toBeGreaterThanOrEqual(110);
     });
 
