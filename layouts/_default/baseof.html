@@ -1,0 +1,39 @@
+<!doctype html>
+{{- $color := $.Site.Params.color -}}
+<html lang="{{ .Lang }}"{{ with $.Site.Params.palette }} data-palette="{{ . }}"{{ end }}
+  {{ if in (slice "light" "dark") $color }}{{ printf " data-mode=\"%s\"" $color | safeHTMLAttr }}{{ end }}>
+  <head>
+    {{- if $.Site.Params.enableGatekeeper -}}
+    <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+    <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+    <script>
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+    </script>
+    {{- end -}}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{- block "title" . -}}{{- partial "head/title" . -}}{{- end -}}</title>
+    {{- partial "head.html" . -}}
+    {{- block "head-end" . -}}{{- end -}}
+    {{- partial "hooks/head-end" . -}}
+    {{- partial "head/canonical" . -}}
+  </head>
+  <body>
+    {{- $bootstrapScript := resources.Get "bootstrap/template.js" | resources.ExecuteAsTemplate "js/bootstrap.js" . | minify -}}
+    <script>
+      {{- $bootstrapScript.Content | safeJS -}}
+    </script>
+    {{- partial "header.html" . -}}
+    {{- partial "hooks/main-begin" . -}}
+    <main role="main" class="container{{ if default false .Site.Params.fullWidth }}-fluid{{ end }}">
+      <div class="row content">
+        {{- block "content" . -}}{{- end -}}
+      </div>
+    </main>
+    {{- partial "hooks/main-end" . -}}
+    {{- partial "footer.html" . -}}
+    {{- partial "body-end" . -}}
+  </body>
+</html>
