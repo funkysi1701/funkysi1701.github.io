@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>{{ .Title }}</title>
-  <link rel="canonical" href="{{ .Permalink }}">
   {{- $pageDesc := "" -}}
   {{- with .Params.description -}}
     {{- $pageDesc = . -}}
@@ -47,6 +46,7 @@
   {{- with site.Params.social.twitter -}}
   <meta name="twitter:site" content="@{{ . }}">
   {{- end -}}
+  {{- partial "head/schema-blog-posting" (dict "page" .) -}}
   <meta http-equiv="refresh" content="0; url={{ .Permalink }}">
 </head>
 <body>
