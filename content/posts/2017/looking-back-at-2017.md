@@ -38,15 +38,15 @@ In September the latest Star Trek TV series Discovery arrived on Netflix. I have
 
 3) Office move
 
-In May I helped my employer move to brand new [offices](https://www.funkysi1701.com/office-move). This was a lot of hard work, but everything went as planned and our new home is great.
+In May I helped my employer move to brand new [offices](https://www.funkysi1701.com/posts/2017/office-move/). This was a lot of hard work, but everything went as planned and our new home is great.
 
 4) Side projects ![Google Play](/images/2017/googleplay.jpg)
 
-I blogged in February about having a side project but it wasn’t until later in the year that this solidified into what I am working on now. It started as a way to understand [interfaces](https://www.funkysi1701.com/interfaces)this then led to learning Xamarin and creating an android app to help promote this blog. Troy Hunt expanded his HIBP API to include passwords that have been in data breaches, I then started working on pwned passwords which is a simple android frontend for this.
+I blogged in February about having a side project but it wasn’t until later in the year that this solidified into what I am working on now. It started as a way to understand [interfaces](https://www.funkysi1701.com/posts/2017/interfaces/)this then led to learning Xamarin and creating an android app to help promote this blog. Troy Hunt expanded his HIBP API to include passwords that have been in data breaches, I then started working on pwned passwords which is a simple android frontend for this.
 
 5) Learning R
 
-In Feb I also experimented with a new programming language [R](https://www.funkysi1701.com/learning-r). It started with a problem about converting exchange rates and ended with a SQL stored procedure that executed some R code, I still want to learn lots more but it was a good example of the sorts of thing you can build with R.
+In Feb I also experimented with a new programming language [R](https://www.funkysi1701.com/posts/2017/learning-r/). It started with a problem about converting exchange rates and ended with a SQL stored procedure that executed some R code, I still want to learn lots more but it was a good example of the sorts of thing you can build with R.
 
 6) DNS programmatically
 

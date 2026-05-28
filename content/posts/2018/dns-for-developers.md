@@ -77,7 +77,7 @@ Like A record but for ipv6
 
 ### What next?
 
-Want to put some different DNS records into practise? Buy a domain name and publish some content to it. Check out my previous post about [programmatically adding records](https://www.funkysi1701.com/creating-dns-records-programmatically). Want an SSL certificate? Get a wildcard one and then you can apply it to any subdomain you add to your domain.
+Want to put some different DNS records into practise? Buy a domain name and publish some content to it. Check out my previous post about [programmatically adding records](https://www.funkysi1701.com/posts/2017/creating-dns-records-programmatically/). Want an SSL certificate? Get a wildcard one and then you can apply it to any subdomain you add to your domain.
 
 If you have a new website you want to publish consider which of the following is better:
 

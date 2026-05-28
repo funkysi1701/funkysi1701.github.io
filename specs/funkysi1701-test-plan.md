@@ -254,7 +254,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
 **File:** `tests/blog-posts-content/blog-comments.spec.ts`
 
 **Steps:**
-  1. Navigate to a blog post (e.g., https://www.funkysi1701.com/posts/2026/01/31/ndc-london-2026)
+  1. Navigate to a blog post (e.g., https://www.funkysi1701.com/posts/2026/ndc-london-2026)
   2. Scroll to the bottom of the post
   3. Check for Giscus comment section
   4. Verify comment section loads
@@ -862,7 +862,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
 **File:** `tests/edge-cases/deep-link-access.spec.ts`
 
 **Steps:**
-  1. Directly navigate to a specific blog post URL (for example, https://www.funkysi1701.com/posts/2025/01/31/some-post – this is a placeholder; replace it with an actual existing post URL such as the NDC London 2026 post)
+  1. Directly navigate to a specific blog post URL (for example, https://www.funkysi1701.com/posts/2025/some-post – this is a placeholder; replace it with an actual existing post URL such as the NDC London 2026 post)
   2. Verify page loads without errors
   3. Directly navigate to a tag page (e.g., /tags/azure/)
   4. Verify tag page loads correctly

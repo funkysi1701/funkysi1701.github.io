@@ -23,7 +23,7 @@ aliases = [
 ]
 +++
 
-Today is my day off, but I wake up and have a quick look at [nagios](https://www.funkysi1701.com/posts/i-love-nagios/) to see if there is anything I need to worry about. Yes there is, SQL Server has run out of disk space on its data disk.
+Today is my day off, but I wake up and have a quick look at [nagios](https://www.funkysi1701.com/posts/2014/i-love-nagios/) to see if there is anything I need to worry about. Yes there is, SQL Server has run out of disk space on its data disk.
 
 I race downstairs and VPN onto the server to find out what has happened. One of my monitoring databases has had runaway log growth and is over 80Gb is size.
 

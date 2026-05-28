@@ -24,7 +24,7 @@ aliases = [
 ]
 +++
 
-While at [Microsoft Ignite](https://www.funkysi1701.com/2019/02/26/microsoft-ignite-the-tour-london) I heard about a lot of cool tech that I want to know more about. The best way to learn something is use it to solve a problem.
+While at [Microsoft Ignite](https://www.funkysi1701.com/posts/2019/microsoft-ignite-the-tour-london) I heard about a lot of cool tech that I want to know more about. The best way to learn something is use it to solve a problem.
 
 So what can I build that is both useful and will let me play with some new tech?
 
