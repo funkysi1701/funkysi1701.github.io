@@ -23,7 +23,7 @@ aliases = [
     "/2020/03/03/testing-for-expiring-ssl-certificates"
 ]
 +++
-Let's Encrypt is amazing, you can easily add SSL certificates to any website and automate the renewal process. I have talked [before](https://www.funkysi1701.com/posts/let-s-encrypt-is-awesome-3f5j/) about how impressive it is.
+Let's Encrypt is amazing, you can easily add SSL certificates to any website and automate the renewal process. I have talked [before](https://www.funkysi1701.com/posts/2018/let-s-encrypt-is-awesome-3f5j/) about how impressive it is.
 
 Once you start adding SSL certificates to your production sites however you may want to check when they expire so you don't get caught out. You can always open your site in your favourite browser and view the certificate information and expiry date.
 

@@ -27,7 +27,7 @@ As I write this, I have just been made redundant. AI is not being used to explai
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I just got laid off..... Again...... I am still in shock. I loved my new job and was creating great impact but here we are again. Layoffs are not personal so I am ok but yeh will be looking for something new...... Again......</p>&mdash; Debbie O&#39;Brien (@debs_obrien) <a href="https://twitter.com/debs_obrien/status/2027171846743892254?ref_src=twsrc%5Etfw">February 27, 2026</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-I listened to an excellent talk at [NDC London](/ndc-london-2026) by Debbie O'Brien about using AI to do amazing things with [Playwright MCP](https://youtu.be/Numb52aJkJw). If people who are using AI to its fullest are losing their jobs to AI, what hope is there for our industry? Are we all going to be writing AI prompts and that's it?
+I listened to an excellent talk at [NDC London](/posts/2026/ndc-london-2026/) by Debbie O'Brien about using AI to do amazing things with [Playwright MCP](https://youtu.be/Numb52aJkJw). If people who are using AI to its fullest are losing their jobs to AI, what hope is there for our industry? Are we all going to be writing AI prompts and that's it?
 
 But let's stop for a minute. Software development is an ever-changing industry. There is always something new to learn and this AI craze is no different.
 
@@ -281,7 +281,7 @@ The developers who thrive in this shift will be the ones who can hold the system
 
 Systems thinking is what stops an AI-generated "solution" from becoming a future incident.
 
-It's also why the old advice from [The Pragmatic Programmer](/pragmatic-programmer) matters even more now: remember the big picture.
+It's also why the old advice from [The Pragmatic Programmer](/posts/2025/pragmatic-programmer/) matters even more now: remember the big picture.
 
 Not "can we generate this function", but:
 
