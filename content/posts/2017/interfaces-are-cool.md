@@ -24,7 +24,7 @@ aliases = [
     "/posts/2017/interfaces-are-cool"
 ]
 +++
-A while back I [blogged](https://www.funkysi1701.com/posts/interfaces/) about learning about interfaces as I didn’t really understand the value of them. I do now.
+A while back I [blogged](https://www.funkysi1701.com/posts/2017/interfaces/) about learning about interfaces as I didn’t really understand the value of them. I do now.
 
 I created an application that used interfaces so I could learn how it worked. I created a Logger Interface and created multiple classes that implemented that interface so I could swap out the different implementations easily. I created a SQL Logger and a File Logger and my code could be written and be completely unaware of which implementation it was using.
 

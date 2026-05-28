@@ -25,7 +25,7 @@ aliases = [
 ]
 +++
 
-In [November 2015](https://www.funkysi1701.com/posts/star-trek-is-back-in-2017) it was announced that a new Star Trek series was going to be launched. It has been a long wait with multiple delays but Star Trek Discovery is finally here.
+In [November 2015](https://www.funkysi1701.com/posts/2015/star-trek-is-back-in-2017/) it was announced that a new Star Trek series was going to be launched. It has been a long wait with multiple delays but Star Trek Discovery is finally here.
 
 Star Trek Discovery launches in the US on 24th September and in the UK on 25th September.
 
