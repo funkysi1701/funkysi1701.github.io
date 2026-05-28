@@ -48,4 +48,4 @@ Azure has a host of command lines available via powershell. AWS has a similar co
 
 AWS Toolkit for Visual Studio is an extension that allows for the publishing of websites to AWS. (Just like you can publish to Azure)
 
-As I learn more about AWS I will continue to blog about it. [Amazon Web Services Pt 2](https://www.funkysi1701.com/2016/08/04/amazon-web-services-pt-2/)
+As I learn more about AWS I will continue to blog about it. [Amazon Web Services Pt 2](https://www.funkysi1701.com/posts/2016/amazon-web-services-pt-2/)
