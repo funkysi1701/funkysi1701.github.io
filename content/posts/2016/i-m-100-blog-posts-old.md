@@ -41,4 +41,4 @@ Hopefully a refreshed look in the next few months. Hopefully regular posts. If t
 
 **What is my favourite post?**
 
-Maybe [User Groups and F#](https://www.funkysi1701.com/2015/05/30/user-groups-and-f/) which proved very popular and got me to start going to user groups something I still enjoy today. I also like [Coding Myself Into A Corner](https://www.funkysi1701.com/2016/02/25/coding-myself-into-a-corner/) which got me to start thinking more if I was giving myself future problems. But there are many others I like such as [James and Becoming a father](https://www.funkysi1701.com/2015/09/03/baby-magic-and-becoming-a-father/)
+Maybe [User Groups and F#](https://www.funkysi1701.com/posts/2015/user-groups-and-f/) which proved very popular and got me to start going to user groups something I still enjoy today. I also like [Coding Myself Into A Corner](https://www.funkysi1701.com/posts/2016/coding-myself-into-a-corner/) which got me to start thinking more if I was giving myself future problems. But there are many others I like such as [James and Becoming a father](https://www.funkysi1701.com/posts/2015/baby-magic-and-becoming-a-father/)

@@ -24,7 +24,7 @@ aliases = [
 ]
 +++
 
-A while ago I blogged about [promoting](https://www.funkysi1701.com/2017/04/17/automation-promotion/) my blog with Buffer. At the time I made use of the nuget package [BufferAPI](https://www.nuget.org/packages/BufferAPI/) but lets look at some improvements I can make.
+A while ago I blogged about [promoting](https://www.funkysi1701.com/posts/2017/automation-promotion/) my blog with Buffer. At the time I made use of the nuget package [BufferAPI](https://www.nuget.org/packages/BufferAPI/) but lets look at some improvements I can make.
 
 The BufferAPI package worked great from my console app, but when I tried to use it from a Controller in an MVC app I never got it to work. Lets look at the API docs and see if I can rewrite it.
 
