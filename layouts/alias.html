@@ -46,7 +46,16 @@
   {{- with site.Params.social.twitter -}}
   <meta name="twitter:site" content="@{{ . }}">
   {{- end -}}
-  {{- partial "head/schema-blog-posting" (dict "page" .) -}}
+  {{- $aliasSchema := dict
+    "@context" "https://schema.org"
+    "@type" "BlogPosting"
+    "headline" $title
+    "description" $pageDesc
+    "url" .Permalink
+    "image" $image
+    "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+  -}}
+  <script type="application/ld+json">{{- $aliasSchema | jsonify | safeJS -}}</script>
   <meta http-equiv="refresh" content="0; url={{ .Permalink }}">
 </head>
 <body>
