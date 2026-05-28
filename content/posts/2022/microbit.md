@@ -30,7 +30,7 @@ Programming is in my DNA, so when I had children it was obvious that I would att
 
 It was his birthday the other day and he got quite a few tech related things. First off he got some programming books. [Get Coding!](https://www.amazon.co.uk/gp/product/1406366846/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&psc=1), [Coding for Kids: Scratch:](https://www.amazon.co.uk/gp/product/1641522453/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) and [Coding for Kids: Python:](https://www.amazon.co.uk/gp/product/1641521759/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
 
-He has been reading an old Javascript book, so I wanted to get him something a bit more up to date, so the Get Coding book should give him the basics of creating webpages and doing things with Javascript. He has been also been playing with [Scratch](/posts/scratch) for a while so the second book will definitely interest him. He also keeps mentioning Python, which I know nothing about, so even if he never reads it, I have something new to learn!
+He has been reading an old Javascript book, so I wanted to get him something a bit more up to date, so the Get Coding book should give him the basics of creating webpages and doing things with Javascript. He has been also been playing with [Scratch](/posts/2022/scratch/) for a while so the second book will definitely interest him. He also keeps mentioning Python, which I know nothing about, so even if he never reads it, I have something new to learn!
 
 As well as the books he got a BBC micro:bit (with some accessories!) from his grandparents. He has been playing with [MakeCode](https://makecode.microbit.org/#) which features a simulator of a micro:bit, so I thought he might like having a physical device in his hands. 
 
