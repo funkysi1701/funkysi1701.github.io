@@ -27,7 +27,7 @@ This week I have been looking at improving my understanding of a few programming
 
 ### MVC
 
-I have previously blogged about [MVC](https://www.funkysi1701.com/2016/03/17/model-view-controller-mvc/), but my understanding was not 100% correct so I will refine this here.
+I have previously blogged about [MVC](https://www.funkysi1701.com/posts/2016/model-view-controller-mvc/), but my understanding was not 100% correct so I will refine this here.
 
 **Model** – Now this is where my understanding was not quite correct. I thought the model was the actual source data, eg an XML file, SQL database etc. The model is the business logic so this is a processed version of the source data. MVC does not care where data is stored it can be flat files, SQL, XML or anything really.
 

@@ -26,7 +26,7 @@ On 19th August at 9.39 pm James David Martin Foster arrived weighing 9 lb 12.
 ![](/images/COogcqtXAAAzZ7A.jpg)
 ![](/images/COZF5PjWUAAhcan.jpg)
 
-My initial thoughts on fatherhood can be found [here](https://www.funkysi1701.com/2015/09/03/baby-magic-and-becoming-a-father/). More baby photos can also be found on my [instragram](https://www.instagram.com/funkysi1701/).
+My initial thoughts on fatherhood can be found [here](https://www.funkysi1701.com/posts/2015/baby-magic-and-becoming-a-father/). More baby photos can also be found on my [instragram](https://www.instagram.com/funkysi1701/).
 
 ![](/images/twitter.jpg)
 

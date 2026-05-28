@@ -25,7 +25,7 @@ aliases = [
 +++
 I have blogged a few times about [interfaces](https://www.funkysi1701.com/posts/2017/interfaces/), and how useful they are for producing good quality maintainable code. Let’s look at a problem and the solution I came up with which I am quite proud of.
 
-As previously mentioned I am in the process of moving [images](https://www.funkysi1701.com/2018/01/22/moving-blobs-cloud-suppliers/) from AWS to Azure blob storage. Now that the actual files themselves have been moved I need to change the code that references them.
+As previously mentioned I am in the process of moving [images](https://www.funkysi1701.com/posts/2018/moving-blobs-cloud-suppliers/) from AWS to Azure blob storage. Now that the actual files themselves have been moved I need to change the code that references them.
 
 Now I could find all the code that uses the AWS API and replace it with the Azure API but I am not very good at predicting the future, we may stay on Azure for a while, we may move to AWS or Google Cloud, or we may want to go back to files sitting on a server.
 

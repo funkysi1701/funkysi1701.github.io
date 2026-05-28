@@ -24,7 +24,7 @@ aliases = [
 ]
 +++
 
-Last week I talked about [Power BI](https://www.funkysi1701.com/2017/06/05/businessintelligence/), what it is and some of the different services you can use with it. This week lets add some of that data to a simple web page.
+Last week I talked about [Power BI](https://www.funkysi1701.com/posts/2017/businessintelligence/), what it is and some of the different services you can use with it. This week lets add some of that data to a simple web page.
 
 For this example I am going to add the google analytics data from this website to this page.
 
