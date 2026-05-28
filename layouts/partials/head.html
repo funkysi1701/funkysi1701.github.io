@@ -48,6 +48,6 @@
 <script type="application/ld+json">{{- $websiteJSON | safeJS -}}</script>
 {{- else if .IsPage -}}
 {{- partial "head/schema-blog-posting" (dict "page" .) -}}
-{{- else if or (eq .Kind "term") (eq .Kind "taxonomy") -}}
+{{- else if or (eq .Kind "term") (eq .Kind "taxonomy") (eq .Kind "section") -}}
 {{- partial "head/schema-collection-page" (dict "page" .) -}}
 {{- end -}}
