@@ -23,7 +23,7 @@ aliases = [
     "/2017/09/12/azure-functions"
 ]
 +++
-I recently blogged about using [Azure Web Jobs](https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff), Azure Function is another way of doing the same thing, lets look at how they work.
+I recently blogged about using [Azure Web Jobs](https://www.funkysi1701.com/posts/2017/using-azure-webjobs-to-automate-stuff/), Azure Function is another way of doing the same thing, lets look at how they work.
 
 (Sorry its been a while since I blogged but I suspect an erratic schedule will continue for the next few months.)
 
