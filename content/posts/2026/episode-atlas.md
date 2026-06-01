@@ -10,7 +10,7 @@ images = [
     "/images/2026/episode-atlas/episode-atlas-home.png",
     "/images/2026/episode-atlas/episode-atlas-episodes.png",
     "/images/2026/episode-atlas/episode-atlas-search.png",
-    "/images/2026/episode-atlas/episode-atlas-themes.png",
+    "/images/2026/episode-atlas/episode-atlas-collections.png",
     "/images/2026/episode-atlas/episode-atlas-random.png"
 ]
 tags = ["Star Trek", "Side Projects", "Episode Atlas"]
@@ -71,7 +71,7 @@ The flow the site describes is simple: **search → open → mark watched → mo
 
 **Collections** answer a different question from search: *“It is late; show me something good in this mood.”* Each collection points at Borg stories, time-travel episodes, holodeck highlights, and similar lists—fan knowledge encoded as browseable sets, so you skip filler without digging through every season.
 
-![Curated Star Trek episode collections](/images/2026/episode-atlas/episode-atlas-themes.png)
+![Curated Star Trek episode collections](/images/2026/episode-atlas/episode-atlas-collections.png)
 
 ## Random episode when you cannot decide
 

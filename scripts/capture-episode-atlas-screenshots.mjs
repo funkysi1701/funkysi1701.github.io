@@ -13,7 +13,7 @@ const outDir = join(__dirname, '..', 'static', 'images', '2026', 'episode-atlas'
 /** @type {{ name: string; url: string; extraMs?: number; after?: (page: import('@playwright/test').Page) => Promise<void> }[]} */
 const shots = [
   { name: 'episode-atlas-home', url: 'https://www.episodeatlas.com/', extraMs: 3000 },
-  { name: 'episode-atlas-themes', url: 'https://www.episodeatlas.com/themes', extraMs: 4000 },
+  { name: 'episode-atlas-collections', url: 'https://www.episodeatlas.com/collections', extraMs: 4000 },
   { name: 'episode-atlas-random', url: 'https://www.episodeatlas.com/random', extraMs: 4000 },
   {
     name: 'episode-atlas-episodes',
