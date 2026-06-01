@@ -34,7 +34,7 @@ These rules apply to all edits in this repo. Prefer matching existing patterns (
 - **Blog posts (`content/posts/**/*.md`):** Front matter `title` must stay within **50–60 characters** (inclusive), and `description` within **110–160 characters** (inclusive). CI enforces this via `scripts/check_meta_titles.py` and `scripts/check_meta_descriptions.py` (`.github/workflows/meta-title-length.yml` and `meta-description-length.yml`). Fix out-of-range values before merge.
 - **Headings:** Use a single top-level Markdown heading per page where that matches the site’s heading structure (one primary in-page title). Use lower-level headings for sections.
 - **Open Graph / Twitter / JSON-LD:** Follow patterns the theme and existing `layouts/partials/head.html` (and related partials) already emit. When adding share imagery or new external hosts, ensure CSP, headers, and SWA config remain coherent—do not bolt on inline trackers or third-party scripts without a clear need and review.
-- **Language:** Site language is British English (`languageCode = 'en-gb'` in config); keep copy and spelling consistent unless a quoted source requires otherwise.
+- **Language:** Site language is British English (`locale = 'en-gb'` in config); keep copy and spelling consistent unless a quoted source requires otherwise.
 
 ## Testing and CI expectations
 
