@@ -112,7 +112,7 @@ steps:
   displayName: 'Notify GitHub (repository_dispatch: azure-pipeline-complete)'
   condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   env:
-    GITHUB_TOKEN: $(GitHubToken)
+    GITHUB_TOKEN: $(GITHUB_TOKEN)
   inputs:
     targetType: inline
     script: |
