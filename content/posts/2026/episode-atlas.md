@@ -39,7 +39,7 @@ That is the problem **[Episode Atlas](https://www.episodeatlas.com/)** exists to
 
 I write about *Star Trek* on this blog from time to time—episode reviews, top-50 lists, thoughts on new series. The honest origin is simpler than that, though: **I wanted a better way to track my own rewatches**.
 
-Generic TV trackers are fine if you watch a bit of everything. They are less helpful when you care about **one enormous franchise** with inconsistent numbering, films mixed in with series, and the urge to jump to "all the Borg episodes" rather than the next sequential instalment. Episode Atlas is deliberately narrow (if you can describe a database of over 900 episodes and films narrow!): all of *Star Trek*, in one place, with features shaped by how fans actually rewatch.
+Generic TV trackers are fine if you watch a bit of everything. They are less helpful when you care about **one enormous franchise** with inconsistent stardates, films mixed in with series, and the urge to jump to "all the Borg episodes" rather than the next sequential instalment. Episode Atlas is deliberately narrow (if you can describe a database of over 900 episodes and films narrow!): all of *Star Trek*, in one place, with features shaped by how fans actually rewatch.
 
 ## Browse first, sign in to save
 
