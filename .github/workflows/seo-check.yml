@@ -1,5 +1,7 @@
 name: SEO Check
-
+permissions:
+  contents: read
+  
 on:
   repository_dispatch:
     types: [azure-pipeline-complete]
