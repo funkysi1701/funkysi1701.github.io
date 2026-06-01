@@ -1,4 +1,6 @@
 locale = 'en-gb'
+# Docker on Windows bind mounts often cannot set mtime (chtimes); static copy still succeeds.
+noTimes = true
 title = "Funky Si's Blog"
 theme = 'hugo-theme-bootstrap'
 enableRobotsTXT = true

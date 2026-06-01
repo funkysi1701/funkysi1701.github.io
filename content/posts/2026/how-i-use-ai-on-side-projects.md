@@ -38,7 +38,7 @@ A few examples from things I have built:
 
 - **This blog (Hugo + Azure Static Web Apps)** — I might ask how people usually implement site search on static sites, or what the trade-offs are between generating a JSON index at build time versus leaning on a hosted search service. I am not looking for a drop-in patch to my theme; I want a short list of options so I can decide what fits a hobby budget.
 
-- **[Episode Atlas](https://www.episodeatlas.com/) (Blazor, Functions, SQL)** — good prompts sound like "patterns for tracking per-user progress through a large catalogue" or "when a tiny Blazor app might still justify a separate API layer." Those are design conversations. The model does not need to see my episode table to help me think about indexing and stale data.
+- **[Episode Atlas](https://www.episodeatlas.com/) (Blazor, Functions, Cosmos DB)** — good prompts sound like "patterns for tracking per-user progress through a large catalogue" or "when a tiny Blazor app might still justify a separate API layer." Those are design conversations. The model does not need to see my episode containers to help me think about partition keys and stale data.
 
 - **[Mandelbrot Generator](https://mandelbrot.funkysi1701.com/) (Blazor WebAssembly)** — I have used general chats to reason about why browser-side fractals feel CPU-bound, or what people typically do first when zoom performance tanks. Again, that is physics-of-the-platform stuff, not "line 40 of my render loop."
 
@@ -54,7 +54,7 @@ Typical jobs:
 
 - **Blog platform** — adjusting a Hugo layout or partial, fixing warnings after a Hugo upgrade, or tweaking GitHub Actions / Azure Pipelines so the build still emits RSS and the JSON search index. Those changes are boring, fiddly, and easy to get subtly wrong if you guess from memory.
 
-- **Episode Atlas** — refactoring a Blazor page, aligning a Function endpoint with what the client expects, or tightening a SQL query once I know the access pattern. Here I want suggestions that match *my* project structure, not a generic sample from the internet.
+- **Episode Atlas** — refactoring a Blazor page, aligning a Function endpoint with what the client expects, or tightening a Cosmos query once I know the access pattern. Here I want suggestions that match *my* project structure, not a generic sample from the internet.
 
 - **Mandelbrot** — iterating on rendering code where small mistakes show up as wrong colours or runaway iterations. Having the file in context beats describing the algorithm in chat.
 
