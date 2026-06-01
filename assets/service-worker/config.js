@@ -20,9 +20,14 @@
   {{- end -}}
 {{ end }}
 
-const pages = JSON.parse('{{ $pages | jsonify }}');
-const assets = JSON.parse('{{ $.Scratch.Get "hbs-assets" | jsonify }}');
-const multilingual = {{ if eq (len hugo.Sites) 1 }}false{{ else }}true{{ end }};
+const pages = {{ $pages | jsonify }};
+const assets = {{ $.Scratch.Get "hbs-assets" | jsonify }};
+const config = {
+    version: {{ now.Unix }},
+    multilingual: {{ if eq (len hugo.Sites) 1 }}false{{ else }}true{{ end }},
+    pages,
+    assets
+};
 const config = {
     version: {{ now.Unix }},
     multilingual: {{ if eq (len hugo.Sites) 1 }}false{{ else }}true{{ end }},
