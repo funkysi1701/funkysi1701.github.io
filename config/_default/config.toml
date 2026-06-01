@@ -1,4 +1,4 @@
-languageCode = 'en-gb'
+locale = 'en-gb'
 title = "Funky Si's Blog"
 theme = 'hugo-theme-bootstrap'
 enableRobotsTXT = true
@@ -48,6 +48,10 @@ enableRobotsTXT = true
   github = "funkysi1701"
   linkedin = "in/funkysi1701/"
   bluesky = "funkysi1701.com"
+
+[params.episodeAtlas]
+  enabled = true
+  url = "https://www.episodeatlas.com"
 
 [params.giscus]
   repo = "funkysi1701/Blog-Comments"
