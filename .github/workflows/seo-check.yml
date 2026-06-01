@@ -10,6 +10,10 @@ on:
 jobs:
   seo-crawl:
     runs-on: ubuntu-latest
+    # Avoid overlapping agent crawls when Azure dispatches back-to-back.
+    concurrency:
+      group: seo-crawl-blog-dev
+      cancel-in-progress: true
     permissions:
       contents: read
       pull-requests: write
@@ -28,6 +32,25 @@ jobs:
           else
             echo "sha=" >> "$GITHUB_OUTPUT"
           fi
+
+      # Azure repository_dispatch runs as soon as Helm --wait returns; blog-dev ingress/CDN
+      # can lag behind the cluster (same pattern as Pa11y readiness in azure-pipelines.yml).
+      - name: Wait for blog-dev sitemap
+        if: github.event_name == 'repository_dispatch'
+        run: |
+          set -euo pipefail
+          url="https://blog-dev.funkysi1701.com/sitemap.xml"
+          for i in $(seq 1 36); do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "$url" || true)
+            if [ "$code" = "200" ]; then
+              echo "blog-dev sitemap ready (HTTP 200) on attempt ${i}"
+              exit 0
+            fi
+            echo "Attempt ${i}: HTTP ${code:-curl-failed}; retrying in 10s..."
+            sleep 10
+          done
+          echo "blog-dev sitemap did not return HTTP 200 within ~6 minutes"
+          exit 1
 
       - name: Run Signal Diff crawl
         id: signal_diff
