@@ -197,36 +197,147 @@
   background-color: color-mix(in srgb, var(--hbs-primary-light, #5e92f3) 16%, transparent);
 }
 
-/* Episode Atlas sidebar promo (300×300 display, 600×600 @2x asset) */
+/* Episode Atlas sidebar promo — readable at ~280px, full card is the click target */
+.episode-atlas-promo.card {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
 .episode-atlas-promo .card-body {
-  padding: 0.5rem;
+  padding: 0;
 }
 
-.episode-atlas-promo__link {
-  display: block;
-  line-height: 0;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+.episode-atlas-promo__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1.1rem 1.15rem 1rem;
+  text-decoration: none;
+  color: #123f3a;
+  background: linear-gradient(160deg, #fff 0%, #f8f6f0 42%, #eef6f5 100%);
+  border: 2px solid #123f3a;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 28px rgba(18, 63, 58, 0.12);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
-.episode-atlas-promo__link:hover,
-.episode-atlas-promo__link:focus-visible {
+.episode-atlas-promo__card:hover,
+.episode-atlas-promo__card:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: #e3922b;
+  box-shadow: 0 14px 32px rgba(18, 63, 58, 0.18);
 }
 
-.episode-atlas-promo__link:focus-visible {
+.episode-atlas-promo__card:focus-visible {
   outline: 2px solid var(--hbs-primary, #1363be);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
-.episode-atlas-promo__img {
-  display: block;
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  margin: 0 auto;
+.episode-atlas-promo__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.episode-atlas-promo__logo {
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 0.5rem;
+  box-shadow: 0 3px 10px rgba(18, 63, 58, 0.18);
+}
+
+.episode-atlas-promo__name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.episode-atlas-promo__headline {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.episode-atlas-promo__lede {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: #2d5a56;
+}
+
+.episode-atlas-promo__stats {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.15rem;
+}
+
+.episode-atlas-promo__stat {
+  flex: 1;
+  padding: 0.55rem 0.35rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  background: #123f3a;
+  color: #fff;
+}
+
+.episode-atlas-promo__stat:last-child {
+  background: linear-gradient(135deg, #1f7a76 0%, #123f3a 100%);
+}
+
+.episode-atlas-promo__stat-value {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.episode-atlas-promo__stat-label {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.92;
+}
+
+.episode-atlas-promo__cta {
+  display: block;
+  margin-top: 0.35rem;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  background: #e3922b;
+  color: #1b1a17;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(227, 146, 43, 0.35);
+}
+
+.episode-atlas-promo__hint {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+  color: #4b6b68;
+}
+
+[data-mode="dark"] .episode-atlas-promo__card {
+  color: #e8f4f3;
+  background: linear-gradient(160deg, #1e2a29 0%, #1a2423 50%, #152220 100%);
+  border-color: #3d8a86;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+[data-mode="dark"] .episode-atlas-promo__lede,
+[data-mode="dark"] .episode-atlas-promo__hint {
+  color: #a8c4c2;
+}
+
+[data-mode="dark"] .episode-atlas-promo__card:hover,
+[data-mode="dark"] .episode-atlas-promo__card:focus-visible {
+  border-color: #e3922b;
 }
 

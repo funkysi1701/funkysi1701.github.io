@@ -1,19 +1,35 @@
 {{- $promo := .Site.Params.episodeAtlas | default dict -}}
 {{- if ne ($promo.enabled | default true) false -}}
+{{- $url := $promo.url | default "https://www.episodeatlas.com" -}}
 <section class="episode-atlas-promo row card component" aria-label="Episode Atlas">
-  <div class="card-body">
-    <a class="episode-atlas-promo__link"
-       href="{{ $promo.url | default "https://www.episodeatlas.com" }}"
-       rel="noopener"
-       target="_blank">
-      <img class="episode-atlas-promo__img"
-           src="{{ $promo.image | default "/images/episode-atlas-sidebar.png" }}"
-           width="300"
-           height="300"
-           alt="Episode Atlas — Track your Star Trek journey — episodeatlas.com"
+  <a class="episode-atlas-promo__card"
+     href="{{ $url }}"
+     rel="noopener sponsored"
+     target="_blank">
+    <div class="episode-atlas-promo__brand">
+      <img class="episode-atlas-promo__logo"
+           src="/images/episode-atlas-icon.png"
+           width="40"
+           height="40"
+           alt=""
            loading="lazy"
            decoding="async" />
-    </a>
-  </div>
+      <span class="episode-atlas-promo__name">Episode Atlas</span>
+    </div>
+    <h2 class="episode-atlas-promo__headline">Track your Star Trek journey</h2>
+    <p class="episode-atlas-promo__lede">Mark episodes watched, earn ranks, and find what to watch next across every series.</p>
+    <div class="episode-atlas-promo__stats" aria-hidden="true">
+      <div class="episode-atlas-promo__stat">
+        <span class="episode-atlas-promo__stat-value">964+</span>
+        <span class="episode-atlas-promo__stat-label">episodes</span>
+      </div>
+      <div class="episode-atlas-promo__stat">
+        <span class="episode-atlas-promo__stat-value">14</span>
+        <span class="episode-atlas-promo__stat-label">series</span>
+      </div>
+    </div>
+    <span class="episode-atlas-promo__cta">Explore Episode Atlas</span>
+    <span class="episode-atlas-promo__hint">Free to browse · episodeatlas.com</span>
+  </a>
 </section>
 {{- end -}}
