@@ -111,6 +111,8 @@ steps:
 - task: PowerShell@2
   displayName: 'Notify GitHub (repository_dispatch: azure-pipeline-complete)'
   condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
+  env:
+    GITHUB_TOKEN: $(GitHubToken)
   inputs:
     targetType: inline
     script: |
@@ -123,7 +125,7 @@ steps:
         -Method Post `
         -ContentType "application/json" `
         -Headers @{
-          Authorization = "Bearer $(GitHubToken)"
+          Authorization = "Bearer $env:GITHUB_TOKEN"
           Accept = "application/vnd.github+json"
           "X-GitHub-Api-Version" = "2022-11-28"
         } `
