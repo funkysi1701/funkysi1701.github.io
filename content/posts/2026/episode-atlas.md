@@ -43,7 +43,7 @@ Generic TV trackers are fine if you watch a bit of everything. They are less hel
 
 ## Browse first, sign in to save
 
-You can use **[Episode Atlas](https://www.episodeatlas.com/)** without creating an account. Search the catalogue, open episodes, try themes, and spin the random picker—no signup required.
+You can use **[Episode Atlas](https://www.episodeatlas.com/)** without creating an account. Search the catalogue, open episodes, browse collections, and spin the random picker—no signup required.
 
 When you want your progress to stick, sign in and start your **captain’s log**. Mark episodes watched, and the site remembers where you left off across every series—even if you detour from DS9 to TNG and back again.
 
@@ -67,11 +67,11 @@ Open any episode and you get what you need for a rewatch session: metadata, **pr
 
 The flow the site describes is simple: **search → open → mark watched → move on**. Three gestures, no spreadsheet.
 
-## Themes when you want a mood, not a season
+## Collections when you want a mood, not a season
 
-**Themes** answer a different question from search: *“It is late; show me something good in this mood.”* Curated collections point at Borg stories, time-travel episodes, holodeck highlights, and similar lists—fan knowledge encoded as browseable sets, so you skip filler without digging through every season.
+**Collections** answer a different question from search: *“It is late; show me something good in this mood.”* Each collection points at Borg stories, time-travel episodes, holodeck highlights, and similar lists—fan knowledge encoded as browseable sets, so you skip filler without digging through every season.
 
-![Curated Star Trek theme collections](/images/2026/episode-atlas/episode-atlas-themes.png)
+![Curated Star Trek episode collections](/images/2026/episode-atlas/episode-atlas-themes.png)
 
 ## Random episode when you cannot decide
 
@@ -87,4 +87,4 @@ Episode Atlas is not trying to replace [Memory Alpha](https://memory-alpha.fando
 
 **[episodeatlas.com](https://www.episodeatlas.com/)** — free to browse, sign in when you want your captain’s log saved. Search, mark your first episode, and see your rank climb.
 
-How do you track long rewatches—spreadsheet, app, or pure memory? I would be interested to hear what works for you in the comments.
+How do you track long rewatches—spreadsheet, app, or pure memory? If you try Episode Atlas, I would genuinely like to know what works for you and what does not: features you love, gaps that annoy you, or anything that would make a rewatch easier. Leave a comment below, or use the **feedback** option on [episodeatlas.com](https://www.episodeatlas.com/)—both reach me, and both help shape what I build next.
