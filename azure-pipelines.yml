@@ -107,6 +107,29 @@ steps:
       --wait --timeout 15m --atomic
   condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), eq(variables['Build.SourceBranchName'], 'main'))
   displayName: 'helm upgrade blog (namespace main / prod)'
+
+- task: PowerShell@2
+  displayName: 'Notify GitHub (repository_dispatch: azure-pipeline-complete)'
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
+  env:
+    GITHUB_TOKEN: $(GITHUB_TOKEN)
+  inputs:
+    targetType: inline
+    script: |
+      $body = @{
+        event_type = "azure-pipeline-complete"
+      } | ConvertTo-Json
+
+      Invoke-RestMethod `
+        -Uri "https://api.github.com/repos/funkysi1701/funkysi1701.github.io/dispatches" `
+        -Method Post `
+        -ContentType "application/json" `
+        -Headers @{
+          Authorization = "Bearer $env:GITHUB_TOKEN"
+          Accept = "application/vnd.github+json"
+          "X-GitHub-Api-Version" = "2022-11-28"
+        } `
+        -Body $body
 - task: CmdLine@2
   displayName: 'Pa11y Accessibility Check (nightly only)'
   condition: and(succeeded(), eq(variables['Build.Reason'], 'Schedule'))
