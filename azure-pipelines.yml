@@ -109,6 +109,8 @@ steps:
   displayName: 'helm upgrade blog (namespace main / prod)'
 
 - task: PowerShell@2
+  displayName: 'Notify GitHub (repository_dispatch: azure-pipeline-complete)'
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), eq(variables['Build.SourceBranchName'], 'main'))
   inputs:
     targetType: inline
     script: |
@@ -119,9 +121,11 @@ steps:
       Invoke-RestMethod `
         -Uri "https://api.github.com/repos/funkysi1701/funkysi1701.github.io/dispatches" `
         -Method Post `
+        -ContentType "application/json" `
         -Headers @{
           Authorization = "Bearer $(GitHubToken)"
           Accept = "application/vnd.github+json"
+          "X-GitHub-Api-Version" = "2022-11-28"
         } `
         -Body $body
 - task: CmdLine@2
