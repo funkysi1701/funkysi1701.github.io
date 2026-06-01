@@ -10,8 +10,8 @@ jobs:
   seo-crawl:
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       pull-requests: write
-      issues: write
     steps:
       - name: Run Signal Diff crawl
         id: signal_diff
@@ -22,6 +22,6 @@ jobs:
           sitemap_url: https://blog-dev.funkysi1701.com/sitemap.xml
           fail_mode: none
           execution_mode: agent
-          comment_on_pr: true
+          comment_on_pr: false
           collect_code_changes: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
