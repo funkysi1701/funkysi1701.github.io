@@ -107,6 +107,23 @@ steps:
       --wait --timeout 15m --atomic
   condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), eq(variables['Build.SourceBranchName'], 'main'))
   displayName: 'helm upgrade blog (namespace main / prod)'
+
+- task: PowerShell@2
+  inputs:
+    targetType: inline
+    script: |
+      $body = @{
+        event_type = "azure-pipeline-complete"
+      } | ConvertTo-Json
+
+      Invoke-RestMethod `
+        -Uri "https://api.github.com/repos/funkysi1701/funkysi1701.github.io/dispatches" `
+        -Method Post `
+        -Headers @{
+          Authorization = "Bearer $(GitHubToken)"
+          Accept = "application/vnd.github+json"
+        } `
+        -Body $body
 - task: CmdLine@2
   displayName: 'Pa11y Accessibility Check (nightly only)'
   condition: and(succeeded(), eq(variables['Build.Reason'], 'Schedule'))
