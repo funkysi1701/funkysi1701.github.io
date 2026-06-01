@@ -1,0 +1,58 @@
+{{- $page := .page -}}
+{{- $pageDesc := "" -}}
+{{- with $page.Params.description -}}
+  {{- $pageDesc = . -}}
+{{- else -}}
+  {{- with $page.Description -}}
+    {{- $pageDesc = . -}}
+  {{- else -}}
+    {{- $pageDesc = $page.Summary -}}
+  {{- end -}}
+{{- end -}}
+{{- $pageDesc = $pageDesc | plainify | htmlUnescape -}}
+{{- if not $pageDesc -}}
+  {{- $pageDesc = $page.Title | plainify | htmlUnescape -}}
+{{- end -}}
+{{- $iso8601 := "2006-01-02T15:04:05Z07:00" -}}
+{{- $published := or $page.PublishDate $page.Date -}}
+{{- $modified := or $page.Lastmod $page.Date -}}
+{{- $image := absURL "/images/1922276.jpg" -}}
+{{- $cover := $page.Params.cover | default "" -}}
+{{- if ne $cover "" -}}
+  {{- $image = absURL $cover -}}
+{{- else if isset $page.Params "images" -}}
+  {{- with $page.Params.images -}}
+    {{- if gt (len .) 0 -}}
+      {{- $firstImage := index . 0 | default "" -}}
+      {{- if ne $firstImage "" -}}
+        {{- $image = absURL $firstImage -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $authorName := $page.Params.author | default $page.Site.Params.author.name -}}
+{{- $author := dict "@type" "Person" "name" $authorName "url" (absURL "about") -}}
+{{- $publisher := dict "@type" "Person" "name" $page.Site.Params.author.name "url" $page.Site.BaseURL -}}
+{{- $mainEntityOfPage := dict "@type" "WebPage" "@id" $page.Permalink -}}
+{{- $article := dict "@type" "BlogPosting" "@id" (printf "%s#article" $page.Permalink) "headline" $page.Title "description" $pageDesc "url" $page.Permalink "datePublished" ($published.Format $iso8601) "dateModified" ($modified.Format $iso8601) "image" $image "author" $author "publisher" $publisher "wordCount" $page.WordCount "mainEntityOfPage" $mainEntityOfPage -}}
+{{- $sectionTitles := slice -}}
+{{- range $page.GetTerms "categories" -}}
+  {{- $sectionTitles = $sectionTitles | append .Title -}}
+{{- end -}}
+{{- if gt (len $sectionTitles) 0 -}}
+  {{- $article = merge $article (dict "articleSection" (delimit $sectionTitles ", ")) -}}
+{{- end -}}
+{{- $structured := dict -}}
+{{- if eq $page.Section "posts" -}}
+  {{- $schemaScratch := newScratch -}}
+  {{- partial "head/breadcrumb-schema" (dict "page" $page "target" $schemaScratch) -}}
+  {{- $breadcrumb := $schemaScratch.Get "schema" -}}
+  {{- if $breadcrumb -}}
+    {{- $structured = dict "@context" "https://schema.org" "@graph" (slice $article $breadcrumb) -}}
+  {{- else -}}
+    {{- $structured = merge $article (dict "@context" "https://schema.org") -}}
+  {{- end -}}
+{{- else -}}
+  {{- $structured = merge $article (dict "@context" "https://schema.org") -}}
+{{- end -}}
+<script type="application/ld+json">{{- $structured | jsonify | safeJS -}}</script>

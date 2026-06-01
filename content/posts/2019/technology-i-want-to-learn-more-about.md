@@ -24,11 +24,11 @@ aliases = [
 ]
 +++
 
-While at [Microsoft Ignite](https://www.funkysi1701.com/2019/02/26/microsoft-ignite-the-tour-london) I heard about a lot of cool tech that I want to know more about. The best way to learn something is use it to solve a problem.
+While at [Microsoft Ignite](https://www.funkysi1701.com/posts/2019/microsoft-ignite-the-tour-london) I heard about a lot of cool tech that I want to know more about. The best way to learn something is use it to solve a problem.
 
 So what can I build that is both useful and will let me play with some new tech?
 
-I have a Xamarin Forms app Pwned Pass that has over 500 downloads on [Google Play](https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords) and over 80 downloads on the Microsoft Store. This has given me a small user base that I can use to make use of whatever I build.
+I have a Xamarin Forms app Pwned Pass that has over 500 downloads on Google Play and over 80 downloads on the Microsoft Store. This has given me a small user base that I can use to make use of whatever I build.
 
 My app makes use of the [HIBP API](https://haveibeenpwned.com/API/v3) created by Troy Hunt. I am going to build my own API, initially it will just make calls to the HIBP API. Building this will give me experience of building something with .net Core from design to deployment. I have made a start already on doing this, I have an empty .net core API project which deploys to an Azure web app using the build and release pipelines from Azure DevOps.
 

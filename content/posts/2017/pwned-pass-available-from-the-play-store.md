@@ -25,7 +25,7 @@ aliases = [
 ]
 +++
 
-Pwned Pass is now available from the [Google Play Store](https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords).
+Pwned Pass is now available from the Google Play Store.
 
 ![Pwned Pass](/images/2017/Screenshot_20170813-205152.png)
 
@@ -39,7 +39,7 @@ My app simply generates a SHA1 hash of anything that is typed in and then passes
 
 It should be noted that:  **Do not send any password you actively use to a third-party service – even this one!** I don’t log anything that you type into my app and all I am then doing is passing a SHA1 hash over SSL to HIBP. However you shouldn’t trust my word alone.
 
-The app itself is written in Visual Studio with Xamarin Forms in a similar fashion to the app I talked about [last week](https://www.funkysi1701.com/posts/android-app-development-and-the-visual-studio-mobile-centre).
+The app itself is written in Visual Studio with Xamarin Forms in a similar fashion to the app I talked about [last week](https://www.funkysi1701.com/posts/2017/android-app-development-and-the-visual-studio-mobile-centre/).
 
 As I am using Xamarin Forms there is the potential that I may develop iPhone or UWP versions of this code in the future. With that in mind I have made use of interfaces for the android specific parts of the code.
 

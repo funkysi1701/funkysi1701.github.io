@@ -1,6 +1,7 @@
 {{- $content := default $.Site.Params.metaRobots .Params.metaRobots -}}
-{{- if and (not (isset .Params "metarobots")) .IsHome .Paginator (gt .Paginator.PageNumber 1) -}}
-  {{- $hr := strings.TrimSpace (default "" $.Site.Params.homePaginationMetaRobots) -}}
+{{- $isPaginatedHome := and .IsHome (strings.Contains .RelPermalink "/page/") -}}
+{{- if and (not (isset .Params "metarobots")) $isPaginatedHome -}}
+  {{- $hr := default "" $.Site.Params.homePaginationMetaRobots -}}
   {{- if ne $hr "" -}}
     {{- $content = $hr -}}
   {{- end -}}

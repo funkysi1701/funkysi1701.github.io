@@ -28,7 +28,7 @@ aliases = [
 
 Its been a while since I first released Pwned Pass so lets have a look at where we are now.
 
-We are very close to 500 Downloads from [Google Play](https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords) and we have recently smashed past 100 active installs, peaking at 116 and even now we are still over 100. I have had 9 reviews (6 x 5*, 2 x 1 * and a 4 *) which averages out at 4 *
+We are very close to 500 Downloads from Google Play and we have recently smashed past 100 active installs, peaking at 116 and even now we are still over 100. I have had 9 reviews (6 x 5*, 2 x 1 * and a 4 *) which averages out at 4 *
 ![Alt Text](/images/2019/01/image.png)
 Over Christmas I released a UWP version that can be found in the Microsoft Store. This has currently had 9 downloads and even had a download to Windows Mobile (someone out there still likes the platform!)
 ![Alt Text](/images/2019/01/image-1.png)

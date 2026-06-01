@@ -29,51 +29,51 @@ What a year 2025 has been! I published 24 blog posts covering a wide range of to
 
 This was a major focus area for me in 2025, not really surprising as I moved into a DevOps role this year, with deep dives into modern infrastructure:
 
-- [**Learning Kubernetes**](/learning-kubernetes/) - Started my journey into container orchestration and shared my beginner experiences
-- [**Deploying Hugo with Helm**](/deploying-hugo-with-helm/) - Deployed this very blog to Kubernetes using Helm charts
-- [**Kubernetes and Let's Encrypt**](/kubernetes-and-letsencrypt/) - Tackled SSL certificate management in Kubernetes
-- [**Monitoring with Nagios Docker**](/nagios-monitoring-with-docker/) - Explored monitoring solutions in containerized environments
+- [**Learning Kubernetes**](/posts/2025/learning-kubernetes/) - Started my journey into container orchestration and shared my beginner experiences
+- [**Deploying Hugo with Helm**](/posts/2025/deploying-hugo-with-helm/) - Deployed this very blog to Kubernetes using Helm charts
+- [**Kubernetes and Let's Encrypt**](/posts/2025/kubernetes-and-letsencrypt/) - Tackled SSL certificate management in Kubernetes
+- [**Monitoring with Nagios Docker**](/posts/2025/nagios-monitoring-with-docker/) - Explored monitoring solutions in containerized environments
 
 ### .NET and Development
 
 My bread and butter continues to be .NET development, with several posts exploring new features and tools:
 
-- [**Blazor and .NET 10**](/blazor-and-dotnet10/) - Covered breaking changes, fixes, and new features in the latest .NET release
-- [**Adding Elasticsearch with .NET Aspire**](/adding-elasticsearch-with-aspire/) - Integrated search capabilities using Aspire
-- [**Aspire 9.2**](/what-is-new-in-aspire-9.2/) - Explored the latest Aspire release
-- [**NuGet Central Package Management**](/central-package-management-with-nuget/) - Streamlined dependency management
-- [**What's New in C#**](/whats-new-csharp/) - Covered the latest language features
-- [**Exceptions**](/exceptions/) - Best practices for error handling
+- [**Blazor and .NET 10**](/posts/2025/blazor-and-dotnet10/) - Covered breaking changes, fixes, and new features in the latest .NET release
+- [**Adding Elasticsearch with .NET Aspire**](/posts/2025/adding-elasticsearch-with-aspire/) - Integrated search capabilities using Aspire
+- [**Aspire 9.2**](/posts/2025/what-is-new-in-aspire-9.2/) - Explored the latest Aspire release
+- [**NuGet Central Package Management**](/posts/2025/central-package-management-with-nuget/) - Streamlined dependency management
+- [**What's New in C#**](/posts/2025/whats-new-csharp/) - Covered the latest language features
+- [**Exceptions**](/posts/2025/exceptions/) - Best practices for error handling
 
 ### Observability and Monitoring
 
 Understanding what's happening in production became a key theme:
 
-- [**Getting Started with OpenTelemetry**](/getting-started-with-opentelemetry/) - Made observability easy with modern tracing
-- [**OpenTelemetry Logs**](/adding-opentelemetry-logs-to-grafana/) - Extended observability to include logging
+- [**Getting Started with OpenTelemetry**](/posts/2025/getting-started-with-opentelemetry/) - Made observability easy with modern tracing
+- [**OpenTelemetry Logs**](/posts/2025/adding-opentelemetry-logs-to-grafana/) - Extended observability to include logging
 - [**Setting up Grafana**](/posts/2025/setting-up-grafana/) - Built dashboards for monitoring
 
 ### Cloud Platforms
 
-- [**Merging Two Projects into One**](/merge-two-projects-into-one/) - Shared my experience consolidating codebases
+- [**Merging Two Projects into One**](/posts/2025/merge-two-projects-into-one/) - Shared my experience consolidating codebases
 
 ### AI and Creativity
 
-- [**Fun with AI**](/fun-with-ai/) - Explored ChatGPT's image generation capabilities
-- [**Using AI**](/using-ai/) - Practical applications of AI in daily work
-- [**Mandelbrot Set**](/mandelbrot-set/) - A fun mathematical exploration
+- [**Fun with AI**](/posts/2025/fun-with-ai/) - Explored ChatGPT's image generation capabilities
+- [**Using AI**](/posts/2025/using-ai/) - Practical applications of AI in daily work
+- [**Mandelbrot Set**](/posts/2025/mandelbrot-set/) - A fun mathematical exploration
 
 ### Professional Development
 
-- [**The Pragmatic Programmer**](/pragmatic-programmer/) - Book review of this classic software development book
-- [**The Hacker Ethic**](/the-hacker-ethic/) - Reflections on developer culture and values
-- [**Stepping Outside Your Comfort Zone**](/stepping-outside-my-comfort-zone/) - Personal growth and career development
-- [**Volunteering at NDC London**](/volunteering-at-ndc-london/) - My experience at this major .NET conference
-- [**Periodic Table of DevOps 2025**](/periodic-table-of-devops-15c7/) - A visual guide to the DevOps ecosystem
+- [**The Pragmatic Programmer**](/posts/2025/pragmatic-programmer/) - Book review of this classic software development book
+- [**The Hacker Ethic**](/posts/2025/the-hacker-ethic/) - Reflections on developer culture and values
+- [**Stepping Outside Your Comfort Zone**](/posts/2025/stepping-outside-my-comfort-zone/) - Personal growth and career development
+- [**Volunteering at NDC London**](/posts/2025/volunteering-at-ndc-london/) - My experience at this major .NET conference
+- [**Periodic Table of DevOps 2025**](/posts/2025/periodic-table-devops-2025/) - A visual guide to the DevOps ecosystem
 
 ### Fun Projects
 
-- [**Festive Naughty or Nice Checker**](/festive-naughty-or-nice-checker/) - A seasonal AI-powered fun project
+- [**Festive Naughty or Nice Checker**](/posts/2025/festive-naughty-or-nice-checker/) - A seasonal AI-powered fun project
 
 Thank you to everyone who read, commented, and shared my posts throughout the year. Your engagement and feedback mean the world to me!
 

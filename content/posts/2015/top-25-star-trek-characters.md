@@ -83,9 +83,9 @@ I have just listened to a [podcast](https://www.trekmate.org.uk/ten-forward-epis
 
 If you enjoyed this character ranking, check out these other Star Trek articles:
 
-- [Top 50 Star Trek Episodes](/posts/2016/01/07/top-50-star-trek-episodes) - My ranking of the greatest episodes across all series
-- [A Comparison of All Good Things and Star Trek Picard](/posts/2021/12/15/a-comparison-of-all-good-things-and-star-trek-picard) - Examining how Picard's future was predicted
-- [Star Trek Episode Review: The Best of Both Worlds](/posts/2016/02/18/star-trek-episode-review-the-best-of-both-worlds) - A deep dive into the iconic Borg episode featuring Picard
+- [Top 50 Star Trek Episodes](/posts/2016/top-50-star-trek-episodes/) - My ranking of the greatest episodes across all series
+- [A Comparison of All Good Things and Star Trek Picard](/posts/2021/a-comparison-of-all-good-things-and-star-trek-picard/) - Examining how Picard's future was predicted
+- [Star Trek Episode Review: The Best of Both Worlds](/posts/2016/star-trek-episode-review-the-best-of-both-worlds/) - A deep dive into the iconic Borg episode featuring Picard
 - [Picard Season 3](/posts/2023/picard-season-three) - My thoughts on the final season of Star Trek Picard
 - [TrekRanks #174](/posts/2024/trekranks) - My appearance on the TrekRanks podcast
 

@@ -1,0 +1,16 @@
+<button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettingsLabel">
+  <div class="offcanvas-header">
+    <p class="offcanvas-title mb-0" id="offcanvasSettingsLabel">{{ i18n "settings" }}</p>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column">
+    {{- partial "header/settings/index" . -}}
+  </div>
+</div>

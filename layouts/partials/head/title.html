@@ -31,6 +31,8 @@
   {{- $paginator = .Paginate (union $pinnedPosts $allPosts) -}}
 {{- else if eq .Kind "taxonomy" -}}
   {{- $paginator = .Paginate .Pages (default 10 $.Site.Params.taxonomyPaginate) -}}
+{{- else if eq .Kind "term" -}}
+  {{- $paginator = .Paginate .Pages (default 10 $.Site.Params.taxonomyPaginate) -}}
 {{- else if eq .Kind "section" -}}
   {{- $paginator = .Paginate .RegularPagesRecursive -}}
 {{- end -}}
