@@ -1,0 +1,19 @@
+{{- $promo := .Site.Params.episodeAtlas | default dict -}}
+{{- if ne ($promo.enabled | default true) false -}}
+<section class="episode-atlas-promo row card component" aria-label="Episode Atlas">
+  <div class="card-body">
+    <a class="episode-atlas-promo__link"
+       href="{{ $promo.url | default "https://www.episodeatlas.com" }}"
+       rel="noopener"
+       target="_blank">
+      <img class="episode-atlas-promo__img"
+           src="{{ $promo.image | default "/images/episode-atlas-sidebar.png" }}"
+           width="300"
+           height="520"
+           alt="Episode Atlas — Track your Star Trek journey — episodeatlas.com"
+           loading="lazy"
+           decoding="async" />
+    </a>
+  </div>
+</section>
+{{- end -}}

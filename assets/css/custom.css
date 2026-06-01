@@ -197,3 +197,36 @@
   background-color: color-mix(in srgb, var(--hbs-primary-light, #5e92f3) 16%, transparent);
 }
 
+/* Episode Atlas sidebar promo (300×520 banner) */
+.episode-atlas-promo .card-body {
+  padding: 0.5rem;
+}
+
+.episode-atlas-promo__link {
+  display: block;
+  line-height: 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.episode-atlas-promo__link:hover,
+.episode-atlas-promo__link:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.episode-atlas-promo__link:focus-visible {
+  outline: 2px solid var(--hbs-primary, #1363be);
+  outline-offset: 2px;
+}
+
+.episode-atlas-promo__img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+}
+
