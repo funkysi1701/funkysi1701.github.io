@@ -219,7 +219,11 @@ steps:
     script: |
       $body = @{
         event_type = "azure-pipeline-complete"
-      } | ConvertTo-Json
+        client_payload = @{
+          commit_sha = "$(Build.SourceVersion)"
+          ref_name = "$(Build.SourceBranch)"
+        }
+      } | ConvertTo-Json -Depth 5
 
       Invoke-RestMethod `
         -Uri "https://api.github.com/repos/funkysi1701/funkysi1701.github.io/dispatches" `
