@@ -49,6 +49,11 @@ enableRobotsTXT = true
   linkedin = "in/funkysi1701/"
   bluesky = "funkysi1701.com"
 
+[params.episodeAtlas]
+  enabled = true
+  url = "https://www.episodeatlas.com"
+  image = "/images/episode-atlas-sidebar.png"
+
 [params.giscus]
   repo = "funkysi1701/Blog-Comments"
   repoId = "R_kgDOQJKGlA"
