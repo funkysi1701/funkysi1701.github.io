@@ -20,7 +20,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 featured = false
-draft = true
+draft = false
 aliases = [
     "/episode-atlas",
     "/posts/episode-atlas",
