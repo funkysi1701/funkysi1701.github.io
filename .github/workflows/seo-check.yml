@@ -42,14 +42,14 @@ jobs:
           url="https://blog-dev.funkysi1701.com/sitemap.xml"
           for i in $(seq 1 36); do
             code=$(curl -s -o /dev/null -w "%{http_code}" "$url" || true)
-            if [ "$code" = "200" ]; then
-              echo "blog-dev sitemap ready (HTTP 200) on attempt ${i}"
+            if [ "$code" = "304" ]; then
+              echo "blog-dev sitemap ready (HTTP 304) on attempt ${i}"
               exit 0
             fi
             echo "Attempt ${i}: HTTP ${code:-curl-failed}; retrying in 10s..."
             sleep 10
           done
-          echo "blog-dev sitemap did not return HTTP 200 within ~6 minutes"
+          echo "blog-dev sitemap did not return HTTP 304 within ~6 minutes"
           exit 1
 
       - name: Run Signal Diff crawl
