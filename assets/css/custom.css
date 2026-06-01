@@ -204,10 +204,6 @@
   box-shadow: none;
 }
 
-.episode-atlas-promo .card-body {
-  padding: 0;
-}
-
 .episode-atlas-promo__card {
   display: flex;
   flex-direction: column;
