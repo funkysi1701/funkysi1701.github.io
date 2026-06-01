@@ -1,10 +1,10 @@
-{{- $defaultRivision := now.Unix  -}}
+{{- $defaultRevision := now.Unix -}}
 {{- $pages := slice -}}
 {{- range hugo.Sites -}}
   {{- range .Pages -}}
-    {{- $revision := $defaultRivision -}}
+    {{- $revision := $defaultRevision -}}
     {{- with .File -}}
-        {{- $revision = .UniqueID -}}
+      {{- $revision = .UniqueID -}}
     {{- end -}}
     {{- $pages = $pages | append (dict "url" .Permalink "revision" $revision) -}}
   {{- end -}}
@@ -13,11 +13,11 @@
 {{- partial "helpers/read-dir" (dict "Path" "/static" "Scratch" $.Scratch) -}}
 
 {{ if eq (len hugo.Sites) 1 }}
-  {{- $pages = $pages | append (dict "url" (printf "/%s" "manifest.json" | absURL) "revision" $defaultRivision)  -}}
+  {{- $pages = $pages | append (dict "url" (printf "/%s" "manifest.json" | absURL) "revision" $defaultRevision) -}}
 {{ else }}
-{{- range hugo.Sites -}}
-  {{- $pages = $pages | append (dict "url" (printf "/%s/%s" .Language.Lang "manifest.json" | absURL) "revision" $defaultRivision)  -}}
-{{- end -}}
+  {{- range hugo.Sites -}}
+    {{- $pages = $pages | append (dict "url" (printf "/%s/%s" .Language.Lang "manifest.json" | absURL) "revision" $defaultRevision) -}}
+  {{- end -}}
 {{ end }}
 
 const pages = JSON.parse('{{ $pages | jsonify }}');
