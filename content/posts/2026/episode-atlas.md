@@ -1,8 +1,8 @@
 +++
 title = "Building Episode Atlas: Tracking 900+ Star Trek Episodes"
-date = "2026-05-18T12:00:00Z"
+date = "2026-06-01T12:00:00Z"
 year = "2026"
-month = "2026-05"
+month = "2026-06"
 author = "funkysi1701"
 authorTwitter = "funkysi1701"
 cover = "/images/2026/episode-atlas/episode-atlas-home.png"
@@ -25,8 +25,8 @@ diagram = true
 aliases = [
     "/episode-atlas",
     "/posts/episode-atlas",
-    "/posts/2026/05/18/episode-atlas",
-    "/2026/05/18/episode-atlas"
+    "/posts/2026/06/01/episode-atlas",
+    "/2026/06/01/episode-atlas"
 ]
 +++
 
@@ -145,4 +145,4 @@ I am happy with “narrow and deep” for *Star Trek*. Generalising to every TV 
 
 If you are building something similar on **Blazor and Azure**, you might also like [Using GitHub Actions](/posts/using-github-actions/) for SWA deploys and [How I use AI on side projects](/how-i-use-ai-on-side-projects/) for how I split ChatGPT, Cursor, and Copilot when refactoring this codebase.
 
-How do you track long rewatches—spreadsheet, app, or pure memory? I would be interested to hear what works for you in the comments.
+How do you track long rewatches — spreadsheet, app, or pure memory? I would be interested to hear what works for you in the comments.
