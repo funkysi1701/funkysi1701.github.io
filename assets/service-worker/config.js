@@ -25,12 +25,6 @@ const assets = {{ $.Scratch.Get "hbs-assets" | jsonify }};
 const config = {
     version: {{ now.Unix }},
     multilingual: {{ if eq (len hugo.Sites) 1 }}false{{ else }}true{{ end }},
-    pages,
-    assets
-};
-const config = {
-    version: {{ now.Unix }},
-    multilingual: {{ if eq (len hugo.Sites) 1 }}false{{ else }}true{{ end }},
     pages: pages,
     assets: assets
 };
