@@ -110,7 +110,7 @@ steps:
 
 - task: PowerShell@2
   displayName: 'Notify GitHub (repository_dispatch: azure-pipeline-complete)'
-  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), eq(variables['Build.SourceBranchName'], 'main'))
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   inputs:
     targetType: inline
     script: |
