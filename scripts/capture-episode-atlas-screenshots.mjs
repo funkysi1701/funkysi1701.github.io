@@ -39,28 +39,24 @@ async function main() {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage({
     viewport: { width: 1280, height: 800 },
-    deviceScaleFactor: 1,
     userAgent:
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
   });
 
-  try {
-    for (const s of shots) {
-      process.stdout.write(`Capturing ${s.name}…\n`);
-      await page.goto(s.url, { waitUntil: 'domcontentloaded', timeout: 90_000 });
-      if (s.extraMs) {
-        await page.waitForTimeout(s.extraMs);
-      }
-      if (s.after) {
-        await s.after(page);
-      }
-      await page.screenshot({ path: join(outDir, `${s.name}.png`) });
+  for (const s of shots) {
+    process.stdout.write(`Capturing ${s.name}…\n`);
+    await page.goto(s.url, { waitUntil: 'domcontentloaded', timeout: 90_000 });
+    if (s.extraMs) {
+      await page.waitForTimeout(s.extraMs);
     }
-
-    process.stdout.write(`Done. Wrote ${shots.length} files to ${outDir}\n`);
-  } finally {
-    await browser.close();
+    if (s.after) {
+      await s.after(page);
+    }
+    await page.screenshot({ path: join(outDir, `${s.name}.png`) });
   }
+
+  await browser.close();
+  process.stdout.write(`Done. Wrote ${shots.length} files to ${outDir}\n`);
 }
 
 main().catch((err) => {
