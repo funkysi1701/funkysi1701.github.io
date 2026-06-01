@@ -23,5 +23,5 @@ jobs:
           fail_mode: none
           execution_mode: agent
           comment_on_pr: false
-          collect_code_changes: true
+          collect_code_changes: false
           github_token: ${{ secrets.GITHUB_TOKEN }}
