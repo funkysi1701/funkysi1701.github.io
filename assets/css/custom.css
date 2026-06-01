@@ -197,7 +197,7 @@
   background-color: color-mix(in srgb, var(--hbs-primary-light, #5e92f3) 16%, transparent);
 }
 
-/* Episode Atlas sidebar promo (300×520 banner) */
+/* Episode Atlas sidebar promo (300×300 display, 600×600 @2x asset) */
 .episode-atlas-promo .card-body {
   padding: 0.5rem;
 }
