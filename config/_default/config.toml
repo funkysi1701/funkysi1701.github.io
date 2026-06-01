@@ -52,7 +52,6 @@ enableRobotsTXT = true
 [params.episodeAtlas]
   enabled = true
   url = "https://www.episodeatlas.com"
-  image = "/images/episode-atlas-sidebar.png"
 
 [params.giscus]
   repo = "funkysi1701/Blog-Comments"
