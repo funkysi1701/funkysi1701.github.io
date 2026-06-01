@@ -44,20 +44,23 @@ async function main() {
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
   });
 
-  for (const s of shots) {
-    process.stdout.write(`Capturing ${s.name}…\n`);
-    await page.goto(s.url, { waitUntil: 'domcontentloaded', timeout: 90_000 });
-    if (s.extraMs) {
-      await page.waitForTimeout(s.extraMs);
+  try {
+    for (const s of shots) {
+      process.stdout.write(`Capturing ${s.name}…\n`);
+      await page.goto(s.url, { waitUntil: 'domcontentloaded', timeout: 90_000 });
+      if (s.extraMs) {
+        await page.waitForTimeout(s.extraMs);
+      }
+      if (s.after) {
+        await s.after(page);
+      }
+      await page.screenshot({ path: join(outDir, `${s.name}.png`) });
     }
-    if (s.after) {
-      await s.after(page);
-    }
-    await page.screenshot({ path: join(outDir, `${s.name}.png`) });
-  }
 
-  await browser.close();
-  process.stdout.write(`Done. Wrote ${shots.length} files to ${outDir}\n`);
+    process.stdout.write(`Done. Wrote ${shots.length} files to ${outDir}\n`);
+  } finally {
+    await browser.close();
+  }
 }
 
 main().catch((err) => {
