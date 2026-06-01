@@ -39,6 +39,7 @@ async function main() {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage({
     viewport: { width: 1280, height: 800 },
+    deviceScaleFactor: 1,
     userAgent:
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
   });
