@@ -1,7 +1,7 @@
 name: SEO Check
 permissions:
   contents: read
-  
+
 on:
   repository_dispatch:
     types: [azure-pipeline-complete]
@@ -13,6 +13,21 @@ jobs:
       contents: read
       pull-requests: write
     steps:
+      - name: Checkout build commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.client_payload.commit_sha || github.sha }}
+          fetch-depth: 2
+
+      - name: Resolve baseline commit
+        id: baseline
+        run: |
+          if git rev-parse --verify HEAD^ >/dev/null 2>&1; then
+            echo "sha=$(git rev-parse HEAD^)" >> "$GITHUB_OUTPUT"
+          else
+            echo "sha=" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Run Signal Diff crawl
         id: signal_diff
         uses: funkysi1701/signal-diff-action@v1.6
@@ -23,5 +38,8 @@ jobs:
           fail_mode: none
           execution_mode: agent
           comment_on_pr: false
-          collect_code_changes: false
+          collect_code_changes: true
+          commit_sha: ${{ github.event.client_payload.commit_sha || github.sha }}
+          ref_name: ${{ github.event.client_payload.ref_name || github.ref }}
+          baseline_ref: ${{ steps.baseline.outputs.sha }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
