@@ -10,7 +10,7 @@
     "@material/elevation": "14.0.0",
     "bootstrap": "5.3.8",
     "fibers": "5.0.3",
-    "fuse.js": "7.4.1",
+    "fuse.js": "7.4.2",
     "katex": "0.17.0",
     "mark.js": "8.11.1",
     "mermaid": "11.15.0",
