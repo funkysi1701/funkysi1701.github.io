@@ -1,6 +1,6 @@
 # Copilot Instructions for funkysi1701.com Blog
 
-For a shorter, tool-agnostic onboarding guide, see **[`AGENTS.md`](../AGENTS.md)** at the repo root. This file adds Copilot-specific detail; full Cursor rules live in **`.cursor/rules/funkysi1701-blog.mdc`**.
+For a shorter, tool-agnostic onboarding guide, see **[`AGENTS.md`](../AGENTS.md)** at the repo root. This file adds Copilot-specific detail. Cursor rules are path-scoped under **[`.cursor/rules/`](../.cursor/rules/)** — always-applied core in **`funkysi1701-blog-core.mdc`**, plus **`content-posts.mdc`**, **`playwright-tests.mdc`**, **`hugo-layouts.mdc`**, and **`parkrun-generated.mdc`**.
 
 ## Project Overview
 
@@ -194,6 +194,7 @@ For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remai
 
 ## Useful File References
 
+- `.cursor/rules/` – Cursor agent rules (`funkysi1701-blog-core.mdc` always applied; `content-posts.mdc`, `playwright-tests.mdc`, `hugo-layouts.mdc`, `parkrun-generated.mdc` path-scoped)
 - `.env` – Hugo version (affects all builds)
 - `config/_default/config.toml` – Main site title, menu, author info
 - `config/production/config.toml` – Production baseURL and analytics
