@@ -27,6 +27,10 @@ After changing `package.json` or `package-lock.json`, run `npm ci` before `npm t
 - **Secrets** — no API keys, deploy tokens, or credentials in `.env`, `config/`, or front matter. Azure Static Web Apps deploy token lives only in GitHub Actions secrets.
 - **Vendored theme** — prefer site overrides in root `layouts/`, `assets/`, and `static/` over editing `themes/hugo-theme-bootstrap/`.
 
+## Cursor context
+
+**`.cursorignore`** keeps Cursor Agent indexing off generated and vendored paths (`public/`, `node_modules/`, `themes/hugo-theme-bootstrap/`, Playwright/coverage artefacts). It affects Cursor only — not git or Hugo. Theme work still belongs in root `layouts/`, `assets/`, and `static/`.
+
 ## Source of truth
 
 - **Content:** `content/` (posts under `content/posts/YYYY/`, pages at `content/` root).
