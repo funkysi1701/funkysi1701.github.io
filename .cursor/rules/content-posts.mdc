@@ -11,7 +11,7 @@ Post structure and front matter examples: [`.github/copilot-instructions.md`](..
 ## Front matter and posts
 
 - Posts live under `content/posts/YYYY/` with TOML front matter in `+++` fences.
-- **`title`:** 50–60 characters (inclusive). **`description`:** 110–160 characters (inclusive). CI enforces via GitHub Actions (`.github/workflows/meta-title-length.yml`, `meta-description-length.yml`). After editing post front matter, run **`npm run check:meta`** locally.
+- **`title`:** 50–60 characters (inclusive). **`description`:** 110–160 characters (inclusive). CI enforces via GitHub Actions (`.github/workflows/meta-title-length.yml`, `meta-description-length.yml`). After editing post front matter, run **`npm run check:meta`** locally (requires Python 3.11+ on `PATH`).
 - Set front matter `title` on Markdown pages (posts, static pages, section/taxonomy `_index.md`) where Hugo would otherwise leave the page title empty.
 
 ## SEO and headings
