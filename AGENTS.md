@@ -17,7 +17,7 @@ Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). Cursor rules 
 | Meta validation (titles + descriptions) | `npm run check:meta` |
 | Meta title check only | `npm run check:meta:titles` |
 | Meta description check only | `npm run check:meta:descriptions` |
-| Preview description fixes (dry-run) | `npm run check:meta:fix` — applies with `python scripts/normalize_meta_descriptions.py --root .` |
+| Preview description fixes (dry-run) | `npm run check:meta:fix` — apply fixes with `python scripts/normalize_meta_descriptions.py --root .` |
 | Parkrun results update | `pip install -r scripts/requirements-parkrun.txt` then `python scripts/update_parkrun_results.py` |
 
 After changing `package.json` or `package-lock.json`, run `npm ci` before `npm test` (matches Azure DevOps).
