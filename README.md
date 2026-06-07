@@ -54,7 +54,16 @@ By default, `playwright.config.ts` uses **`BASE_URL`** of `https://www.funkysi17
 
 **Azure DevOps** runs the full suite in **`azure-pipelines-playwright.yml`**: it sets `BASE_URL` to production for **`main`** (and **`master`** if used) and to **`https://blog-dev.funkysi1701.com`** for **`develop`**. After tests, **`scripts/generate-page-coverage.js`** can feed **Codecov** when `CODECOV_TOKEN` is configured in the pipeline. **`codecov.yml`** marks that **page coverage** as **informational** so normal content and visit churn does not fail PR checks; tighten or turn off `informational` there if you want strict gates.
 
-**GitHub Actions** (`.github/workflows/`) includes checks such as **meta title** (50–60 characters) and **meta description** (110–160 characters) for `content/posts/**/*.md` via `scripts/check_meta_titles.py` and `scripts/check_meta_descriptions.py`.
+**GitHub Actions** (`.github/workflows/`) includes checks such as **meta title** (50–60 characters) and **meta description** (110–160 characters) for `content/posts/**/*.md`. Run the same checks locally after editing post front matter:
+
+```sh
+npm run check:meta              # titles + descriptions
+npm run check:meta:titles       # titles only
+npm run check:meta:descriptions # descriptions only
+npm run check:meta:fix          # preview description rewrites (--dry-run)
+```
+
+To apply description fixes (write files), run `python scripts/normalize_meta_descriptions.py --root .` (without `--dry-run`). Requires Python 3.11+ on `PATH` (same as the GitHub Actions meta workflows).
 
 For Hugo changes, still verify with `hugo server -D` or a production build (`hugo --minify --environment production`) as needed.
 When updating templates, prefer Hugo's canonical date values (`.Date` / `.PublishDate`) instead of gating rendering on `\.Params.date`; this avoids date regressions across Hugo upgrades.
