@@ -14,8 +14,10 @@ Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). Cursor rules 
 | Install test deps | `npm ci` |
 | E2E tests | `npm test` (set `BASE_URL` for non-production targets) |
 | Playwright browser | `npx playwright install chromium` |
-| Meta title check | `python scripts/check_meta_titles.py --root .` |
-| Meta description check | `python scripts/check_meta_descriptions.py --root .` |
+| Meta validation (titles + descriptions) | `npm run check:meta` |
+| Meta title check only | `npm run check:meta:titles` |
+| Meta description check only | `npm run check:meta:descriptions` |
+| Preview description fixes (dry-run) | `npm run check:meta:fix` — applies with `python scripts/normalize_meta_descriptions.py --root .` |
 | Parkrun results update | `pip install -r scripts/requirements-parkrun.txt` then `python scripts/update_parkrun_results.py` |
 
 After changing `package.json` or `package-lock.json`, run `npm ci` before `npm test` (matches Azure DevOps).
@@ -46,6 +48,8 @@ Posts (`content/posts/**/*.md`) use TOML front matter in `+++` fences. CI enforc
 - **`description`:** 110–160 characters (inclusive)
 
 British English (`locale = 'en-gb'`). One top-level Markdown heading per page where that matches site structure. Meaningful images need descriptive alt text.
+
+After bulk-editing post front matter, run **`npm run check:meta`** before opening a PR.
 
 ## CI map
 

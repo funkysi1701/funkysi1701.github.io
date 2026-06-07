@@ -76,6 +76,10 @@
     "test:headed": "npx playwright test --headed",
     "test:debug": "npx playwright test --debug",
     "test:report": "npx playwright show-report",
-    "screenshots:projects": "node scripts/capture-project-screenshots.mjs"
+    "screenshots:projects": "node scripts/capture-project-screenshots.mjs",
+    "check:meta": "python scripts/check_meta_titles.py --root . && python scripts/check_meta_descriptions.py --root .",
+    "check:meta:titles": "python scripts/check_meta_titles.py --root .",
+    "check:meta:descriptions": "python scripts/check_meta_descriptions.py --root .",
+    "check:meta:fix": "python scripts/normalize_meta_descriptions.py --root . --dry-run"
   }
 }

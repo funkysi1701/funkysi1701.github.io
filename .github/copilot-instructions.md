@@ -186,6 +186,8 @@ npm test
 
 **Azure DevOps:** Pipeline **`azure-pipelines-playwright.yml`** runs `npx playwright test` on PRs and branch pushes. It chooses **`BASE_URL`** from the effective target branch: **`main`** or **`master`** → production; **`develop`** → **`https://blog-dev.funkysi1701.com`**; otherwise production. The pipeline runs **`scripts/generate-page-coverage.js`** and can upload **page coverage** to **Codecov** when **`CODECOV_TOKEN`** is set. **`codecov.yml`** configures Codecov **project/patch** status as **informational** (synthetic Markdown visit coverage is volatile); adjust there or in the Codecov UI if you want failing checks on coverage drops.
 
+**Meta validation (post front matter):** After editing `title` or `description` in `content/posts/**/*.md`, run **`npm run check:meta`** (wraps the Python scripts used by GitHub Actions). Subcommands: **`check:meta:titles`**, **`check:meta:descriptions`**. To preview automated description rewrites: **`npm run check:meta:fix`** (dry-run only). Apply fixes with `python scripts/normalize_meta_descriptions.py --root .`. Requires Python on `PATH`.
+
 **GitHub Actions:** Workflows under **`.github/workflows/`** include **meta title** and **meta description** length validation for blog posts (`scripts/check_meta_titles.py`, `scripts/check_meta_descriptions.py`), plus other jobs (Azure SWA deploy, broken link schedule, develop→main auto-PR, etc.). Playwright is **not** currently duplicated there; treat **Azure Pipelines** as the primary full E2E gate unless a GitHub workflow is added later.
 
 **Specs:** High-level scenarios are documented in **`specs/`** (see **`specs/funkysi1701-test-plan.md`**). Individual test files often start with a `// spec: specs/...` pointer for traceability.
@@ -202,7 +204,8 @@ For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remai
 - `azure-pipelines.yml` – CI/CD pipeline (build, ECR push, Helm deploy)
 - `azure-pipelines-playwright.yml` – Playwright test job and Codecov page coverage
 - `codecov.yml` – Codecov behaviour (informational page-coverage gates)
-- `scripts/check_meta_titles.py` / `scripts/check_meta_descriptions.py` – Post front matter length checks (used by GitHub Actions)
+- `npm run check:meta` – Local meta validation (titles + descriptions); see also `check:meta:titles`, `check:meta:descriptions`, `check:meta:fix`
+- `scripts/check_meta_titles.py` / `scripts/check_meta_descriptions.py` – Post front matter length checks (used by GitHub Actions and npm scripts)
 - `scripts/generate-page-coverage.js` – Page visit / coverage artifact for Codecov
 - `.github/workflows/` – GitHub Actions (SWA deploy, meta checks, links, auto-PR, etc.)
 - `specs/` – Test plans referenced from `tests/`

@@ -40,4 +40,8 @@ jobs:
         continue-on-error: true
         run: python scripts/update_parkrun_results.py
 
+      # After editing post title/description front matter, agents should run: npm run check:meta
+      - name: Verify meta validation npm scripts
+        run: npm run check:meta
+
       # No build step needed - tests run against live site at www.funkysi1701.com
