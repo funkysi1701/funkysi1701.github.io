@@ -31,7 +31,7 @@ Here is the complete list of tips that can be found in the book (I am reading th
 1. Care About Your Craft
 2. Think! About Your Work
 
-### A Pragmatic Philosophy
+## A Pragmatic Philosophy
 
 3. You Have Agency
 4. Provide Options, Don’t Make Lame Excuses
@@ -45,7 +45,7 @@ Here is the complete list of tips that can be found in the book (I am reading th
 12. It’s Both What You Say and the Way You Say It
 13. Build Documentation In, Don’t Bolt It On
 
-### A Pragmatic Approach
+## A Pragmatic Approach
 
 14. Good Design Is Easier to Change Than Bad Design
 15. DRY - Don’t Repeat Yourself
@@ -59,7 +59,7 @@ Here is the complete list of tips that can be found in the book (I am reading th
 23. Estimate to Avoid Surprises
 24. Iterate the Schedule with the Code
 
-### The Basic Tools
+## The Basic Tools
 
 25. Keep Knowledge in Plain Text
 26. Use the Power of Command Shells
@@ -73,7 +73,7 @@ Here is the complete list of tips that can be found in the book (I am reading th
 34. Don't Assume It - Prove it
 35. Learn a Text Manipulation Language
 
-### Pragmatic Paranoia
+## Pragmatic Paranoia
 
 36. You Can't Write Perfect Software
 37. Design with Contracts
@@ -84,7 +84,7 @@ Here is the complete list of tips that can be found in the book (I am reading th
 42. Take Small Steps - Always
 43. Avoid Fortune Telling
 
-### Bend, or Break
+## Bend, or Break
 
 44. Decoupled Code is Easy to Change
 45. Tell, Don't Ask
@@ -99,7 +99,7 @@ Here is the complete list of tips that can be found in the book (I am reading th
 54. Use Mixins to Share Functionality
 55. Parameterize Your App Using External Configuration
 
-### Concurrency
+## Concurrency
 
 56. Analyze Workflow to Improve Concurrency
 57. Shared State is Incorrect State
@@ -107,7 +107,7 @@ Here is the complete list of tips that can be found in the book (I am reading th
 59. Use Actors for Concurrency Without Shared State
 60. Use Blackboards to Coordinate Workflow
 
-### While You Are Coding
+## While You Are Coding
 
 61. Listen to Your Inner Lizard
 62. Don't Program by Coincidence
@@ -124,7 +124,7 @@ Here is the complete list of tips that can be found in the book (I am reading th
 73. Apply Security Patches Quickly
 74. Name well; Rename When Needed
 
-### Before the Project
+## Before the Project
 
 75. No One Knows Exactly What They Want
 76. Programmers Help People Understand What They Want
@@ -136,7 +136,7 @@ Here is the complete list of tips that can be found in the book (I am reading th
 82. Don't Go into the Code Alone
 83. Agile is Not a Noun; Agile is How You Do Things
 
-### Pragmatic Projects
+## Pragmatic Projects
 
 84. Maintain Small, Stable Teams
 85. Schedule It to Make it Happen
@@ -153,7 +153,7 @@ Here is the complete list of tips that can be found in the book (I am reading th
 96. Delight Users, Don't Just Deliver Code
 97. Sign your Work
 
-### Professional Ethics
+## Professional Ethics
 
 98. First, Do No Harm
 99. Don't Enable Scumbags

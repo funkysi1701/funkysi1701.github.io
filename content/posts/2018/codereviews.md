@@ -28,7 +28,7 @@ Reviewing code is a great habit to get into. Code reviews help share knowledge b
 
 Visual Studio Team Services (VSTS) has some great options that can help make code reviews second nature.
 
-#### Pull Requests
+## Pull Requests
 
 A lot of source control systems have the concept of pull requests. This is where you request others to review your code usually in a branch and if they approve it, merge it into a main branch.
 
@@ -38,7 +38,7 @@ Select a branch you want to merge from and a branch that should be merged into (
 
 Now if you are anything like me you want your code merged in as soon as you have created your pull request and there is nothing stopping you reviewing your own code and clicking approve and merge on your own pull request. However [branch policies](https://docs.microsoft.com/en-us/vsts/git/branch-policies?view=vsts) is a way around this problem.
 
-#### Branch Policies
+## Branch Policies
 
 ![Branch Policy](/images/2018/save-policy-changes.png)
 
