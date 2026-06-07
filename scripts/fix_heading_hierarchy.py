@@ -36,13 +36,21 @@ def has_hierarchy_skip(levels: list[int]) -> bool:
     return False
 
 
-def promote_line(line: str, delta: int) -> str:
+def set_heading_level(line: str, new_level: int) -> str:
     match = HEADING_RE.match(line)
     if not match:
         return line
-    level = len(match.group(1))
-    new_level = max(2, level - delta)
     return "#" * new_level + match.group(2)
+
+
+def normalize_heading_levels(levels: list[int]) -> list[int]:
+    fixed: list[int] = []
+    prev = 1  # theme renders post title as h1
+    for level in levels:
+        new_level = max(2, min(level, prev + 1))
+        fixed.append(new_level)
+        prev = new_level
+    return fixed
 
 
 def iter_body_lines(body: str):
@@ -73,26 +81,13 @@ def fix_content(content: str) -> tuple[str, bool]:
     if not has_hierarchy_skip(ordered_levels):
         return content, False
 
-    # Promote so the first content heading becomes h2, preserving relative depth.
-    first_level = ordered_levels[0]
-    delta = first_level - 2
-    if delta <= 0:
-        return content, False
-
+    fixed_levels = normalize_heading_levels(ordered_levels)
     changed = False
     new_lines = list(lines)
-    fence = False
-    for idx, line in enumerate(lines):
-        stripped = line.strip()
-        if stripped.startswith("```"):
-            fence = not fence
-            continue
-        if fence:
-            continue
-        if heading_level(line.rstrip("\r\n")) is None:
-            continue
+    for (idx, _), fixed_level in zip(levels, fixed_levels, strict=True):
+        line = lines[idx]
         old = line.rstrip("\r\n")
-        updated = promote_line(old, delta)
+        updated = set_heading_level(old, fixed_level)
         if updated != old:
             changed = True
             suffix = "\r\n" if line.endswith("\r\n") else ("\n" if line.endswith("\n") else "")
