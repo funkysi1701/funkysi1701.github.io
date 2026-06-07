@@ -5,7 +5,7 @@ alwaysApply: true
 
 # funkysi1701.com (Hugo blog) — core rules
 
-Portable onboarding: [`AGENTS.md`](../../AGENTS.md). Copilot detail: [`.github/copilot-instructions.md`](../../.github/copilot-instructions.md). Path-scoped rules in [`.cursor/rules/`](.) activate for content, tests, layouts, and parkrun.
+Portable onboarding: [`AGENTS.md`](../../AGENTS.md). PR checklist: [`CONTRIBUTING.md`](../../CONTRIBUTING.md). Copilot detail: [`.github/copilot-instructions.md`](../../.github/copilot-instructions.md). Path-scoped rules in [`.cursor/rules/`](.) activate for content, tests, layouts, and parkrun.
 
 Prefer matching existing patterns (Hugo TOML front matter in `+++` fences, site overrides under root `layouts/` and `static/`).
 
@@ -43,7 +43,7 @@ No **`dev`** branch — use **`develop`**. `.github/workflows/auto-pr.yml` can o
 ## Documentation
 
 - Tracked **`*.md`** is part of the repo contract. When a change affects documented behaviour, update every affected Markdown file in the same change.
-- Keep **`AGENTS.md`**, **`README.md`**, **`.github/copilot-instructions.md`**, and **`.cursor/rules/`** aligned when workflows, branches, testing, or automation shift. Do not add new Markdown files unless the user or task asks.
+- Keep **`AGENTS.md`**, **`CONTRIBUTING.md`**, **`README.md`**, **`.github/copilot-instructions.md`**, and **`.cursor/rules/`** aligned when workflows, branches, testing, or automation shift. Do not add new Markdown files unless the user or task asks.
 
 ## Scope
 
