@@ -26,7 +26,7 @@ When you have long running branches, it can be challenging to keep them up to da
 
 I am going to look at two ways of doing this, one for GitHub and one for Azure DevOps.
 
-### GitHub
+## GitHub
 
 GitHub Actions are the way to automate tasks in your GitHub repository. You can create workflows that run on specific triggers, such as when a pull request is created or when code is pushed to a specific branch. Create a new GitHub action with the following code in it:
 
@@ -60,7 +60,7 @@ This action uses the GitHub CLI to create the PR. For more information on the Gi
 run: gh pr create -B main -H develop --title 'Merge develop into main' --body 'Created by GitHub action' || gh pr edit -B main --title "Merge develop into main" --body 'Created by GitHub action'
 ```
 
-### Azure DevOps
+## Azure DevOps
 
 Azure DevOps has a similar feature to GitHub Actions called Azure Pipelines. You can create pipelines that run on specific triggers, such as when code is pushed to a specific branch. For Azure DevOps I have a powershell scripts that does most of the work, lets have a look at it:
 

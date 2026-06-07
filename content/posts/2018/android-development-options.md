@@ -27,7 +27,7 @@ A friend asked me how to get started in Android Development and I thought I migh
 
 I am by no means an expert in Android development, I do have an app in the play store so I know something.
 
-#### Manifest File
+## Manifest File
 
 This is probably the easiest option and also doesn’t actually create an android app so I am not sure if it should be included in this list of not.
 
@@ -39,7 +39,7 @@ A manifest file is a simple text file which specifies a few settings like the ic
 
 [More information](https://developers.google.com/web/fundamentals/web-app-manifest/)
 
-#### Visual Studio
+## Visual Studio
 
 This is the option I know most about as is what I have used.
 
@@ -49,7 +49,7 @@ Xamarin Forms allows you to write one a single codebase that can be compiled to 
 
 More Information on [Visual Studio](https://www.visualstudio.com/), [Xamarin Forms](https://dotnet.microsoft.com/en-us/apps/xamarin)
 
-#### Android Studio
+## Android Studio
 
 I don’t know much about this option so do correct me if I don’t get the details correct.
 
@@ -57,7 +57,7 @@ Android Studio can be downloaded from Google this allows you to create java code
 
 [More information](https://developer.android.com/studio/index.html)
 
-#### Cordova
+## Cordova
 
 Cordova allows you to use HTML, CSS and javascript to create cross platform apps. I have no idea why I haven’t heard of this technology until today as it sounds very flexible especially if you know a little bit of javascript.
 

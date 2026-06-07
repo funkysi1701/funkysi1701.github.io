@@ -1,5 +1,7 @@
 # Copilot Instructions for funkysi1701.com Blog
 
+For a shorter, tool-agnostic onboarding guide, see **[`AGENTS.md`](../AGENTS.md)** at the repo root. This file adds Copilot-specific detail; full Cursor rules live in **`.cursor/rules/funkysi1701-blog.mdc`**.
+
 ## Project Overview
 
 This is a personal blog/portfolio website powered by **Hugo** (static site generator), hosted on Azure Static Web Apps with infrastructure managed through **Kubernetes + Helm**. The site features blog posts, projects, podcasts, and technical content, primarily focused on .NET, Azure, and DevOps topics.

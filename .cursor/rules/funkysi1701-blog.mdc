@@ -52,7 +52,7 @@ These rules apply to all edits in this repo. Prefer matching existing patterns (
 ## Documentation (Markdown)
 
 - Tracked **`*.md`** files are part of the repo contract. When a change affects anything they describe (Hugo commands, Docker, CI, env vars, deploy steps, or testing), **update every affected Markdown file in the same change** so commands and paths stay accurate.
-- At minimum, keep **`README.md`**, **`.github/copilot-instructions.md`**, and **this rules file** (`.cursor/rules/funkysi1701-blog.mdc`) aligned with real behaviour when workflows, branches, testing, or content automation shift; search for other **`*.md`** mentions of the same topic and fix stale references.
+- At minimum, keep **`AGENTS.md`**, **`README.md`**, **`.github/copilot-instructions.md`**, and **this rules file** (`.cursor/rules/funkysi1701-blog.mdc`) aligned with real behaviour when workflows, branches, testing, or content automation shift; search for other **`*.md`** mentions of the same topic and fix stale references. **`AGENTS.md`** is the portable agent onboarding layer — keep it concise and link here for detail rather than duplicating this file.
 - Do **not** add new Markdown files unless the user or task explicitly asks for them; prefer updating existing docs.
 
 ## Scope of changes

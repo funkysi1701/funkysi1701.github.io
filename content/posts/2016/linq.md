@@ -27,11 +27,11 @@ aliases = [
 +++
 ![](/images/2016/step30.jpg)
 
-### What is LINQ?
+## What is LINQ?
 
 **LINQ** is an acronym for Language Integrated Query, which describes where it’s used and what it does. The Language Integrated part means that LINQ is part of programming language syntax. In particular, both C# and VB are languages that ship with .NET and have LINQ capabilities.
 
-### How do I use LINQ in my C# code?
+## How do I use LINQ in my C# code?
 
 To use LINQ the first thing you need to do is add the LINQ using statement.
 
@@ -73,7 +73,7 @@ foreach (var num in query)
 }
 ```
 
-### What other SQL like syntax can I use?
+## What other SQL like syntax can I use?
 
 In T-SQL you can control ordering using ORDER BY, LINQ has a similar syntax orderby
 
@@ -99,7 +99,7 @@ foreach (var type in query)
 }
 ```
 
-### JOINS
+## JOINS
 
 So you thought joining tables was a SQL Server only thing. Think again you can do this in LINQ
 
@@ -110,7 +110,7 @@ join prod in products on prod.CustomerId equals cust.Id
 select new { ProductName = prod.Name, CustomerName = cust.CompanyName };
 ```
 
-### Conclusion
+## Conclusion
 
 There are loads more LINQ functionality that you can use. While writing this blog I found https://learn.microsoft.com/101-LINQ-Samples-3fb9811b which has loads of examples of different queries that you can write with LINQ.
 
