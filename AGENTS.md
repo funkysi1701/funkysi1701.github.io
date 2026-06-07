@@ -1,6 +1,6 @@
 # Agent onboarding — funkysi1701.com (Hugo blog)
 
-Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). For full conventions, see [`.cursor/rules/funkysi1701-blog.mdc`](.cursor/rules/funkysi1701-blog.mdc) and [`.github/copilot-instructions.md`](.github/copilot-instructions.md).
+Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). Cursor rules are path-scoped under [`.cursor/rules/`](.cursor/rules/); Copilot detail in [`.github/copilot-instructions.md`](.github/copilot-instructions.md).
 
 **Site:** https://www.funkysi1701.com
 
@@ -14,8 +14,10 @@ Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). For full conv
 | Install test deps | `npm ci` |
 | E2E tests | `npm test` (set `BASE_URL` for non-production targets) |
 | Playwright browser | `npx playwright install chromium` |
-| Meta title check | `python scripts/check_meta_titles.py --root .` |
-| Meta description check | `python scripts/check_meta_descriptions.py --root .` |
+| Meta validation (titles + descriptions) | `npm run check:meta` |
+| Meta title check only | `npm run check:meta:titles` |
+| Meta description check only | `npm run check:meta:descriptions` |
+| Preview description fixes (dry-run) | `npm run check:meta:fix` — apply fixes with `python scripts/normalize_meta_descriptions.py --root .` |
 | Parkrun results update | `pip install -r scripts/requirements-parkrun.txt` then `python scripts/update_parkrun_results.py` |
 
 After changing `package.json` or `package-lock.json`, run `npm ci` before `npm test` (matches Azure DevOps).
@@ -46,6 +48,8 @@ Posts (`content/posts/**/*.md`) use TOML front matter in `+++` fences. CI enforc
 - **`description`:** 110–160 characters (inclusive)
 
 British English (`locale = 'en-gb'`). One top-level Markdown heading per page where that matches site structure. Meaningful images need descriptive alt text.
+
+After bulk-editing post front matter, run **`npm run check:meta`** before opening a PR.
 
 ## CI map
 
@@ -81,8 +85,13 @@ Make the smallest change that satisfies the task. Do not refactor unrelated code
 
 | Path | Purpose |
 |------|---------|
-| [`.cursor/rules/funkysi1701-blog.mdc`](.cursor/rules/funkysi1701-blog.mdc) | Full Cursor rules (always applied in Cursor) |
+| [`.cursor/rules/funkysi1701-blog-core.mdc`](.cursor/rules/funkysi1701-blog-core.mdc) | Always-applied Cursor rules (source of truth, security, branches) |
+| [`.cursor/rules/content-posts.mdc`](.cursor/rules/content-posts.mdc) | Content/posts — front matter, SEO lengths, alt text |
+| [`.cursor/rules/playwright-tests.mdc`](.cursor/rules/playwright-tests.mdc) | Playwright — `BASE_URL`, `// spec:`, CI gates |
+| [`.cursor/rules/hugo-layouts.mdc`](.cursor/rules/hugo-layouts.mdc) | Hugo templates — theme overrides, build verification |
+| [`.cursor/rules/parkrun-generated.mdc`](.cursor/rules/parkrun-generated.mdc) | parkrun generated block and update script |
 | [`.github/copilot-instructions.md`](.github/copilot-instructions.md) | Copilot-specific project context |
 | [`README.md`](README.md) | Human-oriented setup, testing, and deploy |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | PR checklist, branch workflow, merge readiness |
 | [`specs/funkysi1701-test-plan.md`](specs/funkysi1701-test-plan.md) | E2E scenario plan (`// spec:` comments in `tests/`) |
 | [`.vscode/mcp.json`](.vscode/mcp.json) | Playwright MCP server for agent-driven test runs |

@@ -1,0 +1,30 @@
+---
+description: Blog posts and Markdown pages — front matter, SEO meta lengths, British English, alt text
+globs: content/**/*.md
+alwaysApply: false
+---
+
+# Content and blog posts
+
+Post structure and front matter examples: [`.github/copilot-instructions.md`](../../.github/copilot-instructions.md). Quick checks: [`AGENTS.md`](../../AGENTS.md).
+
+## Front matter and posts
+
+- Posts live under `content/posts/YYYY/` with TOML front matter in `+++` fences.
+- **`title`:** 50–60 characters (inclusive). **`description`:** 110–160 characters (inclusive). CI enforces via GitHub Actions (`.github/workflows/meta-title-length.yml`, `meta-description-length.yml`). After editing post front matter, run **`npm run check:meta`** locally (requires Python 3.11+ on `PATH`).
+- Set front matter `title` on Markdown pages (posts, static pages, section/taxonomy `_index.md`) where Hugo would otherwise leave the page title empty.
+
+## SEO and headings
+
+- Every rendered page needs a non-empty HTML `<title>`. Site config sets `Site.Title`; home page falls back via `layouts/partials/head/title.html`.
+- One top-level Markdown heading per page where that matches site structure; lower-level headings for sections.
+- Open Graph / Twitter / JSON-LD: follow patterns in `layouts/partials/head.html` and related partials. New share imagery or external hosts must stay coherent with CSP, headers, and `staticwebapp.config.json`.
+
+## Language and accessibility
+
+- British English (`locale = 'en-gb'` in config); consistent spelling unless a quoted source requires otherwise.
+- Meaningful images: `![descriptive alt text](...)`. Empty alt only for decorative images.
+
+## Links
+
+- `.github/workflows/link.yml` crawls recursively from production homepage monthly. Prefer stable permalinks and `staticwebapp.config.json` redirects when URLs change. Ensure important new pages are reachable from the homepage link graph.
