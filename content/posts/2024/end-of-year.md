@@ -31,19 +31,19 @@ Goals for 2025
 - Drink More Water and Do More Walks
 - Attend Conferences and User Groups
 
-### Blog Posts
+## Blog Posts
 
 For most of the year, I have **not** been writing blog posts. However, the Scottish Summit conference reignited my blogging spark, and I have written seven posts since then. My goal is to write one post a week. I am sure I will miss the odd week, but the important thing is not to miss two in a row.
 
-### More Learning
+## More Learning
 
 Being a developer is a constant journey of learning, and I have not done enough of that this year. During December, I completed a few challenges from [Advent of Code](https://adventofcode.com/), and I hope to do more of them. I have also discovered [Exercism](https://exercism.org/) and started working through the C# track. I am sure there will be more opportunities to learn new things in 2025.
 
-### Health
+## Health
 
 2024 took an unusual turn. In June, I walked a [half marathon across the Peak District](/posts/2024/charity-hike), and since then, I have been doing lots of walks. Walking is good for my physical and mental health, so I intend to do more of it in 2025. I have a 5k scheduled for January, which should be lots of fun as it is around the wildlife park. On the same topic, I want to drink more water. Not sure how I am going to accomplish this as I am easily distracted by the current developer problem, instead of thinking about my health.
 
-### Conferences and User Groups
+## Conferences and User Groups
 
 I want to attend a conference or user group once a month in 2025. Conferences and user groups are great places to meet people, learn new things, and be encouraged by the community. I have signed up as a volunteer for NDC London in January, and DDD North is back in February. I am sure I will be able to fill the other months with events soon enough as well.
 

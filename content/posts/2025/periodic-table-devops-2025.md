@@ -25,11 +25,11 @@ DevOps has transformed the way teams build, deploy, and manage software. Over th
 
 The periodic table lists all the chemical elements and groups them together based on some key properties. In 2016 I found an article about the [periodic table of DevOps](https://digital.ai/periodic-table-of-devops-tools/) and wrote a blog [post](/posts/2016/periodic-table-devops/) about it.
 
-### Periodic Table of DevOps Tools 2025
+## Periodic Table of DevOps Tools 2025
 
 ![Periodic Table of DevOps 2025](/images/2025/periodic-table-devops-2025.png)
 
-### Periodic Table of DevOps Tools 2016
+## Periodic Table of DevOps Tools 2016
 
 ![Periodic Table of DevOps 2016](/images/2016/periodic-table-of-devops-v2.png)
 

@@ -42,7 +42,7 @@ Lets have a look at what my goals were for 2021. I had eight of them, lets look 
 
 8. **Time for me**. Achieved this one, had plenty of time for myself.
  
-### Not a bad year but what are my goals for 2022?
+## Not a bad year but what are my goals for 2022?
 
 1. **Video**. I have just purchased a green screen, so my first goal is to learn how to use OBS, how to light myself properly without getting horrible reflections. I have the content for my first talk, the talk I gave at work about Blazor.
 

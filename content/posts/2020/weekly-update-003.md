@@ -26,7 +26,7 @@ aliases = [
 
 Been a quiet week, so wasn't expecting to have much to write on here, however a few things happened worth talking about.
 
-### My First PR
+## My First PR
 
 A comment was made to me to do something with the postcodes that are in the system I am developing. Find out what projects have postcodes near each other, and that way work can be grouped together and reduce potential mileage costs of staff that need to visit these projects.
 
@@ -42,7 +42,7 @@ I was in luck just 17 hours after I left a message the project owner said to cre
 
 I have been thinking about contributing to open source for a while. However, I had not seen a project I wanted to contribute to, or a problem that I knew how to fix until now that is.
 
-### PHP
+## PHP
 
 This week I had a call asking me if I knew PHP?
 

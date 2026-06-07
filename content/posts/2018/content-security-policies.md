@@ -26,7 +26,7 @@ aliases = [
 
 A content Security Policy or CSP is a HTTP response header that defines what sources of content can be loaded on a web page. It is a way to combat Cross Site Scripting (XSS) attacks.
 
-### What is a XSS attack then?
+## What is a XSS attack then?
 
 When you load a webpage it also loads various other resources like images, some css style sheets, various javascript files that you want to run and probably many other things.
 
@@ -34,7 +34,7 @@ How do you know that you can trust all of these things? If you created them and 
 
 Imagine you had a page which you could add any text into a form which would then be displayed. A malicious user could add evil javascript or get the browser to load evil code from anywhere on the internet.
 
-### CSP to the rescue!
+## CSP to the rescue!
 
 A CSP allows the browser to only load from sources that you specify. You could specify that resources from your own site will load but the evil script will not.
 
@@ -68,7 +68,7 @@ Content-Security-Policy: default-src https://example.com
 
 This allows any content to be loaded from https://example.com only.
 
-### How do I use this on my site?
+## How do I use this on my site?
 
 I have added CSPs into my web.config which works great for my .Net Framework code.
 
@@ -78,7 +78,7 @@ I have added CSPs into my web.config which works great for my .Net Framework cod
 
 For .net core it is a bit more complex as you don’t tend to use web.config files, however check out Anthony Chu’s [post](https://anthonychu.ca/post/aspnet-core-csp/), which has a solution to that problem.
 
-### Report Only
+## Report Only
 
 One last thing about CSPs to mention is the Report Only flag.
 
