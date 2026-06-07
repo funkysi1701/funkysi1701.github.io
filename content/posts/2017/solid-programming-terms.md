@@ -25,7 +25,7 @@ aliases = [
 +++
 This week I have been looking at improving my understanding of a few programming terms, like SOLID and I will try and define them so I can look back here when I get confused.
 
-### MVC
+## MVC
 
 I have previously blogged about [MVC](https://www.funkysi1701.com/posts/2016/model-view-controller-mvc/), but my understanding was not 100% correct so I will refine this here.
 
@@ -35,7 +35,7 @@ I have previously blogged about [MVC](https://www.funkysi1701.com/posts/2016/mod
 
 **Controller** – This is another place I had got a bit confused. I had thought all the logic lived here. This is incorrect controllers are only concerned with getting data between Model and View.
 
-### SOLID
+## SOLID
 
 SOLID are five principles of object oriented programming and design.
 
@@ -61,6 +61,6 @@ SOLID are five principles of object oriented programming and design.
 
 I need to look into SOLID some more but here are some [examples](https://www.codeproject.com/Articles/703634/SOLID-architecture-principles-using-simple-Csharp).
 
-### DRY
+## DRY
 
 DRY is simply Don’t Repeat Yourself. It is often easy to spot when a function call will help you not have to use the same bit of code in different places. I am often spotting places where I can put this into action.

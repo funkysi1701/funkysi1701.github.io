@@ -24,7 +24,7 @@ aliases = [
 +++
 Remember me? I used to write blog posts but somehow life got in the way. So much has happened this year, lets have a look at my [goals](/posts/2018/lets-see-2018-can) for 2018 and see how far we have got with them.
 
-### Buy a house
+## Buy a house
 
 My first goal for 2018 was to buy a house. Well so much progress has been made with this goal.
 
@@ -34,7 +34,7 @@ The location we decided upon was [Thorne](https://www.google.co.uk/maps/place/Th
 
 I have a bit of a mammoth time ahead of me getting everything we own packed up and moved to our new home so wish me luck, but we will get there it is just going to be hard work.
 
-### New Job
+## New Job
 
 In June 2018 I started a new job. This was slightly later than I had hoped but I believe it has been worth the wait.
 
@@ -44,22 +44,22 @@ The main benefit is that I am part of a big development team. I have a huge list
 
 I have also started asking questions about deployment and how this could be automated. Something that interests me, especially with the sysadmin and devops background. I have been tasked with learning [docker](https://docs.docker.com/), so expect some blog posts on this topic in the near future.
 
-### See more of family
+## See more of family
 
 This one I am going to count as a miss. I have seen family a few times this year, but my efforts have been more on the first two items in this list. Hopefully this will change as things settle down.
 
-### Celebrate 5 years of Marriage
+## Celebrate 5 years of Marriage
 
 Me and the wife had a great weekend away to celebrate our wedding anniversary.
 
-### Celebrate my two children
+## Celebrate my two children
 
 Not happened yet but it is booked and we just need to arrange a few more details.
 
-### Lightning Talk
+## Lightning Talk
 
 I have made no effort to do a talk and this is going to be a goal for 2019 I think. Most of the reason is concentrating on the other areas above, but also because I am not a natural speaker and I don’t like stepping out of my comfort zone. But I will do it, I just need to wait for other things to calm down a bit first.
 
-### Family Holiday
+## Family Holiday
 
 We had a great week away at the start of July. The weather was really great (and still is) and we had lots of time doing things as a family.
