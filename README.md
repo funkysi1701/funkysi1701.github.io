@@ -63,7 +63,7 @@ npm run check:meta:descriptions # descriptions only
 npm run check:meta:fix          # preview description rewrites (--dry-run)
 ```
 
-To apply description fixes, run `python scripts/normalize_meta_descriptions.py --root .` (omit `--dry-run`). Requires Python on `PATH` (same as the GitHub Actions meta workflows).
+To apply description fixes (write files), run `python scripts/normalize_meta_descriptions.py --root .` (without `--dry-run`). Requires Python 3.11+ on `PATH` (same as the GitHub Actions meta workflows).
 
 For Hugo changes, still verify with `hugo server -D` or a production build (`hugo --minify --environment production`) as needed.
 When updating templates, prefer Hugo's canonical date values (`.Date` / `.PublishDate`) instead of gating rendering on `\.Params.date`; this avoids date regressions across Hugo upgrades.
