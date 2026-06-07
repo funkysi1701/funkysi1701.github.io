@@ -1,0 +1,35 @@
+---
+description: Playwright E2E tests — BASE_URL, // spec: traceability, Azure Pipelines vs GitHub Actions
+globs: tests/**/*.ts
+alwaysApply: false
+---
+
+# Playwright E2E tests
+
+Config: `playwright.config.ts`. Scenario plans: `specs/` (notably `specs/funkysi1701-test-plan.md`). CI map: [`AGENTS.md`](../../AGENTS.md).
+
+## Running tests
+
+```bash
+npm ci
+npx playwright install chromium   # if needed
+npm test
+```
+
+- **`BASE_URL`:** `playwright.config.ts` defaults to `https://www.funkysi1701.com` when unset. Use `http://localhost:1313` for `hugo server -D`, or another preview URL.
+- After changing `package.json` or `package-lock.json`, run `npm ci` before `npm test`.
+
+## CI expectations
+
+- **Primary E2E gate:** `azure-pipelines-playwright.yml` (Azure DevOps) on PRs and branch pushes. **`BASE_URL` by branch:** `main`/`master` → production; `develop` → `https://blog-dev.funkysi1701.com`; otherwise production.
+- Runs `scripts/generate-page-coverage.js`; Codecov upload when `CODECOV_TOKEN` is set. `codecov.yml` treats page coverage as **informational**.
+- **GitHub Actions** runs meta checks and SWA deploy but **not** Playwright — a green GHA run does not imply E2E passed.
+
+## Spec traceability
+
+- Start test files with a `// spec: specs/...` comment pointing at the scenario doc (e.g. `// spec: specs/funkysi1701-test-plan.md`).
+- Keep `specs/` and tests aligned when behaviour changes.
+
+## Hugo feedback
+
+For template or content changes, `hugo server -D` or a production `hugo` build helps validate before or after E2E runs.

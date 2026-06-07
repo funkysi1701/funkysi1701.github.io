@@ -1,0 +1,50 @@
+---
+description: funkysi1701.com Hugo blog — core repo conventions (source of truth, security, branches)
+alwaysApply: true
+---
+
+# funkysi1701.com (Hugo blog) — core rules
+
+Portable onboarding: [`AGENTS.md`](../../AGENTS.md). Copilot detail: [`.github/copilot-instructions.md`](../../.github/copilot-instructions.md). Path-scoped rules in [`.cursor/rules/`](.) activate for content, tests, layouts, and parkrun.
+
+Prefer matching existing patterns (Hugo TOML front matter in `+++` fences, site overrides under root `layouts/` and `static/`).
+
+## Source of truth and generated output
+
+- **Hugo content and config:** Edit Markdown under `content/`, site parameters under `config/_default/` (and `config/development/`, `config/staging/`, `config/production/` when environment-specific). Active theme: `config/_default/config.toml` (`theme = 'hugo-theme-bootstrap'`).
+- **Theme vs site overrides:** Prefer root `layouts/`, `assets/`, and `static/` over editing `themes/hugo-theme-bootstrap/`. See `hugo-layouts.mdc` when changing templates.
+- **Build output:** `public/` is generated — not source of truth. Production builds use Dockerized Hugo with `--minify --environment production` (`.github/workflows/azure-static-web-apps-victorious-pebble-0b8f90e03.yml`).
+- **Parkrun page:** Generated block in `content/parkrun.md` — see `parkrun-generated.mdc`; do not hand-edit between markers.
+- **Git submodules:** CI checks out with `submodules: true`. Keep submodule config in sync if used.
+- **Azure Static Web Apps:** `staticwebapp.config.json` is copied into `public/` on deploy; keep routing and headers aligned with the built site.
+- **Kubernetes / Helm:** Image build, ECR push, and deploys in `azure-pipelines.yml` (`Helm/blog/`). Consider **develop**, **test**, and **main** namespaces and both SWA and cluster hosting when changing infra or env URLs.
+
+## Security and configuration
+
+- `.env` tracks non-secret shared config (e.g. `HUGO_VERSION`). **Do not** commit secrets, API keys, or deploy tokens. Azure SWA deploy token lives only in GitHub Actions secrets.
+- **Giscus** and similar use public repo identifiers; avoid private tokens in `config/` or front matter.
+
+## Local development
+
+- **Hugo:** `hugo server -D` from repo root, or Docker Compose (`docker-compose.yml`) / commands in `README.md`. Hugo version from `HUGO_VERSION` in `.env`.
+- **Images:** Static binaries under `static/` (site root). Stable paths for external links.
+- **Node:** After changing `package.json` or `package-lock.json`, run `npm ci` before `npm test` (matches Azure DevOps).
+
+## Branches and deploy
+
+| Branch | Target |
+|--------|--------|
+| **`main`** | Production — GHA → Azure SWA; Azure Pipelines → ECR → Helm **`main`** |
+| **`develop`** | Non-prod — Helm **`develop`** and **`test`** (blog-dev / blog-test) |
+| **`feature/*`** | Build and Helm to **`develop`** only |
+
+No **`dev`** branch — use **`develop`**. `.github/workflows/auto-pr.yml` can open or refresh **develop → main**.
+
+## Documentation
+
+- Tracked **`*.md`** is part of the repo contract. When a change affects documented behaviour, update every affected Markdown file in the same change.
+- Keep **`AGENTS.md`**, **`README.md`**, **`.github/copilot-instructions.md`**, and **`.cursor/rules/`** aligned when workflows, branches, testing, or automation shift. Do not add new Markdown files unless the user or task asks.
+
+## Scope
+
+Make the smallest change that satisfies the task. Do not refactor unrelated code or add dependencies without clear need.

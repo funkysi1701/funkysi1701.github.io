@@ -1,0 +1,25 @@
+---
+description: parkrun results page — generated block markers and update script (do not hand-edit)
+globs: content/parkrun.md
+alwaysApply: false
+---
+
+# parkrun page (`content/parkrun.md`)
+
+The block between `<!-- BEGIN PARKRUN_GENERATED -->` and `<!-- END PARKRUN_GENERATED -->` is **generated** by `scripts/update_parkrun_results.py` (deps: `scripts/requirements-parkrun.txt`). **Do not hand-edit that section.**
+
+## Updating results
+
+```bash
+pip install -r scripts/requirements-parkrun.txt
+python scripts/update_parkrun_results.py
+```
+
+Or trigger **Update parkrun results** in `.github/workflows/parkrun-update.yml` — opens a PR to **`develop`** when the scrape succeeds; merge to apply.
+
+parkrun.org.uk often blocks GitHub-hosted runner IPs (workflow skips with a notice). Run the script locally and commit, or use a self-hosted runner.
+
+## Manual edits
+
+- Optional row removals: `data/parkrun_suppress.json`.
+- Everything **below** the generated markers (other races, walks, notes) is edited by hand.

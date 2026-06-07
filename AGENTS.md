@@ -1,6 +1,6 @@
 # Agent onboarding — funkysi1701.com (Hugo blog)
 
-Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). For full conventions, see [`.cursor/rules/funkysi1701-blog.mdc`](.cursor/rules/funkysi1701-blog.mdc) and [`.github/copilot-instructions.md`](.github/copilot-instructions.md).
+Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). Cursor rules are path-scoped under [`.cursor/rules/`](.cursor/rules/); Copilot detail in [`.github/copilot-instructions.md`](.github/copilot-instructions.md).
 
 **Site:** https://www.funkysi1701.com
 
@@ -81,7 +81,11 @@ Make the smallest change that satisfies the task. Do not refactor unrelated code
 
 | Path | Purpose |
 |------|---------|
-| [`.cursor/rules/funkysi1701-blog.mdc`](.cursor/rules/funkysi1701-blog.mdc) | Full Cursor rules (always applied in Cursor) |
+| [`.cursor/rules/funkysi1701-blog-core.mdc`](.cursor/rules/funkysi1701-blog-core.mdc) | Always-applied Cursor rules (source of truth, security, branches) |
+| [`.cursor/rules/content-posts.mdc`](.cursor/rules/content-posts.mdc) | Content/posts — front matter, SEO lengths, alt text |
+| [`.cursor/rules/playwright-tests.mdc`](.cursor/rules/playwright-tests.mdc) | Playwright — `BASE_URL`, `// spec:`, CI gates |
+| [`.cursor/rules/hugo-layouts.mdc`](.cursor/rules/hugo-layouts.mdc) | Hugo templates — theme overrides, build verification |
+| [`.cursor/rules/parkrun-generated.mdc`](.cursor/rules/parkrun-generated.mdc) | parkrun generated block and update script |
 | [`.github/copilot-instructions.md`](.github/copilot-instructions.md) | Copilot-specific project context |
 | [`README.md`](README.md) | Human-oriented setup, testing, and deploy |
 | [`specs/funkysi1701-test-plan.md`](specs/funkysi1701-test-plan.md) | E2E scenario plan (`// spec:` comments in `tests/`) |

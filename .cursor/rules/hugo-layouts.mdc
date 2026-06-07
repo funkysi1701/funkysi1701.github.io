@@ -1,0 +1,30 @@
+---
+description: Hugo templates and partials — override vendored theme via root layouts; verify with hugo build
+globs: layouts/**/*
+alwaysApply: false
+---
+
+# Hugo layouts and templates
+
+Site overrides live in root `layouts/`, `assets/`, and `static/` — prefer these over editing `themes/hugo-theme-bootstrap/`. If you must touch the vendored theme, keep the diff minimal.
+
+## After template or asset changes
+
+Run a local Hugo build so failures surface before push:
+
+```bash
+hugo server -D          # iteration
+hugo --minify --environment production   # production parity
+```
+
+Or Docker Compose / commands in `README.md` (Hugo version from `.env`).
+
+## SEO partials
+
+- Document `<title>`: `layouts/partials/head/title.html` (home falls back to `Site.Title`).
+- Open Graph, Twitter, JSON-LD: follow existing patterns in `layouts/partials/head.html` and related partials.
+- New external hosts, share imagery, or scripts must stay coherent with CSP, response headers, and `staticwebapp.config.json`.
+
+## Images in templates
+
+HTML partials and shortcodes that emit `<img>` need appropriate `alt` (or equivalent ARIA).
