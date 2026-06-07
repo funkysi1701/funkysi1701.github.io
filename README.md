@@ -93,7 +93,7 @@ There is no separate branch named `dev`; use **`develop`** for integration work.
 
 ## 🤝 Contributing
 
-Open to suggestions and improvements. Feel free to submit PRs!
+Open to suggestions and improvements. See **[`CONTRIBUTING.md`](CONTRIBUTING.md)** for the PR checklist, branch workflow, and AI-assisted contribution notes.
 
 ## 👤 Author
 
