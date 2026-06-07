@@ -26,13 +26,13 @@ aliases = [
 
 The term **Business Intelligence (BI)** refers to technologies, applications and practices for the collection, integration, analysis, and presentation of business information. The purpose of Business Intelligence is to support better business decision making. Essentially, Business Intelligence systems are data-driven Decision Support Systems (DSS). Business Intelligence is sometimes used interchangeably with briefing books, report and query tools and executive information systems.
 
-### What is Power BI?
+## What is Power BI?
 
 **Power BI** is a business analytics service provided by Microsoft. It provides interactive visualisations with self-service business intelligence capabilities, where end users can create reports and dashboards by themselves, without having to depend on any information technology staff or database administrator.
 
 Microsoft describe it as follows: **Power BI** is a suite of business analytics tools that deliver insights throughout your organisation. Connect to hundreds of data sources, simplify data prep, and drive ad hoc analysis. Produce beautiful reports, then publish them for your organisation to consume on the web and across mobile devices. Everyone can create personalised dashboards with a unique, 360-degree view of their business. And scale across the enterprise, with governance and security built-in.
 
-### What can you do with it?
+## What can you do with it?
 
 One of the first thing you can do with Power Bi is connect some of the apps that you use.
 

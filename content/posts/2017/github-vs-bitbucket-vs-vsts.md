@@ -25,7 +25,7 @@ aliases = [
 +++
 As a developer using source control and git is bread and butter of what we do. Github is probably the most popular and widely known hosting service for source control but I have also used Bitbucket and Visual Studio Team Services. Lets have a look at each one and what they offer. Note while I have included prices I have only tried out the free versions.
 
-### Github
+## Github
 
 ![](/images/2017/github-octocat.png)
 
@@ -39,7 +39,7 @@ This is probably the most widely used service for hosting code. Over 13 million 
 
 There are a number of externally built APIs that link into Github for doing extra features, like building, code coverage etc
 
-### Bitbucket
+## Bitbucket
 
 ![](/images/2017/d8TRzzL.png)
 
@@ -51,7 +51,7 @@ There are a number of externally built APIs that link into Github for doing extr
 
 At my last job we used Bitbucket extensively for all our projects. All the code was private so only the team could access it, however before I left we were approaching the 5 user limit (but looking at these prices cost seems very reasonable)
 
-### Visual Studio Team Services
+## Visual Studio Team Services
 
 ![](/images/2017/Visual-Studio-Team-Services.png)
 

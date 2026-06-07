@@ -25,7 +25,7 @@ aliases = [
 +++
 Whenever I write a new test I have to think how best to do it. Hopefully I can summarise a few tips here to help get started.
 
-### Arrange Act Assert
+## Arrange Act Assert
 
 The first thing I think about when writing a test is Arrange, Act, Assert. Arrange, Act, Assert is a pattern for writing the tests.
 

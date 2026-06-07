@@ -27,7 +27,7 @@ Have you heard of the website [https://haveibeenpwned.com](https://haveibeenpwne
 
 Well you should have. Have I Been Pwned is a website created by security expert Troy Hunt that keeps track of data breaches and allows you to search and find ones that affect you. As I write this [Troy Hunt](https://www.troyhunt.com/) has tracked 3,752,984,562 pwned accounts from 216 pwned websites.
 
-### What does “pwned” mean?
+## What does “pwned” mean?
 
 pwn means to compromise or control, specifically another computer (server or PC), website, gateway device, or application. (as defined on wikipedia)
 
@@ -37,7 +37,7 @@ In terms of this site Troy Hunt defines it as:
 
 <quote>A "breach" is an incident where a hacker illegally obtains data from a vulnerable system, usually by exploiting weaknesses in the software. All the data in the site comes from website breaches which have been made publicly available.</quote>
 
-### What can I do?
+## What can I do?
 
 As an individual you can search for your email address in Have I Been Pwned, I am in 7 data breaches.
 
@@ -49,7 +49,7 @@ If you are in a data breach change your password. If you use the same password a
 
 If you look after a website or service then follow Troy Hunt. Think about security, is your site vulnerable to SQL injection, do you store passwords with reversible encryption?
 
-### How worried should I be?
+## How worried should I be?
 
 Data breaches are happening more and more often. Its not showing any sign of slowing down, in fact I expect there to be lots more in the years to come. However there are things you can do to mitigate the damage of being in a breach.
 
