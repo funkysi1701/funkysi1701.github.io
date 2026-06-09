@@ -3,8 +3,12 @@
 <link rel="canonical" href="{{ . | relLangURL }}" itemprop="url" />
 {{ else }}
   {{- $canonical := .Permalink -}}
-  {{- if strings.Contains .RelPermalink "/page/" -}}
-    {{- $canonical = .RelPermalink | absLangURL -}}
+  {{- if or .IsHome (eq .Kind "taxonomy") (eq .Kind "term") (eq .Kind "section") -}}
+    {{- with .Paginator -}}
+      {{- if gt .PageNumber 1 -}}
+        {{- $canonical = .URL | absLangURL -}}
+      {{- end -}}
+    {{- end -}}
   {{- end -}}
 <link rel="canonical" href="{{ $canonical }}" itemprop="url" />
 {{ end }}
