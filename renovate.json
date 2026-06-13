@@ -91,6 +91,7 @@
   ],
   "enabledManagers": [
     "custom.regex",
-    "npm"
+    "npm",
+    "github-actions"
   ]
 }
