@@ -26,7 +26,7 @@
     "workbox-strategies": "7.4.1"
   },
   "devDependencies": {
-    "@babel/core": "7.29.7",
+    "@babel/core": "8.0.0",
     "@popperjs/core": "2.11.8",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
@@ -62,7 +62,7 @@
     "stylelint-config-standard": "40.0.0",
     "stylelint-scss": "7.2.0",
     "terser-webpack-plugin": "5.6.1",
-    "ts-loader": "9.6.0",
+    "ts-loader": "9.6.1",
     "typescript": "6.0.3",
     "url-loader": "4.1.1",
     "webpack": "5.107.2",
