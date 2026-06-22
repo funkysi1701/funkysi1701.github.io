@@ -1,6 +1,6 @@
 +++
 title = "Portfolio: Live Azure Workloads, AI Search, and Dev Tools"
-date = "2026-06-01T20:00:00Z"
+date = "2026-06-22T21:00:00Z"
 year = "2026"
 month = "2026-06"
 author = "funkysi1701"
