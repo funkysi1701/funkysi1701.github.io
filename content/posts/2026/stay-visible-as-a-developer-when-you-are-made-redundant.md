@@ -73,7 +73,9 @@ My personal side projects can be found on my [projects](/projects) page. My insp
 
 Being made redundant is not something I would wish on anyone, and I am still in the middle of finding my next role. Some days the job search feels slow and frustrating. On the better days, I remind myself that the things I have been doing for years — showing up at events, writing on this blog, shipping side projects — are not wasted effort. They are what give me stories to tell in interviews and reasons for people to remember my name.
 
-None of this replaces applying for jobs or working through the admin that comes with redundancy. But small, consistent habits compound. You do not need to do everything at once. Pick one thing you can start this month: a user group, a blog post, or a side project you can actually finish. If you still have a job but worry the ground is shifting beneath you, even better — start now while you have a bit more energy and headspace.
+None of this replaces the practical side of job hunting: refreshing your CV and LinkedIn, talking to recruiters, applying properly, and working through the admin that comes with redundancy. I went through redundancy before, in 2021, and wrote about recruiters, interview rounds, and the spreadsheet I used to keep track of it all in [my 2021 story](/posts/lone-developer-to-senior-developer-my-2021-story/). Visibility helps people remember your name; applications still get you in the door.
+
+But small, consistent habits compound. You do not need to do everything at once. Pick one thing you can start this month: a user group, a blog post, or a side project you can actually finish. If you still have a job but worry the ground is shifting beneath you, even better — start now while you have a bit more energy and headspace.
 
 If you are going through something similar, I hope this helps. If you have found other things that worked for you, I would love to hear about them in the comments.
 
