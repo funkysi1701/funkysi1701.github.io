@@ -9,7 +9,7 @@ cover = ""
 tags = ["Career", "Redundancy", "Networking", "Blogging", "Side Projects", "Conferences", "Developer"]
 categories = ["tech"]
 keywords = ["developer redundancy", "job loss tech", "career networking", "developer blog", "side projects portfolio"]
-description = "Made redundant as a developer? Events, blogging, and side projects helped me stay visible in interviews - habits worth building before or during a job search."
+description = "Made redundant as a developer? Events, blogging, side projects, and keeping learning helped me stay visible in interviews - worth starting early."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -69,13 +69,17 @@ If you are between jobs, it is tempting to start something ambitious — the nex
 
 My personal side projects can be found on my [projects](/projects) page. My inspiration came from various places, my hobbies and interests, problems I am facing or hear about, or just stuff I want to learn.
 
+## Keep learning deliberately
+
+Between applications there is often more waiting than interviewing. Use that time deliberately: look at the job descriptions you are targeting, spot a recurring skill gap, and focus on one thing rather than trying to learn everything. I listen to [development podcasts](/podcasts) on the commute and dip into courses — I have written before about using [Pluralsight](/posts/2018/pluralsight/) while doing the washing up. You will not become an expert in a fortnight, but being able to talk about what you are learning still comes up in interviews. For more general advice, see [Tips for Developing Yourself](/posts/tips-for-developing-yourself/).
+
 ## Closing thoughts
 
-Being made redundant is not something I would wish on anyone, and I am still in the middle of finding my next role. Some days the job search feels slow and frustrating. On the better days, I remind myself that the things I have been doing for years — showing up at events, writing on this blog, shipping side projects — are not wasted effort. They are what give me stories to tell in interviews and reasons for people to remember my name.
+Being made redundant is not something I would wish on anyone, and I am still in the middle of finding my next role. Some days the job search feels slow and frustrating. On the better days, I remind myself that the things I have been doing for years — showing up at events, writing on this blog, shipping side projects, keeping my skills current — are not wasted effort. They are what give me stories to tell in interviews and reasons for people to remember my name.
 
 None of this replaces the practical side of job hunting: refreshing your CV and LinkedIn, talking to recruiters, applying properly, and working through the admin that comes with redundancy. I went through redundancy before, in 2021, and wrote about recruiters, interview rounds, and the spreadsheet I used to keep track of it all in [my 2021 story](/posts/lone-developer-to-senior-developer-my-2021-story/). Visibility helps people remember your name; applications still get you in the door.
 
-But small, consistent habits compound. You do not need to do everything at once. Pick one thing you can start this month: a user group, a blog post, or a side project you can actually finish. If you still have a job but worry the ground is shifting beneath you, even better — start now while you have a bit more energy and headspace.
+But small, consistent habits compound. You do not need to do everything at once. Pick one thing you can start this month: a user group, a blog post, a course on something job ads keep asking for, or a side project you can actually finish. If you still have a job but worry the ground is shifting beneath you, even better — start now while you have a bit more energy and headspace.
 
 If you are going through something similar, I hope this helps. If you have found other things that worked for you, I would love to hear about them in the comments.
 
