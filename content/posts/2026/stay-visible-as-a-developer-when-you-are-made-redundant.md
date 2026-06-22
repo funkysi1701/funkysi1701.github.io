@@ -15,7 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 featured = false
-draft = true
+draft = false
 aliases = [
     "/stay-visible-as-a-developer-when-you-are-made-redundant",
     "/posts/stay-visible-as-a-developer-when-you-are-made-redundant",
