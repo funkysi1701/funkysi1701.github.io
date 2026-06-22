@@ -40,7 +40,7 @@ steps:
       unzip -q awscliv2.zip
       ./aws/install --bin-dir ~/.local/bin --install-dir ~/.local/aws-cli --update
       cd ~/.local/aws-cli/v2
-      ls -1 | sort -V | head -n -1 | xargs -r rm -rf
+      ls -1 | sort -V | head -n -2 | xargs -r rm -rf
       export PATH=$HOME/.local/bin:$PATH
       aws --version
 - task: CmdLine@2
