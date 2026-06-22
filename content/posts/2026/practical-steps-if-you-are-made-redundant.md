@@ -60,3 +60,13 @@ What you can deploy depends on what you build. For simple websites you can do a 
 I have learnt more from running a side project in production than I have the original idea. Things like DNS, SSL Certificates, authentication, SEO are all very important for running a project but they would have been missed if you only ever ran your side project on localhost. I think having a rounded experience gives you a leg up when it comes to talking about your skills in an interview scenario.
 
 My personal side projects can be found on my [projects](/projects) page. My inspiration came from various places, my hobbies and interests, problems I am facing or hear about, or just stuff I want to learn.
+
+## Closing thoughts
+
+Being made redundant is not something I would wish on anyone, and I am still in the middle of finding my next role. Some days the job search feels slow and frustrating. On the better days, I remind myself that the things I have been doing for years — showing up at events, writing on this blog, shipping side projects — are not wasted effort. They are what give me stories to tell in interviews and reasons for people to remember my name.
+
+None of this replaces applying for jobs or working through the admin that comes with redundancy. But small, consistent habits compound. You do not need to do everything at once. Pick one thing you can start this month: a user group, a blog post, or a side project you can actually finish. If you still have a job but worry the ground is shifting beneath you, even better — start now while you have a bit more energy and headspace.
+
+If you are going through something similar, I hope this helps. If you have found other things that worked for you, I would love to hear about them in the comments.
+
+If you have enjoyed this article and want a monthly email with my latest posts, please sign up for my [newsletter](/newsletter). You can also [get in touch](/contact) if you have questions or just want to chat.
