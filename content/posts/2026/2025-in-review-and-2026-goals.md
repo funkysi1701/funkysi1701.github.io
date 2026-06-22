@@ -32,7 +32,7 @@ This was a major focus area for me in 2025, not really surprising as I moved int
 - [**Learning Kubernetes**](/posts/2025/learning-kubernetes/) - Started my journey into container orchestration and shared my beginner experiences
 - [**Deploying Hugo with Helm**](/posts/2025/deploying-hugo-with-helm/) - Deployed this very blog to Kubernetes using Helm charts
 - [**Kubernetes and Let's Encrypt**](/posts/2025/kubernetes-and-letsencrypt/) - Tackled SSL certificate management in Kubernetes
-- [**Monitoring with Nagios Docker**](/posts/2025/nagios-monitoring-with-docker/) - Explored monitoring solutions in containerized environments
+- [**Monitoring with Nagios Docker**](/posts/2025/monitoring-with-nagios-docker/) - Explored monitoring solutions in containerized environments
 
 ### .NET and Development
 
@@ -40,8 +40,8 @@ My bread and butter continues to be .NET development, with several posts explori
 
 - [**Blazor and .NET 10**](/posts/2025/blazor-and-dotnet10/) - Covered breaking changes, fixes, and new features in the latest .NET release
 - [**Adding Elasticsearch with .NET Aspire**](/posts/2025/adding-elasticsearch-with-aspire/) - Integrated search capabilities using Aspire
-- [**Aspire 9.2**](/posts/2025/what-is-new-in-aspire-9.2/) - Explored the latest Aspire release
-- [**NuGet Central Package Management**](/posts/2025/central-package-management-with-nuget/) - Streamlined dependency management
+- [**Aspire 9.2**](/posts/2025/aspire-9.2/) - Explored the latest Aspire release
+- [**NuGet Central Package Management**](/posts/2025/nuget-central-package-management/) - Streamlined dependency management
 - [**What's New in C#**](/posts/2025/whats-new-csharp/) - Covered the latest language features
 - [**Exceptions**](/posts/2025/exceptions/) - Best practices for error handling
 
@@ -50,7 +50,7 @@ My bread and butter continues to be .NET development, with several posts explori
 Understanding what's happening in production became a key theme:
 
 - [**Getting Started with OpenTelemetry**](/posts/2025/getting-started-with-opentelemetry/) - Made observability easy with modern tracing
-- [**OpenTelemetry Logs**](/posts/2025/adding-opentelemetry-logs-to-grafana/) - Extended observability to include logging
+- [**OpenTelemetry Logs**](/posts/2025/opentelemetry-logs/) - Extended observability to include logging
 - [**Setting up Grafana**](/posts/2025/setting-up-grafana/) - Built dashboards for monitoring
 
 ### Cloud Platforms
@@ -67,8 +67,8 @@ Understanding what's happening in production became a key theme:
 
 - [**The Pragmatic Programmer**](/posts/2025/pragmatic-programmer/) - Book review of this classic software development book
 - [**The Hacker Ethic**](/posts/2025/the-hacker-ethic/) - Reflections on developer culture and values
-- [**Stepping Outside Your Comfort Zone**](/posts/2025/stepping-outside-my-comfort-zone/) - Personal growth and career development
-- [**Volunteering at NDC London**](/posts/2025/volunteering-at-ndc-london/) - My experience at this major .NET conference
+- [**Stepping Outside Your Comfort Zone**](/posts/2025/stepping-outside-your-comfort-zone/) - Personal growth and career development
+- [**Volunteering at NDC London**](/posts/2025/volunteering-at-ndc/) - My experience at this major .NET conference
 - [**Periodic Table of DevOps 2025**](/posts/2025/periodic-table-devops-2025/) - A visual guide to the DevOps ecosystem
 
 ### Fun Projects
