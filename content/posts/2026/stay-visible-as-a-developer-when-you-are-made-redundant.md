@@ -9,7 +9,7 @@ cover = ""
 tags = ["Career", "Redundancy", "Networking", "Blogging", "Side Projects", "Conferences", "Developer"]
 categories = ["tech"]
 keywords = ["developer redundancy", "job loss tech", "career networking", "developer blog", "side projects portfolio"]
-description = "If you are made redundant, practical steps help: attend events, write a blog, ship side projects, and keep learning so you stay visible when hiring picks up."
+description = "Made redundant as a developer? Events, blogging, and side projects helped me stay visible in interviews - habits worth building before or during a job search."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -23,11 +23,11 @@ aliases = [
 ]
 +++
 
-Sadly earlier this year I was made redundant from my Software Developer job and while it has not been fun looking for a new job, a few common themes have emerged that I wanted to share. My hope is that these will help others to put things in place that may help them in the future.
+Sadly earlier this year I was made redundant from my Software Developer job. Looking for a new job has not been fun, but a few common themes have emerged that I wanted to share. My hope is that these will help others to put things in place that may help them in the future.
 
 ## Go to events and meet people
 
-Something I have said often is that I enjoy going to events or conferences. These are great places to hear interesting talks, however that is not all they are good for. When you are at a conference or user group you are in a room full of like-minded people, each of them has unique experiences of being a Software Developer.
+Something I have said often is that I enjoy going to events or conferences, like [NDC London](/posts/2026/ndc-london-2026). These are great places to hear interesting talks, however that is not all they are good for. When you are at a conference or user group you are in a room full of like-minded people, each of them has unique experiences of being a software developer.
 
 I am not very good at networking, I tend to stand in the corner or look awkward. However the more of these events I go to the better I get. Even if you only talk to one new person, that is one more person that you have spoken to. Want an advantage in meeting people? Volunteer. If you are a volunteer at an event, you will need to interact with other people, you may need to help direct people or assist one of the speakers. I have found this gives me a tiny bit more confidence to go and start speaking with someone or ask a question. Check out my [Volunteering at NDC](/posts/2025/volunteering-at-ndc/)
 
@@ -49,11 +49,11 @@ Today blogging isn't the only way you can share your ideas. You could create vid
 
 Some ideas to get you started (but there are loads more):
 
-- What have you learned today/this week
+- What have you learnt today/this week
 - What do you think about technology X
 - How do you solve problem Y
-- Compare two tech things
-- Your personal experience at conference/meetup
+- Compare two approaches to the same problem
+- Your experience at a conference or meetup
 
 ## Build side projects
 
@@ -61,9 +61,11 @@ Side projects are a great way to learn. You can create a side project with the g
 
 I personally feel there is a lot of value from getting your side project into the wild and letting users interact with it. Users will find your edge cases and ask questions you hadn't considered. Publishing onto the internet is not free so consider your architecture carefully.
 
-What you can deploy depends on what you build. For simple websites you can do a lot with Github pages or Azure Static Web Apps. For example this website is built with Hugo which is deployed to an Azure Static Web app for pennies per month. If you have more complex needs small linux VMs can be created for not a lot.
+What you can deploy depends on what you build. For simple websites you can do a lot with Github Pages or Azure Static Web Apps. For example this website is built with Hugo which is deployed to an Azure Static Web App for pennies per month. If you have more complex needs small Linux VMs can be created for not a lot.
 
 I have learnt more from running a side project in production than I have the original idea. Things like DNS, SSL certificates, authentication, SEO are all very important for running a project but they would have been missed if you only ever ran your side project on localhost. I think having a rounded experience gives you a leg up when it comes to talking about your skills in an interview scenario.
+
+If you are between jobs, it is tempting to start something ambitious — the next big SaaS idea, a full-stack app with every feature you can think of. I have fallen into that trap myself. A small project you actually finish is worth more than a grand one that never ships. Pick something you can complete in a weekend or two: a CLI tool, a simple API, a static site, even a useful script. You will have something concrete to talk about in interviews, and the momentum of finishing one thing often makes the next one easier.
 
 My personal side projects can be found on my [projects](/projects) page. My inspiration came from various places, my hobbies and interests, problems I am facing or hear about, or just stuff I want to learn.
 
