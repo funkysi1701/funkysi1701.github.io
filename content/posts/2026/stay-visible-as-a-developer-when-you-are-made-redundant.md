@@ -23,19 +23,17 @@ aliases = [
 ]
 +++
 
-## Introduction
-
 Sadly earlier this year I was made redundant from my Software Developer job and while it has not been fun looking for a new job, a few common themes have emerged that I wanted to share. My hope is that these will help others to put things in place that may help them in the future.
 
 ## Go to events and meet people
 
 Something I have said often is that I enjoy going to events or conferences. These are great places to hear interesting talks, however that is not all they are good for. When you are at a conference or user group you are in a room full of like-minded people, each of them has unique experiences of being a Software Developer.
 
-I am not very good at networking, I tend to stand in the corner or look awkward. However the more of these events I go to the better I get. Even if you only talk to one new person, that is one more person that you have spoken to. Want an advantage in meeting people? Volunteer. If you are a volunteer at an event, you will need to interact with other people, you may need to help direct people or assist one of the speakers. I have found this gives me a tiny bit more confidence to go and start speaking with someone or ask a question. Check out my [Volunteering at NDC](/posts/2025/volunteering-at-ndc/) 
+I am not very good at networking, I tend to stand in the corner or look awkward. However the more of these events I go to the better I get. Even if you only talk to one new person, that is one more person that you have spoken to. Want an advantage in meeting people? Volunteer. If you are a volunteer at an event, you will need to interact with other people, you may need to help direct people or assist one of the speakers. I have found this gives me a tiny bit more confidence to go and start speaking with someone or ask a question. Check out my [Volunteering at NDC](/posts/2025/volunteering-at-ndc/)
 
-User Groups often have the same people coming week after week, take advantage of this and be one of those people as well. You will start to get noticed and remembered even if you don't talk to many people. For me I don't have any really local user groups, however I am enjoying spending time at LeedsSharp.
+User Groups often have the same people coming week after week, take advantage of this and be one of those people as well. You will start to get noticed and remembered even if you barely speak to anyone. For me I don't have any really local user groups, however I am enjoying spending time at [LeedsSharp](https://www.meetup.com/leeds-sharp/).
 
-If you genuinely had a good conversation with someone, find them on LinkedIn (or other social media) and send them a quick "It was nice chatting with you message", this helps solidify the connection and helps you remember it.
+If you genuinely had a good conversation with someone, find them on LinkedIn (or other social media) and send them a quick "It was nice chatting with you" message, this helps solidify the connection and helps you remember it.
 
 So far during this job search I have met a recruiter who I would not have met without going to events, I have had jobs suggested to me to apply for that I would not have received otherwise, and one hiring manager is someone I have met previously at an event.
 
@@ -47,7 +45,15 @@ Back in 2014 when I started blogging I wasn't even a Software Developer, I was j
 
 My blog is a great talking point during interviews, it helps me talk about why I think sharing information with the community is so important, what technology I have used over the years, some of the things I have learnt. My blog is featured at the top of my CV, and hiring managers have said they love it or spent a while reading its content.
 
-Today blogging isn't the only way you can share your ideas. You could create videos, start a podcast, or have an active social media channel. I think the key is consistency, if you do a lot of it, it can easily look impressive if you look back after a few years. I personally prefer the well written blog post that I can refer back to, or search for again and again. 
+Today blogging isn't the only way you can share your ideas. You could create videos, start a podcast, or have an active social media channel. I think the key is consistency, if you do a lot of it, it can easily look impressive if you look back after a few years. I personally prefer the well written blog post that I can refer back to, or search for again and again.
+
+Some ideas to get you started (but there are loads more):
+
+- What have you learned today/this week
+- What do you think about technology X
+- How do you solve problem Y
+- Compare two tech things
+- Your personal experience at conference/meetup
 
 ## Build side projects
 
@@ -57,7 +63,7 @@ I personally feel there is a lot of value from getting your side project into th
 
 What you can deploy depends on what you build. For simple websites you can do a lot with Github pages or Azure Static Web Apps. For example this website is built with Hugo which is deployed to an Azure Static Web app for pennies per month. If you have more complex needs small linux VMs can be created for not a lot.
 
-I have learnt more from running a side project in production than I have the original idea. Things like DNS, SSL Certificates, authentication, SEO are all very important for running a project but they would have been missed if you only ever ran your side project on localhost. I think having a rounded experience gives you a leg up when it comes to talking about your skills in an interview scenario.
+I have learnt more from running a side project in production than I have the original idea. Things like DNS, SSL certificates, authentication, SEO are all very important for running a project but they would have been missed if you only ever ran your side project on localhost. I think having a rounded experience gives you a leg up when it comes to talking about your skills in an interview scenario.
 
 My personal side projects can be found on my [projects](/projects) page. My inspiration came from various places, my hobbies and interests, problems I am facing or hear about, or just stuff I want to learn.
 
@@ -70,4 +76,3 @@ None of this replaces applying for jobs or working through the admin that comes 
 If you are going through something similar, I hope this helps. If you have found other things that worked for you, I would love to hear about them in the comments.
 
 If you have enjoyed this article and want a monthly email with my latest posts, please sign up for my [newsletter](/newsletter). You can also [get in touch](/contact) if you have questions or just want to chat.
-
