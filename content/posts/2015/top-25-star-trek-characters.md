@@ -89,6 +89,6 @@ If you enjoyed this character ranking, check out these other Star Trek articles:
 - [Picard Season 3](/posts/2023/picard-season-three) - My thoughts on the final season of Star Trek Picard
 - [TrekRanks #174](/posts/2024/trekranks) - My appearance on the TrekRanks podcast
 
-**Want more Trek content?** Browse all my [Star Trek articles](/tags/trek)
+**Want more Trek content?** Browse all my [Star Trek articles](/tags/startrek)
 
 All 900+ Star Trek episodes are now available in [Episode Atlas](https://www.episodeatlas.com/). Track episodes featuring your favorite characters.
