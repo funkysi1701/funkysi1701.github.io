@@ -44,7 +44,9 @@ Almost every interview I have had has featured a comment about my blog. Now buil
 
 Back in 2014 when I started blogging I wasn't even a Software Developer, I was just an IT guy at a small company and I wanted to write about some of the cool things I was learning. I kept writing, some years I wrote more than others, there have been some big gaps where I didn't write anything. But somehow I keep coming back to it and writing a short piece about a new version of X or a conference I have been to, or a trend that is happening.
 
-My blog is a great talking point during interviews, it helps me talk about why I think sharing information with the community is so important, what technology I have used over the years, some of the things I have learnt. My blog is featured at the top of my CV, and hiring managers have said they love it or spent a while reading its content. When redundancy hit, refreshing my CV and LinkedIn was one of the first practical jobs I did: update the headline, add recent projects, link to the blog and [projects](/projects) page, and make sure nothing still implied I was in my old role. Mundane, yes — but recruiters and hiring managers check both before they ever speak to you.
+My blog is a great talking point during interviews, it helps me talk about why I think sharing information with the community is so important, what technology I have used over the years, some of the things I have learnt. My blog is featured at the top of my CV, and hiring managers have said they love it.
+
+When redundancy hit, refreshing my CV and LinkedIn was one of the first practical jobs I did: update the headline, add recent projects, link to the blog and [projects](/projects) page, and make sure nothing still implied I was in my old role. Mundane, yes — but recruiters and hiring managers check both before they ever speak to you.
 
 Today blogging isn't the only way you can share your ideas. You could create videos, start a podcast, or have an active social media channel. I think the key is consistency, if you do a lot of it, it can easily look impressive if you look back after a few years. I personally prefer the well written blog post that I can refer back to, or search for again and again.
 
@@ -62,7 +64,7 @@ Side projects are a great way to learn. You can create a side project with the g
 
 I personally feel there is a lot of value from getting your side project into the wild and letting users interact with it. Users will find your edge cases and ask questions you hadn't considered. Publishing onto the internet is not free so consider your architecture carefully.
 
-What you can deploy depends on what you build. For simple websites you can do a lot with Github Pages or Azure Static Web Apps. For example this website is built with Hugo which is deployed to an Azure Static Web App for pennies per month. If you have more complex needs small Linux VMs can be created for not a lot.
+What you can deploy depends on what you build. For simple websites you can do a lot with Github Pages or Azure Static Web Apps. For example this website is built with Hugo which is deployed to an Azure Static Web App for pennies per month. If you have more complex needs small Linux VMs can be created for not a lot more.
 
 I have learnt more from running a side project in production than I have the original idea. Things like DNS, SSL certificates, authentication, SEO are all very important for running a project but they would have been missed if you only ever ran your side project on localhost. I think having a rounded experience gives you a leg up when it comes to talking about your skills in an interview scenario.
 
