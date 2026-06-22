@@ -64,7 +64,7 @@ Side projects are a great way to learn. You can create a side project with the g
 
 I personally feel there is a lot of value from getting your side project into the wild and letting users interact with it. Users will find your edge cases and ask questions you hadn't considered. Publishing onto the internet is not free so consider your architecture carefully.
 
-What you can deploy depends on what you build. For simple websites you can do a lot with Github Pages or Azure Static Web Apps. For example this website is built with Hugo which is deployed to an Azure Static Web App for pennies per month. If you have more complex needs small Linux VMs can be created for not a lot.
+What you can deploy depends on what you build. For simple websites you can do a lot with Github Pages or Azure Static Web Apps. For example this website is built with Hugo which is deployed to an Azure Static Web App for pennies per month. If you have more complex needs small Linux VMs can be created for not a lot more.
 
 I have learnt more from running a side project in production than I have the original idea. Things like DNS, SSL certificates, authentication, SEO are all very important for running a project but they would have been missed if you only ever ran your side project on localhost. I think having a rounded experience gives you a leg up when it comes to talking about your skills in an interview scenario.
 
