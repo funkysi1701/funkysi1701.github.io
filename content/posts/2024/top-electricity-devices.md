@@ -43,7 +43,7 @@ I am not able to monitor 100% of my electricity usage, things like lights, my bo
 
 [Octopus Energy](https://octopus.energy/) who supply my energy have an agile tariff, which means the price of electricity changes every half hour depending on demand. I want to move the heavy usage of electricity to cheaper parts of the day, so I can save money. 
 
-If you want to support me do check out my [referral links](/referral-links) we could both get £50 if you sign up with Octopus Energy to supply your energy.
+If you want to support me do check out my [referral links](/tools-and-resources/) we could both get £50 if you sign up with Octopus Energy to supply your energy.
 
 ## Now how did I get this all setup?
 
