@@ -23,7 +23,7 @@ aliases = [
     "/2016/01/29/development-annoyance"
 ]
 +++
-![](/images/2016/How-you-can-stop-annoyance-or-frustrations-quickly.jpg)
+![Illustration about stopping development annoyance and frustration quickly](/images/2016/How-you-can-stop-annoyance-or-frustrations-quickly.jpg)
 
 I spend a lot of my time creating new features that simplify my companies business processes.
 

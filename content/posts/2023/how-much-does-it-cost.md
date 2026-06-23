@@ -31,11 +31,11 @@ I have a personal Azure subscription that I pay for myself. I don't use anything
 
 This is how much Azure is costing me daily, I like to keep an eye on this chart fairly often so I can see if I get any increases, especially if I have added a new service.
 
-![](/images/daily-costs.png)
+![Azure Cost Analysis chart showing daily spend on a personal subscription](/images/daily-costs.png)
 
 This is my monthly charges over the last few months. In Sept/Oct I switched from CosmosDB to Mongo DB Atlas as my database backend. Experience has told me that my biggest charge is data storage, websites are cheap but any database or storage is what tends to cost the most.
 
-![](/images/monthly-costs.png)
+![Azure Cost Analysis chart of monthly charges over recent months, including the CosmosDB to MongoDB Atlas switch](/images/monthly-costs.png)
 
 This website you are reading this on (assuming you are not on DevTo or Hashnode) is running Hugo which runs on an Azure Static Web App, the free tier so almost free. I have two of these, a production one and a test one. Source code is on Github (another free service), and auto deploys via Github actions. I have a load of images which I have stuffed in blob storage from when I used to run a wordpress site, the cost for file storage is minimal.
 

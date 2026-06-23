@@ -33,7 +33,7 @@ I might get a surface pro 3, it’s a tablet with attachable keyboard that’s m
 
 I’d like a new car with lots of gadgets built-in. A friend gave me a ride in his new BMW and it’s nice. Bluetooth so I don’t have to have an audio cable to listen to podcasts. Parking sensors so no chance the wife will prang it. Built in satnav etc
 
-![](/images/2014/google-car.png)
+![Google self-driving car prototype](/images/2014/google-car.png)
 
 While we are on the subject of cars eventually I’d like a google self driving car as I think Google is a better driver than me. Think about it I drive to a friends I have a drink I sleep in the back seat as my car drives me home. Once all cars are automated I believe the roads will be much safer.
 

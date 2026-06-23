@@ -29,7 +29,7 @@ I am pleased to announce the birth of James David Martin Foster weighing 9 lb 12
 
 Mother and Baby (and Father) are doing well.
 
-![](/images/2015/07/james5.jpg)
+![Newborn baby James](/images/2015/07/james5.jpg)
 
 I am not a baby person, I hate children and I run a mile from other people’s babies.
 

@@ -37,7 +37,7 @@ Scratch can be found by going to [https://scratch.mit.edu/projects/editor/](http
 
 A lot of the blocks affect your character or "sprite", the default is a cute looking cat which may also be the scratch logo.
 
-![](/images/scratch.png)
+![Scratch editor showing the default cat sprite, block palette on the left and coding area in the centre](/images/scratch.png)
 
 The left hand side of the screen consists of a list of the blocks of code you can use and your coding area where you can arrange them.
 
@@ -45,7 +45,7 @@ The right hand side shows the results of your code, where you can run and test w
 
 It didn't take my boy long to code something like this tonight.
 
-![](/images/scratch2.png)
+![Scratch project where the sprite moves towards the mouse pointer and displays a got you message](/images/scratch2.png)
 
 This game moves the "sprite" towards the mouse pointer and a message "got you" appears on screen when it reaches your mouse pointer.
 

@@ -21,7 +21,7 @@ aliases = [
     "/2016/02/18/star-trek-episode-review-the-best-of-both-worlds"
 ]
 +++
-![](/images/2016/Picard_kidnapped_by_the_Borg.jpg)
+![Captain Picard assimilated by the Borg as Locutus of Borg](/images/2016/Picard_kidnapped_by_the_Borg.jpg)
 - Episode Title: **The Best of Both Worlds**
 - Star Trek Type: TNG
 - Original Air Date: 18 June 1990 & 24 September 1990

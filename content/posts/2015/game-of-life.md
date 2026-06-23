@@ -30,7 +30,7 @@ Unfortunately I can not find the code I wrote, probably a good things as it is p
 
 Now you are probably asking what is the [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)? The game of life, sometimes called cellular automation, is a simulation of cells being born and dying. It is sometimes called Conway’s Game of Life after the British mathematician who devised it in 1970.
 
-![](/images/Gospers_glider_gun.gif)
+![Gosper's glider gun pattern in Conway's Game of Life](/images/Gospers_glider_gun.gif)
 
 The game has several rules:
 

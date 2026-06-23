@@ -33,7 +33,7 @@ However moments after I handed my notice in, a huge wave of uncertainty envelope
 
 *Despite external evidence of their competence, those with the syndrome remain convinced that they are frauds and do not deserve the success they have achieved. Proof of success is dismissed as luck, timing, or as a result of deceiving others into thinking they are more intelligent and competent than they believe themselves to be.*
 
-![](/images/2016/1429677066685.rendition-medium.jpg)
+![Person feeling overwhelmed and uncertain about starting a new job](/images/2016/1429677066685.rendition-medium.jpg)
 
 I started to convince myself I couldn’t do the job I had just accepted and that moments after I arrived on my first day I would be found out as a fraud and kicked out the door.
 

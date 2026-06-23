@@ -26,7 +26,7 @@ aliases = [
 +++
 I am lazy, I won’t try and deny that. When my alarm goes off in the morning, I will snooze it for twenty minutes or so before getting out of bed.
 
-![](/images/2015/02/bill-gates-quote.jpg)
+![Bill Gates quote about hiring a lazy person for a difficult job](/images/2015/02/bill-gates-quote.jpg)
 
 In my work my laziness continues. Remote Desktop (or RDP) is probably my number one laziness tool. For those that don’t know RDP allows you to connect to another computer and access it like you were sat in front of it. So I can be sat at my desk and RDP into any other computer in the office including any server. However this laziness tool does sometimes require a bit of effort sometimes, powering on the target computer, logging on locally, making sure the user account you are using is allowed to use RDP.
 

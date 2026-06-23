@@ -28,7 +28,7 @@ aliases = [
 +++
 For a while now I have been sharing some of my blog posts on the [Dzone](https://dzone.com/) website.
 
-![](/images/2016/dzone_02.png)
+![DZone developer community website homepage](/images/2016/dzone_02.png)
 
 The Dzone website allows users to submit links to content and I have been submitting the content I have created on this website. This is how Dzone describes themselves:
 

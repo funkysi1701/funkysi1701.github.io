@@ -26,7 +26,7 @@ aliases = [
 +++
 How did this happen I think I may actually like SQL Server now?
 
-![](/images/2015/download.jpg)
+![SQL Server logo](/images/2015/download.jpg)
 
 I remember a few years back when I used to grumble about writing a SQL query that included a JOIN. For some reason back then I could never get my head around JOINs.
 

@@ -24,13 +24,13 @@ aliases = [
     "/2015/06/08/pragmatic-programmer-broken-windows"
 ]
 +++
-![](/images/2015/06/1-ucIHdOcnByPsF5eX0j_mhg.jpeg)
+![Building with a broken window illustrating broken windows theory](/images/2015/06/1-ucIHdOcnByPsF5eX0j_mhg.jpeg)
 
 Last night I started reading [The Pragmatic Programmer by Andrew Hunt and David Thomas](https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master-ebook/dp/B003GCTQAE/ref=mt_kindle?_encoding=UTF8&me=).
 
 One practical tip that immediately jumped out at me as useful in my quest to be a better programmer: **Don’t live with broken windows**.
 
-![](/images/2015/06/tpp.jpg)
+![Cover of The Pragmatic Programmer book](/images/2015/06/tpp.jpg)
 
 The theory goes like this: an abandoned building with a single broken window attracts additional broken windows, graffiti, litter, and a sense that no one cares about this building. However this can be avoided if the authorities repair the window straight away.
 
