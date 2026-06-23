@@ -26,7 +26,7 @@ aliases = [
 +++
 The Software as a Service (SaaS) website that I work on has been sold to lots of clients now. Which is great news.
 
-![](/images/2015/09/2275.app-1.png)
+![Azure website app settings configuration screen](/images/2015/09/2275.app-1.png)
 
 However the more Azure websites we have, the more websites we have to administer, especially if like us you take advantage of Traffic Manager which requires multiple website in different regions. Azure has some great options for making this administration easier. One job is adding all the settings onto the Azure portal, so far I have been manually adding these, but a quicker way is to use powershell.
 

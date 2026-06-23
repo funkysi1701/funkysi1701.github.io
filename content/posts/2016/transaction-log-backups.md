@@ -35,7 +35,7 @@ A transaction log backup contains all the transaction log records generated sinc
 
 First right click on Databases in SQL Management Studio and select restore database. You should then get a screen similar to this.
 
-![](/images/2016/restore1.jpg)
+![SQL Server Management Studio restore database dialog](/images/2016/restore1.jpg)
 
 In source click the ... to allow you to select your backup files.
 
@@ -47,7 +47,7 @@ On my test server I need to untick the take tail-log backups option off the opti
 
 Now you can either check the tick boxes in the restore plan section or (more fun) click the timeline button to select at what point in time you want to restore to.
 
-![](/images/2016/restore2.jpg)
+![SQL Server point-in-time restore timeline selector](/images/2016/restore2.jpg)
 
 You can either select the point in time with your mouse or specify the exact point in the time textbox. Alternatively you can just select the most recent point, probably the most likely option when disaster strikes.
 

@@ -53,7 +53,7 @@ To get the website running from Visual Studio I started off creating a .Net 4 we
 
 I have not deployed my new version of the website as it needs further testing. No automated testing or even a smoke test checklist currently exist.
 
-![](/images/2016/Visual-Studio-Team-Services.png)
+![Visual Studio Team Services build pipeline for source code commits](/images/2016/Visual-Studio-Team-Services.png)
 
 As my source code is hosted on Visual Studio Team Services (VSTS), I can get VSTS to build each commit and check I haven’t broken the build. This is not that helpful at the moment, hopefully one day I will have automated tests that can be run here as well.
 

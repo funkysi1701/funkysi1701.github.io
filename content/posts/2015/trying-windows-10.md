@@ -32,7 +32,7 @@ I then installed a few updates and then installed the windows 10 preview. One of
 
 I had purchased the pro pack which gives you the same features as windows 8 pro but I didn’t notice until after I installed 10 that this hadn’t been installed. I will need to roll back to windows 8 apply the update and then reinstall 10 again. I can’t really be bothered to do that, so I will live without HyperV for now. As it is I have done a lot of sitting around waiting for things to finish installing.
 
-![](/images/2015/05/win10.jpg)
+![Windows 10 desktop on a laptop](/images/2015/05/win10.jpg)
 
 I much prefer Windows 10 to Windows 8, an earlier preview had an issue with drivers for my second screen but that appears to have been resolved now. The start menu is back and I prefer it, to being taken to that extra screen of options that windows 8 had.
 

@@ -28,7 +28,7 @@ For a while now I have seen ICYMI splattered around the internet. I had no idea 
 ```
 ICYMI – In Case You Missed It
 ```
-![](/images/2015/08/in-case-you-missed-it-small.jpg)
+![ICYMI acronym explained as In Case You Missed It](/images/2015/08/in-case-you-missed-it-small.jpg)
 ICYMI is often used on social media sites to indicate articles that you might have missed.
 
 Software Development is littered with acronyms and technical terms that I don’t always know the meaning of.

@@ -29,7 +29,7 @@ One of my plans is to create new MVC Webapps for my companies databases. Once I 
 
 The traditional way to do this would be insert membership tables into my database. The user then has to remember another username and password and I have to secure the storage of these credentials. Lots of work for everyone.
 
-![](/images/2016/arch.png)
+![Diagram comparing traditional membership tables with Azure Active Directory authentication](/images/2016/arch.png)
 
 There is a better way by using Azure Active Directory. You have probably heard of Active Directory, if you are a SysAdmin you probably use it all the time to manage your corporate users and computers. Azure Active Directory is an extension of this into the Cloud.
 

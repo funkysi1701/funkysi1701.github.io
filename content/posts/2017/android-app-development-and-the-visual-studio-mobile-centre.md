@@ -25,7 +25,7 @@ aliases = [
 +++
 For the past week or so I have been playing around with Xamarin and creating an android app.
 
-Well I now have an app in the Google Play Store. ![](/images/2017/Screenshot_20170806-190053.png)
+Well I now have an app in the Google Play Store. ![Screenshot of my Android app listing in the Google Play Store](/images/2017/Screenshot_20170806-190053.png)
 
 Before you rush and download the app I must warn you that it doesn’t do much yet. It displays some content that is on my website and there are a few links to allow sharing of content. I have some ideas to display content from my blog and allow sharing. I also have some other ideas for apps that might actually be useful to people that are not me. If you have ideas or feature requests do let me know.
 

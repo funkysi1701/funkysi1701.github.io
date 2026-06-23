@@ -35,7 +35,7 @@ This entire deployment can be set to run at a time of my choosing using SQL Serv
 
 OK so what do I need to do to set this up.
 
-![](/images/2015/09/deploy.jpg)
+![Database deployment workflow diagram](/images/2015/09/deploy.jpg)
 
 1. Test all your code changes are working correctly on a backup of the database and everything is committed to source control.
 2. Backup everything that is going to be changed so it can be rolled back in case of a problem. I don’t rely on the daily backup jobs for this, I do my own. Maybe I am a bit paranoid, or maybe I am just being cautious.

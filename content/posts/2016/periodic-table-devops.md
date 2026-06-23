@@ -27,7 +27,7 @@ aliases = [
 +++
 The periodic table lists all the chemical elements and groups them together based on some key properties. Today I found an article about the [periodic table of DevOps](https://digital.ai/periodic-table-of-devops-tools/).
 
-![](/images/2016/periodic-table-of-devops-v2.png)
+![Periodic table of DevOps tools grouped by category](/images/2016/periodic-table-of-devops-v2.png)
 
 I am not going to discuss every element but I thought I might go through some that I have heard of or used.
 

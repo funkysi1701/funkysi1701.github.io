@@ -32,7 +32,7 @@ Being as my MSDN subscription is still valid I have installed the professional v
 
 One of the first things I spotted was that the integration with Azure has been improved. In the last version it was difficult to sign in to Azure with the correct credentials, especially if you have more than one Azure account. Now you can add multiple Accounts and Subscriptions.
 
-![](/images/2015/05/i1.png)
+![Visual Studio Azure account and subscription settings](/images/2015/05/i1.png)
 
 CodeLens is a feature that has been around in Visual Studio since 2013, but in 2015 it is available in Professional meaning more people have access to it.
 

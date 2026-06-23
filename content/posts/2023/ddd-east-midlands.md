@@ -26,7 +26,7 @@ On Saturday 7th October I attended [DDD East Midlands](https://dddeastmidlands.c
 
 [Matt Brunt](https://twitter.com/Brunty) gave an excellent keynote talk, comparing the role playing game Dungeons and Dragons with working on Software projects. A good D&D game involves team work, very like a good Software Team. A team of all wizards isn't going to get you very far, the same way a team full of developers that excel at algorithms, won't be good at testing, talking to customers etc. A wizard that has a secret spell to defeat the Troll under the bridge, is almost as bad as a developer that hordes his knowledge and "saves the day" when things go wrong.  Keeping connected with your team as you go out on your quest so no one gets lost is as important as keeping connected with your software team. 
 
-![](/images/F701q6xXEAAgZk3.jpg)
+![Matt Brunt delivering the Dungeons, Dragons and Developers keynote at DDD East Midlands](/images/F701q6xXEAAgZk3.jpg)
 
 ## Microservice Mistakes
 
@@ -60,7 +60,7 @@ A 15 minute lightning talk with [Martyn Kilbryde](https://twitter.com/makitdev) 
 
 Another 15 minute lightning talk with [Dan Clarke](https://twitter.com/dracan) This looked at the inner workings of git, this was fascinating as every part points at another part which is obviously part of the reason git is so powerful. It was quite technical and I am sure some of it went over my head.
 
-![](/images/F71PCBEXsAA4_aJ.jpg)
+![Dan Clarke presenting the Git Under the Covers lightning talk at DDD East Midlands](/images/F71PCBEXsAA4_aJ.jpg)
 
 ## This talk could have been a blog post
 
@@ -70,7 +70,7 @@ Another 15 minute lightning talk with [Jamie Tanna](https://twitter.com/JamieTan
 
 [Paul Bailey](https://twitter.com/paul_bailey_) introduced the concept of Communities of Practice. Lots of the features of a Community of Practice I have heard of or been in teams that implement. *"Communities of Practice are groups of people who share a concern or passion for something they do and learn how to do it better as they interact regularly"*
 
-![](/images/F71n4uiWYAA4KHL.jpg)
+![Paul Bailey speaking on creating conditions where happy people do their best work at DDD East Midlands](/images/F71n4uiWYAA4KHL.jpg)
 
 ## Building Robots for Complete Beginners
 

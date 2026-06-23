@@ -40,7 +40,7 @@ Chrome 70 which is due to be released in October 2018 will removed the trust for
 
 If you are getting one of these errors because you are using a certificate that is going to be distrusted what will your site look like in Chrome 66 or Chrome 70?
 
-Well Chrome 66 is now in the dev channel so we can give it a try.  ![](/images/2018/tempsnip.png.jpg)
+Well Chrome 66 is now in the dev channel so we can give it a try.  ![Chrome browser warning that a Symantec SSL certificate is distrusted](/images/2018/tempsnip.png.jpg)
 
 Not very nice for your users is it? Now is the time to order a new SSL certificate to avoid this happening to your site.
 

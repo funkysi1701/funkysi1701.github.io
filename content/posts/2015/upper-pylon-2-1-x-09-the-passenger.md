@@ -23,7 +23,7 @@ aliases = [
 +++
 I recorded another podcast the other week it can be found https://www.trekmate.org.uk/upper-pylon-2-1-x-09-the-passenger/ and feedback about it can be left on the trekmate forums https://forum.trekmatefamily.com/2015/07/thoughts-on-up2s-the-passenger-or-vantika-x-33/
 
-![](/images/2015/07/Bashir-Choked.jpg)
+![Doctor Bashir being choked in DS9 episode The Passenger](/images/2015/07/Bashir-Choked.jpg)
 
 This week on Upper Pylon 2, we are joined by our first UK guest, Simon (aka [funkysi1701](https://twitter.com/funkysi1701)) as we take a look at the Bashir-centric “mystery” episode, “The Passenger.”
 

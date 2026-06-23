@@ -28,7 +28,7 @@ Many years ago I spent a lot of time learning about electronics. It was great fu
 
 I haven’t really thought about this much as my interests have been concentrated on computers and programming, but recently my interest has been peaked again.
 
-![](/images/2015/04/Raspberry_Pi_-_Model_A.jpg)
+![Raspberry Pi Model A board](/images/2015/04/Raspberry_Pi_-_Model_A.jpg)
 
 The [CodeNewbie](https://www.codenewbie.org/) and [Hanselminutes](https://hanselminutes.com/) podcasts have been running a month of stuff about making things and doing clever things with hardware called [#Marchisformakers](https://marchisformakers.com/), this began to start me thinking about this stuff again.
 

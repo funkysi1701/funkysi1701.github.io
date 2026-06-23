@@ -53,7 +53,7 @@ Luckily most of my apps are internal only so are not seriously affected by slown
 
 I manage the backup schedule for all my databases so I know exactly when each one was last backed up. When ever I do anything to a production database I will run a backup so I can roll back in case of problems. As part of developing changes I run my changes on a backup of the data. I can script all my changes and repeatedly run them against a backup until I am sure no problems will occur.
 
-![](/images/2015/07/uf010206.jpg)
+![Illustration of SQL Server database backup and restore](/images/2015/07/uf010206.jpg)
 
 6. **When was the last successful restore test?**
 

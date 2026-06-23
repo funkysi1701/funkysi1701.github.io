@@ -28,7 +28,7 @@ In Cloud Computing there are a lot of terms that end aas or As a Service. Most o
 
 Any service that is delivered over the internet instead of hosted locally on your network or PC could in theory be described as an As a Service.
 
-![](/images/2015/05/19656ee.jpg)
+![Pizza as a Service diagram comparing SaaS, PaaS and IaaS](/images/2015/05/19656ee.jpg)
 
 **PaaS Platform As a Service**
 

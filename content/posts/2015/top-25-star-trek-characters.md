@@ -27,7 +27,7 @@ I have just listened to a [podcast](https://www.trekmate.org.uk/ten-forward-epis
 
 1) **Spock**. My number one star trek character is Spock. Leonard Nimoy who recently passed away brilliantly brought this character to life. We have the inner turmoil that many of us can associate with, we have a journey to become more human, we have the pursuit of logic. We have the great interplay between him and McCoy and Kirk.
 
-![](/images/2015/02/Spock_2293.jpg)
+![Spock as played by Leonard Nimoy](/images/2015/02/Spock_2293.jpg)
 
 2) **Data**. My second number one star trek character, well OK, second star trek character is Data. His weekly exploration of what it meant to be human is star trek's best exploration of the human condition. There are so many moments which make me like Data but I think when he builds his daughter, Lal is possibly my favourite.
 

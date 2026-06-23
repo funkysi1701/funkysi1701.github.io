@@ -24,7 +24,7 @@ aliases = [
     "/2015/07/25/writing-better-git-commit-messages"
 ]
 +++
-![](/images/2015/07/git_commit.png)
+![XKCD comic about Git commit messages](/images/2015/07/git_commit.png)
 
 I always use source control for my coding changes, however some of my commit messages leave something to be desired.
 

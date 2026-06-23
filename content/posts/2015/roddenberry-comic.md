@@ -20,7 +20,7 @@ aliases = [
     "/2015/12/10/roddenberry-comic"
 ]
 +++
-![](/images/1-523x400.webp)
+![The Oatmeal comic panel about Gene Roddenberry and a plane crash](/images/1-523x400.webp)
 
 The Oatmeal created a comic which you really should check out. It can be found [here](https://theoatmeal.com/comics/plane).
 

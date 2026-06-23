@@ -21,7 +21,7 @@ aliases = [
     "/2016/01/07/top-50-star-trek-episodes"
 ]
 +++
-![](/images/2016/07df3N8m.jpg)
+![Star Trek franchise promotional image celebrating fifty years of the series](/images/2016/07df3N8m.jpg)
 
 In 1966 a TV show called [Star Trek](https://www.startrek.com/) first aired in the USA. Since then 726 episodes have been made and 12 films have been released. 2016 marks the 50th anniversary and Star Trek is as alive as ever with a new film due out this summer and a brand new TV series in the works for broadcast in 2017.
 
@@ -31,7 +31,7 @@ Star Trek has five live action TV series so all I need to do is pick my top 10 f
 
 ## Star Trek
 
-![](/images/2016/Landing_party_beams_up_from_Guardian_planet.jpg)
+![Landing party beaming up from the Guardian planet in Star Trek TOS](/images/2016/Landing_party_beams_up_from_Guardian_planet.jpg)
 
 The original Star Trek series first aired on September 8th 1966. It lasted only three years and 79 episodes. This series featured the iconic characters Kirk, Spock and Bones on a five-year mission to explore space.
 
@@ -48,7 +48,7 @@ The original Star Trek series first aired on September 8th 1966. It lasted only 
 
 ## Star Trek: The Next Generation
 
-![](/images/2016/Senior_staff_poker_game.jpg)
+![Senior staff poker game aboard the Enterprise in Star Trek TNG](/images/2016/Senior_staff_poker_game.jpg)
 
 The first spin-off series set 100 years after Kirk featured a new Enterprise continuing to explore space. This series aired between 1987 and 1994 for 178 episodes.
 
@@ -65,7 +65,7 @@ The first spin-off series set 100 years after Kirk featured a new Enterprise con
 
 ## Star Trek: Deep Space Nine
 
-![](/images/2016/Federation_fleet_prepares_to_engage_Dominion_fleet.jpg)
+![Federation fleet preparing to engage the Dominion fleet in Deep Space Nine](/images/2016/Federation_fleet_prepares_to_engage_Dominion_fleet.jpg)
 
 The second spin-off series which ran at the same time as TNG was set on a space station so instead of exploring adventures arrived via a stable wormhole. This series aired between 1993 and 1999 for 176 episodes.
 
@@ -82,7 +82,7 @@ The second spin-off series which ran at the same time as TNG was set on a space 
 
 ## Star Trek: Voyager
 
-![](/images/2016/Voyager_away_team.jpg)
+![Voyager away team on an alien planet in Star Trek Voyager](/images/2016/Voyager_away_team.jpg)
 
 The third spin-off series ran after TNG and featured a female captain and a starship stranded in a remote part of the galaxy journeying home. This series aired between 1995 and 2001 for 172 episodes.
 
@@ -99,7 +99,7 @@ The third spin-off series ran after TNG and featured a female captain and a star
 
 ## Star Trek: Enterprise
 
-![](/images/2016/Andorians_pjem.jpg)
+![Andorians at the P'Jem monastery in Star Trek Enterprise](/images/2016/Andorians_pjem.jpg)
 
 The most recent spin-off ran after Voyager and was set 100 years before Kirk. This series aired between 2001 and 2005 for 98 episodes.
 
