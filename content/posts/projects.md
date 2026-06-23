@@ -14,8 +14,9 @@ copyright = false
 readingTime = true
 comment = false
 pinned = true
+url = "/projects/"
 aliases = [
-    "/projects"
+    "/posts/projects/"
 ]
 +++
 
