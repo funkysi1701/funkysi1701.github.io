@@ -23,7 +23,7 @@ aliases = [
     "/2016/09/29/looking-back-ten-years"
 ]
 +++
-![](/images/2016/10-year-term-life-insurance.gif)
+![Animated graphic marking a ten-year career milestone](/images/2016/10-year-term-life-insurance.gif)
 
 Next month I will celebrate ten years working at my current job, two weeks after that I will start a new chapter of my life at a new company. Lets take this opportunity to look back ten years at some of the great stuff I have achieved.
 

@@ -36,7 +36,7 @@ The rumour mill has been going crazy about Star Trek Discovery but now we have a
 
 When images first surfaced of the ship I wasn’t keen, however all the shots of the ship look great. I assume this must be the USS Discovery, although it is hard to tell anything from a two minute advert.
 
-![](/images/2017/DAD0hTKUAAAUkTP.jpg)
+![USS Discovery from the Star Trek Discovery trailer](/images/2017/DAD0hTKUAAAUkTP.jpg)
 
 ## The Bridge
 

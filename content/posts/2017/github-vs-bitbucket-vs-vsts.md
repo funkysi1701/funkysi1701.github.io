@@ -27,7 +27,7 @@ As a developer using source control and git is bread and butter of what we do. G
 
 ## Github
 
-![](/images/2017/github-octocat.png)
+![GitHub Octocat mascot logo](/images/2017/github-octocat.png)
 
 - URL: https://github.com/
 - Private Repositories: Not Available for free
@@ -41,7 +41,7 @@ There are a number of externally built APIs that link into Github for doing extr
 
 ## Bitbucket
 
-![](/images/2017/d8TRzzL.png)
+![Bitbucket logo](/images/2017/d8TRzzL.png)
 
 - URL: https://bitbucket.org/
 - Private Repositories: Unlimited
@@ -53,7 +53,7 @@ At my last job we used Bitbucket extensively for all our projects. All the code 
 
 ## Visual Studio Team Services
 
-![](/images/2017/Visual-Studio-Team-Services.png)
+![Visual Studio Team Services logo](/images/2017/Visual-Studio-Team-Services.png)
 
 - URL: https://azure.microsoft.com/services/devops/
 - Private Repositories: Unlimited

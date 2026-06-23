@@ -23,7 +23,7 @@ aliases = [
     "/2015/08/03/volunteering-for-a-technical-team"
 ]
 +++
-![](/images/20150802_113719.jpg)
+![Church worship projection desk with screens and equipment](/images/20150802_113719.jpg)
 For the past few years I have volunteered on the technical team at my local church [St Michael le Belfrey](https://www.belfrey.org/).
 
 For the church to function well it requires volunteers in all sorts of roles, people to welcome visitors, people to pray, people to play music, people to look after children and many other roles.
@@ -34,7 +34,7 @@ The church has three projectors, one big one and two slightly smaller ones for t
 
 EasyWorship contains a huge database of song lyrics, so you can quickly select what ever is being sung and project the lyrics on screen. It also allows the addition of PowerPoint files, image or video files and even a web page and they can be projected. EasyWorship allows different things to be queued up in order and that order can be saved as a schedule.
 
-![](/images/2015/CFMwY_UUgAAc2k2.jpg)
+![Projection team volunteers at St Michael le Belfrey church](/images/2015/CFMwY_UUgAAc2k2.jpg)
 
 The projectionist’s job is to follow along with the order of service and project things onto screen at the right time. Simple! No not really. The worship leader will skip songs, play songs in a different order, add new songs, videos will fail to play, easy worship will freeze up or crash or the liturgy that the vicar wants isn’t in the EasyWorship database.
 

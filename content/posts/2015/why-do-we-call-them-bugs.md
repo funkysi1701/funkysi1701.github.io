@@ -24,13 +24,13 @@ aliases = [
     "/2015/07/07/why-do-we-call-them-bugs"
 ]
 +++
-![](/images/2015/07/11666093_10153470803062792_4914668365512645054_n.jpg)
+![Insect resting outdoors](/images/2015/07/11666093_10153470803062792_4914668365512645054_n.jpg)
 
 On my way home from the office I spotted this little chap. In my expert opinion it is a "bug".
 
 This particular "bug" is harmlessly sitting outside, but have you ever wondered why computer problems are often named after this little chap (and his friends)?
 
-![](/images/2015/07/H96566k.jpg)
+![Moth taped in Grace Hopper's 1947 computer logbook](/images/2015/07/H96566k.jpg)
 
 The first recorded bug report was in 1947 when Grace Hopper found a moth between the relays of a Harvard Mark II, this moth was then tapped in the log book as evidence.
 

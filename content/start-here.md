@@ -9,6 +9,7 @@ description = "👋 New Here? Start With These Posts Welcome! If you're new to m
 showFullContent = false
 copyright = false
 readingTime = false
+featured = true
 comment = false
 aliases = [
     "/start-here",

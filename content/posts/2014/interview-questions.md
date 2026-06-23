@@ -27,7 +27,7 @@ aliases = [
 +++
 I have done a few interviews from both sides of the table, I’m not very good at either but thought I would have a go at answering my favourite questions.
 
-![](/images/2014/10/how-not-to-ace-the-technical-interview.jpg)
+![How not to ace the technical interview cartoon](/images/2014/10/how-not-to-ace-the-technical-interview.jpg)
 
 **Describe an IT disaster and what you did to turn it around?**
 

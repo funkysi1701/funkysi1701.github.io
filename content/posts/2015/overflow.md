@@ -26,7 +26,7 @@ aliases = [
 +++
 Today I encountered a new error.
 
-![](/images/2015/05/error.jpg)
+![Microsoft Access run-time error 6 overflow dialog](/images/2015/05/error.jpg)
 
 Run-time error ‘6’: Overflow doesn’t really tell me much. The error was occurring in the Access ADP front-end of our main database. It was only occurring for one particular Id number which was really confusing me.
 

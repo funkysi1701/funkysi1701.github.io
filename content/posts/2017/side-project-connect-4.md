@@ -27,7 +27,7 @@ Hello?
 
 You have probably like me almost forgotten about this blog. Life has got in the way over the last few months, but lets see if I can restart my blogging habit.
 
-![](/images/2017/Connect4.png)
+![Connect 4 board game](/images/2017/Connect4.png)
 
 In 2017 I want to start a side project for a few reasons. I want to improve my coding skills and look at things I wouldn’t normally during my day job.
 

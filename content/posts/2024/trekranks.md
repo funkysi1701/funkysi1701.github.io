@@ -26,4 +26,4 @@ Everyone contributes in this episode of TrekRanks as we break down the "Top 5 En
 
 [Listen here](https://www.thetricordertransmissions.com/episode.php?ep=TR174)
 
-![](/images/TrekRanks-ep174.jpg)
+![TrekRanks episode 174 artwork for Top 5 Ensemble Episodes with Jim Moorhouse, Anika Dane and Simon Foster](/images/TrekRanks-ep174.jpg)

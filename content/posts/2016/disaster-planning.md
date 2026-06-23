@@ -25,7 +25,7 @@ aliases = [
     "/2016/01/14/disaster-planning"
 ]
 +++
-![](/images/2016/flood.jpg)
+![Flooded streets in York during the 2015 Christmas floods](/images/2016/flood.jpg)
 
 Over the Christmas break the city of York experienced the worst flooding disaster it has seen in recent years. If you want to help donations are being taken at [York Flood Appeal](https://mydonate.bt.com/events/yorkfloodappeal/272657).
 

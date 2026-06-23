@@ -44,11 +44,11 @@ The MakeCode website is full of help pages, tutorials and videos, so whatever le
 
 Twenty five years ago (or so) my step father was getting me into electronics, by explaining capacitors, resistors and all the other components. So it is no surprise that he has loved setting things up for my boy. He has spent a great deal of time getting components that would work with the micro:bit and 3D printing boards and connectors (to make it easy to connect things up)
 
-![](/images/microbit-accessories.jpg)
+![BBC micro:bit accessories including breadboards, cables, battery boxes, a joystick, a NeoPixel LED strip and an 8x8 LED matrix](/images/microbit-accessories.jpg)
 
 Pictured are a selection of the components. We have a selection of breadboards which we haven't tried yet, a selection of cables for connecting things up. Two battery boxes, (3V and 9V). A slider variable resistor, we experimented with using this as a volume control earlier. A board that makes it easy to connect components to the micro:bit. A joystick. A [NeoPixel](https://makecode.microbit.org/pkg/microsoft/pxt-neopixel) strip of ten colourful LEDs. A 8x8 LED [Matrix](https://makecode.microbit.org/pkg/alankrantas/pxt-max7219_8x8) for cool scrolling messages. The last two components, the NeoPixel and the Matrix require an extension to the standard controls but these are easily found on the MakeCode website.
 
-![](/images/blocks.png)
+![MakeCode blocks that move an LED around the micro:bit 5x5 display using joystick X and Y co-ordinates](/images/blocks.png)
 
 I have featured on this page the code I helped write that uses the joystick to move a LED around the 5 x 5 grid that is on the micro:bit. To write this I started off by printing the X Co-ordinates to the screen. With the joystick in the centre position, it was about 500, when moved one way it was low teens, and the other way it was 1000+. Then I needed to figure out how to convert X, Y Co-ordinates for the joystick that could be 0 to 1000, to X, Y co-ordinates of the display that is 5 x 5. The Maths was a bit beyond my boy, but he just about understood what was going on. The clear screen step is needed so the previous position can be removed from the screen.
 

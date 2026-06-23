@@ -31,7 +31,7 @@ The iPads were preloaded with easy-to-use software that felt familiar to those w
 
 It was a great hands-on learning experience. My son and I faced a bit of trial and error to figure out which way the robot saw as "forward," but soon enough, our Sphero was gliding smoothly along the first line. As we went along, we added "pause" blocks between movements, which made the robot stop before changing direction, adding a nice rhythm to its journey along the lines.
 
-![](/images/20241102_104220.jpg)
+![Children programming Sphero robots to follow taped lines on the floor at Leeds Central Library Code Club](/images/20241102_104220.jpg)
 
 Once the main task was completed, there was time for the kids to explore other features. We experimented with different commands, making a smile or frown appear on the robot’s LED display, while others programmed their Spheros to zip around the room, flashing lights and making playful noises.
 

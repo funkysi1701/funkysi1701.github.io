@@ -40,6 +40,6 @@ WHEN NumberOfLines * NumberOfDependencies * NumberOfParameters < 10000 THEN ‘M
 ELSE ‘Complex’
 ```
 
-![](/images/2015/08/reportscreenshot1.png)
+![SQL stored procedure complexity report screenshot](/images/2015/08/reportscreenshot1.png)
 
 This gives a fairly good estimate of which stored procedures are the most complex and which would probably take the longest time to rewrite.

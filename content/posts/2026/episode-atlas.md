@@ -19,7 +19,7 @@ description = "Search 900+ Star Trek episodes, mark what you've watched, earn ra
 showFullContent = false
 readingTime = true
 copyright = false
-featured = false
+featured = true
 draft = false
 aliases = [
     "/episode-atlas",

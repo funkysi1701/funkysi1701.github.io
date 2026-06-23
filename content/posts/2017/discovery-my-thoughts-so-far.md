@@ -27,7 +27,7 @@ aliases = [
 +++
 I tried to resist but I am going to have to write about the new Star Trek series Discovery. Warning this post is going to include SPOILERS. If you read on you have been warned.
 
-I watched the first two episodes of the brand new Star Trek TV show. As I am an international viewer I used Netflix, if you are from the US you need to use CBS All Access. ![](/images/2017/DAD0hTKUAAAUkTP.jpg)
+I watched the first two episodes of the brand new Star Trek TV show. As I am an international viewer I used Netflix, if you are from the US you need to use CBS All Access. ![Promotional image from Star Trek Discovery](/images/2017/DAD0hTKUAAAUkTP.jpg)
 
 I have heard a lot of complaining that the show is not free to watch. CBS is making Star Trek Discovery to make money, if they don’t make money they will stop making it. Its as simple as that.
 
@@ -37,7 +37,7 @@ Back to Discovery. I loved it! It felt like Star Trek. I had feared it might onl
 
 **The Klingons**
 
-When it was first announced that the Klingons would feature in the new show I was a bit “meh”. We had done lots with the Klingons before and they had never been my favourite alien race. ![](/images/2017/star-trek-discovery-klingons-1002567-1280x0.jpg)
+When it was first announced that the Klingons would feature in the new show I was a bit “meh”. We had done lots with the Klingons before and they had never been my favourite alien race. ![Redesigned Klingons from Star Trek Discovery](/images/2017/star-trek-discovery-klingons-1002567-1280x0.jpg)
 
 The look of the Klingons was also going to be changed, I have to admit this didn’t bother me. Klingons have had their look updated before. In 1966 Klingons had dark faces and smooth foreheads, in 1979 the forehead ridges were added as the first Star Trek movie was made, and now Discovery has removed all hair from Klingons. I can explain it away as productional changes, I don’t need an on screen explanation like we had on Enterprise (or even DS9).
 

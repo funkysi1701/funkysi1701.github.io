@@ -24,7 +24,7 @@ aliases = [
     "/2015/11/05/how-to-speak-to-the-whole-world"
 ]
 +++
-![](/images/2015/10/world.png)
+![World map showing global website reach](/images/2015/10/world.png)
 
 Having a website is an easy way to reach people across the globe. This website has reached people in almost every continent.
 

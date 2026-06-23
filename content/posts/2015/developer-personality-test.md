@@ -40,7 +40,7 @@ This test however tells you if you are:
 
 **Idealist vs Pragmatist**
 
-![](/images/2015/07/19etmksoopu2ojpg.jpg)
+![Developer personality test trait spectrum diagram](/images/2015/07/19etmksoopu2ojpg.jpg)
 
 **Independent:**
 You prefer to spend most of your time working in an isolated environment.  You rarely want to collaborate because you have a better chance of solving problems on your own.  If you do have to collaborate on the direction of a project, you dislike it when you have to defend your position or when others try to muddy your plans for the project.  It’s better to have one strong vision for a project from the lead programmer on that project.  Having a large team or allowing others to have significant control over the project risks communication errors, a muddied code base, and inefficiencies.  If one developer has a firm grasp on the entire codebase, they’ll be much better at fixing and improving it quickly.

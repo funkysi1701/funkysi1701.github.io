@@ -31,7 +31,7 @@ My old boss has this idea that I should have a big monitor screen displaying all
 For the purpose of this blog post lets assume he has convinced me and I have convinced my actual boss to spend money on the required technology to do this (No easy feat). What exactly would I display on this screen?
 
 I have Google Chromecast that I use for streaming various things to my TV, this is a relatively cheap bit of technology that could allow a TV or monitor to display a web page with the required stats displayed. 
-![](/images/2015/03/perf.jpg)
+![Server performance graphs on a monitoring dashboard](/images/2015/03/perf.jpg)
 
 The two main sources of information that I want to display are New Relic for monitoring my azure websites and Nagios for monitoring my internal servers. New Relic allows you to easily export live performance data as iframes so I quickly threw together a web page full of these graphs. However if you have a static screen on the wall you don’t want to have to scroll to see different information so I needed to come up with another way to display this information.
 

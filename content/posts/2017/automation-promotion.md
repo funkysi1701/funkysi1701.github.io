@@ -24,7 +24,7 @@ aliases = [
 ]
 +++
 I would like to automate the promotion of this blog. Currently to promote this blog on social media I use a few different services.
-![](/images/2017/img-buffer-illustration-hub-960@2x.png)
+![Buffer social media scheduling hub illustration](/images/2017/img-buffer-illustration-hub-960@2x.png)
 
 Buffer ([buffer.com](https://buffer.com)) is a service that allows you to schedule updates to the main social media channels (Facebook, Twitter, LinkedIn and Google+)
 

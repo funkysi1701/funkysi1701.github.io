@@ -28,7 +28,7 @@ Last night I went to a Code Dojo at Leeds Sharp (the coding user group I have st
 
 The challenge that we worked on was to code a solution to the puzzle game Sudoku. The code we worked with can be found on github.
 
-![](/images/2015/06/2000px-Sudoku-by-L2G-20050714.svg_.png)
+![Partially completed Sudoku puzzle grid](/images/2015/06/2000px-Sudoku-by-L2G-20050714.svg_.png)
 
 I don’t know much about Sudoku but the game goes like this. You start with a 9×9 grid, and the idea is to fill in all the missing numbers.
 

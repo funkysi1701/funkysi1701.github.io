@@ -27,7 +27,7 @@ aliases = [
 +++
 As a break from my usual topics I am going to talk about what I did over the weekend.
 
-![](/images/2014/10670061_10152884492389155_77781042960777157_n.jpg)
+![Simon and Laura in Star Trek costume at Destination Star Trek](/images/2014/10670061_10152884492389155_77781042960777157_n.jpg)
 
 I am a huge star trek fan, so me and my wife Laura went to Destination Star Trek, a convention held in London. This is a picture of us in costume, my wife created a tribble costume (A tribble is an alien race that just consists of a ball of fur) and I am wearing an original series captains uniform. We had a great time.
 
