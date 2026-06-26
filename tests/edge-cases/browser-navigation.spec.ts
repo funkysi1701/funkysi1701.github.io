@@ -87,10 +87,12 @@ test.describe('Edge Cases and Error Handling', () => {
     });
 
     await test.step('Navigate to a blog post', async () => {
-      // 8. Navigate to a blog post (first post on /posts/ so any BASE_URL / deploy branch works)
+      // 8. Navigate to a year-based post from /posts/ (skip pinned portfolio at /projects/ and /posts/events/)
       await page.goto('/posts/');
-      await page.locator('article.post .post-title a').first().click();
-      await expect(page).toHaveURL(/\/posts\//);
+      const yearPostLink = page.locator('article.post .post-title a[href*="/posts/20"]').first();
+      await expect(yearPostLink).toBeVisible();
+      await yearPostLink.click();
+      await expect(page).toHaveURL(/\/posts\/\d{4}\//);
     });
 
     await test.step('Use back button multiple times', async () => {
