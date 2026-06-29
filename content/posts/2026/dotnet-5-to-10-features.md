@@ -252,6 +252,6 @@ Microsoft's guidance has shifted over the years: LTS releases (6, 8, 10) alterna
 - [.NET download](https://dotnet.microsoft.com/download)
 - [What's new in each .NET version](https://learn.microsoft.com/en-us/dotnet/core/whats-new/) — official docs
 - [C# language version history](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history)
-- My earlier posts: [Upgrading to .NET 7](/posts/2022/dotnet7/), [.NET 9](/posts/2024/dotnet9/), [Blazor and .NET 10](/posts/blazor-and-dotnet10/), and [Getting started with Aspire](/posts/2025/blazor-and-dotnet10/)
+- My earlier posts: [Upgrading to .NET 7](/posts/2022/dotnet7/), [.NET 9](/posts/2024/dotnet9/), [Blazor and .NET 10](/posts/blazor-and-dotnet10/), and [Getting started with Aspire](/posts/2024/aspire/)
 
 If you have been on the platform since .NET 5, you have lived through the best decade of .NET since the original framework shipped. The pace is relentless — but that November rhythm at least makes it predictable.
