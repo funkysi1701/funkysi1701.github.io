@@ -40,13 +40,24 @@ steps:
   condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   inputs:
     script: |
-      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      set -euo pipefail
+      export PATH="$HOME/.local/bin:$PATH"
+      if command -v aws >/dev/null 2>&1; then
+        echo "AWS CLI already installed: $(aws --version)"
+        exit 0
+      fi
+      rm -f awscliv2.zip
+      curl -fSL --connect-timeout 30 --max-time 600 \
+        "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
       unzip -q awscliv2.zip
-      ./aws/install --bin-dir ~/.local/bin --install-dir ~/.local/aws-cli --update
-      cd ~/.local/aws-cli/v2
-      ls -1 | sort -V | head -n -2 | xargs -r rm -rf
-      export PATH=$HOME/.local/bin:$PATH
+      ./aws/install --bin-dir "$HOME/.local/bin" --install-dir "$HOME/.local/aws-cli" --update
+      if [ -d "$HOME/.local/aws-cli/v2" ]; then
+        cd "$HOME/.local/aws-cli/v2"
+        ls -1 | sort -V | head -n -2 | xargs -r rm -rf
+      fi
+      export PATH="$HOME/.local/bin:$PATH"
       aws --version
+      rm -f awscliv2.zip
 - task: CmdLine@2
   displayName: "Build and Login to ECR"
   condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
