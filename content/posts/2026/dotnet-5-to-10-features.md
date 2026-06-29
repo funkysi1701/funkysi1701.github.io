@@ -1,12 +1,12 @@
 +++
-title = ".NET Key Features Introduced in Each Release"
+title = ".NET 5 to 10: Key Features Introduced in Every Release"
 date = "2026-06-29T18:00:00Z"
 year = "2026"
 month = "2026-06"
 author = "funkysi1701"
 authorTwitter = "funkysi1701"
-cover = "/images/bot-01.png"
-images = ['/images/bot-01.png']
+cover = "/images/2026/dotnet-5-to-10-features.png"
+images = ['/images/2026/dotnet-5-to-10-features.png']
 tags = ["DotNet", ".NET 5", ".NET 6", ".NET 7", ".NET 8", ".NET 9", ".NET 10", "C-Sharp", "Blazor", "ASP.NET Core", "Visual Studio"]
 categories = ["tech"]
 description = "From dropping the Core suffix in .NET 5 to LTS .NET 10 — a version-by-version tour of C#, ASP.NET Core, Blazor, tooling, and performance highlights since 2020."
@@ -254,4 +254,4 @@ Microsoft's guidance has shifted over the years: LTS releases (6, 8, 10) alterna
 - [C# language version history](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history)
 - My earlier posts: [Upgrading to .NET 7](/posts/2022/dotnet7/), [.NET 9](/posts/2024/dotnet9/), [Blazor and .NET 10](/posts/blazor-and-dotnet10/), and [Getting started with Aspire](/posts/2024/aspire/)
 
-If you have been on the platform since .NET 5, you have lived through the best decade of .NET since the original framework shipped. The pace is relentless — but that November rhythm at least makes it predictable.
+If you have been on the platform since .NET 5, you have lived through the best decade of .NET since the original framework shipped. 
