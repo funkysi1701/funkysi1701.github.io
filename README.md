@@ -52,7 +52,7 @@ npm test
 
 By default, `playwright.config.ts` uses **`BASE_URL`** of `https://www.funkysi1701.com` when unset. For local or staging targets, set the variable (PowerShell: `$env:BASE_URL="http://localhost:1313"; npm test`).
 
-**Azure DevOps** runs the full suite in **`azure-pipelines-playwright.yml`**: it sets `BASE_URL` to production for **`main`** (and **`master`** if used) and to **`https://blog-dev.funkysi1701.com`** for **`develop`**. After tests, **`scripts/generate-page-coverage.js`** can feed **Codecov** when `CODECOV_TOKEN` is configured in the pipeline. **`codecov.yml`** marks that **page coverage** as **informational** so normal content and visit churn does not fail PR checks; tighten or turn off `informational` there if you want strict gates.
+**Azure DevOps** runs the full suite in **`azure-pipelines-playwright.yml`**: on pushes to **`develop`** and **`main`**, and on PRs into **`main`** (PRs into **`develop`** are skipped — blog-dev is not updated until merge). It sets `BASE_URL` to production for **`main`** (and **`master`** if used) and to **`https://blog-dev.funkysi1701.com`** for **`develop`**. Pushes to **`develop`** wait for blog-dev to respond before tests run. After tests, **`scripts/generate-page-coverage.js`** can feed **Codecov** when `CODECOV_TOKEN` is configured in the pipeline. **`codecov.yml`** marks that **page coverage** as **informational** so normal content and visit churn does not fail PR checks; tighten or turn off `informational` there if you want strict gates.
 
 **GitHub Actions** (`.github/workflows/`) includes checks such as **meta title** (50–60 characters) and **meta description** (110–160 characters) for `content/posts/**/*.md`. Run the same checks locally after editing post front matter:
 
