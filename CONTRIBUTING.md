@@ -10,7 +10,7 @@ Copy into your PR description or verify locally before requesting review:
 - [ ] **Parkrun generated block:** Did not hand-edit `content/parkrun.md` between `<!-- BEGIN PARKRUN_GENERATED -->` and `<!-- END PARKRUN_GENERATED -->`. Use `scripts/update_parkrun_results.py` instead; see [`README.md`](README.md#parkrun-results-contentparkrunmd).
 - [ ] **Secrets and build output:** Did not commit API keys, deploy tokens, or credentials. Did not commit `public/` (Hugo build output).
 - [ ] **Templates and assets:** Local Hugo build passes (`hugo server -D` or `hugo --minify --environment production` as appropriate). Prefer site overrides in root `layouts/`, `assets/`, and `static/` over editing `themes/hugo-theme-bootstrap/`.
-- [ ] **Test changes:** `npm ci && npm test` when you change tests or behaviour they cover. Full Playwright E2E runs on **Azure Pipelines** (`azure-pipelines-playwright.yml`) after merge to **`develop`** or **`main`**, and on PRs into **`main`** — not on PRs into **`develop`** (blog-dev is not updated until merge). A green GitHub Actions run does not imply E2E passed.
+- [ ] **Test changes:** `npm ci && npm test` when you change tests or behaviour they cover. Full Playwright E2E runs on **Azure Pipelines** after merge to **`develop`** (`azure-pipelines.yml`, blog-dev) or **`main`** (`azure-pipelines-playwright.yml`), and on PRs into **`main`** — not on PRs into **`develop`**. A green GitHub Actions run does not imply E2E passed.
 - [ ] **New Playwright specs:** Include a `// spec: specs/funkysi1701-test-plan.md` comment (or the relevant scenario doc under `specs/`). See [`specs/funkysi1701-test-plan.md`](specs/funkysi1701-test-plan.md).
 
 ## Branch workflow

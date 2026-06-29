@@ -1,10 +1,5 @@
 {{- $content := default $.Site.Params.metaRobots .Params.metaRobots -}}
-{{- $isPaginatedListPage := false -}}
-{{- with .Paginator -}}
-  {{- if gt .PageNumber 1 -}}
-    {{- $isPaginatedListPage = true -}}
-  {{- end -}}
-{{- end -}}
+{{- $isPaginatedListPage := strings.Contains .RelPermalink "/page/" -}}
 {{- if and (not (isset .Params "metarobots")) $isPaginatedListPage -}}
   {{- $lpr := default $.Site.Params.homePaginationMetaRobots $.Site.Params.listPaginationMetaRobots -}}
   {{- if ne $lpr "" -}}
