@@ -1,10 +1,42 @@
-{{- /* Home, section, and taxonomy list pages: site tagline plus optional pagination suffix. */ -}}
+{{- /* Concise meta descriptions for list/archive pages (target ≤160 characters). */ -}}
 {{- $page := . -}}
-{{- $title := $page.Title -}}
-{{- if and $page.IsHome (eq $title "") -}}
-  {{- $title = $page.Site.Title -}}
+{{- $siteTitle := $page.Site.Title -}}
+{{- $pageDesc := "" -}}
+{{- if $page.IsHome -}}
+  {{- $pageDesc = $page.Site.Params.description | plainify | htmlUnescape -}}
+{{- else if eq $page.Kind "term" -}}
+  {{- $tax := $page.Data.Singular -}}
+  {{- if eq $tax "year" -}}
+    {{- $pageDesc = printf "Blog posts published in %s on %s." $page.Title $siteTitle -}}
+  {{- else if eq $tax "month" -}}
+    {{- $monthLabel := $page.Title -}}
+    {{- if findRE `^\d{1,2}$` $page.Title -}}
+      {{- $monthNum := int $page.Title -}}
+      {{- $monthLabel = time.Format "January" (time (printf "2020-%02d-01" $monthNum)) -}}
+    {{- end -}}
+    {{- $year := "" -}}
+    {{- with findRE `\d{4}` $page.RelPermalink -}}
+      {{- $year = index . 0 -}}
+    {{- end -}}
+    {{- if ne $year "" -}}
+      {{- $pageDesc = printf "Blog posts from %s %s on %s." $monthLabel $year $siteTitle -}}
+    {{- else -}}
+      {{- $pageDesc = printf "Blog posts from %s on %s." $monthLabel $siteTitle -}}
+    {{- end -}}
+  {{- else if eq $tax "tag" -}}
+    {{- $pageDesc = printf "Posts tagged “%s” on %s." $page.Title $siteTitle -}}
+  {{- else if eq $tax "category" -}}
+    {{- $pageDesc = printf "Posts in category %s on %s." $page.Title $siteTitle -}}
+  {{- else -}}
+    {{- $pageDesc = printf "%s on %s." $page.Title $siteTitle -}}
+  {{- end -}}
+{{- else if eq $page.Kind "taxonomy" -}}
+  {{- $pageDesc = printf "Browse all %s on %s." (i18n $page.Data.Plural) $siteTitle -}}
+{{- else if eq $page.Kind "section" -}}
+  {{- $pageDesc = printf "Posts in %s on %s." $page.Title $siteTitle -}}
+{{- else -}}
+  {{- $pageDesc = printf "%s on %s." $page.Title $siteTitle -}}
 {{- end -}}
-{{- $pageDesc := printf "%s - %s" $title ($page.Site.Params.description | default "") | plainify | htmlUnescape -}}
 {{- $supportsPagination := or $page.IsHome (eq $page.Kind "taxonomy") (eq $page.Kind "term") (eq $page.Kind "section") -}}
 {{- if $supportsPagination -}}
   {{- with $page.Paginator -}}
@@ -12,5 +44,8 @@
       {{- $pageDesc = printf "%s %s" $pageDesc (i18n "pagination_title" .) -}}
     {{- end -}}
   {{- end -}}
+{{- end -}}
+{{- if gt (len $pageDesc) 160 -}}
+  {{- $pageDesc = truncate 160 $pageDesc -}}
 {{- end -}}
 {{- return $pageDesc -}}
