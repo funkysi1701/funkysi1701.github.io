@@ -1,5 +1,5 @@
 +++
-title = ".NET 5 to 10: Key Features Introduced in Every Release"
+title = ".NET Key Features Introduced in Each Release"
 date = "2026-06-29T18:00:00Z"
 year = "2026"
 month = "2026-06"
@@ -35,6 +35,7 @@ This post is a guided tour of what landed in each major version from **.NET 5** 
 | .NET 8  | Nov 2023 | **LTS** (3 years) | C# 12 | Supported |
 | .NET 9  | Nov 2024 | STS (2 years) | C# 13 | Supported |
 | .NET 10 | Nov 2025 | **LTS** (3 years) | C# 14 | Current LTS |
+| .NET 11 | Nov 2026 | Preview | C# 15 | Preview Until Nov 26 then STS |
 
 For the full release schedule and patch versions, see the official [.NET releases](https://learn.microsoft.com/en-us/dotnet/core/releases-and-support) documentation.
 
@@ -155,7 +156,7 @@ C# 9 shipped alongside .NET 5 and brought several features that are now everyday
 - **Frozen collections** — optimised read-only collections for hot paths.
 - **TimeProvider** — abstract time for testable code.
 
-### .NET Aspire
+### .NET Aspire (now just called Aspire)
 
 [.NET Aspire](/posts/2024/aspire/) launched in preview with .NET 8 — an opinionated stack for observable, distributed applications. AppHost orchestrates dependencies; ServiceDefaults wire up OpenTelemetry, health checks, and resilience. I have been using it for local microservice development and it removes a lot of port-and-connection-string drudgery.
 
@@ -244,7 +245,7 @@ One breaking change caught me when upgrading a Blazor WebAssembly app: **HttpCli
 | Experimenting with the latest features | **.NET 9** or **.NET 10** — check STS/LTS dates |
 | Legacy maintenance | Upgrade anything still on 5, 6, or 7 — they are all end-of-life |
 
-Microsoft's guidance has shifted over the years: LTS releases (6, 8, 10) alternate with STS releases (5, 7, 9) on an annual November cadence. STS now lasts two years; LTS lasts three.
+Microsoft's guidance has shifted over the years: LTS releases (6, 8, 10) alternate with STS releases (5, 7, 9) on an annual November cadence. STS now lasts two years; LTS lasts three. Remember there is no difference in quality between a LTS and STS release, it is only the support window that is different.
 
 ## Further reading
 
