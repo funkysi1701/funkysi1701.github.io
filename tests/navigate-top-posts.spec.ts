@@ -14,7 +14,7 @@ test('navigate to www.funkysi1701.com, click top blog posts, check console for e
 
   // Step 1: Navigate to the homepage (staging uses a different title in Hugo config)
   await page.goto('/');
-  await expect(page).toHaveTitle(/Funky Si.*Blog|Development Version of Funky Si/i);
+  await expect(page).toHaveTitle(/Funky Si.*Blog|Funky Si/i);
 
   // Step 2: Use explicit URLs for the top blog posts based on MCP output
   const blogPostUrls = [
