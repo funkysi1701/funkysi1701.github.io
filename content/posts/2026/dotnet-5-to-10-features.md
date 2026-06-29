@@ -112,7 +112,7 @@ C# 9 shipped alongside .NET 5 and brought several features that are now everyday
 
 ## .NET 7 — November 2022
 
-.NET 7 was a **standard-term support** release focused heavily on performance, cloud-native patterns, and polishing the developer experience. I wrote about [upgrading to .NET 7](/posts/dotnet7/) at the time — mostly smooth, with a few surprises around AutoMapper and EF Core triggers.
+.NET 7 was a **standard-term support** release focused heavily on performance, cloud-native patterns, and polishing the developer experience. I wrote about [upgrading to .NET 7](/posts/2022/dotnet7/) at the time — mostly smooth, with a few surprises around AutoMapper and EF Core triggers.
 
 ### C# 11
 
@@ -169,7 +169,7 @@ C# 9 shipped alongside .NET 5 and brought several features that are now everyday
 
 ## .NET 9 — November 2024
 
-.NET 9 continued the annual cadence with performance, AI integration, and polish across the stack. I covered several highlights in my [.NET 9 post](/posts/dotnet9/) when it shipped.
+.NET 9 continued the annual cadence with performance, AI integration, and polish across the stack. I covered several highlights in my [.NET 9 post](/posts/2024/dotnet9/) when it shipped.
 
 ### C# 13
 
@@ -228,7 +228,7 @@ C# 9 shipped alongside .NET 5 and brought several features that are now everyday
 - **Passkey support** for ASP.NET Core Identity.
 - OpenAPI and minimal API improvements.
 
-One breaking change caught me when upgrading a Blazor WebAssembly app: **HttpClient response streaming is enabled by default**, which broke synchronous `Stream.Read` calls in generated API clients. I wrote about the fix in [Blazor and .NET 10](/posts/blazor-and-dotnet10/) — either opt out with `<WasmEnableStreamingResponse>false</WasmEnableStreamingResponse>` or move to async reads.
+One breaking change caught me when upgrading a Blazor WebAssembly app: **HttpClient response streaming is enabled by default**, which broke synchronous `Stream.Read` calls in generated API clients. I wrote about the fix in [Blazor and .NET 10](/posts/2025/blazor-and-dotnet10/) — either opt out with `<WasmEnableStreamingResponse>false</WasmEnableStreamingResponse>` or move to async reads.
 
 ### EF Core 10, MAUI, and desktop
 
@@ -252,6 +252,6 @@ Microsoft's guidance has shifted over the years: LTS releases (6, 8, 10) alterna
 - [.NET download](https://dotnet.microsoft.com/download)
 - [What's new in each .NET version](https://learn.microsoft.com/en-us/dotnet/core/whats-new/) — official docs
 - [C# language version history](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history)
-- My earlier posts: [Upgrading to .NET 7](/posts/dotnet7/), [.NET 9](/posts/dotnet9/), [Blazor and .NET 10](/posts/blazor-and-dotnet10/), and [Getting started with Aspire](/posts/2024/aspire/)
+- My earlier posts: [Upgrading to .NET 7](/posts/2022/dotnet7/), [.NET 9](/posts/2024/dotnet9/), [Blazor and .NET 10](/posts/blazor-and-dotnet10/), and [Getting started with Aspire](/posts/2025/blazor-and-dotnet10/)
 
 If you have been on the platform since .NET 5, you have lived through the best decade of .NET since the original framework shipped. The pace is relentless — but that November rhythm at least makes it predictable.
