@@ -35,7 +35,7 @@ This post is a guided tour of what landed in each major version from **.NET 5** 
 | .NET 8  | Nov 2023 | **LTS** (3 years) | C# 12 | Supported |
 | .NET 9  | Nov 2024 | STS (2 years) | C# 13 | Supported |
 | .NET 10 | Nov 2025 | **LTS** (3 years) | C# 14 | Current LTS |
-| .NET 11 | Nov 2026 | Preview | C# 15 | Preview Until Nov 26 then STS |
+| .NET 11 | Nov 2026 | Preview | C# 15 | Preview Until Nov 2026 then STS |
 
 For the full release schedule and patch versions, see the official [.NET releases](https://learn.microsoft.com/en-us/dotnet/core/releases-and-support) documentation.
 
@@ -158,7 +158,7 @@ C# 9 shipped alongside .NET 5 and brought several features that are now everyday
 
 ### .NET Aspire (now just called Aspire)
 
-[.NET Aspire](/posts/2024/aspire/) launched in preview with .NET 8 — an opinionated stack for observable, distributed applications. AppHost orchestrates dependencies; ServiceDefaults wire up OpenTelemetry, health checks, and resilience. I have been using it for local microservice development and it removes a lot of port-and-connection-string drudgery.
+[.NET Aspire](/posts/2024/aspire/) launched in preview with .NET 8 — an opinionated stack for observable, distributed applications. AppHost orchestrates dependencies; ServiceDefaults wire up OpenTelemetry, health checks, and resilience. I have been using it for local microservice development and it removes a lot of port-and-connection-string drudgery. In 2025 .Net Aspire was rebranded to Aspire and version 13 was released (don't ask why 13, but I believe it was so it was no longer tied to .NET releases)
 
 ### Other highlights
 
