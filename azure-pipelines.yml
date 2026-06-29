@@ -31,18 +31,33 @@ schedules:
 pool: Docker
 
 steps:
+- checkout: self
+  # Playwright Docker steps below can leave root-owned node_modules/coverage on the self-hosted agent.
+  clean: false
+
 - task: CmdLine@2
   displayName: "Install AWS CLI"
   condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   inputs:
     script: |
-      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      set -euo pipefail
+      export PATH="$HOME/.local/bin:$PATH"
+      if command -v aws >/dev/null 2>&1; then
+        echo "AWS CLI already installed: $(aws --version)"
+        exit 0
+      fi
+      rm -f awscliv2.zip
+      curl -fSL --connect-timeout 30 --max-time 600 \
+        "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
       unzip -q awscliv2.zip
-      ./aws/install --bin-dir ~/.local/bin --install-dir ~/.local/aws-cli --update
-      cd ~/.local/aws-cli/v2
-      ls -1 | sort -V | head -n -2 | xargs -r rm -rf
-      export PATH=$HOME/.local/bin:$PATH
+      ./aws/install --bin-dir "$HOME/.local/bin" --install-dir "$HOME/.local/aws-cli" --update
+      if [ -d "$HOME/.local/aws-cli/v2" ]; then
+        cd "$HOME/.local/aws-cli/v2"
+        ls -1 | sort -V | head -n -2 | xargs -r rm -rf
+      fi
+      export PATH="$HOME/.local/bin:$PATH"
       aws --version
+      rm -f awscliv2.zip
 - task: CmdLine@2
   displayName: "Build and Login to ECR"
   condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
@@ -124,6 +139,10 @@ steps:
   inputs:
     script: |
       set -euo pipefail
+      # Root-owned node_modules from a prior Docker run breaks npm ci as the agent user.
+      sudo rm -rf "$(Build.SourcesDirectory)/node_modules" "$(Build.SourcesDirectory)/coverage" "$(Build.SourcesDirectory)/codecov" 2>/dev/null \
+        || rm -rf "$(Build.SourcesDirectory)/node_modules" "$(Build.SourcesDirectory)/coverage" "$(Build.SourcesDirectory)/codecov" 2>/dev/null \
+        || true
       docker run --rm \
         -v "$(Build.SourcesDirectory):/work" \
         -w /work \
@@ -131,7 +150,18 @@ steps:
         -e CI=true \
         -e CODECOV_TOKEN \
         mcr.microsoft.com/playwright:v1.59.1-jammy \
-        bash -lc 'npm ci && npx playwright install chromium && npx playwright test && node scripts/generate-page-coverage.js && if [ -n "${CODECOV_TOKEN:-}" ]; then curl -sSfL https://uploader.codecov.io/latest/linux/codecov -o codecov && chmod +x codecov && ./codecov -t "$CODECOV_TOKEN" -f ./coverage/page-coverage.lcov -F page-coverage -n page-coverage || true; fi'
+        bash -lc 'set -euo pipefail
+          rm -rf node_modules coverage codecov
+          npm ci
+          npx playwright install chromium
+          npx playwright test
+          node scripts/generate-page-coverage.js
+          if [ -n "${CODECOV_TOKEN:-}" ]; then
+            curl -sSfL https://uploader.codecov.io/latest/linux/codecov -o codecov
+            chmod +x codecov
+            ./codecov -t "$CODECOV_TOKEN" -f ./coverage/page-coverage.lcov -F page-coverage -n page-coverage || true
+          fi
+          rm -rf node_modules coverage codecov'
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace test \
       --set image.tag=$(Build.BuildNumber)-develop \
