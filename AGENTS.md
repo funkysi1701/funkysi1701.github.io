@@ -55,7 +55,7 @@ After bulk-editing post front matter, run **`npm run check:meta`** before openin
 
 | Check | Where | Notes |
 |-------|-------|-------|
-| Playwright E2E | **Azure Pipelines** — `azure-pipelines-playwright.yml` | Primary full E2E gate; `BASE_URL` from branch (`main`/`master` → production, `develop` → blog-dev) |
+| Playwright E2E | **Azure Pipelines** — `azure-pipelines.yml` (blog-dev after deploy) and `azure-pipelines-playwright.yml` (`main` pushes + PRs into `main`) | PRs into **`develop`** skip E2E; post-merge **`develop`** / **`feature/*`** deploy then test blog-dev. `BASE_URL`: production for `main`, blog-dev for non-prod deploys |
 | Page coverage / Codecov | Azure Pipelines | `scripts/generate-page-coverage.js`; informational per `codecov.yml` |
 | Meta title / description length | **GitHub Actions** | `meta-title-length.yml`, `meta-description-length.yml` |
 | Azure SWA deploy | GitHub Actions | `azure-static-web-apps-victorious-pebble-0b8f90e03.yml` (production path) |

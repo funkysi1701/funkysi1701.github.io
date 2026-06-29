@@ -184,7 +184,7 @@ npm test
 
 `playwright.config.ts` sets `baseURL` from **`BASE_URL`**; if unset, it defaults to **`https://www.funkysi1701.com`**. Point `BASE_URL` at `http://localhost:1313` (or another host) when testing a local or preview build.
 
-**Azure DevOps:** Pipeline **`azure-pipelines-playwright.yml`** runs `npx playwright test` on PRs and branch pushes. It chooses **`BASE_URL`** from the effective target branch: **`main`** or **`master`** → production; **`develop`** → **`https://blog-dev.funkysi1701.com`**; otherwise production. The pipeline runs **`scripts/generate-page-coverage.js`** and can upload **page coverage** to **Codecov** when **`CODECOV_TOKEN`** is set. **`codecov.yml`** configures Codecov **project/patch** status as **informational** (synthetic Markdown visit coverage is volatile); adjust there or in the Codecov UI if you want failing checks on coverage drops.
+**Azure DevOps:** **`azure-pipelines.yml`** runs `npx playwright test` against blog-dev after Helm deploy on **`develop`** and **`feature/*`** pushes. **`azure-pipelines-playwright.yml`** runs on **`main`** pushes and PRs into **`main`** only (PRs into **`develop`** are skipped). Production **`BASE_URL`**: **`https://www.funkysi1701.com`**; blog-dev deploys use **`https://blog-dev.funkysi1701.com`**. Both pipelines can run **`scripts/generate-page-coverage.js`** and upload to **Codecov** when **`CODECOV_TOKEN`** is set. **`codecov.yml`** configures Codecov **project/patch** status as **informational** (synthetic Markdown visit coverage is volatile); adjust there or in the Codecov UI if you want failing checks on coverage drops.
 
 **Meta validation (post front matter):** After editing `title` or `description` in `content/posts/**/*.md`, run **`npm run check:meta`** (wraps the Python scripts used by GitHub Actions). Subcommands: **`check:meta:titles`**, **`check:meta:descriptions`**. To preview automated description rewrites: **`npm run check:meta:fix`** (dry-run only). Apply fixes with `python scripts/normalize_meta_descriptions.py --root .`. Requires Python 3.11+ on `PATH`.
 
@@ -202,7 +202,8 @@ For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remai
 - `config/production/config.toml` – Production baseURL and analytics
 - `playwright.config.ts` – Playwright defaults (`baseURL`, reporters, projects)
 - `azure-pipelines.yml` – CI/CD pipeline (build, ECR push, Helm deploy)
-- `azure-pipelines-playwright.yml` – Playwright test job and Codecov page coverage
+- `azure-pipelines.yml` – build, Helm deploy, blog-dev Playwright E2E after deploy
+- `azure-pipelines-playwright.yml` – production Playwright E2E (`main` pushes and PRs into `main`)
 - `codecov.yml` – Codecov behaviour (informational page-coverage gates)
 - `npm run check:meta` – Local meta validation (titles + descriptions); see also `check:meta:titles`, `check:meta:descriptions`, `check:meta:fix`
 - `scripts/check_meta_titles.py` / `scripts/check_meta_descriptions.py` – Post front matter length checks (used by GitHub Actions and npm scripts)

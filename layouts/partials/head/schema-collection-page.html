@@ -1,5 +1,5 @@
 {{- $page := .page -}}
-{{- $pageDesc := printf "%s - %s" $page.Title ($page.Site.Params.description | default "") | plainify | htmlUnescape -}}
+{{- $pageDesc := partial "head/list-page-description" $page -}}
 {{- $pageURL := $page.Permalink -}}
 {{- with $page.Paginator -}}
   {{- if gt .PageNumber 1 -}}

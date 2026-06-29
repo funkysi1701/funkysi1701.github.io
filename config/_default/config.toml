@@ -22,8 +22,8 @@ enableRobotsTXT = true
 
 [params]
   dateFormat = "January 2, 2006"
-  # Home list only, page 2+: reduce near-duplicate SERP snippets vs page 1. Per-page `metaRobots` in front matter wins. Set to "" to keep paginated home indexable like page 1.
-  homePaginationMetaRobots = "noindex,follow"
+  # Paginated list pages (home, year/month archives, tags, etc.), page 2+: noindex plus unique meta descriptions. Per-page `metaRobots` in front matter wins. Set to "" to keep page 2+ indexable.
+  listPaginationMetaRobots = "noindex,follow"
   description = "Senior .NET & Azure Engineer specialising in scalable cloud systems, DevOps, and modern architecture. 18+ years delivering production systems across development, infrastructure, and cloud."
   keywords = ".NET, C#, Azure, DevOps, Software Development, Cloud Architecture, CI/CD, Kubernetes, Docker"
   images = ["/images/1922276.jpg"]

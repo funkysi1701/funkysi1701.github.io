@@ -97,6 +97,41 @@ steps:
       --wait --timeout 15m --atomic
   condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(eq(variables['Build.SourceBranchName'], 'develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   displayName: 'helm upgrade blog (namespace develop)'
+- bash: |
+    set -euo pipefail
+    SITEMAP_URL="https://blog-dev.funkysi1701.com/sitemap.xml"
+    READY=0
+    for i in $(seq 1 36); do
+      HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$SITEMAP_URL" || echo "000")
+      if [ "$HTTP_CODE" = "200" ]; then
+        echo "blog-dev sitemap ready (HTTP 200) on attempt $i"
+        READY=1
+        break
+      fi
+      echo "Attempt $i: HTTP $HTTP_CODE; retrying in 10s..."
+      sleep 10
+    done
+    if [ "$READY" -ne 1 ]; then
+      echo "##vso[task.logissue type=warning]blog-dev sitemap did not return HTTP 200 within ~6 minutes; running Playwright anyway."
+    fi
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(eq(variables['Build.SourceBranchName'], 'develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
+  displayName: 'Wait for blog-dev after deploy'
+- task: CmdLine@2
+  displayName: 'Playwright E2E (blog-dev)'
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(eq(variables['Build.SourceBranchName'], 'develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
+  env:
+    CODECOV_TOKEN: $(CODECOV_TOKEN)
+  inputs:
+    script: |
+      set -euo pipefail
+      docker run --rm \
+        -v "$(Build.SourcesDirectory):/work" \
+        -w /work \
+        -e BASE_URL=https://blog-dev.funkysi1701.com \
+        -e CI=true \
+        -e CODECOV_TOKEN \
+        mcr.microsoft.com/playwright:v1.59.1-jammy \
+        bash -lc 'npm ci && npx playwright install chromium && npx playwright test && node scripts/generate-page-coverage.js && if [ -n "${CODECOV_TOKEN:-}" ]; then curl -sSfL https://uploader.codecov.io/latest/linux/codecov -o codecov && chmod +x codecov && ./codecov -t "$CODECOV_TOKEN" -f ./coverage/page-coverage.lcov -F page-coverage -n page-coverage || true; fi'
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace test \
       --set image.tag=$(Build.BuildNumber)-develop \

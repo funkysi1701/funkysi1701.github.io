@@ -1,9 +1,9 @@
 {{- $content := default $.Site.Params.metaRobots .Params.metaRobots -}}
-{{- $isPaginatedHome := and .IsHome (strings.Contains .RelPermalink "/page/") -}}
-{{- if and (not (isset .Params "metarobots")) $isPaginatedHome -}}
-  {{- $hr := default "" $.Site.Params.homePaginationMetaRobots -}}
-  {{- if ne $hr "" -}}
-    {{- $content = $hr -}}
+{{- $isPaginatedListPage := strings.Contains .RelPermalink "/page/" -}}
+{{- if and (not (isset .Params "metarobots")) $isPaginatedListPage -}}
+  {{- $lpr := default $.Site.Params.homePaginationMetaRobots $.Site.Params.listPaginationMetaRobots -}}
+  {{- if ne $lpr "" -}}
+    {{- $content = $lpr -}}
   {{- end -}}
 {{- end -}}
 {{- if and (not (and (isset .Params "metarobots") (not .Params.metaRobots))) $content -}}
