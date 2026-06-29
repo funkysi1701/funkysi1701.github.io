@@ -139,17 +139,29 @@ steps:
   inputs:
     script: |
       set -euo pipefail
+      # Root-owned node_modules from a prior Docker run breaks npm ci as the agent user.
+      sudo rm -rf "$(Build.SourcesDirectory)/node_modules" "$(Build.SourcesDirectory)/coverage" "$(Build.SourcesDirectory)/codecov" 2>/dev/null \
+        || rm -rf "$(Build.SourcesDirectory)/node_modules" "$(Build.SourcesDirectory)/coverage" "$(Build.SourcesDirectory)/codecov" 2>/dev/null \
+        || true
       docker run --rm \
-        --user "$(id -u):$(id -g)" \
-        -e HOME=/tmp \
         -v "$(Build.SourcesDirectory):/work" \
         -w /work \
         -e BASE_URL=https://blog-dev.funkysi1701.com \
         -e CI=true \
         -e CODECOV_TOKEN \
         mcr.microsoft.com/playwright:v1.59.1-jammy \
-        bash -lc 'npm ci && npx playwright install chromium && npx playwright test && node scripts/generate-page-coverage.js && if [ -n "${CODECOV_TOKEN:-}" ]; then curl -sSfL https://uploader.codecov.io/latest/linux/codecov -o codecov && chmod +x codecov && ./codecov -t "$CODECOV_TOKEN" -f ./coverage/page-coverage.lcov -F page-coverage -n page-coverage || true; fi'
-      rm -rf node_modules coverage codecov 2>/dev/null || true
+        bash -lc 'set -euo pipefail
+          rm -rf node_modules coverage codecov
+          npm ci
+          npx playwright install chromium
+          npx playwright test
+          node scripts/generate-page-coverage.js
+          if [ -n "${CODECOV_TOKEN:-}" ]; then
+            curl -sSfL https://uploader.codecov.io/latest/linux/codecov -o codecov
+            chmod +x codecov
+            ./codecov -t "$CODECOV_TOKEN" -f ./coverage/page-coverage.lcov -F page-coverage -n page-coverage || true
+          fi
+          rm -rf node_modules coverage codecov'
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace test \
       --set image.tag=$(Build.BuildNumber)-develop \
