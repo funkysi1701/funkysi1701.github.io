@@ -1,0 +1,13 @@
+{{- /* Home, section, and taxonomy list pages: site tagline plus optional pagination suffix. */ -}}
+{{- $page := . -}}
+{{- $title := $page.Title -}}
+{{- if and $page.IsHome (eq $title "") -}}
+  {{- $title = $page.Site.Title -}}
+{{- end -}}
+{{- $pageDesc := printf "%s - %s" $title ($page.Site.Params.description | default "") | plainify | htmlUnescape -}}
+{{- with $page.Paginator -}}
+  {{- if gt .PageNumber 1 -}}
+    {{- $pageDesc = printf "%s %s" $pageDesc (i18n "pagination_title" .) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $pageDesc -}}

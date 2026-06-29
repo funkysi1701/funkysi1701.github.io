@@ -24,7 +24,7 @@
     {{- $pageDesc = .Title | plainify | htmlUnescape -}}
   {{- end -}}
 {{- else -}}
-  {{- $pageDesc = printf "%s - %s" .Title ($.Site.Params.description | default "") | plainify | htmlUnescape -}}
+  {{- $pageDesc = partial "head/list-page-description" . -}}
 {{- end -}}
 {{- with $keywords -}}
 <meta name="keywords" content="{{ . }}" />
