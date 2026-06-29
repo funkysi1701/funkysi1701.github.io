@@ -31,6 +31,10 @@ schedules:
 pool: Docker
 
 steps:
+- checkout: self
+  # Playwright Docker steps below can leave root-owned node_modules/coverage on the self-hosted agent.
+  clean: false
+
 - task: CmdLine@2
   displayName: "Install AWS CLI"
   condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
@@ -125,6 +129,8 @@ steps:
     script: |
       set -euo pipefail
       docker run --rm \
+        --user "$(id -u):$(id -g)" \
+        -e HOME=/tmp \
         -v "$(Build.SourcesDirectory):/work" \
         -w /work \
         -e BASE_URL=https://blog-dev.funkysi1701.com \
@@ -132,6 +138,7 @@ steps:
         -e CODECOV_TOKEN \
         mcr.microsoft.com/playwright:v1.59.1-jammy \
         bash -lc 'npm ci && npx playwright install chromium && npx playwright test && node scripts/generate-page-coverage.js && if [ -n "${CODECOV_TOKEN:-}" ]; then curl -sSfL https://uploader.codecov.io/latest/linux/codecov -o codecov && chmod +x codecov && ./codecov -t "$CODECOV_TOKEN" -f ./coverage/page-coverage.lcov -F page-coverage -n page-coverage || true; fi'
+      rm -rf node_modules coverage codecov 2>/dev/null || true
 - script: |
     helm upgrade --install blog ./Helm/blog --namespace test \
       --set image.tag=$(Build.BuildNumber)-develop \

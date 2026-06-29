@@ -43,6 +43,12 @@ jobs:
     timeoutInMinutes: 60
     steps:
       - checkout: self
+        # Prior container runs leave root-owned node_modules/coverage; git clean -ffdx then fails on the self-hosted agent.
+        clean: false
+
+      - bash: |
+          rm -rf node_modules coverage test-results playwright-report codecov
+        displayName: Remove prior build artefacts
 
       - task: Cache@2
         displayName: Cache npm
@@ -140,3 +146,8 @@ jobs:
         inputs:
           targetPath: coverage
           artifact: coverage-report
+
+      - bash: |
+          rm -rf node_modules coverage test-results playwright-report codecov
+        displayName: Remove build artefacts (workspace git clean)
+        condition: always()
