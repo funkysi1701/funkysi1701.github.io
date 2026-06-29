@@ -1,5 +1,6 @@
 import { test, expect } from './fixtures';
 import { benignConsoleErrorSubstrings } from './console-errors';
+import { SITE_TITLE_PATTERN } from './site-title';
 
 test('navigate to www.funkysi1701.com, click top blog posts, check console for errors', async ({ page }) => {
   test.setTimeout(180_000);
@@ -12,13 +13,14 @@ test('navigate to www.funkysi1701.com, click top blog posts, check console for e
     }
   });
 
-  // Step 1: Navigate to the homepage (staging uses a different title in Hugo config)
+  // Step 1: Navigate to the homepage
   await page.goto('/');
-  await expect(page).toHaveTitle(/Funky Si.*Blog|Development Version of Funky Si/i);
+  await expect(page).toHaveTitle(SITE_TITLE_PATTERN);
 
   // Step 2: Use explicit URLs for the top blog posts based on MCP output
   const blogPostUrls = [
     '/posts/start-here/',
+    '/posts/2026/dotnet-5-to-10-features/',
     '/posts/2026/ndc-london-2026/',
     '/posts/2026/2025-in-review-and-2026-goals/',
 

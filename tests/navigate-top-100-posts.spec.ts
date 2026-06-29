@@ -1,9 +1,10 @@
 import { test, expect } from './fixtures';
+import { SITE_TITLE_PATTERN } from './site-title';
 
 test('navigate to www.funkysi1701.com, check top 100 blog posts for broken links and images', async ({ page }) => {
   // Step 1: Navigate to the homepage
   await page.goto('/');
-  await expect(page).toHaveTitle(/Funky Si's Blog/);
+  await expect(page).toHaveTitle(SITE_TITLE_PATTERN);
 
   // Step 2: Find top 100 blog post URLs (assume links under /posts/)
   const blogPostUrls = await page.$$eval('a[href^="/posts/"]', (as) => {
