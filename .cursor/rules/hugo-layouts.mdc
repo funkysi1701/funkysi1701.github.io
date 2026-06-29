@@ -22,6 +22,8 @@ Or Docker Compose / commands in `README.md` (Hugo version from `.env`).
 ## SEO partials
 
 - Document `<title>`: `layouts/partials/head/title.html` (home falls back to `Site.Title`).
+- List/archive meta descriptions: `layouts/partials/head/list-page-description.html` (pagination suffix on page 2+).
+- Paginated list `noindex`: `layouts/partials/head/meta/robots.html` + `params.listPaginationMetaRobots` in `config/_default/config.toml`.
 - Open Graph, Twitter, JSON-LD: follow existing patterns in `layouts/partials/head.html` and related partials.
 - New external hosts, share imagery, or scripts must stay coherent with CSP, response headers, and `staticwebapp.config.json`.
 
