@@ -40,14 +40,12 @@ To celebrate here are some of my highlights.
 
 4) [Building something with a Raspberry Pi](https://www.funkysi1701.com/posts/2015/building-something-with-a-raspberry-pi/) I blog about getting a Raspberry Pi to play around with
 
-5) [Improving your Blog](https://www.funkysi1701.com/posts/2015/improving-your-blog/) John Sonmez tries to help my blog improve
+5) [Javascript progress](https://www.funkysi1701.com/posts/2015/javascript-progress/) About learning javascript
 
-6) [Javascript progress](https://www.funkysi1701.com/posts/2015/javascript-progress/) About learning javascript
+6) [The Raspberry Pi Adventure Starts](https://www.funkysi1701.com/posts/2015/the-raspberry-pi-adventure-starts/) I get a Raspberry Pi and start building something with it
 
-7) [The Raspberry Pi Adventure Starts](https://www.funkysi1701.com/posts/2015/the-raspberry-pi-adventure-starts/) I get a Raspberry Pi and start building something with it
+7) [Weakest Database Design](https://www.funkysi1701.com/posts/2015/weakest-database-design/) I talk about database design
 
-8) [Weakest Database Design](https://www.funkysi1701.com/posts/2015/weakest-database-design/) I talk about database design
+8) [Trying Windows 10](https://www.funkysi1701.com/posts/2015/trying-windows-10/) I talk about my experience with the latest windows operating system
 
-9) [Trying Windows 10](https://www.funkysi1701.com/posts/2015/trying-windows-10/) I talk about my experience with the latest windows operating system
-
-10) [Laziness](https://www.funkysi1701.com/posts/2015/laziness/) I talk about the extreme ways IT Professionals go to be more lazy
+9) [Laziness](https://www.funkysi1701.com/posts/2015/laziness/) I talk about the extreme ways IT Professionals go to be more lazy
