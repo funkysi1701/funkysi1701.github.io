@@ -1,10 +1,10 @@
 +++
-title = "Podcasts"
+title = "My Podcasts"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = ""
 keywords = ["", ""]
-description = "Podcasts"
+description = "My Podcasts"
 comment = false
 showFullContent = false
 featured = true
@@ -16,6 +16,8 @@ aliases = [
 +++
 
 A list of podcasts I have recorded, mostly about Star Trek.
+
+[TrekRanks #233](https://trekranks.libsyn.com/trekranks-233-top-5-mediocre-episodes-ii)
 
 [TrekRanks #174](/posts/2024/trekranks/)
 
