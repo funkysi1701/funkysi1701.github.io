@@ -107,6 +107,8 @@ I regularly write about topics including:
 - Observability, monitoring, and logging
 - Professional development and career growth
 
+New here? [Start with these recommended posts](/start-here/).
+
 ## Connect With Me
 
 Want to collaborate, chat about tech, or discuss DevOps and cloud architecture? Connect with me on:
