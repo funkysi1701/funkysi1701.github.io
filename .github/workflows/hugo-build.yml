@@ -1,0 +1,31 @@
+name: Hugo build
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          submodules: true
+
+      - name: Load Hugo version
+        run: |
+          echo "HUGO_VERSION=$(grep HUGO_VERSION .env | cut -d '=' -f2)" >> $GITHUB_ENV
+
+      - name: Build Hugo site (production)
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/src \
+            -w /src \
+            -u $(id -u):$(id -g) \
+            floryn90/hugo:${HUGO_VERSION}-ext-alpine \
+            --minify --environment production --noBuildLock

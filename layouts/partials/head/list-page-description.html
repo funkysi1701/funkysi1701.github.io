@@ -13,13 +13,10 @@
     {{- $monthLabel := $page.Title -}}
     {{- $year := "" -}}
     {{- if findRE `^\d{4}-\d{2}$` $page.Title -}}
-      {{- $parts := split $page.Title "-" -}}
-      {{- $year = index $parts 0 -}}
-      {{- $monthNum := int (index $parts 1) -}}
-      {{- $monthLabel = time.Format "January" (time (printf "%s-%02d-01" $year $monthNum)) -}}
+      {{- $year = index (split $page.Title "-") 0 -}}
+      {{- $monthLabel = time.Format "January" (time (printf "%s-01" $page.Title)) -}}
     {{- else if findRE `^\d{1,2}$` $page.Title -}}
-      {{- $monthNum := int $page.Title -}}
-      {{- $monthLabel = time.Format "January" (time (printf "2020-%02d-01" $monthNum)) -}}
+      {{- $monthLabel = time.Format "January" (time (printf "2020-%s-01" $page.Title)) -}}
       {{- with findRE `\d{4}` $page.RelPermalink -}}
         {{- $year = index . 0 -}}
       {{- end -}}

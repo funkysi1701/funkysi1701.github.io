@@ -188,7 +188,7 @@ npm test
 
 **Meta validation (post front matter):** After editing `title` or `description` in `content/posts/**/*.md`, run **`npm run check:meta`** (wraps the Python scripts used by GitHub Actions). Subcommands: **`check:meta:titles`**, **`check:meta:descriptions`**. To preview automated description rewrites: **`npm run check:meta:fix`** (dry-run only). Apply fixes with `python scripts/normalize_meta_descriptions.py --root .`. Requires Python 3.11+ on `PATH`.
 
-**GitHub Actions:** Workflows under **`.github/workflows/`** include **meta title** and **meta description** length validation for blog posts (`scripts/check_meta_titles.py`, `scripts/check_meta_descriptions.py`), plus other jobs (Azure SWA deploy, broken link schedule, develop→main auto-PR, etc.). Playwright is **not** currently duplicated there; treat **Azure Pipelines** as the primary full E2E gate unless a GitHub workflow is added later.
+**GitHub Actions:** Workflows under **`.github/workflows/`** include a **Hugo production build** on pull requests (`hugo-build.yml` — same Docker image/flags as Azure SWA deploy), **meta title** and **meta description** length validation for blog posts (`scripts/check_meta_titles.py`, `scripts/check_meta_descriptions.py`), plus other jobs (Azure SWA deploy, broken link schedule, develop→main auto-PR, etc.). Playwright is **not** currently duplicated there; treat **Azure Pipelines** as the primary full E2E gate unless a GitHub workflow is added later.
 
 **Specs:** High-level scenarios are documented in **`specs/`** (see **`specs/funkysi1701-test-plan.md`**). Individual test files often start with a `// spec: specs/...` pointer for traceability.
 
