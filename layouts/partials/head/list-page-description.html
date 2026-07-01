@@ -1,27 +1,37 @@
-{{- /* Concise meta descriptions for list/archive pages (target ≤160 characters). */ -}}
+{{- /* Meta descriptions for list/archive pages (target 50–160 characters). */ -}}
 {{- $page := . -}}
 {{- $siteTitle := $page.Site.Title -}}
+{{- $archiveSuffix := "Software development, cloud, and DevOps articles." -}}
 {{- $pageDesc := "" -}}
 {{- if $page.IsHome -}}
   {{- $pageDesc = $page.Site.Params.description | plainify | htmlUnescape -}}
 {{- else if eq $page.Kind "term" -}}
   {{- $tax := $page.Data.Singular -}}
   {{- if eq $tax "year" -}}
-    {{- $pageDesc = printf "Blog posts published in %s on %s." $page.Title $siteTitle -}}
+    {{- $pageDesc = printf "Browse all blog posts published in %s on %s. %s" $page.Title $siteTitle $archiveSuffix -}}
   {{- else if eq $tax "month" -}}
     {{- $monthLabel := $page.Title -}}
-    {{- if findRE `^\d{1,2}$` $page.Title -}}
+    {{- $year := "" -}}
+    {{- if findRE `^\d{4}-\d{2}$` $page.Title -}}
+      {{- $parts := split $page.Title "-" -}}
+      {{- $year = index $parts 0 -}}
+      {{- $monthNum := int (index $parts 1) -}}
+      {{- $monthLabel = time.Format "January" (time (printf "%s-%02d-01" $year $monthNum)) -}}
+    {{- else if findRE `^\d{1,2}$` $page.Title -}}
       {{- $monthNum := int $page.Title -}}
       {{- $monthLabel = time.Format "January" (time (printf "2020-%02d-01" $monthNum)) -}}
-    {{- end -}}
-    {{- $year := "" -}}
-    {{- with findRE `\d{4}` $page.RelPermalink -}}
-      {{- $year = index . 0 -}}
+      {{- with findRE `\d{4}` $page.RelPermalink -}}
+        {{- $year = index . 0 -}}
+      {{- end -}}
+    {{- else -}}
+      {{- with findRE `\d{4}` $page.RelPermalink -}}
+        {{- $year = index . 0 -}}
+      {{- end -}}
     {{- end -}}
     {{- if ne $year "" -}}
-      {{- $pageDesc = printf "Blog posts from %s %s on %s." $monthLabel $year $siteTitle -}}
+      {{- $pageDesc = printf "Browse blog posts from %s %s on %s. %s" $monthLabel $year $siteTitle $archiveSuffix -}}
     {{- else -}}
-      {{- $pageDesc = printf "Blog posts from %s on %s." $monthLabel $siteTitle -}}
+      {{- $pageDesc = printf "Browse blog posts from %s on %s. %s" $monthLabel $siteTitle $archiveSuffix -}}
     {{- end -}}
   {{- else if eq $tax "tag" -}}
     {{- $pageDesc = printf "Posts tagged “%s” on %s." $page.Title $siteTitle -}}
