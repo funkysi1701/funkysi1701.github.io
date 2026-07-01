@@ -112,6 +112,18 @@ steps:
       --wait --timeout 15m --atomic
   condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(eq(variables['Build.SourceBranchName'], 'develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   displayName: 'helm upgrade blog (namespace develop)'
+- script: |
+    helm upgrade --install blog ./Helm/blog --namespace test \
+      --set image.tag=$(Build.BuildNumber)-develop \
+      --wait --timeout 15m --atomic
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), eq(variables['Build.SourceBranchName'], 'develop'))
+  displayName: 'helm upgrade blog (namespace test)'
+- script: |
+    helm upgrade --install blog ./Helm/blog --namespace main \
+      --set image.tag=$(Build.BuildNumber)-main \
+      --wait --timeout 15m --atomic
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), eq(variables['Build.SourceBranchName'], 'main'))
+  displayName: 'helm upgrade blog (namespace main / prod)'  
 - bash: |
     set -euo pipefail
     SITEMAP_URL="https://blog-dev.funkysi1701.com/sitemap.xml"
@@ -131,6 +143,54 @@ steps:
     fi
   condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(eq(variables['Build.SourceBranchName'], 'develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
   displayName: 'Wait for blog-dev after deploy'
+- task: PowerShell@2
+  displayName: 'Notify GitHub (repository_dispatch: azure-pipeline-complete)'
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
+  env:
+    GITHUB_TOKEN: $(GITHUB_TOKEN)
+  inputs:
+    targetType: inline
+    script: |
+      # blog-dev is not reachable from GitHub-hosted runners (curl HTTP 000 there).
+      # Wait here on the pipeline agent before dispatching the SEO workflow.
+      $sitemapUrl = "https://blog-dev.funkysi1701.com/sitemap.xml"
+      $ready = $false
+      for ($i = 1; $i -le 36; $i++) {
+        try {
+          $resp = Invoke-WebRequest -Uri $sitemapUrl -Method Get -UseBasicParsing -TimeoutSec 30
+          if ($resp.StatusCode -eq 200) {
+            Write-Host "blog-dev sitemap ready (HTTP 200) on attempt $i"
+            $ready = $true
+            break
+          }
+          Write-Host "Attempt ${i}: HTTP $($resp.StatusCode); retrying in 10s..."
+        } catch {
+          Write-Host "Attempt ${i}: $($_.Exception.Message); retrying in 10s..."
+        }
+        Start-Sleep -Seconds 10
+      }
+      if (-not $ready) {
+        Write-Host "##vso[task.logissue type=warning]blog-dev sitemap did not return HTTP 200 within ~6 minutes; dispatching SEO Check anyway."
+      }
+
+      $body = @{
+        event_type = "azure-pipeline-complete"
+        client_payload = @{
+          commit_sha = "$(Build.SourceVersion)"
+          ref_name = "$(Build.SourceBranch)"
+        }
+      } | ConvertTo-Json -Depth 5
+
+      Invoke-RestMethod `
+        -Uri "https://api.github.com/repos/funkysi1701/funkysi1701.github.io/dispatches" `
+        -Method Post `
+        -ContentType "application/json" `
+        -Headers @{
+          Authorization = "Bearer $env:GITHUB_TOKEN"
+          Accept = "application/vnd.github+json"
+          "X-GitHub-Api-Version" = "2022-11-28"
+        } `
+        -Body $body  
 - task: CmdLine@2
   displayName: 'Playwright E2E (blog-dev)'
   condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(eq(variables['Build.SourceBranchName'], 'develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
@@ -162,18 +222,6 @@ steps:
             ./codecov -t "$CODECOV_TOKEN" -f ./coverage/page-coverage.lcov -F page-coverage -n page-coverage || true
           fi
           rm -rf node_modules coverage codecov'
-- script: |
-    helm upgrade --install blog ./Helm/blog --namespace test \
-      --set image.tag=$(Build.BuildNumber)-develop \
-      --wait --timeout 15m --atomic
-  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), eq(variables['Build.SourceBranchName'], 'develop'))
-  displayName: 'helm upgrade blog (namespace test)'
-- script: |
-    helm upgrade --install blog ./Helm/blog --namespace main \
-      --set image.tag=$(Build.BuildNumber)-main \
-      --wait --timeout 15m --atomic
-  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), eq(variables['Build.SourceBranchName'], 'main'))
-  displayName: 'helm upgrade blog (namespace main / prod)'
 
 - task: CmdLine@2
   displayName: 'Pa11y Accessibility Check (nightly only)'
@@ -276,54 +324,7 @@ steps:
         -e SITE_URL="$SITE_URL" \
         node:20-alpine \
         node /app/scripts/create-accessibility-issues.js
-- task: PowerShell@2
-  displayName: 'Notify GitHub (repository_dispatch: azure-pipeline-complete)'
-  condition: and(succeeded(), ne(variables['Build.Reason'], 'Schedule'), or(in(variables['Build.SourceBranch'], 'refs/heads/main', 'refs/heads/develop'), startsWith(variables['Build.SourceBranch'], 'refs/heads/feature/')))
-  env:
-    GITHUB_TOKEN: $(GITHUB_TOKEN)
-  inputs:
-    targetType: inline
-    script: |
-      # blog-dev is not reachable from GitHub-hosted runners (curl HTTP 000 there).
-      # Wait here on the pipeline agent before dispatching the SEO workflow.
-      $sitemapUrl = "https://blog-dev.funkysi1701.com/sitemap.xml"
-      $ready = $false
-      for ($i = 1; $i -le 36; $i++) {
-        try {
-          $resp = Invoke-WebRequest -Uri $sitemapUrl -Method Get -UseBasicParsing -TimeoutSec 30
-          if ($resp.StatusCode -eq 200) {
-            Write-Host "blog-dev sitemap ready (HTTP 200) on attempt $i"
-            $ready = $true
-            break
-          }
-          Write-Host "Attempt ${i}: HTTP $($resp.StatusCode); retrying in 10s..."
-        } catch {
-          Write-Host "Attempt ${i}: $($_.Exception.Message); retrying in 10s..."
-        }
-        Start-Sleep -Seconds 10
-      }
-      if (-not $ready) {
-        Write-Host "##vso[task.logissue type=warning]blog-dev sitemap did not return HTTP 200 within ~6 minutes; dispatching SEO Check anyway."
-      }
 
-      $body = @{
-        event_type = "azure-pipeline-complete"
-        client_payload = @{
-          commit_sha = "$(Build.SourceVersion)"
-          ref_name = "$(Build.SourceBranch)"
-        }
-      } | ConvertTo-Json -Depth 5
-
-      Invoke-RestMethod `
-        -Uri "https://api.github.com/repos/funkysi1701/funkysi1701.github.io/dispatches" `
-        -Method Post `
-        -ContentType "application/json" `
-        -Headers @{
-          Authorization = "Bearer $env:GITHUB_TOKEN"
-          Accept = "application/vnd.github+json"
-          "X-GitHub-Api-Version" = "2022-11-28"
-        } `
-        -Body $body
 - task: CmdLine@2
   displayName: 'Fail build if site was unreachable during Pa11y'
   condition: and(succeededOrFailed(), eq(variables['Build.Reason'], 'Schedule'))
