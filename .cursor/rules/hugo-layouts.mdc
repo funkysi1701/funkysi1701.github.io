@@ -17,7 +17,7 @@ hugo server -D          # iteration
 hugo --minify --environment production   # production parity
 ```
 
-Or Docker Compose / commands in `README.md` (Hugo version from `.env`).
+Or Docker Compose / commands in `README.md` (Hugo version from `.env`). Pull requests also run the production Docker build via `.github/workflows/hugo-build.yml`.
 
 ## SEO partials
 
