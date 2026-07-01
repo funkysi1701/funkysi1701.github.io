@@ -31,18 +31,18 @@
       {{- $pageDesc = printf "Browse blog posts from %s on %s. %s" $monthLabel $siteTitle $archiveSuffix -}}
     {{- end -}}
   {{- else if eq $tax "tag" -}}
-    {{- $pageDesc = printf "Posts tagged “%s” on %s." $page.Title $siteTitle -}}
+    {{- $pageDesc = printf "Browse posts tagged “%s” on %s. %s" $page.Title $siteTitle $archiveSuffix -}}
   {{- else if eq $tax "category" -}}
-    {{- $pageDesc = printf "Posts in category %s on %s." $page.Title $siteTitle -}}
+    {{- $pageDesc = printf "Browse posts in category %s on %s. %s" $page.Title $siteTitle $archiveSuffix -}}
   {{- else -}}
-    {{- $pageDesc = printf "%s on %s." $page.Title $siteTitle -}}
+    {{- $pageDesc = printf "Browse %s on %s. %s" $page.Title $siteTitle $archiveSuffix -}}
   {{- end -}}
 {{- else if eq $page.Kind "taxonomy" -}}
-  {{- $pageDesc = printf "Browse all %s on %s." (i18n $page.Data.Plural) $siteTitle -}}
+  {{- $pageDesc = printf "Browse all %s on %s. %s" (i18n $page.Data.Plural) $siteTitle $archiveSuffix -}}
 {{- else if eq $page.Kind "section" -}}
-  {{- $pageDesc = printf "Posts in %s on %s." $page.Title $siteTitle -}}
+  {{- $pageDesc = printf "Browse all posts in %s on %s. %s" $page.Title $siteTitle $archiveSuffix -}}
 {{- else -}}
-  {{- $pageDesc = printf "%s on %s." $page.Title $siteTitle -}}
+  {{- $pageDesc = printf "Browse %s on %s. %s" $page.Title $siteTitle $archiveSuffix -}}
 {{- end -}}
 {{- $supportsPagination := or $page.IsHome (eq $page.Kind "taxonomy") (eq $page.Kind "term") (eq $page.Kind "section") -}}
 {{- if $supportsPagination -}}
