@@ -16,8 +16,7 @@ Prefer matching existing patterns (Hugo TOML front matter in `+++` fences, site 
 - **Build output:** `public/` is generated — not source of truth. Production builds use Dockerized Hugo with `--minify --environment production` (`.github/workflows/azure-static-web-apps-victorious-pebble-0b8f90e03.yml`).
 - **Parkrun page:** Generated block in `content/parkrun.md` — see `parkrun-generated.mdc`; do not hand-edit between markers.
 - **Git submodules:** CI checks out with `submodules: true`. Keep submodule config in sync if used.
-- **Azure Static Web Apps:** `staticwebapp.config.json` is copied into `public/` on deploy; keep routing and headers aligned with the built site.
-- **Kubernetes / Helm:** Image build, ECR push, and deploys in `azure-pipelines.yml` (`Helm/blog/`). Consider **develop**, **test**, and **main** namespaces and both SWA and cluster hosting when changing infra or env URLs.
+- **Azure Static Web Apps:** `staticwebapp.config.json` is copied into `public/` on every SWA deploy; keep routing and headers aligned with the built site.
 
 ## Security and configuration
 
@@ -28,15 +27,15 @@ Prefer matching existing patterns (Hugo TOML front matter in `+++` fences, site 
 
 - **Hugo:** `hugo server -D` from repo root, or Docker Compose (`docker-compose.yml`) / commands in `README.md`. Hugo version from `HUGO_VERSION` in `.env`.
 - **Images:** Static binaries under `static/` (site root). Stable paths for external links.
-- **Node:** After changing `package.json` or `package-lock.json`, run `npm ci` before `npm test` (matches Azure DevOps).
+- **Node:** After changing `package.json` or `package-lock.json`, run `npm ci` before `npm test` (matches GitHub Actions).
 
 ## Branches and deploy
 
 | Branch | Target |
 |--------|--------|
-| **`main`** | Production — GHA → Azure SWA; Azure Pipelines → ECR → Helm **`main`** |
-| **`develop`** | Non-prod — Helm **`develop`** and **`test`** (blog-dev / blog-test) |
-| **`feature/*`** | Build and Helm to **`develop`** only |
+| **`main`** | Production — GHA → Azure SWA (`www.funkysi1701.com`) |
+| **`develop`** | Non-prod — GHA → SWA dev + test (`blog-dev`, `blog-test`) |
+| **`feature/*`** | GHA → SWA dev only |
 
 No **`dev`** branch — use **`develop`**. `.github/workflows/auto-pr.yml` can open or refresh **develop → main**.
 

@@ -1,0 +1,78 @@
+name: Reusable Hugo SWA deploy
+
+on:
+  workflow_call:
+    inputs:
+      hugo_environment:
+        description: Hugo --environment value (production, development, staging)
+        required: true
+        type: string
+      github_environment:
+        description: GitHub Environment name (optional deployment gate)
+        required: false
+        type: string
+        default: ""
+      wait_sitemap_url:
+        description: Sitemap URL to poll after deploy (optional)
+        required: false
+        type: string
+        default: ""
+    secrets:
+      azure_static_web_apps_api_token:
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.github_environment != '' && inputs.github_environment || null }}
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          submodules: true
+
+      - name: Load Hugo version
+        run: |
+          echo "HUGO_VERSION=$(grep HUGO_VERSION .env | cut -d '=' -f2)" >> "$GITHUB_ENV"
+
+      - name: Build Hugo site
+        run: |
+          docker run --rm \
+            -v "${{ github.workspace }}:/src" \
+            -w /src \
+            -u "$(id -u):$(id -g)" \
+            "floryn90/hugo:${HUGO_VERSION}-ext-alpine" \
+            --minify --environment "${{ inputs.hugo_environment }}" --noBuildLock
+
+      - name: Copy staticwebapp.config.json to public
+        run: cp staticwebapp.config.json public/staticwebapp.config.json
+
+      - name: Deploy to Azure Static Web Apps
+        uses: Azure/static-web-apps-deploy@1a947af9992250f3bc2e68ad0754c0b0c11566c9 # v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.azure_static_web_apps_api_token }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: upload
+          app_location: public
+          api_location: ""
+          output_location: ""
+          skip_app_build: true
+
+      - name: Wait for sitemap after deploy
+        if: inputs.wait_sitemap_url != ''
+        run: |
+          set -euo pipefail
+          SITEMAP_URL="${{ inputs.wait_sitemap_url }}"
+          READY=0
+          for i in $(seq 1 36); do
+            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$SITEMAP_URL" || echo "000")
+            if [ "$HTTP_CODE" = "200" ]; then
+              echo "Sitemap ready (HTTP 200) on attempt $i: $SITEMAP_URL"
+              READY=1
+              break
+            fi
+            echo "Attempt $i: HTTP $HTTP_CODE; retrying in 10s..."
+            sleep 10
+          done
+          if [ "$READY" -ne 1 ]; then
+            echo "::warning::Sitemap did not return HTTP 200 within ~6 minutes: $SITEMAP_URL"
+          fi

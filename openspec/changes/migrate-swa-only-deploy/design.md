@@ -181,6 +181,7 @@ Revert DNS to K8s ingress and re-run Helm upgrade with last known good image tag
 | Dev/test SWA resources | **Create new** — 2022 apps no longer exist |
 | AKS cluster | **Keep cluster** — used for other workloads; remove blog Helm releases only |
 | `blog.funkysi1701.com` | **Abandon** — not needed; no redirect; `www` is canonical |
+| Pre-cutover DNS (`blog-dev`, `blog-test`) | **192.168.2.7** (K8s ingress) — repoint to SWA in phase 5 |
 
 ## Open Questions
 

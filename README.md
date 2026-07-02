@@ -52,7 +52,7 @@ npm test
 
 By default, `playwright.config.ts` uses **`BASE_URL`** of `https://www.funkysi1701.com` when unset. For local or staging targets, set the variable (PowerShell: `$env:BASE_URL="http://localhost:1313"; npm test`).
 
-**Azure DevOps** runs Playwright in two places: **`azure-pipelines.yml`** runs E2E against **`https://blog-dev.funkysi1701.com`** after Helm deploy on pushes to **`develop`** and **`feature/*`**; **`azure-pipelines-playwright.yml`** runs on pushes to **`main`** and PRs into **`main`** (PRs into **`develop`** are skipped — blog-dev is not updated until merge). Production `BASE_URL` is `https://www.funkysi1701.com`. After tests, **`scripts/generate-page-coverage.js`** can feed **Codecov** when `CODECOV_TOKEN` is configured. **`codecov.yml`** marks **page coverage** as **informational**.
+**GitHub Actions** runs Playwright E2E: **`swa-deploy-nonprod.yml`** deploys to blog-dev (and blog-test on **`develop`**) then tests **`https://blog-dev.funkysi1701.com`**; **`playwright.yml`** runs on **`main`** pushes and PRs into **`main`** against production. After tests, **`scripts/generate-page-coverage.js`** can feed **Codecov** when `CODECOV_TOKEN` is configured. **`codecov.yml`** marks **page coverage** as **informational**.
 
 **GitHub Actions** (`.github/workflows/`) runs a **Hugo production build** on pull requests (`hugo-build.yml`) and checks such as **meta title** (50–60 characters) and **meta description** (110–160 characters) for `content/posts/**/*.md`. Run the same checks locally after editing post front matter:
 
@@ -81,11 +81,13 @@ Optional environment variables: `PARKRUN_ID` (default `11453050`), `PARKRUN_BASE
 
 ## 🚢 Deployment and branches
 
-- **`main`:** Production ([funkysi1701.com](https://www.funkysi1701.com?utm_source=gh)). GitHub Actions builds Hugo and deploys **Azure Static Web Apps** (`.github/workflows/azure-static-web-apps-victorious-pebble-0b8f90e03.yml`). **Azure Pipelines** also builds the Docker image, pushes to **ECR**, and deploys with **Helm** to the Kubernetes **`main`** namespace (`azure-pipelines.yml`).
-- **`develop`:** Integration branch. Azure Pipelines builds and deploys to the **`develop`** and **`test`** namespaces (e.g. blog-dev / blog-test). **`.github/workflows/auto-pr.yml`** can open or refresh a **develop → main** pull request when `develop` is pushed.
-- **`feature/*`:** Feature branches; Azure Pipelines builds and targets the **`develop`** namespace (not `test`), per pipeline conditions.
+- **`main`:** Production ([funkysi1701.com](https://www.funkysi1701.com?utm_source=gh)). GitHub Actions builds Hugo and deploys **Azure Static Web Apps** (`.github/workflows/azure-static-web-apps-victorious-pebble-0b8f90e03.yml`).
+- **`develop`:** Integration branch. GitHub Actions deploys to **SWA dev and test** (`swa-deploy-nonprod.yml` → blog-dev / blog-test). **`.github/workflows/auto-pr.yml`** can open or refresh a **develop → main** pull request when `develop` is pushed.
+- **`feature/*`:** Feature branches; GitHub Actions deploys to **SWA dev** only (`swa-deploy-nonprod.yml`).
 
 There is no separate branch named `dev`; use **`develop`** for integration work.
+
+**Before first non-prod deploy:** create dev and test SWA resources in Azure, add GitHub secrets `AZURE_STATIC_WEB_APPS_API_TOKEN_BLOG_DEV` and `AZURE_STATIC_WEB_APPS_API_TOKEN_BLOG_TEST`, and configure GitHub Environments `Dev`, `Test`, and `Prod` (optional approval on `Prod`).
 
 ## 🛠 Built With
 

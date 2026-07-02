@@ -1,0 +1,49 @@
+name: Deploy to Dev and Test SWA
+
+permissions:
+  contents: read
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - develop
+      - "feature/**"
+
+jobs:
+  deploy-dev:
+    name: Deploy blog-dev
+    uses: ./.github/workflows/reusable-hugo-swa-deploy.yml
+    with:
+      hugo_environment: development
+      github_environment: Dev
+      wait_sitemap_url: https://blog-dev.funkysi1701.com/sitemap.xml
+    secrets:
+      azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLOG_DEV }}
+
+  deploy-test:
+    name: Deploy blog-test
+    if: github.ref == 'refs/heads/develop'
+    uses: ./.github/workflows/reusable-hugo-swa-deploy.yml
+    with:
+      hugo_environment: staging
+      github_environment: Test
+      wait_sitemap_url: https://blog-test.funkysi1701.com/sitemap.xml
+    secrets:
+      azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLOG_TEST }}
+
+  playwright-dev:
+    name: Playwright (blog-dev)
+    needs: deploy-dev
+    if: always() && needs.deploy-dev.result == 'success'
+    uses: ./.github/workflows/reusable-playwright.yml
+    with:
+      base_url: https://blog-dev.funkysi1701.com
+    secrets: inherit
+
+  seo-check-dev:
+    name: SEO check (blog-dev)
+    needs: deploy-dev
+    if: always() && needs.deploy-dev.result == 'success'
+    uses: ./.github/workflows/reusable-seo-check.yml
+    secrets: inherit
