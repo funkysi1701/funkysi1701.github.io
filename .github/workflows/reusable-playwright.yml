@@ -17,7 +17,7 @@ permissions:
 jobs:
   playwright:
     runs-on: ubuntu-latest
-    container: mcr.microsoft.com/playwright:v1.59.1-jammy
+    container: mcr.microsoft.com/playwright:v1.61.1-jammy
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
