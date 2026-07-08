@@ -37,7 +37,13 @@ class PageVisitTrackerReporter implements Reporter {
           // Filter to only track the main site URLs (strict host match)
           try {
             const parsedUrl = new URL(url);
-            const allowedHosts = ['funkysi1701.com', 'www.funkysi1701.com', 'localhost'];
+            const allowedHosts = [
+              'funkysi1701.com',
+              'www.funkysi1701.com',
+              'blog-dev.funkysi1701.com',
+              'blog-test.funkysi1701.com',
+              'localhost',
+            ];
             if (allowedHosts.includes(parsedUrl.hostname)) {
               this.uniqueUrls.add(url);
               this.visits.push({

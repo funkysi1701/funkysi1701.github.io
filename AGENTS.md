@@ -20,7 +20,7 @@ Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). Cursor rules 
 | Preview description fixes (dry-run) | `npm run check:meta:fix` — apply fixes with `python scripts/normalize_meta_descriptions.py --root .` |
 | Parkrun results update | `pip install -r scripts/requirements-parkrun.txt` then `python scripts/update_parkrun_results.py` |
 
-After changing `package.json` or `package-lock.json`, run `npm ci` before `npm test` (matches Azure DevOps).
+After changing `package.json` or `package-lock.json`, run `npm ci` before `npm test` (matches GitHub Actions).
 
 ## What not to edit
 
@@ -55,26 +55,24 @@ After bulk-editing post front matter, run **`npm run check:meta`** before openin
 
 | Check | Where | Notes |
 |-------|-------|-------|
-| Playwright E2E | **Azure Pipelines** — `azure-pipelines.yml` (blog-dev after deploy) and `azure-pipelines-playwright.yml` (`main` pushes + PRs into `main`) | PRs into **`develop`** skip E2E; post-merge **`develop`** / **`feature/*`** deploy then test blog-dev. `BASE_URL`: production for `main`, blog-dev for non-prod deploys |
-| Page coverage / Codecov | Azure Pipelines | `scripts/generate-page-coverage.js`; informational per `codecov.yml` |
+| Playwright E2E | **GitHub Actions** — `swa-deploy-nonprod.yml` (blog-dev after dev SWA deploy on **`develop`** / **`feature/*`**) and `playwright.yml` (**`main`** pushes + PRs into **`main`**) | `BASE_URL`: production for `main`, blog-dev for non-prod deploys |
+| Page coverage / Codecov | GitHub Actions (Playwright workflows) | `scripts/generate-page-coverage.js`; informational per `codecov.yml` |
 | Hugo production build | **GitHub Actions** | `hugo-build.yml` — PRs and pushes to `main`/`develop`; catches template/render errors before deploy |
 | Meta title / description length | **GitHub Actions** | `meta-title-length.yml`, `meta-description-length.yml` |
-| Azure SWA deploy | GitHub Actions | `azure-static-web-apps-victorious-pebble-0b8f90e03.yml` (production path) |
+| Azure SWA deploy | GitHub Actions | `azure-static-web-apps-victorious-pebble-0b8f90e03.yml` (prod), `swa-deploy-nonprod.yml` (dev/test) |
 | Broken links | GitHub Actions | `link.yml` — monthly + manual; crawls from production homepage |
 | Parkrun scrape PR | GitHub Actions | `parkrun-update.yml` — PR to `develop` when scrape succeeds |
 | develop → main PR | GitHub Actions | `auto-pr.yml` |
-| SEO crawl (Signal Diff) | GitHub Actions | `seo-check.yml` — triggered after Azure pipeline or manually |
-| Image build + Helm deploy | Azure Pipelines | `azure-pipelines.yml` — ECR push and Kubernetes deploy |
-
-A green GitHub Actions run does **not** imply Playwright passed — check Azure Pipelines for E2E.
+| SEO crawl (Signal Diff) | GitHub Actions | `swa-deploy-nonprod.yml` (blog-dev after deploy) and production SWA workflow; manual `seo-check.yml` |
+| Pa11y nightly | GitHub Actions | `pa11y-nightly.yml` — full sitemap on production |
 
 ## Branches and deploy
 
 | Branch | Target |
 |--------|--------|
-| **`main`** | Production — SWA (GHA) + Helm `main` namespace |
-| **`develop`** | Integration — Helm `develop` and `test` namespaces (blog-dev / blog-test) |
-| **`feature/*`** | Build and Helm to `develop` namespace only |
+| **`main`** | Production — GHA → Azure SWA (`www.funkysi1701.com`) |
+| **`develop`** | Integration — GHA → SWA dev + test (`blog-dev`, `blog-test`) |
+| **`feature/*`** | GHA → SWA dev only |
 
 There is no `dev` branch; use **`develop`**. `.github/workflows/auto-pr.yml` can open or refresh a develop → main PR.
 

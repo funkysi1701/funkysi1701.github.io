@@ -1,0 +1,97 @@
+name: Pa11y nightly accessibility
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * *"
+
+jobs:
+  pa11y:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+
+      - name: Wait for production site
+        run: |
+          set -euo pipefail
+          SITE_URL="https://www.funkysi1701.com"
+          READY=0
+          for i in $(seq 1 36); do
+            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "${SITE_URL}/" || echo "000")
+            if [ "$HTTP_CODE" = "200" ]; then
+              echo "Public URL ready (HTTP 200): ${SITE_URL}/"
+              READY=1
+              break
+            fi
+            echo "Attempt $i: HTTP $HTTP_CODE; retrying in 5s..."
+            sleep 5
+          done
+          if [ "$READY" -ne 1 ]; then
+            echo "::warning::No HTTP 200 from ${SITE_URL}/ after ~180s; running Pa11y anyway."
+          fi
+
+      - name: Run Pa11y full sitemap scan
+        id: pa11y
+        run: |
+          set +e
+          PA11Y_RUN_FAILED=0
+          SITE_URL="https://www.funkysi1701.com"
+          PA11Y_RUNNERS_VAL="${PA11Y_NIGHTLY_RUNNERS:-axe,htmlcs}"
+          PA11Y_MAX_PAGES_VAL="${PA11Y_NIGHTLY_MAX_PAGES:-}"
+
+          docker run --rm --cap-add=SYS_ADMIN --shm-size=2g \
+            -e "SITE_URL=$SITE_URL" \
+            -e "PA11Y_MAX_PAGES=$PA11Y_MAX_PAGES_VAL" \
+            -e "PA11Y_RUNNERS=$PA11Y_RUNNERS_VAL" \
+            -e "PA11Y_WAIT_MS=${PA11Y_WAIT_MS:-}" \
+            -e "PA11Y_TIMEOUT_MS=${PA11Y_TIMEOUT_MS:-}" \
+            -e "PA11Y_THEMES=${PA11Y_THEMES:-light,dark}" \
+            -v "${{ github.workspace }}/scripts:/scripts:ro" \
+            node:20-bookworm \
+            bash -c 'set -e
+              export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+              export PUPPETEER_SKIP_DOWNLOAD=true
+              apt-get update -qq >/dev/null
+              DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends chromium ca-certificates fonts-liberation >/dev/null
+              cp -a /scripts/pa11y-sitemap /tmp/pa11y-sitemap-work
+              cp /scripts/pa11y-pipeline.json /tmp/pa11y.json
+              cd /tmp/pa11y-sitemap-work
+              npm ci --omit=dev --silent >/dev/null
+              export PA11Y_CONFIG=/tmp/pa11y.json
+              set +e
+              node scan.mjs > /tmp/pa11y-out.json
+              code=$?
+              cat /tmp/pa11y-out.json
+              exit $code' \
+            > pa11y-results.json 2>pa11y-error.log
+          PA11Y_EXIT=$?
+          set -e
+
+          if [ "$PA11Y_EXIT" -ne 0 ] && [ "$PA11Y_EXIT" -ne 2 ]; then
+            echo "::error::Pa11y failed with exit code $PA11Y_EXIT"
+            cat pa11y-error.log || true
+            echo "[]" > pa11y-results.json
+            PA11Y_RUN_FAILED=1
+          fi
+          echo "pa11y_run_failed=$PA11Y_RUN_FAILED" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub issues for new violations
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUILD_NUMBER: ${{ github.run_number }}
+          PA11Y_RUN_FAILED: ${{ steps.pa11y.outputs.pa11y_run_failed }}
+          SITE_URL: https://www.funkysi1701.com
+        run: node scripts/create-accessibility-issues.js
+
+      - name: Fail if site was unreachable during Pa11y
+        if: always()
+        run: |
+          if grep -q 'ERR_CONNECTION_REFUSED' pa11y-error.log 2>/dev/null; then
+            echo "::error::Site was unreachable during Pa11y (ERR_CONNECTION_REFUSED)."
+            exit 1
+          fi

@@ -1,0 +1,48 @@
+name: Reusable SEO check (blog-dev)
+
+on:
+  workflow_call:
+    inputs:
+      sitemap_url:
+        description: Sitemap URL for Signal Diff crawl
+        required: false
+        type: string
+        default: https://blog-dev.funkysi1701.com/sitemap.xml
+
+permissions:
+  contents: read
+
+jobs:
+  seo-crawl:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: seo-crawl-blog-dev
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          fetch-depth: 2
+
+      - name: Resolve baseline commit
+        id: baseline
+        run: |
+          if git rev-parse --verify HEAD^ >/dev/null 2>&1; then
+            echo "sha=$(git rev-parse HEAD^)" >> "$GITHUB_OUTPUT"
+          else
+            echo "sha=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run Signal Diff crawl
+        uses: funkysi1701/signal-diff-action@v1.9
+        with:
+          api_base_url: ${{ secrets.SIGNALDIFF_API_BASE_URL }}
+          api_key: ${{ secrets.SIGNALDIFF_CI_API_KEY }}
+          sitemap_url: ${{ inputs.sitemap_url }}
+          fail_mode: none
+          execution_mode: agent
+          comment_on_pr: false
+          collect_code_changes: true
+          commit_sha: ${{ github.sha }}
+          ref_name: ${{ github.ref }}
+          baseline_ref: ${{ steps.baseline.outputs.sha }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
