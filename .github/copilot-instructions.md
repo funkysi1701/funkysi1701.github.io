@@ -4,7 +4,7 @@ For a shorter, tool-agnostic onboarding guide, see **[`AGENTS.md`](../AGENTS.md)
 
 ## Project Overview
 
-This is a personal blog/portfolio website powered by **Hugo** (static site generator), hosted on Azure Static Web Apps with infrastructure managed through **Kubernetes + Helm**. The site features blog posts, projects, podcasts, and technical content, primarily focused on .NET, Azure, and DevOps topics.
+This is a personal blog/portfolio website powered by **Hugo** (static site generator), hosted on **Azure Static Web Apps** (prod, dev, and test) via GitHub Actions. The site features blog posts, projects, podcasts, and technical content, primarily focused on .NET, Azure, and DevOps topics.
 
 **Key URL:** https://www.funkysi1701.com
 
@@ -33,9 +33,11 @@ docker run --rm -it -v .:/src -p 1313:1313 floryn90/hugo:${HUGO_VERSION} server 
 
 ### Deployment Pipeline
 
-- **main:** Production — Azure Pipelines → ECR → Kubernetes `main` namespace; GitHub Actions also builds Hugo and deploys Azure Static Web Apps
-- **develop:** Non-prod — Azure Pipelines → ECR → Helm upgrades **both** Kubernetes namespaces `develop` and `test` (same image tag; URLs include blog-dev and blog-test)
-- **feature/\*:** Azure Pipelines build and push image; Helm targets the `develop` namespace only (not `test`)
+- **main:** Production — GitHub Actions → Azure SWA (`www.funkysi1701.com`; `azure-static-web-apps-victorious-pebble-0b8f90e03.yml`)
+- **develop:** Non-prod — GitHub Actions → SWA dev + test (`swa-deploy-nonprod.yml`; blog-dev and blog-test)
+- **feature/\*:** GitHub Actions → SWA dev only (`swa-deploy-nonprod.yml`)
+
+Non-prod SWA deploy tokens: GitHub secrets `AZURE_STATIC_WEB_APPS_API_TOKEN_BLOG_DEV` and `AZURE_STATIC_WEB_APPS_API_TOKEN_BLOG_TEST`. Optional GitHub Environments: `Dev`, `Test`, `Prod`.
 
 There is no separate git branch named `dev`; use **`develop`** for integration.
 
@@ -121,8 +123,7 @@ Other pages (about, projects, etc.) are in `content/` root using Markdown format
 | `static/images/` | Images, downloads, and media files |
 | `themes/hugo-theme-bootstrap/` | Bootstrap-based theme |
 | `config/` | Hugo configuration for dev/staging/production environments |
-| `Helm/blog/` | Kubernetes Helm charts for multi-environment deployments |
-| `.github/workflows/` | GitHub Actions (Azure Static Web Apps deploy, meta title/description checks, scheduled link check, develop→main auto-PR, etc.) |
+| `.github/workflows/` | GitHub Actions (SWA deploy prod/non-prod, Playwright, Pa11y, meta checks, SEO, links, auto-PR, etc.) |
 | `tests/` | Playwright end-to-end tests (`@playwright/test`) |
 | `specs/` | Test plans; e.g. `funkysi1701-test-plan.md` referenced from many specs via `// spec: ...` comments |
 
@@ -138,10 +139,8 @@ Other pages (about, projects, etc.) are in `content/` root using Markdown format
 
 ### Backend/Infrastructure
 
-- **Azure Static Web Apps** – Primary hosting (GitHub Actions CD)
-- **Kubernetes + Helm** – Secondary infrastructure for multi-environment deployments
-- **Amazon ECR** – Docker image registry (used by Azure Pipelines)
-- **Azure Pipelines** – CI/CD orchestration (builds Docker images, pushes to ECR, deploys via Helm)
+- **Azure Static Web Apps** – Hosting for production, dev, and test (GitHub Actions CD)
+- **GitHub Actions** – Hugo build, SWA deploy, Playwright E2E, Pa11y, meta validation, SEO crawl
 
 ### Environment Configuration
 
@@ -164,7 +163,7 @@ Hugo uses environment-specific configs in `config/`:
    - Staging: Testing environment
    - Production: Full analytics, CDN caching, Google AdSense
 
-4. **Multi-environment deployment:** When modifying infrastructure or deployment, consider all three Kubernetes namespaces (develop, test, main) defined in `Helm/blog/`.
+4. **Multi-environment deployment:** SWA deploys use Hugo `--environment` values `production`, `development`, and `staging` from `config/` overlays. Workflows: `azure-static-web-apps-victorious-pebble-0b8f90e03.yml` (prod), `swa-deploy-nonprod.yml` (dev/test).
 
 5. **Docker version control:** Keep `.env` file updated with correct `HUGO_VERSION` to ensure consistency across local, pipeline, and container environments.
 
@@ -184,11 +183,11 @@ npm test
 
 `playwright.config.ts` sets `baseURL` from **`BASE_URL`**; if unset, it defaults to **`https://www.funkysi1701.com`**. Point `BASE_URL` at `http://localhost:1313` (or another host) when testing a local or preview build.
 
-**Azure DevOps:** **`azure-pipelines.yml`** runs `npx playwright test` against blog-dev after Helm deploy on **`develop`** and **`feature/*`** pushes. **`azure-pipelines-playwright.yml`** runs on **`main`** pushes and PRs into **`main`** only (PRs into **`develop`** are skipped). Production **`BASE_URL`**: **`https://www.funkysi1701.com`**; blog-dev deploys use **`https://blog-dev.funkysi1701.com`**. Both pipelines can run **`scripts/generate-page-coverage.js`** and upload to **Codecov** when **`CODECOV_TOKEN`** is set. **`codecov.yml`** configures Codecov **project/patch** status as **informational** (synthetic Markdown visit coverage is volatile); adjust there or in the Codecov UI if you want failing checks on coverage drops.
+**GitHub Actions:** **`swa-deploy-nonprod.yml`** deploys to blog-dev (and blog-test on **`develop`**) then runs Playwright with **`BASE_URL=https://blog-dev.funkysi1701.com`**. **`playwright.yml`** runs on **`main`** pushes and PRs into **`main`** with production **`BASE_URL`**. Workflows run **`scripts/generate-page-coverage.js`** and upload to **Codecov** when **`CODECOV_TOKEN`** is set. **`codecov.yml`** configures Codecov **project/patch** status as **informational**.
+
+**GitHub Actions (other):** **`hugo-build.yml`** (PR build validation), meta title/description checks, **`pa11y-nightly.yml`**, production SWA deploy, broken link schedule, develop→main auto-PR, parkrun update PRs.
 
 **Meta validation (post front matter):** After editing `title` or `description` in `content/posts/**/*.md`, run **`npm run check:meta`** (wraps the Python scripts used by GitHub Actions). Subcommands: **`check:meta:titles`**, **`check:meta:descriptions`**. To preview automated description rewrites: **`npm run check:meta:fix`** (dry-run only). Apply fixes with `python scripts/normalize_meta_descriptions.py --root .`. Requires Python 3.11+ on `PATH`.
-
-**GitHub Actions:** Workflows under **`.github/workflows/`** include a **Hugo production build** on pull requests (`hugo-build.yml` — same Docker image/flags as Azure SWA deploy), **meta title** and **meta description** length validation for blog posts (`scripts/check_meta_titles.py`, `scripts/check_meta_descriptions.py`), plus other jobs (Azure SWA deploy, broken link schedule, develop→main auto-PR, etc.). Playwright is **not** currently duplicated there; treat **Azure Pipelines** as the primary full E2E gate unless a GitHub workflow is added later.
 
 **Specs:** High-level scenarios are documented in **`specs/`** (see **`specs/funkysi1701-test-plan.md`**). Individual test files often start with a `// spec: specs/...` pointer for traceability.
 
@@ -201,14 +200,13 @@ For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remai
 - `config/_default/config.toml` – Main site title, menu, author info
 - `config/production/config.toml` – Production baseURL and analytics
 - `playwright.config.ts` – Playwright defaults (`baseURL`, reporters, projects)
-- `azure-pipelines.yml` – CI/CD pipeline (build, ECR push, Helm deploy)
-- `azure-pipelines.yml` – build, Helm deploy, blog-dev Playwright E2E after deploy
-- `azure-pipelines-playwright.yml` – production Playwright E2E (`main` pushes and PRs into `main`)
+- `swa-deploy-nonprod.yml` – SWA dev/test deploy + blog-dev Playwright + SEO
+- `playwright.yml` – Production Playwright E2E (`main` pushes and PRs into `main`)
+- `pa11y-nightly.yml` – Scheduled full-sitemap accessibility scan
 - `codecov.yml` – Codecov behaviour (informational page-coverage gates)
 - `npm run check:meta` – Local meta validation (titles + descriptions); see also `check:meta:titles`, `check:meta:descriptions`, `check:meta:fix`
 - `scripts/check_meta_titles.py` / `scripts/check_meta_descriptions.py` – Post front matter length checks (used by GitHub Actions and npm scripts)
 - `scripts/generate-page-coverage.js` – Page visit / coverage artifact for Codecov
-- `.github/workflows/` – GitHub Actions (SWA deploy, meta checks, links, auto-PR, etc.)
+- `.github/workflows/` – GitHub Actions (SWA deploy, Playwright, Pa11y, meta checks, links, auto-PR, etc.)
 - `specs/` – Test plans referenced from `tests/`
-- `Helm/blog/` – Kubernetes deployment configuration
 

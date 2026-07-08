@@ -1,5 +1,5 @@
 ---
-description: Playwright E2E tests — BASE_URL, // spec: traceability, Azure Pipelines vs GitHub Actions
+description: Playwright E2E tests — BASE_URL, // spec: traceability, GitHub Actions CI
 globs: tests/**/*.ts
 alwaysApply: false
 ---
@@ -21,9 +21,8 @@ npm test
 
 ## CI expectations
 
-- **Primary E2E gate:** **`azure-pipelines.yml`** runs Playwright against blog-dev after Helm deploy on pushes to **`develop`** and **`feature/*`**. **`azure-pipelines-playwright.yml`** runs on pushes to **`main`** and PRs into **`main`** only; PRs into **`develop`** are skipped (nothing deploys until merge). **`BASE_URL`:** `main`/`master` → production; `develop` / blog-dev deploys → `https://blog-dev.funkysi1701.com`.
+- **Primary E2E gate:** **`swa-deploy-nonprod.yml`** deploys to blog-dev then runs Playwright on pushes to **`develop`** and **`feature/*`** (`BASE_URL=https://blog-dev.funkysi1701.com`). **`playwright.yml`** runs on pushes to **`main`** and PRs into **`main`** (`BASE_URL=https://www.funkysi1701.com`).
 - Runs `scripts/generate-page-coverage.js`; Codecov upload when `CODECOV_TOKEN` is set. `codecov.yml` treats page coverage as **informational**.
-- **GitHub Actions** runs meta checks and SWA deploy but **not** Playwright — a green GHA run does not imply E2E passed.
 
 ## Spec traceability
 

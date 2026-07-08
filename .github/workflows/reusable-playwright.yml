@@ -1,0 +1,64 @@
+name: Reusable Playwright E2E
+
+on:
+  workflow_call:
+    inputs:
+      base_url:
+        description: BASE_URL for Playwright tests
+        required: true
+        type: string
+    secrets:
+      CODECOV_TOKEN:
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  playwright:
+    runs-on: ubuntu-latest
+    container: mcr.microsoft.com/playwright:v1.59.1-jammy
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync Playwright browser
+        run: npx playwright install chromium
+
+      - name: Run Playwright tests
+        run: npx playwright test
+        env:
+          BASE_URL: ${{ inputs.base_url }}
+          CI: "true"
+
+      - name: Generate page coverage
+        if: always()
+        run: node scripts/generate-page-coverage.js
+
+      - name: Upload page coverage to Codecov
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${CODECOV_TOKEN:-}" ]; then
+            echo "CODECOV_TOKEN not set; skipping Codecov upload."
+            exit 0
+          fi
+          curl -sSfL https://uploader.codecov.io/latest/linux/codecov -o codecov
+          chmod +x codecov
+          ./codecov -t "$CODECOV_TOKEN" -f ./coverage/page-coverage.lcov -F page-coverage -n page-coverage || true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: playwright-report-${{ github.run_id }}
+          path: |
+            playwright-report
+            test-results
+          if-no-files-found: ignore

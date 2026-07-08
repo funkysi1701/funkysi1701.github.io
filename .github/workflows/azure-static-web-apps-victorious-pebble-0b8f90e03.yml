@@ -1,62 +1,34 @@
 name: Deploy to Production
+
 permissions:
   contents: read
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '5 20 * * 1'
+    - cron: "5 20 * * 1"
   push:
     branches:
       - main
 
 jobs:
-  build_and_deploy_job:
-    runs-on: ubuntu-latest
-    name: Build and Deploy Job
-    steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
-        with:
-          ref: main
-          submodules: true
+  deploy-prod:
+    name: Build and deploy production SWA
+    uses: ./.github/workflows/reusable-hugo-swa-deploy.yml
+    with:
+      hugo_environment: production
+      github_environment: Prod
+    secrets:
+      azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_PEBBLE_0B8F90E03 }}
 
-      - name: Load Hugo Version
-        run: |
-          echo "HUGO_VERSION=$(grep HUGO_VERSION .env | cut -d '=' -f2)" >> $GITHUB_ENV
-
-      - name: Build Hugo Site
-        run: |
-          docker run --rm \
-            -v ${{ github.workspace }}:/src \
-            -w /src \
-            -u $(id -u):$(id -g) \
-            floryn90/hugo:${HUGO_VERSION}-ext-alpine \
-            --minify --environment production --noBuildLock
-
-      - name: Copy staticwebapp.config.json to public
-        run: |
-          cp staticwebapp.config.json public/staticwebapp.config.json
-
-      - name: Deploy to Azure Static Web Apps
-        id: builddeploy
-        uses: Azure/static-web-apps-deploy@1a947af9992250f3bc2e68ad0754c0b0c11566c9 # v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_PEBBLE_0B8F90E03 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: "upload"
-          app_location: "public"
-          api_location: ""
-          output_location: ""
-          skip_app_build: true
   seo-crawl:
-    needs: build_and_deploy_job
+    needs: deploy-prod
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
       issues: write
     steps:
       - name: Run Signal Diff crawl
-        id: signal_diff
         uses: funkysi1701/signal-diff-action@v1.9
         with:
           api_base_url: ${{ secrets.SIGNALDIFF_API_BASE_URL }}
