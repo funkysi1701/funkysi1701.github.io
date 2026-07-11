@@ -18,7 +18,11 @@ const FINGERPRINT_PREFIX = "blog-post-idea";
 const FINGERPRINT_RE = /<!--\s*blog-post-idea:\s*([^\s>]+)\s*-->/i;
 const TITLE_PREFIX = "[Content Suggestion]: ";
 const ISSUE_SEARCH_LIMIT = 50;
-const MAX_POSTS_IN_PROMPT = 200;
+/** Recent posts get title + tags; older posts are title+year only. */
+const RECENT_DETAIL_COUNT = 40;
+const TOP_TAGS_COUNT = 25;
+/** Soft cap so GitHub Models gpt-4.1-mini (~8k token request limit) is not exceeded. */
+const MAX_CATALOG_CHARS = 12_000;
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = join(__dirname, "..", "..");
@@ -231,6 +235,74 @@ function fingerprintFromTitle(title) {
     .slice(0, 80);
 }
 
+function yearOf(date) {
+  if (!date) return "?";
+  const m = String(date).match(/^(\d{4})/);
+  return m ? m[1] : "?";
+}
+
+function monthOf(date) {
+  if (!date) return "";
+  const m = String(date).match(/^(\d{4}-\d{2})/);
+  return m ? m[1] : yearOf(date);
+}
+
+/** Compact text catalogue — titles for coverage, detail only on recent posts. */
+function buildCatalogForModel(posts) {
+  const tagCounts = new Map();
+  for (const p of posts) {
+    for (const t of p.tags || []) {
+      tagCounts.set(t, (tagCounts.get(t) || 0) + 1);
+    }
+  }
+  const topTags = [...tagCounts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, TOP_TAGS_COUNT)
+    .map(([name, count]) => `${name}(${count})`)
+    .join(", ");
+
+  const recent = posts.slice(0, RECENT_DETAIL_COUNT);
+  const older = posts.slice(RECENT_DETAIL_COUNT);
+
+  const lines = [
+    `Total published posts: ${posts.length}`,
+    `Top tags: ${topTags || "(none)"}`,
+    "",
+    `Recent posts (newest ${recent.length}, title + month + tags):`,
+  ];
+
+  for (const p of recent) {
+    const tags = (p.tags || []).slice(0, 5).join(", ");
+    lines.push(
+      `- ${monthOf(p.date)} | ${p.title}${tags ? ` | ${tags}` : ""}`,
+    );
+  }
+
+  if (older.length) {
+    lines.push("", `Older post titles (${older.length}, year | title):`);
+    let included = 0;
+    for (const p of older) {
+      const row = `- ${yearOf(p.date)} | ${p.title}`;
+      const nextLen = lines.join("\n").length + row.length + 1;
+      if (nextLen > MAX_CATALOG_CHARS) {
+        break;
+      }
+      lines.push(row);
+      included += 1;
+    }
+    const omitted = older.length - included;
+    if (omitted > 0) {
+      lines.push(`- …and ${omitted} older titles omitted for size`);
+    }
+  }
+
+  let text = lines.join("\n");
+  if (text.length > MAX_CATALOG_CHARS) {
+    text = `${text.slice(0, MAX_CATALOG_CHARS - 20)}\n…(truncated)`;
+  }
+  return text;
+}
+
 function listOpenContentIdeas() {
   try {
     const issues = ghJson([
@@ -335,17 +407,8 @@ async function main() {
     fail("No published posts found under content/posts");
   }
 
-  const forModel = posts.slice(0, MAX_POSTS_IN_PROMPT).map((p) => ({
-    title: p.title,
-    date: p.date,
-    tags: p.tags,
-    categories: p.categories,
-    description: p.description
-      ? p.description.length > 140
-        ? `${p.description.slice(0, 140)}…`
-        : p.description
-      : undefined,
-  }));
+  const catalogText = buildCatalogForModel(posts);
+  console.log(`Catalog prompt chars: ${catalogText.length} (cap ${MAX_CATALOG_CHARS})`);
 
   const openIdeas = listOpenContentIdeas();
   console.log(`Open content-suggestion issues: ${openIdeas.length}`);
@@ -355,17 +418,13 @@ async function main() {
   const userContent = [
     `Run date (UTC): ${runDate}`,
     "",
-    "Existing published posts (newest first, compact JSON):",
-    JSON.stringify(forModel),
+    "Existing published posts:",
+    catalogText,
     "",
     "Already-open content suggestion issues (avoid duplicates):",
-    JSON.stringify(
-      openIdeas.map((i) => ({
-        number: i.number,
-        title: i.title,
-        fingerprint: i.fingerprint,
-      })),
-    ),
+    openIdeas.length
+      ? openIdeas.map((i) => `#${i.number} ${i.title}`).join("\n")
+      : "(none)",
   ].join("\n");
 
   const raw = await callLlm({
