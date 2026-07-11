@@ -1,0 +1,44 @@
+name: Tech debt scan
+
+# Weekly: scan codebase signals, propose tech-debt issues via LLM, create missing GH issues.
+# Default LLM: GitHub Models (permissions.models: read). Optional ISSUE_PLANNER_* override.
+# See scripts/tech-debt-scan/README.md
+
+on:
+  schedule:
+    # Fridays 09:00 UTC (staggered from Mon issue-schedule + Wed blog-post-idea)
+    - cron: '0 9 * * 5'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Print proposed issues without creating them
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+  models: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    name: Scan for tech debt and open issues
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Run tech debt scan
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_PLANNER_API_KEY: ${{ secrets.ISSUE_PLANNER_API_KEY }}
+          ISSUE_PLANNER_BASE_URL: ${{ vars.ISSUE_PLANNER_BASE_URL }}
+          ISSUE_PLANNER_MODEL: ${{ vars.ISSUE_PLANNER_MODEL }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'true' || 'false' }}
+        run: node scripts/tech-debt-scan/run.mjs
