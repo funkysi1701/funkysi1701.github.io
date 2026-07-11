@@ -1,6 +1,6 @@
 # Weekly blog post idea
 
-GitHub Actions workflow [`.github/workflows/blog-post-idea.yml`](../../.github/workflows/blog-post-idea.yml) runs this script every Wednesday at 09:00 UTC (and on `workflow_dispatch`). It catalogues published posts under `content/posts/`, asks a chat model for one trend-aware post idea, and opens a GitHub issue titled **`[Content Suggestion]: …`**.
+GitHub Actions workflow [`.github/workflows/blog-post-idea.yml`](../../.github/workflows/blog-post-idea.yml) runs this script every Wednesday at 09:00 UTC (and on `workflow_dispatch`). It catalogues published posts under `content/posts/` (compact text: top tags, recent posts with tags, older titles — capped for the GitHub Models ~8k token request limit), asks a chat model for one trend-aware post idea, and opens a GitHub issue titled **`[Content Suggestion]: …`**.
 
 Same LLM auth pattern as [`scripts/issue-schedule/`](../issue-schedule/).
 
