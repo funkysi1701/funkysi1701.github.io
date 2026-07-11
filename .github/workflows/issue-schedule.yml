@@ -1,0 +1,45 @@
+name: 30-day issue schedule
+
+# Weekly planner: list open issues, single-shot LLM, upsert tracking issue.
+# Default LLM: GitHub Models via GITHUB_TOKEN (needs permissions.models: read).
+# Optional override: secret ISSUE_PLANNER_API_KEY + vars ISSUE_PLANNER_BASE_URL / ISSUE_PLANNER_MODEL
+# See scripts/issue-schedule/README.md
+
+on:
+  schedule:
+    # Mondays 09:00 UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Print schedule body without creating/updating the GitHub issue
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+  models: read
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    name: Build 30-day implementation schedule
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Run issue schedule planner
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_PLANNER_API_KEY: ${{ secrets.ISSUE_PLANNER_API_KEY }}
+          ISSUE_PLANNER_BASE_URL: ${{ vars.ISSUE_PLANNER_BASE_URL }}
+          ISSUE_PLANNER_MODEL: ${{ vars.ISSUE_PLANNER_MODEL }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'true' || 'false' }}
+        run: node scripts/issue-schedule/run.mjs
