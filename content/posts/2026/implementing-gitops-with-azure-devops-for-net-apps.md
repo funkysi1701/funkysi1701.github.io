@@ -3,21 +3,23 @@ title = "Implementing GitOps with Azure DevOps for .NET Apps"
 date = "2026-07-12T19:00:00Z" 
 year = "2026" 
 month = "2026-07" 
-author = "funkysi1701" 
-authorTwitter = "funkysi1701" 
-tags = ["DevOps", "Azure", "AzureDevOps", "DotNet", "CI/CD", "Kubernetes", "GitOps", "Bicep", "KeyVault"] 
-categories = ["tech"] 
-description = "A hands-on GitOps guide for .NET apps using Azure DevOps: Bicep infrastructure, CI/CD, Key Vault secrets, and safer rollbacks on AKS or App Service." 
-showFullContent = false 
-readingTime = true 
-copyright = false 
-featured = false 
-draft = false 
-aliases = [   
-  "/implementing-gitops-with-azure-devops-for-net-apps",   
-  "/posts/implementing-gitops-with-azure-devops-for-net-apps",   
-  "/posts/2026/07/12/implementing-gitops-with-azure-devops-for-net-apps",   
-  "/2026/07/12/implementing-gitops-with-azure-devops-for-net-apps" 
+author = "funkysi1701"
+authorTwitter = "funkysi1701"
+cover = "/images/2026/implementing-gitops-azure-devops.png"
+images = ["/images/2026/implementing-gitops-azure-devops.png"]
+tags = ["DevOps", "Azure", "AzureDevOps", "DotNet", "CI/CD", "Kubernetes", "GitOps", "Bicep", "KeyVault"]
+categories = ["tech"]
+description = "A hands-on GitOps guide for .NET apps using Azure DevOps: Bicep infrastructure, CI/CD, Key Vault secrets, and safer rollbacks on AKS or App Service."
+showFullContent = false
+readingTime = true
+copyright = false
+featured = false
+draft = false
+aliases = [
+  "/implementing-gitops-with-azure-devops-for-net-apps",
+  "/posts/implementing-gitops-with-azure-devops-for-net-apps",
+  "/posts/2026/07/12/implementing-gitops-with-azure-devops-for-net-apps",
+  "/2026/07/12/implementing-gitops-with-azure-devops-for-net-apps"
 ]
 +++
 
