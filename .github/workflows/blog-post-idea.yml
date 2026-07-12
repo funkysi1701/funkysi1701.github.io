@@ -1,0 +1,45 @@
+name: Blog post idea
+
+# Weekly: catalogue posts, single-shot LLM, open one content-suggestion issue.
+# Default LLM: GitHub Models via GITHUB_TOKEN (needs permissions.models: read).
+# Optional override: secret ISSUE_PLANNER_API_KEY + vars ISSUE_PLANNER_BASE_URL / ISSUE_PLANNER_MODEL
+# See scripts/blog-post-idea/README.md
+
+on:
+  schedule:
+    # Wednesdays 09:00 UTC (staggered from Monday issue-schedule)
+    - cron: '0 9 * * 3'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Print suggested issue without creating it
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+  models: read
+
+jobs:
+  suggest:
+    runs-on: ubuntu-latest
+    name: Suggest a new blog post
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Run blog post idea generator
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_PLANNER_API_KEY: ${{ secrets.ISSUE_PLANNER_API_KEY }}
+          ISSUE_PLANNER_BASE_URL: ${{ vars.ISSUE_PLANNER_BASE_URL }}
+          ISSUE_PLANNER_MODEL: ${{ vars.ISSUE_PLANNER_MODEL }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'true' || 'false' }}
+        run: node scripts/blog-post-idea/run.mjs
