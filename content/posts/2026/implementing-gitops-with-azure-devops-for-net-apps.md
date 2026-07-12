@@ -1,23 +1,23 @@
-+++
-title = "Implementing GitOps with Azure DevOps for .NET Apps"
-date = "2026-07-12T19:00:00Z"
-year = "2026"
-month = "2026-07"
-author = "funkysi1701"
-authorTwitter = "funkysi1701"
-tags = ["DevOps", "Azure", "AzureDevOps", "DotNet", "CI/CD", "Kubernetes", "GitOps", "Bicep", "KeyVault"]
-categories = ["tech"]
-description = "A hands-on GitOps guide for .NET apps using Azure DevOps: Bicep infrastructure, CI/CD, Key Vault secrets, and safer rollbacks on AKS or App Service."
-showFullContent = false
-readingTime = true
-copyright = false
-featured = false
-draft = true
-aliases = [
-  "/implementing-gitops-with-azure-devops-for-net-apps",
-  "/posts/implementing-gitops-with-azure-devops-for-net-apps",
-  "/posts/2026/07/12/implementing-gitops-with-azure-devops-for-net-apps",
-  "/2026/07/12/implementing-gitops-with-azure-devops-for-net-apps"
++++ 
+title = "Implementing GitOps with Azure DevOps for .NET Apps" 
+date = "2026-07-12T19:00:00Z" 
+year = "2026" 
+month = "2026-07" 
+author = "funkysi1701" 
+authorTwitter = "funkysi1701" 
+tags = ["DevOps", "Azure", "AzureDevOps", "DotNet", "CI/CD", "Kubernetes", "GitOps", "Bicep", "KeyVault"] 
+categories = ["tech"] 
+description = "A hands-on GitOps guide for .NET apps using Azure DevOps: Bicep infrastructure, CI/CD, Key Vault secrets, and safer rollbacks on AKS or App Service." 
+showFullContent = false 
+readingTime = true 
+copyright = false 
+featured = false 
+draft = false 
+aliases = [   
+  "/implementing-gitops-with-azure-devops-for-net-apps",   
+  "/posts/implementing-gitops-with-azure-devops-for-net-apps",   
+  "/posts/2026/07/12/implementing-gitops-with-azure-devops-for-net-apps",   
+  "/2026/07/12/implementing-gitops-with-azure-devops-for-net-apps" 
 ]
 +++
 
@@ -121,7 +121,11 @@ steps:
         $(Build.SourceVersion)
 ```
 
+
+
 ## CD: App Service or AKS
+
+
 
 ### App Service
 
@@ -130,6 +134,8 @@ For many .NET APIs and sites, App Service is enough. GitOps still applies:
 - Slot deploy (staging → swap) for safer releases.
 - App settings sourced from Key Vault references or variable groups backed by Key Vault.
 - Infrastructure and app version both pinned in Git.
+
+
 
 ### AKS
 
@@ -172,6 +178,8 @@ On AKS, `helm rollback` is useful in an emergency, but if Git still says “depl
 - **Approvals and branch policies** are part of the platform, not bureaucracy theatre.
 - **Start smaller than the conference talk**. Bicep + YAML pipelines + Key Vault gets you most of GitOps without boiling the ocean.
 - Document the happy path for “something is wrong in prod”: which repo, which commit, which pipeline, which revert.
+
+
 
 ## Wrapping up
 
