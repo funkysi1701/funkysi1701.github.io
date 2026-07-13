@@ -14,6 +14,8 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
 
 **File:** `tests/homepage-navigation/homepage-loads.spec.ts`
 
+**CI:** Included in the `@smoke` PR subset (`playwright-smoke.yml` / `npm run test:smoke`).
+
 **Steps:**
   1. Navigate to https://www.funkysi1701.com
   2. Verify the page loads without errors
@@ -574,6 +576,8 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
 
 **File:** `tests/performance-technical/404-error.spec.ts`
 
+**CI:** Included in the `@smoke` PR subset (`playwright-smoke.yml` / `npm run test:smoke`).
+
 **Steps:**
   1. Navigate to a non-existent page (e.g., https://www.funkysi1701.com/this-page-does-not-exist)
   2. Verify custom 404 page is displayed
@@ -612,6 +616,8 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
 #### 5.7. Sitemap validation
 
 **File:** `tests/performance-technical/sitemap.spec.ts`
+
+**CI:** Included in the `@smoke` PR subset (`playwright-smoke.yml` / `npm run test:smoke`).
 
 **Steps:**
   1. Navigate to https://www.funkysi1701.com/sitemap.xml
