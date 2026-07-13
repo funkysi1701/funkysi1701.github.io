@@ -13,6 +13,7 @@ Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). Cursor rules 
 | Docker dev | `docker-compose up` (Hugo version from `.env`) |
 | Install test deps | `npm ci` |
 | E2E tests | `npm test` (set `BASE_URL` for non-production targets) |
+| Playwright smoke | `npm run test:smoke` (needs a local Hugo server; set `BASE_URL`) |
 | Playwright browser | `npx playwright install chromium` |
 | Meta validation (titles + descriptions) | `npm run check:meta` |
 | Meta title check only | `npm run check:meta:titles` |
@@ -81,7 +82,8 @@ After bulk-editing post front matter, run **`npm run check:meta`** before openin
 
 | Check | Where | Notes |
 |-------|-------|-------|
-| Playwright E2E | **GitHub Actions** — `swa-deploy-nonprod.yml` (blog-dev after dev SWA deploy on **`develop`** / **`feature/*`**) and `playwright.yml` (**`main`** pushes + PRs into **`main`**) | `BASE_URL`: production for `main`, blog-dev for non-prod deploys |
+| Playwright smoke | **GitHub Actions** — `playwright-smoke.yml` on all PRs | Hugo production server in CI; `BASE_URL=http://127.0.0.1:1313`; `@smoke` subset (homepage, 404, sitemap); under 10 minutes |
+| Playwright E2E (full) | **GitHub Actions** — `swa-deploy-nonprod.yml` (blog-dev after dev SWA deploy on **`develop`** / **`feature/*`**) and `playwright.yml` (**`main`** pushes + PRs into **`main`**) | `BASE_URL`: production for `main`, blog-dev for non-prod deploys |
 | Playwright `// spec:` headers | **GitHub Actions** — `spec-headers.yml` (paths under `tests/`); also before E2E in reusable Playwright | Local: `npm run check:spec-headers` |
 | Page coverage / Codecov | GitHub Actions (Playwright workflows) | `scripts/generate-page-coverage.js`; informational per `codecov.yml` |
 | Hugo production build | **GitHub Actions** | `hugo-build.yml` — PRs and pushes to `main`/`develop`; catches template/render errors before deploy |

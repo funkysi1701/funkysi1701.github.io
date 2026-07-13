@@ -5,7 +5,7 @@ import { test, expect } from '../fixtures';
 import type { Locator, Response } from '@playwright/test';
 
 test.describe('Performance and Technical', () => {
-  test('404 error page handling', async ({ page }) => {
+  test('404 error page handling', { tag: '@smoke' }, async ({ page }) => {
     let nav!: Locator;
     let response!: Response | null;
 
