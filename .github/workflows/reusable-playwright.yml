@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Check Playwright // spec: headers
+      - name: "Check Playwright // spec: headers"
         run: npm run check:spec-headers
 
       - name: Sync Playwright browser
