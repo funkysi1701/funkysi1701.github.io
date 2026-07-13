@@ -13,11 +13,13 @@ Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). Cursor rules 
 | Docker dev | `docker-compose up` (Hugo version from `.env`) |
 | Install test deps | `npm ci` |
 | E2E tests | `npm test` (set `BASE_URL` for non-production targets) |
+| Playwright smoke | `npm run test:smoke` (needs a local Hugo server; set `BASE_URL`) |
 | Playwright browser | `npx playwright install chromium` |
 | Meta validation (titles + descriptions) | `npm run check:meta` |
 | Meta title check only | `npm run check:meta:titles` |
 | Meta description check only | `npm run check:meta:descriptions` |
 | Preview description fixes (dry-run) | `npm run check:meta:fix` — apply fixes with `python scripts/normalize_meta_descriptions.py --root .` |
+| Playwright `// spec:` headers | `npm run check:spec-headers` |
 | Parkrun results update | `pip install -r scripts/requirements-parkrun.txt` then `python scripts/update_parkrun_results.py` |
 | 30-day issue schedule (dry-run) | `GH_TOKEN=$(gh auth token) DRY_RUN=true node scripts/issue-schedule/run.mjs` |
 | Blog post idea (dry-run) | `GH_TOKEN=$(gh auth token) DRY_RUN=true node scripts/blog-post-idea/run.mjs` |
@@ -35,6 +37,28 @@ After changing `package.json` or `package-lock.json`, run `npm ci` before `npm t
 ## Cursor context
 
 **`.cursorignore`** keeps Cursor Agent indexing off generated and vendored paths (`public/`, `node_modules/`, `themes/hugo-theme-bootstrap/`, Playwright/coverage artefacts). It affects Cursor only — not git or Hugo. Theme work still belongs in root `layouts/`, `assets/`, and `static/`.
+
+### Cursor hooks (post-edit meta validation)
+
+Committed at [`.cursor/hooks.json`](.cursor/hooks.json). In a **trusted** workspace, Cursor loads these automatically (also for cloud agents). They are opt-in per machine: trust the folder, or disable under **Cursor Settings → Hooks** / remove the project hooks entry if you do not want them.
+
+| Hook | Behaviour |
+|------|-----------|
+| `afterFileEdit` / `postToolUse` (`Write`\|`StrReplace`) | If the edited file is under `content/posts/**/*.md`, runs `scripts/check_meta_titles.py` and `check_meta_descriptions.py` for **that file only** via `--files` (timeout 30s). |
+
+On failure, the hook prints a clear report and (for `postToolUse`) injects `additional_context` so the agent can fix `title` (50–60) / `description` (110–160). Non-post edits are skipped. Hugo layout smoke builds are **not** hooked yet (kept out to avoid slowing every edit).
+
+Requires **Python 3.11+** on `PATH` (same as `npm run check:meta`). Manual equivalent: `python scripts/check_meta_titles.py --root . --files <path>` (and the descriptions script).
+
+**Project skills** under [`.cursor/skills/`](.cursor/skills/) package recurring maintenance workflows (read the skill when the task matches; they link to path-scoped rules instead of duplicating them):
+
+| Skill | Use when |
+|-------|----------|
+| [`update-parkrun`](.cursor/skills/update-parkrun/SKILL.md) | Refreshing parkrun results via the scraper |
+| [`fix-post-meta`](.cursor/skills/fix-post-meta/SKILL.md) | Checking or normalizing post title/description lengths |
+| [`playwright-test-healer`](.cursor/skills/playwright-test-healer/SKILL.md) | Debugging and fixing failing Playwright E2E tests |
+
+OpenSpec skills (`openspec-*`) live in the same directory for change proposal/apply/archive flows.
 
 ## Source of truth
 
@@ -58,7 +82,9 @@ After bulk-editing post front matter, run **`npm run check:meta`** before openin
 
 | Check | Where | Notes |
 |-------|-------|-------|
-| Playwright E2E | **GitHub Actions** — `swa-deploy-nonprod.yml` (blog-dev after dev SWA deploy on **`develop`** / **`feature/*`**) and `playwright.yml` (**`main`** pushes + PRs into **`main`**) | `BASE_URL`: production for `main`, blog-dev for non-prod deploys |
+| Playwright smoke | **GitHub Actions** — `playwright-smoke.yml` on all PRs | Hugo production server in CI; `BASE_URL=http://127.0.0.1:1313`; `@smoke` subset (homepage, 404, sitemap); under 10 minutes |
+| Playwright E2E (full) | **GitHub Actions** — `swa-deploy-nonprod.yml` (blog-dev after dev SWA deploy on **`develop`** / **`feature/*`**) and `playwright.yml` (**`main`** pushes + PRs into **`main`**) | `BASE_URL`: production for `main`, blog-dev for non-prod deploys |
+| Playwright `// spec:` headers | **GitHub Actions** — `spec-headers.yml` (paths under `tests/`); also before E2E in reusable Playwright | Local: `npm run check:spec-headers` |
 | Page coverage / Codecov | GitHub Actions (Playwright workflows) | `scripts/generate-page-coverage.js`; informational per `codecov.yml` |
 | Hugo production build | **GitHub Actions** | `hugo-build.yml` — PRs and pushes to `main`/`develop`; catches template/render errors before deploy |
 | Meta title / description length | **GitHub Actions** | `meta-title-length.yml`, `meta-description-length.yml` |
@@ -95,6 +121,8 @@ Make the smallest change that satisfies the task. Do not refactor unrelated code
 | [`.cursor/rules/playwright-tests.mdc`](.cursor/rules/playwright-tests.mdc) | Playwright — `BASE_URL`, `// spec:`, CI gates |
 | [`.cursor/rules/hugo-layouts.mdc`](.cursor/rules/hugo-layouts.mdc) | Hugo templates — theme overrides, build verification |
 | [`.cursor/rules/parkrun-generated.mdc`](.cursor/rules/parkrun-generated.mdc) | parkrun generated block and update script |
+| [`.cursor/hooks.json`](.cursor/hooks.json) | Cursor post-edit meta validation hooks (trusted workspace) |
+| [`.cursor/skills/`](.cursor/skills/) | Cursor project skills (parkrun, meta, Playwright healer, OpenSpec) |
 | [`.github/copilot-instructions.md`](.github/copilot-instructions.md) | Copilot-specific project context |
 | [`scripts/issue-schedule/README.md`](scripts/issue-schedule/README.md) | Weekly 30-day issue schedule planner (GitHub Models) |
 | [`scripts/blog-post-idea/README.md`](scripts/blog-post-idea/README.md) | Weekly blog post idea → content-suggestion issue (GitHub Models) |

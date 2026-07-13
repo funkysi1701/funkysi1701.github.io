@@ -1,5 +1,5 @@
 ---
-description: Playwright E2E tests — BASE_URL, // spec: traceability, GitHub Actions CI
+description: Playwright E2E tests — BASE_URL, // spec: traceability, smoke subset, GitHub Actions CI
 globs: tests/**/*.ts
 alwaysApply: false
 ---
@@ -13,20 +13,24 @@ Config: `playwright.config.ts`. Scenario plans: `specs/` (notably `specs/funkysi
 ```bash
 npm ci
 npx playwright install chromium   # if needed
-npm test
+npm test                          # full suite
+npm run test:smoke                # @smoke subset (homepage, 404, sitemap)
 ```
 
 - **`BASE_URL`:** `playwright.config.ts` defaults to `https://www.funkysi1701.com` when unset. Use `http://localhost:1313` for `hugo server -D`, or another preview URL.
 - After changing `package.json` or `package-lock.json`, run `npm ci` before `npm test`.
+- Mark lightweight PR scenarios with Playwright tag `{ tag: '@smoke' }` so `npm run test:smoke` / `playwright-smoke.yml` pick them up.
 
 ## CI expectations
 
-- **Primary E2E gate:** **`swa-deploy-nonprod.yml`** deploys to blog-dev then runs Playwright on pushes to **`develop`** and **`feature/*`** (`BASE_URL=https://blog-dev.funkysi1701.com`). **`playwright.yml`** runs on pushes to **`main`** and PRs into **`main`** (`BASE_URL=https://www.funkysi1701.com`).
-- Runs `scripts/generate-page-coverage.js`; Codecov upload when `CODECOV_TOKEN` is set. `codecov.yml` treats page coverage as **informational**.
+- **PR smoke (issue #3275):** **`playwright-smoke.yml`** runs on all pull requests against a local Hugo production server (`BASE_URL=http://127.0.0.1:1313`, `--grep @smoke`, job timeout 10 minutes). This tests PR changes; it is not a substitute for the full suite.
+- **Full E2E gate:** **`swa-deploy-nonprod.yml`** deploys to blog-dev then runs Playwright on pushes to **`develop`** and **`feature/*`** (`BASE_URL=https://blog-dev.funkysi1701.com`). **`playwright.yml`** runs on pushes to **`main`** and PRs into **`main`** (`BASE_URL=https://www.funkysi1701.com`).
+- Full suite runs `scripts/generate-page-coverage.js`; Codecov upload when `CODECOV_TOKEN` is set. `codecov.yml` treats page coverage as **informational**.
 
 ## Spec traceability
 
 - Start test files with a `// spec: specs/...` comment pointing at the scenario doc (e.g. `// spec: specs/funkysi1701-test-plan.md`).
+- Run `npm run check:spec-headers` after adding specs; CI fails if any `tests/**/*.spec.ts` omits the header.
 - Keep `specs/` and tests aligned when behaviour changes.
 
 ## Hugo feedback

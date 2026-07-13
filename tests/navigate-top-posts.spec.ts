@@ -1,3 +1,5 @@
+// spec: specs/funkysi1701-test-plan.md
+
 import { test, expect } from './fixtures';
 import { benignConsoleErrorSubstrings } from './console-errors';
 import { SITE_TITLE_PATTERN } from './site-title';

@@ -38,7 +38,7 @@ docker run --rm -it -v .:/src -p 1313:1313 floryn90/hugo:${HUGO_VERSION} server 
 
 Agents and coding assistants should start with **[`AGENTS.md`](AGENTS.md)** — a concise, tool-agnostic onboarding guide (build commands, guardrails, CI map, branch model). Deeper context lives in [`.cursor/rules/`](.cursor/rules/) (Cursor — always-applied core plus path-scoped rules for content, tests, layouts, and parkrun) and [`.github/copilot-instructions.md`](.github/copilot-instructions.md) (Copilot).
 
-**Cursor:** [`.cursorignore`](.cursorignore) excludes Hugo build output, `node_modules/`, the vendored theme, and test artefacts from agent indexing; site overrides live in root `layouts/`, `assets/`, and `static/`.
+**Cursor:** [`.cursorignore`](.cursorignore) excludes Hugo build output, `node_modules/`, the vendored theme, and test artefacts from agent indexing; site overrides live in root `layouts/`, `assets/`, and `static/`. Recurring maintenance workflows are packaged as project skills under [`.cursor/skills/`](.cursor/skills/) — notably [`update-parkrun`](.cursor/skills/update-parkrun/SKILL.md), [`fix-post-meta`](.cursor/skills/fix-post-meta/SKILL.md), and [`playwright-test-healer`](.cursor/skills/playwright-test-healer/SKILL.md) (see [`AGENTS.md`](AGENTS.md#cursor-context)).
 
 ## 🧪 Testing
 
@@ -47,12 +47,13 @@ End-to-end tests use **[Playwright](https://playwright.dev/)** (`@playwright/tes
 ```sh
 npm ci
 npx playwright install chromium
-npm test
+npm test                 # full suite
+npm run test:smoke       # @smoke subset (homepage, 404, sitemap)
 ```
 
 By default, `playwright.config.ts` uses **`BASE_URL`** of `https://www.funkysi1701.com` when unset. For local or staging targets, set the variable (PowerShell: `$env:BASE_URL="http://localhost:1313"; npm test`).
 
-**GitHub Actions** runs Playwright E2E: **`swa-deploy-nonprod.yml`** deploys to blog-dev (and blog-test on **`develop`**) then tests **`https://blog-dev.funkysi1701.com`**; **`playwright.yml`** runs on **`main`** pushes and PRs into **`main`** against production. After tests, **`scripts/generate-page-coverage.js`** can feed **Codecov** when `CODECOV_TOKEN` is configured. **`codecov.yml`** marks **page coverage** as **informational**.
+**GitHub Actions:** **`playwright-smoke.yml`** runs the `@smoke` subset on every pull request against a local Hugo production server (`BASE_URL=http://127.0.0.1:1313`). Full Playwright E2E: **`swa-deploy-nonprod.yml`** deploys to blog-dev (and blog-test on **`develop`**) then tests **`https://blog-dev.funkysi1701.com`**; **`playwright.yml`** runs on **`main`** pushes and PRs into **`main`** against production. After full-suite runs, **`scripts/generate-page-coverage.js`** can feed **Codecov** when `CODECOV_TOKEN` is configured. **`codecov.yml`** marks **page coverage** as **informational**.
 
 **GitHub Actions** (`.github/workflows/`) runs a **Hugo production build** on pull requests (`hugo-build.yml`) and checks such as **meta title** (50–60 characters) and **meta description** (110–160 characters) for `content/posts/**/*.md`. Run the same checks locally after editing post front matter:
 

@@ -1,6 +1,6 @@
 # Copilot Instructions for funkysi1701.com Blog
 
-For a shorter, tool-agnostic onboarding guide, see **[`AGENTS.md`](../AGENTS.md)** at the repo root. PR checklist and merge readiness: **[`CONTRIBUTING.md`](../CONTRIBUTING.md)**. This file adds Copilot-specific detail. Cursor rules are path-scoped under **[`.cursor/rules/`](../.cursor/rules/)** — always-applied core in **`funkysi1701-blog-core.mdc`**, plus **`content-posts.mdc`**, **`playwright-tests.mdc`**, **`hugo-layouts.mdc`**, and **`parkrun-generated.mdc`**.
+For a shorter, tool-agnostic onboarding guide, see **[`AGENTS.md`](../AGENTS.md)** at the repo root. PR checklist and merge readiness: **[`CONTRIBUTING.md`](../CONTRIBUTING.md)**. This file adds Copilot-specific detail. Cursor rules are path-scoped under **[`.cursor/rules/`](../.cursor/rules/)** — always-applied core in **`funkysi1701-blog-core.mdc`**, plus **`content-posts.mdc`**, **`playwright-tests.mdc`**, **`hugo-layouts.mdc`**, and **`parkrun-generated.mdc`**. Cursor project skills for recurring tasks live under **[`.cursor/skills/`](../.cursor/skills/)** (parkrun update, post meta fix, Playwright healer); see **`AGENTS.md`**.
 
 ## Project Overview
 
@@ -178,30 +178,33 @@ The repo uses **Playwright** for automated end-to-end tests.
 ```bash
 npm ci
 npx playwright install chromium   # if browsers are not already present
-npm test
+npm test                          # full suite
+npm run test:smoke                # @smoke subset (homepage, 404, sitemap)
 ```
 
 `playwright.config.ts` sets `baseURL` from **`BASE_URL`**; if unset, it defaults to **`https://www.funkysi1701.com`**. Point `BASE_URL` at `http://localhost:1313` (or another host) when testing a local or preview build.
 
-**GitHub Actions:** **`swa-deploy-nonprod.yml`** deploys to blog-dev (and blog-test on **`develop`**) then runs Playwright with **`BASE_URL=https://blog-dev.funkysi1701.com`**. **`playwright.yml`** runs on **`main`** pushes and PRs into **`main`** with production **`BASE_URL`**. Workflows run **`scripts/generate-page-coverage.js`** and upload to **Codecov** when **`CODECOV_TOKEN`** is set. **`codecov.yml`** configures Codecov **project/patch** status as **informational**.
+**GitHub Actions:** **`playwright-smoke.yml`** runs `@smoke` on all PRs against a local Hugo server (`BASE_URL=http://127.0.0.1:1313`). **`swa-deploy-nonprod.yml`** deploys to blog-dev (and blog-test on **`develop`**) then runs the full suite with **`BASE_URL=https://blog-dev.funkysi1701.com`**. **`playwright.yml`** runs on **`main`** pushes and PRs into **`main`** with production **`BASE_URL`**. Full-suite workflows run **`scripts/generate-page-coverage.js`** and upload to **Codecov** when **`CODECOV_TOKEN`** is set. **`codecov.yml`** configures Codecov **project/patch** status as **informational**.
 
 **GitHub Actions (other):** **`hugo-build.yml`** (PR build validation), meta title/description checks, **`pa11y-nightly.yml`**, production SWA deploy, broken link schedule, develop→main auto-PR, parkrun update PRs, **`issue-schedule.yml`** (weekly 30-day issue planner → tracking issue), **`blog-post-idea.yml`** (weekly content suggestion issue), **`tech-debt-scan.yml`** (weekly tech-debt issues).
 
 **Meta validation (post front matter):** After editing `title` or `description` in `content/posts/**/*.md`, run **`npm run check:meta`** (wraps the Python scripts used by GitHub Actions). Subcommands: **`check:meta:titles`**, **`check:meta:descriptions`**. To preview automated description rewrites: **`npm run check:meta:fix`** (dry-run only). Apply fixes with `python scripts/normalize_meta_descriptions.py --root .`. Requires Python 3.11+ on `PATH`.
 
-**Specs:** High-level scenarios are documented in **`specs/`** (see **`specs/funkysi1701-test-plan.md`**). Individual test files often start with a `// spec: specs/...` pointer for traceability.
+**Specs:** High-level scenarios are documented in **`specs/`** (see **`specs/funkysi1701-test-plan.md`**). Every `tests/**/*.spec.ts` file must start with a `// spec: specs/...` pointer for traceability. Verify with **`npm run check:spec-headers`** (also run by **`spec-headers.yml`** and before Playwright in the reusable E2E workflow).
 
 For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remains useful for quick feedback before or after running tests.
 
 ## Useful File References
 
 - `.cursor/rules/` – Cursor agent rules (`funkysi1701-blog-core.mdc` always applied; `content-posts.mdc`, `playwright-tests.mdc`, `hugo-layouts.mdc`, `parkrun-generated.mdc` path-scoped)
+- `.cursor/skills/` – Cursor project skills (`update-parkrun`, `fix-post-meta`, `playwright-test-healer`, OpenSpec flows)
 - `.env` – Hugo version (affects all builds)
 - `config/_default/config.toml` – Main site title, menu, author info
 - `config/production/config.toml` – Production baseURL and analytics
 - `playwright.config.ts` – Playwright defaults (`baseURL`, reporters, projects)
 - `swa-deploy-nonprod.yml` – SWA dev/test deploy + blog-dev Playwright + SEO
 - `playwright.yml` – Production Playwright E2E (`main` pushes and PRs into `main`)
+- `playwright-smoke.yml` – PR smoke subset against local Hugo (`@smoke`, `BASE_URL=http://127.0.0.1:1313`)
 - `pa11y-nightly.yml` – Scheduled full-sitemap accessibility scan
 - `issue-schedule.yml` – Weekly LLM planner: open issues → **30-day implementation schedule** tracking issue (`scripts/issue-schedule/`)
 - `blog-post-idea.yml` – Weekly LLM: catalogue posts + trends → one `[Content Suggestion]` issue (`scripts/blog-post-idea/`)

@@ -1,0 +1,80 @@
+# PR smoke subset of Playwright against a local Hugo server (tests PR changes).
+# Full E2E remains on swa-deploy-nonprod.yml (blog-dev) and playwright.yml (production).
+# Decision for issue #3275: GHA smoke on PRs, not contributor-only local tests.
+
+name: Playwright smoke (PR)
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          submodules: true
+
+      - name: Load Hugo version
+        run: |
+          echo "HUGO_VERSION=$(grep HUGO_VERSION .env | cut -d '=' -f2)" >> $GITHUB_ENV
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: lts/*
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Start Hugo server
+        run: |
+          docker run -d --name hugo-smoke \
+            -p 1313:1313 \
+            -v "${{ github.workspace }}:/src" \
+            -w /src \
+            -u "$(id -u):$(id -g)" \
+            "floryn90/hugo:${HUGO_VERSION}-ext-alpine" \
+            server --environment production -p 1313 --bind 0.0.0.0 \
+            --baseURL http://127.0.0.1:1313/ \
+            --disableLiveReload --disableFastRender --noBuildLock
+
+      - name: Wait for Hugo
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 90); do
+            if curl -sf "http://127.0.0.1:1313/" >/dev/null; then
+              echo "Hugo ready after ${i} attempt(s)"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Hugo did not become ready in time"
+          docker logs hugo-smoke || true
+          exit 1
+
+      - name: Run Playwright smoke tests
+        run: npm run test:smoke
+        env:
+          BASE_URL: http://127.0.0.1:1313
+          CI: "true"
+      - name: Stop Hugo server
+        if: always()
+        run: docker rm -f hugo-smoke || true
+
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: playwright-smoke-report-${{ github.run_id }}
+          path: |
+            playwright-report
+            test-results
+          if-no-files-found: ignore

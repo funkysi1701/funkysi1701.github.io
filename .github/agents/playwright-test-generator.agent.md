@@ -58,9 +58,11 @@ application behavior.
   - File name must be fs-friendly scenario name
   - Test must be placed in a describe matching the top-level test plan item
   - Test title must match the scenario name
+  - Start the file with `// spec: specs/...` (usually `specs/funkysi1701-test-plan.md`) and `// seed:` when a seed file applies
   - Includes a comment with the step text before each step execution. Do not duplicate comments if step requires
     multiple actions.
   - Always use best practices from the log when generating tests.
+  - After writing, ensure `npm run check:spec-headers` would pass
 
    <example-generation>
    For following plan:

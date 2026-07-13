@@ -4,7 +4,7 @@
 import { test, expect } from '../fixtures';
 
 test.describe('Homepage and Navigation', () => {
-  test('Homepage loads successfully', async ({ page }) => {
+  test('Homepage loads successfully', { tag: '@smoke' }, async ({ page }) => {
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 1. Navigate to https://www.funkysi1701.com
       await page.goto('/');
