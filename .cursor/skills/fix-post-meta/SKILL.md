@@ -31,6 +31,13 @@ Posts use TOML front matter in `+++` fences. British English (`locale = 'en-gb'`
 
    Or separately: `npm run check:meta:titles`, `npm run check:meta:descriptions`.
 
+   Scoped to edited posts (same as the Cursor post-edit hook):
+
+   ```bash
+   python scripts/check_meta_titles.py --root . --files content/posts/YYYY/slug.md
+   python scripts/check_meta_descriptions.py --root . --files content/posts/YYYY/slug.md
+   ```
+
 2. **Preview description rewrites** (dry-run, no writes):
 
    ```bash

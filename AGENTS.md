@@ -36,6 +36,18 @@ After changing `package.json` or `package-lock.json`, run `npm ci` before `npm t
 
 **`.cursorignore`** keeps Cursor Agent indexing off generated and vendored paths (`public/`, `node_modules/`, `themes/hugo-theme-bootstrap/`, Playwright/coverage artefacts). It affects Cursor only — not git or Hugo. Theme work still belongs in root `layouts/`, `assets/`, and `static/`.
 
+### Cursor hooks (post-edit meta validation)
+
+Committed at [`.cursor/hooks.json`](.cursor/hooks.json). In a **trusted** workspace, Cursor loads these automatically (also for cloud agents). They are opt-in per machine: trust the folder, or disable under **Cursor Settings → Hooks** / remove the project hooks entry if you do not want them.
+
+| Hook | Behaviour |
+|------|-----------|
+| `afterFileEdit` / `postToolUse` (`Write`\|`StrReplace`) | If the edited file is under `content/posts/**/*.md`, runs `scripts/check_meta_titles.py` and `check_meta_descriptions.py` for **that file only** via `--files` (timeout 30s). |
+
+On failure, the hook prints a clear report and (for `postToolUse`) injects `additional_context` so the agent can fix `title` (50–60) / `description` (110–160). Non-post edits are skipped. Hugo layout smoke builds are **not** hooked yet (kept out to avoid slowing every edit).
+
+Requires **Python 3.11+** on `PATH` (same as `npm run check:meta`). Manual equivalent: `python scripts/check_meta_titles.py --root . --files <path>` (and the descriptions script).
+
 **Project skills** under [`.cursor/skills/`](.cursor/skills/) package recurring maintenance workflows (read the skill when the task matches; they link to path-scoped rules instead of duplicating them):
 
 | Skill | Use when |
@@ -105,6 +117,7 @@ Make the smallest change that satisfies the task. Do not refactor unrelated code
 | [`.cursor/rules/playwright-tests.mdc`](.cursor/rules/playwright-tests.mdc) | Playwright — `BASE_URL`, `// spec:`, CI gates |
 | [`.cursor/rules/hugo-layouts.mdc`](.cursor/rules/hugo-layouts.mdc) | Hugo templates — theme overrides, build verification |
 | [`.cursor/rules/parkrun-generated.mdc`](.cursor/rules/parkrun-generated.mdc) | parkrun generated block and update script |
+| [`.cursor/hooks.json`](.cursor/hooks.json) | Cursor post-edit meta validation hooks (trusted workspace) |
 | [`.cursor/skills/`](.cursor/skills/) | Cursor project skills (parkrun, meta, Playwright healer, OpenSpec) |
 | [`.github/copilot-instructions.md`](.github/copilot-instructions.md) | Copilot-specific project context |
 | [`scripts/issue-schedule/README.md`](scripts/issue-schedule/README.md) | Weekly 30-day issue schedule planner (GitHub Models) |
