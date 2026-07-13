@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "hooks": {
+    "afterFileEdit": [
+      {
+        "command": "python .cursor/hooks/validate-post-meta.py",
+        "timeout": 30
+      }
+    ],
+    "postToolUse": [
+      {
+        "command": "python .cursor/hooks/validate-post-meta.py",
+        "matcher": "Write|StrReplace",
+        "timeout": 30
+      }
+    ]
+  }
+}

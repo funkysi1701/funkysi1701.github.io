@@ -46,14 +46,37 @@ def load_description(front_matter: str) -> tuple[str | None, str | None]:
     return desc, None
 
 
-def check_posts(repo_root: Path) -> tuple[list[Failure], int, int]:
+def resolve_post_paths(repo_root: Path, files: list[Path] | None) -> list[Path]:
+    """Return post markdown paths to check (all posts, or an explicit subset)."""
+    if not files:
+        return sorted(p for p in repo_root.glob(POSTS_GLOB) if p.is_file())
+
+    resolved: list[Path] = []
+    for raw in files:
+        path = raw if raw.is_absolute() else (repo_root / raw)
+        path = path.resolve()
+        try:
+            rel = path.relative_to(repo_root).as_posix()
+        except ValueError:
+            raise SystemExit(f"File is outside repository root: {raw}") from None
+        if not rel.startswith("content/posts/") or not rel.endswith(".md"):
+            raise SystemExit(
+                f"Not a post markdown path under content/posts/: {rel}"
+            )
+        if not path.is_file():
+            raise SystemExit(f"File not found: {rel}")
+        resolved.append(path)
+    return sorted(set(resolved))
+
+
+def check_posts(
+    repo_root: Path, files: list[Path] | None = None
+) -> tuple[list[Failure], int, int]:
     """Returns (failures, total_post_files, posts_with_string_description)."""
     failures: list[Failure] = []
     total_post_files = 0
     with_string_description = 0
-    for path in sorted(repo_root.glob(POSTS_GLOB)):
-        if not path.is_file():
-            continue
+    for path in resolve_post_paths(repo_root, files):
         total_post_files += 1
         rel = path.relative_to(repo_root).as_posix()
         text = path.read_text(encoding="utf-8")
@@ -167,9 +190,18 @@ def main() -> int:
         default=None,
         help="Write Markdown report to this path",
     )
+    parser.add_argument(
+        "--files",
+        nargs="+",
+        type=Path,
+        default=None,
+        help="Limit checks to these post paths (relative to --root or absolute)",
+    )
     args = parser.parse_args()
     repo_root = args.root.resolve()
-    failures, total_post_files, with_string_description = check_posts(repo_root)
+    failures, total_post_files, with_string_description = check_posts(
+        repo_root, files=args.files
+    )
     report = render_report(
         failures, total_post_files, with_string_description, repo_root
     )
