@@ -27,6 +27,7 @@ npm test
 ## Spec traceability
 
 - Start test files with a `// spec: specs/...` comment pointing at the scenario doc (e.g. `// spec: specs/funkysi1701-test-plan.md`).
+- Run `npm run check:spec-headers` after adding specs; CI fails if any `tests/**/*.spec.ts` omits the header.
 - Keep `specs/` and tests aligned when behaviour changes.
 
 ## Hugo feedback

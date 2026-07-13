@@ -38,7 +38,7 @@ docker run --rm -it -v .:/src -p 1313:1313 floryn90/hugo:${HUGO_VERSION} server 
 
 Agents and coding assistants should start with **[`AGENTS.md`](AGENTS.md)** — a concise, tool-agnostic onboarding guide (build commands, guardrails, CI map, branch model). Deeper context lives in [`.cursor/rules/`](.cursor/rules/) (Cursor — always-applied core plus path-scoped rules for content, tests, layouts, and parkrun) and [`.github/copilot-instructions.md`](.github/copilot-instructions.md) (Copilot).
 
-**Cursor:** [`.cursorignore`](.cursorignore) excludes Hugo build output, `node_modules/`, the vendored theme, and test artefacts from agent indexing; site overrides live in root `layouts/`, `assets/`, and `static/`.
+**Cursor:** [`.cursorignore`](.cursorignore) excludes Hugo build output, `node_modules/`, the vendored theme, and test artefacts from agent indexing; site overrides live in root `layouts/`, `assets/`, and `static/`. Recurring maintenance workflows are packaged as project skills under [`.cursor/skills/`](.cursor/skills/) — notably [`update-parkrun`](.cursor/skills/update-parkrun/SKILL.md), [`fix-post-meta`](.cursor/skills/fix-post-meta/SKILL.md), and [`playwright-test-healer`](.cursor/skills/playwright-test-healer/SKILL.md) (see [`AGENTS.md`](AGENTS.md#cursor-context)).
 
 ## 🧪 Testing
 
