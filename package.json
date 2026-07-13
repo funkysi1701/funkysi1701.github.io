@@ -80,6 +80,7 @@
     "check:meta": "node -e \"const {spawnSync}=require('child_process'); const run=(script)=>{const r=spawnSync('python',[script,'--root','.'],{stdio:'inherit'}); if (r.error) {console.error(r.error); return 1;} return r.status ?? 1;}; const a=run('scripts/check_meta_titles.py'); const b=run('scripts/check_meta_descriptions.py'); process.exit(a||b);\"",
     "check:meta:titles": "python scripts/check_meta_titles.py --root .",
     "check:meta:descriptions": "python scripts/check_meta_descriptions.py --root .",
-    "check:meta:fix": "python scripts/normalize_meta_descriptions.py --root . --dry-run"
+    "check:meta:fix": "python scripts/normalize_meta_descriptions.py --root . --dry-run",
+    "check:spec-headers": "node scripts/check_spec_headers.mjs"
   }
 }

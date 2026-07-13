@@ -11,7 +11,7 @@ Copy into your PR description or verify locally before requesting review:
 - [ ] **Secrets and build output:** Did not commit API keys, deploy tokens, or credentials. Did not commit `public/` (Hugo build output).
 - [ ] **Templates and assets:** Hugo production build passes (`hugo --minify --environment production`, or Docker per `README.md`). GitHub Actions runs the same build on pull requests (`hugo-build.yml`). Prefer site overrides in root `layouts/`, `assets/`, and `static/` over editing `themes/hugo-theme-bootstrap/`.
 - [ ] **Test changes:** `npm ci && npm test` when you change tests or behaviour they cover. Full Playwright E2E runs on **GitHub Actions** after SWA deploy to **`develop`** / **`feature/*`** (`swa-deploy-nonprod.yml`, blog-dev) and on **`main`** pushes and PRs into **`main`** (`playwright.yml`).
-- [ ] **New Playwright specs:** Include a `// spec: specs/funkysi1701-test-plan.md` comment (or the relevant scenario doc under `specs/`). See [`specs/funkysi1701-test-plan.md`](specs/funkysi1701-test-plan.md).
+- [ ] **New Playwright specs:** Include a `// spec: specs/funkysi1701-test-plan.md` comment (or the relevant scenario doc under `specs/`). Run `npm run check:spec-headers` to verify. See [`specs/funkysi1701-test-plan.md`](specs/funkysi1701-test-plan.md).
 
 ## Branch workflow
 

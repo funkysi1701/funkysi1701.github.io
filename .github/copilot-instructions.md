@@ -189,7 +189,7 @@ npm test
 
 **Meta validation (post front matter):** After editing `title` or `description` in `content/posts/**/*.md`, run **`npm run check:meta`** (wraps the Python scripts used by GitHub Actions). Subcommands: **`check:meta:titles`**, **`check:meta:descriptions`**. To preview automated description rewrites: **`npm run check:meta:fix`** (dry-run only). Apply fixes with `python scripts/normalize_meta_descriptions.py --root .`. Requires Python 3.11+ on `PATH`.
 
-**Specs:** High-level scenarios are documented in **`specs/`** (see **`specs/funkysi1701-test-plan.md`**). Individual test files often start with a `// spec: specs/...` pointer for traceability.
+**Specs:** High-level scenarios are documented in **`specs/`** (see **`specs/funkysi1701-test-plan.md`**). Every `tests/**/*.spec.ts` file must start with a `// spec: specs/...` pointer for traceability. Verify with **`npm run check:spec-headers`** (also run by **`spec-headers.yml`** and before Playwright in the reusable E2E workflow).
 
 For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remains useful for quick feedback before or after running tests.
 
