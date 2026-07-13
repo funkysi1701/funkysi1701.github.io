@@ -26,6 +26,20 @@ function funkysiLocPresent(content: string): boolean {
   return /https:\/\/([^/]+\.)?funkysi1701\.com(:\d+)?\//i.test(content);
 }
 
+/** Hugo `server` rewrites baseURL to the listen URL (localhost or 127.0.0.1). */
+function isLoopbackOrigin(origin: string): boolean {
+  try {
+    const host = new URL(origin).hostname;
+    return host === 'localhost' || host === '127.0.0.1' || host === '::1';
+  } catch {
+    return false;
+  }
+}
+
+function loopbackLocPresent(content: string): boolean {
+  return /https?:\/\/(localhost|127\.0\.0\.1|\[::1\])(:\d+)?\//i.test(content);
+}
+
 function sitemapHasOriginPrefix(content: string, origin: string): boolean {
   const o = origin.replace(/\/$/, '');
   if (content.includes(`${o}/`)) return true;
@@ -66,6 +80,10 @@ test.describe('Performance and Technical', () => {
       try {
         ({ response, content } = await getSitemap(request, deploymentOrigin));
       } catch (firstErr) {
+        // Local Hugo smoke must not silently fall back to production.
+        if (isLoopbackOrigin(deploymentOrigin)) {
+          throw firstErr;
+        }
         // Same deployment sometimes serves the canonical www sitemap only
         if (deploymentOrigin !== 'https://www.funkysi1701.com') {
           ({ response, content } = await getSitemap(
@@ -115,7 +133,9 @@ test.describe('Performance and Technical', () => {
       expect(content).toMatch(/<loc>https?:\/\//);
       const originsToCheck = new Set<string>([deploymentOrigin, ...KNOWN_SITE_ORIGINS]);
       const locHostsOk =
-        [...originsToCheck].some((o) => sitemapHasOriginPrefix(content, o)) || funkysiLocPresent(content);
+        [...originsToCheck].some((o) => sitemapHasOriginPrefix(content, o)) ||
+        funkysiLocPresent(content) ||
+        (isLoopbackOrigin(deploymentOrigin) && loopbackLocPresent(content));
       expect(locHostsOk).toBeTruthy();
     });
 

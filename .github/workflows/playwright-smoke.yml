@@ -43,6 +43,7 @@ jobs:
             -u "$(id -u):$(id -g)" \
             "floryn90/hugo:${HUGO_VERSION}-ext-alpine" \
             server --environment production -p 1313 --bind 0.0.0.0 \
+            --baseURL http://127.0.0.1:1313/ \
             --disableLiveReload --disableFastRender --noBuildLock
 
       - name: Wait for Hugo
