@@ -56,7 +56,7 @@ async function getSitemap(
 }
 
 test.describe('Performance and Technical', () => {
-  test('Sitemap validation', async ({ request }) => {
+  test('Sitemap validation', { tag: '@smoke' }, async ({ request }) => {
     const deploymentOrigin = siteOriginFromEnv();
     let content!: string;
     let response!: APIResponse;
