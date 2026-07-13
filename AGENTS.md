@@ -36,6 +36,16 @@ After changing `package.json` or `package-lock.json`, run `npm ci` before `npm t
 
 **`.cursorignore`** keeps Cursor Agent indexing off generated and vendored paths (`public/`, `node_modules/`, `themes/hugo-theme-bootstrap/`, Playwright/coverage artefacts). It affects Cursor only — not git or Hugo. Theme work still belongs in root `layouts/`, `assets/`, and `static/`.
 
+**Project skills** under [`.cursor/skills/`](.cursor/skills/) package recurring maintenance workflows (read the skill when the task matches; they link to path-scoped rules instead of duplicating them):
+
+| Skill | Use when |
+|-------|----------|
+| [`update-parkrun`](.cursor/skills/update-parkrun/SKILL.md) | Refreshing parkrun results via the scraper |
+| [`fix-post-meta`](.cursor/skills/fix-post-meta/SKILL.md) | Checking or normalizing post title/description lengths |
+| [`playwright-test-healer`](.cursor/skills/playwright-test-healer/SKILL.md) | Debugging and fixing failing Playwright E2E tests |
+
+OpenSpec skills (`openspec-*`) live in the same directory for change proposal/apply/archive flows.
+
 ## Source of truth
 
 - **Content:** `content/` (posts under `content/posts/YYYY/`, pages at `content/` root).
@@ -95,6 +105,7 @@ Make the smallest change that satisfies the task. Do not refactor unrelated code
 | [`.cursor/rules/playwright-tests.mdc`](.cursor/rules/playwright-tests.mdc) | Playwright — `BASE_URL`, `// spec:`, CI gates |
 | [`.cursor/rules/hugo-layouts.mdc`](.cursor/rules/hugo-layouts.mdc) | Hugo templates — theme overrides, build verification |
 | [`.cursor/rules/parkrun-generated.mdc`](.cursor/rules/parkrun-generated.mdc) | parkrun generated block and update script |
+| [`.cursor/skills/`](.cursor/skills/) | Cursor project skills (parkrun, meta, Playwright healer, OpenSpec) |
 | [`.github/copilot-instructions.md`](.github/copilot-instructions.md) | Copilot-specific project context |
 | [`scripts/issue-schedule/README.md`](scripts/issue-schedule/README.md) | Weekly 30-day issue schedule planner (GitHub Models) |
 | [`scripts/blog-post-idea/README.md`](scripts/blog-post-idea/README.md) | Weekly blog post idea → content-suggestion issue (GitHub Models) |
