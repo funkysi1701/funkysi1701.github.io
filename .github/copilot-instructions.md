@@ -163,7 +163,7 @@ Hugo uses environment-specific configs in `config/`:
    - Staging: Testing environment
    - Production: Full analytics, CDN caching, Google AdSense
 
-4. **Multi-environment deployment:** SWA deploys use Hugo `--environment` values `production`, `development`, and `staging` from `config/` overlays. Workflows: `azure-static-web-apps-victorious-pebble-0b8f90e03.yml` (prod), `swa-deploy-nonprod.yml` (dev/test).
+4. **Multi-environment deployment:** SWA deploys use Hugo `--environment` values `production`, `development`, and `staging` from `config/` overlays. Workflows: `azure-static-web-apps-victorious-pebble-0b8f90e03.yml` (prod), `swa-deploy-nonprod.yml` (dev/test). Development (blog-dev) builds pass `--buildFuture`; staging and production do not.
 
 5. **Docker version control:** Keep `.env` file updated with correct `HUGO_VERSION` to ensure consistency across local, pipeline, and container environments.
 

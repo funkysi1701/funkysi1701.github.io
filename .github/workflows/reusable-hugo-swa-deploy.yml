@@ -36,12 +36,19 @@ jobs:
 
       - name: Build Hugo site
         run: |
+          set -euo pipefail
+          EXTRA_FLAGS=()
+          if [ "${{ inputs.hugo_environment }}" = "development" ]; then
+            # blog-dev only: include future-dated posts for preview
+            EXTRA_FLAGS+=(--buildFuture)
+          fi
           docker run --rm \
             -v "${{ github.workspace }}:/src" \
             -w /src \
             -u "$(id -u):$(id -g)" \
             "floryn90/hugo:${HUGO_VERSION}-ext-alpine" \
-            --minify --environment "${{ inputs.hugo_environment }}" --noBuildLock
+            --minify --environment "${{ inputs.hugo_environment }}" --noBuildLock \
+            "${EXTRA_FLAGS[@]}"
 
       - name: Copy staticwebapp.config.json to public
         run: cp staticwebapp.config.json public/staticwebapp.config.json
