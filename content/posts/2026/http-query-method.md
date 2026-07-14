@@ -104,10 +104,10 @@ Putting filters in the QUERY body already helps versus a fat `GET` query string 
 
 ## Using QUERY with ASP.NET Core
 
-Routing in ASP.NET Core already accepts arbitrary method strings via `MapMethods`, so you can expose a QUERY endpoint today:
+You do not need to wait for .NET 11 to try QUERY on the server. ASP.NET Core routing already accepts arbitrary method strings via `MapMethods`, and recent releases expose `HttpMethods.Query` (with `HttpMethods.IsQuery`) so you do not have to sprinkle the literal `"QUERY"` everywhere:
 
 ```csharp
-app.MapMethods("/api/products/search", ["QUERY"], (ProductSearchRequest request) =>
+app.MapMethods("/api/products/search", [HttpMethods.Query], (ProductSearchRequest request) =>
 {
     var results = ProductCatalogue.Search(request);
     return TypedResults.Ok(results);
@@ -123,11 +123,11 @@ public static class HttpQueryExtensions
         this IEndpointRouteBuilder endpoints,
         string pattern,
         Delegate handler) =>
-        endpoints.MapMethods(pattern, ["QUERY"], handler);
+        endpoints.MapMethods(pattern, [HttpMethods.Query], handler);
 }
 ```
 
-On the OpenAPI side, QUERY became a first-class Path Item operation in **OpenAPI 3.2**. In .NET 11, ASP.NET Core's document generator recognises QUERY when you opt into that version:
+What landed later is OpenAPI documentation. QUERY became a first-class Path Item operation in **OpenAPI 3.2**. In **.NET 11**, ASP.NET Core's document generator recognises QUERY when you opt into that version — so Swagger / client generators see a proper `query` operation instead of an oddball method string:
 
 ```csharp
 builder.Services.AddOpenApi(options =>
@@ -136,7 +136,7 @@ builder.Services.AddOpenApi(options =>
 });
 ```
 
-With OpenAPI 3.2, the operation appears as a sibling of `get` / `post`. On older document versions, generators may fall back to an extension such as `x-oai-additionalOperations` so the endpoint is not silently dropped.
+With OpenAPI 3.2, the operation appears as a sibling of `get` / `post`. On older document versions, generators may fall back to an extension such as `x-oai-additionalOperations` so the endpoint is not silently dropped. Until you are on that stack, you can still ship QUERY endpoints and document them by hand if needed.
 
 Clients can call it with curl once the server understands the verb:
 
