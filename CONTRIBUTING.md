@@ -18,7 +18,7 @@ Copy into your PR description or verify locally before requesting review:
 | Branch | Use |
 |--------|-----|
 | **`feature/*`** | Day-to-day work — open PRs into **`develop`** |
-| **`develop`** | Integration; GHA deploys to blog-dev / blog-test (SWA) |
+| **`develop`** | Integration; GHA deploys to blog-dev / blog-test (SWA). blog-dev builds use `--buildFuture`; blog-test does not |
 | **`main`** | Production; promotion via [`.github/workflows/auto-pr.yml`](.github/workflows/auto-pr.yml) (develop → main) |
 
 There is no **`dev`** branch — use **`develop`**.
