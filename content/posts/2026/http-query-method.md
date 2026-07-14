@@ -32,7 +32,9 @@ In June 2026 the IETF published [RFC 10008](https://www.rfc-editor.org/rfc/rfc10
 
 `GET` is the right semantic for "please return something, and I am not asking you to change state." It is safe, idempotent, and cacheable. The catch is where the input lives: in the URI. Complex filters, GraphQL-style documents, Elasticsearch queries, or large multi-field search payloads do not always fit comfortably in a URL. RFC 9110 suggests supporting request targets of at least 8,000 octets, but browsers, proxies, and gateways vary — and overflowing those limits is a practical failure, not a theoretical one.
 
-`POST` accepts a body with a clear media type, which is perfect for structured input. The semantic cost is high: `POST` is not safe, not idempotent, and is not treated like a repeatable read. Intermediaries cannot safely retry a failed `POST` the way they can a `GET`. Shared caches need special handling. Tooling that assumes "POST means mutate" treats a catalogue search as if it wrote data.
+URI length is not the only issue. Request URIs — including query-string filters — are far more likely to appear in access logs, browser history, and bookmarks than request bodies. If your search payload contains personal data or other sensitive filters (think GDPR and PII), stuffing it into a `GET` URL is often a compliance headache. That is one reason many teams already use `POST /search`: the body is less exposed in everyday logging.
+
+`POST` accepts a body with a clear media type, which is perfect for structured input. The catch is what the rest of the HTTP stack is allowed to *assume*. HTTP treats `POST` as potentially unsafe and non-idempotent: a particular search endpoint can be a pure read in practice, but intermediaries cannot tell that from the method alone. They cannot safely auto-retry a failed `POST` the way they can a `GET`, and shared caches cannot treat it as a normal repeatable read. Tooling that assumes "POST means mutate" often groups a catalogue search with create/update traffic — culturally understandable, even when your handler never writes.
 
 People sometimes tried `GET` *with* a body. RFC 9110 is blunt about that: content on a `GET` has no generally defined semantics, must not change the meaning of the request, and some implementations reject it because of request-smuggling concerns. That was never the answer.
 
@@ -55,7 +57,9 @@ Key properties:
 | **Cacheable** | Successful responses may be stored and reused for subsequent QUERY requests |
 | **Body required for the query** | The query lives in the content, not forced into the URI |
 
-**Idempotent** means repeating the same request does not cause additional side effects beyond the first successful attempt. If the connection drops after you send a QUERY, a client or proxy can send it again without worrying that the second attempt will “do something twice” — unlike a non-idempotent `POST` that might create two orders if retried. It does *not* mean the response body is frozen forever: like `GET`, two identical QUERY calls can still return different results if the underlying data changed between them.
+**Safe** here is the HTTP meaning: the client is not asking to change the *target* resource (for example `/api/products`). That does not ban every side effect on the planet. Your server can still increment metrics, write an audit row, or — as the RFC allows — create temporary resources behind `Location` / `Content-Location` so results can be fetched again with `GET`. What intermediaries can assume is that QUERY is a read against the resource you addressed, not a create or update of it.
+
+**Idempotent** means repeating the same request does not cause *additional* side effects beyond what a single successful attempt would cause. If the connection drops after you send a QUERY, a client or proxy can send it again without worrying that the second attempt will “do something twice” — unlike a non-idempotent `POST` that might create two orders if retried. It does *not* mean the response is frozen forever, and it is not the same as “cache forever.” Like `GET`, two identical QUERY calls can return different results if the underlying catalogue changed between them.
 
 A `200 OK` means the query was processed successfully and the results are in the response content. That matches how people already think about search endpoints — now with HTTP semantics that intermediaries can trust.
 
@@ -64,13 +68,14 @@ A `200 OK` means the query was processed successfully and the results are in the
 | | GET | QUERY | POST (as a "search") |
 |--|-----|-------|----------------------|
 | Request body for the query | No (undefined) | Yes | Yes |
-| Safe | Yes | Yes | No |
-| Idempotent | Yes | Yes | No |
-| Typically cacheable as a read | Yes | Yes | No |
+| Safe (assumed by intermediaries) | Yes | Yes | Not assumed |
+| Idempotent (assumed by intermediaries) | Yes | Yes | Not assumed |
+| Typically cacheable as a read | Yes | Yes | Not assumed |
 | Fits large / structured input | Poorly (URI limits) | Yes | Yes |
+| Keeps filters out of the URI (logs / bookmarks) | No | Yes | Yes |
 | Auto-retry after failure | Safe | Safe | Risky |
 
-You still use `GET` when the URI alone identifies what you want. You still use `POST` when you are creating or changing something. QUERY is for the awkward middle: *read-only operations whose input belongs in a body.*
+You still use `GET` when the URI alone identifies what you want — and when you are comfortable with that URI being logged. You still use `POST` when you are creating or changing something, or when you need a body today and cannot yet rely on QUERY end to end. QUERY is for the awkward middle: *read-only operations whose input belongs in a body*, with semantics intermediaries can trust.
 
 ## Caching, Location, and Accept-Query
 
@@ -95,7 +100,7 @@ If you send an unsupported type, expect `415 Unsupported Media Type`, and you ma
 
 QUERY is **not** a CORS-safelisted method. Browser `fetch` calls will trigger a preflight `OPTIONS` check, the same way `PUT` or `DELETE` do. That is intentional: you do not want a body-carrying cross-origin method sliding past CORS just because it is "read-like."
 
-As always with search APIs, treat sensitive filter values carefully if you mint temporary URIs in `Location` or `Content-Location` — the RFC warns that those URIs should not echo sensitive request content into logs or bookmarkable paths.
+Putting filters in the QUERY body already helps versus a fat `GET` query string — less sensitive material in URIs that get logged or bookmarked. That benefit disappears if you then mint temporary `Location` or `Content-Location` URIs that echo those filters into the path or query. The RFC warns those URIs should not include sensitive portions of the original request content.
 
 ## Using QUERY with ASP.NET Core
 
@@ -154,6 +159,6 @@ For service-to-service APIs under your control, QUERY is already useful. For pub
 
 ## Why this matters
 
-HTTP methods are how we communicate intent to every hop between the client and your app. When intent and method disagree — a read shaped as `POST`, or a body bolted onto `GET` — caches, retries, and security tooling all have to guess.
+HTTP methods are how we communicate intent to every hop between the client and your app. When intent and method disagree — a read that intermediaries cannot assume from `POST`, or a body bolted onto `GET` — caches, retries, and security tooling all have to guess.
 
-QUERY closes that gap with a small, carefully designed verb: safe, idempotent, cacheable, and allowed to carry a body. After more than a decade of drafts, [RFC 10008](https://www.rfc-editor.org/rfc/rfc10008.html) makes that contract official. If you maintain search or filter endpoints that never belonged in a URI, it is time to start planning for QUERY.
+QUERY closes that gap with a small, carefully designed verb: safe, idempotent, cacheable, and allowed to carry a body. After more than a decade of drafts, [RFC 10008](https://www.rfc-editor.org/rfc/rfc10008.html) makes that contract official. If you maintain search or filter endpoints that never belonged in a URI, it is time to start planning for QUERY — especially on service-to-service paths you control, before you bet a public browser API on every gateway in the path understanding the verb.
