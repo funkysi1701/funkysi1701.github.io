@@ -55,6 +55,8 @@ Key properties:
 | **Cacheable** | Successful responses may be stored and reused for subsequent QUERY requests |
 | **Body required for the query** | The query lives in the content, not forced into the URI |
 
+**Idempotent** means repeating the same request does not cause additional side effects beyond the first successful attempt. If the connection drops after you send a QUERY, a client or proxy can send it again without worrying that the second attempt will “do something twice” — unlike a non-idempotent `POST` that might create two orders if retried. It does *not* mean the response body is frozen forever: like `GET`, two identical QUERY calls can still return different results if the underlying data changed between them.
+
 A `200 OK` means the query was processed successfully and the results are in the response content. That matches how people already think about search endpoints — now with HTTP semantics that intermediaries can trust.
 
 ## How it compares to GET and POST
