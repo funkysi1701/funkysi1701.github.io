@@ -21,7 +21,7 @@ jobs:
 
   seo-crawl:
     needs: deploy-prod
-    runs-on: [self-hosted, k8s]
+    runs-on: ubuntu-latest
     permissions:
       pull-requests: write
       issues: write
