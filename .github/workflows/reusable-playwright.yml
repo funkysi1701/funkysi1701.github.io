@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   playwright:
-    runs-on: [self-hosted, k8s]
+    runs-on: ubuntu-latest
     container: mcr.microsoft.com/playwright:v1.61.1-jammy
     timeout-minutes: 60
     steps:
