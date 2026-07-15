@@ -22,7 +22,7 @@ permissions:
 
 jobs:
   scan:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, k8s]
     name: Scan for tech debt and open issues
     steps:
       - name: Checkout
