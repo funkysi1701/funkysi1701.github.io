@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   seo-crawl:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, k8s]
     concurrency:
       group: seo-crawl-blog-dev
       cancel-in-progress: true

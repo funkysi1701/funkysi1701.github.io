@@ -23,7 +23,7 @@ permissions:
 
 jobs:
   plan:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, k8s]
     name: Build 30-day implementation schedule
     steps:
       - name: Checkout

@@ -9,7 +9,7 @@ permissions:
   pull-requests: write
 jobs:
   create-pr:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, k8s]
     steps:
       - name: Get current date and time
         id: date
