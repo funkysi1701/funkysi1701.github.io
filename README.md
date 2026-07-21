@@ -86,6 +86,22 @@ python scripts/update_parkrun_results.py
 
 Optional environment variables: `PARKRUN_ID` (default `11453050`), `PARKRUN_BASE` (default `https://www.parkrun.org.uk`), `PARKRUN_STRICT` (fail instead of skip when parkrun blocks the runner). To omit a scraped row that you disagree with (for example a DNF), add an entry to `data/parkrun_suppress.json`. You can refresh results manually from GitHub Actions via **Update parkrun results** (`.github/workflows/parkrun-update.yml`); it opens a pull request into **develop** when the scrape succeeds. parkrun.org.uk often returns HTTP 403/405 to GitHub-hosted IPs—the workflow then exits successfully with a skip notice; run the script locally and commit, or use a self-hosted runner.
 
+## 🧩 Head partial structure
+
+`layouts/partials/head.html` is a thin orchestrator: each `<head>` concern lives in a focused partial under `layouts/partials/head/`.
+
+| Partial | Responsibility |
+|---------|----------------|
+| `head/meta-tags.html` | Keywords, meta description (list pages via `head/list-page-description.html`), fediverse creator |
+| `head/seo.html` | Social preview meta — Open Graph and Twitter cards (Hugo internal templates) |
+| `head/structured-data.html` | JSON-LD — WebSite (home), BlogPosting (`head/schema-blog-posting.html`), CollectionPage (`head/schema-collection-page.html`) |
+| `head/title.html` | Document `<title>` |
+| `head/site-verification.html` | Search engine site-verification meta (home page only) |
+| `head/canonical.html`, `head/meta/robots.html` | Canonical URL and robots meta |
+| Theme partials (`head/favicons`, `head/meta`, `head/feed`, `head/assets`) | Favicons, base meta, RSS links, CSS assets from `themes/hugo-theme-bootstrap/` |
+
+Analytics does not live in the head: the theme's `body-end.html` injects the site overrides `layouts/partials/assets/google-analytics.html` and `layouts/partials/assets/google-adsense.html` at the end of `<body>`.
+
 ## 🚢 Deployment and branches
 
 - **`main`:** Production ([funkysi1701.com](https://www.funkysi1701.com?utm_source=gh)). GitHub Actions builds Hugo and deploys **Azure Static Web Apps** (`.github/workflows/azure-static-web-apps-victorious-pebble-0b8f90e03.yml`).
