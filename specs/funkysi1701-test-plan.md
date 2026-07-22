@@ -20,14 +20,16 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   1. Navigate to https://www.funkysi1701.com
   2. Verify the page loads without errors
   3. Check that the page title contains 'Simon Foster' or 'Funky Si'
-  4. Verify the main navigation menu is visible
-  5. Confirm blog posts are displayed on the homepage
+  4. Verify the main navigation menu is visible (including Start Here)
+  5. Confirm the home hero Start Here next-step link is present
+  6. Confirm blog posts are displayed on the homepage
 
 **Expected Results:**
   - Homepage loads within 3 seconds
   - No console errors appear
   - Page title is descriptive and includes author name
-  - Navigation menu displays all expected items
+  - Navigation menu displays all expected items including Start Here
+  - Home hero includes a single Start Here CTA to `/start-here/`
   - At least 5-10 recent blog posts are visible
 
 #### 1.2. Main navigation menu functionality
@@ -36,13 +38,13 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
 
 **Steps:**
   1. Navigate to https://www.funkysi1701.com
-  2. Verify all navigation items are visible: About, Projects, Tools & Resources, Newsletter, Contact, Events, Search, Support this site
+  2. Verify all navigation items are visible: About, Start Here, Projects, Tools & Resources, Newsletter, Contact, Events, Search, Support this site
   3. Click on each navigation link one at a time
   4. Verify each page loads correctly
   5. Check that the navigation menu remains visible on all pages
 
 **Expected Results:**
-  - All 8 navigation menu items are displayed
+  - All 9 navigation menu items are displayed
   - Each link is clickable and navigates to the correct page
   - Pages load without errors
   - Navigation menu is consistent across all pages

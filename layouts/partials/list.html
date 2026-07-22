@@ -9,7 +9,12 @@
   <header class="home-hero mb-4 pb-3 border-bottom">
     <h1 class="display-6 fw-bold lh-sm">{{ default "" .headline }}</h1>
     {{- with .subheading -}}
-    <p class="lead text-body-secondary mb-0">{{ . }}</p>
+    <p class="lead text-body-secondary mb-2">{{ . }}</p>
+    {{- end -}}
+    {{- if and .ctaText .ctaURL -}}
+    <p class="home-hero__cta mb-0">
+      <a href="{{ .ctaURL | relURL }}">{{ .ctaText }}</a>
+    </p>
     {{- end -}}
   </header>
     {{- end -}}
