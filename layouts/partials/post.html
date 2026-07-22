@@ -1,0 +1,47 @@
+{{/*
+  Override of themes/hugo-theme-bootstrap/layouts/partials/post.html
+  Delta (issue #3465):
+  - Insert engagement footer (Read next + Newsletter) after the article
+  - Soften Support This Site CTA (outline, after Read next)
+  - Omit card-heavy related-posts section (replaced by Read next)
+  When upgrading the theme, re-apply these changes to the updated upstream file.
+*/}}
+{{- partial "post/panel" . -}}
+<article class="row card component mb-4 post">
+  <div class="card-header ">
+    <h1 class="card-title post-title">{{ partial "helpers/title" . }}</h1>
+  </div>
+  <div class="card-body">
+    {{- partial "post/meta" . -}}
+    {{- partial "hooks/content-begin" . -}}
+    {{- partial "post/share" . -}}
+    <div class="post-content mb-3">
+      {{- .Content -}}
+    </div>
+    {{- partial "post/reward" . -}}
+    {{- partial "hooks/content-end" . -}}
+  </div>
+  <div class="card-footer">
+    {{ if .Params.date }}
+    {{- partial "post/nav" . -}}
+    {{ end }}
+  </div>
+  {{- if $.Site.Params.enableGatekeeper -}}
+  <div id="ezoic-pub-ad-placeholder-109"></div>
+  <script>
+      ezstandalone.cmd.push(function() {
+          ezstandalone.showAds(109);
+      });
+  </script>
+  {{- end -}}
+</article>
+{{ if .Params.date }}
+{{- partial "post/engagement-footer" . -}}
+{{ end }}
+<div class="text-center my-3 post-support-cta">
+  <a href="https://otieu.com/4/10431006" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary">Support this site</a>
+</div>
+{{- partial "post/copyright/index" . -}}
+{{ if .Params.date }}
+{{- partial "post/comments" . -}}
+{{ end }}

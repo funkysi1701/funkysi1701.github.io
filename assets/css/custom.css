@@ -337,3 +337,51 @@
   border-color: #e3922b;
 }
 
+/* Post engagement footer (Read next + Newsletter) — issue #3465.
+ * Single-purpose end-of-post block; not a card-heavy promo wall.
+ */
+.post-engagement {
+  margin: 0 0 1rem;
+  padding: 1.25rem 0 0.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid color-mix(in srgb, var(--hbs-on-surface, #000) 12%, transparent);
+}
+
+[data-mode="dark"] .post-engagement {
+  border-top-color: rgba(255, 255, 255, 0.14);
+  border-top-color: color-mix(in srgb, #fff 14%, transparent);
+}
+
+.post-engagement__heading {
+  margin: 0 0 0.65rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.post-engagement__list {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.post-engagement__list li {
+  margin: 0 0 0.4rem;
+  line-height: 1.45;
+}
+
+.post-engagement__list a {
+  font-weight: 600;
+}
+
+.post-engagement__newsletter {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--hbs-secondary-text-on-surface, inherit);
+}
+
+.post-support-cta {
+  opacity: 0.9;
+}
+

@@ -1,0 +1,27 @@
+{{/*
+  End-of-post engagement footer: Read next (1–2 related) + Newsletter CTA.
+  Template-level only (issue #3465). Shown on dated posts.
+*/}}
+{{- $count := 2 -}}
+{{- $sections := default (slice "posts") .Site.Params.mainSections -}}
+{{- $relatedPosts := where (.Site.RegularPages.Related .) "Section" "in" $sections -}}
+<section class="post-engagement" aria-label="Continue reading">
+  {{- with ($relatedPosts | first $count) -}}
+  <div class="post-engagement__read-next">
+    <h2 class="post-engagement__heading">Read next</h2>
+    <ul class="post-engagement__list">
+      {{- range . -}}
+      {{- if .Params.date -}}
+      <li>
+        <a href="{{ .Permalink }}">{{ partial "helpers/title" . }}</a>
+      </li>
+      {{- end -}}
+      {{- end -}}
+    </ul>
+  </div>
+  {{- end -}}
+  <p class="post-engagement__newsletter">
+    Prefer email updates?
+    <a href="{{ "newsletter/" | relLangURL }}">Subscribe to the newsletter</a>.
+  </p>
+</section>
