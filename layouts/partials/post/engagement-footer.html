@@ -13,7 +13,10 @@
       {{- range . -}}
       {{- if .Params.date -}}
       <li>
-        <a href="{{ .Permalink }}">{{ partial "helpers/title" . }}</a>
+        <a class="post-engagement__link" href="{{ .Permalink }}">
+          <span class="post-engagement__link-title">{{ partial "helpers/title" . }}</span>
+          <span class="post-engagement__link-meta">{{- partial "helpers/post-date" . -}}</span>
+        </a>
       </li>
       {{- end -}}
       {{- end -}}
@@ -22,6 +25,6 @@
   {{- end -}}
   <p class="post-engagement__newsletter">
     Prefer email updates?
-    <a href="{{ "newsletter/" | relLangURL }}">Subscribe to the newsletter</a>.
+    <a class="post-engagement__newsletter-link" href="{{ "newsletter/" | relLangURL }}">Subscribe to the newsletter</a>
   </p>
 </section>
