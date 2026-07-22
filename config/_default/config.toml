@@ -12,9 +12,10 @@ enableRobotsTXT = true
 [Menus]
   main = [
       {Name = "About", URL = "/about/", weight = 1},
-      {Name = "Projects", URL = "/projects/", weight = 2},
-      {Name = "Tools & Resources", URL = "/tools-and-resources/", weight = 3},
-      {Name = "Newsletter", URL = "/newsletter/", weight = 4},
+      {Name = "Start Here", URL = "/start-here/", weight = 2},
+      {Name = "Projects", URL = "/projects/", weight = 3},
+      {Name = "Tools & Resources", URL = "/tools-and-resources/", weight = 4},
+      {Name = "Newsletter", URL = "/newsletter/", weight = 5},
       {Name = "Contact", URL = "/contact/", weight = 6},
       {Name = "Events", URL = "/posts/events/", weight = 7},
       {Name = "Search", URL = "/search/", weight = 8},
@@ -34,6 +35,8 @@ enableRobotsTXT = true
 [params.homeHero]
   headline = "Senior .NET & Azure Engineer"
   subheading = "18+ years' experience delivering production systems across development, infrastructure, and cloud"
+  ctaText = "Start Here"
+  ctaURL = "/start-here/"
 
 [params.author]
   name = "Simon Foster"

@@ -452,6 +452,17 @@
   text-underline-offset: 0.15em;
 }
 
+.home-hero__cta a {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.home-hero__cta a:hover,
+.home-hero__cta a:focus-visible {
+  color: var(--hbs-primary, #1363be);
+}
+
 .post-support-cta {
   margin: 0 0 1.25rem;
   text-align: center;
