@@ -24,6 +24,13 @@ test.describe('Homepage and Navigation', () => {
       // 4. Verify the main navigation menu is visible
       const nav = page.locator('nav').first();
       await expect(nav).toBeVisible();
+      await expect(nav.getByRole('link', { name: 'Start Here', exact: true })).toBeVisible();
+    });
+
+    await test.step('Confirm home hero Start Here next-step is present', async () => {
+      const heroCta = page.locator('.home-hero .home-hero__cta a');
+      await expect(heroCta).toBeVisible();
+      await expect(heroCta).toHaveAttribute('href', /\/start-here\/?$/);
     });
 
     await test.step('Confirm blog posts are displayed on the homepage', async () => {
