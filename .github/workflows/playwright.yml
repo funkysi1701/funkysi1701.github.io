@@ -1,4 +1,4 @@
-name: Playwright E2E (production)
+name: Playwright E2E (main)
 
 permissions:
   contents: read
@@ -16,5 +16,9 @@ jobs:
   playwright:
     uses: ./.github/workflows/reusable-playwright.yml
     with:
-      base_url: https://www.funkysi1701.com
+      # PRs into main (typically develop → main) must not hit live production: the
+      # branch under test is not deployed there yet, so UI assertions for new
+      # features deadlock. blog-dev already has develop; push/dispatch still gate
+      # production after merge.
+      base_url: ${{ github.event_name == 'pull_request' && 'https://blog-dev.funkysi1701.com' || 'https://www.funkysi1701.com' }}
     secrets: inherit
