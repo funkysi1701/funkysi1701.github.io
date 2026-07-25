@@ -18,7 +18,7 @@ Post structure and front matter examples: [`.github/copilot-instructions.md`](..
 
 - Every rendered page needs a non-empty HTML `<title>`. Site config sets `Site.Title`; home page falls back via `layouts/partials/head/title.html`.
 - One top-level Markdown heading per page where that matches site structure; lower-level headings for sections.
-- Open Graph / Twitter / JSON-LD: follow patterns in `layouts/partials/head.html` and related partials. New share imagery or external hosts must stay coherent with CSP, headers, and `staticwebapp.config.json`.
+- Open Graph / Twitter / JSON-LD: follow patterns in `layouts/partials/head.html` (orchestrator) and focused partials under `layouts/partials/head/`. New share imagery or external hosts must stay coherent with CSP, headers, and `staticwebapp.config.json`.
 
 ## Language and accessibility
 

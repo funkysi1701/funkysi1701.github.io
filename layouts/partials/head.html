@@ -1,12 +1,16 @@
-{{- /* Orchestrates the <head> section. Each concern lives in a focused partial under head/ — see the "SEO partials" section of .cursor/rules/hugo-layouts.mdc. */ -}}
+{{- /*
+  <head> orchestrator — keep this file thin.
+  Put new meta/SEO concerns in a focused partial under layouts/partials/head/
+  (see README "Head partial structure" and .cursor/rules/hugo-layouts.mdc).
+  Call order: document identity → social → theme meta → feeds → verification → assets → JSON-LD.
+*/ -}}
 {{- partial "head/favicons" . -}}
 {{- partial "head/meta-tags" . -}}
 {{- partial "head/seo" . -}}
-{{- partial "head/meta" . -}}
+{{- partial "head/meta" . -}}{{/* Theme: robots via head/meta/robots (site override). */ -}}
+{{- partial "head/canonical" . -}}
 {{- partial "head/feed" . -}}
 {{- partial "head/site-verification" . -}}
-{{- if eq .Permalink (absLangURL "search/") -}}
-<meta data-name="search-index" content="{{ absLangURL "index.json" }}">
-{{- end -}}
+{{- partial "head/search-index" . -}}
 {{- partial "head/assets" . -}}
 {{- partial "head/structured-data" . -}}
