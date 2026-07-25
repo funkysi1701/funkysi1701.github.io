@@ -35,10 +35,18 @@ jobs:
       - name: Refresh home popular data
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_TAG: ${{ vars.CLOUDFLARE_ACCOUNT_TAG }}
-          CLOUDFLARE_SITE_TAG: ${{ vars.CLOUDFLARE_SITE_TAG }}
+          # Prefer repository Variables; fall back to Secrets if the tags were stored there.
+          CLOUDFLARE_ACCOUNT_TAG: ${{ vars.CLOUDFLARE_ACCOUNT_TAG || secrets.CLOUDFLARE_ACCOUNT_TAG }}
+          CLOUDFLARE_SITE_TAG: ${{ vars.CLOUDFLARE_SITE_TAG || secrets.CLOUDFLARE_SITE_TAG }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'true' || 'false' }}
         run: |
+          if [ -z "${CLOUDFLARE_ACCOUNT_TAG}" ] || [ -z "${CLOUDFLARE_SITE_TAG}" ] || [ -z "${CLOUDFLARE_API_TOKEN}" ]; then
+            echo "::error::Missing Cloudflare config. Set secret CLOUDFLARE_API_TOKEN, and set CLOUDFLARE_ACCOUNT_TAG / CLOUDFLARE_SITE_TAG as repository Variables (or Secrets)."
+            echo "ACCOUNT_TAG set: $([ -n "${CLOUDFLARE_ACCOUNT_TAG}" ] && echo yes || echo no)"
+            echo "SITE_TAG set: $([ -n "${CLOUDFLARE_SITE_TAG}" ] && echo yes || echo no)"
+            echo "API_TOKEN set: $([ -n "${CLOUDFLARE_API_TOKEN}" ] && echo yes || echo no)"
+            exit 1
+          fi
           set +e
           node scripts/home-popular/run.mjs
           ec=$?
