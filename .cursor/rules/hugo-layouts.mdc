@@ -21,12 +21,14 @@ Or Docker Compose / commands in `README.md` (Hugo version from `.env`). Pull req
 
 ## SEO partials
 
-`layouts/partials/head.html` is a thin orchestrator; put new `<head>` concerns in a focused partial under `layouts/partials/head/` (structure table in `README.md`).
+`layouts/partials/head.html` is a thin orchestrator; put new `<head>` concerns in a focused partial under `layouts/partials/head/` and wire it from the orchestrator (structure table in `README.md`). Do not add inline meta/SEO markup to `head.html`.
 
-- Document `<title>`: `layouts/partials/head/title.html` (home falls back to `Site.Title`).
+- Document `<title>`: `layouts/partials/head/title.html` (called from `baseof.html`; home falls back to `Site.Title`).
 - Keywords / meta description / fediverse creator: `layouts/partials/head/meta-tags.html`.
 - List/archive meta descriptions: `layouts/partials/head/list-page-description.html` (short per-page copy, ≤160 characters; pagination suffix on page 2+).
-- Paginated list `noindex`: `layouts/partials/head/meta/robots.html` + `params.listPaginationMetaRobots` in `config/_default/config.toml`.
+- Canonical URL: `layouts/partials/head/canonical.html` (called from `head.html`).
+- Paginated list `noindex`: `layouts/partials/head/meta/robots.html` + `params.listPaginationMetaRobots` in `config/_default/config.toml` (via theme `head/meta`).
+- Search index meta: `layouts/partials/head/search-index.html` (search page only).
 - Open Graph / Twitter cards: `layouts/partials/head/seo.html` (Hugo internal templates).
 - JSON-LD: `layouts/partials/head/structured-data.html` dispatches to the schema partials (`head/schema-blog-posting.html`, `head/schema-collection-page.html`).
 - New external hosts, share imagery, or scripts must stay coherent with CSP, response headers, and `staticwebapp.config.json`.

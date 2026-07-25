@@ -1,0 +1,4 @@
+{{- /* Search page only: points the client search UI at the Hugo index.json. */ -}}
+{{- if eq .Permalink (absLangURL "search/") -}}
+<meta data-name="search-index" content="{{ absLangURL "index.json" }}">
+{{- end -}}
