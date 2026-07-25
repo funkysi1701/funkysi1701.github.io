@@ -15,21 +15,30 @@ GitHub Actions workflow [`.github/workflows/home-popular-update.yml`](../../.git
 | Name | Where | Required | Notes |
 |------|-------|----------|-------|
 | `CLOUDFLARE_API_TOKEN` | Repository **secret** | Yes | API token with **Account Analytics: Read** |
-| `CLOUDFLARE_ACCOUNT_TAG` | Repository **variable** | Yes | Account id (32 hex chars) — dashboard URL or account home |
-| `CLOUDFLARE_SITE_TAG` | Repository **variable** | Yes | Web Analytics site tag — from the site's beacon snippet / analytics dashboard URL |
+| `CLOUDFLARE_ACCOUNT_TAG` | Repository **variable** (or secret) | Yes | Account id (32 hex chars) — dashboard URL or account home |
+| `CLOUDFLARE_SITE_TAG` | Repository **variable** (or secret) | Yes | Web Analytics `site_tag` (not the beacon `token`) |
 | `POPULAR_DAYS` | env (optional) | No | Lookback window, default 30 (max 90) |
 | `POPULAR_COUNT` | env (optional) | No | Links to keep, 3–5, default 5 |
 | `DRY_RUN` | env / dispatch input | No | `true` prints the TOML without writing or opening a PR |
 
-## Local run
+The workflow reads the tags from **Variables** first, then falls back to **Secrets**. If you only added them under Secrets, that works; Variables are preferred because the ids are not sensitive.
+
+**Common gotcha:** Settings → Secrets and variables → Actions has two tabs. Values under **Secrets** are not visible to `${{ vars.* }}`. Use the **Variables** tab (or rely on the secrets fallback after this workflow update is on the branch the job uses).
+
+The job checks out **`develop`**, so for `workflow_dispatch` pick a branch that already contains the updated workflow (or merge to `develop` first).
+
+For a **local** run, export the same names in your shell; GitHub settings are not used:
 
 ```bash
-CLOUDFLARE_API_TOKEN=... CLOUDFLARE_ACCOUNT_TAG=... CLOUDFLARE_SITE_TAG=... \
-DRY_RUN=true node scripts/home-popular/run.mjs
+# PowerShell
+$env:CLOUDFLARE_API_TOKEN = "..."
+$env:CLOUDFLARE_ACCOUNT_TAG = "..."
+$env:CLOUDFLARE_SITE_TAG = "..."
+$env:DRY_RUN = "true"
+node scripts/home-popular/run.mjs
 ```
 
 Drop `DRY_RUN` to write `data/home_popular.toml`, then commit as usual.
-
 Run the offline unit tests with:
 
 ```bash
