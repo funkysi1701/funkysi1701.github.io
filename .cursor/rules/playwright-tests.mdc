@@ -24,7 +24,7 @@ npm run test:smoke                # @smoke subset (homepage, 404, sitemap)
 ## CI expectations
 
 - **PR smoke (issue #3275):** **`playwright-smoke.yml`** runs on all pull requests against a local Hugo production server (`BASE_URL=http://127.0.0.1:1313`, `--grep @smoke`, job timeout 10 minutes). This tests PR changes; it is not a substitute for the full suite.
-- **Full E2E gate:** **`swa-deploy-nonprod.yml`** deploys to blog-dev then runs Playwright on pushes to **`develop`** and **`feature/*`** (`BASE_URL=https://blog-dev.funkysi1701.com`). **`playwright.yml`** runs on pushes to **`main`** and PRs into **`main`** (`BASE_URL=https://www.funkysi1701.com`).
+- **Full E2E gate:** **`swa-deploy-nonprod.yml`** deploys to blog-dev then runs Playwright on pushes to **`develop`** and **`feature/*`** (`BASE_URL=https://blog-dev.funkysi1701.com`). **`playwright.yml`** runs on pushes to **`main`** and PRs into **`main`**: PRs use blog-dev (feature not on production yet); pushes / `workflow_dispatch` use production.
 - Full suite runs `scripts/generate-page-coverage.js`; Codecov upload when `CODECOV_TOKEN` is set. `codecov.yml` treats page coverage as **informational**.
 
 ## Spec traceability

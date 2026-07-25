@@ -1,0 +1,19 @@
+{{/*
+  Home "Popular right now" strip — curated links from data/home_popular.toml (issue #3464).
+  Renders only when items exist; omitted on empty/missing data.
+*/}}
+{{- $items := default (slice) hugo.Data.home_popular.items -}}
+{{- if gt (len $items) 0 -}}
+<section class="home-popular mb-4 pb-3 border-bottom" aria-labelledby="home-popular-heading">
+  <h2 id="home-popular-heading" class="home-popular__heading">Popular right now</h2>
+  <ul class="home-popular__list">
+    {{- range first 5 $items -}}
+    {{- if .url -}}
+    <li class="home-popular__item">
+      <a class="home-popular__link" href="{{ .url | relURL }}">{{ .title | default .url }}</a>
+    </li>
+    {{- end -}}
+    {{- end -}}
+  </ul>
+</section>
+{{- end -}}

@@ -1,0 +1,12 @@
+{{- /* JSON-LD structured data: WebSite (home), BlogPosting (posts), CollectionPage (lists). */ -}}
+{{- if .IsHome -}}
+{{- $siteDesc := $.Site.Params.description | plainify | htmlUnescape -}}
+{{- $author := dict "@type" "Person" "name" $.Site.Params.author.name "url" (absURL "about") -}}
+{{- $website := dict "@context" "https://schema.org" "@type" "WebSite" "@id" (printf "%s#website" .Permalink) "name" .Site.Title "url" .Permalink "description" $siteDesc "author" $author -}}
+{{- $websiteJSON := $website | jsonify -}}
+<script type="application/ld+json">{{- $websiteJSON | safeJS -}}</script>
+{{- else if .IsPage -}}
+{{- partial "head/schema-blog-posting" (dict "page" .) -}}
+{{- else if or (eq .Kind "term") (eq .Kind "taxonomy") (eq .Kind "section") -}}
+{{- partial "head/schema-collection-page" (dict "page" .) -}}
+{{- end -}}

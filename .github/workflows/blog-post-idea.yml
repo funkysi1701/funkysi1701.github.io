@@ -23,7 +23,7 @@ permissions:
 
 jobs:
   suggest:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, k8s]
     name: Suggest a new blog post
     steps:
       - name: Checkout

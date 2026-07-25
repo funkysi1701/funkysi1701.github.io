@@ -1,0 +1,33 @@
+{{- /* Core meta tags: keywords, meta description, and fediverse creator. */ -}}
+{{- $keywords := $.Site.Params.keywords | default "" -}}
+{{- if .IsPage -}}
+  {{- with .Keywords -}}
+    {{- $joined := delimit . ", " -}}
+    {{- if ne $joined ", " -}}
+      {{- $keywords = $joined -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $pageDesc := "" -}}
+{{- if .IsPage -}}
+  {{- with .Params.description -}}
+    {{- $pageDesc = . -}}
+  {{- else -}}
+    {{- with .Description -}}
+      {{- $pageDesc = . -}}
+    {{- else -}}
+      {{- $pageDesc = .Summary -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $pageDesc = $pageDesc | plainify | htmlUnescape -}}
+  {{- if not $pageDesc -}}
+    {{- $pageDesc = .Title | plainify | htmlUnescape -}}
+  {{- end -}}
+{{- else -}}
+  {{- $pageDesc = partial "head/list-page-description" . -}}
+{{- end -}}
+{{- with $keywords -}}
+<meta name="keywords" content="{{ . }}" />
+{{- end -}}
+<meta name="description" content="{{ $pageDesc }}" />
+<meta name="fediverse:creator" content="@funkysi1701@hachyderm.io">

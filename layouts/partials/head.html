@@ -1,38 +1,7 @@
+{{- /* Orchestrates the <head> section. Each concern lives in a focused partial under head/ — see the "SEO partials" section of .cursor/rules/hugo-layouts.mdc. */ -}}
 {{- partial "head/favicons" . -}}
-{{- $keywords := $.Site.Params.keywords | default "" -}}
-{{- if .IsPage -}}
-  {{- with .Keywords -}}
-    {{- $joined := delimit . ", " -}}
-    {{- if ne $joined ", " -}}
-      {{- $keywords = $joined -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
-{{- $pageDesc := "" -}}
-{{- if .IsPage -}}
-  {{- with .Params.description -}}
-    {{- $pageDesc = . -}}
-  {{- else -}}
-    {{- with .Description -}}
-      {{- $pageDesc = . -}}
-    {{- else -}}
-      {{- $pageDesc = .Summary -}}
-    {{- end -}}
-  {{- end -}}
-  {{- $pageDesc = $pageDesc | plainify | htmlUnescape -}}
-  {{- if not $pageDesc -}}
-    {{- $pageDesc = .Title | plainify | htmlUnescape -}}
-  {{- end -}}
-{{- else -}}
-  {{- $pageDesc = partial "head/list-page-description" . -}}
-{{- end -}}
-{{- with $keywords -}}
-<meta name="keywords" content="{{ . }}" />
-{{- end -}}
-<meta name="description" content="{{ $pageDesc }}" />
-<meta name="fediverse:creator" content="@funkysi1701@hachyderm.io">
-{{ template "_internal/opengraph.html" . }}
-{{- template "_internal/twitter_cards.html" . -}}
+{{- partial "head/meta-tags" . -}}
+{{- partial "head/seo" . -}}
 {{- partial "head/meta" . -}}
 {{- partial "head/feed" . -}}
 {{- partial "head/site-verification" . -}}
@@ -40,14 +9,4 @@
 <meta data-name="search-index" content="{{ absLangURL "index.json" }}">
 {{- end -}}
 {{- partial "head/assets" . -}}
-{{- if .IsHome -}}
-{{- $siteDesc := $.Site.Params.description | plainify | htmlUnescape -}}
-{{- $author := dict "@type" "Person" "name" $.Site.Params.author.name "url" (absURL "about") -}}
-{{- $website := dict "@context" "https://schema.org" "@type" "WebSite" "@id" (printf "%s#website" .Permalink) "name" .Site.Title "url" .Permalink "description" $siteDesc "author" $author -}}
-{{- $websiteJSON := $website | jsonify -}}
-<script type="application/ld+json">{{- $websiteJSON | safeJS -}}</script>
-{{- else if .IsPage -}}
-{{- partial "head/schema-blog-posting" (dict "page" .) -}}
-{{- else if or (eq .Kind "term") (eq .Kind "taxonomy") (eq .Kind "section") -}}
-{{- partial "head/schema-collection-page" (dict "page" .) -}}
-{{- end -}}
+{{- partial "head/structured-data" . -}}

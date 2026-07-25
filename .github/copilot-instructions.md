@@ -163,7 +163,7 @@ Hugo uses environment-specific configs in `config/`:
    - Staging: Testing environment
    - Production: Full analytics, CDN caching, Google AdSense
 
-4. **Multi-environment deployment:** SWA deploys use Hugo `--environment` values `production`, `development`, and `staging` from `config/` overlays. Workflows: `azure-static-web-apps-victorious-pebble-0b8f90e03.yml` (prod), `swa-deploy-nonprod.yml` (dev/test).
+4. **Multi-environment deployment:** SWA deploys use Hugo `--environment` values `production`, `development`, and `staging` from `config/` overlays. Workflows: `azure-static-web-apps-victorious-pebble-0b8f90e03.yml` (prod), `swa-deploy-nonprod.yml` (dev/test). Development (blog-dev) builds pass `--buildFuture`; staging and production do not.
 
 5. **Docker version control:** Keep `.env` file updated with correct `HUGO_VERSION` to ensure consistency across local, pipeline, and container environments.
 
@@ -184,9 +184,9 @@ npm run test:smoke                # @smoke subset (homepage, 404, sitemap)
 
 `playwright.config.ts` sets `baseURL` from **`BASE_URL`**; if unset, it defaults to **`https://www.funkysi1701.com`**. Point `BASE_URL` at `http://localhost:1313` (or another host) when testing a local or preview build.
 
-**GitHub Actions:** **`playwright-smoke.yml`** runs `@smoke` on all PRs against a local Hugo server (`BASE_URL=http://127.0.0.1:1313`). **`swa-deploy-nonprod.yml`** deploys to blog-dev (and blog-test on **`develop`**) then runs the full suite with **`BASE_URL=https://blog-dev.funkysi1701.com`**. **`playwright.yml`** runs on **`main`** pushes and PRs into **`main`** with production **`BASE_URL`**. Full-suite workflows run **`scripts/generate-page-coverage.js`** and upload to **Codecov** when **`CODECOV_TOKEN`** is set. **`codecov.yml`** configures Codecov **project/patch** status as **informational**.
+**GitHub Actions:** **`playwright-smoke.yml`** runs `@smoke` on all PRs against a local Hugo server (`BASE_URL=http://127.0.0.1:1313`). **`swa-deploy-nonprod.yml`** deploys to blog-dev (and blog-test on **`develop`**) then runs the full suite with **`BASE_URL=https://blog-dev.funkysi1701.com`**. **`playwright.yml`** runs PRs into **`main`** against blog-dev and **`main`** pushes / `workflow_dispatch` against production. Full-suite workflows run **`scripts/generate-page-coverage.js`** and upload to **Codecov** when **`CODECOV_TOKEN`** is set. **`codecov.yml`** configures Codecov **project/patch** status as **informational**.
 
-**GitHub Actions (other):** **`hugo-build.yml`** (PR build validation), meta title/description checks, **`pa11y-nightly.yml`**, production SWA deploy, broken link schedule, develop→main auto-PR, parkrun update PRs, **`issue-schedule.yml`** (weekly 30-day issue planner → tracking issue), **`blog-post-idea.yml`** (weekly content suggestion issue), **`tech-debt-scan.yml`** (weekly tech-debt issues).
+**GitHub Actions (other):** **`hugo-build.yml`** (PR build validation), meta title/description checks, **`pa11y-nightly.yml`**, production SWA deploy, broken link schedule, develop→main auto-PR, parkrun update PRs, **`issue-schedule.yml`** (weekly 30-day issue planner → tracking issue), **`blog-post-idea.yml`** (weekly content suggestion issue), **`tech-debt-scan.yml`** (weekly tech-debt issues), **`home-popular-update.yml`** (weekly Cloudflare top-pages refresh of `data/home_popular.toml` → PR into `develop`).
 
 **Meta validation (post front matter):** After editing `title` or `description` in `content/posts/**/*.md`, run **`npm run check:meta`** (wraps the Python scripts used by GitHub Actions). Subcommands: **`check:meta:titles`**, **`check:meta:descriptions`**. To preview automated description rewrites: **`npm run check:meta:fix`** (dry-run only). Apply fixes with `python scripts/normalize_meta_descriptions.py --root .`. Requires Python 3.11+ on `PATH`.
 
@@ -203,12 +203,13 @@ For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remai
 - `config/production/config.toml` – Production baseURL and analytics
 - `playwright.config.ts` – Playwright defaults (`baseURL`, reporters, projects)
 - `swa-deploy-nonprod.yml` – SWA dev/test deploy + blog-dev Playwright + SEO
-- `playwright.yml` – Production Playwright E2E (`main` pushes and PRs into `main`)
+- `playwright.yml` – Full Playwright E2E (`main` pushes → production; PRs into `main` → blog-dev)
 - `playwright-smoke.yml` – PR smoke subset against local Hugo (`@smoke`, `BASE_URL=http://127.0.0.1:1313`)
 - `pa11y-nightly.yml` – Scheduled full-sitemap accessibility scan
 - `issue-schedule.yml` – Weekly LLM planner: open issues → **30-day implementation schedule** tracking issue (`scripts/issue-schedule/`)
 - `blog-post-idea.yml` – Weekly LLM: catalogue posts + trends → one `[Content Suggestion]` issue (`scripts/blog-post-idea/`)
 - `tech-debt-scan.yml` – Weekly LLM: codebase signals → `tech-debt` issues (`scripts/tech-debt-scan/`)
+- `home-popular-update.yml` – Weekly Cloudflare Web Analytics top pages → `data/home_popular.toml` PR (`scripts/home-popular/`)
 - `codecov.yml` – Codecov behaviour (informational page-coverage gates)
 - `npm run check:meta` – Local meta validation (titles + descriptions); see also `check:meta:titles`, `check:meta:descriptions`, `check:meta:fix`
 - `scripts/check_meta_titles.py` / `scripts/check_meta_descriptions.py` – Post front matter length checks (used by GitHub Actions and npm scripts)

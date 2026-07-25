@@ -17,6 +17,7 @@ test.describe('Homepage and Navigation', () => {
     await test.step('Verify all navigation items are visible', async () => {
       // 2. Verify all navigation items are visible
       await expect(mainNav.getByRole('link', { name: 'About' })).toBeVisible();
+      await expect(mainNav.getByRole('link', { name: 'Start Here', exact: true })).toBeVisible();
       await expect(mainNav.getByRole('link', { name: 'Projects', exact: true })).toBeVisible();
       await expect(mainNav.getByRole('link', { name: /Tools.*Resources/i })).toBeVisible();
       await expect(mainNav.getByRole('link', { name: 'Newsletter' })).toBeVisible();
@@ -30,6 +31,12 @@ test.describe('Homepage and Navigation', () => {
       await mainNav.getByRole('link', { name: 'About', exact: true }).click();
       // 4. Verify About page loads correctly
       await expect(page).toHaveURL(/\/about\//);
+      await expect(page.locator('nav').first()).toBeVisible();
+    });
+
+    await test.step('Navigate to Start Here page and verify it loads', async () => {
+      await mainNav.getByRole('link', { name: 'Start Here', exact: true }).click();
+      await expect(page).toHaveURL(/\/start-here\//);
       await expect(page.locator('nav').first()).toBeVisible();
     });
 

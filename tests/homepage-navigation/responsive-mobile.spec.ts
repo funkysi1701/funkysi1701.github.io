@@ -97,6 +97,7 @@ test.describe('Homepage and Navigation', () => {
     await test.step('Verify all navigation items are accessible', async () => {
       // 5. Verify all navigation items are accessible
       await expect(mainNavPageLink(navMenu, { name: 'About', exact: true })).toBeVisible();
+      await expect(mainNavPageLink(navMenu, { name: 'Start Here', exact: true })).toBeVisible();
       await expect(mainNavPageLink(navMenu, { name: 'Projects', exact: true })).toBeVisible();
       await expect(mainNavPageLink(navMenu, { name: 'Contact', exact: true })).toBeVisible();
     });

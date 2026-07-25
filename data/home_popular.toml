@@ -1,0 +1,24 @@
+# Curated home "Popular right now" links (issue #3464).
+# Initial seed from Lite Analytics top pages; now auto-refreshed weekly from
+# Cloudflare Web Analytics by scripts/home-popular/run.mjs (PR into develop).
+# Titles are editorial labels: edits here survive the next automated refresh.
+
+[[items]]
+title = ".NET 5 to 10 features"
+url = "/posts/2026/dotnet-5-to-10-features/"
+
+[[items]]
+title = "Merge two projects into one"
+url = "/posts/2025/merge-two-projects-into-one/"
+
+[[items]]
+title = "Stay visible after redundancy"
+url = "/posts/2026/stay-visible-as-a-developer-when-you-are-made-redundant/"
+
+[[items]]
+title = "Grafana for .NET with Docker"
+url = "/posts/2025/setting-up-grafana/"
+
+[[items]]
+title = "Automatic pull requests"
+url = "/posts/2024/automatic-pull-requests/"

@@ -24,6 +24,7 @@ Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). Cursor rules 
 | 30-day issue schedule (dry-run) | `GH_TOKEN=$(gh auth token) DRY_RUN=true node scripts/issue-schedule/run.mjs` |
 | Blog post idea (dry-run) | `GH_TOKEN=$(gh auth token) DRY_RUN=true node scripts/blog-post-idea/run.mjs` |
 | Tech debt scan (dry-run) | `GH_TOKEN=$(gh auth token) DRY_RUN=true node scripts/tech-debt-scan/run.mjs` |
+| Home popular links refresh (dry-run) | `CLOUDFLARE_API_TOKEN=... CLOUDFLARE_ACCOUNT_TAG=... CLOUDFLARE_SITE_TAG=... DRY_RUN=true node scripts/home-popular/run.mjs` |
 
 After changing `package.json` or `package-lock.json`, run `npm ci` before `npm test` (matches GitHub Actions).
 
@@ -83,12 +84,12 @@ After bulk-editing post front matter, run **`npm run check:meta`** before openin
 | Check | Where | Notes |
 |-------|-------|-------|
 | Playwright smoke | **GitHub Actions** — `playwright-smoke.yml` on all PRs | Hugo production server in CI; `BASE_URL=http://127.0.0.1:1313`; `@smoke` subset (homepage, 404, sitemap); under 10 minutes |
-| Playwright E2E (full) | **GitHub Actions** — `swa-deploy-nonprod.yml` (blog-dev after dev SWA deploy on **`develop`** / **`feature/*`**) and `playwright.yml` (**`main`** pushes + PRs into **`main`**) | `BASE_URL`: production for `main`, blog-dev for non-prod deploys |
+| Playwright E2E (full) | **GitHub Actions** — `swa-deploy-nonprod.yml` (blog-dev after dev SWA deploy on **`develop`** / **`feature/*`**) and `playwright.yml` (**`main`** pushes + PRs into **`main`**) | `BASE_URL`: blog-dev for non-prod deploys and for **PRs into `main`** (undeployed UI); production for **`main`** pushes / `workflow_dispatch` |
 | Playwright `// spec:` headers | **GitHub Actions** — `spec-headers.yml` (paths under `tests/`); also before E2E in reusable Playwright | Local: `npm run check:spec-headers` |
 | Page coverage / Codecov | GitHub Actions (Playwright workflows) | `scripts/generate-page-coverage.js`; informational per `codecov.yml` |
 | Hugo production build | **GitHub Actions** | `hugo-build.yml` — PRs and pushes to `main`/`develop`; catches template/render errors before deploy |
 | Meta title / description length | **GitHub Actions** | `meta-title-length.yml`, `meta-description-length.yml` |
-| Azure SWA deploy | GitHub Actions | `azure-static-web-apps-victorious-pebble-0b8f90e03.yml` (prod), `swa-deploy-nonprod.yml` (dev/test) |
+| Azure SWA deploy | GitHub Actions | `azure-static-web-apps-victorious-pebble-0b8f90e03.yml` (prod), `swa-deploy-nonprod.yml` (dev/test). **blog-dev** (`hugo_environment: development`) adds `--buildFuture` so future-dated posts preview; blog-test and production do not |
 | Broken links | GitHub Actions | `link.yml` — monthly + manual; crawls from production homepage |
 | Parkrun scrape PR | GitHub Actions | `parkrun-update.yml` — PR to `develop` when scrape succeeds |
 | develop → main PR | GitHub Actions | `auto-pr.yml` |
@@ -97,6 +98,7 @@ After bulk-editing post front matter, run **`npm run check:meta`** before openin
 | 30-day issue schedule | GitHub Actions | `issue-schedule.yml` — Mondays 09:00 UTC + manual; upserts tracking issue via GitHub Models |
 | Blog post idea | GitHub Actions | `blog-post-idea.yml` — Wednesdays 09:00 UTC + manual; opens one `[Content Suggestion]` issue via GitHub Models |
 | Tech debt scan | GitHub Actions | `tech-debt-scan.yml` — Fridays 09:00 UTC + manual; opens `tech-debt` issues via GitHub Models |
+| Home popular refresh | GitHub Actions | `home-popular-update.yml` — Mondays 06:30 UTC + manual; Cloudflare Web Analytics top pages → `data/home_popular.toml` PR into `develop` |
 
 ## Branches and deploy
 
@@ -127,6 +129,7 @@ Make the smallest change that satisfies the task. Do not refactor unrelated code
 | [`scripts/issue-schedule/README.md`](scripts/issue-schedule/README.md) | Weekly 30-day issue schedule planner (GitHub Models) |
 | [`scripts/blog-post-idea/README.md`](scripts/blog-post-idea/README.md) | Weekly blog post idea → content-suggestion issue (GitHub Models) |
 | [`scripts/tech-debt-scan/README.md`](scripts/tech-debt-scan/README.md) | Weekly tech-debt scan → `tech-debt` issues (GitHub Models) |
+| [`scripts/home-popular/README.md`](scripts/home-popular/README.md) | Weekly Cloudflare top-pages refresh of the home Popular strip data |
 | [`README.md`](README.md) | Human-oriented setup, testing, and deploy |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | PR checklist, branch workflow, merge readiness |
 | [`specs/funkysi1701-test-plan.md`](specs/funkysi1701-test-plan.md) | E2E scenario plan (`// spec:` comments in `tests/`) |

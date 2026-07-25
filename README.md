@@ -53,7 +53,7 @@ npm run test:smoke       # @smoke subset (homepage, 404, sitemap)
 
 By default, `playwright.config.ts` uses **`BASE_URL`** of `https://www.funkysi1701.com` when unset. For local or staging targets, set the variable (PowerShell: `$env:BASE_URL="http://localhost:1313"; npm test`).
 
-**GitHub Actions:** **`playwright-smoke.yml`** runs the `@smoke` subset on every pull request against a local Hugo production server (`BASE_URL=http://127.0.0.1:1313`). Full Playwright E2E: **`swa-deploy-nonprod.yml`** deploys to blog-dev (and blog-test on **`develop`**) then tests **`https://blog-dev.funkysi1701.com`**; **`playwright.yml`** runs on **`main`** pushes and PRs into **`main`** against production. After full-suite runs, **`scripts/generate-page-coverage.js`** can feed **Codecov** when `CODECOV_TOKEN` is configured. **`codecov.yml`** marks **page coverage** as **informational**.
+**GitHub Actions:** **`playwright-smoke.yml`** runs the `@smoke` subset on every pull request against a local Hugo production server (`BASE_URL=http://127.0.0.1:1313`). Full Playwright E2E: **`swa-deploy-nonprod.yml`** deploys to blog-dev (and blog-test on **`develop`**) then tests **`https://blog-dev.funkysi1701.com`**; **`playwright.yml`** runs PRs into **`main`** against blog-dev and **`main`** pushes against production. After full-suite runs, **`scripts/generate-page-coverage.js`** can feed **Codecov** when `CODECOV_TOKEN` is configured. **`codecov.yml`** marks **page coverage** as **informational**.
 
 **GitHub Actions** (`.github/workflows/`) runs a **Hugo production build** on pull requests (`hugo-build.yml`) and checks such as **meta title** (50–60 characters) and **meta description** (110–160 characters) for `content/posts/**/*.md`. Run the same checks locally after editing post front matter:
 
@@ -72,6 +72,8 @@ To apply description fixes (write files), run `python scripts/normalize_meta_des
 
 **Tech debt scan:** Fridays (and manual) **`tech-debt-scan.yml`** gathers codebase signals (hotspots, large files, TODO/FIXME markers), asks GitHub Models which new issues are warranted, and opens **`tech-debt`** issues. See [`scripts/tech-debt-scan/README.md`](scripts/tech-debt-scan/README.md).
 
+**Home popular links:** Mondays (and manual) **`home-popular-update.yml`** queries Cloudflare Web Analytics for the site's top pages, rewrites [`data/home_popular.toml`](data/home_popular.toml) (drives the home **Popular right now** strip), and opens a pull request into **develop** when the list changes. See [`scripts/home-popular/README.md`](scripts/home-popular/README.md).
+
 For Hugo changes, still verify with `hugo server -D` or a production build (`hugo --minify --environment production`) as needed.
 When updating templates, prefer Hugo's canonical date values (`.Date` / `.PublishDate`) instead of gating rendering on `\.Params.date`; this avoids date regressions across Hugo upgrades.
 
@@ -86,10 +88,26 @@ python scripts/update_parkrun_results.py
 
 Optional environment variables: `PARKRUN_ID` (default `11453050`), `PARKRUN_BASE` (default `https://www.parkrun.org.uk`), `PARKRUN_STRICT` (fail instead of skip when parkrun blocks the runner). To omit a scraped row that you disagree with (for example a DNF), add an entry to `data/parkrun_suppress.json`. You can refresh results manually from GitHub Actions via **Update parkrun results** (`.github/workflows/parkrun-update.yml`); it opens a pull request into **develop** when the scrape succeeds. parkrun.org.uk often returns HTTP 403/405 to GitHub-hosted IPs—the workflow then exits successfully with a skip notice; run the script locally and commit, or use a self-hosted runner.
 
+## 🧩 Head partial structure
+
+`layouts/partials/head.html` is a thin orchestrator: each `<head>` concern lives in a focused partial under `layouts/partials/head/`.
+
+| Partial | Responsibility |
+|---------|----------------|
+| `head/meta-tags.html` | Keywords, meta description (list pages via `head/list-page-description.html`), fediverse creator |
+| `head/seo.html` | Social preview meta — Open Graph and Twitter cards (Hugo internal templates) |
+| `head/structured-data.html` | JSON-LD — WebSite (home), BlogPosting (`head/schema-blog-posting.html`), CollectionPage (`head/schema-collection-page.html`) |
+| `head/title.html` | Document `<title>` |
+| `head/site-verification.html` | Search engine site-verification meta (home page only) |
+| `head/canonical.html`, `head/meta/robots.html` | Canonical URL and robots meta |
+| Theme partials (`head/favicons`, `head/meta`, `head/feed`, `head/assets`) | Favicons, base meta, RSS links, CSS assets from `themes/hugo-theme-bootstrap/` |
+
+Analytics does not live in the head: the theme's `body-end.html` injects the site overrides `layouts/partials/assets/google-analytics.html` and `layouts/partials/assets/google-adsense.html` at the end of `<body>`.
+
 ## 🚢 Deployment and branches
 
 - **`main`:** Production ([funkysi1701.com](https://www.funkysi1701.com?utm_source=gh)). GitHub Actions builds Hugo and deploys **Azure Static Web Apps** (`.github/workflows/azure-static-web-apps-victorious-pebble-0b8f90e03.yml`).
-- **`develop`:** Integration branch. GitHub Actions deploys to **SWA dev and test** (`swa-deploy-nonprod.yml` → blog-dev / blog-test). **`.github/workflows/auto-pr.yml`** can open or refresh a **develop → main** pull request when `develop` is pushed.
+- **`develop`:** Integration branch. GitHub Actions deploys to **SWA dev and test** (`swa-deploy-nonprod.yml` → blog-dev / blog-test). blog-dev Hugo builds include `--buildFuture` (future-dated posts preview there); blog-test and production do not. **`.github/workflows/auto-pr.yml`** can open or refresh a **develop → main** pull request when `develop` is pushed.
 - **`feature/*`:** Feature branches; GitHub Actions deploys to **SWA dev** only (`swa-deploy-nonprod.yml`).
 
 There is no separate branch named `dev`; use **`develop`** for integration work.
