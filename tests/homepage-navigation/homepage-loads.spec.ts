@@ -33,6 +33,20 @@ test.describe('Homepage and Navigation', () => {
       await expect(heroCta).toHaveAttribute('href', /\/start-here\/?$/);
     });
 
+    await test.step('Confirm Popular right now strip is present', async () => {
+      const popular = page.locator('.home-popular');
+      await expect(popular).toBeVisible();
+      await expect(popular.getByRole('heading', { name: 'Popular right now' })).toBeVisible();
+
+      // Curation is auto-refreshed from Cloudflare top pages, so assert the
+      // shape (3-5 post links) rather than specific URLs.
+      const links = popular.locator('a.home-popular__link[href*="/posts/"]');
+      const linkCount = await links.count();
+      expect(linkCount).toBeGreaterThanOrEqual(3);
+      expect(linkCount).toBeLessThanOrEqual(5);
+      await expect(links.first()).toBeVisible();
+    });
+
     await test.step('Confirm blog posts are displayed on the homepage', async () => {
       // 5. Confirm blog posts are displayed on the homepage
       const posts = page.locator('article, .post, [class*="post"]').first();

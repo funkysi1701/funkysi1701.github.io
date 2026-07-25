@@ -1,0 +1,72 @@
+name: Update home popular links
+
+# Weekly refresh of data/home_popular.toml from Cloudflare Web Analytics
+# top pages. Opens a PR into develop when the curated list changes.
+# See scripts/home-popular/README.md for token and tag setup.
+
+on:
+  schedule:
+    # Mondays 06:30 UTC
+    - cron: "30 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Print the generated TOML without writing or opening a PR
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: develop
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+
+      - name: Refresh home popular data
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_TAG: ${{ vars.CLOUDFLARE_ACCOUNT_TAG }}
+          CLOUDFLARE_SITE_TAG: ${{ vars.CLOUDFLARE_SITE_TAG }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'true' || 'false' }}
+        run: |
+          set +e
+          node scripts/home-popular/run.mjs
+          ec=$?
+          set -e
+          if [ "$ec" -eq 2 ]; then
+            echo "::notice title=Home popular update skipped::Cloudflare top pages did not include enough eligible posts; data/home_popular.toml left unchanged."
+            exit 0
+          fi
+          exit "$ec"
+
+      - name: Commit and open pull request
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/home_popular.toml
+          if git diff --staged --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          BRANCH="chore/home-popular-${GITHUB_RUN_ID}"
+          git checkout -b "$BRANCH"
+          git commit -m "chore: refresh home popular links from Cloudflare top pages"
+          git push -u origin "$BRANCH"
+          gh pr create \
+            --base develop \
+            --head "$BRANCH" \
+            --title "chore: refresh home popular links" \
+            --body "Automated update of \`data/home_popular.toml\` from Cloudflare Web Analytics top pages (\`scripts/home-popular/run.mjs\`). Merge to refresh the home Popular right now strip on the usual develop → main path."
