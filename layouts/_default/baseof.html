@@ -18,7 +18,6 @@
     {{- partial "head.html" . -}}
     {{- block "head-end" . -}}{{- end -}}
     {{- partial "hooks/head-end" . -}}
-    {{- partial "head/canonical" . -}}
   </head>
   <body>
     {{- $bootstrapScript := resources.Get "bootstrap/template.js" | resources.ExecuteAsTemplate "js/bootstrap.js" . | minify -}}
