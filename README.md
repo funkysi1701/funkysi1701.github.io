@@ -64,6 +64,8 @@ npm run check:meta:descriptions # descriptions only
 npm run check:meta:fix          # preview description rewrites (--dry-run)
 ```
 
+**Azure Static Web Apps config:** After editing `staticwebapp.config.json` (routing, 404 rewrite, security headers), run `npm run check:swa-config`. CI runs the same check via `swa-config.yml` (SchemaStore schema plus required HSTS / frame / MIME / referrer / permissions headers).
+
 To apply description fixes (write files), run `python scripts/normalize_meta_descriptions.py --root .` (without `--dry-run`). Requires Python 3.11+ on `PATH` (same as the GitHub Actions meta workflows).
 
 **30-day issue schedule:** Mondays (and manual) **`issue-schedule.yml`** reviews open GitHub issues via GitHub Models and upserts a tracking issue titled **30-day implementation schedule**. See [`scripts/issue-schedule/README.md`](scripts/issue-schedule/README.md).

@@ -3,5 +3,13 @@
         "activityBar.background": "#371970",
         "titleBar.activeBackground": "#4D229D",
         "titleBar.activeForeground": "#FCFAFE"
-    }
+    },
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/staticwebapp.config.json"
+            ],
+            "url": "./scripts/schemas/staticwebapp.config.schema.json"
+        }
+    ]
 }
