@@ -82,6 +82,7 @@
     "check:meta:titles": "python scripts/check_meta_titles.py --root .",
     "check:meta:descriptions": "python scripts/check_meta_descriptions.py --root .",
     "check:meta:fix": "python scripts/normalize_meta_descriptions.py --root . --dry-run",
-    "check:spec-headers": "node scripts/check_spec_headers.mjs"
+    "check:spec-headers": "node scripts/check_spec_headers.mjs",
+    "check:swa-config": "node scripts/check_staticwebapp_config.mjs"
   }
 }
