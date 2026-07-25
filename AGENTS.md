@@ -24,6 +24,7 @@ Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). Cursor rules 
 | 30-day issue schedule (dry-run) | `GH_TOKEN=$(gh auth token) DRY_RUN=true node scripts/issue-schedule/run.mjs` |
 | Blog post idea (dry-run) | `GH_TOKEN=$(gh auth token) DRY_RUN=true node scripts/blog-post-idea/run.mjs` |
 | Tech debt scan (dry-run) | `GH_TOKEN=$(gh auth token) DRY_RUN=true node scripts/tech-debt-scan/run.mjs` |
+| Home popular links refresh (dry-run) | `CLOUDFLARE_API_TOKEN=... CLOUDFLARE_ACCOUNT_TAG=... CLOUDFLARE_SITE_TAG=... DRY_RUN=true node scripts/home-popular/run.mjs` |
 
 After changing `package.json` or `package-lock.json`, run `npm ci` before `npm test` (matches GitHub Actions).
 
@@ -97,6 +98,7 @@ After bulk-editing post front matter, run **`npm run check:meta`** before openin
 | 30-day issue schedule | GitHub Actions | `issue-schedule.yml` — Mondays 09:00 UTC + manual; upserts tracking issue via GitHub Models |
 | Blog post idea | GitHub Actions | `blog-post-idea.yml` — Wednesdays 09:00 UTC + manual; opens one `[Content Suggestion]` issue via GitHub Models |
 | Tech debt scan | GitHub Actions | `tech-debt-scan.yml` — Fridays 09:00 UTC + manual; opens `tech-debt` issues via GitHub Models |
+| Home popular refresh | GitHub Actions | `home-popular-update.yml` — Mondays 06:30 UTC + manual; Cloudflare Web Analytics top pages → `data/home_popular.toml` PR into `develop` |
 
 ## Branches and deploy
 
@@ -127,6 +129,7 @@ Make the smallest change that satisfies the task. Do not refactor unrelated code
 | [`scripts/issue-schedule/README.md`](scripts/issue-schedule/README.md) | Weekly 30-day issue schedule planner (GitHub Models) |
 | [`scripts/blog-post-idea/README.md`](scripts/blog-post-idea/README.md) | Weekly blog post idea → content-suggestion issue (GitHub Models) |
 | [`scripts/tech-debt-scan/README.md`](scripts/tech-debt-scan/README.md) | Weekly tech-debt scan → `tech-debt` issues (GitHub Models) |
+| [`scripts/home-popular/README.md`](scripts/home-popular/README.md) | Weekly Cloudflare top-pages refresh of the home Popular strip data |
 | [`README.md`](README.md) | Human-oriented setup, testing, and deploy |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | PR checklist, branch workflow, merge readiness |
 | [`specs/funkysi1701-test-plan.md`](specs/funkysi1701-test-plan.md) | E2E scenario plan (`// spec:` comments in `tests/`) |

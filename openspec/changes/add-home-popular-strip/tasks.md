@@ -15,3 +15,11 @@
 - [x] 3.2 Extend `specs/funkysi1701-test-plan.md` homepage scenario for the popular strip
 - [x] 3.3 Extend `tests/homepage-navigation/homepage-loads.spec.ts` (`@smoke`) to assert the strip heading and a seeded href (e.g. `dotnet-5-to-10-features`)
 - [x] 3.4 Run homepage smoke against local Hugo (`BASE_URL=http://127.0.0.1:1313`) and fix any failures
+
+## 4. Automated Cloudflare refresh
+
+- [x] 4.1 Add `scripts/home-popular/run.mjs` to query Cloudflare Web Analytics RUM top pages, normalise and validate post paths, preserve editorial titles, and safely rewrite `data/home_popular.toml`
+- [x] 4.2 Add offline unit tests for Cloudflare query parsing, path canonicalisation, and TOML generation
+- [x] 4.3 Add weekly/manual `home-popular-update.yml` workflow that opens a PR into `develop` only when the generated data changes
+- [x] 4.4 Document Cloudflare secret/variable setup, local dry-run, schedule behaviour, and CI expectations
+- [x] 4.5 Make homepage smoke assertions resilient to automated URL changes

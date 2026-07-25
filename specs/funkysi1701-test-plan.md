@@ -22,7 +22,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   3. Check that the page title contains 'Simon Foster' or 'Funky Si'
   4. Verify the main navigation menu is visible (including Start Here)
   5. Confirm the home hero Start Here next-step link is present
-  6. Confirm the Popular right now strip is present above the post list with a seeded Lite top-page link
+  6. Confirm the Popular right now strip is present above the post list with 3-5 post links
   7. Confirm blog posts are displayed on the homepage
 
 **Expected Results:**
@@ -31,7 +31,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   - Page title is descriptive and includes author name
   - Navigation menu displays all expected items including Start Here
   - Home hero includes a single Start Here CTA to `/start-here/`
-  - Popular strip heading is visible and includes a link to `/posts/2026/dotnet-5-to-10-features/`
+  - Popular strip heading is visible with 3-5 links to `/posts/...` pages (list is auto-refreshed weekly from Cloudflare Web Analytics top pages, so specific URLs are not asserted)
   - At least 5-10 recent blog posts are visible
 
 #### 1.2. Main navigation menu functionality

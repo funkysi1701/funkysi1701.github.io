@@ -28,6 +28,20 @@ Popular strip destinations and display titles MUST be defined in a single Hugo d
 - **WHEN** an editor changes titles or URLs in the popular curation data file (or equivalent params)
 - **THEN** the next Hugo build reflects those links in the home strip without requiring layout markup changes for the link list
 
+### Requirement: Curation is refreshed automatically from Cloudflare Web Analytics
+
+A scheduled GitHub Actions workflow SHALL query Cloudflare Web Analytics (RUM top pages) weekly, rewrite the popular curation data file with the top 3–5 eligible post permalinks, and open a pull request into `develop` when the list changes. The refresh MUST drop non-post paths and query-string variants, MUST only include posts whose content files exist, and MUST preserve editorial titles already present in the data file. When fewer than 3 eligible posts are found the workflow MUST skip without modifying the data file.
+
+#### Scenario: Weekly refresh opens a PR
+
+- **WHEN** the scheduled refresh runs and Cloudflare top pages produce a different top-post set than the current data file
+- **THEN** a pull request into `develop` is opened updating only the popular curation data file
+
+#### Scenario: Insufficient data skips safely
+
+- **WHEN** Cloudflare top pages contain fewer than 3 eligible post permalinks
+- **THEN** the workflow exits successfully with a skip notice and the data file is unchanged
+
 ### Requirement: Initial seed reflects Lite Analytics top pages
 
 The initial curated set MUST be seeded from Lite Analytics top landing pages for the site, combining query-string variants such as `?ref=dailydev` into a single destination when ranking. The seed MUST include the dominant `.NET 5 to 10` post and other high-traffic evergreen posts named in the engagement plan (for example merge-two-projects, stay-visible, Grafana, and/or auto-PRs), totalling 3–5 distinct post URLs. The homepage itself MUST NOT appear as a popular strip item.
@@ -48,9 +62,9 @@ The popular strip MUST use site overrides under root `layouts/` and `assets/` (n
 
 ### Requirement: Homepage smoke test covers the strip
 
-Homepage Playwright coverage MUST assert that the popular strip is visible on `/` and that at least one seeded popular link is present. The assertion SHOULD remain part of the `@smoke` homepage scenario so PR Hugo smoke catches regressions.
+Homepage Playwright coverage MUST assert that the popular strip is visible on `/` with between 3 and 5 post links. Assertions MUST NOT depend on specific post URLs, because the curated list is refreshed automatically. The assertion SHOULD remain part of the `@smoke` homepage scenario so PR Hugo smoke catches regressions.
 
 #### Scenario: Smoke detects missing strip
 
 - **WHEN** the homepage smoke test runs against a built site that includes the popular strip
-- **THEN** the test fails if the popular heading or a known seeded popular href is absent
+- **THEN** the test fails if the popular heading is absent or the strip does not contain 3–5 post links

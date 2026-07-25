@@ -37,9 +37,14 @@ test.describe('Homepage and Navigation', () => {
       const popular = page.locator('.home-popular');
       await expect(popular).toBeVisible();
       await expect(popular.getByRole('heading', { name: 'Popular right now' })).toBeVisible();
-      await expect(
-        popular.locator('a.home-popular__link[href*="dotnet-5-to-10-features"]')
-      ).toBeVisible();
+
+      // Curation is auto-refreshed from Cloudflare top pages, so assert the
+      // shape (3-5 post links) rather than specific URLs.
+      const links = popular.locator('a.home-popular__link[href*="/posts/"]');
+      const linkCount = await links.count();
+      expect(linkCount).toBeGreaterThanOrEqual(3);
+      expect(linkCount).toBeLessThanOrEqual(5);
+      await expect(links.first()).toBeVisible();
     });
 
     await test.step('Confirm blog posts are displayed on the homepage', async () => {
