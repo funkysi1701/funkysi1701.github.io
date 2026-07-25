@@ -28,9 +28,7 @@ Constraints: site overrides under root `layouts/` / `assets/` / `data/` only; Br
 
 ### 1. Curated list lives in `data/home_popular.toml`
 
-**Choice:** A TOML data file with an ordered `[[items]]` list of `title` + `url` (site-relative paths).
-
-**Rationale:** Issue asks for config/data-driven curation. `params.homeHero` is a good pattern for a fixed home block, but a growing link list fits `data/` better (same family as `data/parkrun_suppress.json`) and keeps `config.toml` free of long URL arrays. Templates read `.Site.Data.home_popular.items`.
+**Choice:** A TOML data file with an ordered `[[items]]` list of `title` + `url` (site-relative paths). Templates read `hugo.Data.home_popular.items` (Hugo ≥0.156; `.Site.Data` is deprecated).
 
 **Alternatives considered:**
 

@@ -33,6 +33,15 @@ test.describe('Homepage and Navigation', () => {
       await expect(heroCta).toHaveAttribute('href', /\/start-here\/?$/);
     });
 
+    await test.step('Confirm Popular right now strip is present', async () => {
+      const popular = page.locator('.home-popular');
+      await expect(popular).toBeVisible();
+      await expect(popular.getByRole('heading', { name: 'Popular right now' })).toBeVisible();
+      await expect(
+        popular.locator('a.home-popular__link[href*="dotnet-5-to-10-features"]')
+      ).toBeVisible();
+    });
+
     await test.step('Confirm blog posts are displayed on the homepage', async () => {
       // 5. Confirm blog posts are displayed on the homepage
       const posts = page.locator('article, .post, [class*="post"]').first();
