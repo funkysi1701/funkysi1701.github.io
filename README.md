@@ -72,6 +72,8 @@ To apply description fixes (write files), run `python scripts/normalize_meta_des
 
 **Tech debt scan:** Fridays (and manual) **`tech-debt-scan.yml`** gathers codebase signals (hotspots, large files, TODO/FIXME markers), asks GitHub Models which new issues are warranted, and opens **`tech-debt`** issues. See [`scripts/tech-debt-scan/README.md`](scripts/tech-debt-scan/README.md).
 
+**Home popular links:** Mondays (and manual) **`home-popular-update.yml`** queries Cloudflare Web Analytics for the site's top pages, rewrites [`data/home_popular.toml`](data/home_popular.toml) (drives the home **Popular right now** strip), and opens a pull request into **develop** when the list changes. See [`scripts/home-popular/README.md`](scripts/home-popular/README.md).
+
 For Hugo changes, still verify with `hugo server -D` or a production build (`hugo --minify --environment production`) as needed.
 When updating templates, prefer Hugo's canonical date values (`.Date` / `.PublishDate`) instead of gating rendering on `\.Params.date`; this avoids date regressions across Hugo upgrades.
 

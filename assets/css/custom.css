@@ -463,6 +463,50 @@
   color: var(--hbs-primary, #1363be);
 }
 
+/* Home popular strip (issue #3464) — lean curated links above the post list. */
+.home-popular {
+  --home-popular-accent: var(--hbs-primary, #1363be);
+}
+
+.home-popular__heading {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--hbs-secondary-text-on-surface, rgba(0, 0, 0, 0.7));
+}
+
+.home-popular__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+}
+
+.home-popular__link {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.home-popular__link:hover,
+.home-popular__link:focus-visible {
+  color: var(--home-popular-accent);
+}
+
+.home-popular__link:focus-visible {
+  outline: 2px solid var(--home-popular-accent);
+  outline-offset: 2px;
+}
+
+[data-mode="dark"] .home-popular {
+  --home-popular-accent: var(--hbs-primary-light, #5e92f3);
+}
+
 .post-support-cta {
   margin: 0 0 1.25rem;
   text-align: center;
