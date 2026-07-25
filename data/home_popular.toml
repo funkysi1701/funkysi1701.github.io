@@ -1,24 +1,24 @@
 # Curated home "Popular right now" links (issue #3464).
-# Initial seed from Lite Analytics top pages; now auto-refreshed weekly from
-# Cloudflare Web Analytics by scripts/home-popular/run.mjs (PR into develop).
+# Auto-refreshed from Cloudflare Web Analytics top pages (last 30 days)
+# by scripts/home-popular/run.mjs via .github/workflows/home-popular-update.yml.
 # Titles are editorial labels: edits here survive the next automated refresh.
+
+[[items]]
+title = "NDC London 2026"
+url = "/posts/2026/ndc-london-2026/"
 
 [[items]]
 title = ".NET 5 to 10 features"
 url = "/posts/2026/dotnet-5-to-10-features/"
 
 [[items]]
-title = "Merge two projects into one"
-url = "/posts/2025/merge-two-projects-into-one/"
+title = "The Pragmatic Programmer"
+url = "/posts/2025/pragmatic-programmer/"
 
 [[items]]
-title = "Stay visible after redundancy"
-url = "/posts/2026/stay-visible-as-a-developer-when-you-are-made-redundant/"
+title = "How to Start and Run a Successful Code Club for Kids"
+url = "/posts/2024/codeclub/"
 
 [[items]]
-title = "Grafana for .NET with Docker"
-url = "/posts/2025/setting-up-grafana/"
-
-[[items]]
-title = "Automatic pull requests"
-url = "/posts/2024/automatic-pull-requests/"
+title = "Adding Elasticsearch with .Net Aspire"
+url = "/posts/2025/adding-elasticsearch-with-aspire/"
