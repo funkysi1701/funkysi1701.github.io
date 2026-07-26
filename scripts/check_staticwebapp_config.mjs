@@ -165,10 +165,20 @@ function validateAgainstSchema(value, schema, path, rootSchema) {
 }
 
 function validateBestPractices(config) {
-  if (!isObject(config.navigationFallback) || typeof config.navigationFallback.rewrite !== 'string') {
-    fail('navigationFallback.rewrite', 'required for SPA-style fallback routing');
-  } else if (!config.navigationFallback.rewrite.startsWith('/')) {
-    fail('navigationFallback.rewrite', 'must be a site-relative path starting with /');
+  // This is a multi-page Hugo site, not an SPA. A navigationFallback to /index.html
+  // turns every missing URL (and missing asset) into a soft-404 homepage (HTTP 200).
+  // Prefer responseOverrides["404"] → /404.html so Azure returns a real 404.
+  if (config.navigationFallback !== undefined) {
+    const fb = config.navigationFallback;
+    const rewrite = isObject(fb) ? fb.rewrite : undefined;
+    if (typeof rewrite === 'string' && /^\/index\.html\/?$/i.test(rewrite)) {
+      fail(
+        'navigationFallback.rewrite',
+        'must not rewrite missing routes to /index.html (causes soft-404 homepage); remove navigationFallback and use responseOverrides.404 instead',
+      );
+    } else if (!isObject(fb) || typeof rewrite !== 'string' || !rewrite.startsWith('/')) {
+      fail('navigationFallback.rewrite', 'if set, must be a site-relative path starting with /');
+    }
   }
 
   const notFound = config.responseOverrides?.['404'];
@@ -176,6 +186,12 @@ function validateBestPractices(config) {
     fail('responseOverrides.404.rewrite', 'required so missing pages serve /404.html');
   } else if (notFound.rewrite !== '/404.html') {
     fail('responseOverrides.404.rewrite', `expected "/404.html", got ${JSON.stringify(notFound.rewrite)}`);
+  }
+  if (isObject(notFound) && notFound.statusCode !== undefined && notFound.statusCode !== 404) {
+    fail(
+      'responseOverrides.404.statusCode',
+      `must remain 404 (or be omitted); got ${JSON.stringify(notFound.statusCode)}`,
+    );
   }
 
   if (!isObject(config.globalHeaders)) {
