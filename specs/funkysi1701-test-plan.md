@@ -411,19 +411,18 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
 **File:** `tests/search-functionality/no-results.spec.ts`
 
 **Steps:**
-  1. Navigate to https://www.funkysi1701.com/search/
-  2. Enter a random string unlikely to appear (e.g., 'xyzabc123notfound')
-  3. Execute search
-  4. Verify 'no results' message appears
-  5. Check that message is user-friendly
-  6. Verify search box remains functional for new search
+  1. Navigate to `/search/?q=xyzzy` (a nonsense query with no exact index occurrence)
+  2. Verify the 'no results' message appears and no result cards render
+  3. Verify the search box remains functional for a new search
+  4. Navigate to `/search/?q=parkrun`
+  5. Verify the focused query returns between 1 and 20 results
 
 **Expected Results:**
   - Search executes without errors
   - Clear 'no results found' message is displayed
-  - Message suggests trying different keywords
   - Search box is ready for new query
   - Page doesn't show error or break
+  - Weak Fuse.js matches do not make nonsense or focused queries return most of the index
 
 #### 4.3. Search with special characters
 
