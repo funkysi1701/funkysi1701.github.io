@@ -1,8 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/staticwebapp.config.json",
-  "navigationFallback": {
-    "rewrite": "/index.html"
-  },
   "responseOverrides": {
     "404": {
       "rewrite": "/404.html"

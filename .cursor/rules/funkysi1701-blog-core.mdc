@@ -17,7 +17,7 @@ Prefer matching existing patterns (Hugo TOML front matter in `+++` fences, site 
 - **Parkrun page:** Generated block in `content/parkrun.md` — see `parkrun-generated.mdc`; do not hand-edit between markers.
 - **Home popular links:** `data/home_popular.toml` drives the home strip. `home-popular-update.yml` refreshes its URLs weekly from Cloudflare Web Analytics through `scripts/home-popular/run.mjs` and opens a PR into `develop`; editorial titles are preserved.
 - **Git submodules:** CI checks out with `submodules: true`. Keep submodule config in sync if used.
-- **Azure Static Web Apps:** `staticwebapp.config.json` is copied into `public/` on every SWA deploy; keep routing and headers aligned with the built site. After edits, run `npm run check:swa-config` (CI: `swa-config.yml`).
+- **Azure Static Web Apps:** `staticwebapp.config.json` is copied into `public/` on every SWA deploy; keep routing and headers aligned with the built site. After edits, run `npm run check:swa-config` (CI: `swa-config.yml`). Do not add SPA `navigationFallback` to `/index.html` (soft-404 homepage); use `responseOverrides["404"]` → `/404.html`.
 
 ## Security and configuration
 

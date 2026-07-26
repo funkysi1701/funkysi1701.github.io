@@ -584,11 +584,12 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
 
 **Steps:**
   1. Navigate to a non-existent page (e.g., https://www.funkysi1701.com/this-page-does-not-exist)
-  2. Verify custom 404 page is displayed
-  3. Check that 404 page has navigation menu
-  4. Verify 404 page has helpful message
-  5. Test link back to homepage
-  6. Verify HTTP status code is 404
+  2. Verify HTTP status code is 404 (not a soft-404 homepage with HTTP 200)
+  3. Verify custom 404 page is displayed (heading / copy mention not found; not the home hero title)
+  4. Check that 404 page has navigation menu
+  5. Verify 404 page has helpful message
+  6. Test link back to homepage
+  7. Request a missing static asset path and verify HTTP 404 (not homepage HTML)
 
 **Expected Results:**
   - Custom 404 page is displayed
@@ -597,6 +598,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   - Error message is user-friendly
   - Links to homepage or other pages work
   - HTTP response code is 404 (not 200)
+  - Missing assets return 404 (may include `/404.html` HTML) rather than SPA/`index.html` homepage soft-404
 
 #### 5.6. robots.txt validation
 

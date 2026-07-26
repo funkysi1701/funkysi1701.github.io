@@ -64,7 +64,7 @@ npm run check:meta:descriptions # descriptions only
 npm run check:meta:fix          # preview description rewrites (--dry-run)
 ```
 
-**Azure Static Web Apps config:** After editing `staticwebapp.config.json` (routing, 404 rewrite, security headers), run `npm run check:swa-config`. CI runs the same check via `swa-config.yml` (SchemaStore schema plus required HSTS / frame / MIME / referrer / permissions headers).
+**Azure Static Web Apps config:** After editing `staticwebapp.config.json` (routing, 404 rewrite, security headers), run `npm run check:swa-config`. CI runs the same check via `swa-config.yml` (SchemaStore schema plus required HSTS / frame / MIME / referrer / permissions headers). This is a multi-page Hugo site: do **not** add a `navigationFallback` to `/index.html` (that causes soft-404s). Missing pages use `responseOverrides["404"]` → `/404.html`.
 
 To apply description fixes (write files), run `python scripts/normalize_meta_descriptions.py --root .` (without `--dry-run`). Requires Python 3.11+ on `PATH` (same as the GitHub Actions meta workflows).
 
