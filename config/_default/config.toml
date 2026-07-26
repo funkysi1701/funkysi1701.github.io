@@ -32,6 +32,13 @@ enableRobotsTXT = true
   logo = false
   comment = true
 
+  # Keep Fuse.js results relevant when searching long post bodies. Without a
+  # strict threshold, weak fuzzy matches make nonsense queries match hundreds
+  # of posts.
+  [params.search.fuse]
+    threshold = 0.3
+    minMatchCharLength = 3
+
 [params.homeHero]
   headline = "Senior .NET & Azure Engineer"
   subheading = "18+ years' experience delivering production systems across development, infrastructure, and cloud"
