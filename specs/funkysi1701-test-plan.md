@@ -598,7 +598,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   - Error message is user-friendly
   - Links to homepage or other pages work
   - HTTP response code is 404 (not 200)
-  - Missing assets return 404 rather than SPA/`index.html` fallback HTML
+  - Missing assets return 404 (may include `/404.html` HTML) rather than SPA/`index.html` homepage soft-404
 
 #### 5.6. robots.txt validation
 

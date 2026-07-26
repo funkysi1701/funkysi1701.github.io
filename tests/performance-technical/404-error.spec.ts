@@ -48,8 +48,13 @@ test.describe('Performance and Technical', () => {
     await test.step('Missing static assets must not soft-404 as HTML', async () => {
       const asset = await page.request.get('/img/this-asset-does-not-exist-xyz.png');
       expect(asset.status(), 'missing assets must return 404, not homepage HTML').toBe(404);
-      const contentType = (asset.headers()['content-type'] || '').toLowerCase();
-      expect(contentType.includes('text/html') && (await asset.text()).includes('Senior .NET')).toBeFalsy();
+      const body = await asset.text();
+      // SWA may serve /404.html for missing assets (HTML is fine) — but it must be the
+      // 404 page, not the homepage. Site meta still mentions "Senior .NET", so match on <title>.
+      expect(body, 'missing assets must not soft-404 as the homepage').not.toMatch(
+        /<title>\s*Senior \.NET/i,
+      );
+      expect(body).toMatch(/404 Page not found|Oops!\s*Page not found/i);
     });
   });
 });
