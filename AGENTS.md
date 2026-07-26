@@ -67,7 +67,7 @@ OpenSpec skills (`openspec-*`) live in the same directory for change proposal/ap
 - **Content:** `content/` (posts under `content/posts/YYYY/`, pages at `content/` root).
 - **Config:** `config/_default/` plus `config/development/`, `config/staging/`, `config/production/` when environment-specific.
 - **Templates & assets:** `layouts/`, `assets/`, `static/`.
-- **Routing / headers:** `staticwebapp.config.json` (copied into `public/` on deploy). Validate with `npm run check:swa-config` after edits (SchemaStore schema + required security headers).
+- **Routing / headers:** `staticwebapp.config.json` (copied into `public/` on deploy). Validate with `npm run check:swa-config` after edits (SchemaStore schema + required security headers). Do not use SPA `navigationFallback` → `/index.html`; missing routes must hit `responseOverrides["404"]` → `/404.html`.
 
 ## Blog post guardrails
 

@@ -192,7 +192,7 @@ npm run test:smoke                # @smoke subset (homepage, 404, sitemap)
 
 **Specs:** High-level scenarios are documented in **`specs/`** (see **`specs/funkysi1701-test-plan.md`**). Every `tests/**/*.spec.ts` file must start with a `// spec: specs/...` pointer for traceability. Verify with **`npm run check:spec-headers`** (also run by **`spec-headers.yml`** and before Playwright in the reusable E2E workflow).
 
-**SWA config:** After editing **`staticwebapp.config.json`**, run **`npm run check:swa-config`** (SchemaStore schema + required security headers; also **`swa-config.yml`** in CI).
+**SWA config:** After editing **`staticwebapp.config.json`**, run **`npm run check:swa-config`** (SchemaStore schema + required security headers; also **`swa-config.yml`** in CI). Do not add SPA `navigationFallback` → `/index.html` (soft-404s); missing pages use `responseOverrides["404"]` → `/404.html`.
 
 For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remains useful for quick feedback before or after running tests.
 
