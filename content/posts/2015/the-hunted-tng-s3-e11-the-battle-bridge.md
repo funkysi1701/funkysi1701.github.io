@@ -10,7 +10,7 @@ images = ['/images/2015/10/Danar_captured.jpg']
 tags = ["StarTrek", "Podcast", "Trekmate"]
 categories = ["trek"]
 keywords = ["", ""]
-description = "My latest podcast can be found https://www.trekmate.org.uk/the-hunted-tng-s3-e11-the-battle-bridge/ and feedback can be left on the trekmate forums…"
+description = "Listen to my latest podcast on The Hunted (TNG S3 E11) at https://www.trekmate.org.uk/the-hunted-tng-s3-e11-the-battle-bridge/."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -21,7 +21,7 @@ aliases = [
     "/2015/10/08/the-hunted-tng-s3-e11-the-battle-bridge"
 ]
 +++
-My latest podcast can be found https://www.trekmate.org.uk/the-hunted-tng-s3-e11-the-battle-bridge/ and feedback can be left on the trekmate forums https://forum.trekmatefamily.com/2015/10/the-hunted-tng-s3-e11-review-the-battle-bridge/
+My latest podcast can be found at https://www.trekmate.org.uk/the-hunted-tng-s3-e11-the-battle-bridge/.
 
 While the Enterprise-D is reviewing a seemingly idyllic planet’s application for Federation membership, an escaped prisoner leads its crew to discover an ugly secret: the government’s shameful treatment of its war veterans.
 

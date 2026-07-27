@@ -32,7 +32,17 @@ jobs:
         run: npm ci
 
       - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
+        run: |
+          set -euo pipefail
+          # Self-hosted images may ship a NodeSource apt source that 403s and
+          # breaks apt-get update inside `playwright install --with-deps`.
+          sudo rm -f /etc/apt/sources.list.d/nodesource* \
+            /etc/apt/sources.list.d/*nodesource*.list \
+            /etc/apt/sources.list.d/*nodesource*.sources 2>/dev/null || true
+          if [ -f /etc/apt/sources.list ]; then
+            sudo sed -i '/deb\.nodesource\.com/d' /etc/apt/sources.list || true
+          fi
+          npx playwright install --with-deps chromium
 
       - name: Start Hugo server
         run: |

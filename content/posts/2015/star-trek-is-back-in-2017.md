@@ -37,4 +37,4 @@ Shawn and I are joined again by James Roberts and TrekMates News feed Editor Sim
 
 James can be found on our sister podcast [The Battle Bridge](https://www.trekmate.org.uk/category/the-battle-bridge/) and Simon can be found on Twitter [@funkysi1701](https://twitter.com/funkysi1701)
 
-To listen go [https://www.trekmate.org.uk/sci-fi-waffle-episode-11-star-trek-is-back/](https://www.trekmate.org.uk/sci-fi-waffle-episode-11-star-trek-is-back/), to leave feedback go https://forum.trekmatefamily.com/
+To listen go [https://www.trekmate.org.uk/sci-fi-waffle-episode-11-star-trek-is-back/](https://www.trekmate.org.uk/sci-fi-waffle-episode-11-star-trek-is-back/).

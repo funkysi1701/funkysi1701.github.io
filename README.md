@@ -64,6 +64,8 @@ npm run check:meta:descriptions # descriptions only
 npm run check:meta:fix          # preview description rewrites (--dry-run)
 ```
 
+**Azure Static Web Apps config:** After editing `staticwebapp.config.json` (routing, 404 rewrite, security headers), run `npm run check:swa-config`. CI runs the same check via `swa-config.yml` (SchemaStore schema plus required HSTS / frame / MIME / referrer / permissions headers). This is a multi-page Hugo site: do **not** add a `navigationFallback` to `/index.html` (that causes soft-404s). Missing pages use `responseOverrides["404"]` → `/404.html`.
+
 To apply description fixes (write files), run `python scripts/normalize_meta_descriptions.py --root .` (without `--dry-run`). Requires Python 3.11+ on `PATH` (same as the GitHub Actions meta workflows).
 
 **30-day issue schedule:** Mondays (and manual) **`issue-schedule.yml`** reviews open GitHub issues via GitHub Models and upserts a tracking issue titled **30-day implementation schedule**. See [`scripts/issue-schedule/README.md`](scripts/issue-schedule/README.md).
@@ -90,17 +92,19 @@ Optional environment variables: `PARKRUN_ID` (default `11453050`), `PARKRUN_BASE
 
 ## 🧩 Head partial structure
 
-`layouts/partials/head.html` is a thin orchestrator: each `<head>` concern lives in a focused partial under `layouts/partials/head/`.
+`layouts/partials/head.html` is a thin orchestrator (charset, viewport, and `<title>` stay in `layouts/_default/baseof.html`). Put new `<head>` / SEO concerns in a focused partial under `layouts/partials/head/` and call it from the orchestrator — do not grow `head.html` with inline markup.
 
 | Partial | Responsibility |
 |---------|----------------|
 | `head/meta-tags.html` | Keywords, meta description (list pages via `head/list-page-description.html`), fediverse creator |
 | `head/seo.html` | Social preview meta — Open Graph and Twitter cards (Hugo internal templates) |
-| `head/structured-data.html` | JSON-LD — WebSite (home), BlogPosting (`head/schema-blog-posting.html`), CollectionPage (`head/schema-collection-page.html`) |
-| `head/title.html` | Document `<title>` |
+| `head/canonical.html` | Canonical URL (paginator-aware on list pages) |
+| `head/meta/robots.html` | Robots meta (paginated lists via `params.listPaginationMetaRobots`) — invoked through theme `head/meta` |
 | `head/site-verification.html` | Search engine site-verification meta (home page only) |
-| `head/canonical.html`, `head/meta/robots.html` | Canonical URL and robots meta |
-| Theme partials (`head/favicons`, `head/meta`, `head/feed`, `head/assets`) | Favicons, base meta, RSS links, CSS assets from `themes/hugo-theme-bootstrap/` |
+| `head/search-index.html` | Search page `index.json` pointer (`data-name="search-index"`) |
+| `head/structured-data.html` | JSON-LD — WebSite (home), BlogPosting (`head/schema-blog-posting.html`), CollectionPage (`head/schema-collection-page.html`) |
+| `head/title.html` | Document `<title>` (called from `baseof.html`, not `head.html`) |
+| Theme partials (`head/favicons`, `head/meta`, `head/feed`, `head/assets`) | Favicons, robots entrypoint, RSS links, CSS assets from `themes/hugo-theme-bootstrap/` |
 
 Analytics does not live in the head: the theme's `body-end.html` injects the site overrides `layouts/partials/assets/google-analytics.html` and `layouts/partials/assets/google-adsense.html` at the end of `<body>`.
 

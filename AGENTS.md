@@ -20,6 +20,7 @@ Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). Cursor rules 
 | Meta description check only | `npm run check:meta:descriptions` |
 | Preview description fixes (dry-run) | `npm run check:meta:fix` — apply fixes with `python scripts/normalize_meta_descriptions.py --root .` |
 | Playwright `// spec:` headers | `npm run check:spec-headers` |
+| SWA config validation | `npm run check:swa-config` |
 | Parkrun results update | `pip install -r scripts/requirements-parkrun.txt` then `python scripts/update_parkrun_results.py` |
 | 30-day issue schedule (dry-run) | `GH_TOKEN=$(gh auth token) DRY_RUN=true node scripts/issue-schedule/run.mjs` |
 | Blog post idea (dry-run) | `GH_TOKEN=$(gh auth token) DRY_RUN=true node scripts/blog-post-idea/run.mjs` |
@@ -66,7 +67,7 @@ OpenSpec skills (`openspec-*`) live in the same directory for change proposal/ap
 - **Content:** `content/` (posts under `content/posts/YYYY/`, pages at `content/` root).
 - **Config:** `config/_default/` plus `config/development/`, `config/staging/`, `config/production/` when environment-specific.
 - **Templates & assets:** `layouts/`, `assets/`, `static/`.
-- **Routing / headers:** `staticwebapp.config.json` (copied into `public/` on deploy).
+- **Routing / headers:** `staticwebapp.config.json` (copied into `public/` on deploy). Validate with `npm run check:swa-config` after edits (SchemaStore schema + required security headers). Do not use SPA `navigationFallback` → `/index.html`; missing routes must hit `responseOverrides["404"]` → `/404.html`.
 
 ## Blog post guardrails
 
@@ -86,6 +87,7 @@ After bulk-editing post front matter, run **`npm run check:meta`** before openin
 | Playwright smoke | **GitHub Actions** — `playwright-smoke.yml` on all PRs | Hugo production server in CI; `BASE_URL=http://127.0.0.1:1313`; `@smoke` subset (homepage, 404, sitemap); under 10 minutes |
 | Playwright E2E (full) | **GitHub Actions** — `swa-deploy-nonprod.yml` (blog-dev after dev SWA deploy on **`develop`** / **`feature/*`**) and `playwright.yml` (**`main`** pushes + PRs into **`main`**) | `BASE_URL`: blog-dev for non-prod deploys and for **PRs into `main`** (undeployed UI); production for **`main`** pushes / `workflow_dispatch` |
 | Playwright `// spec:` headers | **GitHub Actions** — `spec-headers.yml` (paths under `tests/`); also before E2E in reusable Playwright | Local: `npm run check:spec-headers` |
+| SWA config validation | **GitHub Actions** — `swa-config.yml` (paths under `staticwebapp.config.json` / validator) | Local: `npm run check:swa-config`; schema in `scripts/schemas/staticwebapp.config.schema.json` |
 | Page coverage / Codecov | GitHub Actions (Playwright workflows) | `scripts/generate-page-coverage.js`; informational per `codecov.yml` |
 | Hugo production build | **GitHub Actions** | `hugo-build.yml` — PRs and pushes to `main`/`develop`; catches template/render errors before deploy |
 | Meta title / description length | **GitHub Actions** | `meta-title-length.yml`, `meta-description-length.yml` |

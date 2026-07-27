@@ -1,0 +1,30 @@
+name: SWA config validation
+
+permissions:
+  contents: read
+
+on:
+  push:
+    paths:
+      - 'staticwebapp.config.json'
+      - 'scripts/check_staticwebapp_config.mjs'
+      - 'scripts/schemas/staticwebapp.config.schema.json'
+      - 'package.json'
+      - '.github/workflows/swa-config.yml'
+  pull_request:
+    paths:
+      - 'staticwebapp.config.json'
+      - 'scripts/check_staticwebapp_config.mjs'
+      - 'scripts/schemas/staticwebapp.config.schema.json'
+      - 'package.json'
+      - '.github/workflows/swa-config.yml'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: [self-hosted, k8s]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Validate staticwebapp.config.json
+        run: npm run check:swa-config
