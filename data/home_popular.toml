@@ -8,17 +8,17 @@ title = "NDC London 2026"
 url = "/posts/2026/ndc-london-2026/"
 
 [[items]]
+title = "Volunteering at NDC London"
+url = "/posts/2025/volunteering-at-ndc/"
+
+[[items]]
+title = "Getting started with .Net Aspire"
+url = "/posts/2024/aspire/"
+
+[[items]]
+title = "The Hacker Ethic"
+url = "/posts/2025/the-hacker-ethic/"
+
+[[items]]
 title = ".NET 5 to 10 features"
 url = "/posts/2026/dotnet-5-to-10-features/"
-
-[[items]]
-title = "The Pragmatic Programmer"
-url = "/posts/2025/pragmatic-programmer/"
-
-[[items]]
-title = "How to Start and Run a Successful Code Club for Kids"
-url = "/posts/2024/codeclub/"
-
-[[items]]
-title = "Adding Elasticsearch with .Net Aspire"
-url = "/posts/2025/adding-elasticsearch-with-aspire/"
