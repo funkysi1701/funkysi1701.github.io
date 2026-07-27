@@ -10,7 +10,7 @@ images = ['/images/2016/Noonian_Soong_2367.jpg']
 tags = ["StarTrek", "Trekmate", "Podcast"]
 categories = ["trek"]
 keywords = ["", ""]
-description = "My latest podcast can be found https://www.trekmate.org.uk/brothers-tng-s4-e3-review-the-battle-bridge/ and feedback can be left on the trekmate forums…"
+description = "My latest podcast covers Brothers (TNG S4 E3) at https://www.trekmate.org.uk/brothers-tng-s4-e3-review-the-battle-bridge/."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -21,7 +21,7 @@ aliases = [
     "/2016/05/26/brothers-tng-s4-e3-review-battle-bridge"
 ]
 +++
-My latest podcast can be found https://www.trekmate.org.uk/brothers-tng-s4-e3-review-the-battle-bridge/ and feedback can be left on the trekmate forums https://forum.trekmatefamily.com/2016/05/brothers-tng-s4-e3-review-the-battle-bridge/
+My latest podcast can be found at https://www.trekmate.org.uk/brothers-tng-s4-e3-review-the-battle-bridge/.
 
 Data jeopardizes an emergency mission to save an ill child when he gets a signal from his creator.
 

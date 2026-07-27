@@ -10,7 +10,7 @@ images =['/images/2015/02/Spock_and_Horta_mind_meld1.jpg']
 tags = ["StarTrek", "Podcast"]
 categories = ["trek"]
 keywords = ["", ""]
-description = "The podcast I recorded the other week has been released, why not have a listen by heading over to trekmate.org.uk and comment on their forums This week Sina…"
+description = "The podcast I recorded the other week has been released — listen on trekmate.org.uk. This week Sina, Chris and Paul welcome Simon."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -24,7 +24,7 @@ aliases = [
     "/2015/02/13/ten-forward-episode-135-anti-firbob-is-back-or-simons-desert-island-trek"
 ]
 +++
-The podcast I recorded the other week has been released, why not have a listen by heading over to [trekmate.org.uk](https://www.trekmate.org.uk/ten-forward-episode-135-anti-firbob-is-back-or-simons-desert-island-trek/) and comment on their forums
+The podcast I recorded the other week has been released — why not have a listen by heading over to [trekmate.org.uk](https://www.trekmate.org.uk/ten-forward-episode-135-anti-firbob-is-back-or-simons-desert-island-trek/)?
 
 This week Sina, Chris and Paul welcome Simon Foster, Trek Mate’s News Editor, to do discuss his Desert Island Trek choices.  Paul becomes Firbob, or AntiFirbob, or...something like that.  Boo hiss Firbob.  Every one listen and decide – Simon or Firbob?
 
