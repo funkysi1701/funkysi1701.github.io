@@ -20,8 +20,10 @@ import { fileURLToPath } from "node:url";
 
 const TRACKING_TITLE = "30-day implementation schedule";
 const META_LABEL = "meta-umbrella";
+const CONTENT_SUGGESTION_PREFIX = "[Content Suggestion]:";
 const BODY_TRUNCATE = 120;
 const ISSUE_LIMIT = 100;
+const PLAN_WEEKS = 4;
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -53,6 +55,12 @@ function truncate(text, max) {
   const t = String(text).trim();
   if (t.length <= max) return t;
   return `${t.slice(0, max)}…`;
+}
+
+function isContentSuggestion(issue) {
+  return String(issue?.title || "")
+    .trim()
+    .startsWith(CONTENT_SUGGESTION_PREFIX);
 }
 
 function normalizeIssues(raw) {
@@ -239,8 +247,15 @@ async function main() {
 
   const issues = normalizeIssues(raw || []);
   const forModel = issues.filter((i) => i.title !== TRACKING_TITLE);
+  const contentSuggestions = forModel.filter(isContentSuggestion);
 
   console.log(`Open issues fetched: ${issues.length} (sending ${forModel.length} to model)`);
+  console.log(
+    `Open content-suggestion issues: ${contentSuggestions.length}` +
+      (contentSuggestions.length
+        ? ` (#${contentSuggestions.map((i) => i.number).join(", #")})`
+        : ""),
+  );
 
   if (forModel.length === 0) {
     fail("No open issues to schedule");
@@ -248,8 +263,22 @@ async function main() {
 
   const runDate = new Date().toISOString().slice(0, 10);
   const systemPrompt = loadPrompt();
+  const contentHint =
+    contentSuggestions.length === 0
+      ? [
+          "Content suggestions: none open.",
+          `Still produce a ${PLAN_WEEKS}-week plan; note that no [Content Suggestion] issues are available this run.`,
+        ].join(" ")
+      : [
+          `Content suggestions (must schedule ≥1 distinct issue per week when the pool allows; ${contentSuggestions.length} open for ${PLAN_WEEKS} weeks):`,
+          contentSuggestions
+            .map((i) => `#${i.number} ${i.title}`)
+            .join("\n"),
+        ].join("\n");
   const userContent = [
     `Run date (UTC): ${runDate}`,
+    "",
+    contentHint,
     "",
     "Open issues JSON (compact):",
     JSON.stringify(forModel),
@@ -267,6 +296,22 @@ async function main() {
 
   if (!schedule.includes("#") && !/\d+/.test(schedule)) {
     fail("LLM output does not look like a schedule (no issue references)");
+  }
+
+  if (contentSuggestions.length > 0) {
+    const scheduledContent = contentSuggestions.filter((i) =>
+      new RegExp(`#${i.number}\\b`).test(schedule),
+    );
+    const needed = Math.min(PLAN_WEEKS, contentSuggestions.length);
+    if (scheduledContent.length < needed) {
+      console.warn(
+        `WARNING: expected at least ${needed} content-suggestion issue(s) in the schedule, found ${scheduledContent.length} (#${scheduledContent.map((i) => i.number).join(", #") || "none"})`,
+      );
+    } else {
+      console.log(
+        `Content suggestions referenced in schedule: ${scheduledContent.length} (≥${needed} required)`,
+      );
+    }
   }
 
   const header = [
