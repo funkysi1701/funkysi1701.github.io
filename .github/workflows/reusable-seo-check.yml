@@ -8,6 +8,11 @@ on:
         required: false
         type: string
         default: https://blog-dev.funkysi1701.com/sitemap.xml
+    secrets:
+      SIGNALDIFF_API_BASE_URL:
+        required: true
+      SIGNALDIFF_CI_API_KEY:
+        required: true
 
 permissions:
   contents: read

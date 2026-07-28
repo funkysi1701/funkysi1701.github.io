@@ -10,4 +10,6 @@ on:
 jobs:
   seo-crawl:
     uses: ./.github/workflows/reusable-seo-check.yml
-    secrets: inherit
+    secrets:
+      SIGNALDIFF_API_BASE_URL: ${{ secrets.SIGNALDIFF_API_BASE_URL }}
+      SIGNALDIFF_CI_API_KEY: ${{ secrets.SIGNALDIFF_CI_API_KEY }}
