@@ -2,6 +2,7 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import { SITE_TITLE_PATTERN } from '../site-title';
 
 test.describe('Homepage and Navigation', () => {
   test('Homepage loads successfully', { tag: '@smoke' }, async ({ page }) => {
@@ -15,9 +16,9 @@ test.describe('Homepage and Navigation', () => {
       await expect(page).toHaveURL('/');
     });
 
-    await test.step("Check that the page title contains 'Simon Foster' or 'Funky Si'", async () => {
-      // 3. Check that the page title contains 'Simon Foster' or 'Funky Si'
-      await expect(page).toHaveTitle(/Simon Foster|Funky Si/i);
+    await test.step('Check that the page title includes the environment site title', async () => {
+      // 3. Check that the page title includes the Hugo site title for this BASE_URL
+      await expect(page).toHaveTitle(SITE_TITLE_PATTERN);
     });
 
     await test.step('Verify the main navigation menu is visible', async () => {

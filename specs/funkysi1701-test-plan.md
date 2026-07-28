@@ -19,7 +19,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
 **Steps:**
   1. Navigate to https://www.funkysi1701.com
   2. Verify the page loads without errors
-  3. Check that the page title contains 'Simon Foster' or 'Funky Si'
+  3. Check that the page title includes the Hugo site title for the target environment (production: Funky Si's Blog; blog-dev: Funky Si's Blog (Dev); blog-test: Funky Si's Test)
   4. Verify the main navigation menu is visible (including Start Here)
   5. Confirm the home hero Start Here next-step link is present
   6. Confirm the Popular right now strip is present above the post list with 3-5 post links
