@@ -2,6 +2,8 @@
 
 GitHub Actions workflow [`.github/workflows/issue-schedule.yml`](../../.github/workflows/issue-schedule.yml) runs this script every Monday at 09:00 UTC (and on `workflow_dispatch`). It lists open issues, calls a chat model once, and creates or updates the issue titled **30-day implementation schedule**.
 
+**Content cadence:** open issues titled `[Content Suggestion]: …` (from [`blog-post-idea`](../blog-post-idea/)) are surfaced explicitly to the model. The prompt requires **at least one content suggestion in each week** of the plan when enough are open (distinct issues preferred; shortfalls noted when the pool is smaller than four weeks).
+
 Same pattern as Episode Atlas (`EpisodeTracker` `scripts/issue-schedule/`).
 
 ## Authentication (LLM)

@@ -208,7 +208,7 @@ For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remai
 - `playwright.yml` – Full Playwright E2E (`main` pushes → production; PRs into `main` → blog-dev)
 - `playwright-smoke.yml` – PR smoke subset against local Hugo (`@smoke`, `BASE_URL=http://127.0.0.1:1313`)
 - `pa11y-nightly.yml` – Scheduled full-sitemap accessibility scan
-- `issue-schedule.yml` – Weekly LLM planner: open issues → **30-day implementation schedule** tracking issue (`scripts/issue-schedule/`)
+- `issue-schedule.yml` – Weekly LLM planner: open issues → **30-day implementation schedule** tracking issue (`scripts/issue-schedule/`); each week includes ≥1 `[Content Suggestion]` when open
 - `blog-post-idea.yml` – Weekly LLM: catalogue posts + trends → one `[Content Suggestion]` issue (`scripts/blog-post-idea/`)
 - `tech-debt-scan.yml` – Weekly LLM: codebase signals → `tech-debt` issues (`scripts/tech-debt-scan/`)
 - `home-popular-update.yml` – Weekly Cloudflare Web Analytics top pages → `data/home_popular.toml` PR (`scripts/home-popular/`)
