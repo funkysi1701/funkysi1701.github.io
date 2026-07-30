@@ -53,6 +53,21 @@ npm run test:smoke       # @smoke subset (homepage, 404, sitemap)
 
 By default, `playwright.config.ts` uses **`BASE_URL`** of `https://www.funkysi1701.com` when unset. For local or staging targets, set the variable (PowerShell: `$env:BASE_URL="http://localhost:1313"; npm test`).
 
+**Config knobs** (optional env vars; defaults match today’s CI-safe behaviour — 1 worker and 2 retries when `CI` is set):
+
+| Variable | Purpose |
+|----------|---------|
+| `BASE_URL` | Site under test |
+| `PLAYWRIGHT_WORKERS` | Parallel workers (CI default `1`; local = Playwright auto) |
+| `PLAYWRIGHT_RETRIES` | Retries per failed test (CI default `2`; local `0`) |
+| `PLAYWRIGHT_TIMEOUT` | Per-test timeout in ms (default `30000`) |
+| `PLAYWRIGHT_EXPECT_TIMEOUT` | `expect()` timeout in ms (default `5000`) |
+| `PLAYWRIGHT_NAVIGATION_TIMEOUT` | Navigation timeout in ms (optional) |
+| `PLAYWRIGHT_ACTION_TIMEOUT` | Action timeout in ms (optional) |
+| `PLAYWRIGHT_MAX_FAILURES` | Fail-fast after N failures (`0` = no limit) |
+
+Example (faster local run against Hugo): `$env:BASE_URL="http://localhost:1313"; $env:PLAYWRIGHT_WORKERS="4"; npm test`.
+
 **GitHub Actions:** **`playwright-smoke.yml`** runs the `@smoke` subset on every pull request against a local Hugo production server (`BASE_URL=http://127.0.0.1:1313`). Full Playwright E2E: **`swa-deploy-nonprod.yml`** deploys to blog-dev (and blog-test on **`develop`**) then tests **`https://blog-dev.funkysi1701.com`**; **`playwright.yml`** runs PRs into **`main`** against blog-dev and **`main`** pushes against production. After full-suite runs, **`scripts/generate-page-coverage.js`** can feed **Codecov** when `CODECOV_TOKEN` is configured. **`codecov.yml`** marks **page coverage** as **informational**.
 
 **GitHub Actions** (`.github/workflows/`) runs a **Hugo production build** on pull requests (`hugo-build.yml`) and checks such as **meta title** (50–60 characters) and **meta description** (110–160 characters) for `content/posts/**/*.md`. Run the same checks locally after editing post front matter:
