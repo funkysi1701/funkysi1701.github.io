@@ -41,6 +41,17 @@ const REQUIRED_HEADERS = {
   'Permissions-Policy': {
     test: (v) => (v.trim().length > 0 ? null : 'must be non-empty'),
   },
+  'Content-Security-Policy': {
+    test: (v) => {
+      const value = v.trim();
+      if (!value) return 'must be non-empty';
+      if (!/default-src\s+'self'/i.test(value)) return "must include default-src 'self'";
+      if (!/script-src\b/i.test(value)) return 'must include script-src';
+      if (!/object-src\s+'none'/i.test(value)) return "must include object-src 'none'";
+      if (!/frame-ancestors\b/i.test(value)) return 'must include frame-ancestors';
+      return null;
+    },
+  },
 };
 
 const errors = [];

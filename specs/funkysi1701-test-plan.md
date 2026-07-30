@@ -523,13 +523,14 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   5. Check for X-Frame-Options header
   6. Verify X-Content-Type-Options header
   7. Check for Referrer-Policy header
-  8. Verify Content-Security-Policy if applicable
+  8. Verify Content-Security-Policy header
 
 **Expected Results:**
   - Strict-Transport-Security header is present
   - X-Frame-Options is set to SAMEORIGIN or DENY
   - X-Content-Type-Options is set to nosniff
   - Referrer-Policy header is configured
+  - Content-Security-Policy is present with `default-src 'self'`, `script-src`, and `object-src 'none'`
   - Security headers match staticwebapp.config.json settings
   - No sensitive information in headers
 
