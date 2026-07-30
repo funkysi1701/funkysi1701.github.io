@@ -135,4 +135,5 @@ Make the smallest change that satisfies the task. Do not refactor unrelated code
 | [`README.md`](README.md) | Human-oriented setup, testing, and deploy |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | PR checklist, branch workflow, merge readiness |
 | [`specs/funkysi1701-test-plan.md`](specs/funkysi1701-test-plan.md) | E2E scenario plan (`// spec:` comments in `tests/`) |
-| [`.vscode/mcp.json`](.vscode/mcp.json) | Playwright MCP server for agent-driven test runs |
+| [`.cursor/mcp.json`](.cursor/mcp.json) | Cursor MCP: `@playwright/mcp` (browser/console) + `playwright-test` (test runs) |
+| [`.vscode/mcp.json`](.vscode/mcp.json) | VS Code / Copilot Playwright Test MCP (`run-test-mcp-server`) |
