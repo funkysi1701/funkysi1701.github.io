@@ -15,7 +15,7 @@ npx playwright install chromium   # if browsers are missing
 ```
 
 - **`BASE_URL`:** defaults to `https://www.funkysi1701.com` when unset. For local Hugo: `http://localhost:1313`. Non-prod CI uses `https://blog-dev.funkysi1701.com`.
-- Playwright MCP (optional): configured in [`.vscode/mcp.json`](../../../.vscode/mcp.json) as `playwright-test` (`npx playwright run-test-mcp-server`). Prefer MCP `test_run` / `test_debug` / browser tools when available; otherwise use CLI below.
+- Playwright MCP (optional): Cursor [`.cursor/mcp.json`](../../mcp.json) exposes `playwright` (`@playwright/mcp` — browse/console) and `playwright-test` (`npx playwright run-test-mcp-server`). VS Code / Copilot: [`.vscode/mcp.json`](../../../.vscode/mcp.json). Prefer MCP `test_run` / `test_debug` / browser tools when available; otherwise use CLI below.
 
 ## Workflow
 
