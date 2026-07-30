@@ -29,7 +29,7 @@ There is no **`dev`** branch — use **`develop`**.
 
 - Start with [`AGENTS.md`](AGENTS.md) for commands, guardrails, and the CI map.
 - Cursor: path-scoped rules in [`.cursor/rules/`](.cursor/rules/) (always-applied [`funkysi1701-blog-core.mdc`](.cursor/rules/funkysi1701-blog-core.mdc) plus content, tests, layouts, and parkrun rules). Copilot: [`.github/copilot-instructions.md`](.github/copilot-instructions.md).
-- Playwright MCP for agent-driven test runs: [`.vscode/mcp.json`](.vscode/mcp.json).
+- Playwright MCP: [`.cursor/mcp.json`](.cursor/mcp.json) for Cursor (`@playwright/mcp` browser tools + test server); [`.vscode/mcp.json`](.vscode/mcp.json) for VS Code / Copilot test agents.
 - Prefer **minimal diffs** — solve the task without refactoring unrelated code or adding dependencies without clear need.
 
 ## Further reading

@@ -50,13 +50,14 @@ test.describe('Performance and Technical', () => {
       }
     });
 
-    await test.step('Verify Content-Security-Policy if applicable', async () => {
-      // 8. Verify Content-Security-Policy if applicable
+    await test.step('Verify Content-Security-Policy header', async () => {
+      // 8. Verify Content-Security-Policy header
       const csp = headers['content-security-policy'];
-      if (csp) {
-        console.log('CSP:', csp);
-      }
-
+      expect(csp).toBeTruthy();
+      expect(csp!).toMatch(/default-src\s+'self'/i);
+      expect(csp!).toMatch(/script-src\b/i);
+      expect(csp!).toMatch(/object-src\s+'none'/i);
+      console.log('CSP:', csp);
       console.log('All headers:', headers);
     });
 

@@ -67,7 +67,7 @@ OpenSpec skills (`openspec-*`) live in the same directory for change proposal/ap
 - **Content:** `content/` (posts under `content/posts/YYYY/`, pages at `content/` root).
 - **Config:** `config/_default/` plus `config/development/`, `config/staging/`, `config/production/` when environment-specific.
 - **Templates & assets:** `layouts/`, `assets/`, `static/`.
-- **Routing / headers:** `staticwebapp.config.json` (copied into `public/` on deploy). Validate with `npm run check:swa-config` after edits (SchemaStore schema + required security headers). Do not use SPA `navigationFallback` → `/index.html`; missing routes must hit `responseOverrides["404"]` → `/404.html`.
+- **Routing / headers:** `staticwebapp.config.json` (copied into `public/` on deploy). Validate with `npm run check:swa-config` after edits (SchemaStore schema + required security headers including CSP). Do not use SPA `navigationFallback` → `/index.html`; missing routes must hit `responseOverrides["404"]` → `/404.html`.
 
 ## Blog post guardrails
 
@@ -135,4 +135,5 @@ Make the smallest change that satisfies the task. Do not refactor unrelated code
 | [`README.md`](README.md) | Human-oriented setup, testing, and deploy |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | PR checklist, branch workflow, merge readiness |
 | [`specs/funkysi1701-test-plan.md`](specs/funkysi1701-test-plan.md) | E2E scenario plan (`// spec:` comments in `tests/`) |
-| [`.vscode/mcp.json`](.vscode/mcp.json) | Playwright MCP server for agent-driven test runs |
+| [`.cursor/mcp.json`](.cursor/mcp.json) | Cursor MCP: `@playwright/mcp` (browser/console) + `playwright-test` (test runs) |
+| [`.vscode/mcp.json`](.vscode/mcp.json) | VS Code / Copilot Playwright Test MCP (`run-test-mcp-server`) |

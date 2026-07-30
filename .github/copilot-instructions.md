@@ -192,7 +192,7 @@ npm run test:smoke                # @smoke subset (homepage, 404, sitemap)
 
 **Specs:** High-level scenarios are documented in **`specs/`** (see **`specs/funkysi1701-test-plan.md`**). Every `tests/**/*.spec.ts` file must start with a `// spec: specs/...` pointer for traceability. Verify with **`npm run check:spec-headers`** (also run by **`spec-headers.yml`** and before Playwright in the reusable E2E workflow).
 
-**SWA config:** After editing **`staticwebapp.config.json`**, run **`npm run check:swa-config`** (SchemaStore schema + required security headers; also **`swa-config.yml`** in CI). Do not add SPA `navigationFallback` → `/index.html` (soft-404s); missing pages use `responseOverrides["404"]` → `/404.html`.
+**SWA config:** After editing **`staticwebapp.config.json`**, run **`npm run check:swa-config`** (SchemaStore schema + required security headers including CSP; also **`swa-config.yml`** in CI). Do not add SPA `navigationFallback` → `/index.html` (soft-404s); missing pages use `responseOverrides["404"]` → `/404.html`.
 
 For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remains useful for quick feedback before or after running tests.
 
@@ -214,7 +214,7 @@ For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remai
 - `home-popular-update.yml` – Weekly Cloudflare Web Analytics top pages → `data/home_popular.toml` PR (`scripts/home-popular/`)
 - `codecov.yml` – Codecov behaviour (informational page-coverage gates)
 - `npm run check:meta` – Local meta validation (titles + descriptions); see also `check:meta:titles`, `check:meta:descriptions`, `check:meta:fix`
-- `npm run check:swa-config` – Validate `staticwebapp.config.json` (schema + security headers); CI: `swa-config.yml`
+- `npm run check:swa-config` – Validate `staticwebapp.config.json` (schema + security headers including CSP); CI: `swa-config.yml`
 - `scripts/check_meta_titles.py` / `scripts/check_meta_descriptions.py` – Post front matter length checks (used by GitHub Actions and npm scripts)
 - `scripts/check_staticwebapp_config.mjs` – SWA config validator; schema vendored at `scripts/schemas/staticwebapp.config.schema.json`
 - `scripts/generate-page-coverage.js` – Page visit / coverage artifact for Codecov
