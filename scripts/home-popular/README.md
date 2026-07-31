@@ -47,6 +47,6 @@ node --test scripts/home-popular/run.test.mjs
 
 ## Notes
 
-- Cloudflare Web Analytics rankings will not match Lite Analytics exactly; this workflow makes Cloudflare the source of truth for the strip.
+- Cloudflare Web Analytics rankings will not match Lite Analytics exactly; this workflow makes Cloudflare the source of truth for the strip. Lite remains the source of truth for bounce / 2+ page depth KPIs (see [README Analytics](../../README.md#analytics-cloudflare-zaraz)).
 - `schedule` triggers only run from the repository **default branch**; merge the workflow there before relying on the Monday cron.
 - The homepage smoke test asserts the strip renders 3–5 post links (not specific URLs), so automated refreshes do not break CI.
