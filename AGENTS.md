@@ -35,6 +35,7 @@ After changing `package.json` or `package-lock.json`, run `npm ci` before `npm t
 - **Parkrun generated block** in `content/parkrun.md` between `<!-- BEGIN PARKRUN_GENERATED -->` and `<!-- END PARKRUN_GENERATED -->` — produced by `scripts/update_parkrun_results.py`. Edit content below the markers by hand; optional row suppressions in `data/parkrun_suppress.json`.
 - **Secrets** — no API keys, deploy tokens, or credentials in `.env`, `config/`, or front matter. Azure Static Web Apps deploy token lives only in GitHub Actions secrets.
 - **Vendored theme** — prefer site overrides in root `layouts/`, `assets/`, and `static/` over editing `themes/hugo-theme-bootstrap/`.
+- **Duplicate Lite Analytics** — do not embed `lite.js` in Hugo while Cloudflare Zaraz injects it (double-count). See [`README.md`](README.md#analytics-cloudflare-zaraz).
 
 ## Cursor context
 
@@ -132,7 +133,7 @@ Make the smallest change that satisfies the task. Do not refactor unrelated code
 | [`scripts/blog-post-idea/README.md`](scripts/blog-post-idea/README.md) | Weekly blog post idea → content-suggestion issue (GitHub Models) |
 | [`scripts/tech-debt-scan/README.md`](scripts/tech-debt-scan/README.md) | Weekly tech-debt scan → `tech-debt` issues (GitHub Models) |
 | [`scripts/home-popular/README.md`](scripts/home-popular/README.md) | Weekly Cloudflare top-pages refresh of the home Popular strip data |
-| [`README.md`](README.md) | Human-oriented setup, testing, and deploy |
+| [`README.md`](README.md) | Human-oriented setup, testing, deploy, and Zaraz analytics inventory |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | PR checklist, branch workflow, merge readiness |
 | [`specs/funkysi1701-test-plan.md`](specs/funkysi1701-test-plan.md) | E2E scenario plan (`// spec:` comments in `tests/`) |
 | [`.cursor/mcp.json`](.cursor/mcp.json) | Cursor MCP: `@playwright/mcp` (browser/console) + `playwright-test` (test runs) |

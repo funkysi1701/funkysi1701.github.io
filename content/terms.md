@@ -17,7 +17,7 @@ aliases = [
 ]
 +++
 
-**Last Updated**: December 2, 2025
+**Last Updated**: July 31, 2026
 
 ## Terms of Service
 
@@ -116,8 +116,9 @@ This website displays advertisements through Google AdSense and other advertisin
 This website uses third-party services including:
 
 - **Giscus** for comments (hosted on GitHub)
-- **Google Analytics** for traffic analysis
-- **Cloudflare** for CDN and security
+- **Lite Analytics** (via Cloudflare Zaraz) for engagement metrics such as bounce and page depth
+- **Ahrefs Analytics** (via Cloudflare Zaraz) for SEO and referral insights
+- **Cloudflare** for CDN, security, and Web Analytics (RUM)
 - **Azure Static Web Apps** for hosting
 - **MailChimp** for newsletter management
 

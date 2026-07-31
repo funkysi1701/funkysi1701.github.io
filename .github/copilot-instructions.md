@@ -148,7 +148,7 @@ Hugo uses environment-specific configs in `config/`:
 - `config/_default/config.toml` – Base configuration
 - `config/development/config.toml` – Local dev overrides
 - `config/staging/config.toml` – Staging overrides
-- `config/production/config.toml` – Production overrides (includes CDN, analytics, monetization)
+- `config/production/config.toml` – Production overrides (CDN image prefix, monetization flags; visitor analytics are via Cloudflare Zaraz — see README)
 
 **Note:** Hugo version is centralized in `.env` file and used by Docker builds for consistency.
 
@@ -159,9 +159,9 @@ Hugo uses environment-specific configs in `config/`:
 2. **Images location:** Store in `static/images/`, reference as `/images/filename.jpg` in content.
 
 3. **Environment-specific settings:** Never hardcode configuration. Use `config/` structure:
-   - Development: Local testing, no analytics
+   - Development: Local testing; Hugo analytics ID empty (Zaraz only on Cloudflare-fronted hosts)
    - Staging: Testing environment
-   - Production: Full analytics, CDN caching, Google AdSense
+   - Production: CDN caching; visitor analytics via Cloudflare Zaraz / Web Insights (Hugo GA and Gatekeeper/Ezoic off)
 
 4. **Multi-environment deployment:** SWA deploys use Hugo `--environment` values `production`, `development`, and `staging` from `config/` overlays. Workflows: `azure-static-web-apps-victorious-pebble-0b8f90e03.yml` (prod), `swa-deploy-nonprod.yml` (dev/test). Development (blog-dev) builds pass `--buildFuture`; staging and production do not.
 
@@ -202,7 +202,7 @@ For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remai
 - `.cursor/skills/` – Cursor project skills (`update-parkrun`, `fix-post-meta`, `playwright-test-healer`, OpenSpec flows)
 - `.env` – Hugo version (affects all builds)
 - `config/_default/config.toml` – Main site title, menu, author info
-- `config/production/config.toml` – Production baseURL and analytics
+- `config/production/config.toml` – Production baseURL and CDN/monetization params (analytics via Zaraz; see README)
 - `playwright.config.ts` – Playwright defaults (`baseURL`, reporters, projects; env-tunable workers/retries/timeouts)
 - `swa-deploy-nonprod.yml` – SWA dev/test deploy + blog-dev Playwright + SEO
 - `playwright.yml` – Full Playwright E2E (`main` pushes → production; PRs into `main` → blog-dev)
