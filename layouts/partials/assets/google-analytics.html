@@ -1,4 +1,10 @@
-{{- /* Hugo ≥0.133: .Site.GoogleAnalytics removed; use services config */ -}}
+{{- /*
+  Production engagement KPIs use Lite Analytics injected by Cloudflare Zaraz
+  (lite.js data-host=funkysi1701.com). Do NOT embed lite.js (or a second GA
+  snippet) here while Zaraz is the injector — double-count risk. Keep
+  services.googleAnalytics.id empty unless Hugo is deliberately the only GA
+  source. Inventory and decisions: README "Analytics (Cloudflare Zaraz)".
+*/ -}}
 {{- with site.Config.Services.GoogleAnalytics.ID -}}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ . | urlquery }}"></script>
 <script>
