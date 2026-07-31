@@ -26,6 +26,15 @@ Copy into your PR description or verify locally before requesting review:
 
 There is no **`dev`** branch — use **`develop`**.
 
+## Publishing and promotion
+
+When publishing or refreshing posts (growth / engagement work):
+
+- **daily.dev:** Treat as a first-class channel for new **.NET** and **DevOps** posts. Submit or promote on [daily.dev](https://app.daily.dev/) when the post goes live (Lite Analytics shows it as a major acquisition path for landers such as `.NET 5 to 10`).
+- **Evergreen first:** Prefer a light refresh of a proven top lander (for example merge-two-projects, Grafana, automatic pull requests) before writing net-new on the same topic.
+- **Optional cross-post:** LinkedIn or other channels for 2–3 pillar posts — always share the **canonical URL** (no `?ref=` query strings).
+- **Referral URLs:** Do **not** branch templates or CTAs on `?ref=dailydev` (or similar). Hugo must serve the same HTML and engagement CTAs as the clean permalink; `layouts/partials/head/canonical.html` already uses `.Permalink`.
+
 ## AI-assisted contributions
 
 - Start with [`AGENTS.md`](AGENTS.md) for commands, guardrails, and the CI map.

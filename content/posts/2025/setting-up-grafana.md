@@ -1,6 +1,7 @@
 +++
 title = "Setting Up Grafana for Monitoring .NET Apps with Docker"
 date = "2025-01-27T20:00:00Z"
+lastmod = "2026-07-31T20:00:00Z"
 year = "2025"
 month= "2025-01"
 author = "funkysi1701"
@@ -9,7 +10,7 @@ cover = "/images/grafana-dashboard.png"
 images =['/images/grafana-dashboard.png']
 tags = ["Grafana", "Monitoring", "Analytics", "Docker", "Prometheus", "DotNet", "DevOps", "Metrics"]
 categories = ["tech"]
-description = "Grafana is an open-source analytics and monitoring platform that allows you to query, visualize, and alert on your metrics data."
+description = "Run Grafana and Prometheus in Docker Compose, scrape a .NET /metrics endpoint, and import the ASP.NET Core Grafana dashboard for live application monitoring."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -22,28 +23,28 @@ aliases = [
     "/2025/01/27/setting-up-grafana-for-monitoring-net-applications-with-docker" 
 ]
 +++
-Grafana is an open-source analytics and monitoring platform that allows you to query, visualize, and alert on your metrics data. It is a popular tool for monitoring systems, applications, and services in real-time. In this post, I will guide you through setting up Grafana in Docker to monitor a simple .NET API.
+Grafana is an open-source analytics and monitoring platform that lets you query, visualise, and alert on metrics. It pairs well with Prometheus for scraping application endpoints. This post walks through a Docker Compose stack that monitors a simple .NET API.
 
 ## Setting up Grafana
 
-To visualize metrics data, we need to set up a few components. Our .NET application will need a `/metrics` endpoint to describe the state of the system. Prometheus will scrape this endpoint every few seconds and store the data. Grafana will then query Prometheus to display the data in a nice dashboard.
+To visualise metrics data, we need a few components. The .NET application exposes a `/metrics` endpoint. Prometheus scrapes it on an interval and stores the samples. Grafana then queries Prometheus and renders dashboards.
 
 ### Docker Compose File
 
-Lets start with a docker compose file to bring up the services we need.
+Start with a Compose file for Prometheus and Grafana. Pin image tags so rebuilds stay reproducible (bump them when you deliberately upgrade):
 
 ```yaml
 services:
   prometheus:
-    image: prom/prometheus:v3.1.0
+    image: prom/prometheus:v3.4.0
     ports:
-      - 5431:9090
+    - 5431:9090
     volumes:
       - ./prometheus/:/etc/prometheus/
       - prometheus:/prometheus   
       
   grafana:
-    image: grafana/grafana:11.4.0
+    image: grafana/grafana:11.6.0
     expose:
       - "3000"
     ports:
@@ -57,7 +58,7 @@ volumes:
 
 ```
 
-This spins up the grafana and prometheus containers, it maps some ports and maps some folders as volumes. Lets look at the config files for prometheus and grafana.
+This brings up Grafana and Prometheus, maps ports, and mounts config/data volumes.
 
 ### Prometheus Configuration
 
@@ -79,29 +80,27 @@ scrape_configs:
     - targets: ['api.example.com:443']       
 ```
 
-This configures how often the /metrics endpoint should be scraped, by default an endpoint at <http://api.example.com/metrics> will be scraped. As my api endpoint is running under https I have to set the tls_config to skip verification and set the scheme to https. scrape_interval is how often the endpoint is scraped and scrape_timeout is how long to wait for a response, it this is not specified the global config with be used.
+This configures how often the `/metrics` endpoint should be scraped. By default Prometheus expects something like `http://api.example.com/metrics`. Because my API ran under HTTPS I set `scheme` to `https` and skipped TLS verification in this lab setup. `scrape_interval` is how often the endpoint is scraped; if `scrape_timeout` is omitted the global value is used.
 
-More information about configuring prometheus can be found [here](https://prometheus.io/docs/prometheus/latest/configuration/configuration/)
+More information about configuring Prometheus can be found [here](https://prometheus.io/docs/prometheus/latest/configuration/configuration/).
 
 ### Grafana Config
 
-You can now log into grafana on <http://localhost:3000> with the default username and password of admin/admin. You will be prompted to change the password. You can now add a data source to connect to prometheus. Prometheus will be running on <http://localhost:5431>, however if you are using docker desktop to you your docker compose it isn't as simple as using that address. Because you want a docker container to access another docker container you need to use a special address. So in this case the address would be <http://host.docker.internal:5431>.
+You can now log into Grafana on <http://localhost:3000> with the default username and password of `admin`/`admin`. You will be prompted to change the password. Add a Prometheus data source next. Prometheus is published on the host as <http://localhost:5431>, but from another container you usually cannot use `localhost` for a sibling service.
 
-**host.docker.internal** is a special DNS name that resolves to the internal IP address used by the host machine. This is particularly useful when you are running Docker containers and need to access services running on the host machine from within a container.
-
-For example, if you have a web server running on your host machine and you want to access it from a Docker container, you can use **host.docker.internal** to refer to the host machine's IP address.
+If Grafana needs to reach Prometheus on the **host** (for example when Prometheus is published only to the host network), use **host.docker.internal** (Docker Desktop and many Linux setups with the host-gateway mapping): <http://host.docker.internal:5431>. Prefer the Compose service name (`http://prometheus:9090`) when both services share the same Compose network.
 
 ### Dashboard
 
-The next thing we need to do is build a dashboard, well the dotnet team has done the hard work for us. They have created a [grafana dashboard](https://devblogs.microsoft.com/dotnet/introducing-aspnetcore-metrics-and-grafana-dashboards-in-dotnet-8/) that we can import into our grafana instance.
+The next thing we need to do is build a dashboard — the .NET team has done much of the hard work. They published a [Grafana dashboard](https://devblogs.microsoft.com/dotnet/introducing-aspnetcore-metrics-and-grafana-dashboards-in-dotnet-8/) you can import.
 
-You can do all of this yourself by using the Grafana UI, to add the graphs, guages and other visualizations that you are interested in.
+You can also build panels yourself in the Grafana UI (graphs, gauges, and other visualisations).
 
 ![Dashboard](/images/2025/dashboard-screenshot.png)
 
 ## Metrics endpoint
 
-If your .NET application is using .NET Aspire, this /metrics endpoint is probably already setup for you. Have a look at Extensions.cs in your ServiceDefaults project and check for the following code (you will need the nuget package OpenTelemetry.Exporter.Prometheus.AspNetCore):
+If your .NET application is using .NET Aspire, this `/metrics` endpoint is often already set up for you. Look in `Extensions.cs` in your ServiceDefaults project for something like the following (you need the NuGet package `OpenTelemetry.Exporter.Prometheus.AspNetCore`):
 
 ```csharp
 public static WebApplication MapDefaultEndpoints(this WebApplication app)
@@ -111,10 +110,10 @@ public static WebApplication MapDefaultEndpoints(this WebApplication app)
 }
 ```
 
-If you are not using .NET Aspire, you can add app.MapPrometheusScrapingEndpoint() to your Program.cs file.
+If you are not using .NET Aspire, you can add `app.MapPrometheusScrapingEndpoint()` to your `Program.cs` file (with the same package referenced).
 
 ## Conclusion
 
-By following these steps, you can set up Grafana with Docker and Prometheus to monitor your .NET applications. This setup allows you to visualize metrics and create real-time dashboards, providing valuable insights into your application's performance. Happy monitoring!
+With Compose, Prometheus, and Grafana in place you can scrape a .NET `/metrics` endpoint and watch live dashboards — useful for latency, exceptions, and ASP.NET Core built-in meters. Happy monitoring!
 
 If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up to my [newsletter](/newsletter). If you have any questions or comments, please feel free to reach out or leave a comment below.
