@@ -1,5 +1,5 @@
 # Known tech-debt hotspots for the weekly scan (one path per line).
-layouts/partials/head.html
+# layouts/partials/head.html — resolved (thin orchestrator + layouts/partials/head/*); do not re-add for size alone.
 staticwebapp.config.json
 playwright.config.ts
 scripts/update_parkrun_results.py

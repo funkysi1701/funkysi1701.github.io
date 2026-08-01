@@ -1,3 +1,47 @@
-{{- /* Social preview / SEO meta via Hugo's internal templates: Open Graph and Twitter cards. */ -}}
+{{- /* Social preview meta: Open Graph and Twitter cards.
+   Regular pages use Hugo internals (aligned with front-matter description).
+   All other pages emit tags from head/list-page-description so og/twitter
+   stay aligned with meta name="description" (Hugo internals fall back to the
+   raw site description on lists/404). */ -}}
+{{- if .IsPage -}}
 {{ template "_internal/opengraph.html" . }}
 {{- template "_internal/twitter_cards.html" . -}}
+{{- else -}}
+{{- $title := .Title | default .Site.Title | plainify | htmlUnescape -}}
+{{- if .IsHome -}}
+  {{- $title = .Site.Title | plainify | htmlUnescape -}}
+{{- end -}}
+{{- $desc := partial "head/list-page-description" . -}}
+{{- $permalink := .Permalink -}}
+{{- if or .IsHome (eq .Kind "taxonomy") (eq .Kind "term") (eq .Kind "section") -}}
+  {{- with .Paginator -}}
+    {{- if gt .PageNumber 1 -}}
+      {{- $permalink = .URL | absLangURL -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $image := "" -}}
+{{- with $.Site.Params.images -}}
+  {{- if gt (len .) 0 -}}
+    {{- $image = index . 0 | absURL -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $image -}}
+  {{- $image = absURL "/images/1922276.jpg" -}}
+{{- end -}}
+{{- $locale := .Site.Language.Locale | default .Lang | replaceRE "-" "_" -}}
+<meta property="og:url" content="{{ $permalink }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:locale" content="{{ $locale }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ $image }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image" content="{{ $image }}">
+{{- with $.Site.Params.social.twitter -}}
+<meta name="twitter:site" content="@{{ . }}">
+{{- end -}}
+{{- end -}}

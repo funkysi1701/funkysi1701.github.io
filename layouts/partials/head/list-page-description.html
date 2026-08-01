@@ -46,18 +46,32 @@
   {{- else if eq $page.Kind "section" -}}
     {{- $pageDesc = printf "Browse all posts in %s on %s. %s" $page.Title $siteTitle $archiveSuffix -}}
   {{- else -}}
-    {{- $pageDesc = printf "Browse %s on %s. %s" $page.Title $siteTitle $archiveSuffix -}}
+    {{- /* 404 and other non-list pages: site description, not "Browse …". */ -}}
+    {{- $pageDesc = $page.Site.Params.description | plainify | htmlUnescape -}}
   {{- end -}}
 {{- end -}}
 {{- $supportsPagination := or $page.IsHome (eq $page.Kind "taxonomy") (eq $page.Kind "term") (eq $page.Kind "section") -}}
+{{- $pageSuffix := "" -}}
 {{- if $supportsPagination -}}
   {{- with $page.Paginator -}}
     {{- if gt .PageNumber 1 -}}
-      {{- $pageDesc = printf "%s %s" $pageDesc (i18n "pagination_title" .) -}}
+      {{- $pageSuffix = printf " %s" (i18n "pagination_title" .) -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
-{{- if gt (len $pageDesc) 160 -}}
-  {{- $pageDesc = truncate 160 $pageDesc -}}
+{{- /* Reserve room for the pagination suffix inside the 160-char SEO budget.
+   Plain slicestr (not truncate): Hugo's truncate is HTML-aware and can turn
+   "&" into "&amp;", which then double-escapes in meta attributes. */ -}}
+{{- $maxBase := sub 160 (len $pageSuffix) -}}
+{{- if lt $maxBase 80 -}}
+  {{- $maxBase = 80 -}}
 {{- end -}}
+{{- if gt (len $pageDesc) $maxBase -}}
+  {{- $base := slicestr $pageDesc 0 $maxBase -}}
+  {{- if strings.Contains $base " " -}}
+    {{- $base = replaceRE " [^ ]*$" "" $base | strings.TrimRight " " -}}
+  {{- end -}}
+  {{- $pageDesc = printf "%s..." $base -}}
+{{- end -}}
+{{- $pageDesc = printf "%s%s" $pageDesc $pageSuffix -}}
 {{- return $pageDesc -}}

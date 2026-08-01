@@ -1,5 +1,17 @@
+{{- /* Robots meta. Paginated lists (page 2+) use listPaginationMetaRobots.
+   Detect via .Paginator.PageNumber — Hugo keeps .RelPermalink as the first page
+   (e.g. "/" or "/tags/"), so string-matching "/page/" never matches.
+   Only touch .Paginator on list kinds; other pages error with
+   "pagination not supported for this page". */ -}}
 {{- $content := default $.Site.Params.metaRobots .Params.metaRobots -}}
-{{- $isPaginatedListPage := strings.Contains .RelPermalink "/page/" -}}
+{{- $isPaginatedListPage := false -}}
+{{- if or .IsHome (eq .Kind "taxonomy") (eq .Kind "term") (eq .Kind "section") -}}
+  {{- with .Paginator -}}
+    {{- if gt .PageNumber 1 -}}
+      {{- $isPaginatedListPage = true -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 {{- if and (not (isset .Params "metarobots")) $isPaginatedListPage -}}
   {{- $lpr := default $.Site.Params.homePaginationMetaRobots $.Site.Params.listPaginationMetaRobots -}}
   {{- if ne $lpr "" -}}
