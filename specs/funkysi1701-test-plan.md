@@ -244,6 +244,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   7. Check for tags at bottom or top of post
   8. Verify author information is displayed
   9. Check for reading time estimate
+  10. Verify SEO meta description from front matter
 
 **Expected Results:**
   - Blog post loads without errors
@@ -254,6 +255,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   - Tags are displayed and clickable
   - Author 'funkysi1701' is shown
   - Reading time estimate is displayed
+  - Meta description matches front matter (110–160 characters)
 
 #### 3.2. Blog post comments integration
 
@@ -657,6 +659,24 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   - Modification dates are present and accurate
   - Sitemap follows XML sitemap protocol
   - No broken URLs in sitemap
+
+#### 5.8. Head SEO meta consistency
+
+**File:** `tests/performance-technical/head-seo-meta.spec.ts`
+
+**CI:** Included in the `@smoke` PR subset (`playwright-smoke.yml` / `npm run test:smoke`).
+
+**Steps:**
+  1. Open a blog post and check meta description, canonical, Open Graph, Twitter card, and BlogPosting JSON-LD
+  2. Open the homepage and check WebSite JSON-LD plus matching social descriptions
+  3. Open `/tags/` and check CollectionPage JSON-LD plus matching social descriptions
+  4. Open `/page/2/` and check `noindex,follow` robots, pagination suffix in descriptions, and canonical URL
+
+**Expected Results:**
+  - `meta name="description"`, `og:description`, and `twitter:description` match on each page type
+  - Posts expose BlogPosting JSON-LD; home exposes WebSite; tags expose CollectionPage
+  - Paginated list pages emit `robots` = `noindex,follow` and include a `Page N` description suffix within 160 characters
+  - Canonical URLs point at the viewed page (including `/page/2/`)
 
 ### 6. Social Media and External Links
 

@@ -179,7 +179,7 @@ The repo uses **Playwright** for automated end-to-end tests.
 npm ci
 npx playwright install chromium   # if browsers are not already present
 npm test                          # full suite
-npm run test:smoke                # @smoke subset (homepage, 404, sitemap)
+npm run test:smoke                # @smoke subset (homepage, 404, sitemap, head SEO meta)
 ```
 
 `playwright.config.ts` sets `baseURL` from **`BASE_URL`**; if unset, it defaults to **`https://www.funkysi1701.com`**. Point `BASE_URL` at `http://localhost:1313` (or another host) when testing a local or preview build. Optional **`PLAYWRIGHT_WORKERS`**, **`PLAYWRIGHT_RETRIES`**, **`PLAYWRIGHT_*_TIMEOUT`**, and **`PLAYWRIGHT_MAX_FAILURES`** override parallelism and timeouts (CI keeps `workers: 1` / `retries: 2` unless overridden). See README Testing and the header comment in `playwright.config.ts`.
