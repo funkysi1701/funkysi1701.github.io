@@ -35,7 +35,7 @@
         {{- $pageDesc = printf "Browse blog posts from %s on %s. %s" $monthLabel $siteTitle $archiveSuffix -}}
       {{- end -}}
     {{- else if eq $tax "tag" -}}
-      {{- $pageDesc = printf "Browse posts tagged “%s” on %s. %s" $page.Title $siteTitle $archiveSuffix -}}
+      {{- $pageDesc = printf "Browse posts tagged '%s' on %s. %s" $page.Title $siteTitle $archiveSuffix -}}
     {{- else if eq $tax "category" -}}
       {{- $pageDesc = printf "Browse posts in category %s on %s. %s" $page.Title $siteTitle $archiveSuffix -}}
     {{- else -}}
@@ -60,14 +60,19 @@
   {{- end -}}
 {{- end -}}
 {{- /* Reserve room for the pagination suffix inside the 160-char SEO budget.
-   Plain slicestr (not truncate): Hugo's truncate is HTML-aware and can turn
-   "&" into "&amp;", which then double-escapes in meta attributes. */ -}}
-{{- $maxBase := sub 160 (len $pageSuffix) -}}
+   Use substr (rune-safe) — slicestr is byte-based and panics on Unicode
+   (e.g. curly quotes in older tag copy) when end > byte length. */ -}}
+{{- $maxBase := sub 160 (strings.RuneCount $pageSuffix) -}}
 {{- if lt $maxBase 80 -}}
   {{- $maxBase = 80 -}}
 {{- end -}}
-{{- if gt (len $pageDesc) $maxBase -}}
-  {{- $base := slicestr $pageDesc 0 $maxBase -}}
+{{- $descLen := strings.RuneCount $pageDesc -}}
+{{- if gt $descLen $maxBase -}}
+  {{- $cut := sub $maxBase 3 -}}
+  {{- if lt $cut 1 -}}
+    {{- $cut = 1 -}}
+  {{- end -}}
+  {{- $base := substr $pageDesc 0 $cut -}}
   {{- if strings.Contains $base " " -}}
     {{- $base = replaceRE " [^ ]*$" "" $base | strings.TrimRight " " -}}
   {{- end -}}
