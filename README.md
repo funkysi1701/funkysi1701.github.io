@@ -83,11 +83,11 @@ npm run check:meta:fix          # preview description rewrites (--dry-run)
 
 To apply description fixes (write files), run `python scripts/normalize_meta_descriptions.py --root .` (without `--dry-run`). Requires Python 3.11+ on `PATH` (same as the GitHub Actions meta workflows).
 
-**30-day issue schedule:** Mondays (and manual) **`issue-schedule.yml`** reviews open GitHub issues via GitHub Models and upserts a tracking issue titled **30-day implementation schedule**, including at least one **`[Content Suggestion]`** per week when open. See [`scripts/issue-schedule/README.md`](scripts/issue-schedule/README.md).
+**30-day issue schedule:** Mondays (and manual) **`issue-schedule.yml`** reviews open GitHub issues via GitHub Models and upserts a tracking issue titled **30-day implementation schedule**, including at least one **`[Content Suggestion]`** per week when open. Implementation: [funkysi1701/repo-automation](https://github.com/funkysi1701/repo-automation) (`@v1`); prompt: [`.github/issue-schedule-prompt.md`](.github/issue-schedule-prompt.md).
 
 **Blog post idea:** Wednesdays (and manual) **`blog-post-idea.yml`** catalogues published posts, asks GitHub Models for one trend-aware idea, and opens a **`[Content Suggestion]`** issue. See [`scripts/blog-post-idea/README.md`](scripts/blog-post-idea/README.md).
 
-**Tech debt scan:** Fridays (and manual) **`tech-debt-scan.yml`** gathers codebase signals (hotspots, large files, TODO/FIXME markers), asks GitHub Models which new issues are warranted, and opens **`tech-debt`** issues. See [`scripts/tech-debt-scan/README.md`](scripts/tech-debt-scan/README.md).
+**Tech debt scan:** Fridays (and manual) **`tech-debt-scan.yml`** gathers codebase signals (hotspots, large files, TODO/FIXME markers), asks GitHub Models which new issues are warranted, and opens **`tech-debt`** issues. Implementation: [funkysi1701/repo-automation](https://github.com/funkysi1701/repo-automation) (`@v1`); hotspots: [`.github/tech-debt-hotspots.txt`](.github/tech-debt-hotspots.txt); prompt: [`.github/tech-debt-prompt.md`](.github/tech-debt-prompt.md).
 
 **Home popular links:** Mondays (and manual) **`home-popular-update.yml`** queries Cloudflare Web Analytics for the site's top pages, rewrites [`data/home_popular.toml`](data/home_popular.toml) (drives the home **Popular right now** strip), and opens a pull request into **develop** when the list changes. See [`scripts/home-popular/README.md`](scripts/home-popular/README.md).
 

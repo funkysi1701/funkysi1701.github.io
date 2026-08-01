@@ -16,6 +16,7 @@ Rules:
 - Do not invent issue numbers — only use numbers from the provided JSON.
 - Skip the schedule tracking issue itself (title "30-day implementation schedule") when ranking work.
 - Do not suggest closing, retitling, or editing other issues.
+- Do **not** write a "Week 0" / "Already done" section — the script injects that from recently closed issues and merged PRs. Start at **Week 1**.
 - Return markdown only (no code fences wrapping the whole response).
 
 Output format:

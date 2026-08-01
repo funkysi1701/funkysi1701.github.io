@@ -22,9 +22,9 @@ Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). Cursor rules 
 | Playwright `// spec:` headers | `npm run check:spec-headers` |
 | SWA config validation | `npm run check:swa-config` |
 | Parkrun results update | `pip install -r scripts/requirements-parkrun.txt` then `python scripts/update_parkrun_results.py` |
-| 30-day issue schedule (dry-run) | `GH_TOKEN=$(gh auth token) DRY_RUN=true node scripts/issue-schedule/run.mjs` |
+| 30-day issue schedule (dry-run) | Actions → **30-day issue schedule** → Run workflow (`dry_run`); impl in [repo-automation](https://github.com/funkysi1701/repo-automation) |
 | Blog post idea (dry-run) | `GH_TOKEN=$(gh auth token) DRY_RUN=true node scripts/blog-post-idea/run.mjs` |
-| Tech debt scan (dry-run) | `GH_TOKEN=$(gh auth token) DRY_RUN=true node scripts/tech-debt-scan/run.mjs` |
+| Tech debt scan (dry-run) | Actions → **Tech debt scan** → Run workflow (`dry_run`); impl in [repo-automation](https://github.com/funkysi1701/repo-automation) |
 | Home popular links refresh (dry-run) | `CLOUDFLARE_API_TOKEN=... CLOUDFLARE_ACCOUNT_TAG=... CLOUDFLARE_SITE_TAG=... DRY_RUN=true node scripts/home-popular/run.mjs` |
 
 After changing `package.json` or `package-lock.json`, run `npm ci` before `npm test` (matches GitHub Actions).
@@ -99,9 +99,9 @@ After bulk-editing post front matter, run **`npm run check:meta`** before openin
 | develop → main PR | GitHub Actions | `auto-pr.yml` |
 | SEO crawl (Signal Diff) | GitHub Actions | `swa-deploy-nonprod.yml` (blog-dev after deploy) and production SWA workflow; manual `seo-check.yml` |
 | Pa11y nightly | GitHub Actions | `pa11y-nightly.yml` — full sitemap on production |
-| 30-day issue schedule | GitHub Actions | `issue-schedule.yml` — Mondays 09:00 UTC + manual; upserts tracking issue via GitHub Models; each week slots ≥1 `[Content Suggestion]` when open |
+| 30-day issue schedule | GitHub Actions | `issue-schedule.yml` — Mondays 09:00 UTC + manual; [repo-automation](https://github.com/funkysi1701/repo-automation) `@v1`; each week slots ≥1 `[Content Suggestion]` when open |
 | Blog post idea | GitHub Actions | `blog-post-idea.yml` — Wednesdays 09:00 UTC + manual; opens one `[Content Suggestion]` issue via GitHub Models |
-| Tech debt scan | GitHub Actions | `tech-debt-scan.yml` — Fridays 09:00 UTC + manual; opens `tech-debt` issues via GitHub Models |
+| Tech debt scan | GitHub Actions | `tech-debt-scan.yml` — Fridays 09:00 UTC + manual; [repo-automation](https://github.com/funkysi1701/repo-automation) `@v1` + [`.github/tech-debt-hotspots.txt`](.github/tech-debt-hotspots.txt) |
 | Home popular refresh | GitHub Actions | `home-popular-update.yml` — Mondays 06:30 UTC + manual; Cloudflare Web Analytics top pages → `data/home_popular.toml` PR into `develop` |
 
 ## Branches and deploy
@@ -130,9 +130,9 @@ Make the smallest change that satisfies the task. Do not refactor unrelated code
 | [`.cursor/hooks.json`](.cursor/hooks.json) | Cursor post-edit meta validation hooks (trusted workspace) |
 | [`.cursor/skills/`](.cursor/skills/) | Cursor project skills (parkrun, meta, Playwright healer, OpenSpec) |
 | [`.github/copilot-instructions.md`](.github/copilot-instructions.md) | Copilot-specific project context |
-| [`scripts/issue-schedule/README.md`](scripts/issue-schedule/README.md) | Weekly 30-day issue schedule planner (GitHub Models) |
+| [`.github/issue-schedule-prompt.md`](.github/issue-schedule-prompt.md) | Prompt for weekly 30-day issue schedule ([repo-automation](https://github.com/funkysi1701/repo-automation)) |
 | [`scripts/blog-post-idea/README.md`](scripts/blog-post-idea/README.md) | Weekly blog post idea → content-suggestion issue (GitHub Models) |
-| [`scripts/tech-debt-scan/README.md`](scripts/tech-debt-scan/README.md) | Weekly tech-debt scan → `tech-debt` issues (GitHub Models) |
+| [`.github/tech-debt-prompt.md`](.github/tech-debt-prompt.md) | Prompt for weekly tech-debt scan ([repo-automation](https://github.com/funkysi1701/repo-automation)) |
 | [`scripts/home-popular/README.md`](scripts/home-popular/README.md) | Weekly Cloudflare top-pages refresh of the home Popular strip data |
 | [`README.md`](README.md) | Human-oriented setup, testing, deploy, and Zaraz analytics inventory |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | PR checklist, branch workflow, merge readiness |
