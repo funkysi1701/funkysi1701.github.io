@@ -1,9 +1,8 @@
 name: 30-day issue schedule
 
-# Weekly planner: list open issues, single-shot LLM, upsert tracking issue.
-# Default LLM: GitHub Models via GITHUB_TOKEN (needs permissions.models: read).
-# Optional override: secret ISSUE_PLANNER_API_KEY + vars ISSUE_PLANNER_BASE_URL / ISSUE_PLANNER_MODEL
-# See scripts/issue-schedule/README.md
+# Thin caller — implementation lives in funkysi1701/repo-automation@v1
+# Custom prompt + content-suggestion slots; self-hosted k8s runners.
+# Docs: https://github.com/funkysi1701/repo-automation
 
 on:
   schedule:
@@ -19,27 +18,16 @@ on:
 permissions:
   contents: read
   issues: write
+  pull-requests: read
   models: read
 
 jobs:
   plan:
-    runs-on: [self-hosted, k8s]
-    name: Build 30-day implementation schedule
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-
-      - name: Setup Node
-        uses: actions/setup-node@v7
-        with:
-          node-version: '24'
-
-      - name: Run issue schedule planner
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_PLANNER_API_KEY: ${{ secrets.ISSUE_PLANNER_API_KEY }}
-          ISSUE_PLANNER_BASE_URL: ${{ vars.ISSUE_PLANNER_BASE_URL }}
-          ISSUE_PLANNER_MODEL: ${{ vars.ISSUE_PLANNER_MODEL }}
-          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'true' || 'false' }}
-        run: node scripts/issue-schedule/run.mjs
+    uses: funkysi1701/repo-automation/.github/workflows/issue-schedule.yml@v1
+    secrets: inherit
+    with:
+      dry_run: ${{ inputs.dry_run || false }}
+      pr_base_branch: develop
+      prompt_file: .github/issue-schedule-prompt.md
+      content_suggestion_prefix: "[Content Suggestion]:"
+      runs_on: '["self-hosted", "k8s"]'
