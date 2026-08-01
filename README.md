@@ -112,14 +112,17 @@ Optional environment variables: `PARKRUN_ID` (default `11453050`), `PARKRUN_BASE
 | Partial | Responsibility |
 |---------|----------------|
 | `head/meta-tags.html` | Keywords, meta description (list pages via `head/list-page-description.html`), fediverse creator |
-| `head/seo.html` | Social preview meta — Open Graph and Twitter cards (Hugo internal templates) |
-| `head/canonical.html` | Canonical URL (paginator-aware on list pages) |
-| `head/meta/robots.html` | Robots meta (paginated lists via `params.listPaginationMetaRobots`) — invoked through theme `head/meta` |
+| `head/seo.html` | Social preview meta — posts use Hugo Open Graph / Twitter internals; list/home pages emit matching tags from `list-page-description` |
+| `head/canonical.html` | Canonical URL (paginator-aware via `.Paginator.PageNumber`, not `.RelPermalink`) |
+| `head/meta/robots.html` | Robots meta (`noindex,follow` on paginated lists via `params.listPaginationMetaRobots`, detected with `.Paginator`) — invoked through theme `head/meta` |
 | `head/site-verification.html` | Search engine site-verification meta (home page only) |
 | `head/search-index.html` | Search page `index.json` pointer (`data-name="search-index"`) |
 | `head/structured-data.html` | JSON-LD — WebSite (home), BlogPosting (`head/schema-blog-posting.html`), CollectionPage (`head/schema-collection-page.html`) |
+| `head/breadcrumb-schema.html` | Shared BreadcrumbList builder used by BlogPosting / CollectionPage schemas |
 | `head/title.html` | Document `<title>` (called from `baseof.html`, not `head.html`) |
 | Theme partials (`head/favicons`, `head/meta`, `head/feed`, `head/assets`) | Favicons, robots entrypoint, RSS links, CSS assets from `themes/hugo-theme-bootstrap/` |
+
+Keep `og:description` / `twitter:description` aligned with `meta name="description"` whenever you change list or social partials. Regression coverage: `tests/performance-technical/head-seo-meta.spec.ts` (`@smoke`).
 
 Analytics does not live in the head: the theme's `body-end.html` injects the site overrides `layouts/partials/assets/google-analytics.html` and `layouts/partials/assets/google-adsense.html` at the end of `<body>`. Hugo `services.googleAnalytics.id` is empty and Gatekeeper/Ezoic are off — production visitor analytics are injected by **Cloudflare Zaraz** / Cloudflare Web Insights, not by Hugo templates. See **Analytics (Cloudflare Zaraz)** below.
 
