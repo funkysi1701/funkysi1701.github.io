@@ -274,6 +274,20 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   - Comment interface is functional
   - No console errors from Giscus integration
 
+#### 3.2a. Engagement CTA identical with daily.dev referral query
+
+**File:** `tests/blog-posts-content/engagement-ref-parity.spec.ts`
+
+**Steps:**
+  1. Navigate to `/posts/2026/dotnet-5-to-10-features/`
+  2. Record the engagement footer newsletter CTA `href`
+  3. Navigate to the same path with `?ref=dailydev`
+  4. Assert the newsletter CTA `href` is unchanged and `.post-engagement` is visible
+
+**Expected Results:**
+  - On-page engagement CTAs do not branch on `?ref=dailydev` (same HTML as the clean permalink)
+  - Newsletter link target matches between clean and referral URLs
+
 #### 3.3. Blog posts by year navigation
 
 **File:** `tests/blog-posts-content/posts-by-year.spec.ts`

@@ -158,7 +158,7 @@ There is no separate branch named `dev`; use **`develop`** for integration work.
 
 ## 🤝 Contributing
 
-Open to suggestions and improvements. See **[`CONTRIBUTING.md`](CONTRIBUTING.md)** for the PR checklist, branch workflow, and AI-assisted contribution notes.
+Open to suggestions and improvements. See **[`CONTRIBUTING.md`](CONTRIBUTING.md)** for the PR checklist, branch workflow, publishing/promotion notes (daily.dev for .NET/DevOps), and AI-assisted contribution notes.
 
 ## 👤 Author
 
