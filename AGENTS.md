@@ -36,6 +36,7 @@ After changing `package.json` or `package-lock.json`, run `npm ci` before `npm t
 - **Secrets** — no API keys, deploy tokens, or credentials in `.env`, `config/`, or front matter. Azure Static Web Apps deploy token lives only in GitHub Actions secrets.
 - **Vendored theme** — prefer site overrides in root `layouts/`, `assets/`, and `static/` over editing `themes/hugo-theme-bootstrap/`.
 - **Duplicate Lite Analytics** — do not embed `lite.js` in Hugo while Cloudflare Zaraz injects it (double-count). See [`README.md`](README.md#analytics-cloudflare-zaraz).
+- **Referral query strings** — do not branch on-page CTAs on `?ref=dailydev`; same HTML as the clean URL. Publishing/promotion checklist (daily.dev, evergreen-first): [`CONTRIBUTING.md`](CONTRIBUTING.md#publishing-and-promotion).
 
 ## Cursor context
 
