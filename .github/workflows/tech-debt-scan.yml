@@ -1,8 +1,8 @@
 name: Tech debt scan
 
-# Weekly: scan codebase signals, propose tech-debt issues via LLM, create missing GH issues.
-# Default LLM: GitHub Models (permissions.models: read). Optional ISSUE_PLANNER_* override.
-# See scripts/tech-debt-scan/README.md
+# Thin caller — implementation lives in funkysi1701/repo-automation@v1
+# Hugo hotspots/globs/prompt; self-hosted k8s runners; Fridays to stagger other jobs.
+# Docs: https://github.com/funkysi1701/repo-automation
 
 on:
   schedule:
@@ -22,23 +22,24 @@ permissions:
 
 jobs:
   scan:
-    runs-on: [self-hosted, k8s]
-    name: Scan for tech debt and open issues
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-
-      - name: Setup Node
-        uses: actions/setup-node@v7
-        with:
-          node-version: '24'
-
-      - name: Run tech debt scan
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_PLANNER_API_KEY: ${{ secrets.ISSUE_PLANNER_API_KEY }}
-          ISSUE_PLANNER_BASE_URL: ${{ vars.ISSUE_PLANNER_BASE_URL }}
-          ISSUE_PLANNER_MODEL: ${{ vars.ISSUE_PLANNER_MODEL }}
-          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'true' || 'false' }}
-        run: node scripts/tech-debt-scan/run.mjs
+    uses: funkysi1701/repo-automation/.github/workflows/tech-debt-scan.yml@v1
+    secrets: inherit
+    with:
+      dry_run: ${{ inputs.dry_run || false }}
+      prompt_profile: generic
+      prompt_file: .github/tech-debt-prompt.md
+      hotspots_file: .github/tech-debt-hotspots.txt
+      file_globs: >-
+        layouts/**/*.html,
+        assets/**/*.{scss,css,js},
+        scripts/**/*.{js,mjs,py},
+        tests/**/*.{ts,js},
+        .github/workflows/*.yml,
+        staticwebapp.config.json
+      large_file_min_bytes: "15000"
+      conventions: |
+        Prefer root layouts/, assets/, static/ overrides over editing themes/hugo-theme-bootstrap/.
+        Do not hand-edit parkrun generated block in content/parkrun.md; use scripts/update_parkrun_results.py.
+        public/ is build output - not source of truth.
+        Keep CI/docs (AGENTS.md, CONTRIBUTING.md, README, copilot-instructions, .cursor/rules) aligned when workflows change.
+      runs_on: '["self-hosted", "k8s"]'

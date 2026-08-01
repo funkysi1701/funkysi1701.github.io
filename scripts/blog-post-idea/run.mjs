@@ -3,7 +3,7 @@
  * Review existing blog posts, ask an LLM for one new post idea informed by
  * current developer trends, then create a GitHub issue (deduped by fingerprint).
  *
- * Env: same LLM knobs as scripts/issue-schedule/run.mjs
+ * Env: same LLM knobs as funkysi1701/repo-automation issue-schedule
  *   ISSUE_PLANNER_API_KEY, ISSUE_PLANNER_BASE_URL, ISSUE_PLANNER_MODEL
  *   GH_TOKEN / GITHUB_TOKEN, DRY_RUN
  */
