@@ -249,9 +249,17 @@ Microsoft's guidance has shifted over the years: LTS releases (6, 8, 10) alterna
 
 ## Further reading
 
+### Official docs
+
 - [.NET download](https://dotnet.microsoft.com/download)
-- [What's new in each .NET version](https://learn.microsoft.com/en-us/dotnet/core/whats-new/) — official docs
+- [What's new in each .NET version](https://learn.microsoft.com/en-us/dotnet/core/whats-new/)
 - [C# language version history](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history)
-- My earlier posts: [Upgrading to .NET 7](/posts/2022/dotnet7/), [.NET 9](/posts/2024/dotnet9/), [Blazor and .NET 10](/posts/2025/blazor-and-dotnet10/), and [Getting started with Aspire](/posts/2024/aspire/)
+
+### On this blog
+
+- [.NET 9](/posts/2024/dotnet9/) and [Blazor and .NET 10](/posts/2025/blazor-and-dotnet10/) — deeper dives from recent releases
+- [What's new with C#](/posts/2025/whats-new-csharp/) — language features that shipped alongside the runtime
+- [Getting started with Aspire](/posts/2024/aspire/) and [Adding Elasticsearch with Aspire](/posts/2025/adding-elasticsearch-with-aspire/) — cloud-native .NET after you pick a target framework
+- Prefer a short curated path? See [Start Here](/start-here/)
 
 If you have been on the platform since .NET 5, you have lived through the best decade of .NET since the original framework shipped. 

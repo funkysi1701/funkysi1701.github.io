@@ -82,4 +82,8 @@ When you look at your PR, it will look like a lot of code has been added. Howeve
 
 This is still one of the simplest ways to combine two codebases without throwing away history. Use it when consolidating services or folding a spike repo into the main project; open a PR so reviewers can see the merge conflicts and folder layout before it lands on the default branch.
 
+### Related on this blog
+
+Once the histories live in one repo, automated promotion helps: see [automatic pull requests](/posts/2024/automatic-pull-requests/) for GitHub Actions and Azure DevOps patterns, and [using GitHub Actions](/posts/2022/using-github-actions/) if you are wiring CI around the merge.
+
 If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up for my [newsletter](/newsletter). If you have any questions or comments, please feel free to reach out or leave a comment below.

@@ -125,3 +125,7 @@ It may have been 10 years since I last looked at Nagios, but the UI hasn't chang
 ## Conclusion
 
 By following these steps, you can set up Nagios monitoring using Docker to keep an eye on your local network. Nagios is a powerful tool for network monitoring, and running it in a Docker container makes it easy to deploy and manage. Happy monitoring!
+
+### Related on this blog
+
+For application metrics and dashboards rather than host ping checks, see [setting up Grafana](/posts/2025/setting-up-grafana/) with Prometheus. I also wrote about [loving Nagios](/posts/2014/i-love-nagios/) the first time around — the UI has barely moved since.
