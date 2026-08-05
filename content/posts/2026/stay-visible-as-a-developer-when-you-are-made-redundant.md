@@ -82,7 +82,7 @@ Being made redundant is not something I would wish on anyone, and I am still in 
 
 None of this replaces the practical side of job hunting: refreshing your CV and LinkedIn, talking to recruiters, applying properly, and working through the admin that comes with redundancy. I went through redundancy before, in 2021, and wrote about recruiters, interview rounds, and the spreadsheet I used to keep track of it all in [my 2021 story](/posts/2021/lone-developer-to-senior-developer-my-2021-story/). Visibility helps people remember your name; applications still get you in the door.
 
-But small, consistent habits compound. You do not need to do everything at once. Pick one thing you can start this month: a user group, a blog post, a course on something job ads keep asking for, or a side project you can actually finish. If you still have a job but worry the ground is shifting beneath you, even better — start now while you have a bit more energy and headspace.
+But small, consistent habits compound. You do not need to do everything at once. Pick one thing you can start this month: a user group, a blog post, a course on something job ads keep asking for, or a side project you can actually finish — [Start Here](/start-here/) collects a short reading path if you want inspiration from this blog first. Community work counts too; running a [Code Club](/posts/2024/codeclub/) taught me as much about showing up as any meetup talk. If you still have a job but worry the ground is shifting beneath you, even better — start now while you have a bit more energy and headspace.
 
 If you are going through something similar, I hope this helps. If you have found other things that worked for you, I would love to hear about them in the comments.
 

@@ -5,7 +5,7 @@ authorTwitter = "funkysi1701"
 cover = "/images/2026/start-here.png"
 images = ['/images/2026/start-here.png']
 keywords = ["best posts", "featured articles", "start here", "popular posts"]
-description = "👋 New Here? Start With These Posts Welcome! If you're new to my blog, here are some of my best and most popular articles to help you get started: Cloud &…"
+description = "New here? Start with .NET 5 to 10, Aspire, Git merges, Grafana, and staying visible as a developer — curated entry points into the blog."
 showFullContent = false
 copyright = false
 readingTime = false
@@ -17,42 +17,47 @@ aliases = [
 ]
 +++
 
-## 👋 New Here? Start With These Posts
+## New here? Start with these posts
 
-Welcome! If you're new to my blog, here are some of my best and most popular articles to help you get started:
+Welcome! If you are new to my blog, these are current pillars and popular evergreen articles to help you get started:
 
-### Cloud & Modern Development
+### Cloud & modern development
 
-- **[Adding Elasticsearch with Aspire](/posts/2025/adding-elasticsearch-with-aspire/)** - Learn how to integrate Elasticsearch into .NET Aspire applications for powerful search capabilities.
+- **[Getting started with Aspire](/posts/2024/aspire/)** — Microsoft's opinionated stack for cloud-native .NET with built-in observability.
 
-- **[Aspire](/posts/2024/aspire/)** - An introduction to .NET Aspire, Microsoft's opinionated stack for building cloud-native applications with built-in observability.
+- **[Adding Elasticsearch with Aspire](/posts/2025/adding-elasticsearch-with-aspire/)** — Integrate search into .NET Aspire applications.
 
-- **[Learning Kubernetes](/posts/2025/learning-kubernetes/)** - My journey learning Kubernetes, container orchestration, and deploying applications to K8s clusters.
+- **[Learning Kubernetes](/posts/2025/learning-kubernetes/)** — Container orchestration and deploying apps to clusters.
 
-### .NET & Development
+### .NET & development
 
-- **[.NET 7](/posts/2022/dotnet7/)** - Exploring the features and improvements in .NET 7, including performance enhancements and new APIs.
+- **[.NET 5 to 10 features](/posts/2026/dotnet-5-to-10-features/)** — A tour of the platform from .NET 5 through .NET 10 LTS.
 
-- **[Festive Naughty or Nice Checker](/posts/2025/festive-naughty-or-nice-checker/)** - Building a fun holiday-themed application with modern .NET practices.
+- **[What's new with C#](/posts/2025/whats-new-csharp/)** — Language features that shipped alongside recent runtimes.
 
-### DevOps & Automation
+- **[Blazor and .NET 10](/posts/2025/blazor-and-dotnet10/)** — Practical Blazor notes on the current LTS stack.
 
-- **[Charting My Energy Usage with the Octopus Energy API](/posts/2021/charting-my-energy-usage-with-the-octopus-energy-api/)** - A practical guide to working with APIs, data visualization, and automation using real-world energy data.
+### DevOps, automation & visibility
+
+- **[Merge two projects into one](/posts/2025/merge-two-projects-into-one/)** — Combine Git repositories without throwing away history.
+
+- **[Setting up Grafana](/posts/2025/setting-up-grafana/)** — Prometheus and dashboards for .NET metrics.
+
+- **[Automatic pull requests](/posts/2024/automatic-pull-requests/)** — Promote branches with GitHub Actions or Azure DevOps.
+
+- **[Stay visible as a developer](/posts/2026/stay-visible-as-a-developer-when-you-are-made-redundant/)** — Community, blogging, and side projects when the ground shifts.
 
 ---
 
-## 📚 Explore More
+## Explore more
 
-Browse by topic:
+- [All Posts](/posts/) — Complete archive of articles
+- [Tools & Resources](/tools-and-resources/) — Recommended development tools
+- [Projects](/projects/) — Side projects I have shipped
+- [About Me](/about/) — Background and experience
+- [Newsletter](/newsletter/) — Monthly updates by email
 
-- [All Posts](/posts/) - Complete archive of articles
-- [Azure](/tags/azure/) - Cloud computing and Azure services
-- [DevOps](/tags/devops/) - CI/CD, automation, and infrastructure
-- [.NET](/tags/dotnet/) - C#, ASP.NET, and .NET ecosystem
-- [Tools & Resources](/tools-and-resources/) - Recommended development tools and resources
-- [About Me](/about/) - Learn more about my background and experience
-
-## 💌 Stay Connected
+## Stay connected
 
 - Subscribe to my [newsletter](/newsletter/) for updates
 - Follow me on [Twitter](https://twitter.com/funkysi1701)
