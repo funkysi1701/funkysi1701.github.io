@@ -116,4 +116,8 @@ If you are not using .NET Aspire, you can add `app.MapPrometheusScrapingEndpoint
 
 With Compose, Prometheus, and Grafana in place you can scrape a .NET `/metrics` endpoint and watch live dashboards — useful for latency, exceptions, and ASP.NET Core built-in meters. Happy monitoring!
 
+### Related on this blog
+
+Prefer classic host and service checks? Try [monitoring with Nagios in Docker](/posts/2025/monitoring-with-nagios-docker/). If Aspire already wires OpenTelemetry for you, [getting started with Aspire](/posts/2024/aspire/) is a useful companion to the metrics endpoint notes above.
+
 If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up to my [newsletter](/newsletter). If you have any questions or comments, please feel free to reach out or leave a comment below.

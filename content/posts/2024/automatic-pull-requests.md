@@ -201,4 +201,8 @@ My pipeline has a step that looks a bit like:
 
 I only run this step on the develop branch, and you can see I supply all the parameters that are defined in my PowerShell script. I include the `System.AccessToken` so the step can call the REST APIs for the project.
 
+### Related on this blog
+
+For combining repositories before you automate promotion, see [merge two projects into one](/posts/2025/merge-two-projects-into-one/). For a broader GitHub Actions walkthrough, start with [using GitHub Actions](/posts/2022/using-github-actions/).
+
 If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up for my [newsletter](/newsletter). If you have any questions or comments, please feel free to reach out or leave a comment below.
