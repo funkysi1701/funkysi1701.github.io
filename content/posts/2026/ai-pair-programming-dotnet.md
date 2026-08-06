@@ -15,7 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 featured = false
-draft = true
+draft = false
 aliases = [
     "/ai-pair-programming-dotnet",
     "/posts/ai-pair-programming-dotnet",
@@ -28,7 +28,7 @@ Pair programming did not disappear. The person on the other side of the keyboard
 
 Earlier this year I wrote about [how I split ChatGPT, Cursor, and Copilot on side projects](/posts/2026/how-i-use-ai-on-side-projects/). That post is about *matching the tool to how much context the problem needs*. This one is narrower: what it feels like to drive **.NET** work in **VS Code and Cursor**, where the suggestions land in real C#, Blazor, Functions, and the glue that holds hobby apps together.
 
-I am not claiming a universal workflow. These are habits that have stuck for me in 2026.
+I am not claiming a universal workflow. These are habits that have helped me in 2026.
 
 ## A thin tools map (so we can move on)
 
