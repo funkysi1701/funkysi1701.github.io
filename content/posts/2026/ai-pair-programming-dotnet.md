@@ -26,7 +26,7 @@ aliases = [
 
 Pair programming did not disappear. The person on the other side of the keyboard often changed. On many days my "pair" is an AI coding assistant sitting in the editor—sometimes finishing the next line, sometimes proposing a multi-file edit I still have to own.
 
-Earlier this year I wrote about [how I split ChatGPT, Cursor, and Copilot on side projects](/posts/2026/how-i-use-ai-on-side-projects/). That post is about *matching the tool to how much context the problem needs*. This one is narrower: what it feels like to drive **.NET** work in **VS Code and Cursor**, where the suggestions land in real C#, Blazor, Functions, and the glue that holds hobby apps together.
+Back in April I covered [how I use ChatGPT, Cursor, and Copilot on side projects](/posts/2026/how-i-use-ai-on-side-projects/). That was mostly about which tool I reach for. Here I want to talk about what that looks like when the code is .NET—C#, Blazor, Azure Functions—and I am working in VS Code or Cursor.
 
 I am not claiming a universal workflow. These are habits that have helped me in 2026.
 
