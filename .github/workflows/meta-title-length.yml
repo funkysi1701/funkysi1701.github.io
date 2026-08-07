@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: "3.14"
 
-      - name: Check post meta titles (50–60 characters)
+      - name: Check post meta titles (rendered 50–60 characters)
         id: meta
         continue-on-error: true
         run: python scripts/check_meta_titles.py --root . --report meta-title-report.md
@@ -47,12 +47,12 @@ jobs:
           else
             gh issue create \
               --label "meta-titles" \
-              --title "Blog posts: meta title lengths out of range (50–60 characters)" \
+              --title "Blog posts: rendered meta titles out of range (50–60 characters)" \
               --body-file "$REPORT"
           fi
 
       - name: Fail if titles are out of range
         if: steps.meta.outcome == 'failure'
         run: |
-          echo "::error::One or more post titles are outside 50–60 characters. See the job summary or the tracking issue (main branch pushes)."
+          echo "::error::One or more post titles produce a production HTML <title> outside 50–60 characters (includes the site title suffix). See the job summary or the tracking issue (main branch pushes)."
           exit 1

@@ -1,5 +1,5 @@
 +++
-title = "AI Pair Programming for .NET in VS Code and Cursor"
+title = "Pairing with AI in VS Code and Cursor"
 date = "2026-08-07T12:00:00Z"
 year = "2026"
 month = "2026-08"

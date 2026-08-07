@@ -129,7 +129,9 @@ def main() -> int:
 
     message = (
         "Post front matter meta validation failed after edit. "
-        "Fix `title` (50–60 chars) and/or `description` (110–160 chars), "
+        "Fix `title` so the production HTML title "
+        "(`{title} - Funky Si's Blog`) is 50–60 chars "
+        "(front matter usually 32–42) and/or `description` (110–160 chars), "
         "then re-save. Run `npm run check:meta` or see `.cursor/skills/fix-post-meta`.\n\n"
         + "\n\n".join(failures)
     )
