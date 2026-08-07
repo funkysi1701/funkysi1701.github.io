@@ -91,6 +91,6 @@ None of that is exciting. All of it is where the time saves compound.
 
 I am faster at first drafts and at navigating code I have not opened in a month. I am not faster at *skipping* judgment. If anything, the cost of a bad accept is higher because the broken change can look polished.
 
-That lines up with the longer argument in [AI Won't Replace Developers, But It Will Redefine Us](/posts/2026/ai-wont-replace-developers/): the work shifts toward directing, reviewing, and verifying. Pairing with AI in VS Code and Cursor is one place that shift shows up day to day—on Episode Atlas, on this blog, on the next .NET experiment I open when I should be sleep.
+That lines up with the longer argument in [AI Won't Replace Developers, But It Will Redefine Us](/posts/2026/ai-wont-replace-developers/): the work shifts toward directing, reviewing, and verifying. I see that every time I open Cursor or Copilot on Episode Atlas, this blog, or whichever .NET side project I am tinkering with that week.
 
-If you are already in that loop on C# or Blazor, I would be interested in what you refuse to automate. The refusals often say more about a solid workflow than the features list does.
+If you are doing similar work in C# or Blazor, leave a comment and tell me which tool you reach for first—and what you still refuse to hand to an assistant. I am always curious how other people draw that line.
