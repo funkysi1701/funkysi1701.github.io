@@ -204,7 +204,7 @@ For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remai
 - `config/_default/config.toml` – Main site title, menu, author info
 - `config/production/config.toml` – Production baseURL and CDN/monetization params (analytics via Zaraz; see README)
 - `playwright.config.ts` – Playwright defaults (`baseURL`, reporters, projects; env-tunable workers/retries/timeouts)
-- `swa-deploy-nonprod.yml` – SWA dev/test deploy + blog-dev Playwright + SEO
+- `swa-deploy-nonprod.yml` – Thin nonprod orchestrator: branch gates → `reusable-hugo-swa-deploy.yml` (blog-dev ∥ blog-test), then blog-dev Playwright ∥ SEO; cancels superseded runs per ref
 - `playwright.yml` – Full Playwright E2E (`main` pushes → production; PRs into `main` → blog-dev)
 - `playwright-smoke.yml` – PR smoke subset against local Hugo (`@smoke`, `BASE_URL=http://127.0.0.1:1313`)
 - `pa11y-nightly.yml` – Scheduled full-sitemap accessibility scan
