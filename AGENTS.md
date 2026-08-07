@@ -15,6 +15,7 @@ Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). Cursor rules 
 | E2E tests | `npm test` (set `BASE_URL` for non-production targets) |
 | Playwright smoke | `npm run test:smoke` (needs a local Hugo server; set `BASE_URL`) |
 | Playwright browser | `npx playwright install chromium` |
+| Playwright tuning | Optional `PLAYWRIGHT_WORKERS`, `PLAYWRIGHT_RETRIES`, timeouts, `PLAYWRIGHT_MAX_FAILURES` — see README Testing and the header in `playwright.config.ts` |
 | Meta validation (titles + descriptions) | `npm run check:meta` |
 | Meta title check only | `npm run check:meta:titles` |
 | Meta description check only | `npm run check:meta:descriptions` |
