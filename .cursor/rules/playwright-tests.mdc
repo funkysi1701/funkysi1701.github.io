@@ -18,8 +18,9 @@ npm run test:smoke                # @smoke subset (homepage, 404, sitemap)
 ```
 
 - **`BASE_URL`:** `playwright.config.ts` defaults to `https://www.funkysi1701.com` when unset. Use `http://localhost:1313` for `hugo server -D`, or another preview URL.
+- **Scalability env vars** (optional): `PLAYWRIGHT_WORKERS`, `PLAYWRIGHT_RETRIES`, `PLAYWRIGHT_TIMEOUT`, `PLAYWRIGHT_EXPECT_TIMEOUT`, `PLAYWRIGHT_NAVIGATION_TIMEOUT`, `PLAYWRIGHT_ACTION_TIMEOUT`, `PLAYWRIGHT_MAX_FAILURES`. When `CI` is set, defaults stay CI-safe (`workers: 1`, `retries: 2`). See the header comment in `playwright.config.ts` and README Testing.
 - After changing `package.json` or `package-lock.json`, run `npm ci` before `npm test`.
-- Mark lightweight PR scenarios with Playwright tag `{ tag: '@smoke' }` so `npm run test:smoke` / `playwright-smoke.yml` pick them up.
+- Mark lightweight PR scenarios with Playwright tag `{ tag: '@smoke' }` so `npm run test:smoke` / `playwright-smoke.yml` pick them up (homepage, 404, sitemap, head SEO meta).
 
 ## CI expectations
 

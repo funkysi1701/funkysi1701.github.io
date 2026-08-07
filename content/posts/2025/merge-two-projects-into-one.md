@@ -1,6 +1,7 @@
 +++
-title = "Merging Two Projects Into One Git Repository"
+title = "Merge Two Git Projects Into One Preserving History"
 date = "2025-03-10T20:00:00Z"
+lastmod = "2026-07-31T20:00:00Z"
 year = "2025"
 month= "2025-03"
 author = "funkysi1701"
@@ -9,7 +10,7 @@ cover = "/images/git-merge.png"
 images =['/images/git-merge.png']
 tags = ["Git", "Version Control", "Repository Management", "Development", "Tech", "Programming"]
 categories = ["tech"]
-description = "Recently, I worked on merging two separate projects into one. Each project had its own Git repository, and I wanted to combine them into a single repository…"
+description = "Merge two separate Git repositories into one while preserving full commit history — clone, remote, fetch, allow-unrelated-histories, then review via PR."
 showFullContent = false
 readingTime = true
 copyright = false
@@ -22,14 +23,9 @@ aliases = [
     "/2025/03/10/merge-two-projects-into-one" 
 ]
 +++
-Recently, I worked on merging two separate projects into one. Each project had its own Git repository, and I wanted to combine them into a single repository while preserving the commit history.
+I needed to merge two separate projects into one repository while keeping the full commit history from both sides. Copy-paste would have worked for the files, but history would have stayed trapped in the old remotes.
 
-Initially, I copied the code from one project, pasted it into the other, and committed the changes. If anyone needed information on the original commits, they could look at the original repo. However, it was suggested to me that it was possible to copy over the history of the commits from the original repository.
-
-Let's look at how we can do this.
-
-I will refer to the two repositories as `project1` and `project2`, each with its own Git repository located at `project1Url` and `project2Url`, respectively.
-
+This approach adds the second repo as a remote, fetches it, and merges with `--allow-unrelated-histories` so Git keeps both lineages. I still refer to the repos as `project1` and `project2`, with remotes at `project1Url` and `project2Url`.
 
 ## Step 1: Clone the original repository
 
@@ -57,7 +53,7 @@ git fetch project2
 
 ## Step 4: Merge the commits from the new repository
 
-Merge the commits from the `project2` repository into `project1`:
+Merge the commits from the `project2` repository into `project1`. Point at the branch that holds the code you want (often `main` or `develop`):
 
 ```bash
 git merge project2/develop --allow-unrelated-histories
@@ -78,12 +74,16 @@ git push origin feature/merge-project2-into-project1
 
 ## Step 7: Clean up
 
-Test your code to ensure everything builds and runs as expected now that it is all in one repository. Create a Pull Request and review all the changes to ensure nothing gets changed that shouldn't be.
+Test your code to ensure everything builds and runs as expected now that it is all in one repository. Create a pull request and review all the changes to ensure nothing gets changed that shouldn't be.
 
-When you look at your PR, it will look like a lot of code has been added. However, if you look closely at the Git history of those files, you will see that the history has been preserved from the original repository.
+When you look at your PR, it will look like a lot of code has been added. However, if you look closely at the Git history of those files, you will see that the history has been preserved from the original repository. You can remove the temporary `project2` remote once you no longer need it (`git remote remove project2`).
 
 ## Conclusion
 
-This is a remarkably simple way to preserve the history of commits from one repository to another. It is a great way to merge two projects into one repository and keep the history of the commits. A similar process could be followed if you want to create a new repository and merge other repositories into it.
+This is still one of the simplest ways to combine two codebases without throwing away history. Use it when consolidating services or folding a spike repo into the main project; open a PR so reviewers can see the merge conflicts and folder layout before it lands on the default branch.
+
+### Related on this blog
+
+Once the histories live in one repo, automated promotion helps: see [automatic pull requests](/posts/2024/automatic-pull-requests/) for GitHub Actions and Azure DevOps patterns, and [using GitHub Actions](/posts/2022/using-github-actions/) if you are wiring CI around the merge.
 
 If you have enjoyed this article and want to get a monthly email with all my latest articles, please sign up for my [newsletter](/newsletter). If you have any questions or comments, please feel free to reach out or leave a comment below.

@@ -12,6 +12,7 @@ Rules:
 - Do **not** invent file paths — only cite paths present in the signals.
 - Skip style nits, missing docs alone, content/editorial ideas, and speculative rewrites without evidence.
 - Skip hand-editing the parkrun generated block; that is owned by `scripts/update_parkrun_results.py`.
+- Skip re-flagging `layouts/partials/head.html` for being small/thin — it is an intentional orchestrator; only propose head/SEO debt when a concrete bug or missing signal is evident in the signals.
 - Each issue must be implementable as a discrete engineering task (CI, layouts, scripts, tests, config).
 - Prefer leaf issues over umbrellas.
 

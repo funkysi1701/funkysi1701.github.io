@@ -19,7 +19,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
 **Steps:**
   1. Navigate to https://www.funkysi1701.com
   2. Verify the page loads without errors
-  3. Check that the page title contains 'Simon Foster' or 'Funky Si'
+  3. Check that the page title includes the Hugo site title for the target environment (production: Funky Si's Blog; blog-dev: Funky Si's Blog (Dev); blog-test: Funky Si's Test)
   4. Verify the main navigation menu is visible (including Start Here)
   5. Confirm the home hero Start Here next-step link is present
   6. Confirm the Popular right now strip is present above the post list with 3-5 post links
@@ -244,6 +244,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   7. Check for tags at bottom or top of post
   8. Verify author information is displayed
   9. Check for reading time estimate
+  10. Verify SEO meta description from front matter
 
 **Expected Results:**
   - Blog post loads without errors
@@ -254,6 +255,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   - Tags are displayed and clickable
   - Author 'funkysi1701' is shown
   - Reading time estimate is displayed
+  - Meta description matches front matter (110–160 characters)
 
 #### 3.2. Blog post comments integration
 
@@ -273,6 +275,20 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   - GitHub authentication option is available
   - Comment interface is functional
   - No console errors from Giscus integration
+
+#### 3.2a. Engagement CTA identical with daily.dev referral query
+
+**File:** `tests/blog-posts-content/engagement-ref-parity.spec.ts`
+
+**Steps:**
+  1. Navigate to `/posts/2026/dotnet-5-to-10-features/`
+  2. Record the engagement footer newsletter CTA `href`
+  3. Navigate to the same path with `?ref=dailydev`
+  4. Assert the newsletter CTA `href` is unchanged and `.post-engagement` is visible
+
+**Expected Results:**
+  - On-page engagement CTAs do not branch on `?ref=dailydev` (same HTML as the clean permalink)
+  - Newsletter link target matches between clean and referral URLs
 
 #### 3.3. Blog posts by year navigation
 
@@ -523,13 +539,14 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   5. Check for X-Frame-Options header
   6. Verify X-Content-Type-Options header
   7. Check for Referrer-Policy header
-  8. Verify Content-Security-Policy if applicable
+  8. Verify Content-Security-Policy header
 
 **Expected Results:**
   - Strict-Transport-Security header is present
   - X-Frame-Options is set to SAMEORIGIN or DENY
   - X-Content-Type-Options is set to nosniff
   - Referrer-Policy header is configured
+  - Content-Security-Policy is present with `default-src 'self'`, `script-src`, and `object-src 'none'`
   - Security headers match staticwebapp.config.json settings
   - No sensitive information in headers
 
@@ -642,6 +659,24 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   - Modification dates are present and accurate
   - Sitemap follows XML sitemap protocol
   - No broken URLs in sitemap
+
+#### 5.8. Head SEO meta consistency
+
+**File:** `tests/performance-technical/head-seo-meta.spec.ts`
+
+**CI:** Included in the `@smoke` PR subset (`playwright-smoke.yml` / `npm run test:smoke`).
+
+**Steps:**
+  1. Open a blog post and check meta description, canonical, Open Graph, Twitter card, and BlogPosting JSON-LD
+  2. Open the homepage and check WebSite JSON-LD plus matching social descriptions
+  3. Open `/tags/` and check CollectionPage JSON-LD plus matching social descriptions
+  4. Open `/page/2/` and check `noindex,follow` robots, pagination suffix in descriptions, and canonical URL
+
+**Expected Results:**
+  - `meta name="description"`, `og:description`, and `twitter:description` match on each page type
+  - Posts expose BlogPosting JSON-LD; home exposes WebSite; tags expose CollectionPage
+  - Paginated list pages emit `robots` = `noindex,follow` and include a `Page N` description suffix within 160 characters
+  - Canonical URLs point at the viewed page (including `/page/2/`)
 
 ### 6. Social Media and External Links
 

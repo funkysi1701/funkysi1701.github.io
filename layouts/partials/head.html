@@ -1,13 +1,15 @@
 {{- /*
-  <head> orchestrator — keep this file thin.
+  <head> orchestrator — keep this file thin (issue #3570 / #3511).
   Put new meta/SEO concerns in a focused partial under layouts/partials/head/
   (see README "Head partial structure" and .cursor/rules/hugo-layouts.mdc).
-  Call order: document identity → social → theme meta → feeds → verification → assets → JSON-LD.
+  Call order: favicons → meta-tags → social → robots → canonical → feeds →
+  verification → search-index → assets → JSON-LD.
+  Social (head/seo) must stay aligned with meta-tags / list-page-description.
 */ -}}
 {{- partial "head/favicons" . -}}
 {{- partial "head/meta-tags" . -}}
 {{- partial "head/seo" . -}}
-{{- partial "head/meta" . -}}{{/* Theme: robots via head/meta/robots (site override). */ -}}
+{{- partial "head/meta" . -}}{{/* Theme entrypoint → site override head/meta/robots. */ -}}
 {{- partial "head/canonical" . -}}
 {{- partial "head/feed" . -}}
 {{- partial "head/site-verification" . -}}

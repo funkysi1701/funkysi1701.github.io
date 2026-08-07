@@ -1,7 +1,27 @@
+# Non-production Azure Static Web Apps deploy + post-deploy checks.
+#
+# Branch gates:
+#   develop      → blog-dev + blog-test, then Playwright + SEO against blog-dev
+#   feature/**   → blog-dev only, then Playwright + SEO against blog-dev
+#   workflow_dispatch → same gates based on the ref that triggered the run
+#
+# Build/upload (Hugo env, --buildFuture on development, staticwebapp.config.json,
+# sitemap wait) live in reusable-hugo-swa-deploy.yml.
+#
+# Required secrets:
+#   AZURE_STATIC_WEB_APPS_API_TOKEN_BLOG_DEV
+#   AZURE_STATIC_WEB_APPS_API_TOKEN_BLOG_TEST  (develop only; unused on feature/*)
+#   SIGNALDIFF_API_BASE_URL, SIGNALDIFF_CI_API_KEY (SEO job)
+#   CODECOV_TOKEN (optional; Playwright page-coverage upload)
 name: Deploy to Dev and Test SWA
 
 permissions:
   contents: read
+
+# One in-flight run per ref; newer pushes cancel superseded deploys.
+concurrency:
+  group: swa-deploy-nonprod-${{ github.ref }}
+  cancel-in-progress: true
 
 on:
   workflow_dispatch:
@@ -11,6 +31,7 @@ on:
       - "feature/**"
 
 jobs:
+  # Always: development Hugo env → blog-dev.funkysi1701.com (--buildFuture).
   deploy-dev:
     name: Deploy blog-dev
     uses: ./.github/workflows/reusable-hugo-swa-deploy.yml
@@ -21,6 +42,7 @@ jobs:
     secrets:
       azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLOG_DEV }}
 
+  # develop only: staging Hugo env → blog-test.funkysi1701.com (no --buildFuture).
   deploy-test:
     name: Deploy blog-test
     if: github.ref == 'refs/heads/develop'
@@ -32,6 +54,7 @@ jobs:
     secrets:
       azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLOG_TEST }}
 
+  # Full E2E against the freshly deployed blog-dev (not blog-test).
   playwright-dev:
     name: Playwright (blog-dev)
     needs: deploy-dev
@@ -39,11 +62,15 @@ jobs:
     uses: ./.github/workflows/reusable-playwright.yml
     with:
       base_url: https://blog-dev.funkysi1701.com
-    secrets: inherit
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
+  # Signal Diff crawl of blog-dev sitemap after a successful deploy.
   seo-check-dev:
     name: SEO check (blog-dev)
     needs: deploy-dev
     if: always() && needs.deploy-dev.result == 'success'
     uses: ./.github/workflows/reusable-seo-check.yml
-    secrets: inherit
+    secrets:
+      SIGNALDIFF_API_BASE_URL: ${{ secrets.SIGNALDIFF_API_BASE_URL }}
+      SIGNALDIFF_CI_API_KEY: ${{ secrets.SIGNALDIFF_CI_API_KEY }}

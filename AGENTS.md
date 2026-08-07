@@ -22,9 +22,9 @@ Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). Cursor rules 
 | Playwright `// spec:` headers | `npm run check:spec-headers` |
 | SWA config validation | `npm run check:swa-config` |
 | Parkrun results update | `pip install -r scripts/requirements-parkrun.txt` then `python scripts/update_parkrun_results.py` |
-| 30-day issue schedule (dry-run) | `GH_TOKEN=$(gh auth token) DRY_RUN=true node scripts/issue-schedule/run.mjs` |
+| 30-day issue schedule (dry-run) | Actions → **30-day issue schedule** → Run workflow (`dry_run`); impl in [repo-automation](https://github.com/funkysi1701/repo-automation) |
 | Blog post idea (dry-run) | `GH_TOKEN=$(gh auth token) DRY_RUN=true node scripts/blog-post-idea/run.mjs` |
-| Tech debt scan (dry-run) | `GH_TOKEN=$(gh auth token) DRY_RUN=true node scripts/tech-debt-scan/run.mjs` |
+| Tech debt scan (dry-run) | Actions → **Tech debt scan** → Run workflow (`dry_run`); impl in [repo-automation](https://github.com/funkysi1701/repo-automation) |
 | Home popular links refresh (dry-run) | `CLOUDFLARE_API_TOKEN=... CLOUDFLARE_ACCOUNT_TAG=... CLOUDFLARE_SITE_TAG=... DRY_RUN=true node scripts/home-popular/run.mjs` |
 
 After changing `package.json` or `package-lock.json`, run `npm ci` before `npm test` (matches GitHub Actions).
@@ -35,6 +35,8 @@ After changing `package.json` or `package-lock.json`, run `npm ci` before `npm t
 - **Parkrun generated block** in `content/parkrun.md` between `<!-- BEGIN PARKRUN_GENERATED -->` and `<!-- END PARKRUN_GENERATED -->` — produced by `scripts/update_parkrun_results.py`. Edit content below the markers by hand; optional row suppressions in `data/parkrun_suppress.json`.
 - **Secrets** — no API keys, deploy tokens, or credentials in `.env`, `config/`, or front matter. Azure Static Web Apps deploy token lives only in GitHub Actions secrets.
 - **Vendored theme** — prefer site overrides in root `layouts/`, `assets/`, and `static/` over editing `themes/hugo-theme-bootstrap/`.
+- **Duplicate Lite Analytics** — do not embed `lite.js` in Hugo while Cloudflare Zaraz injects it (double-count). See [`README.md`](README.md#analytics-cloudflare-zaraz).
+- **Referral query strings** — do not branch on-page CTAs on `?ref=dailydev`; same HTML as the clean URL. Publishing/promotion checklist (daily.dev, evergreen-first): [`CONTRIBUTING.md`](CONTRIBUTING.md#publishing-and-promotion).
 
 ## Cursor context
 
@@ -67,7 +69,7 @@ OpenSpec skills (`openspec-*`) live in the same directory for change proposal/ap
 - **Content:** `content/` (posts under `content/posts/YYYY/`, pages at `content/` root).
 - **Config:** `config/_default/` plus `config/development/`, `config/staging/`, `config/production/` when environment-specific.
 - **Templates & assets:** `layouts/`, `assets/`, `static/`.
-- **Routing / headers:** `staticwebapp.config.json` (copied into `public/` on deploy). Validate with `npm run check:swa-config` after edits (SchemaStore schema + required security headers). Do not use SPA `navigationFallback` → `/index.html`; missing routes must hit `responseOverrides["404"]` → `/404.html`.
+- **Routing / headers:** `staticwebapp.config.json` (copied into `public/` on deploy). Validate with `npm run check:swa-config` after edits (SchemaStore schema + required security headers including CSP). Do not use SPA `navigationFallback` → `/index.html`; missing routes must hit `responseOverrides["404"]` → `/404.html`.
 
 ## Blog post guardrails
 
@@ -84,7 +86,7 @@ After bulk-editing post front matter, run **`npm run check:meta`** before openin
 
 | Check | Where | Notes |
 |-------|-------|-------|
-| Playwright smoke | **GitHub Actions** — `playwright-smoke.yml` on all PRs | Hugo production server in CI; `BASE_URL=http://127.0.0.1:1313`; `@smoke` subset (homepage, 404, sitemap); under 10 minutes |
+| Playwright smoke | **GitHub Actions** — `playwright-smoke.yml` on all PRs | Hugo production server in CI; `BASE_URL=http://127.0.0.1:1313`; `@smoke` subset (homepage, 404, sitemap, head SEO meta); under 10 minutes |
 | Playwright E2E (full) | **GitHub Actions** — `swa-deploy-nonprod.yml` (blog-dev after dev SWA deploy on **`develop`** / **`feature/*`**) and `playwright.yml` (**`main`** pushes + PRs into **`main`**) | `BASE_URL`: blog-dev for non-prod deploys and for **PRs into `main`** (undeployed UI); production for **`main`** pushes / `workflow_dispatch` |
 | Playwright `// spec:` headers | **GitHub Actions** — `spec-headers.yml` (paths under `tests/`); also before E2E in reusable Playwright | Local: `npm run check:spec-headers` |
 | SWA config validation | **GitHub Actions** — `swa-config.yml` (paths under `staticwebapp.config.json` / validator) | Local: `npm run check:swa-config`; schema in `scripts/schemas/staticwebapp.config.schema.json` |
@@ -97,9 +99,9 @@ After bulk-editing post front matter, run **`npm run check:meta`** before openin
 | develop → main PR | GitHub Actions | `auto-pr.yml` |
 | SEO crawl (Signal Diff) | GitHub Actions | `swa-deploy-nonprod.yml` (blog-dev after deploy) and production SWA workflow; manual `seo-check.yml` |
 | Pa11y nightly | GitHub Actions | `pa11y-nightly.yml` — full sitemap on production |
-| 30-day issue schedule | GitHub Actions | `issue-schedule.yml` — Mondays 09:00 UTC + manual; upserts tracking issue via GitHub Models |
+| 30-day issue schedule | GitHub Actions | `issue-schedule.yml` — Mondays 09:00 UTC + manual; [repo-automation](https://github.com/funkysi1701/repo-automation) `@v1`; each week slots ≥1 `[Content Suggestion]` when open |
 | Blog post idea | GitHub Actions | `blog-post-idea.yml` — Wednesdays 09:00 UTC + manual; opens one `[Content Suggestion]` issue via GitHub Models |
-| Tech debt scan | GitHub Actions | `tech-debt-scan.yml` — Fridays 09:00 UTC + manual; opens `tech-debt` issues via GitHub Models |
+| Tech debt scan | GitHub Actions | `tech-debt-scan.yml` — Fridays 09:00 UTC + manual; [repo-automation](https://github.com/funkysi1701/repo-automation) `@v1` + [`.github/tech-debt-hotspots.txt`](.github/tech-debt-hotspots.txt) |
 | Home popular refresh | GitHub Actions | `home-popular-update.yml` — Mondays 06:30 UTC + manual; Cloudflare Web Analytics top pages → `data/home_popular.toml` PR into `develop` |
 
 ## Branches and deploy
@@ -128,11 +130,12 @@ Make the smallest change that satisfies the task. Do not refactor unrelated code
 | [`.cursor/hooks.json`](.cursor/hooks.json) | Cursor post-edit meta validation hooks (trusted workspace) |
 | [`.cursor/skills/`](.cursor/skills/) | Cursor project skills (parkrun, meta, Playwright healer, OpenSpec) |
 | [`.github/copilot-instructions.md`](.github/copilot-instructions.md) | Copilot-specific project context |
-| [`scripts/issue-schedule/README.md`](scripts/issue-schedule/README.md) | Weekly 30-day issue schedule planner (GitHub Models) |
+| [`.github/issue-schedule-prompt.md`](.github/issue-schedule-prompt.md) | Prompt for weekly 30-day issue schedule ([repo-automation](https://github.com/funkysi1701/repo-automation)) |
 | [`scripts/blog-post-idea/README.md`](scripts/blog-post-idea/README.md) | Weekly blog post idea → content-suggestion issue (GitHub Models) |
-| [`scripts/tech-debt-scan/README.md`](scripts/tech-debt-scan/README.md) | Weekly tech-debt scan → `tech-debt` issues (GitHub Models) |
+| [`.github/tech-debt-prompt.md`](.github/tech-debt-prompt.md) | Prompt for weekly tech-debt scan ([repo-automation](https://github.com/funkysi1701/repo-automation)) |
 | [`scripts/home-popular/README.md`](scripts/home-popular/README.md) | Weekly Cloudflare top-pages refresh of the home Popular strip data |
-| [`README.md`](README.md) | Human-oriented setup, testing, and deploy |
+| [`README.md`](README.md) | Human-oriented setup, testing, deploy, and Zaraz analytics inventory |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | PR checklist, branch workflow, merge readiness |
 | [`specs/funkysi1701-test-plan.md`](specs/funkysi1701-test-plan.md) | E2E scenario plan (`// spec:` comments in `tests/`) |
-| [`.vscode/mcp.json`](.vscode/mcp.json) | Playwright MCP server for agent-driven test runs |
+| [`.cursor/mcp.json`](.cursor/mcp.json) | Cursor MCP: `@playwright/mcp` (browser/console) + `playwright-test` (test runs) |
+| [`.vscode/mcp.json`](.vscode/mcp.json) | VS Code / Copilot Playwright Test MCP (`run-test-mcp-server`) |

@@ -148,7 +148,7 @@ Hugo uses environment-specific configs in `config/`:
 - `config/_default/config.toml` – Base configuration
 - `config/development/config.toml` – Local dev overrides
 - `config/staging/config.toml` – Staging overrides
-- `config/production/config.toml` – Production overrides (includes CDN, analytics, monetization)
+- `config/production/config.toml` – Production overrides (CDN image prefix, monetization flags; visitor analytics are via Cloudflare Zaraz — see README)
 
 **Note:** Hugo version is centralized in `.env` file and used by Docker builds for consistency.
 
@@ -159,9 +159,9 @@ Hugo uses environment-specific configs in `config/`:
 2. **Images location:** Store in `static/images/`, reference as `/images/filename.jpg` in content.
 
 3. **Environment-specific settings:** Never hardcode configuration. Use `config/` structure:
-   - Development: Local testing, no analytics
+   - Development: Local testing; Hugo analytics ID empty (Zaraz only on Cloudflare-fronted hosts)
    - Staging: Testing environment
-   - Production: Full analytics, CDN caching, Google AdSense
+   - Production: CDN caching; visitor analytics via Cloudflare Zaraz / Web Insights (Hugo GA and Gatekeeper/Ezoic off)
 
 4. **Multi-environment deployment:** SWA deploys use Hugo `--environment` values `production`, `development`, and `staging` from `config/` overlays. Workflows: `azure-static-web-apps-victorious-pebble-0b8f90e03.yml` (prod), `swa-deploy-nonprod.yml` (dev/test). Development (blog-dev) builds pass `--buildFuture`; staging and production do not.
 
@@ -179,10 +179,10 @@ The repo uses **Playwright** for automated end-to-end tests.
 npm ci
 npx playwright install chromium   # if browsers are not already present
 npm test                          # full suite
-npm run test:smoke                # @smoke subset (homepage, 404, sitemap)
+npm run test:smoke                # @smoke subset (homepage, 404, sitemap, head SEO meta)
 ```
 
-`playwright.config.ts` sets `baseURL` from **`BASE_URL`**; if unset, it defaults to **`https://www.funkysi1701.com`**. Point `BASE_URL` at `http://localhost:1313` (or another host) when testing a local or preview build.
+`playwright.config.ts` sets `baseURL` from **`BASE_URL`**; if unset, it defaults to **`https://www.funkysi1701.com`**. Point `BASE_URL` at `http://localhost:1313` (or another host) when testing a local or preview build. Optional **`PLAYWRIGHT_WORKERS`**, **`PLAYWRIGHT_RETRIES`**, **`PLAYWRIGHT_*_TIMEOUT`**, and **`PLAYWRIGHT_MAX_FAILURES`** override parallelism and timeouts (CI keeps `workers: 1` / `retries: 2` unless overridden). See README Testing and the header comment in `playwright.config.ts`.
 
 **GitHub Actions:** **`playwright-smoke.yml`** runs `@smoke` on all PRs against a local Hugo server (`BASE_URL=http://127.0.0.1:1313`). **`swa-deploy-nonprod.yml`** deploys to blog-dev (and blog-test on **`develop`**) then runs the full suite with **`BASE_URL=https://blog-dev.funkysi1701.com`**. **`playwright.yml`** runs PRs into **`main`** against blog-dev and **`main`** pushes / `workflow_dispatch` against production. Full-suite workflows run **`scripts/generate-page-coverage.js`** and upload to **Codecov** when **`CODECOV_TOKEN`** is set. **`codecov.yml`** configures Codecov **project/patch** status as **informational**.
 
@@ -192,7 +192,7 @@ npm run test:smoke                # @smoke subset (homepage, 404, sitemap)
 
 **Specs:** High-level scenarios are documented in **`specs/`** (see **`specs/funkysi1701-test-plan.md`**). Every `tests/**/*.spec.ts` file must start with a `// spec: specs/...` pointer for traceability. Verify with **`npm run check:spec-headers`** (also run by **`spec-headers.yml`** and before Playwright in the reusable E2E workflow).
 
-**SWA config:** After editing **`staticwebapp.config.json`**, run **`npm run check:swa-config`** (SchemaStore schema + required security headers; also **`swa-config.yml`** in CI). Do not add SPA `navigationFallback` → `/index.html` (soft-404s); missing pages use `responseOverrides["404"]` → `/404.html`.
+**SWA config:** After editing **`staticwebapp.config.json`**, run **`npm run check:swa-config`** (SchemaStore schema + required security headers including CSP; also **`swa-config.yml`** in CI). Do not add SPA `navigationFallback` → `/index.html` (soft-404s); missing pages use `responseOverrides["404"]` → `/404.html`.
 
 For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remains useful for quick feedback before or after running tests.
 
@@ -202,19 +202,19 @@ For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remai
 - `.cursor/skills/` – Cursor project skills (`update-parkrun`, `fix-post-meta`, `playwright-test-healer`, OpenSpec flows)
 - `.env` – Hugo version (affects all builds)
 - `config/_default/config.toml` – Main site title, menu, author info
-- `config/production/config.toml` – Production baseURL and analytics
-- `playwright.config.ts` – Playwright defaults (`baseURL`, reporters, projects)
+- `config/production/config.toml` – Production baseURL and CDN/monetization params (analytics via Zaraz; see README)
+- `playwright.config.ts` – Playwright defaults (`baseURL`, reporters, projects; env-tunable workers/retries/timeouts)
 - `swa-deploy-nonprod.yml` – SWA dev/test deploy + blog-dev Playwright + SEO
 - `playwright.yml` – Full Playwright E2E (`main` pushes → production; PRs into `main` → blog-dev)
 - `playwright-smoke.yml` – PR smoke subset against local Hugo (`@smoke`, `BASE_URL=http://127.0.0.1:1313`)
 - `pa11y-nightly.yml` – Scheduled full-sitemap accessibility scan
-- `issue-schedule.yml` – Weekly LLM planner: open issues → **30-day implementation schedule** tracking issue (`scripts/issue-schedule/`)
+- `issue-schedule.yml` – Weekly LLM planner via [repo-automation](https://github.com/funkysi1701/repo-automation) `@v1` → **30-day implementation schedule** tracking issue (`.github/issue-schedule-prompt.md`); each week includes ≥1 `[Content Suggestion]` when open
 - `blog-post-idea.yml` – Weekly LLM: catalogue posts + trends → one `[Content Suggestion]` issue (`scripts/blog-post-idea/`)
-- `tech-debt-scan.yml` – Weekly LLM: codebase signals → `tech-debt` issues (`scripts/tech-debt-scan/`)
+- `tech-debt-scan.yml` – Weekly LLM via [repo-automation](https://github.com/funkysi1701/repo-automation) `@v1` → `tech-debt` issues (`.github/tech-debt-hotspots.txt`, `.github/tech-debt-prompt.md`)
 - `home-popular-update.yml` – Weekly Cloudflare Web Analytics top pages → `data/home_popular.toml` PR (`scripts/home-popular/`)
 - `codecov.yml` – Codecov behaviour (informational page-coverage gates)
 - `npm run check:meta` – Local meta validation (titles + descriptions); see also `check:meta:titles`, `check:meta:descriptions`, `check:meta:fix`
-- `npm run check:swa-config` – Validate `staticwebapp.config.json` (schema + security headers); CI: `swa-config.yml`
+- `npm run check:swa-config` – Validate `staticwebapp.config.json` (schema + security headers including CSP); CI: `swa-config.yml`
 - `scripts/check_meta_titles.py` / `scripts/check_meta_descriptions.py` – Post front matter length checks (used by GitHub Actions and npm scripts)
 - `scripts/check_staticwebapp_config.mjs` – SWA config validator; schema vendored at `scripts/schemas/staticwebapp.config.schema.json`
 - `scripts/generate-page-coverage.js` – Page visit / coverage artifact for Codecov
