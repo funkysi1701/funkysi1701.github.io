@@ -24,7 +24,7 @@ aliases = [
 ]
 +++
 
-Pair programming did not disappear. The person on the other side of the keyboard often changed. On many days my "pair" is an AI coding assistant sitting in the editor—sometimes finishing the next line, sometimes proposing a multi-file edit I still have to own.
+On a lot of days my pair programmer is not a person. It is Copilot finishing a method, or Cursor proposing a multi-file edit I still have to own.
 
 Back in April I covered [how I use ChatGPT, Cursor, and Copilot on side projects](/posts/2026/how-i-use-ai-on-side-projects/). That was mostly about which tool I reach for. Here I want to talk about what that looks like when the code is .NET—C#, Blazor, Azure Functions—and I am working in VS Code or Cursor.
 
@@ -69,9 +69,9 @@ On Blazor and Functions work the same pattern shows up as DTOs, mapping, and tes
 
 ## Scenario: debugging when the model is too confident
 
-I have let an assistant send me on a wild goose chase: wrong package version, an API that never existed, a "fix" that compiled and still left the bug. The pair programming analogy helps. A human pair who is sure and wrong is more dangerous than one who says "I am guessing."
+I have let an assistant send me on a wild goose chase: wrong package version, an API that never existed, a "fix" that compiled and still left the bug. A human pair who is sure and wrong is more dangerous than one who says "I am guessing."
 
-When something fails, I try to feed the model **evidence**, not vibes: the exact error text, the failing test name, the smallest repro. If the first patch does not change the symptom, I stop re-prompting the same story. I read the stack, check docs, or bisect—same as I would without AI.
+When something fails, I try to feed the model the error text and a failing test, not a vague description of what I think is wrong. If the first patch does not change the symptom, I stop re-prompting the same story. I read the stack, check docs, or bisect—same as I would without AI.
 
 Side projects are a forgiving place to learn that discipline. Production systems are not. Secrets, customer data, and employer code stay out of tools unless policy clearly allows them; I wrote about that boundary in the [side projects post](/posts/2026/how-i-use-ai-on-side-projects/) and I still follow it.
 
@@ -82,10 +82,8 @@ These are the practices that keep AI pairing from becoming AI babysitting:
 1. **Read every diff you did not type.** Especially NuGet names, HTTP routes, auth, and anything touching data.
 2. **Prefer project conventions over "cleaner" internet defaults.** If my solution uses one DI style, I reject the rewrite that introduces another for a one-line fix.
 3. **Verify against official docs when the call looks unfamiliar.** Models still hallucinate plausible APIs.
-4. **Keep the human review bar.** I treat agent output like a junior PR: useful, not sacred.
+4. **Keep the human review bar.** I treat agent output like a junior's pull request: helpful when it is right, never something I merge on trust alone.
 5. **Match depth of context to the task.** Do not paste half a solution into a browser chat for a one-line rename; do not ask inline Copilot to redesign a Functions + Cosmos flow.
-
-None of that is exciting. All of it is where the time saves compound.
 
 ## What "productivity" has meant for me
 
