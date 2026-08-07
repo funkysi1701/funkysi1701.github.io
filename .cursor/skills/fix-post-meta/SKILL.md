@@ -11,7 +11,7 @@ Enforce CI length rules on `content/posts/**/*.md`. Front-matter policy: [`.curs
 
 | Field | Length (inclusive) |
 |-------|--------------------|
-| `title` | 50–60 characters |
+| `title` | **Rendered** production HTML `<title>` 50–60 characters. Hugo appends ` - Funky Si's Blog` (18 chars), so front matter is usually **32–42**. |
 | `description` | 110–160 characters |
 
 Posts use TOML front matter in `+++` fences. British English (`locale = 'en-gb'`).
@@ -50,7 +50,7 @@ Posts use TOML front matter in `+++` fences. British English (`locale = 'en-gb'`
    python scripts/normalize_meta_descriptions.py --root .
    ```
 
-4. **Fix titles by hand** when `check:meta:titles` fails — the normalizer targets descriptions only. Keep meaning; stay within 50–60 characters.
+4. **Fix titles by hand** when `check:meta:titles` fails — the normalizer targets descriptions only. Keep meaning; aim for front matter **32–42** so `{title} - Funky Si's Blog` lands in **50–60**.
 
 5. **Re-validate** until clean:
 

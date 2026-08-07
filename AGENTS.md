@@ -50,7 +50,7 @@ Committed at [`.cursor/hooks.json`](.cursor/hooks.json). In a **trusted** worksp
 |------|-----------|
 | `afterFileEdit` / `postToolUse` (`Write`\|`StrReplace`) | If the edited file is under `content/posts/**/*.md`, runs `scripts/check_meta_titles.py` and `check_meta_descriptions.py` for **that file only** via `--files` (timeout 30s). |
 
-On failure, the hook prints a clear report and (for `postToolUse`) injects `additional_context` so the agent can fix `title` (50–60) / `description` (110–160). Non-post edits are skipped. Hugo layout smoke builds are **not** hooked yet (kept out to avoid slowing every edit).
+On failure, the hook prints a clear report and (for `postToolUse`) injects `additional_context` so the agent can fix `title` (production HTML `<title>` 50–60 = front matter usually 32–42 + ` - Funky Si's Blog`) / `description` (110–160). Non-post edits are skipped. Hugo layout smoke builds are **not** hooked yet (kept out to avoid slowing every edit).
 
 Requires **Python 3.11+** on `PATH` (same as `npm run check:meta`). Manual equivalent: `python scripts/check_meta_titles.py --root . --files <path>` (and the descriptions script).
 
@@ -75,7 +75,7 @@ OpenSpec skills (`openspec-*`) live in the same directory for change proposal/ap
 
 Posts (`content/posts/**/*.md`) use TOML front matter in `+++` fences. CI enforces:
 
-- **`title`:** 50–60 characters (inclusive)
+- **`title`:** production HTML `<title>` (`{front matter title} - Funky Si's Blog`) **50–60** characters (inclusive); front matter is usually **32–42**. Hugo appends the site title in `layouts/partials/head/title.html`.
 - **`description`:** 110–160 characters (inclusive)
 
 British English (`locale = 'en-gb'`). One top-level Markdown heading per page where that matches site structure. Meaningful images need descriptive alt text.
@@ -92,7 +92,7 @@ After bulk-editing post front matter, run **`npm run check:meta`** before openin
 | SWA config validation | **GitHub Actions** — `swa-config.yml` (paths under `staticwebapp.config.json` / validator) | Local: `npm run check:swa-config`; schema in `scripts/schemas/staticwebapp.config.schema.json` |
 | Page coverage / Codecov | GitHub Actions (Playwright workflows) | `scripts/generate-page-coverage.js`; informational per `codecov.yml` |
 | Hugo production build | **GitHub Actions** | `hugo-build.yml` — PRs and pushes to `main`/`develop`; catches template/render errors before deploy |
-| Meta title / description length | **GitHub Actions** | `meta-title-length.yml`, `meta-description-length.yml` |
+| Meta title / description length | **GitHub Actions** | `meta-title-length.yml` (rendered production `<title>` 50–60), `meta-description-length.yml` |
 | Azure SWA deploy | GitHub Actions | `azure-static-web-apps-victorious-pebble-0b8f90e03.yml` (prod), `swa-deploy-nonprod.yml` (dev/test). **blog-dev** (`hugo_environment: development`) adds `--buildFuture` so future-dated posts preview; blog-test and production do not |
 | Broken links | GitHub Actions | `link.yml` — monthly + manual; crawls from production homepage |
 | Parkrun scrape PR | GitHub Actions | `parkrun-update.yml` — PR to `develop` when scrape succeeds |
