@@ -1,6 +1,6 @@
 +++
 title = "AI Pair Programming for .NET in VS Code and Cursor"
-date = "2026-08-06T12:00:00Z"
+date = "2026-08-07T12:00:00Z"
 year = "2026"
 month = "2026-08"
 author = "funkysi1701"
@@ -19,8 +19,8 @@ draft = false
 aliases = [
     "/ai-pair-programming-dotnet",
     "/posts/ai-pair-programming-dotnet",
-    "/posts/2026/08/06/ai-pair-programming-dotnet",
-    "/2026/08/06/ai-pair-programming-dotnet"
+    "/posts/2026/08/07/ai-pair-programming-dotnet",
+    "/2026/08/07/ai-pair-programming-dotnet"
 ]
 +++
 
