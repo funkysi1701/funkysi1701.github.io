@@ -17,7 +17,7 @@ Rules:
 - If open suggestions already cover the best idea, pick a clearly different topic.
 - Return **JSON only** (no markdown fences, no prose outside JSON) with this shape:
   {
-    "title": "Proposed post title (aim 50–60 characters; no [Content Suggestion] prefix)",
+    "title": "Proposed post title (aim 32–42 characters so production HTML title `{title} - Funky Si's Blog` is 50–60; no [Content Suggestion] prefix)",
     "body": "Markdown for the GitHub issue: outline the idea, suggested outline/sections, target tags/categories, and any older posts to link or update.",
     "rationale": "2–4 sentences: why now (trend), why it fits this blog, and how it differs from existing posts."
   }

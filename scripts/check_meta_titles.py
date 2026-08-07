@@ -1,5 +1,22 @@
 #!/usr/bin/env python3
-"""Validate Hugo TOML front matter: title length must be in [MIN, MAX] (inclusive)."""
+"""Validate Hugo post titles against the production HTML <title> length.
+
+For non-home pages, `layouts/partials/head/title.html` builds:
+
+    {front matter title} - {Site.Title}
+
+Production `Site.Title` is `Funky Si's Blog` (`config/production/config.toml`
+and `config/_default/config.toml`). The separator is a space-dash-space
+(`titleSeparator` defaults to `-`).
+
+The 50–60 character budget applies to that **full rendered** string, not the
+front matter `title` alone. With the production suffix (` - Funky Si's Blog`,
+18 characters), front matter titles should therefore be **32–42 characters**.
+
+Preview environments append a longer site title (e.g. blog-dev:
+`Funky Si's Blog (Dev)`); this checker always uses the production suffix,
+which is the SEO budget that matters for www.funkysi1701.com.
+"""
 
 from __future__ import annotations
 
@@ -11,8 +28,22 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
-MIN_LEN = 50
-MAX_LEN = 60
+# Keep in sync with config/production/config.toml `title` and
+# layouts/partials/head/title.html (default separator "-").
+PROD_SITE_TITLE = "Funky Si's Blog"
+TITLE_SEPARATOR = " - "
+TITLE_SUFFIX = f"{TITLE_SEPARATOR}{PROD_SITE_TITLE}"
+SUFFIX_LEN = len(TITLE_SUFFIX)  # 18
+
+MIN_RENDERED_LEN = 50
+MAX_RENDERED_LEN = 60
+MIN_FRONT_MATTER_LEN = MIN_RENDERED_LEN - SUFFIX_LEN  # 32
+MAX_FRONT_MATTER_LEN = MAX_RENDERED_LEN - SUFFIX_LEN  # 42
+
+# Back-compat aliases used in a few call sites / mental models.
+MIN_LEN = MIN_RENDERED_LEN
+MAX_LEN = MAX_RENDERED_LEN
+
 POSTS_GLOB = "content/posts/**/*.md"
 
 
@@ -20,8 +51,14 @@ POSTS_GLOB = "content/posts/**/*.md"
 class Failure:
     path: str
     reason: str
-    length: int | None
+    length: int | None  # rendered length when known
     title_preview: str
+    front_matter_length: int | None = None
+
+
+def rendered_title(page_title: str) -> str:
+    """Return the production HTML <title> Hugo would emit for a post."""
+    return f"{page_title}{TITLE_SUFFIX}"
 
 
 def split_front_matter(text: str) -> tuple[str | None, str | None]:
@@ -91,23 +128,33 @@ def check_posts(
             continue
         assert title is not None
         with_string_title += 1
-        n = len(title)
-        if n < MIN_LEN:
+        fm_len = len(title)
+        rendered = rendered_title(title)
+        n = len(rendered)
+        if n < MIN_RENDERED_LEN:
             failures.append(
                 Failure(
                     rel,
-                    f"Too short (minimum {MIN_LEN} characters)",
+                    (
+                        f"Rendered title too short (minimum {MIN_RENDERED_LEN} "
+                        f"characters including `{TITLE_SUFFIX}`)"
+                    ),
                     n,
                     title,
+                    front_matter_length=fm_len,
                 )
             )
-        elif n > MAX_LEN:
+        elif n > MAX_RENDERED_LEN:
             failures.append(
                 Failure(
                     rel,
-                    f"Too long (maximum {MAX_LEN} characters)",
+                    (
+                        f"Rendered title too long (maximum {MAX_RENDERED_LEN} "
+                        f"characters including `{TITLE_SUFFIX}`)"
+                    ),
                     n,
                     title,
+                    front_matter_length=fm_len,
                 )
             )
     return failures, total_post_files, with_string_title
@@ -125,36 +172,70 @@ def render_report(
     lines = [
         "## Meta title length check",
         "",
-        f"Blog posts must set front matter `title` to **{MIN_LEN}–{MAX_LEN} characters** (inclusive).",
+        (
+            f"Blog posts are checked against the **production HTML `<title>`**: "
+            f"`{{front matter title}}{TITLE_SUFFIX}` "
+            f"(see `layouts/partials/head/title.html`)."
+        ),
+        "",
+        (
+            f"That full string must be **{MIN_RENDERED_LEN}–{MAX_RENDERED_LEN} "
+            f"characters** (inclusive). The suffix "
+            f"`{TITLE_SUFFIX}` is **{SUFFIX_LEN}** characters, so front matter "
+            f"`title` should usually be "
+            f"**{MIN_FRONT_MATTER_LEN}–{MAX_FRONT_MATTER_LEN}** characters."
+        ),
         "",
         "### Summary",
         "",
         f"- **Markdown files under `content/posts/`**: {total_post_files}",
         f"- **Posts with a string `title`**: {with_string_title}",
-        f"- **Titles in range ({MIN_LEN}–{MAX_LEN})**: {in_range}",
+        (
+            f"- **Rendered titles in range "
+            f"({MIN_RENDERED_LEN}–{MAX_RENDERED_LEN})**: {in_range}"
+        ),
         f"- **Failures**: {len(failures)}",
         "",
         "### How to fix",
         "",
-        f"1. Open each file below and edit the `title = \"...\"` line in the `+++` TOML block.",
-        f"2. Aim for **{MIN_LEN}–{MAX_LEN}** characters. Count includes spaces and punctuation.",
+        "1. Open each file below and edit the `title = \"...\"` line in the `+++` TOML block.",
+        (
+            f"2. Aim for a front matter title of "
+            f"**{MIN_FRONT_MATTER_LEN}–{MAX_FRONT_MATTER_LEN}** characters so the "
+            f"rendered production title "
+            f"(`{{title}}{TITLE_SUFFIX}`) lands in "
+            f"**{MIN_RENDERED_LEN}–{MAX_RENDERED_LEN}**. Count includes spaces "
+            f"and punctuation."
+        ),
         "3. Re-run the workflow or execute locally: `python scripts/check_meta_titles.py --root .`",
         "",
         "### Failures",
         "",
-        "| File | Chars | Issue |",
-        "|------|------:|-------|",
+        "| File | FM chars | Rendered | Issue |",
+        "|------|---------:|---------:|-------|",
     ]
     for f in failures:
-        chars = str(f.length) if f.length is not None else "—"
+        fm_chars = (
+            str(f.front_matter_length)
+            if f.front_matter_length is not None
+            else "—"
+        )
+        rendered_chars = str(f.length) if f.length is not None else "—"
         esc_reason = f.reason.replace("|", "\\|")
-        lines.append(f"| `{f.path}` | {chars} | {esc_reason} |")
+        lines.append(
+            f"| `{f.path}` | {fm_chars} | {rendered_chars} | {esc_reason} |"
+        )
     lines.extend(["", "### Current titles (for copy-edit)", ""])
     for f in failures:
         if not f.title_preview:
             continue
         preview = f.title_preview.replace("\n", " ").strip()
-        lines.append(f"- **`{f.path}`** ({len(f.title_preview)} chars): {preview}")
+        rendered = rendered_title(f.title_preview)
+        lines.append(
+            f"- **`{f.path}`** (front matter {len(f.title_preview)} → "
+            f"rendered {len(rendered)}): {preview}"
+        )
+        lines.append(f"  - Rendered: `{rendered}`")
         lines.append("")
     server = os.environ.get("GITHUB_SERVER_URL", "").rstrip("/")
     repo = os.environ.get("GITHUB_REPOSITORY", "")
@@ -208,7 +289,10 @@ def main() -> int:
         return 1
     ok = with_string_title - len([f for f in failures if f.length is not None])
     print(
-        f"OK: {ok}/{total_post_files} posts have titles in {MIN_LEN}–{MAX_LEN} characters."
+        f"OK: {ok}/{total_post_files} posts have rendered production titles "
+        f"in {MIN_RENDERED_LEN}–{MAX_RENDERED_LEN} characters "
+        f"(front matter typically {MIN_FRONT_MATTER_LEN}–{MAX_FRONT_MATTER_LEN} "
+        f"+ `{TITLE_SUFFIX}`)."
     )
     return 0
 

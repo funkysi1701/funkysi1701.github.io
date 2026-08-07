@@ -188,7 +188,7 @@ npm run test:smoke                # @smoke subset (homepage, 404, sitemap, head 
 
 **GitHub Actions (other):** **`hugo-build.yml`** (PR build validation), meta title/description checks, **`pa11y-nightly.yml`**, production SWA deploy, broken link schedule, develop→main auto-PR, parkrun update PRs, **`issue-schedule.yml`** (weekly 30-day issue planner → tracking issue), **`blog-post-idea.yml`** (weekly content suggestion issue), **`tech-debt-scan.yml`** (weekly tech-debt issues), **`home-popular-update.yml`** (weekly Cloudflare top-pages refresh of `data/home_popular.toml` → PR into `develop`).
 
-**Meta validation (post front matter):** After editing `title` or `description` in `content/posts/**/*.md`, run **`npm run check:meta`** (wraps the Python scripts used by GitHub Actions). Subcommands: **`check:meta:titles`**, **`check:meta:descriptions`**. To preview automated description rewrites: **`npm run check:meta:fix`** (dry-run only). Apply fixes with `python scripts/normalize_meta_descriptions.py --root .`. Requires Python 3.11+ on `PATH`.
+**Meta validation (post front matter):** After editing `title` or `description` in `content/posts/**/*.md`, run **`npm run check:meta`** (wraps the Python scripts used by GitHub Actions). Title length is checked against the **production HTML `<title>`** (`{front matter title} - Funky Si's Blog`, 50–60 characters; front matter usually 32–42). Subcommands: **`check:meta:titles`**, **`check:meta:descriptions`**. To preview automated description rewrites: **`npm run check:meta:fix`** (dry-run only). Apply fixes with `python scripts/normalize_meta_descriptions.py --root .`. Requires Python 3.11+ on `PATH`.
 
 **Specs:** High-level scenarios are documented in **`specs/`** (see **`specs/funkysi1701-test-plan.md`**). Every `tests/**/*.spec.ts` file must start with a `// spec: specs/...` pointer for traceability. Verify with **`npm run check:spec-headers`** (also run by **`spec-headers.yml`** and before Playwright in the reusable E2E workflow).
 
@@ -215,7 +215,7 @@ For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remai
 - `codecov.yml` – Codecov behaviour (informational page-coverage gates)
 - `npm run check:meta` – Local meta validation (titles + descriptions); see also `check:meta:titles`, `check:meta:descriptions`, `check:meta:fix`
 - `npm run check:swa-config` – Validate `staticwebapp.config.json` (schema + security headers including CSP); CI: `swa-config.yml`
-- `scripts/check_meta_titles.py` / `scripts/check_meta_descriptions.py` – Post front matter length checks (used by GitHub Actions and npm scripts)
+- `scripts/check_meta_titles.py` / `scripts/check_meta_descriptions.py` – Post front matter length checks (titles use production rendered `<title>` including ` - Funky Si's Blog`; used by GitHub Actions and npm scripts)
 - `scripts/check_staticwebapp_config.mjs` – SWA config validator; schema vendored at `scripts/schemas/staticwebapp.config.schema.json`
 - `scripts/generate-page-coverage.js` – Page visit / coverage artifact for Codecov
 - `.github/workflows/` – GitHub Actions (SWA deploy, Playwright, Pa11y, meta checks, links, auto-PR, etc.)
