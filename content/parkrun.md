@@ -34,11 +34,6 @@ I started parkrun in 2025. The **parkrun results** table below is generated from
   <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 4px;">
     <tr style="vertical-align: bottom; height: 250px;">
       <td style="text-align: center; padding: 5px; position: relative;">
-        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">39m 49s</div>
-        <div style="background: #2196F3; height: 130px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
-        <div style="font-size: 10px; margin-top: 5px;">14 Mar</div>
-      </td>
-      <td style="text-align: center; padding: 5px; position: relative;">
         <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">40m 02s</div>
         <div style="background: #2196F3; height: 131px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
         <div style="font-size: 10px; margin-top: 5px;">11 Apr</div>
@@ -83,6 +78,11 @@ I started parkrun in 2025. The **parkrun results** table below is generated from
         <div style="background: #2196F3; height: 124px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
         <div style="font-size: 10px; margin-top: 5px;">1 Aug</div>
       </td>
+      <td style="text-align: center; padding: 5px; position: relative;">
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">37m 07s</div>
+        <div style="background: #2196F3; height: 122px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="font-size: 10px; margin-top: 5px;">8 Aug</div>
+      </td>
     </tr>
   </table>
   </div>
@@ -96,6 +96,7 @@ Official 5 km parkrun times from [parkrun.org.uk](https://www.parkrun.org.uk/par
 
 | Event/Run | Date | Location | Results | min/km |
 |-----------|------|----------|---------|--------|
+| Vermuyden Way parkrun | 8 August 2026 | Vermuyden Way | 0h 37m 07s | 07m 25s |
 | Withernsea Promenade parkrun | 1 August 2026 | Withernsea Promenade | 0h 37m 52s | 07m 34s |
 | Vermuyden Way parkrun | 25 July 2026 | Vermuyden Way | 0h 38m 03s | 07m 37s |
 | Vermuyden Way parkrun | 18 July 2026 | Vermuyden Way | 0h 36m 27s | 07m 17s |
