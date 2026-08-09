@@ -1,6 +1,7 @@
 // spec: specs/funkysi1701-test-plan.md
 
 import { test, expect } from './fixtures';
+import type { APIRequestContext, APIResponse } from '@playwright/test';
 import { SITE_TITLE_PATTERN } from './site-title';
 
 /**
@@ -17,6 +18,10 @@ const SKIP_LINK_HOSTS = [
   'example.org',
   'example.net',
 ];
+
+/** Transient SWA/CDN blips right after deploy — same URL often returns 200 on retry. */
+const HTTP_ATTEMPTS = 3;
+const HTTP_RETRY_DELAY_MS = 250;
 
 function hostnameOf(link: string): string | null {
   try {
@@ -36,6 +41,40 @@ function shouldCheckLink(link: string, siteHost: string): boolean {
   if (host === siteHost) return true;
   if (host === 'funkysi1701.com' || host.endsWith('.funkysi1701.com')) return true;
   return false;
+}
+
+async function delay(ms: number): Promise<void> {
+  await new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * GET with short retries on network errors or status ≥ 400.
+ * Does not weaken the final assertion — only absorbs transient SWA/CDN failures.
+ */
+async function getWithRetries(
+  request: APIRequestContext,
+  url: string,
+): Promise<{ ok: true; response: APIResponse } | { ok: false; status?: number; error?: string }> {
+  let lastStatus: number | undefined;
+  let lastError: string | undefined;
+
+  for (let attempt = 1; attempt <= HTTP_ATTEMPTS; attempt++) {
+    try {
+      const response = await request.get(url);
+      const status = response.status();
+      if (status < 400) {
+        return { ok: true, response };
+      }
+      lastStatus = status;
+    } catch (err) {
+      lastError = String(err);
+    }
+    if (attempt < HTTP_ATTEMPTS) {
+      await delay(HTTP_RETRY_DELAY_MS * attempt);
+    }
+  }
+
+  return { ok: false, status: lastStatus, error: lastError };
 }
 
 test('navigate to www.funkysi1701.com, check top 100 blog posts for broken links and images', async ({ page }) => {
@@ -73,11 +112,12 @@ test('navigate to www.funkysi1701.com, check top 100 blog posts for broken links
     );
     for (const src of imageSrcs) {
       if (!shouldCheckLink(src, siteHost)) continue;
-      try {
-        const response = await page.request.get(src);
-        expect.soft(response.status(), `Broken image: ${src} on ${url}`).toBeLessThan(400);
-      } catch (err) {
-        expect.soft(null, `Broken image: ${src} on ${url} (${String(err)})`).toBeTruthy();
+      const result = await getWithRetries(page.request, src);
+      if (result.ok) {
+        expect.soft(result.response.status(), `Broken image: ${src} on ${url}`).toBeLessThan(400);
+      } else {
+        const detail = result.error ?? `HTTP ${result.status}`;
+        expect.soft(null, `Broken image: ${src} on ${url} (${detail})`).toBeTruthy();
       }
     }
 
@@ -85,11 +125,12 @@ test('navigate to www.funkysi1701.com, check top 100 blog posts for broken links
     const linkChecks = links
       .filter((link) => /^https?:\/\//.test(link) && shouldCheckLink(link, siteHost))
       .map(async (link) => {
-        try {
-          const response = await page.request.get(link);
-          expect.soft(response.status(), `Broken link: ${link} on ${url}`).toBeLessThan(400);
-        } catch (err) {
-          expect.soft(null, `Broken link: ${link} on ${url} (${String(err)})`).toBeTruthy();
+        const result = await getWithRetries(page.request, link);
+        if (result.ok) {
+          expect.soft(result.response.status(), `Broken link: ${link} on ${url}`).toBeLessThan(400);
+        } else {
+          const detail = result.error ?? `HTTP ${result.status}`;
+          expect.soft(null, `Broken link: ${link} on ${url} (${detail})`).toBeTruthy();
         }
       });
     await Promise.all(linkChecks);

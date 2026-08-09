@@ -107,18 +107,17 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   3. Check for profile image display
   4. Verify author bio is present
   5. Check that certification badges are displayed
-  6. Click on Azure Fundamentals certification badge link
-  7. Verify link opens to Credly in new tab
-  8. Go back and click on AWS Cloud Practitioner badge link
-  9. Verify link opens to Credly in new tab
+  6. Verify Azure Fundamentals certification badge `href` points to Credly (`adacf718`)
+  7. Verify AWS Cloud Practitioner certification badge `href` points to Credly (`3aab54c8`)
+  8. Confirm the test remains on the About page (no third-party navigation)
 
 **Expected Results:**
   - About page loads without errors
   - Profile image is visible and loads correctly
   - Bio text describes Simon Foster's background and expertise
   - Two certification badges are displayed (Azure and AWS)
-  - Certification links are functional
-  - Links open in new tabs to credly.com
+  - Certification badge anchors expose the expected Credly public badge URLs
+  - Scenario does not navigate to credly.com (href assertions only)
   - Page describes specializations: .NET, Azure, DevOps
 
 #### 2.2. Contact page functionality

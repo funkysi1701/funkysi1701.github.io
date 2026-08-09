@@ -4,7 +4,7 @@
 import { test, expect } from '../fixtures';
 
 test.describe('About and Static Pages', () => {
-  test('About page content and links', async ({ page, context }) => {
+  test('About page content and links', async ({ page }) => {
     await test.step('Navigate to https://www.funkysi1701.com/about/', async () => {
       // 1. Navigate to https://www.funkysi1701.com/about/
       await page.goto('/about/');
@@ -35,29 +35,18 @@ test.describe('About and Static Pages', () => {
       await expect(awsBadge).toBeVisible();
     });
 
-    await test.step('Click on Azure Fundamentals certification badge link', async () => {
-      // 6. Click on Azure Fundamentals certification badge link
-      // FIXME: External links may be blocked or not open in test environment
-      // Skipping external link click test for now
+    await test.step('Verify Azure and AWS certification badge hrefs point to Credly', async () => {
+      // 6–7. Assert Credly public badge URLs (no third-party navigation)
       const azureLink = page.locator('a[href*="credly"][href*="adacf718"]').first();
       await expect(azureLink).toBeVisible();
-      // const pagePromise1 = context.waitForEvent('page', { timeout: 5000 });
-      // await azureLink.click();
+      await expect(azureLink).toHaveAttribute('href', /credly\.com.*adacf718/);
 
-      // // 7. Verify link opens to Credly in new tab
-      // const credlyPage1 = await pagePromise1;
-      // await expect(credlyPage1).toHaveURL(/credly\.com/);
-      // await credlyPage1.close();
+      const awsLink = page.locator('a[href*="credly"][href*="3aab54c8"]').first();
+      await expect(awsLink).toBeVisible();
+      await expect(awsLink).toHaveAttribute('href', /credly\.com.*3aab54c8/);
 
-      // // 8. Go back and click on AWS Cloud Practitioner badge link
-      // const awsLink = page.locator('a[href*="credly"][href*="3aab54c8"]').first();
-      // const pagePromise2 = context.waitForEvent('page');
-      // await awsLink.click();
-
-      // // 9. Verify link opens to Credly in new tab
-      // const credlyPage2 = await pagePromise2;
-      // await expect(credlyPage2).toHaveURL(/credly\.com/);
-      // await credlyPage2.close();
+      // Still on About after attribute checks
+      await expect(page).toHaveURL(/\/about\//);
 
       // Verify page describes specializations
       await expect(page.locator('text=/.NET|C#/i').first()).toBeVisible();
