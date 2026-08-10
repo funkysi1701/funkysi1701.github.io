@@ -12,12 +12,12 @@ title = ".NET 5 to 10 features"
 url = "/posts/2026/dotnet-5-to-10-features/"
 
 [[items]]
-title = "Adding Elasticsearch with .Net Aspire"
-url = "/posts/2025/adding-elasticsearch-with-aspire/"
-
-[[items]]
 title = "What is new with C#"
 url = "/posts/2025/whats-new-csharp/"
+
+[[items]]
+title = "Adding Elasticsearch with .Net Aspire"
+url = "/posts/2025/adding-elasticsearch-with-aspire/"
 
 [[items]]
 title = "How to Start and Run a Successful Code Club for Kids"
