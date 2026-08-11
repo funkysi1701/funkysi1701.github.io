@@ -12,6 +12,8 @@ on:
 jobs:
   pa11y:
     runs-on: [self-hosted, k8s]
+    # Healthy full sitemap ≈ 45m; hard per-page timeouts + 90m scanner budget should finish well under this.
+    timeout-minutes: 150
     continue-on-error: true
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -43,13 +45,17 @@ jobs:
           SITE_URL="https://www.funkysi1701.com"
           PA11Y_RUNNERS_VAL="${PA11Y_NIGHTLY_RUNNERS:-axe,htmlcs}"
           PA11Y_MAX_PAGES_VAL="${PA11Y_NIGHTLY_MAX_PAGES:-}"
+          : > pa11y-error.log
 
+          # Tee stderr so progress appears in the job log (and we keep a file for post-checks).
           docker run --rm --cap-add=SYS_ADMIN --shm-size=2g \
             -e "SITE_URL=$SITE_URL" \
             -e "PA11Y_MAX_PAGES=$PA11Y_MAX_PAGES_VAL" \
             -e "PA11Y_RUNNERS=$PA11Y_RUNNERS_VAL" \
             -e "PA11Y_WAIT_MS=${PA11Y_WAIT_MS:-}" \
             -e "PA11Y_TIMEOUT_MS=${PA11Y_TIMEOUT_MS:-}" \
+            -e "PA11Y_HARD_TIMEOUT_MS=${PA11Y_HARD_TIMEOUT_MS:-}" \
+            -e "PA11Y_MAX_DURATION_MS=${PA11Y_MAX_DURATION_MS:-}" \
             -e "PA11Y_THEMES=${PA11Y_THEMES:-light,dark}" \
             -v "${{ github.workspace }}/scripts:/scripts:ro" \
             node:20-bookworm \
@@ -68,23 +74,40 @@ jobs:
               code=$?
               cat /tmp/pa11y-out.json
               exit $code' \
-            > pa11y-results.json 2>pa11y-error.log
+            > pa11y-results.json 2> >(tee -a pa11y-error.log >&2)
           PA11Y_EXIT=$?
           set -e
 
           if [ "$PA11Y_EXIT" -ne 0 ] && [ "$PA11Y_EXIT" -ne 2 ]; then
             echo "::error::Pa11y failed with exit code $PA11Y_EXIT"
-            cat pa11y-error.log || true
-            echo "[]" > pa11y-results.json
-            PA11Y_RUN_FAILED=1
+            # Keep usable JSON (e.g. hard-timeout skip / overall budget truncate) so issues can still be filed.
+            if [ ! -s pa11y-results.json ] || ! node -e "const fs=require('fs'); const j=JSON.parse(fs.readFileSync('pa11y-results.json','utf8')); if(!Array.isArray(j)) process.exit(1)"; then
+              echo "[]" > pa11y-results.json
+              PA11Y_RUN_FAILED=1
+            else
+              echo "::warning::Scan exit $PA11Y_EXIT but pa11y-results.json is usable; filing issues from available findings."
+            fi
           fi
           echo "pa11y_run_failed=$PA11Y_RUN_FAILED" >> "$GITHUB_OUTPUT"
 
+      - name: Upload Pa11y logs
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: pa11y-nightly-${{ github.run_id }}
+          path: |
+            pa11y-error.log
+            pa11y-results.json
+          if-no-files-found: warn
+          retention-days: 14
+
       - name: Create GitHub issues for new violations
+        if: always() && hashFiles('pa11y-results.json') != ''
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BUILD_NUMBER: ${{ github.run_number }}
           PA11Y_RUN_FAILED: ${{ steps.pa11y.outputs.pa11y_run_failed }}
+          PA11Y_RESULTS_PATH: ${{ github.workspace }}/pa11y-results.json
           SITE_URL: https://www.funkysi1701.com
         run: node scripts/create-accessibility-issues.js
 

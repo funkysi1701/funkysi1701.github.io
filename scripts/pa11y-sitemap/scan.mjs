@@ -8,6 +8,8 @@
  * PA11Y_CONFIG (optional, default /tmp/pa11y.json), PA11Y_MAX_PAGES (optional cap).
  * PA11Y_RUNNERS (optional, comma-separated; unset in scan.mjs = axe+htmlcs; Azure pipeline defaults to axe).
  * PA11Y_WAIT_MS / PA11Y_TIMEOUT_MS (optional) — override JSON wait / timeout per page.
+ * PA11Y_HARD_TIMEOUT_MS (optional) — AbortController-style hard cap per scan (default: timeout + 60s).
+ * PA11Y_MAX_DURATION_MS (optional) — overall scan budget before writing partial results (default: 90m).
  * PA11Y_THEMES (optional) — comma-separated `light` and/or `dark` (default: both). Uses #modeSwitcher
  *   (hugo-theme-bootstrap) so each URL is scanned in each colour mode.
  *
@@ -64,6 +66,10 @@ function intEnv(name, fallback) {
 
 const waitMs = intEnv('PA11Y_WAIT_MS', restFileConfig.wait ?? 0);
 const timeoutMs = intEnv('PA11Y_TIMEOUT_MS', restFileConfig.timeout ?? 60000);
+/** Hard cap so a stuck Puppeteer/action wait cannot hold the runner until the GHA 6h cancel. */
+const hardTimeoutMs = intEnv('PA11Y_HARD_TIMEOUT_MS', timeoutMs + 60_000);
+/** Overall budget (default 90m). Healthy full scans are ~45m; leave headroom under GHA limits. */
+const maxDurationMs = intEnv('PA11Y_MAX_DURATION_MS', 90 * 60_000);
 
 const themesFromEnv = process.env.PA11Y_THEMES?.trim();
 const themes = (() => {
@@ -83,6 +89,16 @@ function themeActions(theme) {
     return [wait, 'check field #modeSwitcher'];
   }
   return [wait, 'uncheck field #modeSwitcher'];
+}
+
+function withHardTimeout(promise, ms, label) {
+  let timer;
+  const timeout = new Promise((_, reject) => {
+    timer = setTimeout(() => {
+      reject(new Error(`Hard timeout after ${ms}ms: ${label}`));
+    }, ms);
+  });
+  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
 }
 
 async function fetchText(url) {
@@ -156,13 +172,14 @@ function sortUrlsHomeFirst(list) {
 }
 
 async function main() {
+  const startedAt = Date.now();
   console.error(`Fetching sitemap: ${sitemapUrl}`);
   let urls = await collectPageUrlsFromSitemap(sitemapUrl);
   urls = sortUrlsHomeFirst([...new Set(urls)].filter((u) => sameHost(u)));
 
   console.error(`Found ${urls.length} URL(s) for host ${hostname}`);
   console.error(
-    `Pa11y runners: ${runners.join(', ')}; themes=${themes.join(',')}; wait=${waitMs}ms timeout=${timeoutMs}ms`,
+    `Pa11y runners: ${runners.join(', ')}; themes=${themes.join(',')}; wait=${waitMs}ms timeout=${timeoutMs}ms hardTimeout=${hardTimeoutMs}ms maxDuration=${maxDurationMs}ms`,
   );
 
   if (maxPages > 0 && urls.length > maxPages) {
@@ -179,7 +196,17 @@ async function main() {
     ...chromeLaunchConfig,
   };
 
-  const browser = await puppeteer.launch(launchOpts);
+  let browser = await puppeteer.launch(launchOpts);
+
+  async function relaunchBrowser(reason) {
+    console.error(`Relaunching Chromium (${reason})…`);
+    try {
+      await browser.close();
+    } catch (closeErr) {
+      console.error(`browser.close() after hang: ${closeErr?.message ?? closeErr}`);
+    }
+    browser = await puppeteer.launch(launchOpts);
+  }
 
   const pa11yBase = {
     ...restFileConfig,
@@ -194,40 +221,90 @@ async function main() {
   };
 
   const allIssues = [];
+  let hangCount = 0;
+  let scanErrorCount = 0;
+  let truncated = false;
 
   const fileActions = Array.isArray(restFileConfig.actions) ? restFileConfig.actions : [];
 
   try {
-    for (let i = 0; i < urls.length; i++) {
+    outer: for (let i = 0; i < urls.length; i++) {
       const url = urls[i];
       for (const theme of themes) {
-        console.error(`[${i + 1}/${urls.length}] Pa11y [${theme}]: ${url}`);
+        if (Date.now() - startedAt > maxDurationMs) {
+          console.error(
+            `Overall scan budget (${maxDurationMs}ms) exceeded after ${i}/${urls.length} URLs; writing partial results.`,
+          );
+          truncated = true;
+          break outer;
+        }
+
+        const label = `[${i + 1}/${urls.length}] Pa11y [${theme}]: ${url}`;
+        console.error(label);
         const actions = [...themeActions(theme), ...fileActions];
         let result;
         let themeApplied = true;
         try {
-          result = await pa11y(url, {
-            ...pa11yBase,
-            browser,
-            actions,
-          });
-        } catch (actionErr) {
-          const msg = String(actionErr?.message ?? actionErr);
-          const looksLikeActionFailure = /action/i.test(msg);
-          if (!looksLikeActionFailure) {
-            throw actionErr;
+          try {
+            result = await withHardTimeout(
+              pa11y(url, {
+                ...pa11yBase,
+                browser,
+                actions,
+              }),
+              hardTimeoutMs,
+              label,
+            );
+          } catch (actionErr) {
+            const msg = String(actionErr?.message ?? actionErr);
+            const isHardTimeout = /Hard timeout after/i.test(msg);
+            const looksLikeActionFailure = /action/i.test(msg) && !isHardTimeout;
+            if (isHardTimeout) {
+              hangCount += 1;
+              console.error(`${label} — ${msg}; relaunching browser and skipping this theme.`);
+              await relaunchBrowser(msg);
+              continue;
+            }
+            if (!looksLikeActionFailure) {
+              throw actionErr;
+            }
+            console.error(
+              `[${theme}] Pa11y failed for ${url} (theme actions may be unsupported on this page): ${msg}`,
+            );
+            console.error(`[${theme}] Retrying without theme actions…`);
+            themeApplied = false;
+            result = await withHardTimeout(
+              pa11y(url, {
+                ...pa11yBase,
+                browser,
+                actions: [...fileActions],
+              }),
+              hardTimeoutMs,
+              `${label} (no theme actions)`,
+            );
           }
-          console.error(
-            `[${theme}] Pa11y failed for ${url} (theme actions may be unsupported on this page): ${msg}`,
-          );
-          console.error(`[${theme}] Retrying without theme actions…`);
-          themeApplied = false;
-          result = await pa11y(url, {
-            ...pa11yBase,
-            browser,
-            actions: [...fileActions],
-          });
+        } catch (scanErr) {
+          const msg = String(scanErr?.message ?? scanErr);
+          scanErrorCount += 1;
+          if (/Hard timeout after/i.test(msg)) {
+            hangCount += 1;
+            console.error(`${label} — ${msg}; relaunching browser and skipping.`);
+            await relaunchBrowser(msg);
+          } else {
+            console.error(`${label} — scan error: ${msg}`);
+            // Recover from transient Chromium death; continue the rest of the sitemap.
+            try {
+              const pages = await browser.pages();
+              if (pages.length === 0) {
+                await relaunchBrowser('no open pages after error');
+              }
+            } catch {
+              await relaunchBrowser('browser unresponsive after error');
+            }
+          }
+          continue;
         }
+
         const issues = result.issues || [];
         for (const issue of issues) {
           const row = { ...issue, pageUrl: url };
@@ -239,10 +316,24 @@ async function main() {
       }
     }
   } finally {
-    await browser.close();
+    try {
+      await browser.close();
+    } catch (closeErr) {
+      console.error(`browser.close() at end: ${closeErr?.message ?? closeErr}`);
+    }
   }
 
+  const elapsedMs = Date.now() - startedAt;
+  console.error(
+    `Scan finished in ${elapsedMs}ms; issues=${allIssues.length}; hangs=${hangCount}; scanErrors=${scanErrorCount}; truncated=${truncated}`,
+  );
+
   process.stdout.write(JSON.stringify(allIssues));
+
+  if (hangCount > 0 || truncated || scanErrorCount > 0) {
+    // Infra / incomplete run — not "accessibility errors found" (exit 2).
+    process.exit(1);
+  }
 
   const hasErrors = allIssues.some((i) => i.type === 'error');
   process.exit(hasErrors ? 2 : 0);
