@@ -99,7 +99,7 @@ After bulk-editing post front matter, run **`npm run check:meta`** before openin
 | Parkrun scrape PR | GitHub Actions | `parkrun-update.yml` — PR to `develop` when scrape succeeds |
 | develop → main PR | GitHub Actions | `auto-pr.yml` |
 | SEO crawl (Signal Diff) | GitHub Actions | `swa-deploy-nonprod.yml` (blog-dev after deploy) and production SWA workflow; manual `seo-check.yml` |
-| Pa11y nightly | GitHub Actions | `pa11y-nightly.yml` — full sitemap on production |
+| Pa11y nightly | GitHub Actions | `pa11y-nightly.yml` — full sitemap on production; hard per-page timeouts + 90m scan budget (avoids 6h hangs) |
 | 30-day issue schedule | GitHub Actions | `issue-schedule.yml` — Mondays 09:00 UTC + manual; [repo-automation](https://github.com/funkysi1701/repo-automation) `@v1`; each week slots ≥1 `[Content Suggestion]` when open |
 | Blog post idea | GitHub Actions | `blog-post-idea.yml` — Wednesdays 09:00 UTC + manual; opens one `[Content Suggestion]` issue via GitHub Models |
 | Tech debt scan | GitHub Actions | `tech-debt-scan.yml` — Fridays 09:00 UTC + manual; [repo-automation](https://github.com/funkysi1701/repo-automation) `@v1` + [`.github/tech-debt-hotspots.txt`](.github/tech-debt-hotspots.txt) |
