@@ -4,6 +4,14 @@ GitHub Actions workflow [`.github/workflows/blog-post-idea.yml`](../../.github/w
 
 Same LLM auth pattern as the [30-day issue schedule](../../.github/workflows/issue-schedule.yml) ([repo-automation](https://github.com/funkysi1701/repo-automation)).
 
+## Deduplication
+
+Before creating an issue, the script:
+
+1. Passes **open** and **recently closed** (last 90 days) `[Content Suggestion]` issues into the prompt, and instructs the model not to near-duplicate recent published posts.
+2. Scores the proposed title + target tags against posts and closed suggestions from the last **90 days** (token Jaccard). If too similar, it **retries the LLM once** with an explicit “avoid this” note, then **skips** creating an issue if still similar.
+3. Skips when an open issue already matches by fingerprint or title substring (unchanged).
+
 ## Authentication (LLM)
 
 **Default (no extra secret):** GitHub Models via `GITHUB_TOKEN` / `GH_TOKEN`.

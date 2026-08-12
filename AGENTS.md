@@ -101,7 +101,7 @@ After bulk-editing post front matter, run **`npm run check:meta`** before openin
 | SEO crawl (Signal Diff) | GitHub Actions | `swa-deploy-nonprod.yml` (blog-dev after deploy) and production SWA workflow; manual `seo-check.yml` |
 | Pa11y nightly | GitHub Actions | `pa11y-nightly.yml` — full sitemap on production; hard per-page timeouts + 90m scan budget (avoids 6h hangs) |
 | 30-day issue schedule | GitHub Actions | `issue-schedule.yml` — Mondays 09:00 UTC + manual; [repo-automation](https://github.com/funkysi1701/repo-automation) `@v1`; each week slots ≥1 `[Content Suggestion]` when open |
-| Blog post idea | GitHub Actions | `blog-post-idea.yml` — Wednesdays 09:00 UTC + manual; opens one `[Content Suggestion]` issue via GitHub Models |
+| Blog post idea | GitHub Actions | `blog-post-idea.yml` — Wednesdays 09:00 UTC + manual; opens one `[Content Suggestion]` issue via GitHub Models (skips near-duplicates of posts/closed suggestions from the last 90 days) |
 | Tech debt scan | GitHub Actions | `tech-debt-scan.yml` — Fridays 09:00 UTC + manual; [repo-automation](https://github.com/funkysi1701/repo-automation) `@v1` + [`.github/tech-debt-hotspots.txt`](.github/tech-debt-hotspots.txt) |
 | Home popular refresh | GitHub Actions | `home-popular-update.yml` — Mondays 06:30 UTC + manual; Cloudflare Web Analytics top pages → `data/home_popular.toml` PR into `develop` |
 

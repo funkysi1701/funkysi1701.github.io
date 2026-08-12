@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
  * Review existing blog posts, ask an LLM for one new post idea informed by
- * current developer trends, then create a GitHub issue (deduped by fingerprint).
+ * current developer trends, then create a GitHub issue (deduped by fingerprint
+ * and topical similarity to recent posts / content suggestions).
  *
  * Env: same LLM knobs as funkysi1701/repo-automation issue-schedule
  *   ISSUE_PLANNER_API_KEY, ISSUE_PLANNER_BASE_URL, ISSUE_PLANNER_MODEL
@@ -23,6 +24,96 @@ const RECENT_DETAIL_COUNT = 40;
 const TOP_TAGS_COUNT = 25;
 /** Soft cap so GitHub Models gpt-4.1-mini (~8k token request limit) is not exceeded. */
 const MAX_CATALOG_CHARS = 12_000;
+/** Do not re-suggest topics covered by posts or closed ideas within this window. */
+const RECENT_SIMILARITY_DAYS = 90;
+/** Jaccard token overlap above this → treat as near-duplicate. */
+const SIMILARITY_THRESHOLD = 0.35;
+const STOPWORDS = new Set([
+  "a",
+  "an",
+  "and",
+  "as",
+  "at",
+  "for",
+  "from",
+  "how",
+  "i",
+  "in",
+  "into",
+  "is",
+  "it",
+  "my",
+  "of",
+  "on",
+  "or",
+  "our",
+  "the",
+  "to",
+  "with",
+  "your",
+  "you",
+  "vs",
+  "via",
+  "using",
+  "use",
+  "what",
+  "when",
+  "why",
+  "who",
+  "that",
+  "this",
+  "these",
+  "those",
+  "about",
+  "over",
+  "under",
+  "after",
+  "before",
+  "between",
+  "through",
+  "into",
+  "out",
+  "up",
+  "down",
+  "by",
+  "be",
+  "are",
+  "was",
+  "were",
+  "been",
+  "being",
+  "have",
+  "has",
+  "had",
+  "do",
+  "does",
+  "did",
+  "will",
+  "would",
+  "could",
+  "should",
+  "can",
+  "may",
+  "might",
+  "must",
+  "new",
+  "guide",
+  "tips",
+  "lessons",
+  "learned",
+  "part",
+  "post",
+  "blog",
+  "boosting",
+  "boost",
+  "improve",
+  "improving",
+  "developer",
+  "developers",
+  "development",
+  "tools",
+  "tool",
+]);
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = join(__dirname, "..", "..");
@@ -185,6 +276,7 @@ function parseFrontMatter(text) {
   };
   const tagsLine = block.match(/^tags\s*=\s*(\[[\s\S]*?\])/m);
   const catsLine = block.match(/^categories\s*=\s*(\[[\s\S]*?\])/m);
+  const keywordsLine = block.match(/^keywords\s*=\s*(\[[\s\S]*?\])/m);
   return {
     title: get("title"),
     date: get("date"),
@@ -192,6 +284,7 @@ function parseFrontMatter(text) {
     draft: get("draft") === true,
     tags: tagsLine ? parseTomlStringArray(tagsLine[1]) : [],
     categories: catsLine ? parseTomlStringArray(catsLine[1]) : [],
+    keywords: keywordsLine ? parseTomlStringArray(keywordsLine[1]) : [],
   };
 }
 
@@ -220,6 +313,7 @@ function catalogPosts() {
       description: fm.description || null,
       tags: fm.tags,
       categories: fm.categories,
+      keywords: fm.keywords,
     });
   }
 
@@ -303,28 +397,152 @@ function buildCatalogForModel(posts) {
   return text;
 }
 
-function listOpenContentIdeas() {
+function daysAgoIso(days) {
+  const d = new Date();
+  d.setUTCDate(d.getUTCDate() - days);
+  return d.toISOString();
+}
+
+function isWithinDays(isoDate, days) {
+  if (!isoDate) return false;
+  const t = Date.parse(isoDate);
+  if (Number.isNaN(t)) return false;
+  return t >= Date.parse(daysAgoIso(days));
+}
+
+function mapContentIdea(i) {
+  const fp = i.body?.match(FINGERPRINT_RE)?.[1] || null;
+  const bareTitle = String(i.title || "")
+    .replace(/^\[Content Suggestion\]:\s*/i, "")
+    .trim();
+  return {
+    number: i.number,
+    title: i.title,
+    bareTitle,
+    fingerprint: fp,
+    state: i.state,
+    createdAt: i.createdAt || null,
+    closedAt: i.closedAt || null,
+  };
+}
+
+function listContentIdeas() {
   try {
     const issues = ghJson([
       "issue",
       "list",
       "--state",
-      "open",
+      "all",
       "--limit",
       String(ISSUE_SEARCH_LIMIT),
       "--json",
-      "number,title,body",
+      "number,title,body,state,createdAt,closedAt",
       "--search",
       'in:title "Content Suggestion"',
     ]);
-    return (issues || []).map((i) => {
-      const fp = i.body?.match(FINGERPRINT_RE)?.[1] || null;
-      return { number: i.number, title: i.title, fingerprint: fp };
-    });
+    const mapped = (issues || []).map(mapContentIdea);
+    const openIdeas = mapped.filter((i) => i.state === "OPEN");
+    const closedRecent = mapped.filter(
+      (i) =>
+        i.state === "CLOSED" &&
+        (isWithinDays(i.closedAt, RECENT_SIMILARITY_DAYS) ||
+          isWithinDays(i.createdAt, RECENT_SIMILARITY_DAYS)),
+    );
+    return { openIdeas, closedRecent };
   } catch (err) {
-    console.warn(`WARN: could not list open content ideas: ${err.message}`);
-    return [];
+    console.warn(`WARN: could not list content ideas: ${err.message}`);
+    return { openIdeas: [], closedRecent: [] };
   }
+}
+
+function tokenize(text) {
+  return new Set(
+    String(text || "")
+      .toLowerCase()
+      .replace(/\.net/g, "dotnet")
+      .replace(/c#/g, "csharp")
+      .split(/[^a-z0-9]+/)
+      .filter((t) => t.length >= 2 && !STOPWORDS.has(t)),
+  );
+}
+
+function jaccard(a, b) {
+  if (!a.size || !b.size) return 0;
+  let inter = 0;
+  for (const t of a) {
+    if (b.has(t)) inter += 1;
+  }
+  const union = a.size + b.size - inter;
+  return union === 0 ? 0 : inter / union;
+}
+
+function extractTagsFromBody(body) {
+  const text = String(body || "");
+  const section = text.match(
+    /##\s*Target tags\/categories\s*\n+([^\n#]+)/i,
+  );
+  if (!section) return [];
+  return section[1]
+    .split(/[,|]/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
+
+function ideaTokenSet(idea) {
+  const tags = extractTagsFromBody(idea.body);
+  return tokenize([idea.title, ...tags].join(" "));
+}
+
+function postTokenSet(post) {
+  return tokenize(
+    [
+      post.title,
+      ...(post.tags || []),
+      ...(post.keywords || []),
+      ...(post.categories || []),
+    ].join(" "),
+  );
+}
+
+function issueTokenSet(issue) {
+  return tokenize(issue.bareTitle || issue.title || "");
+}
+
+function recentPosts(posts, days = RECENT_SIMILARITY_DAYS) {
+  return posts.filter((p) => isWithinDays(p.date, days));
+}
+
+/**
+ * Find the strongest topical near-duplicate among recent posts and closed ideas.
+ * @returns {{ kind: string, label: string, score: number } | null}
+ */
+function findSimilarRecent(idea, posts, closedIdeas) {
+  const ideaTokens = ideaTokenSet(idea);
+  let best = null;
+
+  for (const p of recentPosts(posts)) {
+    const score = jaccard(ideaTokens, postTokenSet(p));
+    if (score >= SIMILARITY_THRESHOLD && (!best || score > best.score)) {
+      best = {
+        kind: "post",
+        label: `${monthOf(p.date)} | ${p.title}`,
+        score,
+      };
+    }
+  }
+
+  for (const i of closedIdeas) {
+    const score = jaccard(ideaTokens, issueTokenSet(i));
+    if (score >= SIMILARITY_THRESHOLD && (!best || score > best.score)) {
+      best = {
+        kind: "closed-suggestion",
+        label: `#${i.number} ${i.title}`,
+        score,
+      };
+    }
+  }
+
+  return best;
 }
 
 function labelExists(name) {
@@ -393,6 +611,41 @@ function createIssue({ title, body }) {
   return url;
 }
 
+function formatIdeaList(ideas) {
+  if (!ideas.length) return "(none)";
+  return ideas.map((i) => `#${i.number} ${i.title}`).join("\n");
+}
+
+function buildUserContent({ runDate, catalogText, openIdeas, closedRecent, retryNote }) {
+  const parts = [
+    `Run date (UTC): ${runDate}`,
+    "",
+    "Existing published posts:",
+    catalogText,
+    "",
+    "Already-open content suggestion issues (avoid duplicates):",
+    formatIdeaList(openIdeas),
+    "",
+    `Recently closed content suggestion issues (last ${RECENT_SIMILARITY_DAYS} days — avoid near-duplicates):`,
+    formatIdeaList(closedRecent),
+  ];
+  if (retryNote) {
+    parts.push("", retryNote);
+  }
+  return parts.join("\n");
+}
+
+function findOpenDuplicate(idea, openIdeas) {
+  const fingerprint = fingerprintFromTitle(idea.title);
+  return (
+    openIdeas.find((i) => i.fingerprint === fingerprint) ||
+    openIdeas.find((i) =>
+      i.title.toLowerCase().includes(idea.title.toLowerCase().slice(0, 40)),
+    ) ||
+    null
+  );
+}
+
 async function main() {
   const { apiKey, baseUrl, model, provider } = resolveLlmConfig();
   const dryRun = process.env.DRY_RUN === "true";
@@ -410,40 +663,58 @@ async function main() {
   const catalogText = buildCatalogForModel(posts);
   console.log(`Catalog prompt chars: ${catalogText.length} (cap ${MAX_CATALOG_CHARS})`);
 
-  const openIdeas = listOpenContentIdeas();
+  const { openIdeas, closedRecent } = listContentIdeas();
   console.log(`Open content-suggestion issues: ${openIdeas.length}`);
+  console.log(
+    `Recently closed content-suggestion issues (${RECENT_SIMILARITY_DAYS}d): ${closedRecent.length}`,
+  );
 
   const runDate = new Date().toISOString().slice(0, 10);
   const systemPrompt = loadPrompt();
-  const userContent = [
-    `Run date (UTC): ${runDate}`,
-    "",
-    "Existing published posts:",
-    catalogText,
-    "",
-    "Already-open content suggestion issues (avoid duplicates):",
-    openIdeas.length
-      ? openIdeas.map((i) => `#${i.number} ${i.title}`).join("\n")
-      : "(none)",
-  ].join("\n");
+  const llmOpts = { apiKey, baseUrl, model, systemPrompt, provider };
 
-  const raw = await callLlm({
-    apiKey,
-    baseUrl,
-    model,
-    systemPrompt,
-    userContent,
-    provider,
+  let userContent = buildUserContent({
+    runDate,
+    catalogText,
+    openIdeas,
+    closedRecent,
   });
 
-  const idea = parseIdeaJson(raw);
-  const fingerprint = fingerprintFromTitle(idea.title);
+  let raw = await callLlm({ ...llmOpts, userContent });
+  let idea = parseIdeaJson(raw);
 
-  const already =
-    openIdeas.find((i) => i.fingerprint === fingerprint) ||
-    openIdeas.find((i) =>
-      i.title.toLowerCase().includes(idea.title.toLowerCase().slice(0, 40)),
+  let similar = findSimilarRecent(idea, posts, closedRecent);
+  if (similar) {
+    console.log(
+      `Idea too similar to ${similar.kind} (${similar.score.toFixed(2)}): ${similar.label}`,
     );
+    console.log("Retrying once with explicit avoid list…");
+    const retryNote = [
+      "PREVIOUS SUGGESTION REJECTED — too similar to a recent published post or closed content suggestion.",
+      `Rejected title: ${idea.title}`,
+      `Too similar to: ${similar.label} (${similar.kind}, score ${similar.score.toFixed(2)})`,
+      "Propose a clearly different topic (different tools/stack/angle). Do not complement or deepen that item.",
+    ].join("\n");
+    userContent = buildUserContent({
+      runDate,
+      catalogText,
+      openIdeas,
+      closedRecent,
+      retryNote,
+    });
+    raw = await callLlm({ ...llmOpts, userContent });
+    idea = parseIdeaJson(raw);
+    similar = findSimilarRecent(idea, posts, closedRecent);
+    if (similar) {
+      console.log(
+        `Skipping create; still too similar to ${similar.kind} (${similar.score.toFixed(2)}): ${similar.label}`,
+      );
+      return;
+    }
+  }
+
+  const fingerprint = fingerprintFromTitle(idea.title);
+  const already = findOpenDuplicate(idea, openIdeas);
   if (already) {
     console.log(
       `Skipping create; similar open issue #${already.number}: ${already.title}`,
