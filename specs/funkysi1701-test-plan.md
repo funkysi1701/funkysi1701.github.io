@@ -375,25 +375,6 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   - Images are optimized for web
   - Responsive images work on mobile/tablet
 
-#### 3.7. Events page functionality
-
-**File:** `tests/blog-posts-content/events-page.spec.ts`
-
-**Steps:**
-  1. Navigate to https://www.funkysi1701.com/posts/events/
-  2. Verify Events page loads successfully
-  3. Check for list of events
-  4. Verify event details are displayed (date, title, description)
-  5. Test any links to event details or external sites
-  6. Check chronological ordering of events
-
-**Expected Results:**
-  - Events page loads without errors
-  - Events are listed with relevant details
-  - Event information includes dates and descriptions
-  - Links to events or event posts work correctly
-  - Events are organized logically (by date)
-
 ### 4. Search Functionality
 
 **Seed:** `seed.spec.ts`

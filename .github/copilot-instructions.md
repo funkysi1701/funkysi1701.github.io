@@ -209,7 +209,7 @@ For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remai
 - `playwright-smoke.yml` – PR smoke subset against local Hugo (`@smoke`, `BASE_URL=http://127.0.0.1:1313`)
 - `pa11y-nightly.yml` – Scheduled full-sitemap accessibility scan (hard per-page timeouts + 90m budget; artifacts for logs/results)
 - `issue-schedule.yml` – Weekly LLM planner via [repo-automation](https://github.com/funkysi1701/repo-automation) `@v1` → **30-day implementation schedule** tracking issue (`.github/issue-schedule-prompt.md`); each week includes ≥1 `[Content Suggestion]` when open
-- `blog-post-idea.yml` – Weekly LLM: catalogue posts + trends → one `[Content Suggestion]` issue (`scripts/blog-post-idea/`)
+- `blog-post-idea.yml` – Weekly LLM: catalogue posts + trends → one `[Content Suggestion]` issue (`scripts/blog-post-idea/`); hard-skips near-duplicates of recent posts / closed suggestions (90 days, one retry)
 - `tech-debt-scan.yml` – Weekly LLM via [repo-automation](https://github.com/funkysi1701/repo-automation) `@v1` → `tech-debt` issues (`.github/tech-debt-hotspots.txt`, `.github/tech-debt-prompt.md`)
 - `home-popular-update.yml` – Weekly Cloudflare Web Analytics top pages → `data/home_popular.toml` PR (`scripts/home-popular/`)
 - `codecov.yml` – Codecov behaviour (informational page-coverage gates)
