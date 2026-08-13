@@ -43,7 +43,7 @@ If you want the longer arc from .NET 5 through 10, I already wrote a [version-by
 | **Downloads** | [dotnet.microsoft.com/download/dotnet/11.0](https://dotnet.microsoft.com/download/dotnet/11.0) |
 | **Release notes** | [dotnet/core 11.0 README](https://github.com/dotnet/core/blob/main/release-notes/11.0/README.md) |
 
-.NET 10 remains the LTS baseline for production workloads that want a longer support window. .NET 11 is the place to try new runtime and language features early — side projects, greenfield work, and teams that are happy to plan another upgrade on the STS cadence.
+.NET 10 remains the LTS baseline for production workloads that want a longer support window. .NET 11 is the place to try new runtime and language features early — side projects, greenfield work, and teams that are happy to plan another upgrade on the STS cadence. Remember the only difference between STS and LTS releases is the length of support, there is no difference in quality.
 
 ## Highlights worth caring about
 
