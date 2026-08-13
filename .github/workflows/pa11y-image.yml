@@ -1,0 +1,54 @@
+# Build and push the Pa11y scanner image to GHCR.
+# Nightly also rebuilds before scanning; this workflow refreshes the image on Dockerfile/dep
+# changes and weekly so ARC runners can pull a warm :latest without waiting for nightly.
+name: Pa11y scanner image
+
+permissions:
+  contents: read
+  packages: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Weekly refresh of base layers (Sunday 01:00 UTC), ahead of nightly at 02:00.
+    - cron: "0 1 * * 0"
+  push:
+    branches: [main, develop]
+    paths:
+      - scripts/pa11y-sitemap/Dockerfile
+      - scripts/pa11y-sitemap/package.json
+      - scripts/pa11y-sitemap/package-lock.json
+      - scripts/pa11y-sitemap/scan.mjs
+      - scripts/pa11y-sitemap/.dockerignore
+      - .github/workflows/pa11y-image.yml
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Image name
+        id: image
+        run: |
+          repo="$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')"
+          echo "image=ghcr.io/${repo}/pa11y-scanner" >> "$GITHUB_OUTPUT"
+
+      - uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3.7.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3.12.0
+
+      - uses: docker/build-push-action@ee4ca427a2f43b6a16632044ca514c076267da23 # v6.19.0
+        with:
+          context: scripts/pa11y-sitemap
+          push: true
+          tags: |
+            ${{ steps.image.outputs.image }}:latest
+            ${{ steps.image.outputs.image }}:sha-${{ github.sha }}
+          cache-from: type=gha,scope=pa11y-scanner
+          cache-to: type=gha,mode=max,scope=pa11y-scanner
