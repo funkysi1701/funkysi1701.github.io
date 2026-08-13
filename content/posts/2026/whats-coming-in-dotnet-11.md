@@ -143,5 +143,3 @@ Practical bits either way:
 ## Wrap-up
 
 That is what is coming with .NET 11 this November: the next STS stop after .NET 10 LTS, with Runtime Async, library and SDK polish, and C# 15 on top. Download the [previews](https://dotnet.microsoft.com/download/dotnet/11.0), keep [What’s new in .NET 11](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-11/overview) open while you poke at a project, and watch [.NET Conf](https://www.dotnetconf.net/) for the launch narrative once the 2026 dates are up.
-
-I will refresh this after GA with anything that actually bit me on upgrade — same tradition as [.NET 9](/posts/2024/dotnet9/) and [Blazor on .NET 10](/posts/2025/blazor-and-dotnet10/).
