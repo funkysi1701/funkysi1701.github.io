@@ -318,7 +318,7 @@ function buildIssueBody(code, issues) {
 async function run() {
   if (process.env.PA11Y_RUN_FAILED === '1') {
     console.error(
-      'Pa11y did not finish successfully (e.g. Chromium launch failed). Check workflow logs and pa11y-error.log. Not updating GitHub issues.'
+      'Pa11y did not finish successfully (e.g. image pull, Chromium, or incomplete scan). Check workflow logs and pa11y-error.log. Not updating GitHub issues.'
     );
     process.exit(0);
   }

@@ -6,12 +6,14 @@
  *
  * Env: SITE_URL (required), SITEMAP_URL (optional, default SITE_URL/sitemap.xml),
  * PA11Y_CONFIG (optional, default /tmp/pa11y.json), PA11Y_MAX_PAGES (optional cap).
- * PA11Y_RUNNERS (optional, comma-separated; unset in scan.mjs = axe+htmlcs; Azure pipeline defaults to axe).
+ * PA11Y_RUNNERS (optional, comma-separated; unset in scan.mjs = axe+htmlcs; nightly defaults to axe,htmlcs).
  * PA11Y_WAIT_MS / PA11Y_TIMEOUT_MS (optional) — override JSON wait / timeout per page.
  * PA11Y_HARD_TIMEOUT_MS (optional) — AbortController-style hard cap per scan (default: timeout + 60s).
  * PA11Y_MAX_DURATION_MS (optional) — overall scan budget before writing partial results (default: 90m).
  * PA11Y_THEMES (optional) — comma-separated `light` and/or `dark` (default: both). Uses #modeSwitcher
  *   (hugo-theme-bootstrap) so each URL is scanned in each colour mode.
+ *
+ * Nightly runs via GHCR image `pa11y-scanner` (see scripts/pa11y-sitemap/Dockerfile, pa11y-nightly.yml).
  *
  * pa11y-pipeline.json ignores axe rule frame-tested: cross-origin iframes (e.g. Giscus, Twitter)
  * cannot be scanned inside the frame; the rule only reports that limitation.
