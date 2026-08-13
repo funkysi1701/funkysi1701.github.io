@@ -148,8 +148,8 @@ Inventory for `funkysi1701.com` (verified from live Zaraz `s.js` / page HTML, Ju
 ## 🚢 Deployment and branches
 
 - **`main`:** Production ([funkysi1701.com](https://www.funkysi1701.com?utm_source=gh)). GitHub Actions builds Hugo and deploys **Azure Static Web Apps** (`.github/workflows/azure-static-web-apps-victorious-pebble-0b8f90e03.yml`).
-- **`develop`:** Integration branch. GitHub Actions deploys to **SWA dev and test** (`swa-deploy-nonprod.yml` → blog-dev / blog-test). blog-dev Hugo builds include `--buildFuture` (future-dated posts preview there); blog-test and production do not. **`.github/workflows/auto-pr.yml`** can open or refresh a **develop → main** pull request when `develop` is pushed.
-- **`feature/*`:** Feature branches; GitHub Actions deploys to **SWA dev** only (`swa-deploy-nonprod.yml`).
+- **`develop`:** Integration branch. GitHub Actions deploys to **SWA dev and test** (`swa-deploy-nonprod.yml` orchestrates parallel blog-dev / blog-test via `reusable-hugo-swa-deploy.yml`, then Playwright and SEO against blog-dev; superseded runs for the same ref are cancelled). blog-dev Hugo builds include `--buildFuture` (future-dated posts preview there); blog-test and production do not. **`.github/workflows/auto-pr.yml`** can open or refresh a **develop → main** pull request when `develop` is pushed.
+- **`feature/*`:** Feature branches; GitHub Actions deploys to **SWA dev** only (`swa-deploy-nonprod.yml` → blog-dev).
 
 There is no separate branch named `dev`; use **`develop`** for integration work.
 

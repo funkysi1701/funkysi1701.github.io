@@ -15,6 +15,7 @@ Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). Cursor rules 
 | E2E tests | `npm test` (set `BASE_URL` for non-production targets) |
 | Playwright smoke | `npm run test:smoke` (needs a local Hugo server; set `BASE_URL`) |
 | Playwright browser | `npx playwright install chromium` |
+| Playwright tuning | Optional `PLAYWRIGHT_WORKERS`, `PLAYWRIGHT_RETRIES`, timeouts, `PLAYWRIGHT_MAX_FAILURES` — see README Testing and the header in `playwright.config.ts` |
 | Meta validation (titles + descriptions) | `npm run check:meta` |
 | Meta title check only | `npm run check:meta:titles` |
 | Meta description check only | `npm run check:meta:descriptions` |
@@ -93,14 +94,14 @@ After bulk-editing post front matter, run **`npm run check:meta`** before openin
 | Page coverage / Codecov | GitHub Actions (Playwright workflows) | `scripts/generate-page-coverage.js`; informational per `codecov.yml` |
 | Hugo production build | **GitHub Actions** | `hugo-build.yml` — PRs and pushes to `main`/`develop`; catches template/render errors before deploy |
 | Meta title / description length | **GitHub Actions** | `meta-title-length.yml` (rendered production `<title>` 50–60), `meta-description-length.yml` |
-| Azure SWA deploy | GitHub Actions | `azure-static-web-apps-victorious-pebble-0b8f90e03.yml` (prod), `swa-deploy-nonprod.yml` (dev/test). **blog-dev** (`hugo_environment: development`) adds `--buildFuture` so future-dated posts preview; blog-test and production do not |
+| Azure SWA deploy | GitHub Actions | `azure-static-web-apps-victorious-pebble-0b8f90e03.yml` (prod), `swa-deploy-nonprod.yml` (dev/test orchestrator). Nonprod wires branch gates and secrets into `reusable-hugo-swa-deploy.yml` (Hugo Docker build/upload; no npm cache on that job); blog-dev ∥ blog-test on **`develop`**, then Playwright ∥ SEO on blog-dev. Concurrency cancels superseded runs per ref. **blog-dev** (`hugo_environment: development`) adds `--buildFuture`; blog-test and production do not |
 | Broken links | GitHub Actions | `link.yml` — monthly + manual; crawls from production homepage |
 | Parkrun scrape PR | GitHub Actions | `parkrun-update.yml` — PR to `develop` when scrape succeeds |
 | develop → main PR | GitHub Actions | `auto-pr.yml` |
 | SEO crawl (Signal Diff) | GitHub Actions | `swa-deploy-nonprod.yml` (blog-dev after deploy) and production SWA workflow; manual `seo-check.yml` |
-| Pa11y nightly | GitHub Actions | `pa11y-nightly.yml` — full sitemap on production |
+| Pa11y nightly | GitHub Actions | `pa11y-nightly.yml` — builds `pa11y-scanner` on `ubuntu-latest` → GHCR, then full sitemap on ARC; hard per-page timeouts + 90m budget; infra/incomplete scans fail the job. Image-only refresh: `pa11y-image.yml` |
 | 30-day issue schedule | GitHub Actions | `issue-schedule.yml` — Mondays 09:00 UTC + manual; [repo-automation](https://github.com/funkysi1701/repo-automation) `@v1`; each week slots ≥1 `[Content Suggestion]` when open |
-| Blog post idea | GitHub Actions | `blog-post-idea.yml` — Wednesdays 09:00 UTC + manual; opens one `[Content Suggestion]` issue via GitHub Models |
+| Blog post idea | GitHub Actions | `blog-post-idea.yml` — Wednesdays 09:00 UTC + manual; opens one `[Content Suggestion]` issue via GitHub Models (skips near-duplicates of posts/closed suggestions from the last 90 days) |
 | Tech debt scan | GitHub Actions | `tech-debt-scan.yml` — Fridays 09:00 UTC + manual; [repo-automation](https://github.com/funkysi1701/repo-automation) `@v1` + [`.github/tech-debt-hotspots.txt`](.github/tech-debt-hotspots.txt) |
 | Home popular refresh | GitHub Actions | `home-popular-update.yml` — Mondays 06:30 UTC + manual; Cloudflare Web Analytics top pages → `data/home_popular.toml` PR into `develop` |
 

@@ -7,11 +7,12 @@ const GITHUB_TOKEN = (process.env.GITHUB_TOKEN || process.env.GH_TOKEN || '').tr
 const BUILD_NUMBER = process.env.BUILD_NUMBER || 'unknown';
 const REPO = process.env.REPO || 'funkysi1701/funkysi1701.github.io';
 const SITE_URL = process.env.SITE_URL || 'https://blog-dev.funkysi1701.com';
-const RESULTS_PATH = process.env.PA11Y_RESULTS_PATH || '/app/pa11y-results.json';
+// Workspace-relative default (GitHub Actions). Override with PA11Y_RESULTS_PATH if needed.
+const RESULTS_PATH = process.env.PA11Y_RESULTS_PATH || 'pa11y-results.json';
 
 if (!GITHUB_TOKEN) {
   console.error(
-    'GITHUB_TOKEN (or GH_TOKEN) is missing. Add a secret in Azure DevOps variable group Global named GITHUB_TOKEN, and map it under this task env: (see azure-pipelines.yml).'
+    'GITHUB_TOKEN (or GH_TOKEN) is missing. Ensure the workflow passes secrets.GITHUB_TOKEN (or a PAT with issues write) to this script.'
   );
   process.exit(1);
 }
@@ -310,14 +311,14 @@ function buildIssueBody(code, issues) {
     examplesSection,
     '',
     '---',
-    '_Detected by [Pa11y](https://pa11y.org/) accessibility checker in Azure Pipeline_',
+    '_Detected by [Pa11y](https://pa11y.org/) accessibility checker in GitHub Actions_',
   ].join('\n');
 }
 
 async function run() {
   if (process.env.PA11Y_RUN_FAILED === '1') {
     console.error(
-      'Pa11y did not finish successfully (e.g. Chromium launch failed). Check Azure pipeline logs and pa11y-error.log. Not updating GitHub issues.'
+      'Pa11y did not finish successfully (e.g. image pull, Chromium, or incomplete scan). Check workflow logs and pa11y-error.log. Not updating GitHub issues.'
     );
     process.exit(0);
   }
