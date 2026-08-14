@@ -121,7 +121,7 @@ Other pages (about, projects, etc.) are in `content/` root using Markdown format
 | `layouts/` | Hugo page templates and partials |
 | `assets/` | CSS (SCSS/PostCSS) and JavaScript source |
 | `static/images/` | Images, downloads, and media files |
-| `themes/hugo-theme-bootstrap/` | Bootstrap-based theme |
+| `themes/hugo-theme-bootstrap/` | Frozen fork of hugo-theme-bootstrap v0.65.1 (not synced with upstream); compiled CSS/JS Hugo loads |
 | `config/` | Hugo configuration for dev/staging/production environments |
 | `.github/workflows/` | GitHub Actions (SWA deploy prod/non-prod, Playwright, Pa11y, meta checks, SEO, links, auto-PR, etc.) |
 | `tests/` | Playwright end-to-end tests (`@playwright/test`) |
@@ -130,12 +130,7 @@ Other pages (about, projects, etc.) are in `content/` root using Markdown format
 ### Frontend Stack
 
 - **Hugo** – Static site generation
-- **Bootstrap 5.3.2** – CSS framework
-- **FontAwesome 7** – Icon library
-- **Algolia DocSearch** – Site search
-- **Mermaid** – Diagram rendering
-- **KaTeX** – Math/formula rendering
-- **Workbox** – Service worker caching (PWA support)
+- **Bootstrap / Font Awesome / Fuse search / Mermaid / KaTeX / Workbox** – compiled into the frozen theme `assets/` (not installed from root npm)
 
 ### Backend/Infrastructure
 
