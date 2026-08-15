@@ -1,5 +1,5 @@
 +++
-title = "Getting Started with Scratch: A Beginner’s Guide to Coding for Kids"
+title = "Getting started with Scratch coding"
 date = "2022-04-26T18:00:45Z"
 year = "2022"
 month= "2022-04"

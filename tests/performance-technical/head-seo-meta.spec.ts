@@ -76,6 +76,21 @@ test.describe('Performance and Technical', () => {
       expect(collection?.description).toBe(description);
     });
 
+    await test.step('Year vs month archives have distinct descriptions', async () => {
+      await page.goto('/year/');
+      const yearDesc = await metaContent(page, 'meta[name="description"]');
+      expect(yearDesc ?? '').toMatch(/by year/i);
+      expect((yearDesc ?? '').length).toBeGreaterThanOrEqual(110);
+      expect((yearDesc ?? '').length).toBeLessThanOrEqual(160);
+
+      await page.goto('/month/');
+      const monthDesc = await metaContent(page, 'meta[name="description"]');
+      expect(monthDesc ?? '').toMatch(/by month/i);
+      expect(monthDesc).not.toBe(yearDesc);
+      expect((monthDesc ?? '').length).toBeGreaterThanOrEqual(110);
+      expect((monthDesc ?? '').length).toBeLessThanOrEqual(160);
+    });
+
     await test.step('Paginated home: noindex robots, Page N description, canonical', async () => {
       await page.goto('/page/2/');
 

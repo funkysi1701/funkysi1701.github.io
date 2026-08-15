@@ -1,5 +1,5 @@
 +++
-title = "Top IT Interview Questions and How to Answer Them"
+title = "Top IT interview questions to answer"
 date = "2014-10-23T20:00:45Z"
 year = "2014"
 month= "2014-10"

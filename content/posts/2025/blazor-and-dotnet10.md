@@ -1,5 +1,5 @@
 +++
-title = "Blazor and .NET 10: Breaking Changes, Fixes, and New Features"
+title = "Blazor and .NET 10 breaking changes"
 date = "2025-11-17T20:00:00Z"
 year = "2025"
 month = "2025-11"

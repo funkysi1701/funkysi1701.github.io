@@ -1,5 +1,5 @@
 +++
-title = "How to Get in the Programming Zone and Boost Productivity"
+title = "Get in the zone and boost productivity"
 date = "2014-11-02T20:00:45Z"
 year = "2014"
 month= "2014-11"

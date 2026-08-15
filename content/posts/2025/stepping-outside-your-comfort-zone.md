@@ -1,5 +1,5 @@
 +++
-title = "Stepping Outside My Comfort Zone: An Adventure Holiday Experience"
+title = "Stepping outside my comfort zone"
 date = "2025-06-02T20:00:00Z"
 year = "2025"
 month= "2025-06"

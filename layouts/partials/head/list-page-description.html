@@ -42,7 +42,13 @@
       {{- $pageDesc = printf "Browse %s on %s. %s" $page.Title $siteTitle $archiveSuffix -}}
     {{- end -}}
   {{- else if eq $page.Kind "taxonomy" -}}
-    {{- $pageDesc = printf "Browse all %s on %s. %s" (i18n $page.Data.Plural) $siteTitle $archiveSuffix -}}
+    {{- if eq $page.Data.Plural "year" -}}
+      {{- $pageDesc = printf "Browse all posts by year on %s. %s" $siteTitle $archiveSuffix -}}
+    {{- else if eq $page.Data.Plural "month" -}}
+      {{- $pageDesc = printf "Browse all posts by month on %s. %s" $siteTitle $archiveSuffix -}}
+    {{- else -}}
+      {{- $pageDesc = printf "Browse all %s on %s. %s" (i18n $page.Data.Plural) $siteTitle $archiveSuffix -}}
+    {{- end -}}
   {{- else if eq $page.Kind "section" -}}
     {{- $pageDesc = printf "Browse all posts in %s on %s. %s" $page.Title $siteTitle $archiveSuffix -}}
   {{- else -}}
