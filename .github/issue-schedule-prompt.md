@@ -2,7 +2,7 @@ Review these open GitHub issues for the funkysi1701.com Hugo blog. Build a pract
 
 Context for prioritisation:
 - Content/posts, SEO meta, accessibility, and CI/test fixes are often high leverage.
-- Prefer site overrides under root layouts/assets/static over theme edits.
+- Prefer site overrides under root layouts/assets/static over editing the frozen hugo-theme-bootstrap v0.65.1 fork; do not schedule an upstream v1 rebase.
 - Parkrun generated content and public/ build output are not hand-edited as source of truth.
 - Issues titled `[Content Suggestion]: …` are ready-to-write blog post ideas; treating them as implementable content work keeps the publishing cadence healthy.
 

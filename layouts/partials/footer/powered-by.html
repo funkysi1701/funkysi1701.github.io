@@ -1,0 +1,9 @@
+{{/*
+  Site override of the frozen hugo-theme-bootstrap (v0.65.1) footer credit.
+  Site-specific: status.funkysi1701.com and /terms/.
+*/}}
+{{- if default true .Site.Params.poweredBy -}}
+<div class="powered-by mb-2">
+  Powered by <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo {{ hugo.Version }}</a> and the <a href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">Bootstrap</a> theme. <a href="https://status.funkysi1701.com" target="_blank" rel="noopener noreferrer">Status Page</a>. <a href="/terms/">Terms and Conditions</a>.
+</div>
+{{- end -}}

@@ -14,7 +14,7 @@ Your job:
 Rules:
 - British English.
 - Do not invent claims that the author already shipped a tool or post they have not.
-- Do not suggest rewriting parkrun generated content or theme vendor files.
+- Do not suggest rewriting parkrun generated content or the frozen `themes/hugo-theme-bootstrap/` fork.
 - If open or recently closed suggestions already cover the best idea, pick a clearly different topic.
 - Do **not** propose a post that covers the same core topic as a published post from the last ~90 days (same tools, stack, or angle). Linking or updating an **older** post is fine; a near-rewrite, “part 2”, or “complement / deepen” of a just-published post is **not** different enough.
 - Return **JSON only** (no markdown fences, no prose outside JSON) with this shape:
