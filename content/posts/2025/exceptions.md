@@ -1,5 +1,5 @@
 +++
-title = "Understanding and Handling Exceptions in .NET"
+title = "Understand and handle .NET exceptions"
 date = "2025-02-17T20:00:00Z"
 year = "2025"
 month= "2025-02"

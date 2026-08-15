@@ -1,5 +1,5 @@
 +++
-title = "Github Vs Bitbucket Vs Visual Studio Team Services"
+title = "GitHub, Bitbucket, or VSTS compared"
 date = "2017-03-06T20:00:45Z"
 year = "2017"
 month= "2017-03"

@@ -1,5 +1,5 @@
 +++
-title = "Episode Atlas: Track Your Star Trek Rewatch Journey"
+title = "Episode Atlas: track your Trek rewatch"
 date = "2026-06-01T12:00:00Z"
 year = "2026"
 month = "2026-06"

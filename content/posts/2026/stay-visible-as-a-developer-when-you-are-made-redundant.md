@@ -1,5 +1,5 @@
 +++
-title = "Stay Visible as a Developer When You Are Made Redundant"
+title = "Stay visible when made redundant"
 date = "2026-06-22T12:00:00Z"
 year = "2026"
 month = "2026-06"

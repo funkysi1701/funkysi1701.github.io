@@ -1,5 +1,5 @@
 +++
-title = "Running SQL Server on a Linux Container using Docker for Windows"
+title = "Run SQL Server in a Linux container"
 date = "2018-11-05T00:00:00Z"
 year = "2018"
 month= "2018-11"

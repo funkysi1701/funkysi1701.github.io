@@ -1,5 +1,5 @@
 +++
-title = "Creating a Festive Naughty or Nice Checker Using Semantic Kernel and .NET"
+title = "A festive naughty or nice checker"
 date = "2025-12-12T10:00:00Z"
 year = "2025"
 month = "2025-12"

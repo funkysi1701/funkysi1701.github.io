@@ -1,5 +1,5 @@
 +++
-title = "Brothers, TNG S4 E3 Review, The Battle Bridge"
+title = "TNG Brothers S4 E3: Battle Bridge"
 date = "2016-05-26T20:00:45Z"
 year = "2016"
 month= "2016-05"

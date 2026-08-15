@@ -1,5 +1,5 @@
 +++
-title = "How to Start and Run a Successful Code Club for Kids"
+title = "How to start a code club for kids"
 date = "2024-11-02T18:00:45Z"
 year = "2024"
 month= "2024-11"

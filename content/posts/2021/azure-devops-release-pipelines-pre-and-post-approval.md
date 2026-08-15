@@ -1,5 +1,5 @@
 +++
-title = "Azure DevOps Release Pipelines Pre and Post Approval"
+title = "Azure DevOps pre and post approvals"
 date = "2021-02-14T20:00:45Z"
 year = "2021"
 month= "2021-02"

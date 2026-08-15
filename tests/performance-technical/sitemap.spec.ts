@@ -139,9 +139,22 @@ test.describe('Performance and Technical', () => {
       expect(locHostsOk).toBeTruthy();
     });
 
+    await test.step('Omit Hugo alias stub URLs', async () => {
+      if (!content.includes('<urlset')) {
+        return;
+      }
+      expect(content).toMatch(/\/posts\/2025\/using-ai\/?<\/loc>/i);
+      expect(content).toMatch(/\/posts\/2024\/common-ai-copilot-terms\/?<\/loc>/i);
+      // Alias HTML is generated locally; production may still list stubs until this ships.
+      if (isLoopbackOrigin(deploymentOrigin)) {
+        expect(content).not.toMatch(/\/posts\/using-ai\/?<\/loc>/i);
+        expect(content).not.toMatch(/\/posts\/common-ai-copilot-terms\/?<\/loc>/i);
+      }
+    });
+
     await test.step('Check lastmod / priority (informational)', async () => {
       console.log('Has lastmod:', content.includes('<lastmod>'));
-      console.log('Has priority:', content.includes('<priority>'));
+      console.log('Has priority:', content.includes('priority'));
       console.log('Sitemap snippet length:', content.length, 'url entries:', urlCount);
     });
   });

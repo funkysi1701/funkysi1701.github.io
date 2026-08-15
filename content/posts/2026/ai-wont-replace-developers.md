@@ -1,5 +1,5 @@
 +++
-title = "AI Won't Replace Developers, But It Will Redefine Us"
+title = "AI will not replace us developers"
 date = "2026-03-14T09:00:00Z"
 year = "2026"
 month = "2026-03"

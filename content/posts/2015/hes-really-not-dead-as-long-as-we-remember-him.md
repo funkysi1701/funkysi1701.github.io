@@ -1,5 +1,5 @@
 +++
-title = "He’s really not dead as long as we remember him – Leonard Nimoy"
+title = "Leonard Nimoy: not dead while remembered"
 date = "2015-02-28T20:00:45Z"
 year = "2015"
 month= "2015-02"

@@ -1,5 +1,5 @@
 +++
-title = "Simplifying Dependency Management with NuGet Central Package Management"
+title = "NuGet central package management"
 date = "2025-01-13T20:00:00Z"
 year = "2025"
 month= "2025-01"

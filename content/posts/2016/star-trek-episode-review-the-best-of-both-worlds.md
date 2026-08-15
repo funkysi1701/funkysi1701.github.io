@@ -1,5 +1,5 @@
 +++
-title = "Star Trek Episode Review The Best of Both Worlds"
+title = "Trek review: Best of Both Worlds"
 date = "2016-02-18T20:00:45Z"
 year = "2016"
 month= "2016-02"
