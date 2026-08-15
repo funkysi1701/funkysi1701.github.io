@@ -35,13 +35,13 @@ After changing `package.json` or `package-lock.json`, run `npm ci` before `npm t
 - **`public/`** — Hugo build output; never commit as source of truth.
 - **Parkrun generated block** in `content/parkrun.md` between `<!-- BEGIN PARKRUN_GENERATED -->` and `<!-- END PARKRUN_GENERATED -->` — produced by `scripts/update_parkrun_results.py`. Edit content below the markers by hand; optional row suppressions in `data/parkrun_suppress.json`.
 - **Secrets** — no API keys, deploy tokens, or credentials in `.env`, `config/`, or front matter. Azure Static Web Apps deploy token lives only in GitHub Actions secrets.
-- **Vendored theme** — prefer site overrides in root `layouts/`, `assets/`, and `static/` over editing `themes/hugo-theme-bootstrap/`.
+- **Vendored theme** — `themes/hugo-theme-bootstrap/` is a **frozen fork of hugo-theme-bootstrap v0.65.1** (copied Jan 2022). Production Hugo does not run theme npm/webpack; CSS/JS are committed artefacts under the theme `assets/`. Prefer site overrides in root `layouts/`, `assets/`, and `static/`. Do not rebase onto upstream v1 (Hugo Pipes + UI rewrite; does not build on this site’s Hugo 0.165).
 - **Duplicate Lite Analytics** — do not embed `lite.js` in Hugo while Cloudflare Zaraz injects it (double-count). See [`README.md`](README.md#analytics-cloudflare-zaraz).
 - **Referral query strings** — do not branch on-page CTAs on `?ref=dailydev`; same HTML as the clean URL. Publishing/promotion checklist (daily.dev, evergreen-first): [`CONTRIBUTING.md`](CONTRIBUTING.md#publishing-and-promotion).
 
 ## Cursor context
 
-**`.cursorignore`** keeps Cursor Agent indexing off generated and vendored paths (`public/`, `node_modules/`, `themes/hugo-theme-bootstrap/`, Playwright/coverage artefacts). It affects Cursor only — not git or Hugo. Theme work still belongs in root `layouts/`, `assets/`, and `static/`.
+**`.cursorignore`** keeps Cursor Agent indexing off generated and vendored paths (`public/`, `node_modules/`, `themes/hugo-theme-bootstrap/`, Playwright/coverage artefacts). It affects Cursor only — not git or Hugo. The theme tree is a frozen v0.65.1 fork; new template work belongs in root `layouts/`, `assets/`, and `static/`.
 
 ### Cursor hooks (post-edit meta validation)
 

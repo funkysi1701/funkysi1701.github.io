@@ -6,7 +6,7 @@ alwaysApply: false
 
 # Hugo layouts and templates
 
-Site overrides live in root `layouts/`, `assets/`, and `static/` — prefer these over editing `themes/hugo-theme-bootstrap/`. If you must touch the vendored theme, keep the diff minimal.
+Site overrides live in root `layouts/`, `assets/`, and `static/` — prefer these over editing `themes/hugo-theme-bootstrap/` (frozen fork of hugo-theme-bootstrap v0.65.1; not synced with upstream). If you must touch the vendored theme, keep the diff minimal. Do not rebase onto upstream v1.
 
 ## After template or asset changes
 
