@@ -1,5 +1,5 @@
 +++
-title = "What's New in .NET Aspire 9.2: Infrastructure Diagrams Made Easy"
+title = "New in .NET Aspire 9.2: diagrams"
 date = "2025-04-21T20:00:00Z"
 year = "2025"
 month= "2025-04"

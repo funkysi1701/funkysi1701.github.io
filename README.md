@@ -114,6 +114,7 @@ Optional environment variables: `PARKRUN_ID` (default `11453050`), `PARKRUN_BASE
 | Partial | Responsibility |
 |---------|----------------|
 | `head/meta-tags.html` | Keywords, meta description (list pages via `head/list-page-description.html`), fediverse creator |
+| `head/list-page-description.html` | List/archive meta descriptions (110–160 characters; `/year/` vs `/month/` copy is distinct; optional front-matter override) |
 | `head/seo.html` | Social preview meta — posts use Hugo Open Graph / Twitter internals; list/home pages emit matching tags from `list-page-description` |
 | `head/canonical.html` | Canonical URL (paginator-aware via `.Paginator.PageNumber`, not `.RelPermalink`) |
 | `head/meta/robots.html` | Robots meta (`noindex,follow` on paginated lists via `params.listPaginationMetaRobots`, detected with `.Paginator`) — invoked through theme `head/meta` |

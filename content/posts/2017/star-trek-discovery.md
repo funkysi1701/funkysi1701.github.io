@@ -1,5 +1,5 @@
 +++
-title = "Star Trek Discovery – thoughts on new trailer"
+title = "Star Trek Discovery trailer thoughts"
 date = "2017-05-22T20:00:45Z"
 year = "2017"
 month= "2017-05"

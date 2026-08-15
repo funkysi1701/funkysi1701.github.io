@@ -1,5 +1,5 @@
 +++
-title = "Why Every Developer Should Have a Personal Website"
+title = "Why developers need a personal site"
 date = "2022-01-25T20:00:45Z"
 year = "2022"
 month= "2022-01"

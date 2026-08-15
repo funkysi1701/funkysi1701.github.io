@@ -1,5 +1,5 @@
 +++
-title = "7 Warning Signs that you are a Bad Programmer"
+title = "Seven signs you are a bad programmer"
 date = "2015-07-23T20:00:45Z"
 year = "2015"
 month= "2015-07"

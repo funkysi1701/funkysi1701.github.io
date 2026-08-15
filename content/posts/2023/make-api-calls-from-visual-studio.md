@@ -1,5 +1,5 @@
 +++
-title = "Make API calls from Visual Studio or Visual Studio Code"
+title = "Make API calls from Visual Studio"
 date = "2023-11-19T22:50:00Z"
 year = "2023"
 month= "2023-11"

@@ -1,5 +1,5 @@
 +++
-title = "What is the difference between Development and Operations?"
+title = "What is the difference: Dev vs Ops"
 date = "2014-09-27T20:00:45Z"
 year = "2014"
 month= "2014-09"

@@ -1,5 +1,5 @@
 +++
-title = "Lone Developer to Senior Developer, my 2021 story"
+title = "Lone developer to senior, my 2021"
 date = "2021-12-05T09:00:05Z"
 year = "2021"
 month= "2021-12"

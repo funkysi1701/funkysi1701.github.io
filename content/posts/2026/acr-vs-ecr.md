@@ -1,5 +1,5 @@
 +++
-title = "Azure Container Registry vs AWS Elastic Container Registry: A Developer's Comparison"
+title = "ACR vs ECR: Azure and AWS registries"
 date = "2026-02-23T20:00:00Z"
 year = "2026"
 month= "2026-02"

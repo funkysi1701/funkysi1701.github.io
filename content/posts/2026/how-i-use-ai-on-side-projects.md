@@ -1,5 +1,5 @@
 +++
-title = "How I Use AI on Side Projects: ChatGPT, Cursor, and Copilot"
+title = "AI on side projects: Cursor, Copilot"
 date = "2026-04-10T12:00:00Z"
 year = "2026"
 month = "2026-04"

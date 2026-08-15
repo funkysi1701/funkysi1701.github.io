@@ -1,8 +1,19 @@
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {{ $exclude := slice "tags" "month" "categories" "year" }}
+  {{ $aliasPaths := slice }}
   {{ range .Data.Pages }}
-    {{ if not (in $exclude .Data.Plural) }}
+    {{ range .Aliases }}
+      {{ $a := . | strings.TrimSuffix "/" }}
+      {{ if not (hasPrefix $a "/") }}
+        {{ $a = printf "/%s" $a }}
+      {{ end }}
+      {{ $aliasPaths = $aliasPaths | append $a }}
+    {{ end }}
+  {{ end }}
+  {{ range .Data.Pages }}
+    {{ $rel := .RelPermalink | strings.TrimSuffix "/" }}
+    {{ if and (not (in $exclude .Data.Plural)) (not (in $aliasPaths $rel)) }}
       <url>
         <loc>{{ .Permalink }}</loc>
         {{ with .Lastmod }}

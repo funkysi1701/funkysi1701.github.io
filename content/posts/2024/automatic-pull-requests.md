@@ -1,5 +1,5 @@
 +++
-title = "Automate Develop to Main Pull Requests with Actions"
+title = "Automate develop to main pull requests"
 date = "2024-12-16T20:00:00Z"
 lastmod = "2026-07-31T20:00:00Z"
 year = "2024"

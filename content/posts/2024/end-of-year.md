@@ -1,5 +1,5 @@
 +++
-title = "Reflecting on 2024 and Setting Goals for 2025"
+title = "Reflecting on 2024, goals for 2025"
 date = "2024-12-30T20:00:00Z"
 year = "2024"
 month= "2024-12"

@@ -1,5 +1,5 @@
 +++
-title = "HTTP QUERY Explained: Safe Requests That Include a Body"
+title = "HTTP QUERY: requests with a body"
 date = "2026-07-14T07:30:00Z"
 year = "2026"
 month = "2026-07"

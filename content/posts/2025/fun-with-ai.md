@@ -1,5 +1,5 @@
 +++
-title = "Exploring ChatGPT's Image Generation: Fun with AI"
+title = "Exploring ChatGPT image generation"
 date = "2025-04-07T20:00:00Z"
 year = "2025"
 month= "2025-04"

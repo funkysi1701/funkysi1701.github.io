@@ -1,5 +1,5 @@
 +++
-title = "Getting Started with OpenTelemetry: Observability Made Easy"
+title = "Getting started with OpenTelemetry"
 date = "2025-05-05T20:00:00Z"
 year = "2025"
 month= "2025-05"

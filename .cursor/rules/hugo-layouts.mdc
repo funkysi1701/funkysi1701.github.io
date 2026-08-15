@@ -25,7 +25,7 @@ Or Docker Compose / commands in `README.md` (Hugo version from `.env`). Pull req
 
 - Document `<title>`: `layouts/partials/head/title.html` (called from `baseof.html`; home falls back to `Site.Title`).
 - Keywords / meta description / fediverse creator: `layouts/partials/head/meta-tags.html`.
-- List/archive meta descriptions: `layouts/partials/head/list-page-description.html` (per-page copy targeting 110–160 characters; optional front-matter `description` override; pagination suffix reserved inside the 160 budget on page 2+).
+- List/archive meta descriptions: `layouts/partials/head/list-page-description.html` (per-page copy targeting 110–160 characters; `/year/` vs `/month/` taxonomy indexes are distinct; optional front-matter `description` override; pagination suffix reserved inside the 160 budget on page 2+).
 - Canonical URL: `layouts/partials/head/canonical.html` (called from `head.html`; use `.Paginator`, not `.RelPermalink` string matching — paginated pages keep the first-page permalink).
 - Paginated list `noindex`: `layouts/partials/head/meta/robots.html` + `params.listPaginationMetaRobots` in `config/_default/config.toml` (via theme `head/meta`; detect page 2+ with `.Paginator.PageNumber`).
 - Search index meta: `layouts/partials/head/search-index.html` (search page only).

@@ -1,5 +1,5 @@
 +++
-title = ".NET 5 to 10: Key Features Introduced in Every Release"
+title = ".NET 5 to 10: features per release"
 date = "2026-06-29T18:00:00Z"
 year = "2026"
 month = "2026-06"

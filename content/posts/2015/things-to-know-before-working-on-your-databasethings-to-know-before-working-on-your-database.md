@@ -1,5 +1,5 @@
 +++
-title = "Things to know before working on your database"
+title = "Things to know before database work"
 date = "2015-07-20T20:00:45Z"
 year = "2015"
 month= "2015-07"
