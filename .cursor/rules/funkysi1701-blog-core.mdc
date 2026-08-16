@@ -11,7 +11,7 @@ Prefer matching existing patterns (Hugo TOML front matter in `+++` fences, site 
 
 ## Source of truth and generated output
 
-- **Hugo content and config:** Edit Markdown under `content/`, site parameters under `config/_default/` (and `config/development/`, `config/staging/`, `config/production/` when environment-specific). Active theme: `config/_default/config.toml` (`theme = 'hugo-theme-bootstrap'`).
+- **Hugo content and config:** Edit Markdown under `content/`, site parameters under `config/_default/` (and `config/development/`, `config/staging/`, `config/production/` when environment-specific). Active theme: `config/_default/config.toml` (`theme = 'hugo-theme-bootstrap'`), a **frozen fork of hugo-theme-bootstrap v0.65.1**. Production Hugo does not run theme npm/webpack. Do not rebase onto upstream v1.
 - **Theme vs site overrides:** Prefer root `layouts/`, `assets/`, and `static/` over editing `themes/hugo-theme-bootstrap/`. See `hugo-layouts.mdc` when changing templates.
 - **Build output:** `public/` is generated — not source of truth. Production builds use Dockerized Hugo with `--minify --environment production` (`.github/workflows/azure-static-web-apps-victorious-pebble-0b8f90e03.yml`). **blog-dev** deploys (`hugo_environment: development` via `swa-deploy-nonprod.yml`) also pass `--buildFuture` so future-dated posts appear on preview; staging/production do not.
 - **Parkrun page:** Generated block in `content/parkrun.md` — see `parkrun-generated.mdc`; do not hand-edit between markers.

@@ -1,5 +1,5 @@
 +++
-title = "2021 Mid-Year Review: Progress and Reflections"
+title = "2021 mid-year review and progress"
 date = "2021-08-31T20:00:45Z"
 year = "2021"
 month= "2021-08"

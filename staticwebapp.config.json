@@ -1,5 +1,47 @@
 {
   "$schema": "https://json.schemastore.org/staticwebapp.config.json",
+  "routes": [
+    {
+      "route": "/using-ai",
+      "redirect": "/posts/2025/using-ai/",
+      "statusCode": 301
+    },
+    {
+      "route": "/posts/using-ai",
+      "redirect": "/posts/2025/using-ai/",
+      "statusCode": 301
+    },
+    {
+      "route": "/posts/2025/03/17/using-ai",
+      "redirect": "/posts/2025/using-ai/",
+      "statusCode": 301
+    },
+    {
+      "route": "/2025/03/17/using-ai",
+      "redirect": "/posts/2025/using-ai/",
+      "statusCode": 301
+    },
+    {
+      "route": "/common-ai-copilot-terms",
+      "redirect": "/posts/2024/common-ai-copilot-terms/",
+      "statusCode": 301
+    },
+    {
+      "route": "/posts/common-ai-copilot-terms",
+      "redirect": "/posts/2024/common-ai-copilot-terms/",
+      "statusCode": 301
+    },
+    {
+      "route": "/posts/2024/12/09/common-ai-copilot-terms",
+      "redirect": "/posts/2024/common-ai-copilot-terms/",
+      "statusCode": 301
+    },
+    {
+      "route": "/2024/12/09/common-ai-copilot-terms",
+      "redirect": "/posts/2024/common-ai-copilot-terms/",
+      "statusCode": 301
+    }
+  ],
   "responseOverrides": {
     "404": {
       "rewrite": "/404.html"

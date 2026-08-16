@@ -1,5 +1,5 @@
 +++
-title = "Automating SSL for Kubernetes with Let's Encrypt and Cert Manager"
+title = "Kubernetes SSL with Let's Encrypt"
 date = "2025-07-07T20:00:00Z"
 year = "2025"
 month = "2025-07"

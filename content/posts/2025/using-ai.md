@@ -1,5 +1,5 @@
 +++
-title = "Using AI to Automate Social Media Posts with .NET"
+title = "Automate social posts with AI in .NET"
 date = "2025-03-17T20:00:00Z"
 year = "2025"
 month= "2025-03"

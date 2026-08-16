@@ -40,6 +40,8 @@ Agents and coding assistants should start with **[`AGENTS.md`](AGENTS.md)** — 
 
 **Cursor:** [`.cursorignore`](.cursorignore) excludes Hugo build output, `node_modules/`, the vendored theme, and test artefacts from agent indexing; site overrides live in root `layouts/`, `assets/`, and `static/`. Recurring maintenance workflows are packaged as project skills under [`.cursor/skills/`](.cursor/skills/) — notably [`update-parkrun`](.cursor/skills/update-parkrun/SKILL.md), [`fix-post-meta`](.cursor/skills/fix-post-meta/SKILL.md), and [`playwright-test-healer`](.cursor/skills/playwright-test-healer/SKILL.md) (see [`AGENTS.md`](AGENTS.md#cursor-context)).
 
+**Theme:** [`themes/hugo-theme-bootstrap/`](themes/hugo-theme-bootstrap/) is a **frozen fork** of [hugo-theme-bootstrap](https://github.com/razonyang/hugo-theme-bootstrap) **v0.65.1** (copied January 2022), not a syncable upstream. Site-specific HTML and CSS live in root `layouts/` and `assets/`. Production Hugo (`hugo-build.yml`, SWA deploy) does not run theme webpack or root PostCSS; compiled CSS/JS under the theme `assets/` are committed artefacts. Do not rebase onto upstream v1 (Hugo Pipes + UI rewrite; current HBS does not build on this site’s Hugo 0.165).
+
 ## 🧪 Testing
 
 End-to-end tests use **[Playwright](https://playwright.dev/)** (`@playwright/test`). Playwright tests (spec files) live under `tests/`; many files reference the high-level plan in **`specs/funkysi1701-test-plan.md`** (see `specs/README.md`).
@@ -112,6 +114,7 @@ Optional environment variables: `PARKRUN_ID` (default `11453050`), `PARKRUN_BASE
 | Partial | Responsibility |
 |---------|----------------|
 | `head/meta-tags.html` | Keywords, meta description (list pages via `head/list-page-description.html`), fediverse creator |
+| `head/list-page-description.html` | List/archive meta descriptions (110–160 characters; `/year/` vs `/month/` copy is distinct; optional front-matter override) |
 | `head/seo.html` | Social preview meta — posts use Hugo Open Graph / Twitter internals; list/home pages emit matching tags from `list-page-description` |
 | `head/canonical.html` | Canonical URL (paginator-aware via `.Paginator.PageNumber`, not `.RelPermalink`) |
 | `head/meta/robots.html` | Robots meta (`noindex,follow` on paginated lists via `params.listPaginationMetaRobots`, detected with `.Paginator`) — invoked through theme `head/meta` |
@@ -120,11 +123,12 @@ Optional environment variables: `PARKRUN_ID` (default `11453050`), `PARKRUN_BASE
 | `head/structured-data.html` | JSON-LD — WebSite (home), BlogPosting (`head/schema-blog-posting.html`), CollectionPage (`head/schema-collection-page.html`) |
 | `head/breadcrumb-schema.html` | Shared BreadcrumbList builder used by BlogPosting / CollectionPage schemas |
 | `head/title.html` | Document `<title>` (called from `baseof.html`, not `head.html`) |
-| Theme partials (`head/favicons`, `head/meta`, `head/feed`, `head/assets`) | Favicons, robots entrypoint, RSS links, CSS assets from `themes/hugo-theme-bootstrap/` |
+| `head/favicons.html` | Favicon / webmanifest links |
+| Theme partials (`head/meta`, `head/feed`, `head/assets`) | Robots entrypoint, RSS links, CSS/JS asset includes (main stylesheet via site `assets/main/css.html`) |
 
 Keep `og:description` / `twitter:description` aligned with `meta name="description"` whenever you change list or social partials. Regression coverage: `tests/performance-technical/head-seo-meta.spec.ts` (`@smoke`).
 
-Analytics does not live in the head: the theme's `body-end.html` injects the site overrides `layouts/partials/assets/google-analytics.html` and `layouts/partials/assets/google-adsense.html` at the end of `<body>`. Hugo `services.googleAnalytics.id` is empty and Gatekeeper/Ezoic are off — production visitor analytics are injected by **Cloudflare Zaraz** / Cloudflare Web Insights, not by Hugo templates. See **Analytics (Cloudflare Zaraz)** below.
+Analytics does not live in the head: site `layouts/partials/body-end.html` injects `layouts/partials/assets/google-analytics.html` and `layouts/partials/assets/google-adsense.html` at the end of `<body>`. Hugo `services.googleAnalytics.id` is empty and Gatekeeper/Ezoic are off — production visitor analytics are injected by **Cloudflare Zaraz** / Cloudflare Web Insights, not by Hugo templates. See **Analytics (Cloudflare Zaraz)** below.
 
 ### Analytics (Cloudflare Zaraz)
 

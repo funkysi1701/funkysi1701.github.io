@@ -1,5 +1,5 @@
 +++
-title = "If you had £5000 to spend on technology what would you get?"
+title = "If you had £5,000 for technology"
 date = "2014-10-26T20:00:45Z"
 year = "2014"
 month= "2014-10"

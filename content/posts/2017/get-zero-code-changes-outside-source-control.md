@@ -1,5 +1,5 @@
 +++
-title = "How to get Zero Code Changes outside of Source Control"
+title = "Zero code changes outside source control"
 date = "2017-11-13T20:00:45Z"
 year = "2017"
 month= "2017-11"

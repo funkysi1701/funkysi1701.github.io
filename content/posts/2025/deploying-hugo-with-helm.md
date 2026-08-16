@@ -1,5 +1,5 @@
 +++
-title = "Deploying My Blog to Kubernetes with Helm Charts"
+title = "Deploy this blog with Helm charts"
 date = "2025-05-26T20:00:00Z"
 year = "2025"
 month = "2025-05"

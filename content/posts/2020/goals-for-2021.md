@@ -1,5 +1,5 @@
 +++
-title = "Setting and Achieving Your 2021 Developer Goals"
+title = "Set and achieve 2021 developer goals"
 date = "2020-12-28T00:00:00Z"
 year = "2020"
 month= "2020-12"
