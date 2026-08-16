@@ -1,5 +1,5 @@
 +++
-title = "Become the best Actor, Astronaut or Developer you can be!"
+title = "Be the best developer you can be"
 date = "2023-11-03T01:00:00Z"
 year = "2023"
 month= "2023-11"

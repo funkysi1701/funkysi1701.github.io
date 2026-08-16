@@ -38,7 +38,7 @@ jobs:
         staticwebapp.config.json
       large_file_min_bytes: "15000"
       conventions: |
-        Prefer root layouts/, assets/, static/ overrides over editing themes/hugo-theme-bootstrap/.
+        Prefer root layouts/, assets/, static/ overrides over editing themes/hugo-theme-bootstrap/ (frozen HBS v0.65.1 fork; do not rebase onto upstream v1).
         Do not hand-edit parkrun generated block in content/parkrun.md; use scripts/update_parkrun_results.py.
         public/ is build output - not source of truth.
         Keep CI/docs (AGENTS.md, CONTRIBUTING.md, README, copilot-instructions, .cursor/rules) aligned when workflows change.

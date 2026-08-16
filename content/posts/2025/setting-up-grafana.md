@@ -1,5 +1,5 @@
 +++
-title = "Setting Up Grafana for Monitoring .NET Apps with Docker"
+title = "Set up Grafana for .NET with Docker"
 date = "2025-01-27T20:00:00Z"
 lastmod = "2026-07-31T20:00:00Z"
 year = "2025"

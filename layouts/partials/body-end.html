@@ -1,0 +1,15 @@
+{{/*
+  Site override of the frozen hugo-theme-bootstrap (v0.65.1) body-end.
+  Delta vs upstream: does not include assets/icons/js (icons ship in the main bundle).
+*/}}
+{{- partial "assets/main/js" . -}}
+{{- partial "assets/service-worker/js" . -}}
+{{- partial "assets/viewer/js" . -}}
+{{- partial "assets/math/js" . -}}
+{{- partial "assets/diagram/js" . -}}
+{{- partial "plugins/addthis" . -}}
+{{- partial "assets/google-analytics" . -}}
+{{- partial "assets/baidu-analytics" . -}}
+{{- partial "assets/google-adsense" . -}}
+{{- partial "assets/search/js" . -}}
+{{- partial "hooks/body-end" . -}}

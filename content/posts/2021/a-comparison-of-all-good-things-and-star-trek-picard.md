@@ -1,5 +1,5 @@
 +++
-title = "A Comparison of All Good Things... and Star Trek Picard"
+title = "Comparing All Good Things and Picard"
 date = "2021-12-15T20:00:45Z"
 year = "2021"
 month= "2021-12"

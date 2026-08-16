@@ -1,6 +1,6 @@
 Scan this funkysi1701.com Hugo blog codebase snapshot for **actionable tech debt** that deserves a new GitHub issue.
 
-Context: Hugo site (`content/`, `layouts/`, `assets/`, `static/`), Playwright tests, GitHub Actions → Azure Static Web Apps, parkrun scrape script, meta/SEO checks. Prefer site overrides under root `layouts/`/`assets/`/`static/` — do not propose editing `themes/hugo-theme-bootstrap/` or committing `public/`.
+Context: Hugo site (`content/`, `layouts/`, `assets/`, `static/`), Playwright tests, GitHub Actions → Azure Static Web Apps, parkrun scrape script, meta/SEO checks. Prefer site overrides under root `layouts/`/`assets/`/`static/` — do not propose editing `themes/hugo-theme-bootstrap/` (frozen HBS v0.65.1 fork; do not rebase onto upstream v1) or committing `public/`.
 
 You receive compact JSON with:
 1. Open issues (for deduplication; `fp` = tech-debt fingerprint when present)

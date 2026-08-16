@@ -1,5 +1,5 @@
 +++
-title = "Merge Two Git Projects Into One Preserving History"
+title = "Merge two Git projects, keep history"
 date = "2025-03-10T20:00:00Z"
 lastmod = "2026-07-31T20:00:00Z"
 year = "2025"

@@ -1,5 +1,5 @@
 +++
-title = "What podcasts have I been listening to - Week 2"
+title = "Podcasts I have been listening to"
 date = "2023-01-23T00:00:00Z"
 year = "2023"
 month= "2023-01"

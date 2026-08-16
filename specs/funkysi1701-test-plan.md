@@ -630,6 +630,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   6. Verify URLs are absolute (not relative)
   7. Check lastmod dates are present
   8. Verify priority values if used
+  9. Confirm Hugo alias URLs (for example `/posts/using-ai`) are not listed; canonical dated URLs remain
 
 **Expected Results:**
   - Sitemap is accessible at /sitemap.xml
@@ -639,6 +640,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   - Modification dates are present and accurate
   - Sitemap follows XML sitemap protocol
   - No broken URLs in sitemap
+  - Alias stub paths are omitted from the sitemap
 
 #### 5.8. Head SEO meta consistency
 
@@ -650,7 +652,8 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   1. Open a blog post and check meta description, canonical, Open Graph, Twitter card, and BlogPosting JSON-LD
   2. Open the homepage and check WebSite JSON-LD plus matching social descriptions
   3. Open `/tags/` and check CollectionPage JSON-LD plus matching social descriptions
-  4. Open `/page/2/` and check `noindex,follow` robots, pagination suffix in descriptions, and canonical URL
+  4. Open `/year/` and `/month/` and check the archive descriptions are distinct and 110–160 characters
+  5. Open `/page/2/` and check `noindex,follow` robots, pagination suffix in descriptions, and canonical URL
 
 **Expected Results:**
   - `meta name="description"`, `og:description`, and `twitter:description` match on each page type

@@ -1,5 +1,5 @@
 +++
-title = "2014 in Review: Achievements and Lessons Learned"
+title = "2014 in review: lessons I learned"
 date = "2014-12-31T20:00:45Z"
 year = "2014"
 month= "2014-12"

@@ -1,5 +1,5 @@
 +++
-title = "Integrating OpenTelemetry Logs with Grafana Using Loki and Alloy"
+title = "OpenTelemetry logs via Grafana Loki"
 date = "2025-04-14T20:00:00Z"
 year = "2025"
 month= "2025-04"

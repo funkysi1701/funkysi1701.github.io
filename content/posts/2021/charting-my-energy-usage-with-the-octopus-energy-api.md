@@ -1,5 +1,5 @@
 +++
-title = "Charting my Energy usage with the Octopus Energy API"
+title = "Chart energy use with Octopus API"
 date = "2021-03-07T20:00:45Z"
 year = "2021"
 month= "2021-03"

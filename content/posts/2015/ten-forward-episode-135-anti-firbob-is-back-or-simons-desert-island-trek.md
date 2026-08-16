@@ -1,5 +1,5 @@
 +++
-title = "Ten Forward Episode #135 – Anti Firbob is Back or Simon’s Desert Island Trek"
+title = "Ten Forward 135: desert island Trek"
 date = "2015-02-13T20:00:45Z"
 year = "2015"
 month= "2015-02"
