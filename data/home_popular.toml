@@ -8,17 +8,17 @@ title = "NDC London 2026"
 url = "/posts/2026/ndc-london-2026/"
 
 [[items]]
-title = ".NET 5 to 10 features"
-url = "/posts/2026/dotnet-5-to-10-features/"
+title = "How to Start and Run a Successful Code Club for Kids"
+url = "/posts/2024/codeclub/"
 
 [[items]]
-title = "What is new with C#"
-url = "/posts/2025/whats-new-csharp/"
+title = "Periodic Table of DevOps 2025"
+url = "/posts/2025/periodic-table-devops-2025/"
 
 [[items]]
 title = "Adding Elasticsearch with .Net Aspire"
 url = "/posts/2025/adding-elasticsearch-with-aspire/"
 
 [[items]]
-title = "How to Start and Run a Successful Code Club for Kids"
-url = "/posts/2024/codeclub/"
+title = "What is new with C#"
+url = "/posts/2025/whats-new-csharp/"
