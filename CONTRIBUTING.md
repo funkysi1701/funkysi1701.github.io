@@ -6,7 +6,7 @@ Thank you for contributing to this Hugo blog. Use this checklist before opening 
 
 Copy into your PR description or verify locally before requesting review:
 
-- [ ] **Post front matter:** production HTML `<title>` (`{title} - Funky Si's Blog`) 50–60 characters (front matter usually 32–42) and `description` 110–160 characters for `content/posts/**/*.md`. Run `npm run check:meta` after editing front matter.
+- [ ] **Post front matter:** new posts use `draft = false`. Production HTML `<title>` (`{title} - Funky Si's Blog`) 50–60 characters (front matter usually 32–42) and `description` 110–160 characters for `content/posts/**/*.md`. Run `npm run check:meta` after editing front matter. Review unpublished posts on **https://blog-dev.funkysi1701.com**, not via Hugo `draft = true`.
 - [ ] **Parkrun generated block:** Did not hand-edit `content/parkrun.md` between `<!-- BEGIN PARKRUN_GENERATED -->` and `<!-- END PARKRUN_GENERATED -->`. Use `scripts/update_parkrun_results.py` instead; see [`README.md`](README.md#parkrun-results-contentparkrunmd).
 - [ ] **Home popular data:** `data/home_popular.toml` remains 3–5 valid post links. Its URLs are refreshed weekly from Cloudflare Web Analytics by `scripts/home-popular/run.mjs`; editorial title changes are preserved.
 - [ ] **Analytics injection:** Did not embed `lite.js` (or a second analytics snippet) in Hugo while Cloudflare Zaraz injects Lite — see [`README.md`](README.md#analytics-cloudflare-zaraz). Hugo `services.googleAnalytics.id` stays empty unless deliberately replacing Zaraz.
@@ -20,13 +20,15 @@ Copy into your PR description or verify locally before requesting review:
 
 | Branch | Use |
 |--------|-----|
-| **`feature/*`** | Day-to-day work — open PRs into **`develop`** |
+| **`feature/*`** | Day-to-day work — open PRs into **`develop`**; GHA deploys to blog-dev for review (`https://blog-dev.funkysi1701.com`) |
 | **`develop`** | Integration; GHA deploys to blog-dev / blog-test (SWA). blog-dev builds use `--buildFuture`; blog-test does not |
 | **`main`** | Production; promotion via [`.github/workflows/auto-pr.yml`](.github/workflows/auto-pr.yml) (develop → main) |
 
 There is no **`dev`** branch — use **`develop`**.
 
 ## Publishing and promotion
+
+**Drafts are preview URLs, not Hugo flags.** Always create posts with `draft = false`. Review them on the private site **https://blog-dev.funkysi1701.com** (`feature/*` deploys there; `develop` also deploys blog-test). Going live means merging to **`main`** (`www.funkysi1701.com`). Do not set `draft = true` on new posts.
 
 When publishing or refreshing posts (growth / engagement work):
 
