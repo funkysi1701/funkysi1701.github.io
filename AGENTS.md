@@ -74,7 +74,9 @@ OpenSpec skills (`openspec-*`) live in the same directory for change proposal/ap
 
 ## Blog post guardrails
 
-Posts (`content/posts/**/*.md`) use TOML front matter in `+++` fences. CI enforces:
+Posts (`content/posts/**/*.md`) use TOML front matter in `+++` fences. **Always create posts with `draft = false`.** Do not hide work in progress with Hugo `draft = true`. “Draft” here means the post is on `feature/*` or `develop` and can be reviewed on the private preview **https://blog-dev.funkysi1701.com** before it goes live on production (`www.funkysi1701.com` via `main`). blog-dev builds also pass `--buildFuture`, so a future `date` previews there but not on blog-test or production.
+
+CI enforces:
 
 - **`title`:** production HTML `<title>` (`{front matter title} - Funky Si's Blog`) **50–60** characters (inclusive); front matter is usually **32–42**. Hugo appends the site title in `layouts/partials/head/title.html`.
 - **`description`:** 110–160 characters (inclusive)
@@ -111,9 +113,9 @@ After bulk-editing post front matter, run **`npm run check:meta`** before openin
 |--------|--------|
 | **`main`** | Production — GHA → Azure SWA (`www.funkysi1701.com`) |
 | **`develop`** | Integration — GHA → SWA dev + test (`blog-dev`, `blog-test`) |
-| **`feature/*`** | GHA → SWA dev only |
+| **`feature/*`** | GHA → SWA dev only (`https://blog-dev.funkysi1701.com` — review unpublished posts here) |
 
-There is no `dev` branch; use **`develop`**. `.github/workflows/auto-pr.yml` can open or refresh a develop → main PR.
+There is no `dev` branch; use **`develop`**. `.github/workflows/auto-pr.yml` can open or refresh a develop → main PR. New posts use `draft = false`; “draft” means blog-dev review, not Hugo `draft = true`.
 
 ## Scope
 

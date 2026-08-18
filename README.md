@@ -18,6 +18,8 @@ Run locally with Hugo:
 hugo server -D
 ```
 
+New posts always use `draft = false`. Review unpublished work on **https://blog-dev.funkysi1701.com** (feature branches and `develop`); production is `main`. Local `-D` only includes leftover Hugo drafts if any exist.
+
 #### Docker/Compose Setup
 
 The Hugo version is set in the `.env` file as `HUGO_VERSION`. Update this file to change the version everywhere.
@@ -153,7 +155,7 @@ Inventory for `funkysi1701.com` (verified from live Zaraz `s.js` / page HTML, Ju
 
 - **`main`:** Production ([funkysi1701.com](https://www.funkysi1701.com?utm_source=gh)). GitHub Actions builds Hugo and deploys **Azure Static Web Apps** (`.github/workflows/azure-static-web-apps-victorious-pebble-0b8f90e03.yml`).
 - **`develop`:** Integration branch. GitHub Actions deploys to **SWA dev and test** (`swa-deploy-nonprod.yml` orchestrates parallel blog-dev / blog-test via `reusable-hugo-swa-deploy.yml`, then Playwright and SEO against blog-dev; superseded runs for the same ref are cancelled). blog-dev Hugo builds include `--buildFuture` (future-dated posts preview there); blog-test and production do not. **`.github/workflows/auto-pr.yml`** can open or refresh a **develop → main** pull request when `develop` is pushed.
-- **`feature/*`:** Feature branches; GitHub Actions deploys to **SWA dev** only (`swa-deploy-nonprod.yml` → blog-dev).
+- **`feature/*`:** Feature branches; GitHub Actions deploys to **SWA dev** only (`swa-deploy-nonprod.yml` → blog-dev). This is the review URL for new posts (`draft = false`): **https://blog-dev.funkysi1701.com**.
 
 There is no separate branch named `dev`; use **`develop`** for integration work.
 

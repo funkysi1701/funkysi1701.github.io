@@ -26,7 +26,7 @@ aliases = [
 
 I already knew how to put things *on* a Kubernetes cluster. [Helm](/posts/2025/deploying-hugo-with-helm/) packages the YAML. [`kubectl apply`](/posts/2025/learning-kubernetes/) makes it exist. [cert-manager](/posts/2025/kubernetes-and-letsencrypt/) mints the certificates. What I did not have was a boring answer to “what happens next week, when I have forgotten which laptop I ran that from?”
 
-GitOps is that answer, at least for **platform** on my homelab. [Flux CD](https://fluxcd.io/) on `simon-cluster` (k3s) watches a git repo and keeps the cluster in line with `main`. The repo is public: [funkysi1701/cluster-config](https://github.com/funkysi1701/cluster-config).
+GitOps is that answer, at least for **platform** on my homelab. **`simon-cluster`** is the name I gave the [k3s](https://k3s.io/) cluster I run at home — a small Kubernetes estate for shared ingress, certificates, monitoring, and the GitHub Actions runners this blog builds on. [Flux CD](https://fluxcd.io/) on that cluster watches a **private** git repo (call it `example-config` here) and keeps it in line with `main`.
 
 The useful part is not “I put YAML in git.” It is the **split**. Flux owns MetalLB, Traefik, cert-manager, GitHub runners, the in-cluster registry, Cloudflare Tunnel, and monitoring. Application Helm releases in `develop` / `main` / `test` still come from **their own repos and pipelines**. Azure DevOps is still in that second column. Flux is not pretending to be the whole estate.
 
@@ -34,7 +34,7 @@ The useful part is not “I put YAML in git.” It is the **split**. Flux owns M
 
 A lot of “GitOps” talk is really CI with extra steps: a pipeline authenticates to the cluster and runs `helm upgrade`. That is a **push**. It works. I still do it for apps.
 
-Flux is a **pull**. The cluster has a `GitRepository` pointed at `cluster-config` on `main`. Child `Kustomization` objects apply paths under that repo on a schedule. If someone (or some leftover pipeline) changes a Flux-managed object by hand, the next reconcile puts it back. Git is the desired state; the cluster is the cache.
+Flux is a **pull**. The cluster has a `GitRepository` pointed at `example-config` on `main`. Child `Kustomization` objects apply paths under that repo on a schedule. If someone (or some leftover pipeline) changes a Flux-managed object by hand, the next reconcile puts it back. Git is the desired state; the cluster is the cache.
 
 ```yaml
 apiVersion: source.toolkit.fluxcd.io/v1
@@ -46,7 +46,7 @@ spec:
   interval: 1m
   ref:
     branch: main
-  url: https://github.com/funkysi1701/cluster-config.git
+  url: https://github.com/example/example-config.git
 ```
 
 Bootstrap is once: install the Flux controllers (`gotk-components.yaml`), give Flux a git credential and an age key for SOPS, apply `gotk-sync.yaml`. After that the day-to-day loop is git, not kubeconfig.
@@ -126,15 +126,15 @@ I already wrote about [Let’s Encrypt on this cluster](/posts/2025/kubernetes-a
 
 Grafana followed the same path. I first ran it in [Docker Compose for .NET metrics](/posts/2025/setting-up-grafana/). The homelab copy now sits in the `monitoring` namespace, owned by Flux, with dashboards as ConfigMaps in the same repo. Compose taught me the product; GitOps is how it stays installed when I am not watching.
 
-This blog is in the picture too, just not as a website on the cluster. Production is still Azure Static Web Apps. What Flux *does* provision for this repo is a pool of [Actions Runner Controller](https://github.com/actions/actions-runner-controller) runners labelled `k8s`, so GitHub Actions can build on the homelab instead of burning hosted minutes. The `RunnerDeployment` is YAML in `cluster-config`. The workflows stay in *this* git repo. That is the split in miniature.
+This blog is in the picture too, just not as a website on the cluster. Production is still Azure Static Web Apps. What Flux *does* provision for this repo is a pool of [Actions Runner Controller](https://github.com/actions/actions-runner-controller) runners labelled `k8s`, so GitHub Actions can build on the homelab instead of burning hosted minutes. The `RunnerDeployment` is YAML in `example-config`. The workflows stay in *this* git repo. That is the split in miniature.
 
 ## Secrets in git, not in chat
 
 Platform secrets are `*.enc.yaml` files encrypted with [SOPS](https://github.com/getsops/sops) and [age](https://age-encryption.org/). Flux has a `sops-age` Secret in `flux-system` (created once, not committed) and Kustomizations that need secrets set `decryption.provider: sops`.
 
-What *is* in git: Cloudflare DNS-01, the ARC GitHub token, Grafana admin, registry pull secrets, tunnel token. What is **not**: the age private key. If you clone `cluster-config` you get ciphertext and the public key in `.sops.yaml`. That is enough to *add* a secret if you have the private key locally; it is not enough to read the live ones.
+What *is* in git: Cloudflare DNS-01, the ARC GitHub token, Grafana admin, registry pull secrets, tunnel token. What is **not**: the age private key. If you clone `example-config` you get ciphertext and the public key in `.sops.yaml`. That is enough to *add* a secret if you have the private key locally; it is not enough to read the live ones.
 
-This is not Azure Key Vault. A homelab cluster does not need a cloud HSM to stop me committing a PAT. It needs encryption at rest in git and a bootstrap secret that never hits GitHub. Details live in the repo’s [secrets doc](https://github.com/funkysi1701/cluster-config/blob/main/docs/secrets.md).
+This is not Azure Key Vault. A homelab cluster does not need a cloud HSM to stop me committing a PAT. It needs encryption at rest in git and a bootstrap secret that never hits GitHub. The repo documents how SOPS and age are wired up.
 
 ## What Flux does not own
 

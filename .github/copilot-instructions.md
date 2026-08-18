@@ -13,7 +13,7 @@ This is a personal blog/portfolio website powered by **Hugo** (static site gener
 ### Local Development (Hugo)
 
 ```bash
-# Start Hugo dev server with draft posts visible
+# Start Hugo dev server (includes leftover Hugo drafts if any exist)
 hugo server -D
 # Runs on http://localhost:1313
 
@@ -65,7 +65,7 @@ content/posts/YYYY/post-title.md
 - `tags` – Array of tags
 - `categories` – Array of categories (e.g., ["tech"])
 - `description` – SEO description should be between 110 and 160 characters
-- `draft` – Boolean (set to `false` to publish)
+- `draft` – Always `false` on new posts. Unpublished review is **https://blog-dev.funkysi1701.com** (`feature/*` / `develop`), not Hugo `draft = true`. Production is `main`.
 
 **Optional fields:**
 - `cover` – Path to cover image (e.g., "/images/cover.jpg")
@@ -90,7 +90,7 @@ images = ["/images/my-cover.jpg"]
 tags = ["Tag1", "Tag2"]
 categories = ["tech"]
 description = "A short description for SEO"
-draft = true
+draft = false
 aliases = [
     "/my-post-title",
     "/posts/my-post-title",
