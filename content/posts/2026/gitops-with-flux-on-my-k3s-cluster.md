@@ -1,12 +1,12 @@
 +++
 title = "GitOps with Flux on my k3s cluster"
-date = "2026-08-17T20:00:00Z"
+date = "2026-08-18T08:00:00Z"
 year = "2026"
 month = "2026-08"
 author = "funkysi1701"
 authorTwitter = "funkysi1701"
-cover = "/images/kubernetes.png"
-images = ["/images/kubernetes.png"]
+cover = "/images/2026/gitops-with-flux-k3s.png"
+images = ["/images/2026/gitops-with-flux-k3s.png"]
 tags = ["Flux", "GitOps", "Kubernetes", "Helm", "k3s", "DevOps", "SOPS", "cert-manager"]
 categories = ["tech"]
 keywords = ["Flux CD", "GitOps", "k3s", "HelmRelease", "SOPS", "homelab Kubernetes"]
@@ -15,12 +15,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 featured = false
-draft = true
+draft = false
 aliases = [
     "/gitops-with-flux-on-my-k3s-cluster",
     "/posts/gitops-with-flux-on-my-k3s-cluster",
-    "/posts/2026/08/17/gitops-with-flux-on-my-k3s-cluster",
-    "/2026/08/17/gitops-with-flux-on-my-k3s-cluster"
+    "/posts/2026/08/18/gitops-with-flux-on-my-k3s-cluster",
+    "/2026/08/18/gitops-with-flux-on-my-k3s-cluster"
 ]
 +++
 
