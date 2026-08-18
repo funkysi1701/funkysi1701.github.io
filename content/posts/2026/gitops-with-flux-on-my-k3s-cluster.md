@@ -138,7 +138,7 @@ This is not Azure Key Vault. A homelab cluster does not need a cloud HSM to stop
 
 ## What Flux does not own
 
-I keep an [ownership map](https://github.com/funkysi1701/cluster-config/blob/main/docs/k8s-object-ownership.md) because GitOps fails the moment two systems apply the same object. The short version:
+I keep an ownership map in `example-config` because GitOps fails the moment two systems apply the same object. The short version:
 
 | Owner | Examples |
 | --- | --- |
@@ -150,7 +150,7 @@ Several apps still deploy from Azure DevOps. That is fine. It is **push CI**, an
 
 k3s itself is not GitOps in this repo either. Node join, versions, and “do not run the bundled Traefik” are documented and applied on the hosts. Flux cannot bootstrap the thing that runs Flux.
 
-In-cluster [Renovate](https://docs.renovatebot.com/) is a small extra: it opens image-bump PRs against `cluster-config`. Upgrades become git history too, not SSH-and-hope.
+In-cluster [Renovate](https://docs.renovatebot.com/) is a small extra: it opens image-bump PRs against `example-config`. Upgrades become git history too, not SSH-and-hope.
 
 ## Lessons so far
 
