@@ -157,3 +157,7 @@ In-cluster [Renovate](https://docs.renovatebot.com/) is a small extra: it opens 
 I would not start a new cluster by SSHing in and applying twenty manifests. Ingress, certificates, runners, and monitoring are shared, so they belong in git from the start. I would still start a new *app* with a pipeline and a Helm chart in *that* repo — Flux `HelmRelease` is how those charts get onto the cluster, not a replacement for packaging.
 
 I have not moved every Helm chart into Flux, and I am not pretending that is a moral failing. GitOps earned its place here by making the platform dull. Dull is the goal.
+
+If you run Kubernetes at home — or you are weighing GitOps against push CI — how do you split **platform** from **apps**? Full pull, pipelines only, or a hybrid like mine? I would be interested to hear what works for you in the comments.
+
+If this is your first step on the same path, these posts are where I started: [learning Kubernetes](/posts/2025/learning-kubernetes/), [deploying with Helm](/posts/2025/deploying-hugo-with-helm/), and [Let's Encrypt on the cluster](/posts/2025/kubernetes-and-letsencrypt/). For a monthly email when I publish something new, [subscribe to the newsletter](/newsletter).
