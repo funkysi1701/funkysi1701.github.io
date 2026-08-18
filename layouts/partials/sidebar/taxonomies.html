@@ -1,3 +1,7 @@
+{{/*
+  Sidebar tags: compact chips of the most-used tags (not a JS font-size cloud).
+  Full archive remains at /tags/.
+*/}}
 <section class="tags-taxonomies row card component">
   <div class="card-header">
     <h2 class="card-title">
@@ -5,26 +9,21 @@
     </h2>
   </div>
   <div class="card-body">
-    <div class="py-2">
-      <div class="container tagcloud">
-        {{- if ne (len $.Site.Taxonomies.tags) 0 -}}
-          {{- range $name, $taxonomy := $.Site.Taxonomies.tags -}}
-            {{- $tagCount := len $taxonomy.Pages -}}
-            {{- if gt $tagCount 3 -}}
-              <a href="{{ $taxonomy.Page.RelPermalink }}" rel="{{ $tagCount }}" class="tagcloud-item">
-                {{- $taxonomy.Page.Title -}}
-              </a>
-            {{- end -}}
-          {{- end -}}
+    {{- $ordered := $.Site.Taxonomies.tags.ByCount -}}
+    {{- if gt (len $ordered) 0 -}}
+    <div class="tag-chips">
+      {{- range first 20 $ordered -}}
+        {{- $term := .Page -}}
+        {{- if $term -}}
+        <a href="{{ $term.RelPermalink }}" class="badge post-taxonomy" title="{{ .Count }} {{ cond (eq .Count 1) "post" "posts" }}">{{ $term.Title | default .Term }}</a>
         {{- end -}}
-      </div>
+      {{- end -}}
     </div>
+    {{- if gt (len $ordered) 20 -}}
+    <p class="tag-chips__all">
+      <a href="{{ relLangURL "tags" }}">View all tags</a>
+    </p>
+    {{- end -}}
+    {{- end -}}
   </div>
 </section>
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="/js/jquery.tagcloud.js"></script>
-<script>
-  $(".tagcloud a").tagcloud({
-    size: {start: 15, end: 60, unit:"px"}
-  });
-</script>

@@ -58,5 +58,18 @@ test.describe('Homepage and Navigation', () => {
       expect(postCount).toBeGreaterThanOrEqual(5);
     });
 
+    await test.step('Confirm sidebar Tags chips (top 20) and View all tags', async () => {
+      const tagsCard = page.locator('.tags-taxonomies');
+      await expect(tagsCard).toBeVisible();
+      const chips = tagsCard.locator('.tag-chips a.post-taxonomy[href*="/tags/"]');
+      const chipCount = await chips.count();
+      expect(chipCount).toBeGreaterThan(0);
+      expect(chipCount).toBeLessThanOrEqual(20);
+      await expect(chips.first()).toBeVisible();
+      const viewAll = tagsCard.locator('.tag-chips__all a');
+      await expect(viewAll).toBeVisible();
+      await expect(viewAll).toHaveAttribute('href', /\/tags\/?$/);
+    });
+
   });
 });

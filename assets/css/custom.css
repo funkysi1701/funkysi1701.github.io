@@ -525,3 +525,44 @@
   color: var(--hbs-primary, #1363be);
 }
 
+/* Sidebar tags: equal-size chips instead of a JS font-size cloud. */
+.tag-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.45rem;
+  align-items: center;
+}
+
+.tag-chips .post-taxonomy {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.tag-chips__all {
+  margin: 0.75rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.tag-chips__all a {
+  color: var(--hbs-primary, #1363be);
+  text-underline-offset: 0.15em;
+}
+
+.tag-chips__all a:hover,
+.tag-chips__all a:focus-visible {
+  color: var(--hbs-primary-dark, #003c8f);
+}
+
+[data-mode="dark"] .tag-chips__all a {
+  color: var(--hbs-primary-light, #5e92f3);
+}
+
+[data-mode="dark"] .tag-chips__all a:hover,
+[data-mode="dark"] .tag-chips__all a:focus-visible {
+  color: #9ec1fa;
+}
+
