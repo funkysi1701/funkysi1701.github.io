@@ -152,7 +152,7 @@ Several apps still deploy from Azure DevOps. That is fine. It is **push CI**, an
 
 k3s itself is not GitOps in this repo either. Node join, versions, and “do not run the bundled Traefik” are documented and applied on the hosts. Flux cannot bootstrap the thing that runs Flux.
 
-In-cluster [Renovate](https://docs.renovatebot.com/) is a small extra: it opens image-bump PRs against that private platform repo. Upgrades become git history too, not SSH-and-hope. One note on Renovate, the Renovate package itself is very noisy, with multiple update PRs raised per day. I have chosen to automerge these, but you may want to consider skiping this package or updating on a schedule.
+In-cluster [Renovate](https://docs.renovatebot.com/) is a small extra: it opens image-bump PRs against that private platform repo. Upgrades become git history too, not SSH-and-hope. One note on Renovate, the Renovate package itself is very noisy, with multiple update PRs raised per day. I have chosen to automerge these, but you may want to consider skipping this package or updating on a schedule.
 
 I would not start a new cluster by SSHing in and applying twenty manifests. Ingress, certificates, runners, and monitoring are shared, so they belong in git from the start. I would still start a new *app* with a pipeline and a Helm chart in *that* repo — Flux `HelmRelease` is how those charts get onto the cluster, not a replacement for packaging.
 
