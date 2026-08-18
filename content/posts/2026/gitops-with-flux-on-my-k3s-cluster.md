@@ -34,7 +34,7 @@ The useful part is not “I put YAML in git.” It is the **split**. Flux owns M
 
 A lot of “GitOps” talk is really CI with extra steps: a pipeline authenticates to the cluster and runs `helm upgrade`. That is a **push**. It works. I still do it for apps.
 
-Flux is a **pull**. The cluster has a `GitRepository` pointed at `example-config` on `main`. Child `Kustomization` objects apply paths under that repo on a schedule. If someone (or some leftover pipeline) changes a Flux-managed object by hand, the next reconcile puts it back. Git is the desired state; the cluster is the cache.
+Flux is a **pull**. The cluster has a `GitRepository` pointed at `example-config` on `main`. Child `Kustomization` objects apply paths under that repo on a schedule. If someone (or some leftover pipeline) changes a Flux-managed object by hand, the next reconcile puts it back.
 
 ```yaml
 apiVersion: source.toolkit.fluxcd.io/v1
@@ -49,7 +49,7 @@ spec:
   url: https://github.com/example/example-config.git
 ```
 
-Bootstrap is once: install the Flux controllers (`gotk-components.yaml`), give Flux a git credential and an age key for SOPS, apply `gotk-sync.yaml`. After that the day-to-day loop is git, not kubeconfig.
+Bootstrap is once: install the Flux controllers (`gotk-components.yaml`), give Flux a git credential and an age key for SOPS, apply `gotk-sync.yaml`. After that I mostly work in git rather than reaching for kubeconfig.
 
 ```bash
 git add -A && git commit -m "…" && git push
@@ -154,14 +154,14 @@ In-cluster [Renovate](https://docs.renovatebot.com/) is a small extra: it opens 
 
 ## Lessons so far
 
-**Name the owner.** GitOps is not a personality. It is a rule about who is allowed to apply. The ownership doc is more valuable than any controller version pin.
+**Name the owner.** Decide which system is allowed to apply a given object. The ownership doc has been more useful than any controller version pin.
 
 **Platform first.** Ingress, certificates, runners, and observability are shared. Apps can keep their own pipelines until the pull path is boring. I have not moved every Helm chart into Flux, and I am not pretending that is a moral failing.
 
 **Helm is still the packaging.** Flux `HelmRelease` is how community charts get into the cluster. If you skipped Helm and jumped straight to “GitOps,” you will reinvent a chart badly.
 
-**Prune and health checks are not optional.** `dependsOn` plus `wait: true` plus a HelmRelease health check is why cert-manager does not race Traefik. Without prune, deleted YAML is a ghost on the cluster.
+**Prune and health checks are not optional.** `dependsOn` plus `wait: true` plus a HelmRelease health check is why cert-manager does not race Traefik. Turn prune off and a deleted manifest can leave the live object behind.
 
-**Leave a way to look.** `flux get all -A` is the homelab equivalent of a pipeline log. If a slice is not `Ready`, git is lying to you until you read the condition.
+**Leave a way to look.** `flux get all -A` is the homelab equivalent of a pipeline log. If a slice is not `Ready`, read the condition before assuming git and the cluster agree.
 
 I would not start a new cluster by SSHing in and applying twenty manifests. I would still start a new *app* with a pipeline and a Helm chart in *that* repo. GitOps earned its place here by making the platform dull. Dull is the goal.
