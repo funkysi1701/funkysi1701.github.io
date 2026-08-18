@@ -102,6 +102,14 @@ aliases = [
 Post content in Markdown...
 ```
 
+### Blog draft review checklist
+
+When drafting or editing blog posts, always assess these three questions:
+
+- **Was this written by the author or AI?** Keep the voice aligned with Simon's existing posts and remove generic AI phrasing.
+- **What would fellow developers take away from this?** Make sure there is a concrete practical takeaway, not just explanation.
+- **Is there a clear call to action (CTA)?** End with a specific next step (for example comments, related post, newsletter, or contact).
+
 ### Page Structure
 
 Other pages (about, projects, etc.) are in `content/` root using Markdown format:
