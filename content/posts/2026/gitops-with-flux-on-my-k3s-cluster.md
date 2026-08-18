@@ -26,7 +26,7 @@ aliases = [
 
 I already knew how to put things *on* a Kubernetes cluster. [Helm](/posts/2025/deploying-hugo-with-helm/) packages the YAML. [`kubectl apply`](/posts/2025/learning-kubernetes/) makes it exist. [cert-manager](/posts/2025/kubernetes-and-letsencrypt/) mints the certificates. What I did not have was a boring answer to “what happens next week, when I have forgotten which laptop I ran that from?”
 
-GitOps is that answer, at least for **platform** on my homelab. **`simon-cluster`** is the name I gave the [k3s](https://k3s.io/) cluster I run at home — a small Kubernetes estate for shared ingress, certificates, monitoring, and the GitHub Actions runners this blog builds on. [Flux CD](https://fluxcd.io/) on that cluster watches a **private** git repo (call it `example-config` here) and keeps it in line with `main`.
+GitOps is that answer, at least for **platform** on my homelab. In practice, GitOps means keeping the desired cluster state in git and having an in-cluster controller continuously reconcile the live cluster back to that state. **`simon-cluster`** is the name I gave the [k3s](https://k3s.io/) cluster I run at home — a small Kubernetes estate for shared ingress, certificates, monitoring, and the GitHub Actions runners this blog builds on. [Flux CD](https://fluxcd.io/) on that cluster watches a private platform repo and keeps it in line with `main`.
 
 The useful part is not “I put YAML in git.” It is the **split**. Flux owns MetalLB, Traefik, cert-manager, GitHub runners, the in-cluster registry, Cloudflare Tunnel, and monitoring. Application Helm releases in `develop` / `main` / `test` still come from **their own repos and pipelines**. Azure DevOps is still in that second column. Flux is not pretending to be the whole estate.
 
@@ -34,7 +34,7 @@ The useful part is not “I put YAML in git.” It is the **split**. Flux owns M
 
 A lot of “GitOps” talk is really CI with extra steps: a pipeline authenticates to the cluster and runs `helm upgrade`. That is a **push**. It works. I still do it for apps.
 
-Flux is a **pull**. The cluster has a `GitRepository` pointed at `example-config` on `main`. Child `Kustomization` objects apply paths under that repo on a schedule. If someone (or some leftover pipeline) changes a Flux-managed object by hand, the next reconcile puts it back.
+Flux is a **pull**. The cluster has a `GitRepository` pointed at a private platform repo on `main`. Child `Kustomization` objects apply paths under that repo on a schedule. If someone (or some leftover pipeline) changes a Flux-managed object by hand, the next reconcile puts it back.
 
 ```yaml
 apiVersion: source.toolkit.fluxcd.io/v1
@@ -89,7 +89,7 @@ spec:
       name: sops-age
 ```
 
-`prune: true` is the bit people skip and then regret. If you delete the manifest and Flux still has prune off, the live object sits there forever looking “fine.”
+`prune: true` is the bit people skip and then regret. If you delete the manifest and Flux still has prune off, the live object sits there forever looking “fine.” `wait: true` plus `dependsOn` is the other half of that: cert-manager does not race Traefik because the Kustomization will not move on until the slice is healthy.
 
 The Helm install itself is a `HelmRelease`, not a pipeline task:
 
@@ -122,23 +122,25 @@ A typical platform change is dull, which is the point.
 3. Wait for the Kustomization interval, or `flux reconcile` if I am impatient.
 4. `flux get hr,ks -A` until the slice is `Ready`.
 
+If it is not Ready, read the condition before assuming git and the cluster agree. That command is the homelab equivalent of a pipeline log.
+
 I already wrote about [Let’s Encrypt on this cluster](/posts/2025/kubernetes-and-letsencrypt/) when cert-manager was a `kubectl apply` of upstream YAML. That install now lives in git as the HelmRelease above plus `ClusterIssuer` manifests. The DNS-01 token is not in those files in plaintext; it is a SOPS-encrypted Secret Flux decrypts on the cluster.
 
 Grafana followed the same path. I first ran it in [Docker Compose for .NET metrics](/posts/2025/setting-up-grafana/). The homelab copy now sits in the `monitoring` namespace, owned by Flux, with dashboards as ConfigMaps in the same repo. Compose taught me the product; GitOps is how it stays installed when I am not watching.
 
-This blog is in the picture too, just not as a website on the cluster. Production is still Azure Static Web Apps. What Flux *does* provision for this repo is a pool of [Actions Runner Controller](https://github.com/actions/actions-runner-controller) runners labelled `k8s`, so GitHub Actions can build on the homelab instead of burning hosted minutes. The `RunnerDeployment` is YAML in `example-config`. The workflows stay in *this* git repo. That is the split in miniature.
+This blog is in the picture too, just not as a website on the cluster. Production is still Azure Static Web Apps. What Flux *does* provision for this repo is a pool of [Actions Runner Controller](https://github.com/actions/actions-runner-controller) runners labelled `k8s`, so GitHub Actions can build on the homelab instead of burning hosted minutes. The `RunnerDeployment` is YAML in that private platform repo. The workflows stay in *this* git repo. That is the split in miniature.
 
 ## Secrets in git, not in chat
 
 Platform secrets are `*.enc.yaml` files encrypted with [SOPS](https://github.com/getsops/sops) and [age](https://age-encryption.org/). Flux has a `sops-age` Secret in `flux-system` (created once, not committed) and Kustomizations that need secrets set `decryption.provider: sops`.
 
-What *is* in git: Cloudflare DNS-01, the ARC GitHub token, Grafana admin, registry pull secrets, tunnel token. What is **not**: the age private key. If you clone `example-config` you get ciphertext and the public key in `.sops.yaml`. That is enough to *add* a secret if you have the private key locally; it is not enough to read the live ones.
+What *is* in git: Cloudflare DNS-01, the ARC GitHub token, Grafana admin, registry pull secrets, tunnel token. What is **not**: the age private key. If you clone that private platform repo you get ciphertext and the public key in `.sops.yaml`. That is enough to *add* a secret if you have the private key locally; it is not enough to read the live ones.
 
 This is not Azure Key Vault. A homelab cluster does not need a cloud HSM to stop me committing a PAT. It needs encryption at rest in git and a bootstrap secret that never hits GitHub. The repo documents how SOPS and age are wired up.
 
 ## What Flux does not own
 
-I keep an ownership map in `example-config` because GitOps fails the moment two systems apply the same object. The short version:
+I keep an ownership map in that private platform repo because GitOps fails the moment two systems apply the same object. Deciding who is allowed to apply has been more useful than any controller version pin. The short version:
 
 | Owner | Examples |
 | --- | --- |
@@ -150,18 +152,8 @@ Several apps still deploy from Azure DevOps. That is fine. It is **push CI**, an
 
 k3s itself is not GitOps in this repo either. Node join, versions, and “do not run the bundled Traefik” are documented and applied on the hosts. Flux cannot bootstrap the thing that runs Flux.
 
-In-cluster [Renovate](https://docs.renovatebot.com/) is a small extra: it opens image-bump PRs against `example-config`. Upgrades become git history too, not SSH-and-hope.
+In-cluster [Renovate](https://docs.renovatebot.com/) is a small extra: it opens image-bump PRs against that private platform repo. Upgrades become git history too, not SSH-and-hope.
 
-## Lessons so far
+I would not start a new cluster by SSHing in and applying twenty manifests. Ingress, certificates, runners, and monitoring are shared, so they belong in git from the start. I would still start a new *app* with a pipeline and a Helm chart in *that* repo — Flux `HelmRelease` is how those charts get onto the cluster, not a replacement for packaging.
 
-**Name the owner.** Decide which system is allowed to apply a given object. The ownership doc has been more useful than any controller version pin.
-
-**Platform first.** Ingress, certificates, runners, and observability are shared. Apps can keep their own pipelines until the pull path is boring. I have not moved every Helm chart into Flux, and I am not pretending that is a moral failing.
-
-**Helm is still the packaging.** Flux `HelmRelease` is how community charts get into the cluster. If you skipped Helm and jumped straight to “GitOps,” you will reinvent a chart badly.
-
-**Prune and health checks are not optional.** `dependsOn` plus `wait: true` plus a HelmRelease health check is why cert-manager does not race Traefik. Turn prune off and a deleted manifest can leave the live object behind.
-
-**Leave a way to look.** `flux get all -A` is the homelab equivalent of a pipeline log. If a slice is not `Ready`, read the condition before assuming git and the cluster agree.
-
-I would not start a new cluster by SSHing in and applying twenty manifests. I would still start a new *app* with a pipeline and a Helm chart in *that* repo. GitOps earned its place here by making the platform dull. Dull is the goal.
+I have not moved every Helm chart into Flux, and I am not pretending that is a moral failing. GitOps earned its place here by making the platform dull. Dull is the goal.
