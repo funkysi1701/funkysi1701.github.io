@@ -11,8 +11,13 @@ Post structure and front matter examples: [`.github/copilot-instructions.md`](..
 ## Front matter and posts
 
 - Posts live under `content/posts/YYYY/` with TOML front matter in `+++` fences.
+- **Always create posts with `draft = false`.** Do not use Hugo `draft = true` to hide work in progress. In this repo, “draft” means the post is on a `feature/*` (or `develop`) branch and can be reviewed on the private preview **https://blog-dev.funkysi1701.com** before it goes live on production (`www.funkysi1701.com` via `main`). `archetypes/posts.md` already sets `draft = false`.
 - **`title`:** budget is the **production HTML `<title>`** (`{front matter title} - Funky Si's Blog` from `layouts/partials/head/title.html`) at **50–60 characters** inclusive. The suffix is 18 characters, so front matter is usually **32–42**. **`description`:** 110–160 characters (inclusive). CI enforces via GitHub Actions (`.github/workflows/meta-title-length.yml`, `meta-description-length.yml`). After editing post front matter, run **`npm run check:meta`** locally (requires Python 3.11+ on `PATH`).
 - Set front matter `title` on Markdown pages (posts, static pages, section/taxonomy `_index.md`) where Hugo would otherwise leave the page title empty.
+- For post drafting/polish, always run this quality check:
+  1. **Authorship:** does it sound like Simon rather than generic AI?
+  2. **Developer takeaway:** is there a practical takeaway for fellow developers?
+  3. **CTA:** is there a clear call to action at the end?
 
 ## SEO and headings
 
