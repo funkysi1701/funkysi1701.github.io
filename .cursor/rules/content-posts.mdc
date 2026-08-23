@@ -25,6 +25,12 @@ Post structure and front matter examples: [`.github/copilot-instructions.md`](..
 - One top-level Markdown heading per page where that matches site structure; lower-level headings for sections.
 - Open Graph / Twitter / JSON-LD: follow patterns in `layouts/partials/head.html` (orchestrator) and focused partials under `layouts/partials/head/`. New share imagery or external hosts must stay coherent with CSP, headers, and `staticwebapp.config.json`.
 
+## Tags
+
+- Hugo treats differently spelled tags as separate terms. Use canonical spellings from [`CONTRIBUTING.md`](../../CONTRIBUTING.md#post-tags) (`Star Trek`, `GitHub`, `PowerShell`, `Podcast`, `JavaScript`, `Open Source`, `Cloud`, etc.).
+- Prefer specific tags already in use (`DotNet`, `Azure`, `Kubernetes`, `DevOps`, `AI`). Avoid vague catch-alls on new posts (`Tech`, `Technology`, `Programming`, `Development`) unless nothing more specific fits.
+- Re-merge accidental splits with `python scripts/merge_duplicate_tags.py`.
+
 ## Language and accessibility
 
 - British English (`locale = 'en-gb'` in config); consistent spelling unless a quoted source requires otherwise.
