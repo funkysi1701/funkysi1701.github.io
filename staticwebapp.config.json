@@ -40,6 +40,36 @@
       "route": "/2024/12/09/common-ai-copilot-terms",
       "redirect": "/posts/2024/common-ai-copilot-terms/",
       "statusCode": 301
+    },
+    {
+      "route": "/tags/startrek",
+      "redirect": "/tags/star-trek/",
+      "statusCode": 301
+    },
+    {
+      "route": "/tags/opensource",
+      "redirect": "/tags/open-source/",
+      "statusCode": 301
+    },
+    {
+      "route": "/tags/usergroups",
+      "redirect": "/tags/user-groups/",
+      "statusCode": 301
+    },
+    {
+      "route": "/tags/clouds",
+      "redirect": "/tags/cloud/",
+      "statusCode": 301
+    },
+    {
+      "route": "/tags/baddesign",
+      "redirect": "/tags/bad-design/",
+      "statusCode": 301
+    },
+    {
+      "route": "/tags/patrickstewart",
+      "redirect": "/tags/patrick-stewart/",
+      "statusCode": 301
     }
   ],
   "responseOverrides": {

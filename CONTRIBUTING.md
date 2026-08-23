@@ -26,6 +26,31 @@ Copy into your PR description or verify locally before requesting review:
 
 There is no **`dev`** branch — use **`develop`**.
 
+## Post tags
+
+Hugo treats differently spelled tags as separate terms (counts split on `/tags/` and in the homepage chip list). Prefer these **canonical** spellings when retagging or writing new posts:
+
+| Canonical | Do not use |
+|-----------|------------|
+| `Star Trek` | `StarTrek` |
+| `GitHub` | `Github`, `github` |
+| `PowerShell` | `Powershell` |
+| `Podcast` | `podcast` |
+| `C-Sharp` | `c-sharp` |
+| `Microsoft` | `microsoft` |
+| `Source Control` | `source control` |
+| `JavaScript` | `Javascript` |
+| `jQuery` | `JQuery` |
+| `Career` / `Security` / `Website` / `Conference` / `AI` / `Technology` | lowercase variants |
+| `Open Source` | `OpenSource`, `open source` |
+| `User Groups` | `UserGroups` |
+| `NuGet` | `Nuget` |
+| `Cloud` | `cloud`, `Clouds` |
+
+Leave `AzureDevOps` and `SourceCode` as distinct tags when that is intentional. Prefer specific tags already in use (`DotNet`, `Azure`, `Kubernetes`, `DevOps`, `AI`, etc.). Avoid adding vague catch-alls on **new** posts (`Tech`, `Technology`, `Programming`, `Development`) unless nothing more specific fits — do not bulk-delete them from older posts.
+
+To re-apply the merge map after accidental splits: `python scripts/merge_duplicate_tags.py`.
+
 ## Publishing and promotion
 
 **Drafts are preview URLs, not Hugo flags.** Always create posts with `draft = false`. Review them on the private site **https://blog-dev.funkysi1701.com** (`feature/*` deploys there; `develop` also deploys blog-test). Going live means merging to **`main`** (`www.funkysi1701.com`). Do not set `draft = true` on new posts.
