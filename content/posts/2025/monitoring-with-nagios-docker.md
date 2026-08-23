@@ -1,5 +1,5 @@
 +++
-title = "Setting Up Nagios Monitoring with Docker"
+title = "Nagios monitoring setup with Docker"
 date = "2025-01-06T20:00:00Z"
 year = "2025"
 month= "2025-01"

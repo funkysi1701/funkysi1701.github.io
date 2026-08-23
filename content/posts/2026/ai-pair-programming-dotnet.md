@@ -1,5 +1,5 @@
 +++
-title = "Pairing with AI in VS Code and Cursor"
+title = "AI pairing in VS Code and Cursor"
 date = "2026-08-07T12:00:00Z"
 year = "2026"
 month = "2026-08"
@@ -39,11 +39,11 @@ I still use the same three buckets. The only change is which bucket I reach for 
 | Framing a design question or learning path | ChatGPT (browser) |
 | Multi-file change across a solution | Cursor |
 | Finish this method / test / YAML stanza | GitHub Copilot in the editor |
-| "Build AI *into* the product" | Separate concern — see [Using AI with .NET and Semantic Kernel](/posts/using-ai/) |
+| "Build AI *into* the product" | Separate concern — see [Using AI with .NET and Semantic Kernel](/posts/2025/using-ai/) |
 
 If you already read the April post, you can skim this table and skip ahead. The interesting part is not the brand names; it is what happens after a suggestion appears.
 
-For vocabulary (RAG, LLM, Copilot, and friends), [Common AI and Copilot Terms](/posts/common-ai-copilot-terms/) is still a useful glossary.
+For vocabulary (RAG, LLM, Copilot, and friends), [Common AI and Copilot Terms](/posts/2024/common-ai-copilot-terms/) is still a useful glossary.
 
 ## Scenario: unfamiliar code that is still "mine"
 

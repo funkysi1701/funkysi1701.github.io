@@ -1,5 +1,5 @@
 +++
-title = "How complex are my stored procedures?"
+title = "How complex are my stored procs?"
 date = "2015-08-13T20:00:45Z"
 year = "2015"
 month= "2015-08"

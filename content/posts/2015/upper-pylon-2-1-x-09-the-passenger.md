@@ -1,5 +1,5 @@
 +++
-title = "Upper Pylon 2 – 1 x 09: The Passenger"
+title = "Upper Pylon 2 x09: The Passenger"
 date = "2015-07-30T20:00:45Z"
 year = "2015"
 month= "2015-07"
