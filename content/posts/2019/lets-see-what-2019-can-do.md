@@ -1,5 +1,5 @@
 +++
-title = "My 2019 Tech Goals: What I Plan to Achieve"
+title = "What I planned to achieve in 2019"
 date = "2019-01-01T20:00:45Z"
 year = "2019"
 month= "2019-01"

@@ -1,5 +1,5 @@
 +++
-title = "Creating your own nuget packages with VSTS"
+title = "Creating NuGet packages with VSTS"
 date = "2017-07-31T20:00:45Z"
 year = "2017"
 month= "2017-07"

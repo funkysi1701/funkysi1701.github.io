@@ -1,5 +1,5 @@
 +++
-title = "Pwned Pass – Available from the Play Store"
+title = "Pwned Pass available on Play Store"
 date = "2017-08-14T20:00:45Z"
 year = "2017"
 month= "2017-08"

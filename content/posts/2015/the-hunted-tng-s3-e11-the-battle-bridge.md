@@ -1,5 +1,5 @@
 +++
-title = "The Hunted, TNG S3 E11, The Battle Bridge"
+title = "The Hunted, TNG S3 E11 reviewed"
 date = "2015-10-08T20:00:45Z"
 year = "2015"
 month= "2015-10"

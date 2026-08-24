@@ -1,5 +1,5 @@
 +++
-title = "Create Azure resources with Terraform"
+title = "Create Azure resources via Terraform"
 date = "2019-05-11T20:00:45Z"
 year = "2019"
 month= "2019-05"

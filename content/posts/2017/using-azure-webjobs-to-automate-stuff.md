@@ -1,5 +1,5 @@
 +++
-title = "Using Azure WebJobs to Automate Stuff"
+title = "Using Azure WebJobs to automate"
 date = "2017-06-26T20:00:45Z"
 year = "2017"
 month= "2017-06"
