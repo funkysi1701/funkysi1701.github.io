@@ -1,5 +1,5 @@
 +++
-title = "What the heck is Business Intelligence?"
+title = "What is Business Intelligence here?"
 date = "2017-06-05T20:00:45Z"
 year = "2017"
 month= "2017-06"

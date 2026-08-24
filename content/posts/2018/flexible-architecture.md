@@ -1,5 +1,5 @@
 +++
-title = "Flexible Architecture with Interfaces"
+title = "Flexible architecture and interfaces"
 date = "2018-01-29T00:00:00Z"
 year = "2018"
 month= "2018-01"

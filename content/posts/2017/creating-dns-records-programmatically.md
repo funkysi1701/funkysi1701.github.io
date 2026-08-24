@@ -1,5 +1,5 @@
 +++
-title = "Creating DNS records programmatically"
+title = "Create DNS records programmatically"
 date = "2017-10-16T20:00:45Z"
 year = "2017"
 month= "2017-10"

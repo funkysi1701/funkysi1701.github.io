@@ -1,5 +1,5 @@
 +++
-title = "To boldly go where no SQL has gone before"
+title = "Beyond SQL: to boldly go further"
 date = "2014-10-12T20:00:45Z"
 year = "2014"
 month= "2014-10"

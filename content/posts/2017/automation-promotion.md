@@ -1,5 +1,5 @@
 +++
-title = "Automation of the Promotion of my Blog"
+title = "Automating promotion of my blog"
 date = "2017-04-17T20:00:45Z"
 year = "2017"
 month= "2017-04"
