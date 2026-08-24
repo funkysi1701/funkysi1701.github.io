@@ -14,6 +14,8 @@ description = "AI is everywhere at the moment, from chatbots to code completion 
 showFullContent = false
 readingTime = true
 aliases = [
+    "/common-ai-copilot-terms",
+    "/posts/common-ai-copilot-terms",
     "/posts/2024/12/09/common-ai-copilot-terms",
     "/2024/12/09/common-ai-copilot-terms",
 ]

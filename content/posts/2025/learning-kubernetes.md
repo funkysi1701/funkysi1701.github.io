@@ -1,5 +1,5 @@
 +++
-title = "Learning Kubernetes from scratch"
+title = "Learning Kubernetes: A Beginner's Journey"
 date = "2025-05-12T20:00:00Z"
 year = "2025"
 month= "2025-05"

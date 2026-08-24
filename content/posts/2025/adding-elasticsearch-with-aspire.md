@@ -1,5 +1,5 @@
 +++
-title = "Adding Elasticsearch to .NET Aspire"
+title = "Adding Elasticsearch with .Net Aspire"
 date = "2025-01-20T20:00:00Z"
 year = "2025"
 month= "2025-01"

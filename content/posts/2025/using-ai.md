@@ -1,5 +1,5 @@
 +++
-title = "Automate social media AI with .NET"
+title = "Automate social posts with AI in .NET"
 date = "2025-03-17T20:00:00Z"
 year = "2025"
 month= "2025-03"
@@ -16,6 +16,8 @@ copyright = false
 featured = false
 draft = false
 aliases = [
+    "/using-ai",
+    "/posts/using-ai",
     "/posts/2025/03/17/using-ai",
     "/2025/03/17/using-ai" 
 ]
