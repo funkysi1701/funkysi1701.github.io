@@ -82,8 +82,6 @@ An entertaining and insightful exploration of Java's history, examining how its 
 
 This session challenged developers to shift perspectives and consider user experience from the ground up. Lex provided practical, actionable advice for creating more intuitive interfaces.
 
-[View the slides](https://www.figma.com/deck/FgeSzQhT74JlnxW3iiONqj/UX-Tips?node-id=1-42&t=h9PIcTBhU6KRDMNU-1)
-
 **Recommended Reading:**
 
 - *The Design of Everyday Things* by Don Norman
