@@ -5,6 +5,6 @@
   "type": "module",
   "description": "Pa11y full-sitemap scanner (GHCR image + pa11y-nightly.yml).",
   "dependencies": {
-    "pa11y": "^9.0.0"
+    "pa11y": "^10.0.0"
   }
 }
