@@ -16,9 +16,9 @@ title = ".NET 5 to 10: features per release"
 url = "/posts/2026/dotnet-5-to-10-features/"
 
 [[items]]
-title = "Visual Studio Keyboard Shortcuts"
-url = "/posts/2022/keyboard-shortcuts/"
+title = "Setting Up Nagios Monitoring with Docker"
+url = "/posts/2025/monitoring-with-nagios-docker/"
 
 [[items]]
-title = "NuGet central package management"
-url = "/posts/2025/nuget-central-package-management/"
+title = "Visual Studio Keyboard Shortcuts"
+url = "/posts/2022/keyboard-shortcuts/"
