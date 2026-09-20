@@ -1,5 +1,5 @@
 +++
-title = "Getting started with Azure Table Storage"
+title = "Getting started with Azure Tables"
 date = "2017-12-17T20:00:45Z"
 year = "2017"
 month= "2017-12"

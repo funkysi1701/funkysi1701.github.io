@@ -1,5 +1,5 @@
 +++
-title = "James goes on an adventure with Daddy"
+title = "James goes on adventure with Daddy"
 date = "2015-10-22T20:00:45Z"
 year = "2015"
 month= "2015-10"

@@ -1,5 +1,5 @@
 +++
-title = "Upper Pylon 2 – 1 x 09: The Passenger"
+title = "Upper Pylon 2 x09: The Passenger"
 date = "2015-07-30T20:00:45Z"
 year = "2015"
 month= "2015-07"
@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/2015/07/Bashir-Choked.jpg"
 images = ['/images/2015/07/Bashir-Choked.jpg']
-tags = ["StarTrek", "podcast", "trekmate"]
+tags = ["Star Trek", "Podcast", "Trekmate"]
 categories = ["trek"]
 keywords = ["", ""]
 description = "I recorded another podcast — Upper Pylon 2 on The Passenger — at https://www.trekmate.org.uk/upper-pylon-2-1-x-09-the-passenger/."

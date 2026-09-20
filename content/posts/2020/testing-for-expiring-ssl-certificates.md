@@ -1,5 +1,5 @@
 +++
-title = "Testing for expiring SSL Certificates"
+title = "Testing expiring SSL certificates"
 date = "2020-03-03T20:00:45Z"
 year = "2020"
 month= "2020-03"

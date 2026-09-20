@@ -1,5 +1,5 @@
 +++
-title = "How do I add Power BI data to a webpage?"
+title = "Add Power BI data to a webpage"
 date = "2017-06-12T20:00:45Z"
 year = "2017"
 month= "2017-06"

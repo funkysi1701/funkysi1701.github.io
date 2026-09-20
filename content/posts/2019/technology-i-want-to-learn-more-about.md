@@ -1,5 +1,5 @@
 +++
-title = "Technology I want to learn more about"
+title = "Tech I want to learn more about"
 date = "2019-03-05T20:00:45Z"
 year = "2019"
 month= "2019-03"

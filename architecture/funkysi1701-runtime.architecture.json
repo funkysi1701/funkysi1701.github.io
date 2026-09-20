@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "funkysi1701.com runtime architecture",
+    "locale": "en",
+    "output": "funkysi1701-runtime.html",
+    "quality_profile": "showcase",
+    "viewBox": [1100, 580],
+    "repository": {
+      "url": "https://github.com/funkysi1701/funkysi1701.github.io.git",
+      "revision": "c6632581b4a29be601c63f62ea0d8bfa99900d49"
+    },
+    "views": [
+      {
+        "id": "request-path",
+        "label": "Visitor request path",
+        "focus": ["visitor", "cloudflare", "azure_swa"],
+        "note": "Browser HTTPS hits Cloudflare, then Azure Static Web Apps serves Hugo public/."
+      },
+      {
+        "id": "publish-path",
+        "label": "Publish path",
+        "focus": ["content_config", "theme_overrides", "github_actions", "hugo_build", "azure_swa"],
+        "note": "Repo content and overrides build in GitHub Actions, then deploy to SWA."
+      },
+      {
+        "id": "client-side",
+        "label": "Client-side edges",
+        "focus": ["visitor", "cloudflare", "giscus", "analytics"],
+        "note": "Comments and engagement analytics stay outside the static origin."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "visitor",
+      "type": "frontend",
+      "label": "Visitor browser",
+      "sublabel": "www / blog-dev / blog-test",
+      "pos": [40, 290],
+      "size": [140, 58]
+    },
+    {
+      "id": "cloudflare",
+      "type": "cloud",
+      "label": "Cloudflare",
+      "sublabel": "CDN · DNS · Zaraz",
+      "brand": "cloudflare",
+      "tag": "edge",
+      "pos": [280, 290],
+      "size": [140, 58]
+    },
+    {
+      "id": "azure_swa",
+      "type": "cloud",
+      "label": "Azure Static Web Apps",
+      "sublabel": "static origin · public/",
+      "tag": "no app API",
+      "pos": [680, 290],
+      "size": [168, 58],
+      "sources": [
+        { "path": "staticwebapp.config.json", "label": "SWA routing" }
+      ]
+    },
+    {
+      "id": "hugo_build",
+      "type": "backend",
+      "label": "Hugo Docker build",
+      "sublabel": "floryn90/hugo · --minify",
+      "pos": [680, 150],
+      "size": [168, 58],
+      "sources": [
+        { "path": ".env", "label": "HUGO_VERSION" }
+      ]
+    },
+    {
+      "id": "content_config",
+      "type": "database",
+      "label": "Content + config",
+      "sublabel": "content/ · config/",
+      "pos": [210, 150],
+      "size": [146, 58],
+      "sources": [
+        { "path": "content/parkrun.md", "label": "Content sample" },
+        { "path": "config/_default/config.toml", "label": "Hugo config" }
+      ]
+    },
+    {
+      "id": "theme_overrides",
+      "type": "frontend",
+      "label": "Theme + overrides",
+      "sublabel": "v0.65.1 fork · layouts/",
+      "pos": [450, 150],
+      "size": [146, 58],
+      "sources": [
+        { "path": "layouts/partials/head/title.html", "label": "Title override" },
+        { "path": "themes/hugo-theme-bootstrap/theme.toml", "label": "Frozen theme" }
+      ]
+    },
+    {
+      "id": "github_actions",
+      "type": "backend",
+      "label": "GitHub Actions",
+      "sublabel": "build · deploy · gates",
+      "brand": "github-actions",
+      "pos": [690, 28],
+      "size": [148, 58],
+      "sources": [
+        { "path": ".github/workflows/swa-deploy-nonprod.yml", "label": "Nonprod SWA" },
+        { "path": ".github/workflows/azure-static-web-apps-victorious-pebble-0b8f90e03.yml", "label": "Prod SWA" }
+      ]
+    },
+    {
+      "id": "giscus",
+      "type": "external",
+      "label": "Giscus",
+      "sublabel": "Blog-Comments",
+      "pos": [40, 430],
+      "size": [140, 58]
+    },
+    {
+      "id": "analytics",
+      "type": "external",
+      "label": "Lite + Ahrefs",
+      "sublabel": "via Zaraz",
+      "pos": [280, 430],
+      "size": [140, 58]
+    },
+    {
+      "id": "content_feeds",
+      "type": "external",
+      "label": "Content feeds",
+      "sublabel": "parkrun · CF Insights",
+      "pos": [40, 150],
+      "size": [140, 58],
+      "sources": [
+        { "path": "scripts/update_parkrun_results.py", "label": "Parkrun scrape" },
+        { "path": "scripts/home-popular/run.mjs", "label": "Home popular" }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Repo ownership — source of truth",
+      "wraps": ["content_feeds", "content_config", "theme_overrides", "github_actions", "hugo_build"],
+      "pad": 16
+    },
+    {
+      "kind": "region",
+      "label": "Cloudflare trust boundary",
+      "wraps": ["cloudflare", "analytics"],
+      "pad": 14
+    },
+    {
+      "kind": "security-group",
+      "label": "Azure origin (static only)",
+      "wraps": ["azure_swa"],
+      "pad": 12
+    }
+  ],
+  "connections": [
+    {
+      "id": "visitor-to-edge",
+      "from": "visitor",
+      "to": "cloudflare",
+      "label": "HTTPS",
+      "variant": "emphasis"
+    },
+    {
+      "id": "edge-to-origin",
+      "from": "cloudflare",
+      "to": "azure_swa",
+      "label": "origin fetch",
+      "variant": "emphasis"
+    },
+    {
+      "id": "build-to-swa",
+      "from": "hugo_build",
+      "to": "azure_swa",
+      "label": "deploy public/",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 24
+    },
+    {
+      "id": "content-to-build",
+      "from": "content_config",
+      "to": "theme_overrides",
+      "label": "site sources",
+      "labelDy": -26
+    },
+    {
+      "id": "theme-to-build",
+      "from": "theme_overrides",
+      "to": "hugo_build",
+      "label": "layouts + theme",
+      "labelDy": -26
+    },
+    {
+      "id": "gha-to-build",
+      "from": "github_actions",
+      "to": "hugo_build",
+      "label": "CI Docker Hugo",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 24
+    },
+    {
+      "id": "visitor-to-giscus",
+      "from": "visitor",
+      "to": "giscus",
+      "label": "comments",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 24
+    },
+    {
+      "id": "zaraz-to-analytics",
+      "from": "cloudflare",
+      "to": "analytics",
+      "label": "Zaraz inject",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 24
+    },
+    {
+      "id": "feeds-to-content",
+      "from": "content_feeds",
+      "to": "content_config",
+      "label": "scheduled PR",
+      "variant": "dashed",
+      "labelDy": -26
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Branch deploy matrix",
+      "items": [
+        "main → www (production, no --buildFuture)",
+        "develop → blog-dev ∥ blog-test (dev --buildFuture)",
+        "feature/* → blog-dev only"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Analytics ownership",
+      "items": [
+        "Lite + Ahrefs via Zaraz (not Hugo lite.js)",
+        "CF Web Insights → home Popular strip",
+        "Hugo GA id empty to avoid double-count"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Trust & ownership",
+      "items": [
+        "SWA: HSTS/CSP, 404→/404.html, no SPA fallback",
+        "Secrets only in GitHub; Giscus uses public ids",
+        "Repo owns content/layouts/CI; not Azure/Zaraz/giscus.app"
+      ]
+    }
+  ]
+}

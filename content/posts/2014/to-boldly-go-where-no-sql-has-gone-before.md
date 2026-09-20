@@ -1,5 +1,5 @@
 +++
-title = "To boldly go where no SQL has gone before"
+title = "Beyond SQL: to boldly go further"
 date = "2014-10-12T20:00:45Z"
 year = "2014"
 month= "2014-10"
@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/2014/10/enterprise.jpg"
 images = ['/images/2014/10/enterprise.jpg']
-tags = ["StarTrek", "SQL", "Database"]
+tags = ["Star Trek", "SQL", "Database"]
 categories = ["tech"]
 keywords = ["", ""]
 description = "My last post proved quite popular so I am wondering if I can combine a post about IT and Star Trek. Years ago I used to have lists of Star Trek episodes…"

@@ -1,12 +1,12 @@
 +++
-title = "Creating your own nuget packages with VSTS"
+title = "Creating NuGet packages with VSTS"
 date = "2017-07-31T20:00:45Z"
 year = "2017"
 month= "2017-07"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = ""
-tags = ["Nuget", "C-Sharp", "Visual Studio"]
+tags = ["NuGet", "C-Sharp", "Visual Studio"]
 categories = ["tech"]
 keywords = ["", ""]
 description = "For a while I have found myself writing the same bits of code for different web projects. This annoys me as it goes against the DRY principle (don’t repeat…"

@@ -1,5 +1,5 @@
 +++
-title = "Adding Internet Connection Resiliency"
+title = "Add internet connection resilience"
 date = "2015-09-24T20:00:45Z"
 year = "2015"
 month= "2015-09"

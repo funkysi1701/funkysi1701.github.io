@@ -1,5 +1,5 @@
 +++
-title = "The Hunted, TNG S3 E11, The Battle Bridge"
+title = "The Hunted, TNG S3 E11 reviewed"
 date = "2015-10-08T20:00:45Z"
 year = "2015"
 month= "2015-10"
@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/2015/10/Danar_captured.jpg"
 images = ['/images/2015/10/Danar_captured.jpg']
-tags = ["StarTrek", "Podcast", "Trekmate"]
+tags = ["Star Trek", "Podcast", "Trekmate"]
 categories = ["trek"]
 keywords = ["", ""]
 description = "Listen to my latest podcast on The Hunted (TNG S3 E11) at https://www.trekmate.org.uk/the-hunted-tng-s3-e11-the-battle-bridge/."

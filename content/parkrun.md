@@ -34,21 +34,6 @@ I started parkrun in 2025. The **parkrun results** table below is generated from
   <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 4px;">
     <tr style="vertical-align: bottom; height: 250px;">
       <td style="text-align: center; padding: 5px; position: relative;">
-        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">36m 27s</div>
-        <div style="background: #4CAF50; height: 126px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
-        <div style="font-size: 10px; margin-top: 5px;">18 Apr</div>
-      </td>
-      <td style="text-align: center; padding: 5px; position: relative;">
-        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">40m 16s</div>
-        <div style="background: #2196F3; height: 137px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
-        <div style="font-size: 10px; margin-top: 5px;">25 Apr</div>
-      </td>
-      <td style="text-align: center; padding: 5px; position: relative;">
-        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">39m 45s</div>
-        <div style="background: #2196F3; height: 136px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
-        <div style="font-size: 10px; margin-top: 5px;">9 May</div>
-      </td>
-      <td style="text-align: center; padding: 5px; position: relative;">
         <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">39m 06s</div>
         <div style="background: #2196F3; height: 134px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
         <div style="font-size: 10px; margin-top: 5px;">23 May</div>
@@ -83,6 +68,21 @@ I started parkrun in 2025. The **parkrun results** table below is generated from
         <div style="background: #4CAF50; height: 120px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
         <div style="font-size: 10px; margin-top: 5px;">15 Aug</div>
       </td>
+      <td style="text-align: center; padding: 5px; position: relative;">
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">38m 17s</div>
+        <div style="background: #2196F3; height: 132px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="font-size: 10px; margin-top: 5px;">22 Aug</div>
+      </td>
+      <td style="text-align: center; padding: 5px; position: relative;">
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">40m 30s</div>
+        <div style="background: #2196F3; height: 138px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="font-size: 10px; margin-top: 5px;">5 Sep</div>
+      </td>
+      <td style="text-align: center; padding: 5px; position: relative;">
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 11px;">37m 58s</div>
+        <div style="background: #2196F3; height: 131px; margin: 0 auto; width: 60px; border-radius: 4px 4px 0 0;"></div>
+        <div style="font-size: 10px; margin-top: 5px;">12 Sep</div>
+      </td>
     </tr>
   </table>
   </div>
@@ -96,6 +96,9 @@ Official 5 km parkrun times from [parkrun.org.uk](https://www.parkrun.org.uk/par
 
 | Event/Run | Date | Location | Results | min/km |
 |-----------|------|----------|---------|--------|
+| Vermuyden Way parkrun | 12 September 2026 | Vermuyden Way | 0h 37m 58s | 07m 36s |
+| Vermuyden Way parkrun | 5 September 2026 | Vermuyden Way | 0h 40m 30s | 08m 06s |
+| Vermuyden Way parkrun | 22 August 2026 | Vermuyden Way | 0h 38m 17s | 07m 39s |
 | Vermuyden Way parkrun | 15 August 2026 | Vermuyden Way | 0h 34m 11s | 06m 50s |
 | Vermuyden Way parkrun | 8 August 2026 | Vermuyden Way | 0h 37m 07s | 07m 25s |
 | Withernsea Promenade parkrun | 1 August 2026 | Withernsea Promenade | 0h 37m 52s | 07m 34s |

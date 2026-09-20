@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "/images/2015/02/Spock_2293.jpg"
 images = ['/images/2015/02/Spock_2293.jpg']
-tags = ["StarTrek", "TNG", "DS9", "Voyager", "TOS", "Enterprise", "Spock", "Picard", "Data", "Kirk", "Rankings", "SciFi", "Television"]
+tags = ["Star Trek", "TNG", "DS9", "Voyager", "TOS", "Enterprise", "Spock", "Picard", "Data", "Kirk", "Rankings", "SciFi", "Television"]
 categories = ["trek"]
 keywords = ["Star Trek characters ranked", "best Star Trek characters of all time", "greatest Star Trek characters", "top Star Trek character list", "Spock vs Kirk", "Picard Data Worf", "Star Trek TNG characters", "Star Trek DS9 best characters", "Star Trek Voyager Seven of Nine", "most iconic Star Trek characters", "Star Trek character rankings", "favorite Star Trek characters", "Star Trek all series characters", "Garak Dukat Sisko"]
 description = "I am going to take a break this week from talking about technology to talk about Star Trek. I have just listened to a podcast where they consider this list of…"
@@ -89,6 +89,6 @@ If you enjoyed this character ranking, check out these other Star Trek articles:
 - [Picard Season 3](/posts/2023/picard-season-three) - My thoughts on the final season of Star Trek Picard
 - [TrekRanks #174](/posts/2024/trekranks) - My appearance on the TrekRanks podcast
 
-**Want more Trek content?** Browse all my [Star Trek articles](/tags/startrek)
+**Want more Trek content?** Browse all my [Star Trek articles](/tags/star-trek/)
 
 All 900+ Star Trek episodes are now available in [Episode Atlas](https://www.episodeatlas.com/). Track episodes featuring your favorite characters.
