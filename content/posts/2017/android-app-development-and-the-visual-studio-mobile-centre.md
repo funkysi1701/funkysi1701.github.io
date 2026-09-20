@@ -1,5 +1,5 @@
 +++
-title = "Android development with Mobile Centre"
+title = "Android apps with Mobile Centre"
 date = "2017-08-07T20:00:45Z"
 year = "2017"
 month= "2017-08"

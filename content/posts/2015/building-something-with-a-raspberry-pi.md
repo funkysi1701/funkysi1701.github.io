@@ -1,5 +1,5 @@
 +++
-title = "Building something with a Raspberry Pi"
+title = "Building something with Raspberry Pi"
 date = "2015-04-05T20:00:45Z"
 year = "2015"
 month= "2015-04"

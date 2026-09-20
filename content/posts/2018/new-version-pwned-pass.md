@@ -47,5 +47,3 @@ List of Data Breaches – this lists the data breaches from haveibeenpwned.com y
 Calendar of Breaches – this shows a github like chart of what days breaches are added
 
 If you like my app do let me know. I have received a few ratings on google play it would be great to get a few more. If you want me to add a feature or have ideas of how I could improve it let me know as well.
-
-To download take a look at [https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords](https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords)

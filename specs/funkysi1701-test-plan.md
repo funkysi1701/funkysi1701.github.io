@@ -24,6 +24,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   5. Confirm the home hero Start Here next-step link is present
   6. Confirm the Popular right now strip is present above the post list with 3-5 post links
   7. Confirm blog posts are displayed on the homepage
+  8. Confirm the sidebar Tags card shows a compact chip list (at most 20 tags) and a View all tags link
 
 **Expected Results:**
   - Homepage loads within 3 seconds
@@ -33,6 +34,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   - Home hero includes a single Start Here CTA to `/start-here/`
   - Popular strip heading is visible with 3-5 links to `/posts/...` pages (list is auto-refreshed weekly from Cloudflare Web Analytics top pages, so specific URLs are not asserted)
   - At least 5-10 recent blog posts are visible
+  - Sidebar Tags chips are badge links to `/tags/...` (count 1–20) with a View all tags link to `/tags/`
 
 #### 1.2. Main navigation menu functionality
 

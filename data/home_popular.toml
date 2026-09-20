@@ -4,21 +4,21 @@
 # Titles are editorial labels: edits here survive the next automated refresh.
 
 [[items]]
-title = "NDC London 2026"
-url = "/posts/2026/ndc-london-2026/"
-
-[[items]]
-title = "How to Start and Run a Successful Code Club for Kids"
-url = "/posts/2024/codeclub/"
-
-[[items]]
-title = "Periodic Table of DevOps 2025"
-url = "/posts/2025/periodic-table-devops-2025/"
-
-[[items]]
 title = "Adding Elasticsearch with .Net Aspire"
 url = "/posts/2025/adding-elasticsearch-with-aspire/"
 
 [[items]]
-title = "What is new with C#"
-url = "/posts/2025/whats-new-csharp/"
+title = "Top 25 Star Trek Characters"
+url = "/posts/2015/top-25-star-trek-characters/"
+
+[[items]]
+title = "2022 Goals"
+url = "/posts/2022/2022-goals/"
+
+[[items]]
+title = "Scottish Summit 2022"
+url = "/posts/2022/scottishsummit/"
+
+[[items]]
+title = "10 Ways to Survive as an IT Manager"
+url = "/posts/2016/10-ways-to-survive-as-an-it-manager/"
