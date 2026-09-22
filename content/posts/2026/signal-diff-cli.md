@@ -24,7 +24,7 @@ aliases = [
 ]
 +++
 
-I already know whether a deploy of this blog broke titles, descriptions, or routes. After the Static Web Apps job finishes, [Signal Diff](https://signaldiff.dev/) crawls the sitemap and compares the live site with a baseline. I wrote that loop up in [GitOps with Azure DevOps for .NET apps](/posts/2026/implementing-gitops-with-azure-devops-for-net-apps/). The Action is the unattended gate. It sits quiet during the hour I am in Cursor, halfway through a layout change, wanting the same answer before I push.
+I already know whether a deploy of this blog broke titles, descriptions, or routes. After the Static Web Apps job finishes, [Signal Diff](https://signaldiff.dev/) crawls the sitemap and compares the live site with a baseline. That step is [`funkysi1701/signal-diff-action`](https://github.com/funkysi1701/signal-diff-action). The Action is the unattended gate. It sits quiet during the hour I am in Cursor, halfway through a layout change, wanting the same answer before I push.
 
 That is the job of the `signaldiff` CLI. Coding agents already have a terminal. A terminal is enough to crawl a sitemap and read the report. There is no browser session to open, and no MCP server to configure.
 
@@ -115,7 +115,7 @@ Starting a cloud scan is a separate decision. `signaldiff scan start` queues wor
 
 ## The Action still runs after deploy
 
-The pipeline check stays. On this blog the Action still crawls after a Static Web Apps deploy, with the API key in GitHub secrets and a pinned action version. The wiring is in the [GitOps post](/posts/2026/implementing-gitops-with-azure-devops-for-net-apps/). The Action answers "did this deploy stay healthy?" when I am not looking. The CLI answers the same question while an agent and I are still in the change.
+The pipeline check stays. On this blog the Action still crawls after a Static Web Apps deploy, with the API key in GitHub secrets and a pinned [`signal-diff-action`](https://github.com/funkysi1701/signal-diff-action) version. The Action answers "did this deploy stay healthy?" when I am not looking. The CLI answers the same question while an agent and I are still in the change.
 
 ## Try it on a sitemap you care about
 
