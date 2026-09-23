@@ -26,7 +26,7 @@ aliases = [
 
 This post is about the `signaldiff` CLI: how to install it, run a local sitemap crawl, and hand that to Cursor, Copilot, or Claude Code so the agent can spot SEO and crawl issues without opening a dashboard.
 
-[Signal Diff](https://signaldiff.dev/) is the product behind that command. It fetches the URLs in a sitemap, checks on-page SEO and crawl health (titles, meta descriptions, redirects, slow responses, and more), and can compare a run with a baseline—often the previous deploy—so you see what changed. I already use it on this blog after each Static Web Apps release via [`funkysi1701/signal-diff-action`](https://github.com/funkysi1701/signal-diff-action). That Action is the unattended gate. The CLI is the same product when the caller is a shell. Signal Diff also has a customer-hosted crawler for teams who want the crawl to stay on their network; this post stays on the coding-agent path.
+[Signal Diff](https://signaldiff.dev/) is the product behind that command. It fetches the URLs in a sitemap, checks on-page SEO and crawl health (titles, meta descriptions, redirects, slow responses, and more), and can compare a run with a baseline—often the previous deploy—so you see what changed. I already use it on this blog after each Static Web Apps release via [`funkysi1701/signal-diff-action`](https://github.com/funkysi1701/signal-diff-action). That Action is the unattended gate. The CLI is the same crawl, from a shell. Signal Diff also has a customer-hosted crawler for teams who want the crawl to stay on their network; this post stays on the coding-agent path.
 
 A CLI is a good fit here because coding agents already have a terminal. They can install one binary, run a crawl, and read an HTML report. You do not need a browser session, and you do not need an MCP server. Local crawls need no account. Cloud commands are optional once an API key is already in the environment. The rest of this post walks through install, a capped crawl of this site, the prompt I give an agent, and the cloud commands worth using when a key is set.
 
@@ -42,7 +42,7 @@ A few behaviours matter once an agent is the one typing:
 
 ## Install, then crawl this blog
 
-The installers are self-contained. You do not need the .NET SDK, and you do not need a clone of the repo. On Windows:
+The installers are self-contained. You do not need the .NET SDK, and you do not need a clone of the repo. They verify SHA256 before putting `signaldiff` on your `PATH`. Prefer that path, or download a versioned zip from [the CLI downloads page](https://signaldiff.dev/downloads/cli/) and check the published `.sha256` sidecar yourself. On Windows:
 
 ```powershell
 irm 'https://signaldiff.dev/install/cli.ps1' -OutFile "$env:TEMP\signaldiff-install-cli.ps1"
@@ -110,7 +110,7 @@ Starting a cloud scan is a separate decision. `signaldiff scan start` queues wor
 
 ## The Action still runs after deploy
 
-The pipeline check stays. On this blog the Action still crawls after a Static Web Apps deploy, with the API key in GitHub secrets and a pinned [`signal-diff-action`](https://github.com/funkysi1701/signal-diff-action) version. The Action answers "did this deploy stay healthy?" when I am not looking. The CLI answers the same question while an agent and I are still in the change.
+The pipeline check stays. On this blog the Action still crawls after a Static Web Apps deploy, with the API key in GitHub secrets and a pinned [`signal-diff-action`](https://github.com/funkysi1701/signal-diff-action) version. The Action answers "did this deploy stay healthy?" when I am not looking. The CLI answers the same SEO questions while an agent and I are still in the change. A local `--sitemap` crawl is not a drop-in for that CI step: it does not attach a commit SHA, collect a code diff, or comment on a pull request.
 
 ## Try it on a sitemap you care about
 
