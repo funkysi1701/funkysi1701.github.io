@@ -1,6 +1,6 @@
 +++
 title = "Signal Diff CLI for coding agents"
-date = "2026-09-21T12:00:00Z"
+date = "2026-09-23T12:00:00Z"
 year = "2026"
 month = "2026-09"
 author = "funkysi1701"
@@ -19,8 +19,8 @@ draft = false
 aliases = [
     "/signal-diff-cli",
     "/posts/signal-diff-cli",
-    "/posts/2026/09/21/signal-diff-cli",
-    "/2026/09/21/signal-diff-cli"
+    "/posts/2026/09/23/signal-diff-cli",
+    "/2026/09/23/signal-diff-cli"
 ]
 +++
 
