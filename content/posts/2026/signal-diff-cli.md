@@ -26,11 +26,11 @@ aliases = [
 
 This post is about the `signaldiff` CLI: how to install it, run a local sitemap crawl, and hand that to Cursor, Copilot, or Claude Code so the agent can spot SEO and crawl issues without opening a dashboard.
 
-[Signal Diff](https://signaldiff.dev/) is the product behind that command. It fetches the URLs in a sitemap, checks on-page SEO and crawl health (titles, meta descriptions, redirects, slow responses, and more), and can compare a run with a baseline—often the previous deploy—so you see what changed. I already use it on this blog after each Static Web Apps release via [`funkysi1701/signal-diff-action`](https://github.com/funkysi1701/signal-diff-action). That Action is the unattended gate. The CLI is the same crawl, from a shell. Signal Diff also has a customer-hosted crawler for teams who want the crawl to stay on their network; this post stays on the coding-agent path.
+[Signal Diff](https://signaldiff.dev/) is the product behind that command. It fetches the URLs in a sitemap, checks on-page SEO and crawl health (titles, meta descriptions, redirects, slow responses, and more), and can compare a run with a baseline—often the previous deploy—so you see what changed. I already use it on this blog after each Static Web Apps release via [`funkysi1701/signal-diff-action`](https://github.com/funkysi1701/signal-diff-action). That Action is the unattended gate. The CLI is the same crawl, from a shell. (There is also a customer-hosted crawler; this post stays on the coding-agent path.)
 
 A CLI is a good fit here because coding agents already have a terminal. They can install one binary, run a crawl, and read an HTML report. You do not need a browser session, and you do not need an MCP server. Local crawls need no account. Cloud commands are optional once an API key is already in the environment. The rest of this post walks through install, a capped crawl of this site, the prompt I give an agent, and the cloud commands worth using when a key is set.
 
-## Why I added a CLI
+## CLI behaviour agents need
 
 Once a key exists, the subcommands `sites`, `runs`, `diff`, `findings`, and `scan` call the [Agent API](https://signaldiff.dev/docs/agent-api). Full command reference: [signaldiff.dev/docs/cli](https://signaldiff.dev/docs/cli).
 
@@ -73,7 +73,7 @@ The API key stays in the environment. It stays out of the chat. Here is the prom
 
 That is the loop. The agent installs if it must, runs a capped crawl, and works from the HTML. I still read the suggestions. A title that is two characters over the limit is a real fix. A rewrite of a post I care about is a suggestion until I agree with it.
 
-On a recent crawl of this sitemap the report had no errors and a few hundred warnings. The agent did not invent a title rewrite for every post. It collapsed them into one finding: Font Awesome's CSS sits at the 100 KB file-size limit, repeated across pages. That is the shape of answer I want—site-wide root cause, not 264 identical notes.
+On a recent crawl of this sitemap the report had no errors and a few hundred warnings. Even with `--max-pages`, a site-wide CSS finding still fans out across every page the crawl touched. The agent did not invent a title rewrite for every post. It collapsed them into one finding: Font Awesome's CSS sits at the 100 KB file-size limit, repeated across pages. That is the shape of answer I want—site-wide root cause, not hundreds of identical notes.
 
 This sits next to the split I described in [how I use AI on side projects](/posts/2026/how-i-use-ai-on-side-projects/). ChatGPT when the question needs no repo. Cursor when the answer is in the files. The CLI when the question is about the live sitemap.
 
