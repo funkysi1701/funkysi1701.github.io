@@ -24,15 +24,15 @@ aliases = [
 ]
 +++
 
-I already know whether a deploy of this blog broke titles, descriptions, or routes. After the Static Web Apps job finishes, [Signal Diff](https://signaldiff.dev/) crawls the sitemap and compares the live site with a baseline. That step is [`funkysi1701/signal-diff-action`](https://github.com/funkysi1701/signal-diff-action). The Action is the unattended gate. It sits quiet during the hour I am in Cursor, halfway through a layout change, wanting the same answer before I push.
+This post is about the `signaldiff` CLI: how to install it, run a local sitemap crawl, and hand that to Cursor, Copilot, or Claude Code so the agent can spot SEO and crawl issues without opening a dashboard.
 
-That is the job of the `signaldiff` CLI. Coding agents already have a terminal. A terminal is enough to crawl a sitemap and read the report. There is no browser session to open, and no MCP server to configure.
+[Signal Diff](https://signaldiff.dev/) is the product behind that command. It fetches the URLs in a sitemap, checks on-page SEO and crawl health (titles, meta descriptions, redirects, slow responses, and more), and can compare a run with a baseline—often the previous deploy—so you see what changed. I already use it on this blog after each Static Web Apps release via [`funkysi1701/signal-diff-action`](https://github.com/funkysi1701/signal-diff-action). That Action is the unattended gate. The CLI is the same product when the caller is a shell.
+
+A CLI is a good fit here because coding agents already have a terminal. They can install one binary, run a crawl, and read an HTML report. You do not need a browser session, and you do not need an MCP server. Local crawls need no account. Cloud commands are optional once an API key is already in the environment. The rest of this post walks through install, a capped crawl of this site, the prompt I give an agent, and the cloud commands worth using when a key is set.
 
 ## What Signal Diff is doing
 
-[Signal Diff](https://signaldiff.dev/) fetches the URLs in a sitemap and looks for on-page SEO and crawl problems: titles, meta descriptions, redirects, slow responses, and the rest of the check list. A later run can diff against a baseline, often the previous deploy, so you see what changed.
-
-The site and the GitHub Action came first. I still use those. The CLI is the same product when the caller is a shell, which is where Cursor, Copilot, and Claude Code already are. Signal Diff also has a customer-hosted crawler for teams who want the crawl to stay on their network. This post stays on the coding-agent path.
+The web app and the GitHub Action came first. I still use both. The CLI is the shell-facing surface of the same crawl and diff loop, aimed at the tools I already have open. Signal Diff also has a customer-hosted crawler for teams who want the crawl to stay on their network. This post stays on the coding-agent path.
 
 ## Why I added a CLI
 
