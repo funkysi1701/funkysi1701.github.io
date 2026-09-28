@@ -87,6 +87,6 @@ To automate this I run
 cscript createADE.vbs "path to ADP" "path to ADE"
 ```
 
-The contents of createADE came from this [forum post](https://social.msdn.microsoft.com/Forums/office/en-US/01fd48a9-258e-4405-86f1-adfb2f1057ee/create-an-access-2007-ade-from-a-adp-via-commandline?forum=accessdev), the only change I made was to comment out some of the echo statements so it would run silently as part of my build process. It should be noted that cscript and wscript are almost identical and either will run these scripts however in a command line environment cscript is preferable, and wscript should be used in a windows environment.
+The contents of createADE came from a retired MSDN forum thread about creating an Access 2007 ADE from an ADP via the command line, the only change I made was to comment out some of the echo statements so it would run silently as part of my build process. It should be noted that cscript and wscript are almost identical and either will run these scripts however in a command line environment cscript is preferable, and wscript should be used in a windows environment.
 
 I am quite surprised at how much I have managed to do in terms of scripting the build and deployment process for MS Access. I still don’t like developing with Access but this has definitely improved things.
