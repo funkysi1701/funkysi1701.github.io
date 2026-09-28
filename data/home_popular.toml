@@ -4,21 +4,21 @@
 # Titles are editorial labels: edits here survive the next automated refresh.
 
 [[items]]
-title = "Adding Elasticsearch with .Net Aspire"
-url = "/posts/2025/adding-elasticsearch-with-aspire/"
+title = "NDC London 2026"
+url = "/posts/2026/ndc-london-2026/"
+
+[[items]]
+title = "Temporal Trek Podcast"
+url = "/posts/2022/temporal-trek-podcast/"
+
+[[items]]
+title = "Understand and handle .NET exceptions"
+url = "/posts/2025/exceptions/"
+
+[[items]]
+title = "Merge two Git projects, keep history"
+url = "/posts/2025/merge-two-projects-into-one/"
 
 [[items]]
 title = "Top 25 Star Trek Characters"
 url = "/posts/2015/top-25-star-trek-characters/"
-
-[[items]]
-title = "What I planned to achieve in 2019"
-url = "/posts/2019/lets-see-what-2019-can-do/"
-
-[[items]]
-title = "Development Annoyance"
-url = "/posts/2016/development-annoyance/"
-
-[[items]]
-title = "10 Ways to Survive as an IT Manager"
-url = "/posts/2016/10-ways-to-survive-as-an-it-manager/"
