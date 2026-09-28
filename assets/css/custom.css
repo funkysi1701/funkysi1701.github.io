@@ -507,24 +507,6 @@
   --home-popular-accent: var(--hbs-primary-light, #5e92f3);
 }
 
-.post-support-cta {
-  margin: 0 0 1.25rem;
-  text-align: center;
-  font-size: 0.875rem;
-  line-height: 1.4;
-}
-
-.post-support-cta a {
-  color: var(--hbs-secondary-text-on-surface, rgba(0, 0, 0, 0.7));
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
-}
-
-.post-support-cta a:hover,
-.post-support-cta a:focus-visible {
-  color: var(--hbs-primary, #1363be);
-}
-
 /* Sidebar tags: equal-size chips instead of a JS font-size cloud. */
 .tag-chips {
   display: flex;
