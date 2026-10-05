@@ -8,17 +8,17 @@ title = "NDC London 2026"
 url = "/posts/2026/ndc-london-2026/"
 
 [[items]]
-title = "Temporal Trek Podcast"
-url = "/posts/2022/temporal-trek-podcast/"
-
-[[items]]
 title = "Understand and handle .NET exceptions"
 url = "/posts/2025/exceptions/"
 
 [[items]]
-title = "Merge two Git projects, keep history"
-url = "/posts/2025/merge-two-projects-into-one/"
+title = ".NET 5 to 10: features per release"
+url = "/posts/2026/dotnet-5-to-10-features/"
 
 [[items]]
-title = "Top 25 Star Trek Characters"
-url = "/posts/2015/top-25-star-trek-characters/"
+title = "Temporal Trek Podcast"
+url = "/posts/2022/temporal-trek-podcast/"
+
+[[items]]
+title = "NuGet central package management"
+url = "/posts/2025/nuget-central-package-management/"
