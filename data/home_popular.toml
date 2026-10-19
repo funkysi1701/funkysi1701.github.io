@@ -4,21 +4,21 @@
 # Titles are editorial labels: edits here survive the next automated refresh.
 
 [[items]]
-title = "NDC London 2026"
-url = "/posts/2026/ndc-london-2026/"
+title = "Merge two Git projects, keep history"
+url = "/posts/2025/merge-two-projects-into-one/"
 
 [[items]]
-title = ".NET 5 to 10: features per release"
-url = "/posts/2026/dotnet-5-to-10-features/"
+title = "Reflecting on 2024, goals for 2025"
+url = "/posts/2024/end-of-year/"
 
 [[items]]
-title = "Understand and handle .NET exceptions"
-url = "/posts/2025/exceptions/"
+title = "Scottish Summit 2024"
+url = "/posts/2024/scottishsummit/"
 
 [[items]]
-title = "Temporal Trek Podcast"
-url = "/posts/2022/temporal-trek-podcast/"
+title = "The Mandelbrot Set"
+url = "/posts/2025/mandelbrot-set/"
 
 [[items]]
-title = "Stay visible when made redundant"
-url = "/posts/2026/stay-visible-as-a-developer-when-you-are-made-redundant/"
+title = "User Groups and F#"
+url = "/posts/2015/user-groups-and-f/"
