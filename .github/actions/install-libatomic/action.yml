@@ -1,0 +1,23 @@
+name: Install libatomic1
+description: >
+  Install libatomic1 when missing. Node 25+ official linux-x64 binaries link
+  libatomic.so.1; ARC/minimal images often omit it, so setup-node fails with exit 127.
+
+runs:
+  using: composite
+  steps:
+    - name: Install libatomic1 for Node 25+
+      shell: bash
+      run: |
+        set -euo pipefail
+        # Self-hosted images may ship a NodeSource apt source that 403s.
+        sudo rm -f /etc/apt/sources.list.d/nodesource* \
+          /etc/apt/sources.list.d/*nodesource*.list \
+          /etc/apt/sources.list.d/*nodesource*.sources 2>/dev/null || true
+        if [ -f /etc/apt/sources.list ]; then
+          sudo sed -i '/deb\.nodesource\.com/d' /etc/apt/sources.list || true
+        fi
+        if ! ldconfig -p 2>/dev/null | grep -q 'libatomic\.so\.1'; then
+          sudo apt-get update
+          sudo apt-get install -y libatomic1
+        fi
