@@ -1,20 +1,44 @@
 schema: spec-driven
 
-# Project context (optional)
-# This is shown to AI when creating artifacts.
-# Add your tech stack, conventions, style guides, domain knowledge, etc.
-# Example:
-#   context: |
-#     Tech stack: TypeScript, React, Node.js
-#     We use conventional commits
-#     Domain: e-commerce platform
+# Shown to AI when creating OpenSpec artifacts (not copied into the files).
+# OpenSpec is preferred for medium/large changes (see docs/AI_CONTEXT.md).
+context: |
+  Product: funkysi1701.com — personal Hugo blog/portfolio on Azure Static Web Apps.
+  Workflow: OpenSpec is preferred for medium/large work (/opsx-propose → apply → archive). Skip OpenSpec for typos, single-file content tweaks, and test-only fixes.
+  Stack: Hugo (version from .env HUGO_VERSION) + Azure Static Web Apps via GitHub Actions. Theme: frozen fork of hugo-theme-bootstrap v0.65.1 under themes/ — prefer root layouts/, assets/, static/ overrides. Do not rebase onto upstream v1.
+  Layout: content/ (posts under content/posts/YYYY/), layouts/, assets/, static/, config/_default|development|staging|production/, tests/ (Playwright), specs/, scripts/, .github/workflows/.
+  Canonical docs (link; do not paste long prose): docs/AI_CONTEXT.md, AGENTS.md, README.md, CONTRIBUTING.md.
+  Work tracking: GitHub Issues on this repo. Put issue numbers in PR descriptions when known.
+  Deploy: main → production www.funkysi1701.com; develop → blog-dev + blog-test; feature/* → blog-dev only. No git branch named "dev".
 
-# Per-artifact rules (optional)
-# Add custom rules for specific artifacts.
-# Example:
-#   rules:
-#     proposal:
-#       - Keep proposals under 500 words
-#       - Always include a "Non-goals" section
-#     tasks:
-#       - Break tasks into chunks of max 2 hours
+  Non-negotiables:
+  - New posts: draft = false; review on https://blog-dev.funkysi1701.com (feature/* / develop), not Hugo draft = true. Production is main. blog-dev builds use --buildFuture; staging/production do not.
+  - British English (locale = en-gb).
+  - SEO: production HTML <title> 50–60 ({front matter title} - Funky Si's Blog); description 110–160. Run npm run check:meta after front-matter edits.
+  - Do not edit public/ or the parkrun generated block between BEGIN/END PARKRUN_GENERATED markers.
+  - Prefer root layouts/assets/static over themes/hugo-theme-bootstrap/.
+  - No secrets in .env, config/, or front matter — SWA/Cloudflare tokens only in GitHub Actions secrets/vars.
+  - staticwebapp.config.json: no SPA navigationFallback → /index.html; responseOverrides["404"] → /404.html; keep required globalHeaders including CSP. Validate with npm run check:swa-config.
+  - Do not embed lite.js while Cloudflare Zaraz injects it.
+  - Keep AGENTS.md, CONTRIBUTING.md, README.md, .github/copilot-instructions.md, and .cursor/rules/ aligned when behaviour changes.
+  - Playwright specs need // spec: headers; set BASE_URL for non-production targets.
+
+  Local: hugo server -D → http://localhost:1313. Quality: npm run check:meta; npm run check:swa-config; npm run check:spec-headers; npm test / npm run test:smoke.
+
+rules:
+  proposal:
+    - Keep under ~500 words; link AGENTS.md / docs/AI_CONTEXT.md instead of restating the CI map.
+    - Always include Non-goals and which surfaces change (content / layouts / config / tests / workflows / scripts).
+    - Call out SEO/meta, SWA routing, and deploy-branch impact when relevant.
+    - Note GitHub issue number when known.
+  design:
+    - Prefer site overrides (root layouts/assets/static) over theme edits.
+    - List contract changes (front matter rules, SWA headers/routes, Playwright selectors, workflow triggers).
+    - Name docs to update (AGENTS.md, README, CONTRIBUTING, Cursor rules, Copilot instructions, this AI_CONTEXT).
+  tasks:
+    - Break into small, checkable steps (prefer ≤2 hours each).
+    - Include meta check / Playwright / check:swa-config / check:spec-headers steps when those areas are touched.
+    - End with a documentation checklist item when boundaries change.
+  specs:
+    - Prefer MUST/SHOULD requirements; cover failure paths for routing, SEO, and CI gates.
+    - Keep British English and draft=false / blog-dev review explicit for content requirements.
