@@ -1,10 +1,20 @@
 {
   "version": 1,
   "hooks": {
+    "sessionStart": [
+      {
+        "command": "node .cursor/hooks/session-start.mjs",
+        "timeout": 10
+      }
+    ],
     "afterFileEdit": [
       {
         "command": "python .cursor/hooks/validate-post-meta.py",
         "timeout": 30
+      },
+      {
+        "command": "node .cursor/hooks/after-file-edit.mjs",
+        "timeout": 15
       }
     ],
     "postToolUse": [
@@ -12,6 +22,19 @@
         "command": "python .cursor/hooks/validate-post-meta.py",
         "matcher": "Write|StrReplace",
         "timeout": 30
+      }
+    ],
+    "beforeShellExecution": [
+      {
+        "command": "node .cursor/hooks/before-shell-guard.mjs",
+        "timeout": 10
+      }
+    ],
+    "stop": [
+      {
+        "command": "node .cursor/hooks/agent-stop-checklist.mjs",
+        "timeout": 15,
+        "loop_limit": 1
       }
     ]
   }

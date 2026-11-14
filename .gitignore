@@ -5,6 +5,7 @@ test-results
 playwright-report
 coverage
 .playwright-mcp/
+.cursor/hooks/state/
 
 __pycache__
 *.pyc
