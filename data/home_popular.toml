@@ -4,21 +4,21 @@
 # Titles are editorial labels: edits here survive the next automated refresh.
 
 [[items]]
-title = "Adding Elasticsearch with .Net Aspire"
-url = "/posts/2025/adding-elasticsearch-with-aspire/"
+title = "NDC London 2026"
+url = "/posts/2026/ndc-london-2026/"
 
 [[items]]
-title = "Top 25 Star Trek Characters"
-url = "/posts/2015/top-25-star-trek-characters/"
+title = "Setting Up Nagios Monitoring with Docker"
+url = "/posts/2025/monitoring-with-nagios-docker/"
 
 [[items]]
-title = "2022 Goals"
-url = "/posts/2022/2022-goals/"
+title = ".NET 5 to 10: features per release"
+url = "/posts/2026/dotnet-5-to-10-features/"
 
 [[items]]
-title = "Scottish Summit 2022"
-url = "/posts/2022/scottishsummit/"
+title = "Blazor and .NET 10 breaking changes"
+url = "/posts/2025/blazor-and-dotnet10/"
 
 [[items]]
-title = "10 Ways to Survive as an IT Manager"
-url = "/posts/2016/10-ways-to-survive-as-an-it-manager/"
+title = "Reflecting on 2024, goals for 2025"
+url = "/posts/2024/end-of-year/"

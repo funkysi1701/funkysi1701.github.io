@@ -2,7 +2,6 @@
   Override of themes/hugo-theme-bootstrap/layouts/partials/post.html
   Delta (issue #3465):
   - Insert engagement footer (Read next + Newsletter) after the article
-  - Soften Support This Site CTA (outline, after Read next)
   - Omit card-heavy related-posts section (replaced by Read next)
   When upgrading the theme, re-apply these changes to the updated upstream file.
 */}}
@@ -38,9 +37,6 @@
 {{ if .Params.date }}
 {{- partial "post/engagement-footer" . -}}
 {{ end }}
-<p class="post-support-cta">
-  <a href="https://otieu.com/4/10431006" target="_blank" rel="noopener noreferrer">Support this site</a>
-</p>
 {{- partial "post/copyright/index" . -}}
 {{ if .Params.date }}
 {{- partial "post/comments" . -}}

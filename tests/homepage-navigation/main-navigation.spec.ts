@@ -82,16 +82,5 @@ test.describe('Homepage and Navigation', () => {
       await expect(page.locator('nav').first()).toBeVisible();
     });
 
-    await test.step('Test Support this site link (opens in new tab)', async () => {
-      // 5. Test Support this site link (opens in new tab)
-      // Note: Just verify link has correct href and target, as external site may have protections
-      const supportLink = page.getByRole('link', { name: /Support.*site/i });
-      if (await supportLink.count() > 0) {
-        await expect(supportLink.first()).toBeVisible();
-        const href = await supportLink.first().getAttribute('href');
-        expect(href).toMatch(/otieu\.com/);
-      }
-    });
-
   });
 });

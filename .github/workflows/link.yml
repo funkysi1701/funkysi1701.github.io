@@ -1,6 +1,7 @@
 name: Broken link check
 permissions:
   contents: read
+  issues: write
 
 on:
   schedule:
@@ -11,7 +12,7 @@ jobs:
   broken_link_checker_job:
     runs-on: [self-hosted, k8s]
     name: Check for broken links
-    timeout-minutes: 120
+    timeout-minutes: 180
     steps:
       - name: Broken Link Checker Action
         uses: technote-space/broken-link-checker-action@7820497a025fb09ff736ee11bb8bb12ca715b4fe # v2.3.1
@@ -19,3 +20,7 @@ jobs:
           # SiteChecker follows internal links site-wide from this entry URL (no hand-maintained URL list).
           TARGET: https://www.funkysi1701.com
           RECURSIVE: true
+          # Skip RSS/XML feeds, local dev URLs in posts, and GitHub camo proxies (not user-facing destinations).
+          EXCLUDED_KEYWORDS: camo.githubusercontent.com,index.xml,localhost,host.docker.internal
+          USER_AGENT: Mozilla/5.0 (compatible; funkysi1701-link-check/1.0; +https://www.funkysi1701.com)
+          HONOR_ROBOT_EXCLUSIONS: true

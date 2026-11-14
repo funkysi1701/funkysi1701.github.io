@@ -42,13 +42,13 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
 
 **Steps:**
   1. Navigate to https://www.funkysi1701.com
-  2. Verify all navigation items are visible: About, Start Here, Projects, Tools & Resources, Newsletter, Contact, Events, Search, Support this site
+  2. Verify all navigation items are visible: About, Start Here, Projects, Tools & Resources, Newsletter, Contact, Events, Search
   3. Click on each navigation link one at a time
   4. Verify each page loads correctly
   5. Check that the navigation menu remains visible on all pages
 
 **Expected Results:**
-  - All 9 navigation menu items are displayed
+  - All 8 navigation menu items are displayed
   - Each link is clickable and navigates to the correct page
   - Pages load without errors
   - Navigation menu is consistent across all pages
@@ -709,25 +709,7 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   - GitHub repository links point to correct repos
   - All external links work without errors
 
-#### 6.3. Support this site link
-
-**File:** `tests/social-external-links/support-link.spec.ts`
-
-**Steps:**
-  1. Navigate to https://www.funkysi1701.com
-  2. Click on 'Support this site' navigation link
-  3. Verify it opens https://otieu.com/4/10431006 in new tab
-  4. Check that link doesn't break site navigation
-  5. Verify external site loads (or redirects appropriately)
-
-**Expected Results:**
-  - Support link is visible in main navigation
-  - Link opens in new tab
-  - External URL (otieu.com) loads or redirects
-  - Original site tab remains open
-  - No errors occur when clicking support link
-
-#### 6.4. Blog post external links
+#### 6.3. Blog post external links
 
 **File:** `tests/social-external-links/blog-external-links.spec.ts`
 

@@ -29,10 +29,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - uses: ./.github/actions/install-libatomic
+
       - name: Setup Node
         uses: actions/setup-node@v7
         with:
-          node-version: '24'
+          node-version: '26'
 
       - name: Run blog post idea generator
         env:

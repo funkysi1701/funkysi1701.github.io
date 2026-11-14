@@ -24,9 +24,9 @@ aliases = [
     "/2018/01/15/website-ui-testing"
 ]
 +++
-Last week I looked at testing the [UI of mobile apps](https://dev.to/funkysi1701/mobile-app-ui-testing-jgg-temp-slug-9433902), this week lets look at how we could do a similar thing for websites.
+Last week I looked at testing the [UI of mobile apps](/posts/2018/mobile-app-ui-testing/), this week lets look at how we could do a similar thing for websites.
 
-Testing the user interface is not an excuse for a lack of [unit tests](https://dev.to/funkysi1701/writing-your-first-test-53gi-temp-slug-2645725). Testing the user interface takes longer so for keep creating your small unit tests that can be run after ever build. That said lets look at how you create a UI test.
+Testing the user interface is not an excuse for a lack of [unit tests](/posts/2017/writing-your-first-test/). Testing the user interface takes longer so for keep creating your small unit tests that can be run after ever build. That said lets look at how you create a UI test.
 
 Create a Unit Test project as normal. Now install the following nuget packages
 

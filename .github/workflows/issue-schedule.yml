@@ -5,9 +5,6 @@ name: 30-day issue schedule
 # Docs: https://github.com/funkysi1701/repo-automation
 
 on:
-  schedule:
-    # Mondays 09:00 UTC
-    - cron: '0 9 * * 1'
   workflow_dispatch:
     inputs:
       dry_run:
