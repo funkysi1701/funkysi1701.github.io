@@ -7,7 +7,7 @@ alwaysApply: true
 
 Hugo blog/portfolio on **Azure Static Web Apps**. Theme: frozen **hugo-theme-bootstrap v0.65.1** — prefer root `layouts/`, `assets/`, `static/` over editing `themes/`.
 
-**Start here:** [`docs/AI_CONTEXT.md`](../../docs/AI_CONTEXT.md) — tool map, non-negotiables, OpenSpec vs small fixes, anti-patterns. Commands and CI: [`AGENTS.md`](../../AGENTS.md). PR checklist: [`CONTRIBUTING.md`](../../CONTRIBUTING.md). Slim Copilot: [`.github/copilot-instructions.md`](../../.github/copilot-instructions.md).
+**Start here:** [`docs/AI_CONTEXT.md`](../../docs/AI_CONTEXT.md) — tool map, non-negotiables, OpenSpec vs small fixes, anti-patterns. Commands and CI: [`AGENTS.md`](../../AGENTS.md). PR checklist: [`CONTRIBUTING.md`](../../CONTRIBUTING.md). Slim Copilot: [`.github/copilot-instructions.md`](../../.github/copilot-instructions.md). Backlog: Feature **2996** ([`azure-devops-stories.mdc`](azure-devops-stories.mdc)).
 
 ## Repo layout (quick)
 
@@ -23,6 +23,7 @@ Hugo blog/portfolio on **Azure Static Web Apps**. Theme: frozen **hugo-theme-boo
 
 | Rule file | When it loads |
 |-----------|----------------|
+| `azure-devops-stories.mdc` | Always (Boards Feature 2996) |
 | `content-posts.mdc` | `content/posts/**` |
 | `playwright-tests.mdc` | `tests/**` |
 | `hugo-layouts.mdc` | `layouts/**` |
