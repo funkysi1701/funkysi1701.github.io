@@ -36,7 +36,7 @@ Constraints: prefer root `layouts/` / `assets/` / `config/` only; British Englis
 | Featured posts | **Remove** from `sidebar/main.html` (home Popular + pin already surface curated work) |
 | Recent posts | **Keep** (cheap chronological discovery in sidebar) |
 | Tags | Keep (existing chip override) |
-| Social / Years | **Override** theme `social.html` in root layouts: one Years section + existing social/links content; delete the duplicate Years block |
+| Social / Years | **Override** theme `social.html` in root layouts: one Years section + existing social/links content; delete the duplicate Years block. **Follow-up:** theme social also loaded Font Awesome CDN; dropping it broke glyphs — site `body-end.html` now loads `assets/icons/js`; Bluesky/Mastodon (not in pack) use inline SVGs in `helpers/social-links.html`. |
 
 **Alternatives considered:** Drop both featured and recent — too aggressive for archive browsing. Drop tags instead of featured — tags are the intentional discovery affordance already covered by Playwright.
 

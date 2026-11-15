@@ -578,3 +578,17 @@
   color: #9ec1fa;
 }
 
+/* Bluesky / Mastodon footer icons: inline SVGs (not in local FA pack). Match
+ * Font Awesome svg-inline--fa sizing so they align with fab/fas neighbours. */
+.social-links .social-link > svg.svg-inline--fa {
+  display: inline-block;
+  height: 1em;
+  width: 1.25em;
+  vertical-align: -0.125em;
+  overflow: visible;
+}
+
+.social-links .social-link > svg.svg-inline--fa.fa-2x {
+  font-size: 2em;
+}
+

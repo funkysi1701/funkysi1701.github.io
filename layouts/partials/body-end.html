@@ -1,8 +1,12 @@
 {{/*
   Site override of the frozen hugo-theme-bootstrap (v0.65.1) body-end.
-  Delta vs upstream: does not include assets/icons/js (icons ship in the main bundle).
+  Delta vs upstream: loads assets/icons/js. The theme fork used a Font Awesome
+  CDN link inside sidebar/social.html for fas/fab glyphs (search, map-marker,
+  etc.); our social override removed that link, so icons must come from the
+  local SVG pack instead of the CDN.
 */}}
 {{- partial "assets/main/js" . -}}
+{{- partial "assets/icons/js" . -}}
 {{- partial "assets/service-worker/js" . -}}
 {{- partial "assets/viewer/js" . -}}
 {{- partial "assets/math/js" . -}}
