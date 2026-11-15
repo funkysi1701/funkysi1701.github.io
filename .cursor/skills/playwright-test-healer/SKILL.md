@@ -7,6 +7,8 @@ description: Debug and fix failing Playwright E2E tests using a systematic run-d
 
 Systematically identify, diagnose, and fix broken Playwright tests. Repo conventions: [`.cursor/rules/playwright-tests.mdc`](../../rules/playwright-tests.mdc). Copilot twin: [`.github/agents/playwright-test-healer.agent.md`](../../../.github/agents/playwright-test-healer.agent.md).
 
+**Layering:** personal skill `playwright-test-healer` covers the cross-repo loop (including Episode Atlas .NET E2E). **This project skill wins for the Hugo blog** — `BASE_URL`, `@smoke`, `// spec:` headers, and blog MCP wiring.
+
 ## Prerequisites
 
 ```bash
