@@ -6,7 +6,7 @@ alwaysApply: false
 
 # Content and blog posts
 
-Post structure and front matter examples: [`.github/copilot-instructions.md`](../../.github/copilot-instructions.md). Quick checks: [`AGENTS.md`](../../AGENTS.md).
+AI entry: [`docs/AI_CONTEXT.md`](../../docs/AI_CONTEXT.md). Commands and meta checks: [`AGENTS.md`](../../AGENTS.md). Archetype: [`archetypes/posts.md`](../../archetypes/posts.md).
 
 ## Front matter and posts
 
