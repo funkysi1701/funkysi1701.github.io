@@ -33,6 +33,10 @@ Or Docker Compose / commands in `README.md` (Hugo version from `.env`). Pull req
 - JSON-LD: `layouts/partials/head/structured-data.html` dispatches to the schema partials (`head/schema-blog-posting.html`, `head/schema-collection-page.html`); breadcrumbs via `head/breadcrumb-schema.html`.
 - New external hosts, share imagery, or scripts must stay coherent with CSP, response headers, and `staticwebapp.config.json`.
 
+## Icons (Font Awesome)
+
+Site `layouts/partials/body-end.html` loads the theme’s local SVG pack (`assets/icons/js`). Do **not** rely on a Font Awesome CDN link inside `sidebar/social.html` (that was theme quirk; the site social override does not include it). Prefer icon names that exist in `themes/hugo-theme-bootstrap/assets/icons/index.js` (e.g. `fa-expand-alt` not `fa-expand`). Brands missing from the pack (Bluesky, Mastodon) use inline SVGs in `layouts/partials/helpers/social-links.html`.
+
 ## Images in templates
 
 HTML partials and shortcodes that emit `<img>` need appropriate `alt` (or equivalent ARIA).
