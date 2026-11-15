@@ -1,6 +1,6 @@
 # Agent onboarding — funkysi1701.com (Hugo blog)
 
-Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). **Start here for the AI tool map:** [`docs/AI_CONTEXT.md`](docs/AI_CONTEXT.md). Cursor rules are path-scoped under [`.cursor/rules/`](.cursor/rules/); slim Copilot guidance in [`.github/copilot-instructions.md`](.github/copilot-instructions.md).
+Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). **Start here for the AI tool map:** [`docs/AI_CONTEXT.md`](docs/AI_CONTEXT.md). Cursor rules are path-scoped under [`.cursor/rules/`](.cursor/rules/); slim Copilot guidance in [`.github/copilot-instructions.md`](.github/copilot-instructions.md). Backlog: Azure Boards Feature **2996** ([`azure-devops-stories.mdc`](.cursor/rules/azure-devops-stories.mdc)); personal skill `azure-boards`.
 
 **Site:** https://www.funkysi1701.com
 
@@ -68,6 +68,10 @@ Requires **Python 3.11+** and **Node.js** on `PATH`. Manual meta equivalent: `py
 | [`playwright-test-healer`](.cursor/skills/playwright-test-healer/SKILL.md) | Debugging and fixing failing Playwright E2E tests |
 
 OpenSpec skills (`openspec-*`) live in the same directory for change proposal/apply/archive flows.
+
+### Work tracking (Azure Boards)
+
+Product / engineering backlog is Azure Boards under Feature **[2996](https://dev.azure.com/funkysi1701/My%20GitHub%20Projects/_workitems/edit/2996)** (`funkysi1701` / **My GitHub Projects**), not GitHub Issues. Link PRs with `AB#{id}` in the description. Some automation (e.g. 30-day schedule, tech debt scan) may still open GitHub issues — promote intentional build work into Boards when you take it on.
 
 ## Source of truth
 
