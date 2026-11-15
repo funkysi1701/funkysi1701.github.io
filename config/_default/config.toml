@@ -10,15 +10,17 @@ enableRobotsTXT = true
     id = ''
 
 [Menus]
+  # Four primary items + More dropdown (Tools, Contact, Events, Search).
   main = [
       {Name = "About", URL = "/about/", weight = 1},
       {Name = "Start Here", URL = "/start-here/", weight = 2},
       {Name = "Projects", URL = "/projects/", weight = 3},
-      {Name = "Tools & Resources", URL = "/tools-and-resources/", weight = 4},
-      {Name = "Newsletter", URL = "/newsletter/", weight = 5},
-      {Name = "Contact", URL = "/contact/", weight = 6},
-      {Name = "Events", URL = "/posts/events/", weight = 7},
-      {Name = "Search", URL = "/search/", weight = 8},
+      {Name = "Newsletter", URL = "/newsletter/", weight = 4},
+      {Name = "More", Identifier = "more", weight = 5},
+      {Name = "Tools & Resources", URL = "/tools-and-resources/", Parent = "more", weight = 1},
+      {Name = "Contact", URL = "/contact/", Parent = "more", weight = 2},
+      {Name = "Events", URL = "/posts/events/", Parent = "more", weight = 3},
+      {Name = "Search", URL = "/search/", Parent = "more", weight = 4},
   ]
 
 [params]
@@ -40,8 +42,8 @@ enableRobotsTXT = true
     minMatchCharLength = 3
 
 [params.homeHero]
+  # name defaults to params.author.name; avatar from params.author.avatar
   headline = "Senior .NET & Azure Engineer"
-  subheading = "18+ years' experience delivering production systems across development, infrastructure, and cloud"
   ctaText = "Start Here"
   ctaURL = "/start-here/"
 

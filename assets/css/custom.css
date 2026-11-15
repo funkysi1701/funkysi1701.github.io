@@ -452,15 +452,45 @@
   text-underline-offset: 0.15em;
 }
 
-.home-hero__cta a {
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
+/* Home hero identity (first-viewport-chrome-polish): avatar + name + role + button CTA. */
+.home-hero__identity {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.25rem;
 }
 
-.home-hero__cta a:hover,
-.home-hero__cta a:focus-visible {
-  color: var(--hbs-primary, #1363be);
+.home-hero__avatar {
+  flex: 0 0 auto;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid color-mix(in srgb, var(--hbs-primary, #1363be) 35%, transparent);
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.08);
+}
+
+[data-mode="dark"] .home-hero__avatar {
+  border-color: color-mix(in srgb, var(--hbs-primary-light, #5e92f3) 45%, transparent);
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.35);
+}
+
+.home-hero__copy {
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+
+.home-hero__name {
+  margin: 0;
+}
+
+.home-hero__role {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.home-hero__cta .btn-primary {
+  font-weight: 600;
 }
 
 /* Home popular strip (issue #3464) — lean curated links above the post list. */
