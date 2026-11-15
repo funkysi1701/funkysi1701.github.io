@@ -1,9 +1,11 @@
 {{/*
   Override of themes/hugo-theme-bootstrap/layouts/partials/post/panel/sidebar-toggler.html
-  Delta: added aria-label="Sidebar toggler" to fix WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.Name
-  accessibility violation (anchor with role=button missing accessible name).
-  When upgrading the theme, re-apply this change to the updated upstream file.
+  Delta:
+  - aria-label="Sidebar toggler" for WCAG2AA name on the control
+  - fa-expand → fa-expand-alt (local theme icons pack has expand-alt only; missing
+    icons render as the FA placeholder “spinner” ring)
+  When upgrading the theme, re-apply these changes to the updated upstream file.
 */}}
 <button id="sidebarToggler" type="button" class="action d-none d-lg-block" title="Sidebar toggler" aria-label="Sidebar toggler">
-  <i class="fas fa-fw fa-expand" data-fa-transform="rotate-45" aria-hidden="true"></i>
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45" aria-hidden="true"></i>
 </button>
