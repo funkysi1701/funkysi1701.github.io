@@ -83,8 +83,19 @@ Of course there is always more they can do and writing a letter or sending them 
 
 ## Work
 
+I work at a company called Microlise, lets look at their green credentials.
 
+Its technology helps transport companies:
 
-## Church
+- Reduce unnecessary vehicle mileage through route optimisation.
+- Reduce fuel consumption through better driving behaviour.
+- Reduce engine idling.
+- Improve vehicle utilisation.
+- Maintain vehicles more effectively, extending their useful lives.
+- Support the transition to electric commercial vehicles.
+
+Microlise reports that its technology helped UK customers save 246 million litres of fuel over five years, equivalent to more than 645 million kg of CO₂
+
+Microlise received the London Stock Exchange Green Economy Mark for the sixth consecutive year in 2026. The particularly interesting statistic is that 60.9% of Microlise's revenue was classified as green in the 2026 assessment.
 
 ## Future Actions
