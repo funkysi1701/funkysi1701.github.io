@@ -3,11 +3,13 @@
 {{- $titleSep := printf " %s " (default "-" $.Site.Params.titleSeparator) -}}
 {{- if .IsHome -}}
   {{- with $.Site.Params.homeHero -}}
-    {{- with .headline -}}
-      {{- $hl := strings.TrimSpace . -}}
-      {{- if ne $hl "" -}}
-        {{- $title = delimit (slice $hl $.Site.Title) $titleSep -}}
-      {{- end -}}
+    {{- /* Prefer author/brand name so <title> matches the home hero H1. */ -}}
+    {{- $brand := strings.TrimSpace (default $.Site.Params.author.name .name) -}}
+    {{- if eq $brand "" -}}
+      {{- $brand = strings.TrimSpace (default "" .headline) -}}
+    {{- end -}}
+    {{- if ne $brand "" -}}
+      {{- $title = delimit (slice $brand $.Site.Title) $titleSep -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}

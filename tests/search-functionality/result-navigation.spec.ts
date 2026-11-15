@@ -2,73 +2,57 @@
 // seed: seed.spec.ts
 
 import { test, expect } from '../fixtures';
+import type { Page } from '@playwright/test';
+
+async function waitForSearchStat(page: Page) {
+  await page.locator('#loadingSpinner').waitFor({ state: 'hidden', timeout: 15_000 }).catch(() => {});
+  await expect(page.locator('#searchStat')).not.toHaveText('', { timeout: 15_000 });
+}
+
+/** Result links inside #searchResults only — excludes nav More → Events (/posts/events/). */
+function searchResultLinks(page: Page) {
+  return page.locator('#searchResults .search-result-title a, #searchResults .search-result a[href*="/posts/"]');
+}
 
 test.describe('Search Functionality', () => {
   test('Search result navigation', async ({ page }) => {
-    await test.step('Navigate to https://www.funkysi1701.com/search/', async () => {
-      // 1. Navigate to https://www.funkysi1701.com/search/
-      await page.goto('/search/');
+    await test.step("Search for 'DevOps' via query string", async () => {
+      // Drive Fuse the same way as other search specs (index load + #searchStat).
+      await page.goto('/search/?q=DevOps');
+      await waitForSearchStat(page);
+      await expect(page.locator('#searchStat')).toContainText(/found \d+ results?/i);
     });
 
-    await test.step("Search for 'DevOps'", async () => {
-      // 2. Search for 'DevOps'
-      // Click the search button/icon to make input visible
-      const searchButton = page.locator('button[aria-label="Search"], .search-toggle, button:has([class*="search"])');
-      const searchButtonVisible = await searchButton.isVisible().catch(() => false);
-      if (searchButtonVisible) {
-        await searchButton.first().click();
+    await test.step('Verify search results appear and navigate', async () => {
+      const results = searchResultLinks(page);
+      await expect(results.first()).toBeVisible({ timeout: 10_000 });
+      expect(await results.count()).toBeGreaterThan(0);
+
+      const searchUrl = page.url();
+      await results.first().click();
+      await expect(page).toHaveURL(/\/posts\//);
+
+      // Back to search (Algolia/DocSearch can race — fall back to goto).
+      try {
+        await page.goBack({ waitUntil: 'domcontentloaded', timeout: 20_000 });
+      } catch {
         await page.waitForTimeout(500);
-      }
-
-      const searchInput = page.locator('input[type="search"], input[aria-label="Search"]').first();
-      await searchInput.waitFor({ state: 'attached', timeout: 5000 });
-      await searchInput.fill('DevOps', { force: true });
-      await searchInput.press('Enter');
-    });
-
-    await test.step('Verify search results appear', async () => {
-      // 3. Verify search results appear
-      await page.waitForTimeout(1500);
-      const results = page.locator('a[href*="/posts/"], .result a, .search-result a');
-      const resultCount = await results.count();
-
-      if (resultCount > 0) {
-        // 4. Click on first search result
-        const firstResult = results.first();
-        const searchUrl = page.url();
-        await firstResult.click();
-
-        // 5. Verify it navigates to the correct blog post
-        await expect(page).toHaveURL(/\/posts\//);
-
-        // 6. Use browser back button (Algolia/DocSearch can trigger a parallel /search/ nav — don't race with goto)
         try {
-          await page.goBack({ waitUntil: 'domcontentloaded', timeout: 20_000 });
+          await page.waitForURL((u) => u.pathname.includes('/search/'), { timeout: 15_000 });
         } catch {
-          await page.waitForTimeout(500);
-          try {
-            await page.waitForURL((u) => u.pathname.includes('/search/'), { timeout: 15_000 });
-          } catch {
-            await page.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 20_000 });
-          }
-          await page.waitForLoadState('domcontentloaded');
+          await page.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 20_000 });
         }
+        await page.waitForLoadState('domcontentloaded');
+      }
 
-        // 7. Verify search results are preserved
-        await page.waitForTimeout(1000);
-        const resultsAfterBack = page.locator('a[href*="/posts/"], .result a, .search-result a');
-        const countAfterBack = await resultsAfterBack.count();
+      await waitForSearchStat(page);
+      const resultsAfterBack = searchResultLinks(page);
+      await expect(resultsAfterBack.first()).toBeVisible({ timeout: 10_000 });
 
-        if (countAfterBack > 1) {
-          // 8. Click on a different result
-          const secondResult = resultsAfterBack.nth(1);
-          await secondResult.click();
-
-          // 9. Verify navigation works correctly
-          await expect(page).toHaveURL(/\/posts\//);
-        }
+      if ((await resultsAfterBack.count()) > 1) {
+        await resultsAfterBack.nth(1).click();
+        await expect(page).toHaveURL(/\/posts\//);
       }
     });
-
   });
 });

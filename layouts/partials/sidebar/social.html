@@ -1,0 +1,44 @@
+{{/*
+  Override of themes/hugo-theme-bootstrap/layouts/partials/sidebar/social.html
+  Delta (first-viewport-chrome-polish): keep Links + a single Years list; drop the
+  duplicate Years tag-cloud section from the theme fork.
+*/}}
+<section class="social row card component">
+  <div class="card-header">
+    <h2 class="card-title">
+      Links
+    </h2>
+  </div>
+  <div class="card-body">
+      <ul class="post-list">
+        <li><a href="https://buymeacoffee.com/funkysi1701">Buy Me A Coffee</a></li>
+        <li><a href="https://github.com/sponsors/funkysi1701">GitHub Sponsors</a></li>
+        <li><a href="https://share.octopus.energy/amber-eel-810">Octopus Energy</a></li>
+        <li><a href="https://dev.to/funkysi1701">DevTo</a></li>
+        <li><a rel="me" href="https://hachyderm.io/@funkysi1701">Mastodon</a></li>
+        <li><a href="{{ "/funky-si-the-next-generation/" | relURL }}">Funky Si: The Next Generation</a></li>
+        <li><a href="{{ "/podcasts/" | relURL }}">Podcasts</a></li>
+        <li><a href="{{ "/newsletter/" | relURL }}">My Monthly Newsletter</a></li>
+        <li><a href="{{ "/tools-and-resources/" | relURL }}">Tools &amp; Resources</a></li>
+      </ul>
+  </div>
+</section>
+{{- if ne (len .Site.Taxonomies.year) 0 -}}
+<section class="year row card component">
+  <div class="card-header">
+    <h2 class="card-title">
+      <a href="{{ "/year/" | relURL }}">Years</a>
+    </h2>
+  </div>
+  <div class="card-body">
+      <ul class="post-list">
+        {{- $posts := where .Site.RegularPages "Section" "eq" "posts" -}}
+        {{- $total := len $posts -}}
+        {{- range .Site.Taxonomies.year.Alphabetical.Reverse -}}
+        <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title | default .Term }}</a> ({{ len .Pages }})</li>
+        {{- end -}}
+        <li>{{ $total }} Posts so far</li>
+      </ul>
+  </div>
+</section>
+{{- end -}}

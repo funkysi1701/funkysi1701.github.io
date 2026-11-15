@@ -11,7 +11,7 @@
     <h1 class="card-title post-title">{{ partial "helpers/title" . }}</h1>
   </div>
   <div class="card-body">
-    {{- partial "post/meta" . -}}
+    {{- partial "post/meta" (dict "Page" .) -}}
     {{- partial "hooks/content-begin" . -}}
     {{- partial "post/share" . -}}
     <div class="post-content mb-3">

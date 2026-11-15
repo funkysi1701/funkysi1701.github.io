@@ -1,24 +1,36 @@
+{{/*
+  Post meta: date, reading time, topical tag badges only (not year/month taxonomies).
+  Callers may pass a Page or dict { Page, maxTags } where maxTags caps list chips.
+*/}}
+{{- $page := . -}}
+{{- $maxTags := -1 -}}
+{{- if reflect.IsMap . -}}
+  {{- $page = .Page -}}
+  {{- with .maxTags -}}{{- $maxTags = . -}}{{- end -}}
+{{- end -}}
 <div class="post-meta">
-  {{- $displayDate := or .PublishDate .Date -}}
-  {{- if and (default true (default .Site.Params.postDate .Params.postDate)) (not $displayDate.IsZero) -}}
+  {{- $displayDate := or $page.PublishDate $page.Date -}}
+  {{- if and (default true (default $page.Site.Params.postDate $page.Params.postDate)) (not $displayDate.IsZero) -}}
   {{- $dateParams := dict "createdOn" $displayDate.Local -}}
-  {{ if gt .Lastmod $displayDate }}
-    {{- $dateParams = merge $dateParams (dict "updatedOn" .Lastmod.Local) -}}
+  {{ if gt $page.Lastmod $displayDate }}
+    {{- $dateParams = merge $dateParams (dict "updatedOn" $page.Lastmod.Local) -}}
   {{ end }}
   <span class="post-date" title="{{ i18n "post_date" $dateParams }}">
-    {{ partial "helpers/post-date" . }}
+    {{ partial "helpers/post-date" $page }}
   </span>
   {{- end -}}
-  {{- if and (default true (default .Site.Params.readingTime .Params.readingTime)) -}}
+  {{- if and (default true (default $page.Site.Params.readingTime $page.Params.readingTime)) -}}
   <span class="post-reading-time">
-    {{ i18n "reading_time" . }}
+    {{ i18n "reading_time" $page }}
   </span>
   {{- end -}}
   <span class="post-taxonomies">
-  {{- range $key, $value := .Site.Taxonomies -}}
-    {{- range ($.GetTerms $key) -}}
+  {{- $tags := $page.GetTerms "tags" -}}
+  {{- if ge $maxTags 0 -}}
+    {{- $tags = first $maxTags $tags -}}
+  {{- end -}}
+  {{- range $tags -}}
     <a href="{{ .Permalink }}" class="badge post-taxonomy">{{ .Name }}</a>
-    {{- end -}}
   {{- end -}}
   </span>
 </div>

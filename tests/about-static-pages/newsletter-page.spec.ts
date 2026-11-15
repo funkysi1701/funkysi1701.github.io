@@ -24,10 +24,11 @@ test.describe('About and Static Pages', () => {
     });
 
     await test.step('Look for subscription form or link', async () => {
-      // 4. Look for subscription form or link
-      const subscriptionElement = content.locator('form, a[href*="subscribe"], a[href*="newsletter"], button, input[type="email"]').first();
-      // Newsletter might use external service, so we just check content is present
-      await expect(subscriptionElement).toBeVisible();
+      // 4. Assert the Mailchimp CTA — not heading permalinks that contain "subscribe"
+      // or "newsletter" in the fragment (those anchors are hidden).
+      const subscribeLink = content.locator('a[href*="list-manage.com/subscribe"]');
+      await expect(subscribeLink).toBeVisible();
+      await expect(subscribeLink).toContainText(/subscribe/i);
     });
 
     await test.step('Verify recent topics are mentioned', async () => {

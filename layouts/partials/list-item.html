@@ -1,0 +1,40 @@
+{{/*
+  Override of themes/hugo-theme-bootstrap/layouts/partials/list-item.html
+  Delta (first-viewport-chrome-polish): pass maxTags=3 into post/meta so list
+  cards show at most three topical tag badges (year/month omitted in meta).
+*/}}
+<article class="row card post component">
+  {{- if and (default true .Page.Site.Params.pinned) .Page.Params.pinned -}}
+    {{- $pinnedPosts := .PinnedPosts -}}
+    {{- with .Page.File.UniqueID -}}
+      {{- if in $pinnedPosts . -}}
+      <span class="position-absolute start-0 top-0 text-accent"><i class="fas fa-thumbtack" data-fa-transform="rotate-45"></i></span>
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  <div class="card-header">
+    <h2 class="card-title post-title">
+      <a href="{{ .Page.Permalink }}">{{ partial "helpers/title" .Page }}</a>
+    </h2>
+  </div>
+  <div class="card-body">
+    {{- with index .Page.Params.Images 0 -}}
+      {{- if ne (strings.TrimSpace .) "" -}}
+    {{ partial "helpers/image" (dict "filename" . "alt" $.Page.Title "class" "img-fluid" "resources" $.Page.Resources) }}
+      {{- end -}}
+    {{- end -}}
+    {{- partial "post/meta" (dict "Page" .Page "maxTags" 3) -}}
+    <div class="post-summary">
+      {{- if .Page.Params.pinned -}}
+        {{- if .Page.Description -}}
+          <p>{{ .Page.Description }}</p>
+          <div><a class="btn btn-sm btn-primary btn-read-more" href="{{ .Page.Permalink }}">{{ i18n "read_more" }}</a></div>
+        {{- else -}}
+          {{ partial "post/excerpt" .Page }}
+        {{- end -}}
+      {{- else -}}
+        {{ partial "post/excerpt" .Page }}
+      {{- end -}}
+    </div>
+  </div>
+</article>
