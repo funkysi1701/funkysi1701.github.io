@@ -24,7 +24,7 @@ When you change workflows, branches, testing, or automation, update every affect
 | Tool | File | Scope |
 |------|------|-------|
 | **Cursor (always on)** | [`.cursor/rules/funkysi1701-blog-core.mdc`](../.cursor/rules/funkysi1701-blog-core.mdc) | Thin entry point; links here and to `AGENTS.md` |
-| **Cursor (scoped)** | [`.cursor/rules/`](../.cursor/rules/) | `content-posts.mdc`, `playwright-tests.mdc`, `hugo-layouts.mdc`, `parkrun-generated.mdc` |
+| **Cursor (scoped)** | [`.cursor/rules/`](../.cursor/rules/) | `azure-devops-stories.mdc` (Feature **2996**), `content-posts.mdc`, `playwright-tests.mdc`, `hugo-layouts.mdc`, `parkrun-generated.mdc` |
 | **Cursor MCP** | [`.cursor/mcp.json`](../.cursor/mcp.json) | Playwright browser + test server |
 | **Cursor Cloud / any agent** | [`AGENTS.md`](../AGENTS.md) | Build, test, what not to edit, CI map |
 | **GitHub Copilot** | [`.github/copilot-instructions.md`](../.github/copilot-instructions.md) | Slim always-on edit guidance; detail → `AGENTS.md` |
@@ -40,7 +40,7 @@ Stack context most durable → most task-specific:
 
 1. **User rules** — Personal Cursor preferences (commits, communication).
 2. **Project rules** — This file, [`AGENTS.md`](../AGENTS.md), and [`.cursor/rules/*.mdc`](../.cursor/rules/).
-3. **Chat prompt** — The GitHub issue, PR, or one-line task for *this* session.
+3. **Chat prompt** — The Azure Boards `AB#`, PR, or one-line task for *this* session. Product backlog: Feature **2996** (not GitHub Issues for intentional build work).
 
 Keep tasks scoped. Prefer **`@` file references** (e.g. `@AGENTS.md`, `@content/posts/2026/...`) over pasting large blocks or copying instructions from other repos.
 
