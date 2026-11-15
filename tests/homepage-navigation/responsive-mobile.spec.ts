@@ -68,9 +68,15 @@ async function clickVisibleMainNavLink(
 /** Secondary destinations live under the More dropdown (dropdown-item, not nav-link). */
 async function clickVisibleMoreChild(page: Page, name: string | RegExp) {
   const navMenu = page.locator('#navbarSupportedContent');
-  const more = navMenu.locator('#navbarDropdownMore');
+  const more = navMenu.getByRole('button', { name: 'More', exact: true });
   await ensureMobileNavLinkVisible(page, more);
-  await more.click();
+  // Same Bootstrap dropdown quirk as desktop: prefer DOM click over Playwright click.
+  if ((await more.getAttribute('aria-expanded')) === 'true') {
+    await more.evaluate((el: HTMLElement) => el.click());
+    await expect(more).toHaveAttribute('aria-expanded', 'false');
+  }
+  await more.evaluate((el: HTMLElement) => el.click());
+  await expect(more).toHaveAttribute('aria-expanded', 'true', { timeout: 10000 });
   const menu = navMenu.locator('ul.dropdown-menu[aria-labelledby="navbarDropdownMore"]');
   const item =
     typeof name === 'string'

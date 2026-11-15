@@ -5,18 +5,23 @@ import { test, expect } from '../fixtures';
 import type { Locator } from '@playwright/test';
 
 async function openMoreMenu(mainNav: Locator) {
-  const more = mainNav.locator('#navbarDropdownMore');
+  // Prefer role over raw id — matches the a11y tree (More is role=button).
+  const more = mainNav.getByRole('button', { name: 'More', exact: true });
   const menu = mainNav.locator('ul.dropdown-menu[aria-labelledby="navbarDropdownMore"]');
-  await more.click();
-  // Bootstrap may leave the menu in the a11y tree before/without a durable .show class
-  // on some builds; wait for expanded state or visible menu either way.
-  await expect
-    .poll(async () => {
-      const expanded = (await more.getAttribute('aria-expanded')) === 'true';
-      const visible = await menu.isVisible().catch(() => false);
-      return expanded || visible;
-    }, { timeout: 10000 })
-    .toBe(true);
+  await expect(more).toBeVisible();
+  await more.scrollIntoViewIfNeeded();
+
+  // Playwright’s actionability click often fails to toggle this Bootstrap 5
+  // dropdown (<a role="button" data-bs-toggle="dropdown"> without href) on
+  // blog-dev / headless Chromium. A DOM click() matches real user agents.
+  const isExpanded = async () => (await more.getAttribute('aria-expanded')) === 'true';
+  if (await isExpanded()) {
+    await more.evaluate((el: HTMLElement) => el.click());
+    await expect(more).toHaveAttribute('aria-expanded', 'false');
+  }
+  await more.evaluate((el: HTMLElement) => el.click());
+  await expect(more).toHaveAttribute('aria-expanded', 'true', { timeout: 10000 });
+  await expect(menu).toBeVisible();
   return menu;
 }
 
