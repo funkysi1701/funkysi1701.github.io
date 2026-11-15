@@ -68,14 +68,14 @@ Our Health Our Planet says we need to speak out and talk to our MP about the nee
 
 ### Examples of votes supporting environmental action
 
-| Date | Parliamentary vote | Lee Pitcher's vote |
-| -------- | ---------------------------------------- | ------------------ |
-| Sep 2024 | Great British Energy Bill | |
-| Oct 2024 | Great British Energy Bill, third reading | |
-| Jan 2025 | Clean Heat Market Mechanism | |
-| Apr 2025 | Onshore wind and solar planning | |
-| Feb 2026 | Greenhouse Gas Emissions Trading Scheme | |
-| Jun 2026 | Seventh Carbon Budget | |
+| Date | Parliamentary vote |
+| -------- | ---------------------------------------- |
+| Sep 2024 | Great British Energy Bill |
+| Oct 2024 | Great British Energy Bill, third reading |
+| Jan 2025 | Clean Heat Market Mechanism |
+| Apr 2025 | Onshore wind and solar planning |
+| Feb 2026 | Greenhouse Gas Emissions Trading Scheme |
+| Jun 2026 | Seventh Carbon Budget |
 
 Vote Climate gives my MP a score of 16 / 21 in favour of Climate issues.
 
