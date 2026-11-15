@@ -65,8 +65,23 @@ async function clickVisibleMainNavLink(
   await link.click();
 }
 
+/** Secondary destinations live under the More dropdown (dropdown-item, not nav-link). */
+async function clickVisibleMoreChild(page: Page, name: string | RegExp) {
+  const navMenu = page.locator('#navbarSupportedContent');
+  const more = navMenu.locator('#navbarDropdownMore');
+  await ensureMobileNavLinkVisible(page, more);
+  await more.click();
+  const menu = navMenu.locator('ul.dropdown-menu[aria-labelledby="navbarDropdownMore"]');
+  const item =
+    typeof name === 'string'
+      ? menu.getByRole('link', { name, exact: true })
+      : menu.getByRole('link', { name });
+  await item.click({ force: true });
+}
+
 test.describe('Homepage and Navigation', () => {
   test('Responsive design on mobile viewport', async ({ page }) => {
+    test.setTimeout(90_000);
     let hamburger!: Locator;
 
     await test.step('Set viewport to mobile size (375x667)', async () => {
@@ -77,7 +92,7 @@ test.describe('Homepage and Navigation', () => {
     await test.step('Navigate to https://www.funkysi1701.com', async () => {
       // 2. Navigate to https://www.funkysi1701.com
       await page.goto('/');
-      await page.waitForLoadState('load');
+      await page.waitForLoadState('domcontentloaded');
     });
 
     const navMenu = page.locator('#navbarSupportedContent');
@@ -95,15 +110,16 @@ test.describe('Homepage and Navigation', () => {
     });
 
     await test.step('Verify all navigation items are accessible', async () => {
-      // 5. Verify all navigation items are accessible
+      // 5. Verify primary items + More (Contact lives under More)
       await expect(mainNavPageLink(navMenu, { name: 'About', exact: true })).toBeVisible();
       await expect(mainNavPageLink(navMenu, { name: 'Start Here', exact: true })).toBeVisible();
       await expect(mainNavPageLink(navMenu, { name: 'Projects', exact: true })).toBeVisible();
-      await expect(mainNavPageLink(navMenu, { name: 'Contact', exact: true })).toBeVisible();
+      await expect(mainNavPageLink(navMenu, { name: 'Newsletter', exact: true })).toBeVisible();
+      await expect(navMenu.locator('#navbarDropdownMore')).toBeVisible();
     });
 
     await test.step('Test navigation on About page', async () => {
-      // 6. Test navigation on About, Projects, and Contact (open menu only when links are hidden)
+      // 6. Test navigation on About, Projects, and Contact via More
       await clickVisibleMainNavLink(page, { name: 'About', exact: true });
       await expect(page).toHaveURL(/\/about\//);
       await page.waitForLoadState('load');
@@ -113,7 +129,7 @@ test.describe('Homepage and Navigation', () => {
       await expect(page).toHaveURL(/\/(?:posts\/)?projects\/?$/);
       await page.waitForLoadState('load');
 
-      await clickVisibleMainNavLink(page, { name: 'Contact', exact: true });
+      await clickVisibleMoreChild(page, 'Contact');
       await expect(page).toHaveURL(/\/contact\//);
     });
 

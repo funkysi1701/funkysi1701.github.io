@@ -452,15 +452,45 @@
   text-underline-offset: 0.15em;
 }
 
-.home-hero__cta a {
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
+/* Home hero identity (first-viewport-chrome-polish): avatar + name + role + button CTA. */
+.home-hero__identity {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.25rem;
 }
 
-.home-hero__cta a:hover,
-.home-hero__cta a:focus-visible {
-  color: var(--hbs-primary, #1363be);
+.home-hero__avatar {
+  flex: 0 0 auto;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid color-mix(in srgb, var(--hbs-primary, #1363be) 35%, transparent);
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.08);
+}
+
+[data-mode="dark"] .home-hero__avatar {
+  border-color: color-mix(in srgb, var(--hbs-primary-light, #5e92f3) 45%, transparent);
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.35);
+}
+
+.home-hero__copy {
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+
+.home-hero__name {
+  margin: 0;
+}
+
+.home-hero__role {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.home-hero__cta .btn-primary {
+  font-weight: 600;
 }
 
 /* Home popular strip (issue #3464) — lean curated links above the post list. */
@@ -546,5 +576,19 @@
 [data-mode="dark"] .tag-chips__all a:hover,
 [data-mode="dark"] .tag-chips__all a:focus-visible {
   color: #9ec1fa;
+}
+
+/* Bluesky / Mastodon footer icons: inline SVGs (not in local FA pack). Match
+ * Font Awesome svg-inline--fa sizing so they align with fab/fas neighbours. */
+.social-links .social-link > svg.svg-inline--fa {
+  display: inline-block;
+  height: 1em;
+  width: 1.25em;
+  vertical-align: -0.125em;
+  overflow: visible;
+}
+
+.social-links .social-link > svg.svg-inline--fa.fa-2x {
+  font-size: 2em;
 }
 
