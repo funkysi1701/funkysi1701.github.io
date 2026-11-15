@@ -6,16 +6,26 @@
   {{- partial "hooks/list-begin" . -}}
   {{- if .IsHome -}}
     {{- with $.Site.Params.homeHero -}}
+  {{- $authorName := default $.Site.Params.author.name .name -}}
+  {{- $avatar := $.Site.Params.author.avatar -}}
+  {{- $role := default "" .headline -}}
   <header class="home-hero mb-4 pb-3 border-bottom">
-    <h1 class="display-6 fw-bold lh-sm">{{ default "" .headline }}</h1>
-    {{- with .subheading -}}
-    <p class="lead text-body-secondary mb-2">{{ . }}</p>
-    {{- end -}}
-    {{- if and .ctaText .ctaURL -}}
-    <p class="home-hero__cta mb-0">
-      <a href="{{ .ctaURL | relURL }}">{{ .ctaText }}</a>
-    </p>
-    {{- end -}}
+    <div class="home-hero__identity">
+      {{- if $avatar -}}
+      <img class="home-hero__avatar" src="{{ $avatar | relURL }}" alt="{{ $authorName }}" width="96" height="96" decoding="async">
+      {{- end -}}
+      <div class="home-hero__copy">
+        <h1 class="home-hero__name display-6 fw-bold lh-sm mb-1">{{ $authorName }}</h1>
+        {{- with $role -}}
+        <p class="home-hero__role lead text-body-secondary mb-3">{{ . }}</p>
+        {{- end -}}
+        {{- if and .ctaText .ctaURL -}}
+        <p class="home-hero__cta mb-0">
+          <a class="btn btn-primary" href="{{ .ctaURL | relURL }}">{{ .ctaText }}</a>
+        </p>
+        {{- end -}}
+      </div>
+    </div>
   </header>
     {{- end -}}
     {{- partial "home/popular" . -}}
