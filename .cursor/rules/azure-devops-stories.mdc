@@ -1,0 +1,37 @@
+---
+description: Where funkysi1701.com blog backlog stories live in Azure DevOps (org, project, parent Feature 2996). Use when reviewing open stories, picking next work, or querying Boards.
+alwaysApply: true
+---
+
+# Azure DevOps — Blog stories
+
+Backlog for this repo lives in **Azure DevOps**, not GitHub Issues (Dependabot / security advisories and automation that already opens GitHub issues may remain there).
+
+| | |
+| --- | --- |
+| **Organization** | `https://dev.azure.com/funkysi1701` |
+| **Project** | `My GitHub Projects` |
+| **Parent Feature** | **2996** (funkysi1701.com / Hugo blog) |
+
+When the user asks to review open stories, pick next work, or summarize the backlog:
+
+1. Query **User Stories** (and related Tasks/Bugs as needed) under **parent Feature `2996`**.
+2. Exclude **Closed** and **Removed**.
+3. Prefer `az boards query` with WIQL filtering `[System.Parent] = 2996` (org/project as above).
+4. Order by priority then changed date unless the user specifies otherwise.
+
+Example WIQL filter:
+
+```wiql
+SELECT [System.Id], [System.Title], [System.State], [System.WorkItemType],
+       [Microsoft.VSTS.Common.Priority], [System.Tags], [System.ChangedDate], [System.Parent]
+FROM WorkItems
+WHERE [System.TeamProject] = 'My GitHub Projects'
+  AND [System.WorkItemType] = 'User Story'
+  AND [System.State] <> 'Closed'
+  AND [System.State] <> 'Removed'
+  AND [System.Parent] = 2996
+ORDER BY [Microsoft.VSTS.Common.Priority] ASC, [System.ChangedDate] DESC
+```
+
+Link pull requests with `AB#{id}` in the **PR description** (not titles only).

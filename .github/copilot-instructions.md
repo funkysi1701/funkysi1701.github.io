@@ -1,227 +1,74 @@
 # Copilot Instructions for funkysi1701.com Blog
 
-For a shorter, tool-agnostic onboarding guide, see **[`AGENTS.md`](../AGENTS.md)** at the repo root. PR checklist and merge readiness: **[`CONTRIBUTING.md`](../CONTRIBUTING.md)**. This file adds Copilot-specific detail. Cursor rules are path-scoped under **[`.cursor/rules/`](../.cursor/rules/)** — always-applied core in **`funkysi1701-blog-core.mdc`**, plus **`content-posts.mdc`**, **`playwright-tests.mdc`**, **`hugo-layouts.mdc`**, and **`parkrun-generated.mdc`**. Cursor project skills for recurring tasks live under **[`.cursor/skills/`](../.cursor/skills/)** (parkrun update, post meta fix, Playwright healer); see **`AGENTS.md`**.
+> **Keep this file short.** Always-loaded Copilot / agent surface should stay lean. Canonical entry: [`docs/AI_CONTEXT.md`](../docs/AI_CONTEXT.md) · commands and CI: [`AGENTS.md`](../AGENTS.md) · PR checklist: [`CONTRIBUTING.md`](../CONTRIBUTING.md). Cursor: [`.cursor/rules/`](../.cursor/rules/) · skills: [`.cursor/skills/`](../.cursor/skills/).
 
-## Project Overview
+## Product and stack
 
-This is a personal blog/portfolio website powered by **Hugo** (static site generator), hosted on **Azure Static Web Apps** (prod, dev, and test) via GitHub Actions. The site features blog posts, projects, podcasts, and technical content, primarily focused on .NET, Azure, and DevOps topics.
+Personal Hugo blog/portfolio on **Azure Static Web Apps** (prod, blog-dev, blog-test via GitHub Actions). **Site:** https://www.funkysi1701.com
 
-**Key URL:** https://www.funkysi1701.com
+Theme: **frozen fork** of hugo-theme-bootstrap v0.65.1 — prefer root `layouts/`, `assets/`, `static/` over editing `themes/hugo-theme-bootstrap/`. Do not rebase onto upstream v1.
 
-## Build & Development Commands
+## Layout
 
-### Local Development (Hugo)
+| Path | Role |
+|------|------|
+| `content/posts/YYYY/` | Blog posts (TOML front matter in `+++` fences) |
+| `content/` | Pages (about, projects, parkrun, …) |
+| `layouts/`, `assets/`, `static/` | Site overrides |
+| `config/` | `_default` + development / staging / production |
+| `tests/`, `specs/` | Playwright E2E + scenario plan |
+| `scripts/`, `.github/workflows/` | Automation and CI |
 
-```bash
-# Start Hugo dev server (includes leftover Hugo drafts if any exist)
-hugo server -D
-# Runs on http://localhost:1313
+## Branches and deploy
 
-# Build static site for production
-hugo
-```
+| Branch | Target |
+|--------|--------|
+| **`main`** | Production — `www.funkysi1701.com` |
+| **`develop`** | blog-dev + blog-test |
+| **`feature/*`** | blog-dev only |
 
-### Docker Development
+No git branch named `dev`. blog-dev builds pass `--buildFuture`; staging/production do not.
 
-```bash
-# Run in Docker Compose (uses .env for HUGO_VERSION)
-docker-compose up
+## Non-negotiables
 
-# Or run Docker directly
-docker run --rm -it -v .:/src -p 1313:1313 floryn90/hugo:${HUGO_VERSION} server -D --disableFastRender --environment development
-```
-
-### Deployment Pipeline
-
-- **main:** Production — GitHub Actions → Azure SWA (`www.funkysi1701.com`; `azure-static-web-apps-victorious-pebble-0b8f90e03.yml`)
-- **develop:** Non-prod — GitHub Actions → SWA dev + test (`swa-deploy-nonprod.yml`; blog-dev and blog-test)
-- **feature/\*:** GitHub Actions → SWA dev only (`swa-deploy-nonprod.yml`)
-
-Non-prod SWA deploy tokens: GitHub secrets `AZURE_STATIC_WEB_APPS_API_TOKEN_BLOG_DEV` and `AZURE_STATIC_WEB_APPS_API_TOKEN_BLOG_TEST`. Optional GitHub Environments: `Dev`, `Test`, `Prod`.
-
-There is no separate git branch named `dev`; use **`develop`** for integration.
-
-## Content Conventions
-
-### Parkrun page (`content/parkrun.md`)
-
-Official parkrun 5k results and the bar chart are produced by `scripts/update_parkrun_results.py` and written between HTML markers `<!-- BEGIN PARKRUN_GENERATED -->` and `<!-- END PARKRUN_GENERATED -->`. Do not hand-edit that block; run the script after `pip install -r scripts/requirements-parkrun.txt`. Other races, walks, and explanatory notes are edited manually in the same file (below the markers). Optional row exclusions: `data/parkrun_suppress.json`. Scheduled or manual **Update parkrun results** (`.github/workflows/parkrun-update.yml`) opens a **pull request into `develop`** when the scrape succeeds (it does not push to protected `develop` directly); merge the PR to apply the update. parkrun.org.uk often blocks GitHub-hosted runner IPs (HTTP 403/405); the workflow then succeeds with a skip notice—run `python scripts/update_parkrun_results.py` locally and commit, or use a self-hosted runner.
-
-### Blog Post Structure
-
-Blog posts use **TOML frontmatter** and are organized by year:
-
-```
-content/posts/YYYY/post-title.md
-```
-
-**Required frontmatter fields:**
-- `title` – Post title
-- `date` – Publication date (ISO 8601, e.g., "2026-01-31T15:46:00Z")
-- `year` – Year as string (e.g., "2026")
-- `month` – Year-month for grouping (e.g., "2026-01")
-- `author` – Usually "funkysi1701"
-- `authorTwitter` – Twitter handle without @
-- `tags` – Array of tags
-- `categories` – Array of categories (e.g., ["tech"])
-- `description` – SEO description should be between 110 and 160 characters
-- `draft` – Always `false` on new posts. Unpublished review is **https://blog-dev.funkysi1701.com** (`feature/*` / `develop`), not Hugo `draft = true`. Production is `main`.
-
-**Optional fields:**
-- `cover` – Path to cover image (e.g., "/images/cover.jpg")
-- `images` – Array of image paths used in post
-- `aliases` – Array of alternate URL paths for SEO/redirects
-- `featured` – Boolean (for homepage featuring)
-- `showFullContent` – Boolean
-- `readingTime` – Boolean
-- `copyright` – Boolean
-
-**Example:**
-```toml
-+++
-title = "My Post Title"
-date = "2026-01-31T15:46:00Z"
-year = "2026"
-month = "2026-01"
-author = "funkysi1701"
-authorTwitter = "funkysi1701"
-cover = "/images/my-cover.jpg"
-images = ["/images/my-cover.jpg"]
-tags = ["Tag1", "Tag2"]
-categories = ["tech"]
-description = "A short description for SEO"
-draft = false
-aliases = [
-    "/my-post-title",
-    "/posts/my-post-title",
-    "/posts/2026/01/31/my-post-title",
-    "/2026/01/31/my-post-title"
-]
-+++
-
-Post content in Markdown...
-```
+1. New posts: **`draft = false`**. Review on **https://blog-dev.funkysi1701.com** — not Hugo `draft = true`.
+2. **British English** (`en-gb`).
+3. SEO: production HTML `<title>` **50–60** (`{title} - Funky Si's Blog`); `description` **110–160**. After front-matter edits: `npm run check:meta`.
+4. Do not edit **`public/`** or the parkrun block between `BEGIN`/`END PARKRUN_GENERATED` markers.
+5. **No secrets** in `.env`, `config/`, or front matter.
+6. **No SPA `navigationFallback` → `/index.html`** — `responseOverrides["404"]` → `/404.html`. After SWA config edits: `npm run check:swa-config`.
+7. Do not embed **`lite.js`** while Cloudflare Zaraz injects it.
+8. Keep **`AGENTS.md` / README / CONTRIBUTING / Cursor rules / this file** aligned when behaviour changes.
 
 ### Blog draft review checklist
 
-When drafting or editing blog posts, always assess these three questions:
+When drafting or polishing posts:
 
-- **Was this written by the author or AI?** Keep the voice aligned with Simon's existing posts and remove generic AI phrasing.
-- **What would fellow developers take away from this?** Make sure there is a concrete practical takeaway, not just explanation.
-- **Is there a clear call to action (CTA)?** End with a specific next step (for example comments, related post, newsletter, or contact).
+- **Authorship:** Does this read like Simon wrote it, or like AI?
+- **Developer takeaway:** What will fellow developers learn or do differently?
+- **CTA:** Clear next step (comments, related post, newsletter, contact)?
 
-### Page Structure
-
-Other pages (about, projects, etc.) are in `content/` root using Markdown format:
-- `content/about.md`
-- `content/projects.md`
-- `content/contact.md`
-- etc.
-
-## High-Level Architecture
-
-### Directory Organization
-
-| Directory | Purpose |
-|-----------|---------|
-| `content/posts/` | Blog posts organized by year |
-| `content/` | Pages (about, projects, contact, etc.) |
-| `layouts/` | Hugo page templates and partials |
-| `assets/` | CSS (SCSS/PostCSS) and JavaScript source |
-| `static/images/` | Images, downloads, and media files |
-| `themes/hugo-theme-bootstrap/` | Frozen fork of hugo-theme-bootstrap v0.65.1 (not synced with upstream); compiled CSS/JS Hugo loads |
-| `config/` | Hugo configuration for dev/staging/production environments |
-| `.github/workflows/` | GitHub Actions (SWA deploy prod/non-prod, Playwright, Pa11y, meta checks, SEO, links, auto-PR, etc.) |
-| `tests/` | Playwright end-to-end tests (`@playwright/test`) |
-| `specs/` | Test plans; e.g. `funkysi1701-test-plan.md` referenced from many specs via `// spec: ...` comments |
-
-### Frontend Stack
-
-- **Hugo** – Static site generation
-- **Bootstrap / Font Awesome / Fuse search / Mermaid / KaTeX / Workbox** – compiled into the frozen theme `assets/` (not installed from root npm)
-
-### Backend/Infrastructure
-
-- **Azure Static Web Apps** – Hosting for production, dev, and test (GitHub Actions CD)
-- **GitHub Actions** – Hugo build, SWA deploy, Playwright E2E, Pa11y, meta validation, SEO crawl
-
-### Environment Configuration
-
-Hugo uses environment-specific configs in `config/`:
-- `config/_default/config.toml` – Base configuration
-- `config/development/config.toml` – Local dev overrides
-- `config/staging/config.toml` – Staging overrides
-- `config/production/config.toml` – Production overrides (CDN image prefix, monetization flags; visitor analytics are via Cloudflare Zaraz — see README)
-
-**Note:** Hugo version is centralized in `.env` file and used by Docker builds for consistency.
-
-## Key Conventions
-
-1. **Blog post URLs:** Follow year-based organization in both filesystem (`content/posts/2026/`) and URLs (`/2026/01/31/post-title`). The `aliases` field provides backward compatibility for old URL formats.
-
-2. **Images location:** Store in `static/images/`, reference as `/images/filename.jpg` in content.
-
-3. **Environment-specific settings:** Never hardcode configuration. Use `config/` structure:
-   - Development: Local testing; Hugo analytics ID empty (Zaraz only on Cloudflare-fronted hosts)
-   - Staging: Testing environment
-   - Production: CDN caching; visitor analytics via Cloudflare Zaraz / Web Insights (Hugo GA and Gatekeeper/Ezoic off)
-
-4. **Multi-environment deployment:** SWA deploys use Hugo `--environment` values `production`, `development`, and `staging` from `config/` overlays. Workflows: `azure-static-web-apps-victorious-pebble-0b8f90e03.yml` (prod), `swa-deploy-nonprod.yml` (dev/test). Development (blog-dev) builds pass `--buildFuture`; staging and production do not.
-
-5. **Docker version control:** Keep `.env` file updated with correct `HUGO_VERSION` to ensure consistency across local, pipeline, and container environments.
-
-6. **Comments system:** Uses Giscus (GitHub discussions-backed), configured in base config. Comments are stored in the `Blog-Comments` repository.
-
-## Testing
-
-The repo uses **Playwright** for automated end-to-end tests.
-
-**Local (and any environment without Azure DevOps):**
+## Build, test, run
 
 ```bash
+hugo server -D                                          # http://localhost:1313
+hugo --minify --environment production
 npm ci
-npx playwright install chromium   # if browsers are not already present
-npm test                          # full suite
-npm run test:smoke                # @smoke subset (homepage, 404, sitemap, head SEO meta)
+npm run check:meta
+npm run check:swa-config
+npm run check:spec-headers
+npm test                                                # set BASE_URL for non-prod
+npm run test:smoke                                      # needs local Hugo; set BASE_URL
 ```
 
-`playwright.config.ts` sets `baseURL` from **`BASE_URL`**; if unset, it defaults to **`https://www.funkysi1701.com`**. Point `BASE_URL` at `http://localhost:1313` (or another host) when testing a local or preview build. Optional **`PLAYWRIGHT_WORKERS`**, **`PLAYWRIGHT_RETRIES`**, **`PLAYWRIGHT_*_TIMEOUT`**, and **`PLAYWRIGHT_MAX_FAILURES`** override parallelism and timeouts (CI keeps `workers: 1` / `retries: 2` unless overridden). See README Testing and the header comment in `playwright.config.ts`.
+Hugo version: `.env` → `HUGO_VERSION`. Full CI map: [`AGENTS.md`](../AGENTS.md).
 
-**GitHub Actions:** **`playwright-smoke.yml`** runs `@smoke` on all PRs against a local Hugo server (`BASE_URL=http://127.0.0.1:1313`). **`swa-deploy-nonprod.yml`** deploys to blog-dev (and blog-test on **`develop`**) then runs the full suite with **`BASE_URL=https://blog-dev.funkysi1701.com`**. **`playwright.yml`** runs PRs into **`main`** against blog-dev and **`main`** pushes / `workflow_dispatch` against production. Full-suite workflows run **`scripts/generate-page-coverage.js`** and upload to **Codecov** when **`CODECOV_TOKEN`** is set. **`codecov.yml`** configures Codecov **project/patch** status as **informational**.
+Playwright: every `tests/**/*.spec.ts` needs a `// spec: specs/...` header. `BASE_URL` defaults to production if unset.
 
-**GitHub Actions (other):** **`hugo-build.yml`** (PR build validation), meta title/description checks, **`pa11y-nightly.yml`** / **`pa11y-image.yml`** (GHCR Pa11y scanner image + nightly accessibility), production SWA deploy, broken link schedule, develop→main auto-PR, parkrun update PRs, **`issue-schedule.yml`** (weekly 30-day issue planner → tracking issue), **`blog-post-idea.yml`** (weekly content suggestion issue), **`tech-debt-scan.yml`** (weekly tech-debt issues), **`home-popular-update.yml`** (weekly Cloudflare top-pages refresh of `data/home_popular.toml` → PR into `develop`).
+## Medium / large work
 
-**Meta validation (post front matter):** After editing `title` or `description` in `content/posts/**/*.md`, run **`npm run check:meta`** (wraps the Python scripts used by GitHub Actions). Title length is checked against the **production HTML `<title>`** (`{front matter title} - Funky Si's Blog`, 50–60 characters; front matter usually 32–42). Subcommands: **`check:meta:titles`**, **`check:meta:descriptions`**. To preview automated description rewrites: **`npm run check:meta:fix`** (dry-run only). Apply fixes with `python scripts/normalize_meta_descriptions.py --root .`. Requires Python 3.11+ on `PATH`.
+Prefer **OpenSpec** (`/opsx-propose` → apply → archive). Context: [`openspec/config.yaml`](../openspec/config.yaml). Skills: parkrun update, fix-post-meta, playwright-test-healer under [`.cursor/skills/`](../.cursor/skills/).
 
-**Specs:** High-level scenarios are documented in **`specs/`** (see **`specs/funkysi1701-test-plan.md`**). Every `tests/**/*.spec.ts` file must start with a `// spec: specs/...` pointer for traceability. Verify with **`npm run check:spec-headers`** (also run by **`spec-headers.yml`** and before Playwright in the reusable E2E workflow).
+## When changing boundaries
 
-**SWA config:** After editing **`staticwebapp.config.json`**, run **`npm run check:swa-config`** (SchemaStore schema + required security headers including CSP; also **`swa-config.yml`** in CI). Do not add SPA `navigationFallback` → `/index.html` (soft-404s); missing pages use `responseOverrides["404"]` → `/404.html`.
-
-For Hugo-only edits, **`hugo server -D`** or a production **`hugo`** build remains useful for quick feedback before or after running tests.
-
-## Useful File References
-
-- `.cursor/rules/` – Cursor agent rules (`funkysi1701-blog-core.mdc` always applied; `content-posts.mdc`, `playwright-tests.mdc`, `hugo-layouts.mdc`, `parkrun-generated.mdc` path-scoped)
-- `.cursor/skills/` – Cursor project skills (`update-parkrun`, `fix-post-meta`, `playwright-test-healer`, OpenSpec flows)
-- `.env` – Hugo version (affects all builds)
-- `config/_default/config.toml` – Main site title, menu, author info
-- `config/production/config.toml` – Production baseURL and CDN/monetization params (analytics via Zaraz; see README)
-- `playwright.config.ts` – Playwright defaults (`baseURL`, reporters, projects; env-tunable workers/retries/timeouts)
-- `swa-deploy-nonprod.yml` – Thin nonprod orchestrator: branch gates → `reusable-hugo-swa-deploy.yml` (blog-dev ∥ blog-test), then blog-dev Playwright ∥ SEO; cancels superseded runs per ref
-- `playwright.yml` – Full Playwright E2E (`main` pushes → production; PRs into `main` → blog-dev)
-- `playwright-smoke.yml` – PR smoke subset against local Hugo (`@smoke`, `BASE_URL=http://127.0.0.1:1313`)
-- `pa11y-nightly.yml` – Scheduled full-sitemap accessibility scan: build/push `ghcr.io/<repo>/pa11y-scanner` on `ubuntu-latest`, pull on ARC, hard per-page timeouts + 90m budget; infra/incomplete scans fail (a11y findings still file issues). Artifacts for logs/results
-- `pa11y-image.yml` – Build/push Pa11y scanner image to GHCR on Dockerfile/dep changes, weekly refresh, or `workflow_dispatch`
-- `issue-schedule.yml` – Weekly LLM planner via [repo-automation](https://github.com/funkysi1701/repo-automation) `@v1` → **30-day implementation schedule** tracking issue (`.github/issue-schedule-prompt.md`); each week includes ≥1 `[Content Suggestion]` when open
-- `blog-post-idea.yml` – Weekly LLM: catalogue posts + trends → one `[Content Suggestion]` issue (`scripts/blog-post-idea/`); hard-skips near-duplicates of recent posts / closed suggestions (90 days, one retry)
-- `tech-debt-scan.yml` – Weekly LLM via [repo-automation](https://github.com/funkysi1701/repo-automation) `@v1` → `tech-debt` issues (`.github/tech-debt-hotspots.txt`, `.github/tech-debt-prompt.md`)
-- `home-popular-update.yml` – Weekly Cloudflare Web Analytics top pages → `data/home_popular.toml` PR (`scripts/home-popular/`)
-- `codecov.yml` – Codecov behaviour (informational page-coverage gates)
-- `npm run check:meta` – Local meta validation (titles + descriptions); see also `check:meta:titles`, `check:meta:descriptions`, `check:meta:fix`
-- `npm run check:swa-config` – Validate `staticwebapp.config.json` (schema + security headers including CSP); CI: `swa-config.yml`
-- `scripts/check_meta_titles.py` / `scripts/check_meta_descriptions.py` – Post front matter length checks (titles use production rendered `<title>` including ` - Funky Si's Blog`; used by GitHub Actions and npm scripts)
-- `scripts/check_staticwebapp_config.mjs` – SWA config validator; schema vendored at `scripts/schemas/staticwebapp.config.schema.json`
-- `scripts/generate-page-coverage.js` – Page visit / coverage artifact for Codecov
-- `.github/workflows/` – GitHub Actions (SWA deploy, Playwright, Pa11y, meta checks, links, auto-PR, etc.)
-- `specs/` – Test plans referenced from `tests/`
-
+Update docs per [`docs/AI_CONTEXT.md`](../docs/AI_CONTEXT.md#when-to-update-docs-ai-checklist). Parkrun scrape: [`.cursor/skills/update-parkrun`](../.cursor/skills/update-parkrun/SKILL.md).

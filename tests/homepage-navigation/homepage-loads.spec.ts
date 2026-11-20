@@ -26,12 +26,18 @@ test.describe('Homepage and Navigation', () => {
       const nav = page.locator('nav').first();
       await expect(nav).toBeVisible();
       await expect(nav.getByRole('link', { name: 'Start Here', exact: true })).toBeVisible();
+      await expect(nav.locator('#navbarDropdownMore')).toBeVisible();
     });
 
-    await test.step('Confirm home hero Start Here next-step is present', async () => {
-      const heroCta = page.locator('.home-hero .home-hero__cta a');
+    await test.step('Confirm home hero identity and Start Here button', async () => {
+      const hero = page.locator('.home-hero');
+      await expect(hero.getByRole('heading', { level: 1, name: 'Simon Foster' })).toBeVisible();
+      await expect(hero.locator('img.home-hero__avatar')).toBeVisible();
+      await expect(hero.locator('.home-hero__role')).toContainText(/\.NET|Azure/i);
+      const heroCta = hero.locator('.home-hero__cta a.btn-primary');
       await expect(heroCta).toBeVisible();
       await expect(heroCta).toHaveAttribute('href', /\/start-here\/?$/);
+      await expect(heroCta).toHaveText('Start Here');
     });
 
     await test.step('Confirm Popular right now strip is present', async () => {
@@ -58,6 +64,22 @@ test.describe('Homepage and Navigation', () => {
       expect(postCount).toBeGreaterThanOrEqual(5);
     });
 
+    await test.step('Confirm list cards omit year/month badges and cap tags', async () => {
+      const listBadges = page.locator('.posts .post-taxonomies a.post-taxonomy');
+      // At least one topical tag chip should exist on the home feed.
+      await expect(listBadges.first()).toBeVisible();
+      // Year / month taxonomy chips must not appear on list cards.
+      await expect(listBadges.filter({ hasText: /^\d{4}$/ })).toHaveCount(0);
+      await expect(listBadges.filter({ hasText: /^\d{4}-\d{2}$/ })).toHaveCount(0);
+
+      const cards = page.locator('.posts article.post');
+      const sample = Math.min(await cards.count(), 8);
+      for (let i = 0; i < sample; i++) {
+        const badgeCount = await cards.nth(i).locator('.post-taxonomies a.post-taxonomy').count();
+        expect(badgeCount).toBeLessThanOrEqual(3);
+      }
+    });
+
     await test.step('Confirm sidebar Tags chips (top 20) and View all tags', async () => {
       const tagsCard = page.locator('.tags-taxonomies');
       await expect(tagsCard).toBeVisible();
@@ -71,5 +93,9 @@ test.describe('Homepage and Navigation', () => {
       await expect(viewAll).toHaveAttribute('href', /\/tags\/?$/);
     });
 
+    await test.step('Confirm sidebar has no Featured Posts and a single Years heading', async () => {
+      await expect(page.getByRole('heading', { name: 'Featured Posts' })).toHaveCount(0);
+      await expect(page.locator('.year .card-title').filter({ hasText: 'Years' })).toHaveCount(1);
+    });
   });
 });

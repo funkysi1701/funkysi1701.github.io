@@ -1,53 +1,41 @@
 ---
-description: funkysi1701.com Hugo blog — core repo conventions (source of truth, security, branches)
+description: funkysi1701.com Hugo blog — AI entry point (link canonical docs; keep always-on surface slim)
 alwaysApply: true
 ---
 
-# funkysi1701.com (Hugo blog) — core rules
+# funkysi1701.com (Hugo blog)
 
-Portable onboarding: [`AGENTS.md`](../../AGENTS.md). PR checklist: [`CONTRIBUTING.md`](../../CONTRIBUTING.md). Copilot detail: [`.github/copilot-instructions.md`](../../.github/copilot-instructions.md). Path-scoped rules in [`.cursor/rules/`](.) activate for content, tests, layouts, and parkrun.
+Hugo blog/portfolio on **Azure Static Web Apps**. Theme: frozen **hugo-theme-bootstrap v0.65.1** — prefer root `layouts/`, `assets/`, `static/` over editing `themes/`.
 
-Prefer matching existing patterns (Hugo TOML front matter in `+++` fences, site overrides under root `layouts/` and `static/`).
+**Start here:** [`docs/AI_CONTEXT.md`](../../docs/AI_CONTEXT.md) — tool map, non-negotiables, OpenSpec vs small fixes, anti-patterns. Commands and CI: [`AGENTS.md`](../../AGENTS.md). PR checklist: [`CONTRIBUTING.md`](../../CONTRIBUTING.md). Slim Copilot: [`.github/copilot-instructions.md`](../../.github/copilot-instructions.md). Backlog: Feature **2996** ([`azure-devops-stories.mdc`](azure-devops-stories.mdc)).
 
-## Source of truth and generated output
+## Repo layout (quick)
 
-- **Hugo content and config:** Edit Markdown under `content/`, site parameters under `config/_default/` (and `config/development/`, `config/staging/`, `config/production/` when environment-specific). Active theme: `config/_default/config.toml` (`theme = 'hugo-theme-bootstrap'`), a **frozen fork of hugo-theme-bootstrap v0.65.1**. Production Hugo does not run theme npm/webpack. Do not rebase onto upstream v1.
-- **Theme vs site overrides:** Prefer root `layouts/`, `assets/`, and `static/` over editing `themes/hugo-theme-bootstrap/`. See `hugo-layouts.mdc` when changing templates.
-- **Build output:** `public/` is generated — not source of truth. Production builds use Dockerized Hugo with `--minify --environment production` (`.github/workflows/azure-static-web-apps-victorious-pebble-0b8f90e03.yml`). **blog-dev** deploys (`hugo_environment: development` via `swa-deploy-nonprod.yml`) also pass `--buildFuture` so future-dated posts appear on preview; staging/production do not.
-- **New posts:** Always set `draft = false`. Review unpublished work on **https://blog-dev.funkysi1701.com** (`feature/*` and `develop`); production is `main`. Do not use Hugo `draft = true` as the unpublished flag — see `content-posts.mdc`.
-- **Parkrun page:** Generated block in `content/parkrun.md` — see `parkrun-generated.mdc`; do not hand-edit between markers.
-- **Home popular links:** `data/home_popular.toml` drives the home strip. `home-popular-update.yml` refreshes its URLs weekly from Cloudflare Web Analytics through `scripts/home-popular/run.mjs` and opens a PR into `develop`; editorial titles are preserved.
-- **Analytics:** Production engagement KPIs use **Lite Analytics via Cloudflare Zaraz** (not Hugo). Do not embed `lite.js` in templates while Zaraz injects it. Inventory and keep/disable decisions: [`README.md`](../../README.md#analytics-cloudflare-zaraz). Cloudflare Web Analytics (separate beacon) feeds the home Popular strip.
-- **Git submodules:** CI checks out with `submodules: true`. Keep submodule config in sync if used.
-- **Azure Static Web Apps:** `staticwebapp.config.json` is copied into `public/` on every SWA deploy; keep routing and headers aligned with the built site. After edits, run `npm run check:swa-config` (CI: `swa-config.yml`). Required `globalHeaders` include HSTS, frame/MIME/referrer/permissions policies, and Content-Security-Policy. Do not add SPA `navigationFallback` to `/index.html` (soft-404 homepage); use `responseOverrides["404"]` → `/404.html`.
+| Path | Role |
+|------|------|
+| `content/` | Posts (`posts/YYYY/`) and pages |
+| `layouts/`, `assets/`, `static/` | Site overrides (not the vendored theme) |
+| `config/` | `_default` + development / staging / production |
+| `tests/`, `specs/` | Playwright E2E + scenario plan |
+| `scripts/`, `.github/workflows/` | Automation and CI |
 
-## Security and configuration
+## Scoped Cursor rules
 
-- `.env` tracks non-secret shared config (e.g. `HUGO_VERSION`). **Do not** commit secrets, API keys, or deploy tokens. Azure SWA deploy token lives only in GitHub Actions secrets.
-- Cloudflare automation keeps `CLOUDFLARE_API_TOKEN` in GitHub Actions secrets; account/site tags are repository variables.
-- **Giscus** and similar use public repo identifiers; avoid private tokens in `config/` or front matter.
+| Rule file | When it loads |
+|-----------|----------------|
+| `azure-devops-stories.mdc` | Always (Boards Feature 2996) |
+| `content-posts.mdc` | `content/posts/**` |
+| `playwright-tests.mdc` | `tests/**` |
+| `hugo-layouts.mdc` | `layouts/**` |
+| `parkrun-generated.mdc` | parkrun content / scraper |
 
-## Local development
+## Non-negotiables (summary)
 
-- **Hugo:** `hugo server -D` from repo root, or Docker Compose (`docker-compose.yml`) / commands in `README.md`. Hugo version from `HUGO_VERSION` in `.env`.
-- **Images:** Static binaries under `static/` (site root). Stable paths for external links.
-- **Node:** After changing `package.json` or `package-lock.json`, run `npm ci` before `npm test` (matches GitHub Actions).
+1. Posts: `draft = false`; review on **blog-dev** (`feature/*` / `develop`), not Hugo `draft = true`.
+2. British English; SEO title/description length gates (`npm run check:meta`).
+3. Do not edit `public/` or the parkrun generated block.
+4. No secrets in git; no SPA `navigationFallback` → `/index.html` (`npm run check:swa-config`).
+5. Keep docs (`AGENTS.md`, README, CONTRIBUTING, rules, Copilot) in sync when behaviour changes.
+6. Smallest change that satisfies the task.
 
-## Branches and deploy
-
-| Branch | Target |
-|--------|--------|
-| **`main`** | Production — GHA → Azure SWA (`www.funkysi1701.com`) |
-| **`develop`** | Non-prod — GHA → SWA dev + test (`blog-dev`, `blog-test`) |
-| **`feature/*`** | GHA → SWA dev only |
-
-No **`dev`** branch — use **`develop`**. `.github/workflows/auto-pr.yml` can open or refresh **develop → main**.
-
-## Documentation
-
-- Tracked **`*.md`** is part of the repo contract. When a change affects documented behaviour, update every affected Markdown file in the same change.
-- Keep **`AGENTS.md`**, **`CONTRIBUTING.md`**, **`README.md`**, **`.github/copilot-instructions.md`**, and **`.cursor/rules/`** aligned when workflows, branches, testing, or automation shift. Do not add new Markdown files unless the user or task asks.
-
-## Scope
-
-Make the smallest change that satisfies the task. Do not refactor unrelated code or add dependencies without clear need.
+**OpenSpec** for medium/large work: `/opsx-propose` → apply → archive (`openspec/config.yaml`). Skills: [`.cursor/skills/`](../skills/). Hooks: [`.cursor/hooks/README.md`](../hooks/README.md).

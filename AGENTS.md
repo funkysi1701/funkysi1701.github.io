@@ -1,6 +1,6 @@
 # Agent onboarding — funkysi1701.com (Hugo blog)
 
-Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). Cursor rules are path-scoped under [`.cursor/rules/`](.cursor/rules/); Copilot detail in [`.github/copilot-instructions.md`](.github/copilot-instructions.md).
+Portable guide for AI agents (Cursor, Copilot, Claude Code, etc.). **Start here for the AI tool map:** [`docs/AI_CONTEXT.md`](docs/AI_CONTEXT.md). Cursor rules are path-scoped under [`.cursor/rules/`](.cursor/rules/); slim Copilot guidance in [`.github/copilot-instructions.md`](.github/copilot-instructions.md). Backlog: Azure Boards Feature **2996** ([`azure-devops-stories.mdc`](.cursor/rules/azure-devops-stories.mdc)); personal skill `azure-boards`.
 
 **Site:** https://www.funkysi1701.com
 
@@ -43,17 +43,21 @@ After changing `package.json` or `package-lock.json`, run `npm ci` before `npm t
 
 **`.cursorignore`** keeps Cursor Agent indexing off generated and vendored paths (`public/`, `node_modules/`, `themes/hugo-theme-bootstrap/`, Playwright/coverage artefacts). It affects Cursor only — not git or Hugo. The theme tree is a frozen v0.65.1 fork; new template work belongs in root `layouts/`, `assets/`, and `static/`.
 
-### Cursor hooks (post-edit meta validation)
+### Cursor hooks
 
-Committed at [`.cursor/hooks.json`](.cursor/hooks.json). In a **trusted** workspace, Cursor loads these automatically (also for cloud agents). They are opt-in per machine: trust the folder, or disable under **Cursor Settings → Hooks** / remove the project hooks entry if you do not want them.
+Committed at [`.cursor/hooks.json`](.cursor/hooks.json); details in [`.cursor/hooks/README.md`](.cursor/hooks/README.md). In a **trusted** workspace, Cursor loads these automatically (also for cloud agents). They are opt-in per machine: trust the folder, or disable under **Cursor Settings → Hooks** / remove the project hooks entry if you do not want them.
 
 | Hook | Behaviour |
 |------|-----------|
-| `afterFileEdit` / `postToolUse` (`Write`\|`StrReplace`) | If the edited file is under `content/posts/**/*.md`, runs `scripts/check_meta_titles.py` and `check_meta_descriptions.py` for **that file only** via `--files` (timeout 30s). |
+| `sessionStart` | Clears edit state; short reminder to use `docs/AI_CONTEXT.md` / OpenSpec |
+| `afterFileEdit` / `postToolUse` (`Write`\|`StrReplace`) | If the edited file is under `content/posts/**/*.md`, runs meta title/description checks for **that file only** (Python; timeout 30s) |
+| `afterFileEdit` | Records edited paths; scans new text for secret-like patterns (Node) |
+| `beforeShellExecution` | Asks before force-push, `reset --hard`, `git clean -f`, recursive deletes of core paths |
+| `stop` | One follow-up if docs/security/tech-debt gaps look relevant (`loop_limit: 1`) |
 
-On failure, the hook prints a clear report and (for `postToolUse`) injects `additional_context` so the agent can fix `title` (production HTML `<title>` 50–60 = front matter usually 32–42 + ` - Funky Si's Blog`) / `description` (110–160). Non-post edits are skipped. Hugo layout smoke builds are **not** hooked yet (kept out to avoid slowing every edit).
+On meta failure, the hook prints a clear report and (for `postToolUse`) injects `additional_context` so the agent can fix `title` (production HTML `<title>` 50–60 = front matter usually 32–42 + ` - Funky Si's Blog`) / `description` (110–160). Non-post edits skip the meta check. Hugo layout smoke builds are **not** hooked yet (kept out to avoid slowing every edit).
 
-Requires **Python 3.11+** on `PATH` (same as `npm run check:meta`). Manual equivalent: `python scripts/check_meta_titles.py --root . --files <path>` (and the descriptions script).
+Requires **Python 3.11+** and **Node.js** on `PATH`. Manual meta equivalent: `python scripts/check_meta_titles.py --root . --files <path>` (and the descriptions script).
 
 **Project skills** under [`.cursor/skills/`](.cursor/skills/) package recurring maintenance workflows (read the skill when the task matches; they link to path-scoped rules instead of duplicating them):
 
@@ -64,6 +68,10 @@ Requires **Python 3.11+** on `PATH` (same as `npm run check:meta`). Manual equiv
 | [`playwright-test-healer`](.cursor/skills/playwright-test-healer/SKILL.md) | Debugging and fixing failing Playwright E2E tests |
 
 OpenSpec skills (`openspec-*`) live in the same directory for change proposal/apply/archive flows.
+
+### Work tracking (Azure Boards)
+
+Product / engineering backlog is Azure Boards under Feature **[2996](https://dev.azure.com/funkysi1701/My%20GitHub%20Projects/_workitems/edit/2996)** (`funkysi1701` / **My GitHub Projects**), not GitHub Issues. Link PRs with `AB#{id}` in the description. Some automation (e.g. 30-day schedule, tech debt scan) may still open GitHub issues — promote intentional build work into Boards when you take it on.
 
 ## Source of truth
 
@@ -132,14 +140,16 @@ Make the smallest change that satisfies the task. Do not refactor unrelated code
 
 | Path | Purpose |
 |------|---------|
-| [`.cursor/rules/funkysi1701-blog-core.mdc`](.cursor/rules/funkysi1701-blog-core.mdc) | Always-applied Cursor rules (source of truth, security, branches) |
+| [`docs/AI_CONTEXT.md`](docs/AI_CONTEXT.md) | AI entry point — tool map, OpenSpec, anti-patterns |
+| [`.cursor/rules/funkysi1701-blog-core.mdc`](.cursor/rules/funkysi1701-blog-core.mdc) | Always-applied Cursor entry (slim; links AI_CONTEXT) |
 | [`.cursor/rules/content-posts.mdc`](.cursor/rules/content-posts.mdc) | Content/posts — front matter, SEO lengths, alt text |
 | [`.cursor/rules/playwright-tests.mdc`](.cursor/rules/playwright-tests.mdc) | Playwright — `BASE_URL`, `// spec:`, CI gates |
 | [`.cursor/rules/hugo-layouts.mdc`](.cursor/rules/hugo-layouts.mdc) | Hugo templates — theme overrides, build verification |
 | [`.cursor/rules/parkrun-generated.mdc`](.cursor/rules/parkrun-generated.mdc) | parkrun generated block and update script |
-| [`.cursor/hooks.json`](.cursor/hooks.json) | Cursor post-edit meta validation hooks (trusted workspace) |
+| [`.cursor/hooks.json`](.cursor/hooks.json) · [`.cursor/hooks/README.md`](.cursor/hooks/README.md) | Cursor hooks (meta, shell guard, stop checklist) |
 | [`.cursor/skills/`](.cursor/skills/) | Cursor project skills (parkrun, meta, Playwright healer, OpenSpec) |
-| [`.github/copilot-instructions.md`](.github/copilot-instructions.md) | Copilot-specific project context |
+| [`openspec/config.yaml`](openspec/config.yaml) | OpenSpec project context for medium/large changes |
+| [`.github/copilot-instructions.md`](.github/copilot-instructions.md) | Slim always-on Copilot edit guidance |
 | [`.github/issue-schedule-prompt.md`](.github/issue-schedule-prompt.md) | Prompt for weekly 30-day issue schedule ([repo-automation](https://github.com/funkysi1701/repo-automation)) |
 | [`scripts/blog-post-idea/README.md`](scripts/blog-post-idea/README.md) | Weekly blog post idea → content-suggestion issue (GitHub Models) |
 | [`.github/tech-debt-prompt.md`](.github/tech-debt-prompt.md) | Prompt for weekly tech-debt scan ([repo-automation](https://github.com/funkysi1701/repo-automation)) |

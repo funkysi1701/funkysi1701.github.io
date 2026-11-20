@@ -20,21 +20,25 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   1. Navigate to https://www.funkysi1701.com
   2. Verify the page loads without errors
   3. Check that the page title includes the Hugo site title for the target environment (production: Funky Si's Blog; blog-dev: Funky Si's Blog (Dev); blog-test: Funky Si's Test)
-  4. Verify the main navigation menu is visible (including Start Here)
-  5. Confirm the home hero Start Here next-step link is present
+  4. Verify the main navigation menu is visible (including Start Here and More)
+  5. Confirm the home hero shows author avatar + name (`h1`), role line, and Start Here primary button
   6. Confirm the Popular right now strip is present above the post list with 3-5 post links
   7. Confirm blog posts are displayed on the homepage
-  8. Confirm the sidebar Tags card shows a compact chip list (at most 20 tags) and a View all tags link
+  8. Confirm list cards omit year/month taxonomy badges and show at most three tag chips
+  9. Confirm the sidebar Tags card shows a compact chip list (at most 20 tags) and a View all tags link
+  10. Confirm the sidebar has no Featured Posts block and exactly one Years heading
 
 **Expected Results:**
   - Homepage loads within 3 seconds
   - No console errors appear
-  - Page title is descriptive and includes author name
-  - Navigation menu displays all expected items including Start Here
-  - Home hero includes a single Start Here CTA to `/start-here/`
+  - Page title is descriptive and includes author name / site title
+  - Navigation shows About, Start Here, Projects, Newsletter, and More
+  - Home hero identity CTA is a primary button to `/start-here/`
   - Popular strip heading is visible with 3-5 links to `/posts/...` pages (list is auto-refreshed weekly from Cloudflare Web Analytics top pages, so specific URLs are not asserted)
   - At least 5-10 recent blog posts are visible
+  - List post meta chips are topical tags only (≤3); no bare year or `YYYY-MM` badges
   - Sidebar Tags chips are badge links to `/tags/...` (count 1–20) with a View all tags link to `/tags/`
+  - Sidebar omits Featured Posts and shows a single Years archive
 
 #### 1.2. Main navigation menu functionality
 
@@ -42,17 +46,18 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
 
 **Steps:**
   1. Navigate to https://www.funkysi1701.com
-  2. Verify all navigation items are visible: About, Start Here, Projects, Tools & Resources, Newsletter, Contact, Events, Search
-  3. Click on each navigation link one at a time
-  4. Verify each page loads correctly
-  5. Check that the navigation menu remains visible on all pages
+  2. Verify primary navigation items: About, Start Here, Projects, Newsletter, plus More
+  3. Open More and confirm Tools & Resources, Contact, Events, Search
+  4. Click each primary link and each More child one at a time
+  5. Verify each page loads correctly
+  6. Check that the navigation menu remains visible on all pages
 
 **Expected Results:**
-  - All 8 navigation menu items are displayed
+  - Four primary items plus More are displayed at the top level
+  - Secondary destinations are reachable under More with unchanged permalinks
   - Each link is clickable and navigates to the correct page
   - Pages load without errors
   - Navigation menu is consistent across all pages
-  - Support link opens in a new tab to external URL
 
 #### 1.3. Responsive design on mobile viewport
 
@@ -63,14 +68,15 @@ Funkysi1701.com is a personal technical blog and portfolio website for Simon Fos
   2. Navigate to https://www.funkysi1701.com
   3. Check if navigation menu collapses to hamburger menu
   4. Click hamburger menu to expand
-  5. Verify all navigation items are accessible
-  6. Test navigation on About, Projects, and Contact pages
+  5. Verify primary navigation items (including More) are accessible
+  6. Test navigation on About, Projects, and Contact (via More) pages
   7. Verify content is readable and not cut off
 
 **Expected Results:**
   - Navigation adapts to mobile viewport
   - Hamburger menu icon appears
-  - Menu expands showing all navigation items
+  - Menu expands showing primary items and More
+  - Contact remains reachable under More
   - All links remain functional
   - Content is properly formatted for mobile
   - No horizontal scrolling required
