@@ -8,17 +8,17 @@ title = "NDC London 2026"
 url = "/posts/2026/ndc-london-2026/"
 
 [[items]]
-title = ".NET 5 to 10: features per release"
-url = "/posts/2026/dotnet-5-to-10-features/"
-
-[[items]]
 title = "Setting Up Nagios Monitoring with Docker"
 url = "/posts/2025/monitoring-with-nagios-docker/"
 
 [[items]]
-title = "Deploy this blog with Helm charts"
-url = "/posts/2025/deploying-hugo-with-helm/"
+title = ".NET 5 to 10: features per release"
+url = "/posts/2026/dotnet-5-to-10-features/"
 
 [[items]]
-title = "The Mandelbrot Set"
-url = "/posts/2025/mandelbrot-set/"
+title = "Blazor and .NET 10 breaking changes"
+url = "/posts/2025/blazor-and-dotnet10/"
+
+[[items]]
+title = "Reflecting on 2024, goals for 2025"
+url = "/posts/2024/end-of-year/"
