@@ -12,12 +12,12 @@ title = ".NET 5 to 10: features per release"
 url = "/posts/2026/dotnet-5-to-10-features/"
 
 [[items]]
-title = "Setting Up Nagios Monitoring with Docker"
-url = "/posts/2025/monitoring-with-nagios-docker/"
-
-[[items]]
 title = "Set up Grafana for .NET with Docker"
 url = "/posts/2025/setting-up-grafana/"
+
+[[items]]
+title = "Merge two Git projects, keep history"
+url = "/posts/2025/merge-two-projects-into-one/"
 
 [[items]]
 title = "Kubernetes SSL with Let's Encrypt"
